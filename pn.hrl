@@ -4,7 +4,7 @@
     {
         name = ?UNNAMED, 
         showed_name = ?UNNAMED,
-        initial_marking = 0,
+        marking = 0,
         position = {"0", "0"}
     }).
 

@@ -63,8 +63,13 @@ main(Args) ->
             build_digraph(PN),
             PNBefExec = 
                 set_enabled_transitions(PN),
-            {PNFinal, Executed} = run(PNBefExec, []),
-            io:format("Execution:\n~s\n", [string:join(Executed, ",")]),
+            FunChoose = 
+                ask_mode(),
+            {PNFinal, Executed} = 
+                run(PNBefExec, FunChoose, []),
+            io:format(
+                "Execution:\n~s\n", 
+                [string:join([T || {T, _} <- Executed], ",")]),
             export(PNFinal);
         Op2 ->    
             export(PN);
@@ -80,12 +85,86 @@ main(Args) ->
             SC0 = ask_slicing_criterion(PN),
             SC = lists:usort(SC0),
             io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
-            SCT = ask_transitions_slicing_criterion(PN),
+            build_digraph(PN), 
+            PNBefExec = 
+                set_enabled_transitions(PN),
+            {SCT, Exec} = 
+                ask_transitions_slicing_criterion(PNBefExec),
             io:format("Slicing criterion execution: [~s]\n", [string:join(SCT, ", ")]),
-            build_digraph(PN),
-            export(PN)
+            RevExec = 
+                lists:reverse([{none, PNBefExec} | Exec]),
+            PNSlice = 
+                slice_with_sequence(RevExec, SC, []),
+            export(PNSlice)
     end,
     ok.
+
+ask_mode() ->
+    Question = 
+            "Available modes:\n"
+        ++  "0.- Manually\n"
+        ++  "n.- n random steps (at most)\n"
+        ++  "How do you want to run the PN? ",
+    [_|Answer0] = 
+        lists:reverse(io:get_line(standard_io, Question)),
+    Answer =
+        lists:reverse(Answer0),
+    try 
+        AnsInt = list_to_integer(Answer),
+        case AnsInt of 
+            0 ->
+                fun ask_fired_transition/2;
+            N ->
+                ServerSeq = 
+                    spawn(fun() -> server_random(N) end),
+                fun(_, Enabled) ->
+                    ServerSeq!{get_next, self(), Enabled},
+                    receive 
+                        {next, T} ->
+                            T
+                    end
+                end
+        end
+    catch 
+        _:_ ->
+            ask_mode()
+    end.
+
+server_random(N) when N > 0 ->
+    receive 
+        {get_next, PidAns, Enabled} ->
+            Next = 
+                case Enabled of 
+                    [] ->
+                        none;
+                    [{T, _}] -> 
+                        T;
+                    _ ->
+                        {T, _} = 
+                            lists:nth(
+                                rand:uniform(length(Enabled)), 
+                                Enabled),
+                        T
+                end,
+            PidAns!{next, Next},
+            case Next of 
+                none ->
+                    ok;
+                _ ->
+                    io:format("Seleced transition: ~s\n", [Next]),
+                    server_random(N - 1)
+            end  
+    end;
+server_random(_) ->
+    receive 
+        {get_next, PidAns, _} ->
+            PidAns!{next, none}
+    end.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slicing criterion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 ask_slicing_criterion(#petri_net{places = Ps}) ->
     Places0 = 
@@ -128,11 +207,19 @@ ask_transitions_slicing_criterion(PN) ->
              | ["[" ++ string:join(lists:reverse(Ans), "/") ++ "]: "]],
     Answer = 
         get_answer(string:join(QuestionLines,"\n"), lists:seq(1, length(Ans))),
-    case dict:fetch(Answer, AnsDict) of 
-        Op1 ->
-            read_transitions_sequence();
-        Op2 ->
-            build_transitions_sequence(PN)
+    Seq = 
+        case dict:fetch(Answer, AnsDict) of 
+            Op1 ->
+                read_transitions_sequence();
+            Op2 ->
+                build_transitions_sequence(PN)
+        end,
+    case check_execution(PN, Seq) of 
+        {ok, {_, Exec}} -> 
+            {Seq, Exec};
+        false ->
+            io:format("The execution is not valid.\n"),
+            ask_transitions_slicing_criterion(PN)
     end.
 
 read_transitions_sequence() ->
@@ -165,6 +252,46 @@ build_transitions_sequence(#petri_net{transitions = Ts}) ->
             string:join(QuestionLines,"\n"), 
             lists:seq(1, length(Ans))),
     [lists:last(string:tokens(dict:fetch(A, AnsDict), " - ")) || A <- lists:reverse(Answers)].
+
+server_sequence([H|T]) ->
+    receive 
+        {get_next, PidAns} ->
+            PidAns!{next, H},
+            server_sequence(T)
+    end;
+server_sequence([]) ->
+    receive 
+        {get_next, PidAns} ->
+            PidAns!{next, none}
+    end.
+
+check_execution(PN, Seq) ->
+    ServerSeq = 
+        spawn(fun() -> server_sequence(Seq) end),
+    FunChoose = 
+        fun(_, Enabled) ->
+            ServerSeq!{get_next, self()},
+            receive 
+                {next, N} -> 
+                    case N of 
+                        none ->
+                            none;
+                        _ ->
+                            case lists:member(N, [K || {K, _} <- Enabled]) of 
+                                true ->
+                                    N;
+                                false ->
+                                    error
+                            end 
+                    end
+            end
+        end,
+    case run(PN, FunChoose, []) of 
+        error ->
+            false;
+        Exec ->
+            {ok, Exec}
+    end.
 
 
 
@@ -221,9 +348,7 @@ ask_other_formats(PN) ->
 % Execution functions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-run(PN = #petri_net{transitions = Ts}, Executed) ->
-    % print
-    print_net(PN),
+run(PN = #petri_net{transitions = Ts}, FunChoose, Executed) ->
     % Extract enabled
     Enabled = 
         dict:fold(
@@ -235,43 +360,59 @@ run(PN = #petri_net{transitions = Ts}, Executed) ->
             end,
             [],
             Ts),
-    % ask which one (with additional options like finish, etc)
-    Chosen = 
-        case Enabled of 
-            [] ->
-                none;
-            [{T, SN}] -> 
-                io:format("Transition ~s is chosen.\n", [SN]),
-                io:get_line(standard_io, ""),
-                T;
-            _ ->
-                SortingFun = fun({_,V1}, {_, V2}) -> V1 < V2 end,
-                {_, Lines, Ans, AnsDict} = 
-                    lists:foldl(
-                        fun build_question_option/2,
-                        {1, [], [], dict:new()},
-                        lists:sort(SortingFun, Enabled)),
-                EnhAns = ["f" | Ans],
-                EnhAnsDict = dict:store(f, none,AnsDict),
-                QuestionLines = 
-                        ["The following transitions are enabled:" | lists:reverse(Lines)]
-                    ++  ["What is the next transition to be fired?" 
-                         | ["[" ++ string:join(lists:reverse(EnhAns), "/") ++ "]: "]],
-                Answer = 
-                    get_answer(string:join(QuestionLines,"\n"), [f | lists:seq(1, length(Ans))]),
-                dict:fetch(Answer, EnhAnsDict)
-        end,
-    case Chosen of 
+    case FunChoose(PN, Enabled) of 
         none ->
             {PN, lists:reverse(Executed)};
-        _ ->
+        error ->
+            error;
+        Chosen ->
             % execute (place update)
             NPN = fire_transition(Chosen, PN),
             % transitions update 
             NPN2 = set_enabled_transitions(NPN),
             % recursive call
-            run(NPN2, [Chosen | Executed])
+            run(NPN2, FunChoose, [{Chosen, NPN2} | Executed])
     end.
+
+ask_fired_transition(PN, Enabled) ->
+    % print
+    print_net(PN),
+    % ask which one (with additional options like finish, etc)
+    case Enabled of 
+        [] ->
+            none;
+        [{T, SN}] -> 
+            io:format("Transition ~s is chosen.\n", [SN]),
+            io:get_line(standard_io, ""),
+            T;
+        _ ->
+            SortingFun = fun({_,V1}, {_, V2}) -> V1 < V2 end,
+            {_, Lines, Ans, AnsDict} = 
+                lists:foldl(
+                    fun build_question_option/2,
+                    {1, [], [], dict:new()},
+                    lists:sort(SortingFun, Enabled)),
+            EnhAns = ["f" | Ans],
+            EnhAnsDict = dict:store(f, none,AnsDict),
+            QuestionLines = 
+                    ["The following transitions are enabled:" | lists:reverse(Lines)]
+                ++  ["What is the next transition to be fired?" 
+                     | ["[" ++ string:join(lists:reverse(EnhAns), "/") ++ "]: "]],
+            Answer = 
+                get_answer(string:join(QuestionLines,"\n"), [f | lists:seq(1, length(Ans))]),
+            dict:fetch(Answer, EnhAnsDict)
+    end.
+
+% random_fired_transition(PN, Enabled) ->
+%     case Enabled of 
+%         [] ->
+%             none;
+%         [{T, SN}] -> 
+%             T;
+%         _ ->
+%             {T, SN} = lists:nth(uniform(length(Enabled)), Enabled),
+%             T
+%     end.
 
 set_enabled_transitions(
     PN = #petri_net{
@@ -289,13 +430,14 @@ set_enabled_transitions(
                         _ -> 
                             lists:all(
                                 fun(X) -> X end,
-                                [(dict:fetch(P, Ps))#place.initial_marking > 0
+                                [(dict:fetch(P, Ps))#place.marking > 0
                                  || P <- InputPlaces])
                     end,
                 V#transition{enabled = Enabled}
             end,
             Ts),
     PN#petri_net{transitions = NTs}.
+
 
 fire_transition(
     Transition, 
@@ -312,8 +454,8 @@ fire_transition(
                 case lists:member(K, PlacesToInc) of 
                     true ->
                         V#place{
-                            initial_marking = 
-                                V#place.initial_marking + 1
+                            marking = 
+                                V#place.marking + 1
                         };
                     false ->
                         V
@@ -326,8 +468,8 @@ fire_transition(
                 case lists:member(K, PlacesToDec) of 
                     true ->
                         V#place{
-                            initial_marking = 
-                                V#place.initial_marking - 1
+                            marking = 
+                                V#place.marking - 1
                         };
                     false ->
                         V
@@ -341,16 +483,19 @@ fire_transition(
 % Slicing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-slice(
-    PN = #petri_net{
-        places = Ps, 
-        transitions = Ts,
-        arcs = As},
-    SC) ->
+slice(PN, SC) ->
     {PsB, TsB} = backward_slice(PN, SC, [], {[], []}),
     {PsF, TsF} = forward_slice(PN),
     PsSet = sets:intersection(PsB, PsF),
     TsSet = sets:intersection(TsB, TsF),
+    filter_pn(PN, {PsSet, TsSet}).
+
+filter_pn(
+    PN = #petri_net{
+        places = Ps, 
+        transitions = Ts,
+        arcs = As},
+    {PsSet, TsSet}) ->
     FunFilter = 
         fun(Dict, Set) ->
             dict:fold(
@@ -407,7 +552,7 @@ forward_slice(PN = #petri_net{places = Ps}) ->
     StartingPs = 
         dict:fold(
             fun
-                (K, #place{initial_marking = IM}, Acc) when IM > 0 ->
+                (K, #place{marking = IM}, Acc) when IM > 0 ->
                     [K | Acc];
                 (_, _, Acc) ->
                     Acc
@@ -468,6 +613,46 @@ forward_slice(PN = #petri_net{transitions = Ts, digraph = G}, W, R, V) ->
             NV = sets:from_list(NV0),
             forward_slice(PN, NW, NR, NV)
     end.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slicing (sequence trans.)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+slice_with_sequence(
+    [{T_i, #petri_net{places = Ps_i, digraph = G}}, 
+     {T_i_1, PN_i_1 = #petri_net{places = Ps_i_1}} 
+     | T], 
+    W,
+    Slice) ->
+    ChangingPs = 
+        lists:foldl(
+            fun(P, Acc) ->
+                M_i = 
+                    (dict:fetch(P, Ps_i))#place.marking,
+                M_i_1 = 
+                    (dict:fetch(P, Ps_i_1))#place.marking,
+                case (M_i_1 < M_i) of 
+                    true ->
+                        [P | Acc];
+                    false ->
+                        Acc
+                end
+            end,
+            [],
+            W),
+    case ChangingPs of 
+        [] ->
+            slice_with_sequence([{T_i_1, PN_i_1} | T], W, Slice);
+        _ ->
+            InT_i = digraph:in_neighbours(G, T_i),
+            slice_with_sequence(
+                [{T_i_1, PN_i_1} | T], 
+                lists:usort(W ++ InT_i), 
+                [T_i | Slice])
+    end;
+slice_with_sequence(
+    [{none, PN}], Ps, Ts) ->
+    filter_pn(PN, {sets:from_list(Ps), sets:from_list(Ts)}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Build internal structures
@@ -571,7 +756,7 @@ extract_info_place(T) ->
             Name,
         showed_name = 
             string:strip(read_value_or_text(T, "name", Name)),
-        initial_marking = 
+        marking = 
             str2int(case string:tokens(read_value_or_text(T, "initialMarking", "0"), ",") of 
                 [H] ->
                     H;
@@ -746,7 +931,7 @@ place_to_dot(
     {
         name = N,
         showed_name = SN,
-        initial_marking = IM
+        marking = IM
     }) ->
     Filled = 
         case IM of 
@@ -854,7 +1039,7 @@ place_to_pnml(
     {
         name = N,
         showed_name = SN,
-        initial_marking = IM,
+        marking = IM,
         position = {X, Y}
     }) ->
     [

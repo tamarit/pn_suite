@@ -1,0 +1,12 @@
+
+*.dot
+
+*.pdf
+
+*.svg
+
+*.pnml
+
+*.beam
+
+*.dump

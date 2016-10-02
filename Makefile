@@ -2,8 +2,8 @@ all:
 	@erlc *.erl
 
 test:
-	@make csp2pn
 	@make paper
+	@make csp2pn
 	@make web
 
 
