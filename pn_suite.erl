@@ -10,9 +10,6 @@
 % Interface
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% TODO
-% Showed name also needed for places
-
 main(Args) ->
     XML = read_xml_document(hd(Args)),
     Name = 
