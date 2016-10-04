@@ -628,7 +628,10 @@ slice_with_sequence(
                     (dict:fetch(P, Ps_i))#place.marking,
                 M_i_1 = 
                     (dict:fetch(P, Ps_i_1))#place.marking,
-                case (M_i_1 < M_i) of 
+                % ORIGINAL
+                % case (M_i_1 < M_i) of 
+                % MODIFIED. Is what we want?
+                case (M_i_1 =< M_i) of 
                     true ->
                         [P | Acc];
                     false ->

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <pnml>
-<net id="Net-One" type="P/T net">
+<net id="csp2pn" type="P/T net">
 	<place id="P0">
 		<graphics>
 			<position x="744.440002" y="26.389000"/>
