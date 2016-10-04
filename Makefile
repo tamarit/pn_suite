@@ -5,7 +5,8 @@ all:
 	@make paper
 	@make csp2pn
 	@make web
-	@make error
+	@make yu1
+	@make yu2
 	@make rakow1
 	@make rakow2
 
@@ -30,11 +31,17 @@ web:
 	@echo "*************************************" 	
 	@erl -run pn_suite main examples/pn_web.pnml  -noshell -s erlang halt 
 
-error:
+yu1:
 	@echo "*************************************" 
-	@echo "************ Test error *************"
+	@echo "********** Test Yu et al 1 **********"
 	@echo "*************************************" 	
-	@erl -run pn_suite main examples/pn_error.xml  -noshell -s erlang halt
+	@erl -run pn_suite main examples/pn_yuetal1.xml  -noshell -s erlang halt
+
+yu2:
+	@echo "*************************************" 
+	@echo "********** Test Yu et al 2 **********"
+	@echo "*************************************" 	
+	@erl -run pn_suite main examples/pn_yuetal2.xml  -noshell -s erlang halt
 
 rakow5:
 	@echo "*************************************" 
