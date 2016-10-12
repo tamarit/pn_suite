@@ -76,6 +76,8 @@ main(Args) ->
             io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
             build_digraph(PN),
             PNSlice = slice(PN, SC),
+            SDG = sdg(PN, SC),
+            bsg(PN, SDG, SC),
             % io:format("ResSlice:\n[~s]\n[~s]\n", [string:join(PsS, ", "), string:join(TsS, ", ")]),
             export(PNSlice);
         Op4 ->
@@ -653,6 +655,323 @@ slice_with_sequence(
 slice_with_sequence(
     [{none, PN}], Ps, Ts) ->
     filter_pn(PN, {sets:from_list(Ps), sets:from_list(Ts)}).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SDG
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+sdg(PN, SC) ->
+    SDG0 = #sdg{},
+    Nodes = [[P] || P <- SC],
+    [digraph:add_vertex(SDG0#sdg.digraph, N) 
+     || N <- Nodes],
+    SDG = SDG0#sdg{structural_nodes = [Nodes]},
+    FSDG = sdg_while(PN, SDG, Nodes),
+    file:write_file(
+        "sdg.dot", 
+        list_to_binary(sdg_to_dot(FSDG))),
+    FSDG.
+
+
+sdg_while(PN, SDG, [Q | T]) ->
+    io:format("Entra amb ~p\n", [Q]),
+    {NSDG, NPending} = 
+        lists:foldl(
+            fun
+                (P_i, {CSDG, CPending}) -> 
+                    sdg_forEveryPN([P_i], PN, CSDG, CPending)
+            end, 
+            {SDG, T}, 
+            Q),
+    sdg_while(PN, NSDG, NPending);
+sdg_while(_, SDG, []) ->
+    SDG.
+
+sdg_forEveryPN([P_i], PN = #petri_net{digraph = G}, SDG, Pending) ->
+    % io:format("P_i: ~p, Ts ~p\n", [P_i, digraph:in_neighbours(G, P_i)]),
+    lists:foldl(
+        fun(T_i, {CSDG, CPending}) -> 
+            sdg_forEveryT(T_i, [P_i], PN, CSDG, CPending) 
+        end, 
+        {SDG, Pending}, 
+        digraph:in_neighbours(G, P_i)).
+
+
+sdg_forEveryT(T_i, P_i, #petri_net{digraph = G}, FullSDG = #sdg{digraph = SDG}, Pending) ->
+    Q_ = lists:sort(digraph:in_neighbours(G, T_i)),
+    % io:format("P_i: ~p, T_i ~p, Q_ ~p\n", [P_i, T_i, Q_]),
+    Vs = digraph:vertices(SDG),
+    case search_equal(Vs, Q_) of 
+        {ok, N} ->
+            digraph:add_edge(SDG, N, P_i, T_i),
+            {FullSDG, Pending};
+        none ->
+            case search_intersection(Vs, Q_) of 
+                {ok, N} ->
+                    digraph:add_vertex(SDG, Q_),
+                    [digraph:add_vertex(SDG, [P]) || P <- Q_],
+                    digraph:add_edge(SDG, Q_, P_i, T_i),
+                    {
+                        add_to_structurals(FullSDG, lists:usort([N, Q_] ++ [[P] || P <- Q_])),
+                        [[PQ_] || PQ_ <- Q_] ++ Pending
+                    };
+                none ->
+                    digraph:add_vertex(SDG, Q_),
+                    [digraph:add_vertex(SDG, [P]) || P <- Q_],
+                    digraph:add_edge(SDG, Q_, P_i, T_i),
+                    {
+                        add_to_structurals(FullSDG, lists:usort([Q_ | [[P] || P <- Q_]])),
+                        [[PQ_] || PQ_ <- Q_] ++ Pending
+                    }
+            end
+    end.
+
+search_equal([C | _], C) ->
+    {ok, C};
+search_equal([_ | T], Q) ->
+    search_equal(T, Q);
+search_equal([], _) ->
+    none.
+
+search_intersection([C | T], Q) ->
+    case [P1 || P1 <- Q, P2 <- C, P1 == P2] of 
+        [] ->
+            search_intersection(T, Q);
+        _ ->
+            {ok, C} 
+    end;
+search_intersection([], _) ->
+    none.
+
+add_to_structurals(SDG = #sdg{structural_nodes = SN}, N) ->
+    case [Ns|| Ns <- SN, sets:intersection(sets:from_list(Ns), sets:from_list(N)) /= sets:new()] of 
+        [Ns] ->
+            SDG#sdg{structural_nodes = [lists:usort(N ++ Ns) | (SN -- [Ns])]};
+        _ ->
+            SDG#sdg{structural_nodes = [N | SN]}
+    end.
+
+sdg_to_dot(#sdg{digraph = G, structural_nodes = SN}) ->
+    % Vs = 
+    %     digraph:vertices(G),
+    Es = 
+        lists:usort([begin {_, S, T, Label} = digraph:edge(G, E), {S, T, Label} end || E <- digraph:edges(G)]),
+    {SNDot, _} = 
+        lists:mapfoldl(fun sdg_sn_to_dot/2, 1, SN),
+    EsDot = 
+        lists:map(fun sdg_edge_to_dot/1, Es),
+        "digraph \"SDG\"{\n"
+    ++  "ordering=out; ranksep=0.5;\n"
+    ++  SNDot ++ "\n"
+    ++  string:join(EsDot,"\n")
+    ++ "\n}"
+    .
+
+places_to_string(Ps) ->
+    string:join(Ps, "_").
+
+places_to_string_pp(Ps) ->
+    "[" ++ string:join(Ps, ", ") ++ "]".
+
+sdg_node_to_dot(Ps) ->
+    StrPs = places_to_string(Ps),
+    StrPsPP = places_to_string_pp(Ps),
+        StrPs 
+    ++ " [shape=ellipse, label=\"" ++ StrPsPP
+    ++  "\"];".
+
+sdg_sn_to_dot(SN, N) ->
+    SNDot = lists:map(fun sdg_node_to_dot/1, SN),
+    DotCluster = 
+            "subgraph cluster" ++ integer_to_list(N) ++ "{"
+        ++  string:join(SNDot,"\n") ++ "\n"
+        ++  "}",
+    {DotCluster, N + 1}.
+
+sdg_edge_to_dot({S, T, Label}) ->
+    places_to_string(S) ++ " -> "  ++ places_to_string(T) 
+    ++ " [label=\"" ++ Label
+    ++  "\"];".
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BSG
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+bsg(#petri_net{places = Ps}, #sdg{digraph = G_SDG, structural_nodes = SN}, SC) ->
+    % S = R' = (nodos en R con tokens) U (nodos compuestos cuyos todos sus lugares tiene tokens)
+    S0 = 
+        lists:concat([
+                    [ Node 
+                    ||  Node <- Group, 
+                        lists:all(
+                            fun(P) -> 
+                                (dict:fetch(P, Ps))#place.marking > 0 
+                            end, 
+                            Node)] 
+                || Group <- SN]),
+    % S =
+    %     lists:concat([sn_of_node(SN, V) || V <- S0]), 
+    S = S0,
+    io:format("S: ~p\n", [S]),
+    BSG = #sdg{},
+    G_BSG = BSG#sdg.digraph,
+    lists:map(
+        fun(N) -> 
+            digraph:add_vertex(G_BSG, N) 
+        end, 
+        S),
+    bsg_while_S(G_SDG, G_BSG, SN, S),
+    Vs = digraph:vertices(G_BSG),
+    % if \forall r \in R' -> r \not\in SlicingCriterion
+        % BSG = \empty
+    InSC = [[P || P <- V, lists:member(P, SC)] || V <- Vs],
+    case InSC of 
+        [] ->
+            #sdg{};
+        _ ->  
+            NSN = 
+                [[N || N <- Group, lists:member(N, Vs)] || Group <- SN],
+            % ConcatNSN = 
+            %     lists:usort(lists:concat(NSN)),
+            % io:format("ConcatNSN: ~p\n", [ConcatNSN]),
+            % [
+            %     [ begin 
+            %         {E, V, Target, Label} = digraph:edge(G_SDG, E), 
+            %         io:format("Target: ~p\n", [Target]),
+            %         case lists:member(Target, ConcatNSN) of 
+            %             true -> 
+            %                 digraph:add_edge(G_BSG, V, Target, Label); 
+            %             false -> 
+            %                 ok 
+            %         end 
+            %      end 
+            %     || E <- digraph:out_edges(G_SDG, V)] 
+            % || V <- ConcatNSN],
+            FBSG = BSG#sdg{structural_nodes = NSN},
+            file:write_file(
+                "bsg.dot", 
+                list_to_binary(sdg_to_dot(FBSG))),
+            % clean structural_nodes leaving only the nodes in R'
+            FBSG
+    end.
+
+% while (S no est evacio y S tenga successor nodes)
+    % foreach s_i \in S
+        % Elegir un t_i de los arcos de salida de s_i
+            % foreach s_j al que se llega desde el arco etiquetado con t_i
+bsg_while_S(G_SDG, G_BSG, SN, [S_i | S0]) -> 
+    io:format("Entra : ~p\n", [S_i]),
+    digraph:add_vertex(G_BSG, S_i),
+    OE = digraph:out_edges(G_SDG, S_i),
+
+    R = digraph:vertices(G_SDG),
+    R_ = digraph:vertices(G_BSG),
+    SKs0 = [N || N <- R, sets:intersection(sets:from_list(S_i), sets:from_list(N)) /= sets:new()] -- [S_i],
+    io:format("SKs0: ~p\n", [{S_i,R, SKs0}]),
+    io:format("R_: ~p\n", [R_]),
+    SKs = [S_k || S_k <- SKs0, lists:member(S_k -- S_i, R_)],
+    io:format("SKs: ~p\n", [SKs]),
+    S = 
+        case SKs of 
+            [] ->
+                S0;
+            [S_k | _] ->
+                digraph:add_vertex(G_BSG, S_k),
+                % FromSNk = sn_of_node(SN, S_k),
+                FromSNk = [S_k],
+                lists:usort(FromSNk ++ S0) 
+        end,
+
+    % S = S0,
+
+    % OE_Info = 
+    %     [digraph:edge(G_SDG, E) || E <- OE],
+    case OE of 
+        [] -> 
+            bsg_while_S(G_SDG, G_BSG, SN, S);
+        [OneOE|_] ->
+            {OneOE, S_i, _, T_i} = digraph:edge(G_SDG, OneOE),
+            SJs = 
+                [element(3, digraph:edge(G_SDG, E)) 
+                 || E <- digraph:edges(G_SDG), 
+                    element(4, digraph:edge(G_SDG, E)) == T_i],
+            NS = 
+                lists:foldl(
+                    fun (S_j, CS) ->
+                        bsg_process_s_j(G_SDG, G_BSG, SN, S_i, S_j, T_i, CS)
+                    end,
+                    S,
+                    SJs),
+            bsg_while_S(G_SDG, G_BSG, SN, NS)
+    end;
+bsg_while_S(_, _, _, []) -> 
+    ok.
+
+
+bsg_process_s_j(G_SDG, G_BSG, SN, S_i, S_j, T_i, S0) ->
+    io:format("S_j: ~p\n", [S_j]),
+    % R = digraph:vertices(G_SDG),
+    % R_ = digraph:vertices(G_BSG),
+    % SKs0 = [N || N <- R, sets:intersection(sets:from_list(S_j), sets:from_list(N)) /= sets:new()] -- [S_j],
+    % io:format("SKs0: ~p\n", [{S_j,R, SKs0}]),
+    % SKs = [S_k || S_k <- SKs0, lists:member(S_k -- [S_j], R_)],
+    % io:format("SKs: ~p\n", [SKs]),
+    % S = 
+    %     case SKs of 
+    %         [] ->
+    %             S0;
+    %         [S_k | _] ->
+    %             digraph:add_vertex(G_BSG, S_k),
+    %             % FromSNk = sn_of_node(SN, S_k),
+    %             FromSNk = [S_k],
+    %             lists:usort(FromSNk ++ S0) 
+    %     end,
+
+    S = S0,
+
+    case digraph:vertex(G_BSG, S_j) of 
+        {S_j, _} ->
+            case [E || E <- digraph:out_edges(G_BSG, S_i), element(3, digraph:edge(G_SDG, E)) ==  S_j] of 
+                [] ->
+                    Res = digraph:add_edge(G_BSG, S_i, S_j, T_i),
+                    io:format("No estava arc: ~p\n", [Res]),
+                    S;
+                _ ->
+                    io:format("Res que añadir\n"),
+                    S 
+            end;
+        false ->    
+            io:format("Tot nou\n"),
+            digraph:add_vertex(G_BSG, S_j),
+            digraph:add_edge(G_BSG, S_i, S_j, T_i),
+            % FromSNj = sn_of_node(SN, S_j),
+            FromSNj = [S_j],
+            lists:usort(FromSNj ++ S) 
+    end.
+    % case s_j \not\in R' of 
+        % true ->
+            % R' = R' U {s_j} 
+            % S = S U {s_j}
+            % Añadir a E' el arco s_i -t_i-> s_j 
+        % false ->
+            % case s_j \in R' and (s_i, s_j) \not\in E' of 
+                % true ->
+                    % Añadir a E' el arco s_i -t_i-> s_j 
+                % false ->
+                    % case s_j is part of of an s_k \in R and (s_k - s_j) \in R' of
+                        % true ->
+                            % R' = R' U {s_k}
+                            % S = S U {s_k}
+                        % false -> 
+                            % do_nothing
+    % end
+
+
+sn_of_node(SNs, N) ->
+    hd([SN || SN <- SNs, lists:member(N, SN)]).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Build internal structures
