@@ -43,13 +43,14 @@ main(Args) ->
     Op1 = "Run the Petri Net",
     Op2 = "Export the Petri Net",
     Op3 = "Slicing",
-    Op4 = "Slicing (for a given transition sequence)",
-    Op5 = "Slicing Yu et al",
+    Op4 = "Slicing improved",
+    Op5 = "Slicing (for a given transition sequence)",
+    Op6 = "Slicing Yu et al",
     {_, Lines, Ans, AnsDict} = 
         lists:foldl(
             fun build_question_option/2,
             {1, [], [], dict:new()},
-            [Op1, Op2, Op3, Op4, Op5]),
+            [Op1, Op2, Op3, Op4, Op5, Op6]),
     QuestionLines = 
             ["These are the available options: " | lists:reverse(Lines)]
         ++  ["What do you want to do?" 
@@ -68,22 +69,31 @@ main(Args) ->
             io:format(
                 "Execution:\n~s\n", 
                 [string:join([T || {T, _} <- Executed], ",")]),
-            export(PNFinal);
+            export(PNFinal, "_run");
         Op2 ->    
-            export(PN);
+            export(PN, "");
         Op3 ->
             SC0 = ask_slicing_criterion(PN),
             SC = lists:usort(SC0),
             io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
             build_digraph(PN),
+            % PNSlice = slice(PN, SC),
             PNSlice = slice(PN, SC),
             % SDG = sdg(PN, SC),
             % SDGS = sdg_sim(PN, SC),
             % bsg(PN, SDG, SC),
             % bsg_sim(PN, SDGS, SC),
             % io:format("ResSlice:\n[~s]\n[~s]\n", [string:join(PsS, ", "), string:join(TsS, ", ")]),
-            export(PNSlice);
+            export(PNSlice, "_slc");
         Op4 ->
+            SC0 = ask_slicing_criterion(PN),
+            SC = lists:usort(SC0),
+            io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
+            build_digraph(PN),
+            % PNSlice = slice(PN, SC),
+            PNSlice = slice_imp(PN, SC),
+            export(PNSlice, "_slc_imp");
+        Op5 ->
             SC0 = ask_slicing_criterion(PN),
             SC = lists:usort(SC0),
             io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
@@ -97,16 +107,22 @@ main(Args) ->
                 lists:reverse([{none, PNBefExec} | Exec]),
             PNSlice = 
                 slice_with_sequence(RevExec, SC, []),
-            export(PNSlice);
-        Op5 ->
+            export(PNSlice, "_slc_trs");
+        Op6 ->
             SC0 = ask_slicing_criterion(PN),
             SC = lists:usort(SC0),
             io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
             build_digraph(PN),
             SDG = sdg_sim(PN, SC),
             BSG = bsg_sim(PN, SDG, SC),
+            file:write_file(
+                "sdg_sim.dot", 
+                list_to_binary(sdg_to_dot_sim(SDG))),
+            file:write_file(
+                "bsg_sim.dot", 
+                list_to_binary(sdg_to_dot_sim(BSG))),
             PNSlice = filter_pn(PN, sdg_places_trans(BSG)),
-            export(PNSlice)
+            export(PNSlice, "_slc_yu")
     end,
     ok.
 
@@ -310,9 +326,9 @@ check_execution(PN, Seq) ->
 % Export functions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-export(PN) ->
-    print_net(PN, false, "svg"),
-    SVG = read_xml_document(PN#petri_net.name ++ ".svg"),
+export(PN, Suffix) ->
+    print_net(PN, false, "svg", "_temp"),
+    SVG = read_xml_document(PN#petri_net.name ++ "_temp.svg"),
     PNtoExport = extract_positions(SVG, PN),
     Op1 = "pdf",
     Op2 = "dot",
@@ -333,12 +349,12 @@ export(PN) ->
         Op3 -> 
             print_pnml(PNtoExport);
         Op4 ->
-            ask_other_formats(PNtoExport);
+            ask_other_formats(PNtoExport, Suffix);
         Format ->
-            print_net(PNtoExport, false, Format)
+            print_net(PNtoExport, false, Format, Suffix)
     end.
 
-ask_other_formats(PN) ->
+ask_other_formats(PN, Suffix) ->
     FormatsStr = lists:map(fun atom_to_list/1, formats()),
     {_, Lines, Ans, AnsDict} = 
         lists:foldl(
@@ -351,7 +367,7 @@ ask_other_formats(PN) ->
              | ["[" ++ string:join(lists:reverse(Ans), "/") ++ "]: "]],
     Answer = 
         get_answer(string:join(QuestionLines,"\n"), lists:seq(1, length(Ans))),
-    print_net(PN, false, dict:fetch(Answer, AnsDict)).
+    print_net(PN, false, dict:fetch(Answer, AnsDict), Suffix).
 
 
 
@@ -631,114 +647,171 @@ filter_pn(
             arcs = AsS
         }.
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% % Slicing Improved
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slicing Improved
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% slice_imp(PN, SC) ->
-%     {PsB, TsB} = backward_slice_imp(PN, SC, [], {[], []}),
+slice_imp(PN, SC) ->
+    {{PsB, TsB}, _, _} = backward_slice_imp(PN, SC, [], {[], []}, []),
+    % [ io:format("~p\n", [{P, [{T, {sets:to_list(PsT), sets:to_list(TsT)}} || {T, {PsT, TsT}} <- BI]}]) || {P, BI} <- Bif],
+    % io:format("Bif: ~p\n", [Bif]),
 
-%     % Without intersection
-%     BPN = filter_pn(PN, {PsB, TsB}),
-%     {PsF, TsF} = forward_slice_imp(BPN),
-%     filter_pn(BPN, {PsF, TsF}).
+    % Without intersection
+    BPN = filter_pn(PN, {PsB, TsB}),
+    {PsF, TsF} = forward_slice_imp(BPN),
+    filter_pn(BPN, {PsF, TsF}).
     
-%     % With intersection
-%     % {PsF, TsF} = forward_slice(PN),
-%     % PsSet = sets:intersection(PsB, PsF),
-%     % TsSet = sets:intersection(TsB, TsF),
-%     % filter_pn(PN, {PsSet, TsSet}).
+    % With intersection
+    % {PsF, TsF} = forward_slice(PN),
+    % PsSet = sets:intersection(PsB, PsF),
+    % TsSet = sets:intersection(TsB, TsF),
+    % filter_pn(PN, {PsSet, TsSet}).
     
-% backward_slice_imp(PN = #petri_net{digraph = G}, [P | W], Done, {PsS, TsS}) ->
-%     InTs = 
-%         digraph:in_neighbours(G, P),
-%     case InTs of 
-%         [] -> 
-%             backward_slice_imp(PN, lists:usort(W -- Done), [P | Done], {PsS, TsS});
-%         [T] ->
-%             InPs = digraph:in_neighbours(G, T),
-%             backward_slice_imp(PN, lists:usort((W ++ InPs) -- Done), [P | Done], {PsS, [T | TsS]});
-%         _ ->
-%            % Anaydir bifurcacio
-%            lists:foldl(
-%                 fun({CPsS, CTsS, CDone}) ->
-                    
-%                 end
-%                 {PsS, TsS, Done},
-%                 InTs
-%                 ),
-%            backward_slice_imp(PN, lists:usort(W -- Done), [P | Done], {PsS, TsS});
-%     % InPs = 
-%     %     lists:concat([digraph:in_neighbours(G, T) || T <- InTs]),
-%     % backward_slice_imp(PN, lists:usort((W ++ InPs) -- Done), [P|Done], {PsS, InTs ++ TsS});
-% backward_slice_imp(_, [], Done, {PsS, TsS}) ->
-%     {sets:from_list(PsS ++ Done), sets:from_list(TsS)}.
-    
-% forward_slice_imp(PN = #petri_net{places = Ps}) ->
-%     StartingPs = 
-%         dict:fold(
-%             fun
-%                 (K, #place{marking = IM}, Acc) when IM > 0 ->
-%                     [K | Acc];
-%                 (_, _, Acc) ->
-%                     Acc
-%             end,
-%             [],
-%             Ps),
-%     % io:format("StartingPs: ~p\n", [StartingPs]),
-%     #petri_net{transitions = NTs} 
-%         = set_enabled_transitions(PN),
-%     StartingTs = 
-%         dict:fold(
-%             fun
-%                 (K, #transition{enabled = true}, Acc) -> 
-%                     [K | Acc];
-%                 (_, _, Acc) ->
-%                     Acc 
-%             end,
-%             [],
-%             NTs),
-%     % io:format("StartingTs: ~p\n", [StartingTs]),
-%     forward_slice_imp(
-%         PN,
-%         sets:from_list(StartingPs), 
-%         sets:from_list([]), 
-%         sets:from_list(StartingTs)).
+backward_slice_imp(PN = #petri_net{digraph = G}, [P | W], Done, {PsS, TsS}, Bif) ->
+    InTs = 
+        digraph:in_neighbours(G, P),
+    NDone = 
+        [P | Done],
+    NPs = 
+        [P | PsS],
+    case InTs of 
+        [] -> 
+            backward_slice_imp(PN, lists:usort(W -- NDone), NDone, {NPs, TsS}, Bif);
+        [T] ->
+            InPs = digraph:in_neighbours(G, T),
+            backward_slice_imp(PN, lists:usort((W ++ InPs) -- NDone), NDone, {NPs, [T | TsS]}, Bif);
+        _ ->
+            % Anaydir bifurcacio
+            BifInfo =
+               lists:map(
+                    fun(T) ->
+                        InPs = digraph:in_neighbours(G, T),
+                        {{CPs, CTs}, CDone, CBif} = 
+                            backward_slice_imp(PN, lists:usort(InPs -- NDone), NDone, {NPs, [T | TsS]}, Bif),
+                        % {FCPs, FCTs} = 
+                        %     { sets:subtract(CPs, sets:from_list(NPs)),
+                        %       sets:subtract(CTs, sets:from_list([T | TsS]))},
+                        {T, {CPs, CTs}, CBif, CDone}       
+                    end,
+                    InTs),
+            {FPs0, FTs0} = 
+                lists:unzip([PsTs || {_, PsTs, _, _} <- BifInfo]),
+            FBifInfo =
+                [ {T, { sets:subtract(CPs, sets:from_list(NPs)),
+                        sets:subtract(CTs, sets:from_list(TsS))}} 
+                 || {T, {CPs, CTs} , _, _} <- BifInfo],
+            NBif = 
+                [ {P, FBifInfo} 
+                | lists:concat([BifBI || {_, _ , BifBI, _} <- BifInfo])],
+            % io:format("~p\n", [{P, lists:concat([BifBI || {_, _ , BifBI, _} <- BifInfo])}]), 
+            % FDone = 
+            %     lists:usort([DoneBI || {_, _ , _, DoneBI} <- BifInfo]),
+            % FPs = sets:to_list(sets:union(FPs0)),
+            % FTs = sets:to_list(sets:union(FTs0)),
 
-% forward_slice_imp(PN = #petri_net{transitions = Ts, digraph = G}, W, R, V) ->
-%     case sets:to_list(V) of 
-%         [] ->
-%             {W, R};
-%         _ ->
-%             OutV = 
-%                 lists:append(
-%                     [digraph:out_neighbours(G, P) 
-%                     || P <- sets:to_list(V)]),
-%             NW = sets:union(W, sets:from_list(OutV)),
-%             NR = sets:union(R, V),
-%             NV0 = 
-%                 dict:fold(
-%                     fun(K, _, Acc) ->
-%                         case sets:is_element(K, NR) of 
-%                             true ->
-%                                 Acc;
-%                             false ->
-%                                 InK = 
-%                                     sets:from_list(
-%                                         digraph:in_neighbours(G, K)),
-%                                 case sets:is_subset(InK, NW) of 
-%                                     true ->
-%                                         [K | Acc];
-%                                     false ->
-%                                         Acc
-%                                 end
-%                         end
-%                     end,
-%                     [],
-%                     Ts),
-%             NV = sets:from_list(NV0),
-%             forward_slice_imp(PN, NW, NR, NV)
-%     end.
+            % Extraure els que se borren i la intersecció
+            % Els de la interseccio se poden borrar de W al cridar a backward, i.e. formen junt a NDone el FDone
+            % Els que se poden borrar se borren de FPs0 i FTs
+            {UInter, FPs1, FTs1} = remove_useless({FPs0, FTs0}),
+            FPs = sets:to_list(FPs1),
+            FTs = sets:to_list(FTs1),
+            FDone = lists:usort(UInter ++ NDone), 
+            backward_slice_imp(PN, lists:usort(W -- FDone), FDone, {FPs, FTs}, NBif)
+    end;
+    % InPs = 
+    %     lists:concat([digraph:in_neighbours(G, T) || T <- InTs]),
+    % backward_slice_imp(PN, lists:usort((W ++ InPs) -- Done), [P|Done], {PsS, InTs ++ TsS});
+backward_slice_imp(_, [], Done, {PsS, TsS}, Bif) ->
+    {{sets:from_list(PsS), sets:from_list(TsS)}, lists:sort(Done), lists:usort(Bif)}.
+
+remove_useless({Ps, Ts}) ->
+    InterPs = sets:intersection(Ps),
+    InterTs = sets:intersection(Ts),
+    DiffPs = 
+        lists:map(
+            fun(P) ->
+                sets:subtract(P, InterPs)
+            end,
+            Ps),
+    DiffTs = 
+        lists:map(
+            fun(T) ->
+                sets:subtract(T, InterPs)
+            end,
+            Ts),
+    [{KPs, KTs} | _] = 
+        lists:sort(
+            fun({DP1,DT1}, {DP2,DT2}) ->
+                (sets:size(DP1) + sets:size(DT1)) =< (sets:size(DP2) + sets:size(DT2))
+            end,
+            lists:zip(DiffPs, DiffTs)),
+    {sets:to_list(InterPs), sets:union(InterPs, KPs), sets:union(InterTs, KTs)}.
+    
+forward_slice_imp(PN = #petri_net{places = Ps}) ->
+    StartingPs = 
+        dict:fold(
+            fun
+                (K, #place{marking = IM}, Acc) when IM > 0 ->
+                    [K | Acc];
+                (_, _, Acc) ->
+                    Acc
+            end,
+            [],
+            Ps),
+    % io:format("StartingPs: ~p\n", [StartingPs]),
+    #petri_net{transitions = NTs} 
+        = set_enabled_transitions(PN),
+    StartingTs = 
+        dict:fold(
+            fun
+                (K, #transition{enabled = true}, Acc) -> 
+                    [K | Acc];
+                (_, _, Acc) ->
+                    Acc 
+            end,
+            [],
+            NTs),
+    % io:format("StartingTs: ~p\n", [StartingTs]),
+    forward_slice_imp(
+        PN,
+        sets:from_list(StartingPs), 
+        sets:from_list([]), 
+        sets:from_list(StartingTs)).
+
+forward_slice_imp(PN = #petri_net{transitions = Ts, digraph = G}, W, R, V) ->
+    case sets:to_list(V) of 
+        [] ->
+            {W, R};
+        _ ->
+            OutV = 
+                lists:append(
+                    [digraph:out_neighbours(G, P) 
+                    || P <- sets:to_list(V)]),
+            NW = sets:union(W, sets:from_list(OutV)),
+            NR = sets:union(R, V),
+            NV0 = 
+                dict:fold(
+                    fun(K, _, Acc) ->
+                        case sets:is_element(K, NR) of 
+                            true ->
+                                Acc;
+                            false ->
+                                InK = 
+                                    sets:from_list(
+                                        digraph:in_neighbours(G, K)),
+                                case sets:is_subset(InK, NW) of 
+                                    true ->
+                                        [K | Acc];
+                                    false ->
+                                        Acc
+                                end
+                        end
+                    end,
+                    [],
+                    Ts),
+            NV = sets:from_list(NV0),
+            forward_slice_imp(PN, NW, NR, NV)
+    end.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Slicing (sequence trans.)
@@ -904,18 +977,18 @@ slice_with_sequence(
 %     ++ "\n}"
 %     .
 
-% places_to_string(Ps) ->
-%     string:join(Ps, "_").
+places_to_string(Ps) ->
+    string:join(Ps, "_").
 
-% places_to_string_pp(Ps) ->
-%     "[" ++ string:join(Ps, ", ") ++ "]".
+places_to_string_pp(Ps) ->
+    "[" ++ string:join(Ps, ", ") ++ "]".
 
-% sdg_node_to_dot(Ps) ->
-%     StrPs = places_to_string(Ps),
-%     StrPsPP = places_to_string_pp(Ps),
-%         StrPs 
-%     ++ " [shape=ellipse, label=\"" ++ StrPsPP
-%     ++  "\"];".
+sdg_node_to_dot(Ps) ->
+    StrPs = places_to_string(Ps),
+    StrPsPP = places_to_string_pp(Ps),
+        StrPs 
+    ++ " [shape=ellipse, label=\"" ++ StrPsPP
+    ++  "\"];".
 
 % sdg_sn_to_dot(SN, N) ->
 %     SNDot = lists:map(fun sdg_node_to_dot/1, SN),
@@ -925,10 +998,10 @@ slice_with_sequence(
 %         ++  "}",
 %     {DotCluster, N + 1}.
 
-% sdg_edge_to_dot({S, T, Label}) ->
-%     places_to_string(S) ++ " -> "  ++ places_to_string(T) 
-%     ++ " [label=\"" ++ Label
-%     ++  "\"];".
+sdg_edge_to_dot({S, T, Label}) ->
+    places_to_string(S) ++ " -> "  ++ places_to_string(T) 
+    ++ " [label=\"" ++ Label
+    ++  "\"];".
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1119,9 +1192,6 @@ sdg_sim(PN, SC) ->
     [digraph:add_vertex(SDG#sdg.digraph, N) 
      || N <- Nodes],
     sdg_process_sim(PN#petri_net.digraph, SDG#sdg.digraph, Nodes),
-    % file:write_file(
-    %     "sdg_sim.dot", 
-    %     list_to_binary(sdg_to_dot_sim(SDG))),
     SDG.
 
 sdg_process_sim(G, SDG, [Q | Pending]) ->
@@ -1160,22 +1230,22 @@ sdg_add_edges(T_i, P_i, G, SDG, Pending) ->
 % Simplemente tira hacia atras desde el SC, y va metiendo los lugares y transiciones que se encuentra hasta que no puede tirar mas hacia atras
 % la unica diferencia con el nuestro es que mete un nodo con todos los lugares a los cuales se llega desde uan transición especifica.
 
-% sdg_to_dot_sim(#sdg{digraph = G}) ->
-%     Vs = 
-%         digraph:vertices(G),
-%     Es = 
-%         lists:usort([begin {_, S, T, Label} = digraph:edge(G, E), {S, T, Label} end || E <- digraph:edges(G)]),
-%     VsDot = 
-%         lists:map(fun sdg_node_to_dot/1, Vs),
-%     EsDot = 
-%         lists:map(fun sdg_edge_to_dot/1, Es),
+sdg_to_dot_sim(#sdg{digraph = G}) ->
+    Vs = 
+        digraph:vertices(G),
+    Es = 
+        lists:usort([begin {_, S, T, Label} = digraph:edge(G, E), {S, T, Label} end || E <- digraph:edges(G)]),
+    VsDot = 
+        lists:map(fun sdg_node_to_dot/1, Vs),
+    EsDot = 
+        lists:map(fun sdg_edge_to_dot/1, Es),
 
-%         "digraph \"SDG\"{\n"
-%     ++  "ordering=out; ranksep=0.5;\n"
-%     ++  string:join(VsDot,"\n") ++ "\n"
-%     ++  string:join(EsDot,"\n") ++ "\n"
-%     ++ "}"
-%     .
+        "digraph \"SDG\"{\n"
+    ++  "ordering=out; ranksep=0.5;\n"
+    ++  string:join(VsDot,"\n") ++ "\n"
+    ++  string:join(EsDot,"\n") ++ "\n"
+    ++ "}"
+    .
 
 
 sdg_places_trans(#sdg{digraph = G}) ->
@@ -1217,9 +1287,6 @@ bsg_sim(#petri_net{places = Ps}, #sdg{digraph = SDG}, SC) ->
         [] ->
             #sdg{};
         _ ->  
-            % file:write_file(
-            %     "bsg_sim.dot", 
-            %     list_to_binary(sdg_to_dot_sim(BSG))),
             BSG
     end.
 
@@ -1597,15 +1664,15 @@ arc_to_dot(
     S ++ " -> "  ++ T.
 
 print_net(PN) ->
-    print_net(PN, true, "pdf").   
+    print_net(PN, true, "pdf", "_run").   
 
-print_net(PN, ShowEnabled, Format) ->
+print_net(PN, ShowEnabled, Format, Suffix) ->
     file:write_file(
-        PN#petri_net.name ++ ".dot", 
+        PN#petri_net.name ++ "_temp.dot", 
         list_to_binary(to_dot(PN, ShowEnabled))),
     os:cmd(
-            "dot -T" ++ Format ++ " "++ PN#petri_net.name ++ ".dot > "
-        ++  PN#petri_net.name ++"." ++ Format).
+            "dot -T" ++ Format ++ " "++ PN#petri_net.name ++ "_temp.dot > "
+        ++  PN#petri_net.name ++ Suffix ++ "." ++ Format).
 
 formats() ->
     [bmp, canon, cgimage, cmap, cmapx, cmapx_np, dot, 

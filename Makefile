@@ -1,6 +1,14 @@
 compile:
 	@erlc *.erl
 
+clean:
+	@rm -f *.pdf
+	@rm -f *.dot
+	@rm -f *.svg
+	@rm -f *.pnml
+	@rm -f *.dump
+	@rm -f *.beam
+
 all:
 	@make paper
 	@make csp2pn
@@ -10,6 +18,8 @@ all:
 	@make rakow1
 	@make rakow2
 	@make loop
+	@make bf
+	@make bb
 
 test1:
 	@erl -run pn_suite main PT/afcs_06_a.pnml  -noshell -s erlang halt
