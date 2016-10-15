@@ -9,6 +9,7 @@ all:
 	@make yu2
 	@make rakow1
 	@make rakow2
+	@make loop
 
 test1:
 	@erl -run pn_suite main PT/afcs_06_a.pnml  -noshell -s erlang halt
@@ -56,3 +57,20 @@ rakow6:
 	@echo "*************************************" 	
 	@erl -run pn_suite main examples/pn_rakowp6.xml  -noshell -s erlang halt  
 
+loop:
+	@echo "*************************************" 
+	@echo "************* Test loop *************"
+	@echo "*************************************" 	
+	@erl -run pn_suite main examples/loop.xml  -noshell -s erlang halt
+
+bb:
+	@echo "*************************************" 
+	@echo "************** Test bb **************"
+	@echo "*************************************" 	
+	@erl -run pn_suite main examples/bif_backwards.xml  -noshell -s erlang halt 
+
+bf:
+	@echo "*************************************" 
+	@echo "************** Test bf **************"
+	@echo "*************************************" 	
+	@erl -run pn_suite main examples/bif_forwards.xml  -noshell -s erlang halt 
