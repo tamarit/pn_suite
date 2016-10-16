@@ -11,34 +11,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 main(Args) ->
-    XML = read_xml_document(hd(Args)),
-    Name = 
-        read_attribute(
-            hd(xmerl_xpath:string("//net", XML)),
-            "id"
-        ),
-    Places = 
-        lists:map(
-            fun extract_info_place/1, 
-            xmerl_xpath:string("//place", XML)
-        ),
-    Transitions = 
-        lists:map(
-            fun extract_info_transition/1, 
-            xmerl_xpath:string("//transition", XML)
-        ),
-    Arcs = 
-        lists:map(
-            fun extract_info_arc/1, 
-            xmerl_xpath:string("//arc", XML)
-        ),
-    PN = 
-        #petri_net{
-            name = Name,
-            places = build_dict(place, Places),
-            transitions = build_dict(transition, Transitions),
-            arcs = Arcs
-        },
+    PN = pn_input:read_pn(hd(Args)),
+    Name = PN#petri_net.name,
     io:format("Petri net " ++ Name ++ " successfully read.\n"),
     Op1 = "Run the Petri Net",
     Op2 = "Export the Petri Net",
@@ -59,7 +33,7 @@ main(Args) ->
         get_answer(string:join(QuestionLines,"\n"), lists:seq(1, length(Ans))),
     case dict:fetch(Answer, AnsDict) of 
         Op1 ->
-            build_digraph(PN),
+            pn_input:build_digraph(PN),
             PNBefExec = 
                 set_enabled_transitions(PN),
             FunChoose = 
@@ -76,7 +50,7 @@ main(Args) ->
             SC0 = ask_slicing_criterion(PN),
             SC = lists:usort(SC0),
             io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
-            build_digraph(PN),
+            pn_input:build_digraph(PN),
             % PNSlice = slice(PN, SC),
             PNSlice = slice(PN, SC),
             % SDG = sdg(PN, SC),
@@ -89,7 +63,7 @@ main(Args) ->
             SC0 = ask_slicing_criterion(PN),
             SC = lists:usort(SC0),
             io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
-            build_digraph(PN),
+            pn_input:build_digraph(PN),
             % PNSlice = slice(PN, SC),
             PNSlice = slice_imp(PN, SC),
             export(PNSlice, "_slc_imp");
@@ -97,7 +71,7 @@ main(Args) ->
             SC0 = ask_slicing_criterion(PN),
             SC = lists:usort(SC0),
             io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
-            build_digraph(PN), 
+            pn_input:build_digraph(PN), 
             PNBefExec = 
                 set_enabled_transitions(PN),
             {SCT, Exec} = 
@@ -112,7 +86,7 @@ main(Args) ->
             SC0 = ask_slicing_criterion(PN),
             SC = lists:usort(SC0),
             io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
-            build_digraph(PN),
+            pn_input:build_digraph(PN),
             SDG = sdg_sim(PN, SC),
             BSG = bsg_sim(PN, SDG, SC),
             file:write_file(
@@ -327,9 +301,7 @@ check_execution(PN, Seq) ->
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 export(PN, Suffix) ->
-    print_net(PN, false, "svg", "_temp"),
-    SVG = read_xml_document(PN#petri_net.name ++ "_temp.svg"),
-    PNtoExport = extract_positions(SVG, PN),
+    PNtoExport = pn_input:read_pos_from_svg(PN),
     Op1 = "pdf",
     Op2 = "dot",
     Op3 = "PNML compatible with PIPE",
@@ -347,15 +319,15 @@ export(PN, Suffix) ->
         get_answer(string:join(QuestionLines,"\n"), lists:seq(1, length(Ans))),
     case dict:fetch(Answer, AnsDict) of 
         Op3 -> 
-            print_pnml(PNtoExport);
+            pn_output:print_pnml(PNtoExport);
         Op4 ->
             ask_other_formats(PNtoExport, Suffix);
         Format ->
-            print_net(PNtoExport, false, Format, Suffix)
+            pn_output:print_net(PNtoExport, false, Format, Suffix)
     end.
 
 ask_other_formats(PN, Suffix) ->
-    FormatsStr = lists:map(fun atom_to_list/1, formats()),
+    FormatsStr = lists:map(fun atom_to_list/1, pn_output:formats()),
     {_, Lines, Ans, AnsDict} = 
         lists:foldl(
             fun build_question_option/2,
@@ -367,7 +339,7 @@ ask_other_formats(PN, Suffix) ->
              | ["[" ++ string:join(lists:reverse(Ans), "/") ++ "]: "]],
     Answer = 
         get_answer(string:join(QuestionLines,"\n"), lists:seq(1, length(Ans))),
-    print_net(PN, false, dict:fetch(Answer, AnsDict), Suffix).
+    pn_output:print_net(PN, false, dict:fetch(Answer, AnsDict), Suffix).
 
 
 
@@ -403,7 +375,7 @@ run(PN = #petri_net{transitions = Ts}, FunChoose, Executed) ->
 
 ask_fired_transition(PN, Enabled) ->
     % print
-    print_net(PN),
+    pn_output:print_net(PN),
     % ask which one (with additional options like finish, etc)
     case Enabled of 
         [] ->
@@ -709,9 +681,6 @@ backward_slice_imp(PN = #petri_net{digraph = G}, [P | W], Done, {PsS, TsS}, Bif)
             % FPs = sets:to_list(sets:union(FPs0)),
             % FTs = sets:to_list(sets:union(FTs0)),
 
-            % Extraure els que se borren i la intersecció
-            % Els de la interseccio se poden borrar de W al cridar a backward, i.e. formen junt a NDone el FDone
-            % Els que se poden borrar se borren de FPs0 i FTs
             {UInter, FPs1, FTs1} = remove_useless({FPs0, FTs0}),
             FPs = sets:to_list(FPs1),
             FTs = sets:to_list(FTs1),
@@ -1350,177 +1319,8 @@ bsg_process_s_j_sim(G_BSG, S_i, S_j, T_i, S) ->
     end.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Build internal structures
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-build_dict(Type, List) ->
-    lists:foldl(
-        fun(E, CDict) ->
-            dict:store(extract_key(Type, E), E, CDict)
-        end,
-    dict:new(),
-    List).
-
-extract_key(place, E) ->
-    E#place.name;
-extract_key(transition, E) ->
-    E#transition.name.
-
-build_digraph(
-    #petri_net{
-        places = Ps0, 
-        transitions = Ts0,
-        arcs = As,
-        digraph = G}) ->
-    Ps = get_value_list_from_dict(Ps0),
-    Ts = get_value_list_from_dict(Ts0),
-    lists:map(
-        fun (P) -> 
-            digraph:add_vertex(G, P#place.name)
-        end,
-        Ps),
-    lists:map(
-        fun (T) -> 
-            digraph:add_vertex(G, T#transition.name)
-        end,
-        Ts),
-    lists:map(
-        fun (A) -> 
-            digraph:add_edge(G, A#arc.source, A#arc.target)
-        end,
-        As).
- 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Info extractors
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-extract_positions(
-    SVG,
-    PN = #petri_net{
-        places = Ps, 
-        transitions = Ts}) ->
-    Gs = xmerl_xpath:string("//*[local-name() = 'g']", SVG),
-    ContentsGs = [C || #xmlElement{content = C} <- Gs],
-    NPs = 
-        dict:map(
-            fun(K, V) ->
-                Pos = extract_position_contents(K, ellipse, cx, cy, ContentsGs),
-                V#place{position = Pos}
-            end,
-            Ps
-            ),
-    NTs = 
-        dict:map(
-            fun(K, V) ->
-                Pos = extract_position_contents(K, text, x, y, ContentsGs),
-                V#transition{position = Pos}
-            end,
-            Ts
-            ),
-    PN#petri_net{places = NPs, transitions = NTs}.
-
-extract_position_contents(K, Fig, X, Y, [Cs | Tail]) ->
-    case 
-        [0 
-        ||  #xmlElement{
-                name = title, 
-                content = [#xmlText{value = Text}]} <- Cs, 
-            Text == K] 
-    of 
-        [] ->
-            extract_position_contents(K, Fig, X, Y, Tail);
-        _ ->
-            [Atts] = 
-                [Atts0 
-                ||  #xmlElement{name = Fig0, attributes = Atts0} <- Cs, 
-                    Fig == Fig0],
-            [CX] = 
-                [V || #xmlAttribute{name = X0, value = V} <- Atts, X0 == X],
-            [[_|CY]] = 
-                [V || #xmlAttribute{name = Y0, value = V} <- Atts, Y0 == Y],
-            {CX, CY}
-    end;
-extract_position_contents(_, _, _, _, []) ->
-    {"0", "0"}.
-
-extract_info_place(T) ->
-    Name = 
-        string:strip(read_attribute(T, "id"), both, $ ),
-    #place{
-        name = 
-            Name,
-        showed_name = 
-            string:strip(read_value_or_text(T, "name", Name)),
-        marking = 
-            str2int(case string:tokens(read_value_or_text(T, "initialMarking", "0"), ",") of 
-                [H] ->
-                    H;
-                L ->
-                    lists:last(L)
-            end)
-    }.
-
-extract_info_transition(T) ->
-    #transition{
-        name = 
-            string:strip(read_attribute(T, "id"), both, $ ),
-        showed_name = 
-            string:strip(
-                read_value_or_text(T, "name", ?UNNAMED), 
-                both, 
-                $ )
-    }.
-
-extract_info_arc(T) ->
-    #arc{
-        name = 
-            string:strip(read_attribute(T, "id"), both, $ ),
-        source =  
-            string:strip(read_attribute(T, "source"), both, $ ),
-        target = 
-            string:strip(read_attribute(T, "target"), both, $ )
-    }.
-    
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Helping functions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-read_attribute(T, Att) ->
-    (hd(xmerl_xpath:string("//@" ++ Att, T)))#xmlAttribute.value.
-
-read_value_or_text(T, Tag, DefaultValue) ->
-    case xmerl_xpath:string("//" ++ Tag ++ "/text", T) of 
-        [V] ->
-            case V#xmlElement.content of 
-                [HC|_] ->
-                    HC#xmlText.value;
-                _ ->
-                    DefaultValue
-            end;
-        [] ->
-            case xmerl_xpath:string("//" ++ Tag ++ "/value", T)  of 
-                [V] ->
-                    case V#xmlElement.content of 
-                        [HC|_] ->
-                            HC#xmlText.value; 
-                        _ ->
-                            DefaultValue 
-                    end;
-                [] ->
-                    DefaultValue
-            end
-    end.
-
-str2int(Str) ->
-    element(1,string:to_integer(Str)).
-
-get_value_list_from_dict(Dict) ->
-    lists:map(
-        fun({_,V}) ->
-            V
-        end,
-        dict:to_list(Dict)).
 
 get_answer(Message, Answers) ->
    [_|Answer] = 
@@ -1587,247 +1387,4 @@ build_question_option({O, Name}, {N, Lines, Answers, Dict}) ->
 build_question_option(Other, {N, Lines, Answers, Dict}) ->
     build_question_option({Other, Other}, {N, Lines, Answers, Dict}).
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% DOT
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-to_dot(
-    #petri_net{
-        name = Name,
-        places = Ps0, 
-        transitions = Ts0,
-        arcs = As},
-    ShowEnabled) ->
-
-    Ps = get_value_list_from_dict(Ps0),
-    Ts = get_value_list_from_dict(Ts0),
-
-    PsDot = 
-        lists:map(fun place_to_dot/1, Ps),
-    TsDot = 
-        lists:map(
-            fun(T) -> 
-                transition_to_dot(T, ShowEnabled) 
-            end, 
-            Ts),
-    AsDot = 
-        lists:map(fun arc_to_dot/1, As),
-
-        "digraph \"" ++ Name ++ "\"{\n"
-    ++  "ordering=out; ranksep=0.5;\n" % root=false 0;\n",
-    ++  string:join(PsDot,"\n")
-    ++  string:join(TsDot,"\n")
-    ++  string:join(AsDot,"\n")
-    ++ "\n}"
-    .
-
-place_to_dot(
-    #place
-    {
-        name = N,
-        showed_name = SN,
-        marking = IM
-    }) ->
-    Filled = 
-        case IM of 
-            0 -> 
-                "";
-            _ -> 
-                " style=filled color=\"blue\" fontcolor=\"white\" fillcolor=\"blue\""
-        end,
-        N ++ " [shape=ellipse, label=\"" ++ SN ++ " - " ++ N
-    ++  "\\l(" ++ integer_to_list(IM) ++ ")\""++ Filled ++ "];".
-
-transition_to_dot(
-    #transition
-    {
-        name = N,
-        showed_name = SN,
-        enabled = Enabled
-    },
-    ShowEnabled) ->
-    Filled = 
-        case (ShowEnabled and Enabled) of 
-            true -> 
-                " style=filled color=\"red\" fontcolor=\"white\" fillcolor=\"red\"";
-            false -> 
-                ""
-        end,
-    N ++ " [shape=box, label=\"" ++ SN ++ " - "  ++ N ++ "\"" ++ Filled ++ "];".
-
-arc_to_dot(
-    #arc
-    {
-        source = S,
-        target = T
-    }) ->
-    S ++ " -> "  ++ T.
-
-print_net(PN) ->
-    print_net(PN, true, "pdf", "_run").   
-
-print_net(PN, ShowEnabled, Format, Suffix) ->
-    file:write_file(
-        PN#petri_net.name ++ "_temp.dot", 
-        list_to_binary(to_dot(PN, ShowEnabled))),
-    os:cmd(
-            "dot -T" ++ Format ++ " "++ PN#petri_net.name ++ "_temp.dot > "
-        ++  PN#petri_net.name ++ Suffix ++ "." ++ Format).
-
-formats() ->
-    [bmp, canon, cgimage, cmap, cmapx, cmapx_np, dot, 
-     eps, exr, fig, gd, gd2, gif, gv, icns, ico, imap, 
-     imap_np, ismap, jp2, jpe, jpeg, jpg, pct, pdf, pic, 
-     pict, plain, 'plain-ext', png, pov, ps, ps2, psd, sgi, 
-     svg, svgz, tga, tif, tiff, tk, vml, vmlz, vrml, 
-     webp, x11, xdot, 'xdot1.2', 'xdot1.4', xlib].
-
-% print_all_formats(PN) ->
-%     Formats = formats(),
-%     lists:map(
-%         fun(Format) -> 
-%             StrFormat = atom_to_list(Format),
-%             os:cmd("dot -T" ++ StrFormat ++ " "++ PN#petri_net.name ++".dot > formats/"++ PN#petri_net.name ++"." ++ StrFormat) 
-%         end,
-%         Formats).
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% PNML  
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-print_pnml(PN) ->
-    file:write_file(
-        PN#petri_net.name ++ "_PIPE.pnml", 
-        list_to_binary(to_pnml(PN))).
-
-to_pnml(
-    #petri_net{
-        name = Name,
-        places = Ps0, 
-        transitions = Ts0,
-        arcs = As}) ->
-    Header = 
-        ["<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>",
-         "<pnml>",
-         "<net id=\"" ++ Name ++ "\" type=\"P/T net\">"],
-    Foot = 
-        ["</net>", "</pnml>"],
-    Ps = get_value_list_from_dict(Ps0),
-    Ts = get_value_list_from_dict(Ts0),
-
-    PsPNML = 
-        lists:map(fun place_to_pnml/1, Ps),
-    TsPNML = 
-        lists:map(fun transition_to_pnml/1, Ts),
-    AsPNML = 
-        lists:map(fun arc_to_pnml/1, As),
-    string:join(
-            Header 
-        ++ lists:append(PsPNML)
-        ++ lists:append(TsPNML)
-        ++ lists:append(AsPNML)
-        ++ Foot,
-        "\n").
-
-place_to_pnml(
-    #place
-    {
-        name = N,
-        showed_name = SN,
-        marking = IM,
-        position = {X, Y}
-    }) ->
-    [
-        "\t<place id=\"" ++ N ++ "\">",
-        "\t\t<graphics>",
-        "\t\t\t<position x=\"" ++ X ++ "\" y=\"" ++ Y ++ "\"/>",
-        "\t\t</graphics>",
-        "\t\t<name>",
-        "\t\t\t<value>" ++ SN ++ "</value>",
-        "\t\t\t<graphics/>",
-        "\t\t</name>",
-        "\t\t<initialMarking>",
-        "\t\t\t<value>" ++ integer_to_list(IM)  ++ "</value>",
-        "\t\t\t<graphics>",
-        "\t\t\t\t<offset x=\"0.0\" y=\"0.0\"/>",
-        "\t\t\t</graphics>",
-        "\t\t</initialMarking>",
-        "\t</place>"
-    ].
-
-transition_to_pnml(
-    #transition
-    {
-        name = N,
-        showed_name = SN,
-        position = {X, Y}
-    }) ->
-    [
-        "\t<transition id=\"" ++ N ++ "\">",
-        "\t\t<graphics>",
-        "\t\t\t<position x=\"" ++ X ++ "\" y=\"" ++ Y ++ "\"/>",
-        "\t\t</graphics>",
-        "\t\t<name>",
-        "\t\t\t<value>" ++ SN ++ "</value>",
-        "\t\t\t<graphics/>",
-        "\t\t</name>",
-        "\t\t<orientation>",
-        "\t\t\t<value>0</value>",
-        "\t\t</orientation>",
-        "\t\t<rate>",
-        "\t\t\t<value>1.0</value>",
-        "\t\t</rate>",
-        "\t\t<timed>",
-        "\t\t\t<value>false</value>",
-        "\t\t</timed>",
-        "\t</transition>"
-    ].
-
-arc_to_pnml(
-    #arc
-    {
-        source = S,
-        target = T
-    }) ->
-    [
-        "\t<arc id=\"from " ++ S ++ " to " ++ T++ "\" source=\"" ++ S ++ "\" target=\"" ++ T ++ "\">",
-        "\t\t<graphics/>",
-        "\t\t<inscription>",
-        "\t\t\t<value>1</value>",
-        "\t\t\t<graphics/>",
-        "\t\t</inscription>",
-        "\t</arc>"
-    ].
-    
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Input
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-read_xml_document(File) ->
-    {ok, InpDev} = 
-        file:open(File, [read]),
-    {XML, []} = 
-        xmerl_scan:string(
-            read_data(InpDev), 
-            [{encoding, "iso-10646-utf-1"}]),
-    XML.
-
-read_data(Device) ->
-    Binary = read(Device),
-    Res = binary:split(Binary, [<<"\n">>], [global]),
-    lists:concat([binary_to_list(R) || R <- Res]).
-
--define(BLK_SIZE, 16384).
-
-read(Device) ->
-    ok = io:setopts(Device, [binary]),
-    read(Device, <<>>).
-
-read(Device, Acc) ->
-    case file:read(Device, ?BLK_SIZE) of
-        {ok, Data} ->
-            read(Device, <<Acc/bytes, Data/bytes>>);
-        eof ->
-            Acc
-    end.
