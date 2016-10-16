@@ -1,6 +1,6 @@
 -module( pn_input ).
  
--export( [read_pn/1, read_pos_from_svg/1, build_digraph/1, get_value_list_from_dict/1] ).
+-export( [read_pn/1, read_pos_from_svg/1] ).
 
 -include("pn.hrl").
  
@@ -158,30 +158,6 @@ extract_key(place, E) ->
 extract_key(transition, E) ->
     E#transition.name.
 
-build_digraph(
-    #petri_net{
-        places = Ps0, 
-        transitions = Ts0,
-        arcs = As,
-        digraph = G}) ->
-    Ps = get_value_list_from_dict(Ps0),
-    Ts = get_value_list_from_dict(Ts0),
-    lists:map(
-        fun (P) -> 
-            digraph:add_vertex(G, P#place.name)
-        end,
-        Ps),
-    lists:map(
-        fun (T) -> 
-            digraph:add_vertex(G, T#transition.name)
-        end,
-        Ts),
-    lists:map(
-        fun (A) -> 
-            digraph:add_edge(G, A#arc.source, A#arc.target)
-        end,
-        As).
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Helping functions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -214,13 +190,6 @@ read_value_or_text(T, Tag, DefaultValue) ->
 
 str2int(Str) ->
     element(1,string:to_integer(Str)).
-
-get_value_list_from_dict(Dict) ->
-    lists:map(
-        fun({_,V}) ->
-            V
-        end,
-        dict:to_list(Dict)).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % General Input
