@@ -46,7 +46,7 @@ read_pn(File) ->
 
 read_pos_from_svg(PN) ->
 	Suffix = "_temp",
-	pn_ouput:print_net(PN, false, "svg", Suffix),
+	pn_output:print_net(PN, false, "svg", Suffix),
     SVG = read_xml_document(PN#petri_net.name ++  Suffix ++ ".svg"),
     extract_positions(SVG, PN).
 

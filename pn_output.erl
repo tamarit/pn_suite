@@ -18,8 +18,8 @@ to_dot(
         arcs = As},
     ShowEnabled) ->
 
-    Ps = pn_input:get_value_list_from_dict(Ps0),
-    Ts = pn_input:get_value_list_from_dict(Ts0),
+    Ps = pn_lib:get_value_list_from_dict(Ps0),
+    Ts = pn_lib:get_value_list_from_dict(Ts0),
 
     PsDot = 
         lists:map(fun place_to_dot/1, Ps),
@@ -131,8 +131,8 @@ to_pnml(
          "<net id=\"" ++ Name ++ "\" type=\"P/T net\">"],
     Foot = 
         ["</net>", "</pnml>"],
-    Ps = pn_input:get_value_list_from_dict(Ps0),
-    Ts = pn_input:get_value_list_from_dict(Ts0),
+    Ps = pn_lib:get_value_list_from_dict(Ps0),
+    Ts = pn_lib:get_value_list_from_dict(Ts0),
 
     PsPNML = 
         lists:map(fun place_to_pnml/1, Ps),

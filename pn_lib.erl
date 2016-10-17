@@ -6,14 +6,11 @@
 	build_digraph/1,
 	check_answer/3,
 	get_answer_multiple/2,
-	get_answer/2] ).
+	get_answer/2,
+	filter_pn/2] ).
 
 -include("pn.hrl").
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Build internal structures
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 build_digraph(
     #petri_net{
@@ -39,11 +36,50 @@ build_digraph(
         end,
         As).
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Helping functions
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+filter_pn(
+    PN = #petri_net{
+        places = Ps, 
+        transitions = Ts,
+        arcs = As},
+    {PsSet, TsSet}) ->
+    FunFilter = 
+        fun(Dict, Set) ->
+            dict:fold(
+                fun(K, V, CDict) ->
+                    case sets:is_element(K, Set) of 
+                        true ->
+                            dict:store(K, V, CDict);
+                        false ->
+                            CDict
+                    end
+                end,
+                dict:new(),
+                Dict)
+        end,
+    PsS = FunFilter(Ps, PsSet),
+    TsS = FunFilter(Ts, TsSet),
+    AsS = 
+        lists:foldl(
+            fun(A = #arc{source = S, target = T}, Acc) ->
+                case
+                    (sets:is_element(S, PsSet) or sets:is_element(S, TsSet))
+                    and
+                    (sets:is_element(T, PsSet) or sets:is_element(T, TsSet))
+                of 
+                    true ->
+                        [A | Acc];
+                    false ->
+                        Acc
+                end
+            end,
+            [],
+            As),
+    PN#petri_net
+        {
+            places = PsS,
+            transitions= TsS,
+            arcs = AsS
+        }.
 
 get_value_list_from_dict(Dict) ->
     lists:map(
