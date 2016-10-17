@@ -488,24 +488,6 @@ bsg_process_s_j(G_SDG, G_BSG, _, S_i, S_j, T_i, S0) ->
             FromSNj = [S_j],
             lists:usort(FromSNj ++ S) 
     end.
-    % case s_j \not\in R' of 
-        % true ->
-            % R' = R' U {s_j} 
-            % S = S U {s_j}
-            % Añadir a E' el arco s_i -t_i-> s_j 
-        % false ->
-            % case s_j \in R' and (s_i, s_j) \not\in E' of 
-                % true ->
-                    % Añadir a E' el arco s_i -t_i-> s_j 
-                % false ->
-                    % case s_j is part of of an s_k \in R and (s_k - s_j) \in R' of
-                        % true ->
-                            % R' = R' U {s_k}
-                            % S = S U {s_k}
-                        % false -> 
-                            % do_nothing
-    % end
-
 
 % sn_of_node(SNs, N) ->
 %     hd([SN || SN <- SNs, lists:member(N, SN)]).
