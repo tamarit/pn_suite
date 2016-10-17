@@ -371,22 +371,6 @@ bsg(#petri_net{places = Ps}, #sdg{digraph = G_SDG, structural_nodes = SN}, SC) -
         _ ->  
             NSN = 
                 [[N || N <- Group, lists:member(N, Vs)] || Group <- SN],
-            % ConcatNSN = 
-            %     lists:usort(lists:concat(NSN)),
-            % io:format("ConcatNSN: ~p\n", [ConcatNSN]),
-            % [
-            %     [ begin 
-            %         {E, V, Target, Label} = digraph:edge(G_SDG, E), 
-            %         io:format("Target: ~p\n", [Target]),
-            %         case lists:member(Target, ConcatNSN) of 
-            %             true -> 
-            %                 digraph:add_edge(G_BSG, V, Target, Label); 
-            %             false -> 
-            %                 ok 
-            %         end 
-            %      end 
-            %     || E <- digraph:out_edges(G_SDG, V)] 
-            % || V <- ConcatNSN],
             FBSG = BSG#sdg{structural_nodes = NSN},
             file:write_file(
                 "bsg.dot", 
@@ -449,24 +433,6 @@ bsg_while_S(_, _, _, []) ->
 
 
 bsg_process_s_j(G_SDG, G_BSG, _, S_i, S_j, T_i, S0) ->
-    % io:format("S_j: ~p\n", [S_j]),
-    % R = digraph:vertices(G_SDG),
-    % R_ = digraph:vertices(G_BSG),
-    % SKs0 = [N || N <- R, sets:intersection(sets:from_list(S_j), sets:from_list(N)) /= sets:new()] -- [S_j],
-    % io:format("SKs0: ~p\n", [{S_j,R, SKs0}]),
-    % SKs = [S_k || S_k <- SKs0, lists:member(S_k -- [S_j], R_)],
-    % io:format("SKs: ~p\n", [SKs]),
-    % S = 
-    %     case SKs of 
-    %         [] ->
-    %             S0;
-    %         [S_k | _] ->
-    %             digraph:add_vertex(G_BSG, S_k),
-    %             % FromSNk = sn_of_node(SN, S_k),
-    %             FromSNk = [S_k],
-    %             lists:usort(FromSNk ++ S0) 
-    %     end,
-
     S = S0,
 
     case digraph:vertex(G_BSG, S_j) of 
