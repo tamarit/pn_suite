@@ -84,3 +84,16 @@ bf:
 	@echo "************** Test bf **************"
 	@echo "*************************************" 	
 	@erl -run pn_suite main examples/bif_forwards.xml  -noshell -s erlang halt 
+
+
+p1:
+	@echo "*************************************" 
+	@echo "*********** Test problem1 ***********"
+	@echo "*************************************" 	
+	@erl -run pn_suite main examples/problem1.xml  -noshell -s erlang halt 
+
+i1:
+	@echo "*************************************" 
+	@echo "*********** Test improve1 ***********"
+	@echo "*************************************" 	
+	@erl -run pn_suite main examples/improve1.xml  -noshell -s erlang halt 

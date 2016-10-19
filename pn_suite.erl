@@ -19,11 +19,13 @@ main(Args) ->
     Op4 = "Slicing improved",
     Op5 = "Slicing (for a given transition sequence)",
     Op6 = "Slicing Yu et al",
+    Op7 = "Slicing Rakow CTL",
+    Op8 = "Slicing Rakow Safety",
     {_, Lines, Ans, AnsDict} = 
         lists:foldl(
             fun pn_lib:build_question_option/2,
             {1, [], [], dict:new()},
-            [Op1, Op2, Op3, Op4, Op5, Op6]),
+            [Op1, Op2, Op3, Op4, Op5, Op6, Op7, Op8]),
     QuestionLines = 
             ["These are the available options: " | lists:reverse(Lines)]
         ++  ["What do you want to do?" 
@@ -84,7 +86,21 @@ main(Args) ->
             pn_yuetal:write_sdg(SDG, "sdg_sim.dot"),
             pn_yuetal:write_sdg(BSG, "bsg_sim.dot"),
             PNSlice = pn_lib:filter_pn(PN, pn_yuetal:sdg_places_trans(BSG)),
-            export(PNSlice, "_slc_yu")
+            export(PNSlice, "_slc_yu");
+        Op7 ->
+            SC0 = ask_slicing_criterion(PN),
+            SC = lists:usort(SC0),
+            io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
+            pn_lib:build_digraph(PN),
+            PNSlice = pn_rakow:slice_ctl(PN, SC),
+            export(PNSlice, "_slc_rakow_ctl");
+        Op8 ->
+            SC0 = ask_slicing_criterion(PN),
+            SC = lists:usort(SC0),
+            io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
+            pn_lib:build_digraph(PN),
+            PNSlice = pn_rakow:slice_safety(PN, SC),
+            export(PNSlice, "_slc_rakow_safety")
     end,
     ok.
 

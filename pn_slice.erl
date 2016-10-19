@@ -105,13 +105,19 @@ forward_slice(PN = #petri_net{transitions = Ts, digraph = G}, W, R, V) ->
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 slice_imp(PN, SC) ->
-    {{PsB, TsB}, _, _} = backward_slice_imp(PN, SC, [], {[], []}, []),
+    ListOfPsBTsB = backward_slice_imp(PN, SC, [], {[], []}),
     % [ io:format("~p\n", [{P, [{T, {sets:to_list(PsT), sets:to_list(TsT)}} || {T, {PsT, TsT}} <- BI]}]) || {P, BI} <- Bif],
     % io:format("Bif: ~p\n", [Bif]),
 
     % Without intersection
-    BPN = pn_lib:filter_pn(PN, {PsB, TsB}),
-    {PsF, TsF} = forward_slice_imp(BPN),
+    ListOfPsFTsF=
+        lists:map(
+            fun({PsB, TsB}) ->
+                BPN = pn_lib:filter_pn(PN, {PsB, TsB}),
+                {BPN, forward_slice_imp(BPN)}
+            end,
+            ListOfPsBTsB),
+    {BPN, {PsF, TsF}} = take_smallest_net(ListOfPsFTsF),
     pn_lib:filter_pn(BPN, {PsF, TsF}).
     
     % With intersection
@@ -119,8 +125,36 @@ slice_imp(PN, SC) ->
     % PsSet = sets:intersection(PsB, PsF),
     % TsSet = sets:intersection(TsB, TsF),
     % pn_lib:filter_pn(PN, {PsSet, TsSet}).
+
+take_smallest_net(List) ->
+    WithSize = 
+        lists:map(
+            fun({PN, Net = {Ps, Ts}}) ->
+                {sets:size(Ps) +  sets:size(Ts),
+                 PN,
+                 Net}
+            end,
+            List
+            ),
+    Sorted = 
+        lists:sort(
+            fun({Size1, _, _}, {Size2, _, _}) ->
+                Size1 < Size2
+            end,
+            WithSize),
+    {_,PN, Smallest} = first_not_zero(Sorted),
+    {PN, Smallest}.
     
-backward_slice_imp(PN = #petri_net{digraph = G}, [P | W], Done, {PsS, TsS}, Bif) ->
+first_not_zero([H = {0, _, _}]) ->
+    H;
+first_not_zero([{0, _, _} | T]) ->
+    first_not_zero(T);
+first_not_zero([H | _]) ->
+    H;
+first_not_zero([]) ->
+    none.
+
+backward_slice_imp(PN = #petri_net{digraph = G}, [P | W], Done, {PsS, TsS}) ->
     InTs = 
         digraph:in_neighbours(G, P),
     NDone = 
@@ -129,73 +163,49 @@ backward_slice_imp(PN = #petri_net{digraph = G}, [P | W], Done, {PsS, TsS}, Bif)
         [P | PsS],
     case InTs of 
         [] -> 
-            backward_slice_imp(PN, lists:usort(W -- NDone), NDone, {NPs, TsS}, Bif);
+            backward_slice_imp(PN, lists:usort(W -- NDone), NDone, {NPs, TsS});
         [T] ->
             InPs = digraph:in_neighbours(G, T),
-            backward_slice_imp(PN, lists:usort((W ++ InPs) -- NDone), NDone, {NPs, [T | TsS]}, Bif);
+            backward_slice_imp(PN, lists:usort((W ++ InPs) -- NDone), NDone, {NPs, [T | TsS]});
         _ ->
-            % Anaydir bifurcacio
-            BifInfo =
+            % All branches
+            lists:concat(
                lists:map(
                     fun(T) ->
                         InPs = digraph:in_neighbours(G, T),
-                        {{CPs, CTs}, CDone, CBif} = 
-                            backward_slice_imp(PN, lists:usort(InPs -- NDone), NDone, {NPs, [T | TsS]}, Bif),
-                        % {FCPs, FCTs} = 
-                        %     { sets:subtract(CPs, sets:from_list(NPs)),
-                        %       sets:subtract(CTs, sets:from_list([T | TsS]))},
-                        {T, {CPs, CTs}, CBif, CDone}       
+                        backward_slice_imp(
+                            PN, 
+                            lists:usort((InPs ++ W) -- NDone), 
+                            NDone, 
+                            {NPs, [T | TsS]}) 
                     end,
-                    InTs),
-            {FPs0, FTs0} = 
-                lists:unzip([PsTs || {_, PsTs, _, _} <- BifInfo]),
-            FBifInfo =
-                [ {T, { sets:subtract(CPs, sets:from_list(NPs)),
-                        sets:subtract(CTs, sets:from_list(TsS))}} 
-                 || {T, {CPs, CTs} , _, _} <- BifInfo],
-            NBif = 
-                [ {P, FBifInfo} 
-                | lists:concat([BifBI || {_, _ , BifBI, _} <- BifInfo])],
-            % io:format("~p\n", [{P, lists:concat([BifBI || {_, _ , BifBI, _} <- BifInfo])}]), 
-            % FDone = 
-            %     lists:usort([DoneBI || {_, _ , _, DoneBI} <- BifInfo]),
-            % FPs = sets:to_list(sets:union(FPs0)),
-            % FTs = sets:to_list(sets:union(FTs0)),
-
-            {UInter, FPs1, FTs1} = remove_useless({FPs0, FTs0}),
-            FPs = sets:to_list(FPs1),
-            FTs = sets:to_list(FTs1),
-            FDone = lists:usort(UInter ++ NDone), 
-            backward_slice_imp(PN, lists:usort(W -- FDone), FDone, {FPs, FTs}, NBif)
+                    InTs))
     end;
-    % InPs = 
-    %     lists:concat([digraph:in_neighbours(G, T) || T <- InTs]),
-    % backward_slice_imp(PN, lists:usort((W ++ InPs) -- Done), [P|Done], {PsS, InTs ++ TsS});
-backward_slice_imp(_, [], Done, {PsS, TsS}, Bif) ->
-    {{sets:from_list(PsS), sets:from_list(TsS)}, lists:sort(Done), lists:usort(Bif)}.
+backward_slice_imp(_, [], _, {PsS, TsS}) ->
+    [{sets:from_list(PsS), sets:from_list(TsS)}].
 
-remove_useless({Ps, Ts}) ->
-    InterPs = sets:intersection(Ps),
-    InterTs = sets:intersection(Ts),
-    DiffPs = 
-        lists:map(
-            fun(P) ->
-                sets:subtract(P, InterPs)
-            end,
-            Ps),
-    DiffTs = 
-        lists:map(
-            fun(T) ->
-                sets:subtract(T, InterPs)
-            end,
-            Ts),
-    [{KPs, KTs} | _] = 
-        lists:sort(
-            fun({DP1,DT1}, {DP2,DT2}) ->
-                (sets:size(DP1) + sets:size(DT1)) =< (sets:size(DP2) + sets:size(DT2))
-            end,
-            lists:zip(DiffPs, DiffTs)),
-    {sets:to_list(InterPs), sets:union(InterPs, KPs), sets:union(InterTs, KTs)}.
+% remove_useless({Ps, Ts}) ->
+%     InterPs = sets:intersection(Ps),
+%     InterTs = sets:intersection(Ts),
+%     DiffPs = 
+%         lists:map(
+%             fun(P) ->
+%                 sets:subtract(P, InterPs)
+%             end,
+%             Ps),
+%     DiffTs = 
+%         lists:map(
+%             fun(T) ->
+%                 sets:subtract(T, InterPs)
+%             end,
+%             Ts),
+%     [{KPs, KTs} | _] = 
+%         lists:sort(
+%             fun({DP1,DT1}, {DP2,DT2}) ->
+%                 (sets:size(DP1) + sets:size(DT1)) =< (sets:size(DP2) + sets:size(DT2))
+%             end,
+%             lists:zip(DiffPs, DiffTs)),
+%     {sets:to_list(InterPs), sets:union(InterPs, KPs), sets:union(InterTs, KTs)}.
     
 forward_slice_imp(PN = #petri_net{places = Ps}) ->
     StartingPs = 
