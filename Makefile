@@ -8,6 +8,8 @@ clean:
 	@rm -f *.pnml
 	@rm -f *.dump
 	@rm -f *.beam
+	@rm -f *.lola
+	@rm -f *.json
 
 all:
 	@make paper

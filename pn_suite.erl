@@ -314,12 +314,13 @@ export(PN, Suffix) ->
     Op1 = "pdf",
     Op2 = "dot",
     Op3 = "PNML compatible with PIPE",
-    Op4 = "Other formats",
+    Op4 = "LoLa",
+    Op5 = "Other formats",
     {_, Lines, Ans, AnsDict} = 
         lists:foldl(
             fun pn_lib:build_question_option/2,
             {1, [], [], dict:new()},
-            [Op1, Op2, Op3, Op4]),
+            [Op1, Op2, Op3, Op4, Op5]),
     QuestionLines = 
             ["These are the available output formats: " | lists:reverse(Lines)]
         ++  ["What format do you need?" 
@@ -329,7 +330,9 @@ export(PN, Suffix) ->
     case dict:fetch(Answer, AnsDict) of 
         Op3 -> 
             pn_output:print_pnml(PNtoExport);
-        Op4 ->
+        Op4 -> 
+            pn_output:print_lola(PNtoExport);
+        Op5 ->
             ask_other_formats(PNtoExport, Suffix);
         Format ->
             pn_output:print_net(PNtoExport, false, Format, Suffix)

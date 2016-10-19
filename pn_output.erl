@@ -1,6 +1,6 @@
 -module( pn_output ).
  
--export( [print_net/1, print_net/4, print_pnml/1, formats/0] ).
+-export( [print_net/1, print_net/4, print_pnml/1, print_lola/1, formats/0] ).
 
 -include("pn.hrl").
  
@@ -218,3 +218,53 @@ arc_to_pnml(
         "\t</arc>"
     ].
     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LOLA format  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+print_lola(PN) ->
+    file:write_file(
+        PN#petri_net.name ++ ".lola", 
+        list_to_binary(to_lola(PN))).
+
+to_lola(
+    PN = #petri_net{
+        places = Ps0, 
+        transitions = Ts0,
+        digraph = G}) ->
+    pn_lib:build_digraph(PN),
+    Ps = pn_lib:get_value_list_from_dict(Ps0),
+    Ts = pn_lib:get_value_list_from_dict(Ts0),
+    PsStr0 = lists:map(fun place_to_lola/1, Ps),
+    PsStr = "PLACE\n\t" ++ string:join(PsStr0, ", ") ++ ";\n",
+    MStr0 = marking_to_lola(Ps, []),
+    MStr = "MARKING\n\t" ++ string:join(MStr0, ", ") ++ ";\n",
+    TsStr = lists:map(fun(T) -> transition_to_lola(T, G) end, Ts),
+    string:join([PsStr, MStr | TsStr], "\n").
+
+
+
+place_to_lola(#place{name = N}) ->
+    N.
+
+marking_to_lola([#place{name = N, marking = M} | Ps], Acc) ->
+    NAcc = 
+        case M of 
+            0 ->
+                Acc;
+            _ ->
+                [(N ++ ": " ++ integer_to_list(M)) | Acc]
+        end,
+    marking_to_lola(Ps, NAcc);
+marking_to_lola([], Acc) ->
+    Acc.
+
+transition_to_lola(#transition{name = T}, G) ->
+    FunPlace = fun(P) -> P ++ ": 1" end,
+    InTStr = lists:map(FunPlace, digraph:in_neighbours(G, T)),
+    OutTStr = lists:map(FunPlace, digraph:out_neighbours(G, T)),
+    Header = "TRANSITION " ++ T,
+    Consume = "\tCONSUME " ++ string:join(InTStr, ", ") ++ ";",
+    Produce = "\tPRODUCE " ++ string:join(OutTStr, ", ") ++ ";",
+    string:join([Header, Consume, Produce], "\n") ++ "\n".
+
