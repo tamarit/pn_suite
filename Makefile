@@ -10,8 +10,8 @@ compile:
 
 clean:
 	@rm -Rf ebin
-	@rm -f *.dump
 	@find examples -name 'output' -prune -exec rm -fr {} \;
+	@find . -name '*.dump' -prune -exec rm -fr {} \;
 
 install:
 	@erl -pa ebin -run make_script from_path $(ROOT_DIR)  -noshell -s erlang halt
