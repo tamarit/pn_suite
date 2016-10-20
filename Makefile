@@ -36,72 +36,72 @@ csp2pn:
 	@echo "*************************************" 
 	@echo "*********** Test CSP2PN *************"
 	@echo "*************************************" 
-	@./pn_suite.sh examples/pn_CSP2PN.xml
+	@./pn_suite examples/pn_CSP2PN.xml
 
 paper:
 	@echo "*************************************" 
 	@echo "************ Test paper *************"
 	@echo "*************************************" 
-	@./pn_suite.sh examples/pn_paper.xml
+	@./pn_suite examples/pn_paper.xml
 
 web:
 	@echo "*************************************" 
 	@echo "*********** Test external ***********"
 	@echo "*************************************" 	
-	@./pn_suite.sh examples/pn_web.pnml
+	@./pn_suite examples/pn_web.pnml
 
 yu1:
 	@echo "*************************************" 
 	@echo "********** Test Yu et al 1 **********"
 	@echo "*************************************" 	
-	@./pn_suite.sh examples/pn_yuetal1.xml
+	@./pn_suite examples/pn_yuetal1.xml
 
 yu2:
 	@echo "*************************************" 
 	@echo "********** Test Yu et al 2 **********"
 	@echo "*************************************" 	
-	@./pn_suite.sh examples/pn_yuetal2.xml
+	@./pn_suite examples/pn_yuetal2.xml
 
-rakow5:
+rakow1:
 	@echo "*************************************" 
 	@echo "************ Test rakow5 ************"
 	@echo "*************************************" 	
-	@./pn_suite.sh examples/pn_rakowp5.xml
+	@./pn_suite examples/pn_rakowp5.xml
 
 
-rakow6:
+rakow2:
 	@echo "*************************************" 
 	@echo "************ Test rakow6 ************"
 	@echo "*************************************" 	
-	@./pn_suite.sh examples/pn_rakowp6.xml
+	@./pn_suite examples/pn_rakowp6.xml
 
 loop:
 	@echo "*************************************" 
 	@echo "************* Test loop *************"
 	@echo "*************************************" 	
-	@./pn_suite.sh examples/loop.xml
+	@./pn_suite examples/loop.xml
 
 bb:
 	@echo "*************************************" 
 	@echo "************** Test bb **************"
 	@echo "*************************************" 	
-	@./pn_suite.sh examples/bif_backwards.xml
+	@./pn_suite examples/bif_backwards.xml
 
 bf:
 	@echo "*************************************" 
 	@echo "************** Test bf **************"
 	@echo "*************************************" 	
-	@./pn_suite.sh examples/bif_forwards.xml
+	@./pn_suite examples/bif_forwards.xml
 
 
 p1:
 	@echo "*************************************" 
 	@echo "*********** Test problem1 ***********"
 	@echo "*************************************" 	
-	@./pn_suite.sh examples/problem1.xml
+	@./pn_suite examples/problem1.xml
 
 i1:
 	@echo "*************************************" 
 	@echo "*********** Test improve1 ***********"
 	@echo "*************************************" 	
-	@./pn_suite.sh examples/improve1.xml 
+	@./pn_suite examples/improve1.xml 
