@@ -1,0 +1,479 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="Kanban-PT-0010" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <page id="page0">
+      <name>
+        <text>DefaultPage</text>
+      </name>
+      <place id="P3">
+        <name>
+          <graphics>
+            <offset x="-17" y="11"/>
+          </graphics>
+          <text>P3</text>
+        </name>
+        <graphics>
+          <position x="456" y="367"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="146" y="210"/>
+          </graphics>
+          <text>10</text>
+        </initialMarking>
+      </place>
+      <place id="Pm3">
+        <name>
+          <graphics>
+            <offset x="23" y="12"/>
+          </graphics>
+          <text>Pm3</text>
+        </name>
+        <graphics>
+          <position x="161" y="305"/>
+        </graphics>
+      </place>
+      <place id="Pback3">
+        <name>
+          <graphics>
+            <offset x="-15" y="9"/>
+          </graphics>
+          <text>Pback3</text>
+        </name>
+        <graphics>
+          <position x="204" y="389"/>
+        </graphics>
+      </place>
+      <place id="Pout3">
+        <name>
+          <graphics>
+            <offset x="30" y="9"/>
+          </graphics>
+          <text>Pout3</text>
+        </name>
+        <graphics>
+          <position x="116" y="389"/>
+        </graphics>
+      </place>
+      <place id="P4">
+        <name>
+          <graphics>
+            <offset x="-22" y="10"/>
+          </graphics>
+          <text>P4</text>
+        </name>
+        <graphics>
+          <position x="307" y="153"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="-3" y="-4"/>
+          </graphics>
+          <text>10</text>
+        </initialMarking>
+      </place>
+      <place id="Pm4">
+        <name>
+          <graphics>
+            <offset x="-22" y="10"/>
+          </graphics>
+          <text>Pm4</text>
+        </name>
+        <graphics>
+          <position x="222" y="109"/>
+        </graphics>
+      </place>
+      <place id="Pback4">
+        <name>
+          <graphics>
+            <offset x="38" y="11"/>
+          </graphics>
+          <text>Pback4</text>
+        </name>
+        <graphics>
+          <position x="188" y="190"/>
+        </graphics>
+      </place>
+      <place id="Pout4">
+        <name>
+          <graphics>
+            <offset x="-16" y="12"/>
+          </graphics>
+          <text>Pout4</text>
+        </name>
+        <graphics>
+          <position x="255" y="190"/>
+        </graphics>
+      </place>
+      <place id="Pm1">
+        <name>
+          <graphics>
+            <offset x="-17" y="10"/>
+          </graphics>
+          <text>Pm1</text>
+        </name>
+        <graphics>
+          <position x="255" y="499"/>
+        </graphics>
+      </place>
+      <place id="P1">
+        <name>
+          <graphics>
+            <offset x="-22" y="10"/>
+          </graphics>
+          <text>P1</text>
+        </name>
+        <graphics>
+          <position x="337" y="526"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="27" y="369"/>
+          </graphics>
+          <text>10</text>
+        </initialMarking>
+      </place>
+      <place id="Pout1">
+        <name>
+          <graphics>
+            <offset x="-17" y="12"/>
+          </graphics>
+          <text>Pout1</text>
+        </name>
+        <graphics>
+          <position x="292" y="575"/>
+        </graphics>
+      </place>
+      <place id="Pback1">
+        <name>
+          <graphics>
+            <offset x="41" y="9"/>
+          </graphics>
+          <text>Pback1</text>
+        </name>
+        <graphics>
+          <position x="219" y="575"/>
+        </graphics>
+      </place>
+      <place id="Pm2">
+        <name>
+          <graphics>
+            <offset x="-14" y="10"/>
+          </graphics>
+          <text>Pm2</text>
+        </name>
+        <graphics>
+          <position x="357" y="305"/>
+        </graphics>
+      </place>
+      <place id="P2">
+        <name>
+          <graphics>
+            <offset x="13" y="11"/>
+          </graphics>
+          <text>P2</text>
+        </name>
+        <graphics>
+          <position x="64" y="364"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="-246" y="207"/>
+          </graphics>
+          <text>10</text>
+        </initialMarking>
+      </place>
+      <place id="Pout2">
+        <name>
+          <graphics>
+            <offset x="-16" y="9"/>
+          </graphics>
+          <text>Pout2</text>
+        </name>
+        <graphics>
+          <position x="399" y="389"/>
+        </graphics>
+      </place>
+      <place id="Pback2">
+        <name>
+          <graphics>
+            <offset x="36" y="10"/>
+          </graphics>
+          <text>Pback2</text>
+        </name>
+        <graphics>
+          <position x="314" y="389"/>
+        </graphics>
+      </place>
+      <transition id="tback3">
+        <name>
+          <graphics>
+            <offset x="-17" y="13"/>
+          </graphics>
+          <text>tback3</text>
+        </name>
+        <graphics>
+          <position x="203" y="428"/>
+        </graphics>
+      </transition>
+      <transition id="tredo3">
+        <name>
+          <graphics>
+            <offset x="-17" y="14"/>
+          </graphics>
+          <text>tredo3</text>
+        </name>
+        <graphics>
+          <position x="203" y="357"/>
+        </graphics>
+      </transition>
+      <transition id="tredo2">
+        <name>
+          <graphics>
+            <offset x="29" y="14"/>
+          </graphics>
+          <text>tredo2</text>
+        </name>
+        <graphics>
+          <position x="313" y="357"/>
+        </graphics>
+      </transition>
+      <transition id="tok3">
+        <name>
+          <graphics>
+            <offset x="20" y="12"/>
+          </graphics>
+          <text>tok3</text>
+        </name>
+        <graphics>
+          <position x="115" y="357"/>
+        </graphics>
+      </transition>
+      <transition id="tredo4">
+        <name>
+          <graphics>
+            <offset x="28" y="15"/>
+          </graphics>
+          <text>tredo4</text>
+        </name>
+        <graphics>
+          <position x="187" y="153"/>
+        </graphics>
+      </transition>
+      <transition id="tin4">
+        <name>
+          <graphics>
+            <offset x="3" y="15"/>
+          </graphics>
+          <text>tin4</text>
+        </name>
+        <graphics>
+          <position x="221" y="72"/>
+        </graphics>
+      </transition>
+      <transition id="tok4">
+        <name>
+          <graphics>
+            <offset x="-14" y="13"/>
+          </graphics>
+          <text>tok4</text>
+        </name>
+        <graphics>
+          <position x="254" y="153"/>
+        </graphics>
+      </transition>
+      <transition id="tback4">
+        <name>
+          <graphics>
+            <offset x="33" y="13"/>
+          </graphics>
+          <text>tback4</text>
+        </name>
+        <graphics>
+          <position x="187" y="239"/>
+        </graphics>
+      </transition>
+      <transition id="tsynch1_23">
+        <name>
+          <graphics>
+            <offset x="55" y="-9"/>
+          </graphics>
+          <text>tsynch1_23</text>
+        </name>
+        <graphics>
+          <position x="254" y="465"/>
+        </graphics>
+      </transition>
+      <transition id="tout1">
+        <name>
+          <graphics>
+            <offset x="-16" y="14"/>
+          </graphics>
+          <text>tout1</text>
+        </name>
+        <graphics>
+          <position x="291" y="619"/>
+        </graphics>
+      </transition>
+      <transition id="tok1">
+        <name>
+          <graphics>
+            <offset x="-14" y="13"/>
+          </graphics>
+          <text>tok1</text>
+        </name>
+        <graphics>
+          <position x="291" y="543"/>
+        </graphics>
+      </transition>
+      <transition id="tsynch4_23">
+        <name>
+          <graphics>
+            <offset x="57" y="14"/>
+          </graphics>
+          <text>tsynch4_23</text>
+        </name>
+        <graphics>
+          <position x="254" y="261"/>
+        </graphics>
+      </transition>
+      <transition id="tredo1">
+        <name>
+          <graphics>
+            <offset x="29" y="13"/>
+          </graphics>
+          <text>tredo1</text>
+        </name>
+        <graphics>
+          <position x="218" y="543"/>
+        </graphics>
+      </transition>
+      <transition id="tback1">
+        <name>
+          <graphics>
+            <offset x="32" y="16"/>
+          </graphics>
+          <text>tback1</text>
+        </name>
+        <graphics>
+          <position x="218" y="619"/>
+        </graphics>
+      </transition>
+      <transition id="tback2">
+        <name>
+          <graphics>
+            <offset x="31" y="18"/>
+          </graphics>
+          <text>tback2</text>
+        </name>
+        <graphics>
+          <position x="313" y="433"/>
+        </graphics>
+      </transition>
+      <transition id="tok2">
+        <name>
+          <graphics>
+            <offset x="-14" y="15"/>
+          </graphics>
+          <text>tok2</text>
+        </name>
+        <graphics>
+          <position x="398" y="357"/>
+        </graphics>
+      </transition>
+      <arc id="cId-3808157255165954295110" source="Pm4" target="tok4"/>      <arc id="cId-3824682095922730167111" source="tok4" target="Pout4"/>      <arc id="cId-3824682095922730167108" source="Pback4" target="tback4"/>      <arc id="cId-3824682095922730167109" source="tback4" target="Pm4">
+        <graphics>
+          <position x="138" y="115"/>
+          <position x="138" y="239"/>
+        </graphics>
+      </arc>
+      <arc id="cId-3821377129489361911106" source="Pm4" target="tredo4"/>      <arc id="cId-3821377129489361911107" source="tredo4" target="Pback4"/>      <arc id="cId-3821377129489361911104" source="P4" target="tin4">
+        <graphics>
+          <position x="313" y="72"/>
+        </graphics>
+      </arc>
+      <arc id="cId-3821377129489361911105" source="tin4" target="Pm4"/>      <arc id="cId-3821377129489361911119" source="tredo2" target="Pback2"/>      <arc id="cId-3821377129489361911118" source="Pm2" target="tredo2"/>      <arc id="cId-3821377129489361911117" source="tok3" target="Pout3"/>      <arc id="cId-3821377129489361911116" source="Pm3" target="tok3"/>      <arc id="cId-3823029612706046039115" source="tback3" target="Pm3">
+        <graphics>
+          <position x="259" y="428"/>
+          <position x="259" y="311"/>
+        </graphics>
+      </arc>
+      <arc id="cId-3823029612706046039114" source="Pback3" target="tback3"/>      <arc id="cId-3823029612706046039113" source="tredo3" target="Pback3"/>      <arc id="cId-3823029612706046039112" source="Pm3" target="tredo3"/>      <arc id="cId-3823029612706046039127" source="tback1" target="Pm1">
+        <graphics>
+          <position x="171" y="505"/>
+          <position x="171" y="619"/>
+        </graphics>
+      </arc>
+      <arc id="cId-3823029612706046039126" source="Pback1" target="tback1"/>      <arc id="cId-3823029612706046039125" source="tredo1" target="Pback1"/>      <arc id="cId-3823029612706046039124" source="Pm1" target="tredo1"/>      <arc id="cId-3823029612706046039123" source="tok2" target="Pout2"/>      <arc id="cId-3823029612706046039122" source="Pm2" target="tok2"/>      <arc id="cId-3823029612706046039121" source="tback2" target="Pm2">
+        <graphics>
+          <position x="271" y="311"/>
+          <position x="271" y="433"/>
+        </graphics>
+      </arc>
+      <arc id="cId-3823029612706046039120" source="Pback2" target="tback2"/>      <arc id="cId-3884171521788129848137" source="Pout2" target="tsynch1_23">
+        <graphics>
+          <position x="405" y="446"/>
+          <position x="264" y="446"/>
+        </graphics>
+      </arc>
+      <arc id="cId-3884171521788129848136" source="Pout3" target="tsynch1_23">
+        <graphics>
+          <position x="122" y="445"/>
+          <position x="257" y="445"/>
+        </graphics>
+      </arc>
+      <arc id="cId-3884171521788129848139" source="tsynch1_23" target="P3">
+        <graphics>
+          <position x="462" y="465"/>
+        </graphics>
+      </arc>
+      <arc id="cId-3884171521788129848138" source="P1" target="tsynch1_23">
+        <graphics>
+          <position x="266" y="480"/>
+          <position x="343" y="480"/>
+        </graphics>
+      </arc>
+      <arc id="cId-3884171521788129848141" source="tsynch1_23" target="Pm1"/>      <arc id="cId-3884171521788129848140" source="tsynch1_23" target="P2">
+        <graphics>
+          <position x="70" y="465"/>
+        </graphics>
+      </arc>
+      <arc id="cId-3884171521788129848143" source="tout1" target="P1">
+        <graphics>
+          <position x="343" y="619"/>
+        </graphics>
+      </arc>
+      <arc id="cId-3884171521788129848142" source="Pout1" target="tout1"/>      <arc id="cId-3884171521788129848129" source="tok1" target="Pout1"/>      <arc id="cId-3884171521788129848128" source="Pm1" target="tok1"/>      <arc id="cId-3884171521788129848131" source="P2" target="tsynch4_23">
+        <graphics>
+          <position x="70" y="261"/>
+        </graphics>
+      </arc>
+      <arc id="cId-3885824005004813976130" source="Pout4" target="tsynch4_23"/>      <arc id="cId-3885824005004813976133" source="tsynch4_23" target="P4">
+        <graphics>
+          <position x="266" y="253"/>
+          <position x="313" y="253"/>
+        </graphics>
+      </arc>
+      <arc id="cId-3885824005004813976132" source="P3" target="tsynch4_23">
+        <graphics>
+          <position x="462" y="261"/>
+        </graphics>
+      </arc>
+      <arc id="cId-3885824005004813976135" source="tsynch4_23" target="Pm3">
+        <graphics>
+          <position x="167" y="278"/>
+          <position x="257" y="278"/>
+        </graphics>
+      </arc>
+      <arc id="cId-3885824005004813976134" source="tsynch4_23" target="Pm2">
+        <graphics>
+          <position x="264" y="276"/>
+          <position x="363" y="276"/>
+        </graphics>
+      </arc>
+    </page>
+    <name>
+      <text>Kanban-PT-0010</text>
+    </name>
+  </net>
+</pnml>

@@ -1,0 +1,1051 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<pnml>
+<net id="csp2pn" type="P/T net">
+	<place id="P0">
+		<graphics>
+			<position x="744.440002" y="26.389000"/>
+		</graphics>
+		<name>
+			<value>MAIN </value>
+			<graphics/>
+		</name>
+		<initialMarking>
+			<value>1</value>
+			<graphics>
+				<offset x="0.0" y="0.0"/>
+			</graphics>
+		</initialMarking>
+	</place>
+	<place id="P2">
+		<graphics>
+			<position x="744.440002" y="229.169983"/>
+		</graphics>
+		<name>
+			<value>FSM0 </value>
+			<graphics/>
+		</name>
+		<initialMarking>
+			<value>0</value>
+			<graphics>
+				<offset x="0.0" y="0.0"/>
+			</graphics>
+		</initialMarking>
+	</place>
+	<place id="P10">
+		<graphics>
+			<position x="238.889999" y="431.939972"/>
+		</graphics>
+		<name>
+			<value>FSM1 </value>
+			<graphics/>
+		</name>
+		<initialMarking>
+			<value>0</value>
+			<graphics>
+				<offset x="0.0" y="0.0"/>
+			</graphics>
+		</initialMarking>
+	</place>
+	<place id="P22">
+		<graphics>
+			<position x="54.167004" y="634.719971"/>
+		</graphics>
+		<name>
+			<value>FSM3 </value>
+			<graphics/>
+		</name>
+		<initialMarking>
+			<value>0</value>
+			<graphics>
+				<offset x="0.0" y="0.0"/>
+			</graphics>
+		</initialMarking>
+	</place>
+	<place id="P38">
+		<graphics>
+			<position x="163.889999" y="837.500000"/>
+		</graphics>
+		<name>
+			<value>FSM2 </value>
+			<graphics/>
+		</name>
+		<initialMarking>
+			<value>0</value>
+			<graphics>
+				<offset x="0.0" y="0.0"/>
+			</graphics>
+		</initialMarking>
+	</place>
+	<place id="P62">
+		<graphics>
+			<position x="768.059998" y="431.939972"/>
+		</graphics>
+		<name>
+			<value>FSM2 </value>
+			<graphics/>
+		</name>
+		<initialMarking>
+			<value>0</value>
+			<graphics>
+				<offset x="0.0" y="0.0"/>
+			</graphics>
+		</initialMarking>
+	</place>
+	<place id="P70">
+		<graphics>
+			<position x="583.330017" y="634.719971"/>
+		</graphics>
+		<name>
+			<value>FSM3 </value>
+			<graphics/>
+		</name>
+		<initialMarking>
+			<value>0</value>
+			<graphics>
+				<offset x="0.0" y="0.0"/>
+			</graphics>
+		</initialMarking>
+	</place>
+	<place id="P82">
+		<graphics>
+			<position x="529.169983" y="837.500000"/>
+		</graphics>
+		<name>
+			<value>FSM1 </value>
+			<graphics/>
+		</name>
+		<initialMarking>
+			<value>0</value>
+			<graphics>
+				<offset x="0.0" y="0.0"/>
+			</graphics>
+		</initialMarking>
+	</place>
+	<place id="P110">
+		<graphics>
+			<position x="966.670044" y="634.719971"/>
+		</graphics>
+		<name>
+			<value>FSM3 </value>
+			<graphics/>
+		</name>
+		<initialMarking>
+			<value>0</value>
+			<graphics>
+				<offset x="0.0" y="0.0"/>
+			</graphics>
+		</initialMarking>
+	</place>
+	<place id="P122">
+		<graphics>
+			<position x="852.779968" y="837.500000"/>
+		</graphics>
+		<name>
+			<value>FSM1 </value>
+			<graphics/>
+		</name>
+		<initialMarking>
+			<value>0</value>
+			<graphics>
+				<offset x="0.0" y="0.0"/>
+			</graphics>
+		</initialMarking>
+	</place>
+	<transition id="T1">
+		<graphics>
+			<position x="744.440002" y="127.779999"/>
+		</graphics>
+		<name>
+			<value>tau </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T9">
+		<graphics>
+			<position x="315.279999" y="330.559998"/>
+		</graphics>
+		<name>
+			<value>a </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T17">
+		<graphics>
+			<position x="138.889999" y="533.330017"/>
+		</graphics>
+		<name>
+			<value>a </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T21">
+		<graphics>
+			<position x="238.889999" y="533.330017"/>
+		</graphics>
+		<name>
+			<value>b </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T33">
+		<graphics>
+			<position x="230.559998" y="736.110046"/>
+		</graphics>
+		<name>
+			<value>b </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T37">
+		<graphics>
+			<position x="330.559998" y="736.110046"/>
+		</graphics>
+		<name>
+			<value>c </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T45">
+		<graphics>
+			<position x="159.720001" y="938.889954"/>
+		</graphics>
+		<name>
+			<value>a </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T53">
+		<graphics>
+			<position x="259.720001" y="938.889954"/>
+		</graphics>
+		<name>
+			<value>c </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T57">
+		<graphics>
+			<position x="338.890015" y="533.330017"/>
+		</graphics>
+		<name>
+			<value>c </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T61">
+		<graphics>
+			<position x="568.059998" y="330.559998"/>
+		</graphics>
+		<name>
+			<value>b </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T69">
+		<graphics>
+			<position x="591.669983" y="533.330017"/>
+		</graphics>
+		<name>
+			<value>a </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T81">
+		<graphics>
+			<position x="683.330017" y="736.110046"/>
+		</graphics>
+		<name>
+			<value>b </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T89">
+		<graphics>
+			<position x="379.169983" y="938.889954"/>
+		</graphics>
+		<name>
+			<value>a </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T93">
+		<graphics>
+			<position x="479.169983" y="938.889954"/>
+		</graphics>
+		<name>
+			<value>b </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T97">
+		<graphics>
+			<position x="579.169983" y="938.889954"/>
+		</graphics>
+		<name>
+			<value>c </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T109">
+		<graphics>
+			<position x="691.669983" y="533.330017"/>
+		</graphics>
+		<name>
+			<value>c </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T121">
+		<graphics>
+			<position x="1036.099976" y="736.110046"/>
+		</graphics>
+		<name>
+			<value>b </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T129">
+		<graphics>
+			<position x="706.940002" y="938.889954"/>
+		</graphics>
+		<name>
+			<value>a </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T133">
+		<graphics>
+			<position x="806.940002" y="938.889954"/>
+		</graphics>
+		<name>
+			<value>b </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T137">
+		<graphics>
+			<position x="906.940002" y="938.889954"/>
+		</graphics>
+		<name>
+			<value>c </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T145">
+		<graphics>
+			<position x="668.059998" y="330.559998"/>
+		</graphics>
+		<name>
+			<value>c </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T27">
+		<graphics>
+			<position x="130.559998" y="736.110046"/>
+		</graphics>
+		<name>
+			<value>a </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T75">
+		<graphics>
+			<position x="583.330017" y="736.110046"/>
+		</graphics>
+		<name>
+			<value>a </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T115">
+		<graphics>
+			<position x="936.110046" y="736.110046"/>
+		</graphics>
+		<name>
+			<value>a </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T47">
+		<graphics>
+			<position x="59.722000" y="938.889954"/>
+		</graphics>
+		<name>
+			<value>b </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T103">
+		<graphics>
+			<position x="491.669983" y="533.330017"/>
+		</graphics>
+		<name>
+			<value>b </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T99">
+		<graphics>
+			<position x="483.330017" y="736.110046"/>
+		</graphics>
+		<name>
+			<value>c </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<transition id="T139">
+		<graphics>
+			<position x="836.110046" y="736.110046"/>
+		</graphics>
+		<name>
+			<value>c </value>
+			<graphics/>
+		</name>
+		<orientation>
+			<value>0</value>
+		</orientation>
+		<rate>
+			<value>1.0</value>
+		</rate>
+		<timed>
+			<value>false</value>
+		</timed>
+	</transition>
+	<arc id="P0 to T1" source="P0" target="T1">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P2 to T9" source="P2" target="T9">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P2 to T61" source="P2" target="T61">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P2 to T145" source="P2" target="T145">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P10 to T17" source="P10" target="T17">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P10 to T21" source="P10" target="T21">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P10 to T57" source="P10" target="T57">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P22 to T33" source="P22" target="T33">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P22 to T37" source="P22" target="T37">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P22 to T27" source="P22" target="T27">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P38 to T45" source="P38" target="T45">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P38 to T53" source="P38" target="T53">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P38 to T47" source="P38" target="T47">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P62 to T69" source="P62" target="T69">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P62 to T109" source="P62" target="T109">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P62 to T103" source="P62" target="T103">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P70 to T81" source="P70" target="T81">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P70 to T75" source="P70" target="T75">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P70 to T99" source="P70" target="T99">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P82 to T89" source="P82" target="T89">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P82 to T93" source="P82" target="T93">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P82 to T97" source="P82" target="T97">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P110 to T121" source="P110" target="T121">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P110 to T115" source="P110" target="T115">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P110 to T139" source="P110" target="T139">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P122 to T129" source="P122" target="T129">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P122 to T133" source="P122" target="T133">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="P122 to T137" source="P122" target="T137">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T1 to P2" source="T1" target="P2">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T9 to P10" source="T9" target="P10">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T17 to P10" source="T17" target="P10">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T21 to P22" source="T21" target="P22">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T33 to P10" source="T33" target="P10">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T37 to P38" source="T37" target="P38">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T45 to P22" source="T45" target="P22">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T53 to P22" source="T53" target="P22">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T57 to P10" source="T57" target="P10">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T61 to P62" source="T61" target="P62">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T69 to P70" source="T69" target="P70">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T81 to P82" source="T81" target="P82">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T89 to P82" source="T89" target="P82">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T93 to P70" source="T93" target="P70">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T97 to P82" source="T97" target="P82">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T109 to P110" source="T109" target="P110">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T121 to P122" source="T121" target="P122">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T129 to P122" source="T129" target="P122">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T133 to P110" source="T133" target="P110">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T137 to P122" source="T137" target="P122">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T145 to P2" source="T145" target="P2">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T27 to P2" source="T27" target="P2">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T75 to P2" source="T75" target="P2">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T115 to P2" source="T115" target="P2">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T47 to P2" source="T47" target="P2">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T103 to P2" source="T103" target="P2">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T99 to P62" source="T99" target="P62">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+	<arc id="T139 to P62" source="T139" target="P62">
+		<graphics/>
+		<inscription>
+			<value>1</value>
+			<graphics/>
+		</inscription>
+	</arc>
+</net>
+</pnml>
