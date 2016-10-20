@@ -1,28 +1,7 @@
-
-*.dot
-
-*.pdf
-
-*.svg
-
-*.pnml
-
 *.beam
 
 *.dump
 
-*.jpeg
+bib/*
 
-*.bmp
-
-*.jpg
-
-*.pdf àlies
-
-*.lola
-
-*.formula
-
-*.json
-
-*.apt
+examples/output/*
