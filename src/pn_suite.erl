@@ -11,8 +11,9 @@
 
 main(Args) ->
     PN = pn_input:read_pn(hd(Args)),
-    Name = PN#petri_net.name,
-    io:format("Petri net " ++ Name ++ " successfully read.\n"),
+    io:format(
+        "Petri net ~s successfully read from directory:\n\t ~s\n\n", 
+        [PN#petri_net.name, PN#petri_net.dir]),
     Op1 = "Run the Petri Net",
     Op2 = "Export the Petri Net",
     Op3 = "Slicing",

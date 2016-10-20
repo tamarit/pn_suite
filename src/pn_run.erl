@@ -39,7 +39,7 @@ run(PN = #petri_net{transitions = Ts}, FunChoose, Executed) ->
 
 ask_fired_transition(PN, Enabled) ->
     % print
-    pn_output:print_net(PN),
+    pn_output:print_net_run(PN),
     % ask which one (with additional options like finish, etc)
     case Enabled of 
         [] ->

@@ -29,7 +29,8 @@
         places = dict:new(), 
         transitions = dict:new(),
         arcs = [],
-        digraph = digraph:new()
+        digraph = digraph:new(),
+        dir = "."
     }).
 
 % -record(sdg_node,

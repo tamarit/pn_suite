@@ -1,6 +1,6 @@
 -module( pn_output ).
  
--export( [print_net/1, print_net/4, print_pnml/1, print_lola/1, formats/0] ).
+-export( [print_net_run/1, print_net/4, print_pnml/1, print_lola/1, formats/0] ).
 
 -include("pn.hrl").
  
@@ -82,16 +82,25 @@ arc_to_dot(
     }) ->
     S ++ " -> "  ++ T.
 
-print_net(PN) ->
+print_net_run(PN) ->
     print_net(PN, true, "pdf", "_run").   
 
 print_net(PN, ShowEnabled, Format, Suffix) ->
+    Output = PN#petri_net.dir ++ "/output",
+    os:cmd("mkdir " ++ Output),
     file:write_file(
-        PN#petri_net.name ++ "_temp.dot", 
+            Output ++ "/" 
+        ++  PN#petri_net.name ++ "_temp.dot",  
         list_to_binary(to_dot(PN, ShowEnabled))),
     os:cmd(
-            "dot -T" ++ Format ++ " "++ PN#petri_net.name ++ "_temp.dot > "
-        ++  PN#petri_net.name ++ Suffix ++ "." ++ Format).
+            "dot -T" ++ Format ++ " " 
+        ++  Output ++ "/" 
+        ++  PN#petri_net.name ++ "_temp.dot > "
+        ++  Output ++ "/"  
+        ++  PN#petri_net.name ++ Suffix ++ "." ++ Format),
+    os:cmd(
+            "rm -f " ++  Output ++ "/" 
+        ++  PN#petri_net.name ++ "_temp.dot").
 
 formats() ->
     [bmp, canon, cgimage, cmap, cmapx, cmapx_np, dot, 
@@ -115,8 +124,10 @@ formats() ->
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 print_pnml(PN) ->
+    os:cmd("mkdir " ++ PN#petri_net.dir ++ "/output"),
     file:write_file(
-        PN#petri_net.name ++ "_PIPE.pnml", 
+            PN#petri_net.dir ++ "/output/" 
+        ++  PN#petri_net.name ++ "_PIPE.pnml", 
         list_to_binary(to_pnml(PN))).
 
 to_pnml(
@@ -223,9 +234,12 @@ arc_to_pnml(
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 print_lola(PN) ->
+    os:cmd("mkdir " ++ PN#petri_net.dir ++ "/output"),
     file:write_file(
-        PN#petri_net.name ++ ".lola", 
+            PN#petri_net.dir ++ "/output/" 
+        ++  PN#petri_net.name ++ ".lola", 
         list_to_binary(to_lola(PN))).
+
 
 to_lola(
     PN = #petri_net{
