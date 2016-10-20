@@ -24,3 +24,5 @@
 *.formula
 
 *.json
+
+*.apt
