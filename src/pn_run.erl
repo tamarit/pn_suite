@@ -3,8 +3,7 @@
 -export( [run/3, ask_fired_transition/2, set_enabled_transitions/1] ).
 
 -include("pn.hrl").
- 
-% -include_lib("xmerl/include/xmerl.hrl").
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%

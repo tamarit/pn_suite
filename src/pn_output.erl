@@ -4,7 +4,6 @@
 
 -include("pn.hrl").
  
-% -include_lib("xmerl/include/xmerl.hrl").
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DOT

@@ -33,12 +33,6 @@
         dir = "."
     }).
 
-% -record(sdg_node,
-%     {
-%         components = [],
-%         marked = false
-%     }).
-
 -record(sdg,
     {
        digraph = digraph:new(),
