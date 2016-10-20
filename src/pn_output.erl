@@ -1,6 +1,6 @@
 -module( pn_output ).
  
--export( [print_net_run/1, print_net/4, print_pnml/1, print_lola/1, formats/0] ).
+-export( [print_net_run/1, print_net/4, print_pnml/2, print_lola/2, formats/0] ).
 
 -include("pn.hrl").
  
@@ -53,7 +53,12 @@ place_to_dot(
             _ -> 
                 " style=filled color=\"blue\" fontcolor=\"white\" fillcolor=\"blue\""
         end,
-        N ++ " [shape=ellipse, label=\"" ++ SN ++ " - " ++ N
+    Name = 
+        if 
+            SN == N -> SN;
+            true -> SN ++ " (id: "  ++ N ++ ")"
+        end,
+        N ++ " [shape=ellipse, label=\"" ++ Name
     ++  "\\l(" ++ integer_to_list(IM) ++ ")\""++ Filled ++ "];".
 
 transition_to_dot(
@@ -71,7 +76,12 @@ transition_to_dot(
             false -> 
                 ""
         end,
-    N ++ " [shape=box, label=\"" ++ SN ++ " - "  ++ N ++ "\"" ++ Filled ++ "];".
+    Name = 
+        if 
+            SN == N -> SN;
+            true -> SN ++ " (id: "  ++ N ++ ")"
+        end,
+    N ++ " [shape=box, label=\"" ++ Name ++ "\"" ++ Filled ++ "];".
 
 arc_to_dot(
     #arc
@@ -122,11 +132,11 @@ formats() ->
 % PNML  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-print_pnml(PN) ->
+print_pnml(PN, Suffix) ->
     os:cmd("mkdir " ++ PN#petri_net.dir ++ "/output"),
     file:write_file(
             PN#petri_net.dir ++ "/output/" 
-        ++  PN#petri_net.name ++ "_PIPE.pnml", 
+        ++  PN#petri_net.name ++ Suffix ++ ".pnml", 
         list_to_binary(to_pnml(PN))).
 
 to_pnml(
@@ -232,11 +242,11 @@ arc_to_pnml(
 % LOLA format  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-print_lola(PN) ->
+print_lola(PN, Suffix) ->
     os:cmd("mkdir " ++ PN#petri_net.dir ++ "/output"),
     file:write_file(
             PN#petri_net.dir ++ "/output/" 
-        ++  PN#petri_net.name ++ ".lola", 
+        ++  PN#petri_net.name ++ Suffix ++ ".lola", 
         list_to_binary(to_lola(PN))).
 
 

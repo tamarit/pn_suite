@@ -12,8 +12,10 @@
 main(Args) ->
     PN = pn_input:read_pn(hd(Args)),
     io:format(
-        "Petri net ~s successfully read from directory:\n\t ~s\n\n", 
-        [PN#petri_net.name, PN#petri_net.dir]),
+        "Petri net ~s successfully read.\n\n", [PN#petri_net.name]),
+    % io:format(
+    %     "Petri net ~s successfully read from directory:\n\t ~s\n\n", 
+    %     [PN#petri_net.name, PN#petri_net.dir]),
     Op1 = "Run the Petri Net",
     Op2 = "Export the Petri Net",
     Op3 = "Slicing",
@@ -330,9 +332,9 @@ export(PN, Suffix) ->
         pn_lib:get_answer(string:join(QuestionLines,"\n"), lists:seq(1, length(Ans))),
     case dict:fetch(Answer, AnsDict) of 
         Op3 -> 
-            pn_output:print_pnml(PNtoExport);
+            pn_output:print_pnml(PNtoExport, Suffix);
         Op4 -> 
-            pn_output:print_lola(PNtoExport);
+            pn_output:print_lola(PNtoExport, Suffix);
         Op5 ->
             ask_other_formats(PNtoExport, Suffix);
         Format ->

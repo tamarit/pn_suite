@@ -15,6 +15,8 @@ run(PN = #petri_net{transitions = Ts}, FunChoose, Executed) ->
     Enabled = 
         dict:fold(
             fun
+                (K, #transition{enabled = true, showed_name = K}, Acc) -> 
+                    [{K, K} | Acc];
                 (K, #transition{enabled = true, showed_name = SN}, Acc) -> 
                     [{K, SN ++ " - " ++ K} | Acc];
                 (_, _, Acc) ->

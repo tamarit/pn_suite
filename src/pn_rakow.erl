@@ -26,7 +26,7 @@ slice_ctl(PN, SC) ->
     
 
 slice_rec(PN = #petri_net{digraph = G}, P_, T_, PDone, TsFun, ValidTFun) ->
-    io:format("T_: ~p\n", [lists:sort(sets:to_list(T_))]),
+    % io:format("T_: ~p\n", [lists:sort(sets:to_list(T_))]),
     Pending = sets:to_list(sets:subtract(P_, PDone)),
     case Pending of 
         [] ->
