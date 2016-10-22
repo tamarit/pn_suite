@@ -1,15 +1,25 @@
 -module( pn_yuetal ).
  
 -export( [
-    sdg_sim/2, 
-    bsg_sim/3, 
-    sdg/2, 
-    bsg/3, 
-    sdg_places_trans/1, 
-    write_sdg/2
+    slice/2,
+    write_sdg/2,
+    sdg/2,
+    bsg/3
     ] ).
 
 -include("pn.hrl").
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slice Yu et al
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+slice(PN, SC) ->
+    SDG = sdg_sim(PN, SC),
+    BSG = bsg_sim(PN, SDG, SC),
+    % write_sdg(SDG, "sdg_sim.dot"),
+    % write_sdg(BSG, "bsg_sim.dot"),
+    pn_lib:filter_pn(PN, sdg_places_trans(BSG)).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SDG Output

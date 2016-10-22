@@ -1,6 +1,6 @@
 -module( pn_input ).
  
--export( [read_pn/1, read_pos_from_svg/1] ).
+-export( [read_pn/1, read_pos_from_svg/1, read_data/1] ).
 
 -include("pn.hrl").
  
@@ -13,11 +13,26 @@
 
 read_pn(File) ->
     XML = read_xml_document(File),
-    Name = 
+    Name0 = 
         read_attribute(
             hd(xmerl_xpath:string("//net", XML)),
             "id"
         ),
+    Name = 
+        case Name0 of 
+            "" ->
+                [$.|RestName] = 
+                    lists:dropwhile(
+                        fun($.) ->
+                                false;
+                            (_) ->
+                                true
+                        end,
+                        lists:reverse(Name0)),
+                lists:reverse(RestName);
+            _ ->
+                Name0
+        end,
     Places = 
         lists:map(
             fun extract_info_place/1, 
@@ -207,14 +222,14 @@ read_xml_document(File) ->
         file:open(File, [read]),
     {XML, []} = 
         xmerl_scan:string(
-            read_data(InpDev), 
+            lists:concat(read_data(InpDev)), 
             [{encoding, "iso-10646-utf-1"}]),
     XML.
 
 read_data(Device) ->
     Binary = read(Device),
     Res = binary:split(Binary, [<<"\n">>], [global]),
-    lists:concat([binary_to_list(R) || R <- Res]).
+    [binary_to_list(R) || R <- Res].
 
 -define(BLK_SIZE, 16384).
 

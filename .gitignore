@@ -7,3 +7,5 @@ bib/*
 **/output/*
 
 **/report*
+
+*.dot

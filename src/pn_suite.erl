@@ -84,11 +84,7 @@ main(Args) ->
             SC = lists:usort(SC0),
             io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
             pn_lib:build_digraph(PN),
-            SDG = pn_yuetal:sdg_sim(PN, SC),
-            BSG = pn_yuetal:bsg_sim(PN, SDG, SC),
-            pn_yuetal:write_sdg(SDG, "sdg_sim.dot"),
-            pn_yuetal:write_sdg(BSG, "bsg_sim.dot"),
-            PNSlice = pn_lib:filter_pn(PN, pn_yuetal:sdg_places_trans(BSG)),
+            PNSlice = pn_yuetal:slice(PN, SC),
             export(PNSlice, "_slc_yu");
         Op7 ->
             SC0 = ask_slicing_criterion(PN),
@@ -114,8 +110,10 @@ main(Args) ->
 ask_slicing_criterion(#petri_net{places = Ps}) ->
     Places0 = 
         dict:fold(
-            fun(K, #place{showed_name = SN}, Acc) ->
-                [SN ++ " - " ++ K | Acc]
+            fun (K, #place{showed_name = K}, Acc) -> 
+                    [{K, K} | Acc];
+                (K, #place{showed_name = SN}, Acc) -> 
+                    [{K, SN ++ " - " ++ K} | Acc]
             end,
             [],
             Ps),
@@ -178,8 +176,11 @@ read_transitions_sequence() ->
 build_transitions_sequence(#petri_net{transitions = Ts}) ->
     Transitions0 = 
         dict:fold(
-            fun(K, #transition{showed_name = SN}, Acc) ->
-                [SN ++ " - " ++ K | Acc]
+            fun 
+                (K, #transition{showed_name = K}, Acc) ->
+                    [ K | Acc];   
+                (K, #transition{showed_name = SN}, Acc) ->
+                    [SN ++ " - " ++ K | Acc]
             end,
             [],
             Ts),

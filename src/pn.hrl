@@ -38,3 +38,9 @@
        digraph = digraph:new(),
        structural_nodes = []
     }).
+
+-record(slicer, 
+    {
+        name = ?UNNAMED,
+        function = none
+    }).

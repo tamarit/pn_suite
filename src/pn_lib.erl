@@ -7,7 +7,9 @@
 	check_answer/3,
 	get_answer_multiple/2,
 	get_answer/2,
-	filter_pn/2] ).
+	filter_pn/2,
+    format/2
+    ] ).
 
 -include("pn.hrl").
 

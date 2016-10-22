@@ -108,6 +108,7 @@ slice_imp(PN, SC) ->
     ListOfPsBTsB = backward_slice_imp(PN, SC, [], {[], []}),
     % [ io:format("~p\n", [{P, [{T, {sets:to_list(PsT), sets:to_list(TsT)}} || {T, {PsT, TsT}} <- BI]}]) || {P, BI} <- Bif],
     % io:format("Bif: ~p\n", [Bif]),
+    % io:format("~p\n", [ListOfPsBTsB]),
 
     % Without intersection
     ListOfPsFTsF=
@@ -117,7 +118,11 @@ slice_imp(PN, SC) ->
                 {BPN, forward_slice_imp(BPN)}
             end,
             ListOfPsBTsB),
-    {BPN, {PsF, TsF}} = take_smallest_net(ListOfPsFTsF),
+    % io:format("~p\n", [ListOfPsFTsF]),
+    ListOfPsFTsFFIltered = 
+        filterWOSC(ListOfPsFTsF, sets:from_list(SC)),
+    {BPN, {PsF, TsF}} = 
+        take_smallest_net(ListOfPsFTsFFIltered, PN),
     pn_lib:filter_pn(BPN, {PsF, TsF}).
     
     % With intersection
@@ -126,7 +131,20 @@ slice_imp(PN, SC) ->
     % TsSet = sets:intersection(TsB, TsF),
     % pn_lib:filter_pn(PN, {PsSet, TsSet}).
 
-take_smallest_net(List) ->
+filterWOSC(List, SC) ->
+    lists:foldl(
+        fun(Elem = {_, {Ps, _}}, Acc) ->
+            case sets:intersection(SC, Ps) == SC of 
+                true ->
+                    [Elem | Acc];
+                false ->
+                    Acc 
+            end
+        end,
+        [],
+        List). 
+
+take_smallest_net(List, OriPN) ->
     WithSize = 
         lists:map(
             fun({PN, Net = {Ps, Ts}}) ->
@@ -134,16 +152,19 @@ take_smallest_net(List) ->
                  PN,
                  Net}
             end,
-            List
-            ),
+            List),
     Sorted = 
         lists:sort(
             fun({Size1, _, _}, {Size2, _, _}) ->
                 Size1 < Size2
             end,
             WithSize),
-    {_,PN, Smallest} = first_not_zero(Sorted),
-    {PN, Smallest}.
+    case first_not_zero(Sorted) of 
+        none ->
+            {OriPN, {sets:new(), sets:new()}};
+        {_,PN, Smallest} ->
+            {PN, Smallest}
+    end.
     
 first_not_zero([H = {0, _, _}]) ->
     H;
