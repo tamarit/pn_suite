@@ -54,6 +54,7 @@ start_bench(Directories, Timeout, SlicesPerNet, MaxSC) ->
                             [$0 | IStr];
                         _ ->
                             IStr
+                    end
                 end, 
                 [Yea, Mon, Day, Hou, Min, Sec]),
             "_"),
@@ -188,7 +189,7 @@ bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev) ->
     % ConRes = os:cmd(CmdCon),
     % io:format("~p\n", [ConRes]),
     ResAnalyses = os:cmd("java -jar apt/apt.jar examine_pn "  ++ AptFile),
-    io:format("~p\n", [ResAnalyses]),
+    % io:format("~p\n", [ResAnalyses]),
     file:write(OutDev, list_to_binary("Properties:\n" ++ ResAnalyses)),
     % Vs = digraph:vertices(PN#petri_net.digraph),
     Ps = dict:fetch_keys(PN#petri_net.places),
@@ -302,7 +303,7 @@ check_reachable_sc([SC | SCs], File, Dir) ->
     % io:format("~p\n", [JSON]),
     {struct, [{"analysis",{struct, [_, {"result", Reachable} | _]}} | _]}  = 
         JSON,
-    io:format("~p\n", [Reachable]),
+    io:format("~s: ~p\n", [SC, Reachable]),
     case Reachable of 
         false -> 
             false;

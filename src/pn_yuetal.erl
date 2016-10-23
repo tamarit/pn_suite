@@ -128,7 +128,7 @@ bsg_sim(#petri_net{places = Ps}, #sdg{digraph = SDG}, SC) ->
             digraph:add_vertex(G_BSG, N) 
         end, 
         S),
-    bsg_while_S_sim(SDG, G_BSG, S),
+    bsg_while_S_sim(SDG, G_BSG, S, []),
     Vs = digraph:vertices(G_BSG),
     InSC = [[P || P <- V, lists:member(P, SC)] || V <- Vs],
     case InSC of 
@@ -144,7 +144,7 @@ bsg_sim(#petri_net{places = Ps}, #sdg{digraph = SDG}, SC) ->
 % Si p_i -> t -> * coger todas las p_k tal que p_k -> t -> *, es decir todos los lugares que hacen falta para habilitar la transicion
 % para toda transicion y para todo lugar desde esa transicion añadirla. Los lugares que no estuviesen hay que recorrelos
 
-bsg_while_S_sim(G_SDG, G_BSG, [S_i | S0]) -> 
+bsg_while_S_sim(G_SDG, G_BSG, [S_i | S0], Done) -> 
     % io:format("Entra : ~p\n", [S_i]),
     digraph:add_vertex(G_BSG, S_i),
     R = digraph:vertices(G_SDG),
@@ -158,7 +158,7 @@ bsg_while_S_sim(G_SDG, G_BSG, [S_i | S0]) ->
     OE = digraph:out_edges(G_SDG, S_i),
     case OE of 
         [] -> 
-            bsg_while_S_sim(G_SDG, G_BSG, S);
+            bsg_while_S_sim(G_SDG, G_BSG, S -- Done, [S_i | Done]);
         _ ->
             NS =
                 lists:foldl(
@@ -179,9 +179,9 @@ bsg_while_S_sim(G_SDG, G_BSG, [S_i | S0]) ->
                     % OE),
                     % [lists:last(OE)]),
                     [hd(OE)]),
-            bsg_while_S_sim(G_SDG, G_BSG, NS)
+            bsg_while_S_sim(G_SDG, G_BSG, NS -- Done, [S_i | Done])
     end;
-bsg_while_S_sim(_, _, []) -> 
+bsg_while_S_sim(_, _, [], _) -> 
     ok.
 
 

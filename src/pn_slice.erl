@@ -134,10 +134,10 @@ slice_imp(PN, SC) ->
 filterWOSC(List, SC) ->
     lists:foldl(
         fun(Elem = {_, {Ps, _}}, Acc) ->
-            case sets:intersection(SC, Ps) == SC of 
-                true ->
-                    [Elem | Acc];
+            case sets:intersection(SC, Ps) == [] of 
                 false ->
+                    [Elem | Acc];
+                true ->
                     Acc 
             end
         end,
