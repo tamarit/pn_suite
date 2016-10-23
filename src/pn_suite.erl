@@ -335,6 +335,7 @@ export(PN, Suffix) ->
         Op3 -> 
             pn_output:print_pnml(PNtoExport, Suffix);
         Op4 -> 
+            pn_lib:build_digraph(PN),
             pn_output:print_lola(PNtoExport, Suffix);
         Op5 ->
             ask_other_formats(PNtoExport, Suffix);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <pnml>
-    <net>
+    <net id="bifb" type="P/T net">
         <token id="bif_backwards" red="0" green="0" blue="0"/>
         <place id="P0">
             <graphics>

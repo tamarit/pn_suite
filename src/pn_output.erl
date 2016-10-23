@@ -1,6 +1,7 @@
 -module( pn_output ).
  
--export( [print_net_run/1, print_net/4, print_pnml/2, print_lola/2, formats/0] ).
+-export( [  print_net_run/1, print_net/4, print_pnml/2, 
+            print_lola/2, print_apt/2, formats/0] ).
 
 -include("pn.hrl").
  
@@ -251,11 +252,10 @@ print_lola(PN, Suffix) ->
 
 
 to_lola(
-    PN = #petri_net{
+    #petri_net{
         places = Ps0, 
         transitions = Ts0,
         digraph = G}) ->
-    pn_lib:build_digraph(PN),
     Ps = pn_lib:get_value_list_from_dict(Ps0),
     Ts = pn_lib:get_value_list_from_dict(Ts0),
     PsStr0 = lists:map(fun place_to_lola/1, Ps),
@@ -290,4 +290,68 @@ transition_to_lola(#transition{name = T}, G) ->
     Consume = "\tCONSUME " ++ string:join(InTStr, ", ") ++ ";",
     Produce = "\tPRODUCE " ++ string:join(OutTStr, ", ") ++ ";",
     string:join([Header, Consume, Produce], "\n") ++ "\n".
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APT format  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+print_apt(PN, Suffix) ->
+    os:cmd("mkdir " ++ PN#petri_net.dir ++ "/output"),
+    file:write_file(
+            PN#petri_net.dir ++ "/output/" 
+        ++  PN#petri_net.name ++ Suffix ++ ".apt", 
+        list_to_binary(to_apt(PN))).
+
+
+to_apt(
+    #petri_net{
+        name = Name,
+        places = Ps0, 
+        transitions = Ts0,
+        digraph = G}) ->
+    NameStr = ".name \"" ++ Name ++ "\"",
+    TypeStr = ".type LPN",
+    Empty = "",
+    Ps = pn_lib:get_value_list_from_dict(Ps0),
+    Ts = pn_lib:get_value_list_from_dict(Ts0),
+    PsStr0 = lists:map(fun place_to_apt/1, Ps),
+    PsStr = ".places\n" ++ string:join(PsStr0, "\n"),
+    TsStr0 = lists:map(fun transition_to_apt/1, Ts),
+    TsStr = ".transitions\n" ++ string:join(TsStr0, "\n"),
+    FlowStr0 = lists:map(fun(T) -> flow_to_apt(T, G) end, Ts),
+    FlowStr = ".flows\n" ++ string:join(FlowStr0, "\n") ,
+    IMStr0 = "{" ++ string:join(marking_to_apt(Ps, []), ", ") ++ "}",
+    IMStr = ".initial_marking " ++ IMStr0,
+    string:join(
+        [NameStr, TypeStr, Empty, PsStr, Empty, TsStr, 
+         Empty, FlowStr, Empty, IMStr], 
+        "\n").
+
+
+
+place_to_apt(#place{name = N}) ->
+    N.
+
+transition_to_apt(#transition{name = N, showed_name = SN}) ->
+    N ++ "[label=\"" ++ SN ++ "\"]".
+
+flow_to_apt(#transition{name = T}, G) ->
+    FunPlace = fun(P) -> "1*" ++  P end,
+    InTStr = lists:map(FunPlace, digraph:in_neighbours(G, T)),
+    OutTStr = lists:map(FunPlace, digraph:out_neighbours(G, T)),
+    Consume = "{" ++ string:join(InTStr, ", ") ++ "}",
+    Produce = "{" ++ string:join(OutTStr, ", ") ++ "}",
+    T ++ ": " ++ Consume ++ " -> " ++ Produce.
+
+marking_to_apt([#place{name = N, marking = M} | Ps], Acc) ->
+    NAcc = 
+        case M of 
+            0 ->
+                Acc;
+            _ ->
+                [(integer_to_list(M) ++ "*" ++ N) | Acc]
+        end,
+    marking_to_apt(Ps, NAcc);
+marking_to_apt([], Acc) ->
+    Acc.
 

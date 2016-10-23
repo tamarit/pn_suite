@@ -47,7 +47,14 @@ start_bench(Directories, Timeout, SlicesPerNet, MaxSC) ->
     TimeStr = 
         string:join(
             lists:map(
-                fun integer_to_list/1, 
+                fun(I) -> 
+                    IStr = integer_to_list(I),
+                    case length(IStr) of 
+                        1 ->
+                            [$0 | IStr];
+                        _ ->
+                            IStr
+                end, 
                 [Yea, Mon, Day, Hou, Min, Sec]),
             "_"),
     Filename = 
@@ -169,7 +176,20 @@ bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev) ->
     io:format("File: " ++ File ++ "\n"),
     PN = 
         pn_input:read_pn(File),
+    % pn_output:print_lola(PN, ""),
+    Dir = PN#petri_net.dir ++ "/output/",
     pn_lib:build_digraph(PN),
+    % LOLAFile = 
+    %     Dir ++  PN#petri_net.name ++ ".lola", 
+    AptFile = Dir ++ PN#petri_net.name ++ ".apt",
+    pn_output:print_apt(PN, ""),
+    % CmdCon = "java -jar apt/apt.jar pn_convert pnml apt "  ++ File ++ " " ++ AptFile,
+    % io:format("~p\n", [CmdCon]),
+    % ConRes = os:cmd(CmdCon),
+    % io:format("~p\n", [ConRes]),
+    ResAnalyses = os:cmd("java -jar apt/apt.jar examine_pn "  ++ AptFile),
+    io:format("~p\n", [ResAnalyses]),
+    file:write(OutDev, list_to_binary("Properties:\n" ++ ResAnalyses)),
     % Vs = digraph:vertices(PN#petri_net.digraph),
     Ps = dict:fetch_keys(PN#petri_net.places),
     MaxSC = 
@@ -262,7 +282,7 @@ up_dict_and_fun_info(Res, PN, AN, SC, Dict, OutDev) ->
                 true -> 
                     FunOK();
                 false ->
-                    file:write(OutDev, list_to_binary(AN ++ ": null what it should not be\n")),
+                    file:write(OutDev, list_to_binary(AN ++ ": null when it should not be\n")),
                     Dict
             end;
         _ ->
@@ -282,7 +302,7 @@ check_reachable_sc([SC | SCs], File, Dir) ->
     % io:format("~p\n", [JSON]),
     {struct, [{"analysis",{struct, [_, {"result", Reachable} | _]}} | _]}  = 
         JSON,
-    % io:format("~p\n", [Reachable]),
+    io:format("~p\n", [Reachable]),
     case Reachable of 
         false -> 
             false;

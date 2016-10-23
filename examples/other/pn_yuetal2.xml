@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <pnml>
-    <net>
+    <net id="yu_et_al_2" type="P/T net">
         <token id="yu_et_al_2" red="0" green="0" blue="0"/>
         <place id="P1">
             <graphics>
