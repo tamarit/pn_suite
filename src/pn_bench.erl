@@ -52,7 +52,7 @@ bench(Directories, Timeout, SlicesPerNet, MaxSC) ->
                 DirDict = bench_dir(Dir, Timeout, SlicesPerNet, MaxSC, OutDev),     
                 update_total_dict(CDict, DirDict)     
             end,
-            new_alg_dict({0, 0}),
+            new_alg_dict({{0, 0}, []}),
             Directories),
     final_report(FinalDict, "Final report", OutDev),
     file:close(OutDev).
@@ -73,7 +73,7 @@ bench_dir(Dir, Timeout, SlicesPerNet, MaxSC, OutDev) ->
                 DictFile = bench_file(File, Timeout, SlicesPerNet, MaxSC, OutDev),
                 update_total_dict(CDict, DictFile)
             end,
-            new_alg_dict({0, 0}),
+            new_alg_dict({{0, 0}, []}),
             NetFiles),
     final_report(FDict, "Directory report", OutDev),
     FDict.
@@ -102,7 +102,7 @@ bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev) ->
                 DictSC = bench_sc(PN, SC, Timeout, OutDev, DictPropOri, CDict),
                 update_total_dict(CDict, DictSC)
             end,
-            new_alg_dict({0, 0}),
+            new_alg_dict({{0, 0}, []}),
             SCS),
     final_report(FinalDict, "File report", OutDev),
     FinalDict.
@@ -115,26 +115,24 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
                 bench_fun(A, PN, SC, Timeout, OutDev, DictPropOri)
             end,
             algorithms()),
-    Max = lists:max([R || R <- ResAlg, R /= none]),
+    {Max, _} = lists:max([R || R <- ResAlg, R /= none]),
     NormRes = 
         lists:map(
             fun
                 (none) ->
                     none;
-                (V) -> 
+                ({V, IP}) -> 
                     % io:format("~p / ~p\n", [V, Max]),
-                    V / Max 
+                    {V / Max, IP}
             end, 
             ResAlg),
     lists:foldl(
-        fun({#slicer{name = A}, V}, CDict) ->
-            case V of 
-                none ->
+        fun
+            ({_, none}, CDict) ->
                     CDict;
-                _ ->
-                    {OldValue, Count} = dict:fetch(A, CDict),
-                    dict:store(A, {OldValue + V, Count + 1}, CDict)
-            end
+            ({#slicer{name = A}, {V, IP}}, CDict) ->
+                {{OldValue, Count}, OldIP} = dict:fetch(A, CDict),
+                dict:store(A, {{OldValue + V, Count + 1}, IP ++ OldIP}, CDict)
         end,
         Dict,
         lists:zip(algorithms(), NormRes)).
@@ -187,12 +185,15 @@ store_fun_info_and_return_size(Res, PN, AN, SC, OutDev, DictPropOri) ->
                 end,
             InfoAlg = 
                 [
-                    "\tSize: " ++ integer_to_list(Size),
-                    "\tPreserverd properties: " ++ PreservedStr,
-                    "\tChanged properties: " ++ string:join(Changed, ", ")
+                    "\t- Size: " ++ integer_to_list(Size),
+                    "",
+                    "\t- Preserved properties: " ++ PreservedStr,
+                    "",
+                    "\t- Changed properties: " ++ string:join(Changed, ", "),
+                    ""
                 ],
             file:write(OutDev, list_to_binary(AN ++ ":\n" ++ string:join(InfoAlg, "\n") ++ "\n")),
-            Size
+            {Size, Changed}
         end,
     % io:format("Res: ~p\n", [Res]),
     case Size of 
@@ -222,14 +223,14 @@ final_report(Dict, Msg, OutDev) ->
     ListDict = 
         dict:to_list(Dict),
     Considered = 
-        [Item || Item = {_, {N,_}} <- ListDict, N > 0],
+        [Item || Item = {_, {{N,_}, _}} <- ListDict, N > 0],
     NotConsidered = 
         ListDict -- Considered,
     Processed = 
-        [{A, (N / C)} || {A, {N,C}} <- Considered],
+        [{A, {(N / C), IP}} || {A, {{N,C}, IP}} <- Considered],
     Sorted = 
         lists:sort(
-            fun({_, N1}, {_, N2}) ->
+            fun({_, {N1,_}}, {_, {N2, _}}) ->
                 N1 =< N2
             end,
             Processed),
@@ -241,8 +242,29 @@ final_report(Dict, Msg, OutDev) ->
                     "\nClassification (from smallest to biggest):\n"
                 ++  string:join(
                         lists:map(
-                            fun({A, N}) -> 
-                                A ++ ": " ++ pn_lib:format("~.3f", [N]) %float_to_list(N)
+                            fun({A, {N, CP}}) -> 
+                                Changed = 
+                                    lists:usort(CP),
+                                NotChanged = 
+                                    all_properties() -- Changed, 
+                                NotChangedStr = 
+                                    case Changed of 
+                                        [] ->
+                                            "All";
+                                        _ ->
+                                            string:join(NotChanged, ", ")
+                                    end,
+                                InfoAlg = 
+                                    [
+                                        A, 
+                                        "\t- Size: " ++ pn_lib:format("~.3f", [N]) ,
+                                        "",
+                                        "\t- Preserved properties: " ++ NotChangedStr,
+                                        "",
+                                        "\t- Changed properties: " ++ string:join(Changed, ", "),
+                                        ""
+                                    ],
+                                string:join(InfoAlg, "\n")
                             end,
                             Sorted),
                         "\n")
@@ -278,9 +300,9 @@ sep() ->
 
 update_total_dict(TotalDict, DirDict) ->  
     dict:map(
-        fun(K, {T, Count}) ->
-            {NT, NCount} = dict:fetch(K, DirDict),
-            {T + NT, Count + NCount}
+        fun(K, {{T, Count}, IP}) ->
+            {{NT, NCount}, NIP} = dict:fetch(K, DirDict),
+            {{T + NT, Count + NCount}, IP ++ NIP}
         end,
         TotalDict).
 
@@ -388,4 +410,15 @@ compare_properties(DictOri, DictSlice) ->
         {[], []},
         DictOri).
 
-
+all_properties() ->
+    [ 
+        "backwards_persistent", "output_nonbranching", "bicf", 
+        "strongly_connected", "free_choice", "pure", "plain", 
+        "persistent", "strongly_live", "k-marking", "s_net", 
+        "nonpure_only_simple_side_conditions", "bcf", "num_tokens",
+        "asymmetric_choice", "safe", "weakly_live", 
+        "restricted_free_choice", "homogeneous", "k-bounded",
+        "bounded", "reversible", "conflict_free", 
+        "weakly_connected", "num_places", "num_arcs", "simply_live",
+         "num_transitions", "t_net", "num_labels", "isolated_elements"
+    ].
