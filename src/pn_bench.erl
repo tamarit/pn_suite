@@ -115,13 +115,14 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
                 bench_fun(A, PN, SC, Timeout, OutDev, DictPropOri)
             end,
             algorithms()),
-    Max = lists:max(ResAlg),
+    Max = lists:max([R || R <- ResAlg, R /= none]),
     NormRes = 
         lists:map(
             fun
                 (none) ->
                     none;
                 (V) -> 
+                    % io:format("~p / ~p\n", [V, Max]),
                     V / Max 
             end, 
             ResAlg),
@@ -158,18 +159,36 @@ store_fun_info_and_return_size(none, _, AN, _, OutDev, _) ->
     file:write(OutDev, list_to_binary(AN ++ ": timeouted\n")),
     none;
 store_fun_info_and_return_size(Res, PN, AN, SC, OutDev, DictPropOri) ->
-    Size = dict:size(Res#petri_net.places) + dict:size(Res#petri_net.transitions),
+    NP = dict:size(Res#petri_net.places),
+    NT = dict:size(Res#petri_net.transitions),
+    Size = NP + NT,
     FunOK = 
         fun() ->
-            
-            {DictSlice, _} = 
-                apt_properties(Res), 
             {Preserved, Changed} = 
-                compare_properties(DictPropOri, DictSlice),
+                case 
+                    {
+                        list_to_integer(dict:fetch("num_places", DictPropOri)), 
+                        list_to_integer(dict:fetch("num_transitions", DictPropOri))
+                    } 
+                of 
+                    {NP, NT} ->
+                        {dict:fetch_keys(DictPropOri), []};
+                    _ ->
+                        {DictSlice, _} = 
+                            apt_properties(Res), 
+                        compare_properties(DictPropOri, DictSlice)
+                end,
+            PreservedStr = 
+                case Changed of 
+                    [] ->
+                        "All";
+                    _ ->
+                        string:join(Preserved, ", ")
+                end,
             InfoAlg = 
                 [
                     "\tSize: " ++ integer_to_list(Size),
-                    "\tPreserverd properties: " ++ string:join(Preserved, ", "),
+                    "\tPreserverd properties: " ++ PreservedStr,
                     "\tChanged properties: " ++ string:join(Changed, ", ")
                 ],
             file:write(OutDev, list_to_binary(AN ++ ":\n" ++ string:join(InfoAlg, "\n") ++ "\n")),
