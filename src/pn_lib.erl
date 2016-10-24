@@ -20,6 +20,8 @@ build_digraph(
         transitions = Ts0,
         arcs = As,
         digraph = G}) ->
+    digraph:del_edges(G, digraph:edges(G)),
+    digraph:del_vertices(G, digraph:vertices(G)),
     Ps = get_value_list_from_dict(Ps0),
     Ts = get_value_list_from_dict(Ts0),
     lists:map(

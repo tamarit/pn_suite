@@ -319,12 +319,13 @@ export(PN, Suffix) ->
     Op2 = "dot",
     Op3 = "PNML compatible with PIPE",
     Op4 = "LoLa",
-    Op5 = "Other formats",
+    Op5 = "APT",
+    Op6 = "Other formats",
     {_, Lines, Ans, AnsDict} = 
         lists:foldl(
             fun pn_lib:build_question_option/2,
             {1, [], [], dict:new()},
-            [Op1, Op2, Op3, Op4, Op5]),
+            [Op1, Op2, Op3, Op4, Op5, Op6]),
     QuestionLines = 
             ["These are the available output formats: " | lists:reverse(Lines)]
         ++  ["What format do you need?" 
@@ -337,7 +338,10 @@ export(PN, Suffix) ->
         Op4 -> 
             pn_lib:build_digraph(PN),
             pn_output:print_lola(PNtoExport, Suffix);
-        Op5 ->
+        Op5 -> 
+            pn_lib:build_digraph(PN),
+            pn_output:print_apt(PNtoExport, Suffix);
+        Op6 ->
             ask_other_formats(PNtoExport, Suffix);
         Format ->
             pn_output:print_net(PNtoExport, false, Format, Suffix)

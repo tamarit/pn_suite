@@ -283,9 +283,14 @@ marking_to_lola([], Acc) ->
     Acc.
 
 transition_to_lola(#transition{name = T}, G) ->
-    FunPlace = fun(P) -> P ++ ": 1" end,
-    InTStr = lists:map(FunPlace, digraph:in_neighbours(G, T)),
-    OutTStr = lists:map(FunPlace, digraph:out_neighbours(G, T)),
+    FunPlace = 
+        fun(P) -> 
+            P ++ ": 1" 
+        end,
+    InTStr = 
+        lists:map(FunPlace, digraph:in_neighbours(G, T)), 
+    OutTStr = 
+        lists:map(FunPlace, digraph:out_neighbours(G, T)), 
     Header = "TRANSITION " ++ T,
     Consume = "\tCONSUME " ++ string:join(InTStr, ", ") ++ ";",
     Produce = "\tPRODUCE " ++ string:join(OutTStr, ", ") ++ ";",
