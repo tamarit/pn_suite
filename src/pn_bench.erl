@@ -8,10 +8,13 @@
 % Benchmarks
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+timeout_analysis() ->
+    2000.
+
 bench() ->
     Directories = 
         [
-            % "examples/mcc_models/2011/FMS",
+            "examples/mcc_models/2011/Peterson",
             "examples/other"
         ],
     Timeout = 
@@ -115,40 +118,48 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
                 bench_fun(A, PN, SC, Timeout, OutDev, DictPropOri)
             end,
             algorithms()),
-    {Max, _} = lists:max([R || R <- ResAlg, R /= none]),
-    NormRes = 
-        lists:map(
-            fun
-                (none) ->
-                    none;
-                ({V, IP}) -> 
-                    % io:format("~p / ~p\n", [V, Max]),
-                    {V / Max, IP}
-            end, 
-            ResAlg),
-    lists:foldl(
-        fun
-            ({_, none}, CDict) ->
-                    CDict;
-            ({#slicer{name = A}, {V, IP}}, CDict) ->
-                {{OldValue, Count}, OldIP} = dict:fetch(A, CDict),
-                dict:store(A, {{OldValue + V, Count + 1}, IP ++ OldIP}, CDict)
-        end,
-        Dict,
-        lists:zip(algorithms(), NormRes)).
+    case [R || R <- ResAlg, R /= none] of 
+        [] ->
+            Dict;
+        NoNone ->
+            {Max, _} = lists:max(NoNone),
+            NormRes = 
+                lists:map(
+                    fun
+                        (none) ->
+                            none;
+                        ({V, IP}) -> 
+                            % io:format("~p / ~p\n", [V, Max]),
+                            {V / Max, IP}
+                    end, 
+                    ResAlg),
+            lists:foldl(
+                fun
+                    ({_, none}, CDict) ->
+                            CDict;
+                    ({#slicer{name = A}, {V, IP}}, CDict) ->
+                        {{OldValue, Count}, OldIP} = dict:fetch(A, CDict),
+                        dict:store(A, {{OldValue + V, Count + 1}, IP ++ OldIP}, CDict)
+                end,
+                Dict,
+                lists:zip(algorithms(), NormRes))
+    end.
 
 bench_fun(#slicer{name = AN, function = AF}, PN, SC, Timeout, OutDev, DictPropOri) ->
     Self = self(),
-    spawn(
-        fun() -> 
-            Self!AF(PN, SC)
-        end),
+    flush(),
+    Pid = 
+        spawn(
+            fun() -> 
+                Self!AF(PN, SC)
+            end),
     Res = 
         receive
             Res0 ->
                 Res0
         after
             Timeout ->
+                exit(Pid, kill),
                 none
         end,
     store_fun_info_and_return_size(Res, PN, AN, SC, OutDev, DictPropOri).
@@ -157,24 +168,30 @@ store_fun_info_and_return_size(none, _, AN, _, OutDev, _) ->
     file:write(OutDev, list_to_binary(AN ++ ": timeouted\n")),
     none;
 store_fun_info_and_return_size(Res, PN, AN, SC, OutDev, DictPropOri) ->
+    % io:format("~p\n", [Res]),
     NP = dict:size(Res#petri_net.places),
     NT = dict:size(Res#petri_net.transitions),
     Size = NP + NT,
     FunOK = 
         fun() ->
             {Preserved, Changed} = 
-                case 
-                    {
-                        list_to_integer(dict:fetch("num_places", DictPropOri)), 
-                        list_to_integer(dict:fetch("num_transitions", DictPropOri))
-                    } 
-                of 
-                    {NP, NT} ->
-                        {dict:fetch_keys(DictPropOri), []};
+                case DictPropOri of 
+                    none ->
+                        {[], []};
                     _ ->
-                        {DictSlice, _} = 
-                            apt_properties(Res), 
-                        compare_properties(DictPropOri, DictSlice)
+                        case 
+                            {
+                                list_to_integer(dict:fetch("num_places", DictPropOri)), 
+                                list_to_integer(dict:fetch("num_transitions", DictPropOri))
+                            } 
+                        of 
+                            {NP, NT} ->
+                                {dict:fetch_keys(DictPropOri), []};
+                            _ ->
+                                {DictSlice, _} = 
+                                    apt_properties(Res), 
+                                compare_properties(DictPropOri, DictSlice)
+                        end
                 end,
             PreservedStr = 
                 case Changed of 
@@ -381,9 +398,35 @@ apt_properties(PN) ->
     AptFile = Dir ++ PN#petri_net.name ++ ".apt",
     pn_lib:build_digraph(PN),
     pn_output:print_apt(PN, ""),
-    ResAnalyses = os:cmd("java -jar apt/apt.jar examine_pn "  ++ AptFile),
-    DictProperties = parse_properties(ResAnalyses),
-    {DictProperties, ResAnalyses}.
+    % Self = self(),
+    Cmd = 
+        "java -jar apt/apt.jar examine_pn "  ++ AptFile,
+    flush(),
+    cmd_run(Cmd, timeout_analysis()).
+    % Port = erlang:open_port({spawn, Cmd},[exit_status]),
+    % receive
+    %     {Port, {data, NewData}} -> loop(Port, [Data | NewData], Timeout);
+    %     {Port, {exit_status, 0}} -> Data;
+    %     {Port, {exit_status, S}} -> throw({commandfailed, S})
+    % after Timeout ->
+    %     throw(timeout)
+    % end,
+    % io:format("~p\n", [Cmd]),
+    % Pid = 
+    %     spawn(
+    %         fun() ->
+    %             Self!os:cmd(Cmd)
+    %         end),
+    % receive 
+    %     ResAnalyses ->
+    %         DictProperties = parse_properties(ResAnalyses),
+    %         {DictProperties, ResAnalyses}
+    % after 
+    %     TO ->
+    %         exit(Pid, kill),
+    %         % io:format("Pids: ~s\n", [os:cmd("pgrep -P " ++ os:getpid())]),
+    %         {none, "No analyzed (timeouted).\n\n"}
+    % end.
 
 parse_properties(PropStr) ->
     Lines = string:tokens(PropStr, "\n"),
@@ -397,6 +440,8 @@ parse_properties(PropStr) ->
             Lines),
     dict:from_list(Pairs).
 
+compare_properties(_, none) ->
+    {[], []};
 compare_properties(DictOri, DictSlice) ->
     dict:fold(
         fun(K, V, {CP, CC}) ->
@@ -422,3 +467,42 @@ all_properties() ->
         "weakly_connected", "num_places", "num_arcs", "simply_live",
          "num_transitions", "t_net", "num_labels", "isolated_elements"
     ].
+
+flush() ->
+    receive
+        _ -> 
+            flush()
+    after 0 ->
+        ok
+    end.
+    
+cmd_run(Cmd, Timeout) ->
+    Port = erlang:open_port({spawn, Cmd},[exit_status]),
+    [PidOs] = 
+        [PidOs0 || {os_pid,PidOs0} <- erlang:port_info(Port)],
+    Res = cmd_loop(Port, [], Timeout),
+    try 
+        port_close(Port),
+        os:cmd("kill -9 " ++ integer_to_list(PidOs))
+    catch 
+        _:_ ->
+            ok
+    end,
+    Res.
+    
+cmd_loop(Port, Data, Timeout) ->
+    receive
+        {Port, {data, NewData}} -> 
+            cmd_loop(Port, [NewData | Data], Timeout);
+        {Port, {exit_status, 0}} -> 
+            ResAnalyses = string:join(lists:reverse(Data), ""),
+            % io:format("~s\n", [ResAnalyses]),
+            DictProperties = parse_properties(ResAnalyses),
+            {DictProperties, ResAnalyses};
+        {Port, {exit_status, _}} -> 
+            {none, "No analyzed (error).\n\n"}
+    after 
+        Timeout ->
+
+            {none, "No analyzed (timeouted).\n\n"}
+    end.
