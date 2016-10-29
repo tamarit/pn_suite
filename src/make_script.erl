@@ -20,7 +20,7 @@ from_path_web(Path) ->
 	Lines = 
 		["#!/bin/bash"
 		,""
-		,"if [ $# != 1 ]"
+		,"if [ $# != 4 ]"
 		,"then" 
 		,"echo -e \"Usage:\n\tpn_suite PNML_FILE SLC_ALG TIMEOUT SC\""
 		,"else"

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ $# != 34 ]
+if [ $# != 4 ]
 then 
-	echo -e "Usage:\n\tpn_suite PNML_FILE TIMEOUT SC"
+	echo -e "Usage:\n\tpn_suite PNML_FILE SLC_ALG TIMEOUT SC"
 else
 	erl -pa ebin -run pn_suite web $1 $2 $3 $4 -noshell -s erlang halt
 fi
