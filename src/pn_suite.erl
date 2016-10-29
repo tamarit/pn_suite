@@ -245,7 +245,7 @@ server_sequence([]) ->
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-web([File, Alg, TimeoutStr, SCStr]) ->
+web([File, Alg, Timeout, SCStr]) ->
     {PN, SC0} = 
         try 
             PN0 = 
@@ -294,9 +294,18 @@ web([File, Alg, TimeoutStr, SCStr]) ->
                         io:format("Slicing using Llorens et al.\n"),
                         fun pn_slice:slice/2
                 end,
-            PNSlice = FunSlice(PN, SC),
-            pn_output:print_pnml_file(PNSlice, "pn_slice.xml"),
-            io:format(digraph:size(PN#petri_net.digraph))
+            Self = self(),
+            spawn(fun() -> Self!FunSlice(PN, SC) end),
+            receive 
+                Res -> 
+                   PNSlice = Res, 
+                    pn_output:print_pnml_file(PNSlice, "pn_slice.xml"),
+                    io:format(digraph:size(PN#petri_net.digraph))
+            after 
+                Timeout ->
+                    io:format("Execution cut due to timeout.\n"),
+                    io:format("0")
+            end
     end.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
