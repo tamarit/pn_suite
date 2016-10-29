@@ -1,7 +1,10 @@
 -module( pn_output ).
  
--export( [  print_net_run/1, print_net/4, print_pnml/2, 
-            print_lola/2, print_apt/2, formats/0] ).
+-export( [  print_net_run/1, print_net/4, print_net_file/3, 
+            print_pnml/2, print_pnml_file/2,
+            print_lola/2, print_lola_file/2, 
+            print_apt/2, print_apt_file/2, 
+            formats/0] ).
 
 -include("pn.hrl").
  
@@ -95,6 +98,15 @@ arc_to_dot(
 print_net_run(PN) ->
     print_net(PN, true, "pdf", "_run").   
 
+print_net_file(PN, File, Format) ->
+    file:write_file(
+        File,  
+        list_to_binary(to_dot(PN, false))),
+    os:cmd( "dot -T" ++ Format ++ " " 
+        ++  "pn_slice_temp.dot > "
+        ++   File ++ "." ++ Format),
+    os:cmd("rm -f pn_slice_temp.dot").
+
 print_net(PN, ShowEnabled, Format, Suffix) ->
     Output = PN#petri_net.dir ++ "/output",
     os:cmd("mkdir " ++ Output),
@@ -132,6 +144,11 @@ formats() ->
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PNML  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+print_pnml_file(PN, File) ->
+    file:write_file(
+        File, 
+        list_to_binary(to_pnml(PN))).
 
 print_pnml(PN, Suffix) ->
     os:cmd("mkdir " ++ PN#petri_net.dir ++ "/output"),
@@ -243,6 +260,11 @@ arc_to_pnml(
 % LOLA format  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+print_lola_file(PN, File) ->
+    file:write_file(
+        File, 
+        list_to_binary(to_lola(PN))).
+
 print_lola(PN, Suffix) ->
     os:cmd("mkdir " ++ PN#petri_net.dir ++ "/output"),
     file:write_file(
@@ -299,6 +321,11 @@ transition_to_lola(#transition{name = T}, G) ->
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % APT format  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+print_apt_file(PN, File) ->
+    file:write_file(
+        File, 
+        list_to_binary(to_apt(PN))).
 
 print_apt(PN, Suffix) ->
     os:cmd("mkdir " ++ PN#petri_net.dir ++ "/output"),

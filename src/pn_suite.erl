@@ -1,6 +1,6 @@
 -module( pn_suite ).
  
--export( [main/1] ).
+-export( [main/1, web/1] ).
 
 -include("pn.hrl").
  
@@ -240,6 +240,64 @@ server_sequence([]) ->
             PidAns!{next, none}
     end.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Web
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+web([File, Alg, TimeoutStr, SCStr]) ->
+    {PN, SC0} = 
+        try 
+            PN0 = 
+                pn_input:read_pn(File),
+            io:format(
+                "Petri net ~s successfully read.\n\n", [PN0#petri_net.name]),
+            Ps = 
+                PN0#petri_net.places,
+            PsOnlyKey = 
+                [ K || {K, _} <- dict:to_list(Ps)],
+            SCParsed = string:tokens(SCStr, " ,"),
+            case [P || P <- SCParsed, lists:member(P, PsOnlyKey)] of 
+                SCParsed ->
+                    {PN0, SCParsed};
+                SCFiltered ->
+                    io:format("The slicing criterion contains unknown places. They will be ignored.\n"),       
+                    {PN0, SCFiltered}
+            end
+        catch 
+            _:_ ->
+                io:format("The input Petri net cannot be read.\n"),
+                {error, error}
+        end,
+    case PN of 
+        error ->
+            ok;
+        _ ->
+            SC = lists:usort(SC0),
+            io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
+            pn_lib:build_digraph(PN),
+            FunSlice = 
+                case alg of 
+                    "llorens_imp" ->
+                        io:format("Slicing using Llorens et al. improved.\n"),
+                        fun pn_slice:slice_imp/2;
+                    "rakow_ctl" ->
+                        io:format("Slicing using Rakow CTL.\n"),
+                        fun pn_rakow:slice_ctl/2;
+                    "rakow_safety" ->
+                        io:format("Slicing using Rakow safety.\n"),
+                        fun pn_rakow:slice_safety/2;
+                    "yu" ->
+                        io:format("Slicing using Rakow safety.\n"),
+                        fun pn_yuetal:slice/2;
+                    _ ->
+                        io:format("Slicing using Llorens et al.\n"),
+                        fun pn_slice:slice/2
+                end,
+            PNSlice = FunSlice(PN, SC),
+            pn_output:print_pnml_file(PNSlice, "pn_slice.xml"),
+            io:format(digraph:size(PN#petri_net.digraph))
+    end.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Run functions
