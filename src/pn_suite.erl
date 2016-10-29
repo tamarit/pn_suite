@@ -245,8 +245,8 @@ server_sequence([]) ->
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-web([File, Alg, Timeout, SCStr]) ->
-    {PN, SC0} = 
+web([File, Alg, TimeoutStr, SCStr]) ->
+    {PN, SC0, Timeout} = 
         try 
             PN0 = 
                 pn_input:read_pn(File),
@@ -257,17 +257,25 @@ web([File, Alg, Timeout, SCStr]) ->
             PsOnlyKey = 
                 [ K || {K, _} <- dict:to_list(Ps)],
             SCParsed = string:tokens(SCStr, " ,"),
+            Timeout0 = 
+               case list_to_integer(TimeoutStr) of
+                Num when (is_number(Num) andalso Num =< 2000 ) -> 
+                    Num;
+                _ -> 
+                    io:format("Timeout set to default value, i.e. 50 milisec.\n"),
+                    50
+               end,
             case [P || P <- SCParsed, lists:member(P, PsOnlyKey)] of 
                 SCParsed ->
-                    {PN0, SCParsed};
+                    {PN0, SCParsed, Timeout0};
                 SCFiltered ->
                     io:format("The slicing criterion contains unknown places. They will be ignored.\n"),       
-                    {PN0, SCFiltered}
+                    {PN0, SCFiltered, Timeout0}
             end
         catch 
             _:_ ->
                 io:format("The input Petri net cannot be read.\n"),
-                {error, error}
+                {error, error,error}
         end,
     case PN of 
         error ->

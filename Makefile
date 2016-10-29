@@ -16,8 +16,11 @@ clean:
 
 install:
 	@erl -pa ebin -run make_script from_path $(ROOT_DIR)  -noshell -s erlang halt
+	@erl -pa ebin -run make_script from_path_web $(ROOT_DIR)  -noshell -s erlang halt
 	@chmod +x pn_suite_temp
+	@chmod +x pn_slice_web_temp
 	mv -f pn_suite_temp $(ERLC_PATH)/pn_suite
+	mv -f pn_slice_web_temp $(ERLC_PATH)/pn_slice_web
 
 bench:
 	@erl -pa ebin -run pn_bench bench -noshell -s erlang halt
