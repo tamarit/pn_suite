@@ -308,7 +308,7 @@ web([File, Alg, TimeoutStr, SCStr]) ->
                 Res -> 
                    PNSlice = Res, 
                     pn_output:print_pnml_file(PNSlice, "pn_slice.xml"),
-                    io:format(digraph:size(PN#petri_net.digraph))
+                    io:format("1")
             after 
                 Timeout ->
                     io:format("Execution cut due to timeout.\n"),
