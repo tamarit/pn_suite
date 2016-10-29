@@ -307,7 +307,7 @@ web([File, Alg, TimeoutStr, SCStr]) ->
             receive 
                 Res -> 
                    PNSlice = Res, 
-                    pn_output:print_pnml_file(PNSlice, "pn_slice.xml"),
+                    pn_output:print_pnml_file(PNSlice, "pn_slicer_slice.xml"),
                     io:format("1")
             after 
                 Timeout ->
