@@ -258,13 +258,19 @@ web([File, Alg, TimeoutStr, SCStr]) ->
                 [ K || {K, _} <- dict:to_list(Ps)],
             SCParsed = string:tokens(SCStr, " ,"),
             Timeout0 = 
-               case list_to_integer(TimeoutStr) of
-                Num when (is_number(Num) andalso Num =< 2000 ) -> 
-                    Num;
-                _ -> 
-                    io:format("Timeout set to default value, i.e. 50 milisec.\n"),
-                    50
-               end,
+                try 
+                   case list_to_integer(TimeoutStr) of
+                    Num when (is_number(Num) andalso Num =< 2000 ) -> 
+                        Num;
+                    _ -> 
+                        io:format("Timeout set to default value, i.e. 50 milisec.\n"),
+                        50
+                   end
+                catch 
+                    _:_ ->
+                        io:format("Timeout set to default value, i.e. 50 milisec.\n"),
+                        50
+                end,
             case [P || P <- SCParsed, lists:member(P, PsOnlyKey)] of 
                 SCParsed ->
                     {PN0, SCParsed, Timeout0};
