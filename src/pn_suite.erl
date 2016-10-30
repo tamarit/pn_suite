@@ -281,6 +281,7 @@ web([File, Alg, TimeoutStr, SCStr]) ->
         catch 
             _:_ ->
                 io:format("The input Petri net cannot be read.\n"),
+                io:format("error_format\n"),
                 {error, error,error}
         end,
     case PN of 
