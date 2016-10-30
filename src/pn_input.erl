@@ -74,11 +74,10 @@ read_pos_from_svg(PN) ->
     extract_positions(SVG, PN).
 
 read_pos_from_svg_web(PN) ->
-    Suffix = "_temp",
-    pn_output:print_net_file(PN, "pn_slicer_slice", "svg"),
+    pn_output:print_net_file(PN, "pn_slicer_temp", "svg"),
     SVG = 
-        read_xml_document("pn_slicer_slice.svg"),
-    os:cmd("rm -f pn_slicer_slice.svg"),
+        read_xml_document("pn_slicer_temp.svg"),
+    os:cmd("rm -f pn_slicer_temp.svg"),
     extract_positions(SVG, PN).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
