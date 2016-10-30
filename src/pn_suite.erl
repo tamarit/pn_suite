@@ -1,6 +1,6 @@
 -module( pn_suite ).
  
--export( [main/1, web/1] ).
+-export( [main/1, web/1, web_convert/1] ).
 
 -include("pn.hrl").
  
@@ -315,6 +315,31 @@ web([File, Alg, TimeoutStr, SCStr]) ->
                     io:format("0")
             end
     end.
+
+web_convert(Format) ->
+    case Format of 
+        "pnml" ->
+            ok;
+        "lola" ->
+            PN = pn_input:read_pn("pn_slicer_slice.xml"),
+            pn_lib:build_digraph(PN),
+            pn_output:print_lola_file(
+                PN, 
+                "pn_slicer_slice.lola");
+        "apt" ->
+            PN = pn_input:read_pn("pn_slicer_slice.xml"),
+            pn_lib:build_digraph(PN),
+            pn_output:print_apt_file(
+                PN, 
+                "pn_slicer_slice.apt");   
+        _ ->
+            PN = pn_input:read_pn("pn_slicer_slice.xml"),
+            pn_lib:build_digraph(PN),
+            pn_output:print_net_file(
+                PN,
+                "pn_slicer_slice", Format)      
+    end.
+    
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Run functions
