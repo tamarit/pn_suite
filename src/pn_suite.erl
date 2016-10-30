@@ -302,7 +302,7 @@ web([File, Alg, TimeoutStr, SCStr]) ->
                         io:format("Slicing using Rakow safety.\n"),
                         fun pn_rakow:slice_safety/2;
                     "yu" ->
-                        io:format("Slicing using Rakow safety.\n"),
+                        io:format("Slicing using Yu et al.\n"),
                         fun pn_yuetal:slice/2;
                     _ ->
                         io:format("Slicing using Llorens et al.\n"),
