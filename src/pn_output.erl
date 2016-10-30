@@ -100,7 +100,7 @@ print_net_run(PN) ->
 
 print_net_file(PN, File, Format) ->
     file:write_file(
-        File,  
+        "pn_slicer_temp.dot",  
         list_to_binary(to_dot(PN, false))),
     os:cmd( "dot -T" ++ Format ++ " " 
         ++  "pn_slicer_temp.dot > "
