@@ -302,21 +302,31 @@ web([File, Alg, TimeoutStr, SCStr]) ->
                         io:format("Slicing using Llorens et al.\n"),
                         fun pn_slice:slice/2
                 end,
-            Self = self(),
-            spawn(fun() -> Self!FunSlice(PN, SC) end),
-            receive 
-                Res -> 
-                    PNSlice = Res, 
+            case SC of
+                [] ->
                     PNtoExport = 
-                        pn_input:read_pos_from_svg_web(PNSlice),
+                        pn_input:read_pos_from_svg_web(PN),
                     pn_output:print_pnml_file(
                         PNtoExport, 
                         "pn_slicer_slice.xml"),
-                    io:format("1")
-            after 
-                Timeout ->
-                    io:format("Execution cut due to timeout.\n"),
-                    io:format("0")
+                    io:format("1");                
+                _ -> 
+                    Self = self(),
+                    spawn(fun() -> Self!FunSlice(PN, SC) end),
+                    receive 
+                        Res -> 
+                            PNSlice = Res, 
+                            PNtoExport = 
+                                pn_input:read_pos_from_svg_web(PNSlice),
+                            pn_output:print_pnml_file(
+                                PNtoExport, 
+                                "pn_slicer_slice.xml"),
+                            io:format("1")
+                    after 
+                        Timeout ->
+                            io:format("Execution cut due to timeout.\n"),
+                            io:format("0")
+                    end
             end
     end.
 
