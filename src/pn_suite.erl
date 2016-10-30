@@ -318,7 +318,7 @@ web([File, Alg, TimeoutStr, SCStr]) ->
 
 web_convert(Format) ->
     case Format of 
-        "pnml" ->
+        "xml" ->
             ok;
         "lola" ->
             PN = pn_input:read_pn("pn_slicer_slice.xml"),
