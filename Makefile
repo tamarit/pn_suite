@@ -22,6 +22,8 @@ install:
 bench:
 	@erl -pa ebin -run pn_bench bench -noshell -s erlang halt
 
+select:
+	@erl -pa ebin -run pn_select_html create -noshell -s erlang halt	
 
 # ***********************************
 # ************** Tests **************

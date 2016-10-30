@@ -285,7 +285,7 @@ web([File, Alg, TimeoutStr, SCStr]) ->
             io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
             pn_lib:build_digraph(PN),
             FunSlice = 
-                case alg of 
+                case Alg of 
                     "llorens_imp" ->
                         io:format("Slicing using Llorens et al. improved.\n"),
                         fun pn_slice:slice_imp/2;
