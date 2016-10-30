@@ -306,8 +306,12 @@ web([File, Alg, TimeoutStr, SCStr]) ->
             spawn(fun() -> Self!FunSlice(PN, SC) end),
             receive 
                 Res -> 
-                   PNSlice = Res, 
-                    pn_output:print_pnml_file(PNSlice, "pn_slicer_slice.xml"),
+                    PNSlice = Res, 
+                    PNtoExport = 
+                        pn_input:read_pos_from_svg_web(PNSlice),
+                    pn_output:print_pnml_file(
+                        PNSlice, 
+                        "pn_slicer_slice.xml"),
                     io:format("1")
             after 
                 Timeout ->

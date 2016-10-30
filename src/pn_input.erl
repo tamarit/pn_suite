@@ -1,6 +1,7 @@
 -module( pn_input ).
  
--export( [read_pn/1, read_pos_from_svg/1, read_data/1] ).
+-export( [  read_pn/1, read_pos_from_svg/1, 
+            read_pos_from_svg_web/1, read_data/1] ).
 
 -include("pn.hrl").
  
@@ -70,6 +71,14 @@ read_pos_from_svg(PN) ->
     os:cmd(
             "rm -f " ++  PN#petri_net.dir ++ "/output/"
         ++  PN#petri_net.name ++ "_temp.svg"),
+    extract_positions(SVG, PN).
+
+read_pos_from_svg_web(PN) ->
+    Suffix = "_temp",
+    pn_output:print_net_file(PN, "pn_slicer_slice", "svg"),
+    SVG = 
+        read_xml_document("pn_slicer_slice.svg"),
+    os:cmd("rm -f pn_slicer_slice.svg"),
     extract_positions(SVG, PN).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%

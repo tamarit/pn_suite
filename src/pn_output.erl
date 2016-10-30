@@ -103,9 +103,9 @@ print_net_file(PN, File, Format) ->
         File,  
         list_to_binary(to_dot(PN, false))),
     os:cmd( "dot -T" ++ Format ++ " " 
-        ++  "pn_slice_temp.dot > "
+        ++  "pn_slicer_temp.dot > "
         ++   File ++ "." ++ Format),
-    os:cmd("rm -f pn_slice_temp.dot").
+    os:cmd("rm -f pn_slicer_temp.dot").
 
 print_net(PN, ShowEnabled, Format, Suffix) ->
     Output = PN#petri_net.dir ++ "/output",
