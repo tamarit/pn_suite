@@ -115,7 +115,7 @@ slice_imp(PN, SC) ->
         lists:map(
             fun({PsB, TsB}) ->
                 BPN = pn_lib:filter_pn(PN, {PsB, TsB}),
-                {BPN, forward_slice_imp(BPN)}
+                {BPN, forward_slice(BPN)}
             end,
             ListOfPsBTsB),
     % io:format("~p\n", [ListOfPsFTsF]),
@@ -228,68 +228,68 @@ backward_slice_imp(_, [], _, {PsS, TsS}) ->
 %             lists:zip(DiffPs, DiffTs)),
 %     {sets:to_list(InterPs), sets:union(InterPs, KPs), sets:union(InterTs, KTs)}.
     
-forward_slice_imp(PN = #petri_net{places = Ps}) ->
-    StartingPs = 
-        dict:fold(
-            fun
-                (K, #place{marking = IM}, Acc) when IM > 0 ->
-                    [K | Acc];
-                (_, _, Acc) ->
-                    Acc
-            end,
-            [],
-            Ps),
-    % io:format("StartingPs: ~p\n", [StartingPs]),
-    #petri_net{transitions = NTs} 
-        = pn_run:set_enabled_transitions(PN),
-    StartingTs = 
-        dict:fold(
-            fun
-                (K, #transition{enabled = true}, Acc) -> 
-                    [K | Acc];
-                (_, _, Acc) ->
-                    Acc 
-            end,
-            [],
-            NTs),
-    % io:format("StartingTs: ~p\n", [StartingTs]),
-    forward_slice_imp(
-        PN,
-        sets:from_list(StartingPs), 
-        sets:from_list([]), 
-        sets:from_list(StartingTs)).
+% forward_slice_imp(PN = #petri_net{places = Ps}) ->
+%     StartingPs = 
+%         dict:fold(
+%             fun
+%                 (K, #place{marking = IM}, Acc) when IM > 0 ->
+%                     [K | Acc];
+%                 (_, _, Acc) ->
+%                     Acc
+%             end,
+%             [],
+%             Ps),
+%     % io:format("StartingPs: ~p\n", [StartingPs]),
+%     #petri_net{transitions = NTs} 
+%         = pn_run:set_enabled_transitions(PN),
+%     StartingTs = 
+%         dict:fold(
+%             fun
+%                 (K, #transition{enabled = true}, Acc) -> 
+%                     [K | Acc];
+%                 (_, _, Acc) ->
+%                     Acc 
+%             end,
+%             [],
+%             NTs),
+%     % io:format("StartingTs: ~p\n", [StartingTs]),
+%     forward_slice_imp(
+%         PN,
+%         sets:from_list(StartingPs), 
+%         sets:from_list([]), 
+%         sets:from_list(StartingTs)).
 
-forward_slice_imp(PN = #petri_net{transitions = Ts, digraph = G}, W, R, V) ->
-    case sets:to_list(V) of 
-        [] ->
-            {W, R};
-        _ ->
-            OutV = 
-                lists:append(
-                    [digraph:out_neighbours(G, P) 
-                    || P <- sets:to_list(V)]),
-            NW = sets:union(W, sets:from_list(OutV)),
-            NR = sets:union(R, V),
-            NV0 = 
-                dict:fold(
-                    fun(K, _, Acc) ->
-                        case sets:is_element(K, NR) of 
-                            true ->
-                                Acc;
-                            false ->
-                                InK = 
-                                    sets:from_list(
-                                        digraph:in_neighbours(G, K)),
-                                case sets:is_subset(InK, NW) of 
-                                    true ->
-                                        [K | Acc];
-                                    false ->
-                                        Acc
-                                end
-                        end
-                    end,
-                    [],
-                    Ts),
-            NV = sets:from_list(NV0),
-            forward_slice_imp(PN, NW, NR, NV)
-    end.
+% forward_slice_imp(PN = #petri_net{transitions = Ts, digraph = G}, W, R, V) ->
+%     case sets:to_list(V) of 
+%         [] ->
+%             {W, R};
+%         _ ->
+%             OutV = 
+%                 lists:append(
+%                     [digraph:out_neighbours(G, P) 
+%                     || P <- sets:to_list(V)]),
+%             NW = sets:union(W, sets:from_list(OutV)),
+%             NR = sets:union(R, V),
+%             NV0 = 
+%                 dict:fold(
+%                     fun(K, _, Acc) ->
+%                         case sets:is_element(K, NR) of 
+%                             true ->
+%                                 Acc;
+%                             false ->
+%                                 InK = 
+%                                     sets:from_list(
+%                                         digraph:in_neighbours(G, K)),
+%                                 case sets:is_subset(InK, NW) of 
+%                                     true ->
+%                                         [K | Acc];
+%                                     false ->
+%                                         Acc
+%                                 end
+%                         end
+%                     end,
+%                     [],
+%                     Ts),
+%             NV = sets:from_list(NV0),
+%             forward_slice_imp(PN, NW, NR, NV)
+%     end.

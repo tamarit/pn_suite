@@ -17,7 +17,7 @@ clean:
 install:
 	@erl -pa ebin -run make_script from_path $(ROOT_DIR)  -noshell -s erlang halt
 	@chmod +x pn_suite_temp
-	mv -f pn_suite_temp $(ERLC_PATH)/pn_suite
+	@mv -f pn_suite_temp $(ERLC_PATH)/pn_suite
 
 bench:
 	@erl -pa ebin -run pn_bench bench -noshell -s erlang halt
