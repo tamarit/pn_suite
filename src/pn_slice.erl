@@ -205,6 +205,10 @@ backward_slice_imp(PN = #petri_net{digraph = G}, [P | W], Done, {PsS, TsS}) ->
 backward_slice_imp(_, [], _, {PsS, TsS}) ->
     [{sets:from_list(PsS), sets:from_list(TsS)}].
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Old Code
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % remove_useless({Ps, Ts}) ->
 %     InterPs = sets:intersection(Ps),
 %     InterTs = sets:intersection(Ts),

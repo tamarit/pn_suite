@@ -14,8 +14,8 @@ timeout_analysis() ->
 bench() ->
     Directories = 
         [
-            "examples/mcc_models/2011/Peterson",
             "examples/other"
+            % ,"examples/mcc_models/2011/Peterson"
         ],
     Timeout = 
         1000,
@@ -123,6 +123,44 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
             Dict;
         NoNone ->
             {Max, _} = lists:max(NoNone),
+            TotalChanged = 
+                case NoNone of 
+                    ResAlg ->
+                        lists:foldl(
+                            fun({_, IP}, PropAcc) ->
+                                SIP = lists:sort(IP),
+                                case PropAcc of 
+                                    none ->
+                                        [SIP];
+                                    % repeated ->
+                                    %     repeated;
+                                    _ ->
+                                        case lists:member(SIP, PropAcc) of 
+                                            true ->
+                                                PropAcc;
+                                            false ->
+                                                [SIP | PropAcc]
+                                        end
+                                end
+                            end,
+                            none,
+                            ResAlg);
+                    _ ->
+                        none
+                end,
+            case TotalChanged of 
+                none ->
+                    ok;
+                _ ->
+                    file:write(OutDev, list_to_binary("Groups of changed properties: ")),
+                    [file:write(OutDev, list_to_binary("\n\t" ++ string:join(Changed, ", "))) || Changed <- TotalChanged],
+                    case length(TotalChanged) == length(ResAlg) of 
+                        true ->
+                            file:write(OutDev, list_to_binary("\nNOTE: Petri Net where each algorithm changes different properties.\n"));
+                        false ->
+                            file:write(OutDev, list_to_binary("\n"))
+                    end
+            end,
             NormRes = 
                 lists:map(
                     fun
