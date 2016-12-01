@@ -153,7 +153,8 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
                     ok;
                 _ ->
                     file:write(OutDev, list_to_binary("Groups of changed properties: ")),
-                    [file:write(OutDev, list_to_binary("\n\t" ++ string:join(Changed, ", "))) || Changed <- TotalChanged],
+                    [file:write(OutDev, list_to_binary("\n\tGroup " ++ (integer_to_list(Id)) ++ ": " ++ string:join(Changed, ", "))) 
+                    || {Id,Changed} <- lists:zip(lists:seq(1, length(TotalChanged)),TotalChanged)],
                     case length(TotalChanged) == length(ResAlg) of 
                         true ->
                             file:write(OutDev, list_to_binary("\nNOTE: Petri Net where each algorithm changes different properties.\n"));

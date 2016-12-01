@@ -11,13 +11,13 @@
 create() ->
     Directories = 
         [
+            "other"
             "mcc_models/2011/FMS",
             "mcc_models/2011/Kanban",
             "mcc_models/2011/MAPK",
             "mcc_models/2011/Peterson",
             "mcc_models/2011/Philosophers",
-            "mcc_models/2011/TokenRing",
-            "other"
+            "mcc_models/2011/TokenRing"
         ],
     lists:map(fun create_options_dir/1, Directories).
 
