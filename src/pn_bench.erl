@@ -25,25 +25,6 @@ bench() ->
         5,
     bench(Directories, Timeout, SlicesPerNet, MaxSC).
 
-algorithms() -> 
-    [
-        #slicer{
-            name = "Llorens et al's slicer", 
-            function = fun pn_slice:slice/2},
-        #slicer{
-            name = "Llorens et al's slicer improved", 
-            function = fun pn_slice:slice_imp/2},
-        #slicer{
-            name = "Rakow's slicer CTL", 
-            function = fun pn_rakow:slice_ctl/2},
-        #slicer{
-            name = "Rakow's slicer safety", 
-            function = fun pn_rakow:slice_safety/2},
-        #slicer{
-            name = "Yu et al's slicer", 
-            function = fun pn_yuetal:slice/2}
-    ].
-
 bench(Directories, Timeout, SlicesPerNet, MaxSC) ->
     Filename = 
         "report_" ++ get_time_string() ++ ".txt",
@@ -117,7 +98,7 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
             fun(A) ->
                 bench_fun(A, PN, SC, Timeout, OutDev, DictPropOri)
             end,
-            algorithms()),
+            pn_lib:algorithms()),
     case [R || R <- ResAlg, R /= none] of 
         [] ->
             Dict;
@@ -181,7 +162,7 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
                         dict:store(A, {{OldValue + V, Count + 1}, IP ++ OldIP}, CDict)
                 end,
                 Dict,
-                lists:zip(algorithms(), NormRes))
+                lists:zip(pn_lib:algorithms(), NormRes))
     end.
 
 bench_fun(#slicer{name = AN, function = AF}, PN, SC, Timeout, OutDev, DictPropOri) ->
@@ -210,7 +191,7 @@ store_fun_info_and_return_size(Res, PN, AN, SC, OutDev, DictPropOri) ->
     % io:format("~p\n", [Res]),
     NP = dict:size(Res#petri_net.places),
     NT = dict:size(Res#petri_net.transitions),
-    Size = NP + NT,
+    Size = pn_lib:size(Res),
     FunOK = 
         fun() ->
             {Preserved, Changed} = 
@@ -368,7 +349,7 @@ new_alg_dict(Value) ->
             fun(#slicer{name = AN}) -> 
                 {AN, Value} 
             end, 
-            algorithms())).
+            pn_lib:algorithms())).
 
 build_scs(_, 0, _, Acc) ->
     Acc;

@@ -9,7 +9,7 @@
 % Interface
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-main(Args) when length(Args) > 1 ->
+main(Args) ->
     PN = pn_input:read_pn(hd(Args)),
     io:format(
         "Petri net ~s successfully read.\n\n", [PN#petri_net.name]),
@@ -280,6 +280,7 @@ web([File, Alg, TimeoutStr, SCStr]) ->
             SC = lists:usort(SC0),
             io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
             pn_lib:build_digraph(PN),
+            % TODO: Improve this using or extending pn_lib:algorithms()
             FunSlice = 
                 case Alg of 
                     "llorens_imp" ->
@@ -310,12 +311,9 @@ web([File, Alg, TimeoutStr, SCStr]) ->
                     Self = self(),
                     spawn(fun() -> Self!FunSlice(PN, SC) end),
                     receive 
-                        Res -> 
-                            PNSlice = Res, 
-                            PNtoExport = 
-                                pn_input:read_pos_from_svg_web(PNSlice),
+                        PNSlice -> 
                             pn_output:print_pnml_file(
-                                PNtoExport, 
+                                pn_input:read_pos_from_svg_web(PNSlice), 
                                 "pn_slicer_slice.xml"),
                             io:format("1")
                     after 
@@ -477,16 +475,66 @@ ask_other_formats(PN, Suffix) ->
 % Property-preserving slice
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-slice_prop_preserving(Args) when length(Args) >= 3 -> 
+slice_prop_preserving(Args) -> 
+    TimeoutAnalysis = 5000,
     [PNFile, PropsStr, SCStr | _] = Args,
     io:format("~p\n", [{PNFile, PropsStr, SCStr}]),
     PN = pn_input:read_pn(PNFile),
+    pn_lib:build_digraph(PN),
     io:format(
         "Petri net ~s successfully read.\n\n", [PN#petri_net.name]),
-    SCParsed = parse_sc(PN, SCStr),
-    PropsParsed = pn_properties:parse_property_list(PropsStr),
-    io:format("~p\n", [{SCParsed, PropsParsed}]),
-    {SCParsed, PropsParsed}.
+    SC = 
+        parse_sc(PN, SCStr),
+    PropsParsed = 
+        pn_properties:parse_property_list(PropsStr),
+    io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
+    SizeOriginal = 
+        pn_lib:size(PN),
+    {PropOriginal, _} = 
+        pn_properties:apt_properties(PN, TimeoutAnalysis),
+    Slices0 = 
+        lists:map(
+            fun(#slicer{name = Name, function = Fun}) ->
+                {Name, Fun(PN, SC)}
+            end,
+            pn_lib:algorithms()
+            ),
+    Slices = 
+        lists:filter(
+            fun({_, PNSlice}) ->
+                {PropSlice, _} = 
+                    pn_properties:apt_properties(PNSlice, TimeoutAnalysis),
+                are_properties_preserved(PropsParsed, PropOriginal, PropSlice)
+            end,
+            Slices0
+            ),
+    lists:foldl(
+        fun({Name, PNSlice}, Acc) ->
+            PNtoExport = 
+                pn_input:read_pos_from_svg(PNSlice),
+            Suffix = 
+                "_" ++ integer_to_list(Acc),
+            pn_output:print_pnml(PNtoExport, Suffix),
+            pn_output:print_net(PNtoExport, false, "pdf", Suffix),
+            ReductionStr = 
+                float_to_list(100 * pn_lib:size(PNSlice) / SizeOriginal,[{decimals,2}]),
+            io:format("~p.- ~s -> Reduction: ~s %\n", [Acc, Name, ReductionStr]),
+            Acc + 1
+        end,
+        1,
+        Slices
+        ),
+    ok.
 
+are_properties_preserved(PropList, DictOri, DictMod) ->
+    lists:all(
+        fun(Prop) -> 
+            is_property_preserved(Prop, DictOri, DictMod) 
+        end, 
+        PropList).
+
+
+is_property_preserved(Prop, DictOri, DictMod) ->
+    dict:fetch(Prop, DictOri) == dict:fetch(Prop, DictMod).
 
 

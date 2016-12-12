@@ -10,7 +10,9 @@
     	get_answer/2,
     	filter_pn/2,
         format/2,
-        flush/0
+        flush/0,
+        algorithms/0,
+        size/1
     ] ).
 
 -include("pn.hrl").
@@ -166,3 +168,25 @@ flush() ->
     after 0 ->
         ok
     end.
+
+algorithms() -> 
+    [
+        #slicer{
+            name = "Llorens et al's slicer", 
+            function = fun pn_slice:slice/2},
+        #slicer{
+            name = "Llorens et al's slicer improved", 
+            function = fun pn_slice:slice_imp/2},
+        #slicer{
+            name = "Rakow's slicer CTL", 
+            function = fun pn_rakow:slice_ctl/2},
+        #slicer{
+            name = "Rakow's slicer safety", 
+            function = fun pn_rakow:slice_safety/2},
+        #slicer{
+            name = "Yu et al's slicer", 
+            function = fun pn_yuetal:slice/2}
+    ].
+
+size(#petri_net{places = Ps, transitions = Ts}) ->
+    dict:size(Ps) + dict:size(Ts).
