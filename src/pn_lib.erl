@@ -1,14 +1,16 @@
 -module( pn_lib ).
 
--export( [
-	build_question_option/2, 
-	get_value_list_from_dict/1, 
-	build_digraph/1,
-	check_answer/3,
-	get_answer_multiple/2,
-	get_answer/2,
-	filter_pn/2,
-    format/2
+-export( 
+    [
+    	build_question_option/2, 
+    	get_value_list_from_dict/1, 
+    	build_digraph/1,
+    	check_answer/3,
+    	get_answer_multiple/2,
+    	get_answer/2,
+    	filter_pn/2,
+        format/2,
+        flush/0
     ] ).
 
 -include("pn.hrl").
@@ -157,3 +159,10 @@ build_question_option({O, Name}, {N, Lines, Answers, Dict}) ->
 build_question_option(Other, {N, Lines, Answers, Dict}) ->
     build_question_option({Other, Other}, {N, Lines, Answers, Dict}).
 
+flush() ->
+    receive
+        _ -> 
+            flush()
+    after 0 ->
+        ok
+    end.

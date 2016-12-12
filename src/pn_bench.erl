@@ -87,7 +87,7 @@ bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev) ->
     PN = 
         pn_input:read_pn(File),
     pn_lib:build_digraph(PN),
-    {DictPropOri, ResAnalyses} = apt_properties(PN),
+    {DictPropOri, ResAnalyses} = pn_properties:apt_properties(PN, timeout_analysis()),
     file:write(OutDev, list_to_binary("Properties:\n" ++ ResAnalyses)),
     Ps = dict:fetch_keys(PN#petri_net.places),
     MaxSC = 
@@ -186,7 +186,7 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
 
 bench_fun(#slicer{name = AN, function = AF}, PN, SC, Timeout, OutDev, DictPropOri) ->
     Self = self(),
-    flush(),
+    pn_lib:flush(),
     Pid = 
         spawn(
             fun() -> 
@@ -228,8 +228,8 @@ store_fun_info_and_return_size(Res, PN, AN, SC, OutDev, DictPropOri) ->
                                 {dict:fetch_keys(DictPropOri), []};
                             _ ->
                                 {DictSlice, _} = 
-                                    apt_properties(Res), 
-                                compare_properties(DictPropOri, DictSlice)
+                                    pn_properties:apt_properties(Res, timeout_analysis()), 
+                                pn_properties:compare_properties(DictPropOri, DictSlice)
                         end
                 end,
             PreservedStr = 
@@ -259,7 +259,7 @@ store_fun_info_and_return_size(Res, PN, AN, SC, OutDev, DictPropOri) ->
             Dir = PN#petri_net.dir ++ "/output/",
             LOLAFile = 
                 Dir ++  PN#petri_net.name ++ ".lola", 
-            case check_reachable_sc(SC, LOLAFile, Dir) of 
+            case pn_properties:check_reachable_sc(SC, LOLAFile, Dir) of 
                 false -> 
                     FunOK();
                 true ->
@@ -302,7 +302,7 @@ final_report(Dict, Msg, OutDev) ->
                                 Changed = 
                                     lists:usort(CP),
                                 NotChanged = 
-                                    all_properties() -- Changed, 
+                                    pn_properties:all_properties() -- Changed, 
                                 NotChangedStr = 
                                     case Changed of 
                                         [] ->
@@ -396,25 +396,6 @@ build_sc(List, Max, Acc) ->
             end 
     end.
 
-check_reachable_sc([], _, _) ->
-    false;
-check_reachable_sc([SC | SCs], File, Dir) ->
-    JSONFile = 
-        Dir ++ "output.json",
-    os:cmd("lola " ++ File ++ " --formula=\"EF " ++ SC ++ " > 0\" --json=" ++ JSONFile),
-    {ok, IODev} = file:open(JSONFile, [read]),
-    [JSONContent|_] = pn_input:read_data(IODev),
-    JSON = mochijson:decode(JSONContent),
-    {struct, [{"analysis",{struct, [_, {"result", Reachable} | _]}} | _]}  = 
-        JSON,
-    % io:format("~s: ~p\n", [SC, Reachable]),
-    case Reachable of 
-        true -> 
-            true;
-        false ->
-            check_reachable_sc(SCs, File, Dir)
-    end.
-
 get_time_string() ->
     {{Yea, Mon, Day}, {Hou, Min, Sec}} = 
         calendar:local_time(),
@@ -431,117 +412,3 @@ get_time_string() ->
             end, 
             [Yea, Mon, Day, Hou, Min, Sec]),
         "_").
-
-apt_properties(PN) ->
-    Dir = PN#petri_net.dir ++ "/output/",
-    AptFile = Dir ++ PN#petri_net.name ++ ".apt",
-    pn_lib:build_digraph(PN),
-    pn_output:print_apt(PN, ""),
-    % Self = self(),
-    Cmd = 
-        "java -jar apt/apt.jar examine_pn "  ++ AptFile,
-    flush(),
-    cmd_run(Cmd, timeout_analysis()).
-    % Port = erlang:open_port({spawn, Cmd},[exit_status]),
-    % receive
-    %     {Port, {data, NewData}} -> loop(Port, [Data | NewData], Timeout);
-    %     {Port, {exit_status, 0}} -> Data;
-    %     {Port, {exit_status, S}} -> throw({commandfailed, S})
-    % after Timeout ->
-    %     throw(timeout)
-    % end,
-    % io:format("~p\n", [Cmd]),
-    % Pid = 
-    %     spawn(
-    %         fun() ->
-    %             Self!os:cmd(Cmd)
-    %         end),
-    % receive 
-    %     ResAnalyses ->
-    %         DictProperties = parse_properties(ResAnalyses),
-    %         {DictProperties, ResAnalyses}
-    % after 
-    %     TO ->
-    %         exit(Pid, kill),
-    %         % io:format("Pids: ~s\n", [os:cmd("pgrep -P " ++ os:getpid())]),
-    %         {none, "No analyzed (timeouted).\n\n"}
-    % end.
-
-parse_properties(PropStr) ->
-    Lines = string:tokens(PropStr, "\n"),
-    Pairs = 
-        lists:map(
-            fun(Line) ->
-                [PropName, [_|Value]] = 
-                    string:tokens(Line, ":"),
-                {PropName, Value}
-            end,
-            Lines),
-    dict:from_list(Pairs).
-
-compare_properties(_, none) ->
-    {[], []};
-compare_properties(DictOri, DictSlice) ->
-    dict:fold(
-        fun(K, V, {CP, CC}) ->
-            case dict:fetch(K, DictSlice) of 
-                V ->
-                    {[K | CP], CC};
-                _ ->
-                    {CP, [K | CC]}
-            end
-        end,
-        {[], []},
-        DictOri).
-
-all_properties() ->
-    [ 
-        "backwards_persistent", "output_nonbranching", "bicf", 
-        "strongly_connected", "free_choice", "pure", "plain", 
-        "persistent", "strongly_live", "k-marking", "s_net", 
-        "nonpure_only_simple_side_conditions", "bcf", "num_tokens",
-        "asymmetric_choice", "safe", "weakly_live", 
-        "restricted_free_choice", "homogeneous", "k-bounded",
-        "bounded", "reversible", "conflict_free", 
-        "weakly_connected", "num_places", "num_arcs", "simply_live",
-         "num_transitions", "t_net", "num_labels", "isolated_elements"
-    ].
-
-flush() ->
-    receive
-        _ -> 
-            flush()
-    after 0 ->
-        ok
-    end.
-    
-cmd_run(Cmd, Timeout) ->
-    Port = erlang:open_port({spawn, Cmd},[exit_status]),
-    [PidOs] = 
-        [PidOs0 || {os_pid,PidOs0} <- erlang:port_info(Port)],
-    Res = cmd_loop(Port, [], Timeout),
-    try 
-        port_close(Port),
-        os:cmd("kill -9 " ++ integer_to_list(PidOs))
-    catch 
-        _:_ ->
-            ok
-    end,
-    Res.
-    
-cmd_loop(Port, Data, Timeout) ->
-    receive
-        {Port, {data, NewData}} -> 
-            cmd_loop(Port, [NewData | Data], Timeout);
-        {Port, {exit_status, 0}} -> 
-            ResAnalyses = string:join(lists:reverse(Data), ""),
-            % io:format("~s\n", [ResAnalyses]),
-            DictProperties = parse_properties(ResAnalyses),
-            {DictProperties, ResAnalyses};
-        {Port, {exit_status, _}} -> 
-            {none, "No analyzed (error).\n\n"}
-    after 
-        Timeout ->
-
-            {none, "No analyzed (timeouted).\n\n"}
-    end.

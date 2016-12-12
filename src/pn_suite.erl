@@ -1,6 +1,6 @@
 -module( pn_suite ).
  
--export( [main/1, web/1, web_convert/1] ).
+-export( [main/1, web/1, web_convert/1, slice_prop_preserving/1] ).
 
 -include("pn.hrl").
  
@@ -9,7 +9,7 @@
 % Interface
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-main(Args) ->
+main(Args) when length(Args) > 1 ->
     PN = pn_input:read_pn(hd(Args)),
     io:format(
         "Petri net ~s successfully read.\n\n", [PN#petri_net.name]),
@@ -18,9 +18,9 @@ main(Args) ->
     %     [PN#petri_net.name, PN#petri_net.dir]),
     Op1 = "Run the Petri Net",
     Op2 = "Export the Petri Net",
-    Op3 = "Slicing",
-    Op4 = "Slicing improved",
-    Op5 = "Slicing (for a given transition sequence)",
+    Op3 = "Slicing Llorens et al",
+    Op4 = "Slicing Llorens et al (improved)",
+    Op5 = "Slicing Llorens et al (for a given transition sequence)",
     Op6 = "Slicing Yu et al",
     Op7 = "Slicing Rakow CTL",
     Op8 = "Slicing Rakow Safety",
@@ -51,19 +51,9 @@ main(Args) ->
         Op2 ->    
             export(PN, "");
         Op3 ->
-            SC0 = ask_slicing_criterion(PN),
-            SC = lists:usort(SC0),
-            io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
-            pn_lib:build_digraph(PN),
-            PNSlice = pn_slice:slice(PN, SC),
-            export(PNSlice, "_slc");
+            slicing_common(PN, fun pn_slice:slice/2, "_slc");
         Op4 ->
-            SC0 = ask_slicing_criterion(PN),
-            SC = lists:usort(SC0),
-            io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
-            pn_lib:build_digraph(PN),
-            PNSlice = pn_slice:slice_imp(PN, SC),
-            export(PNSlice, "_slc_imp");
+            slicing_common(PN, fun pn_slice:slice_imp/2, "_slc_imp");
         Op5 ->
             SC0 = ask_slicing_criterion(PN),
             SC = lists:usort(SC0),
@@ -80,28 +70,25 @@ main(Args) ->
                 pn_slice_seq:slice_with_sequence(RevExec, SC, []),
             export(PNSlice, "_slc_trs");
         Op6 ->
-            SC0 = ask_slicing_criterion(PN),
-            SC = lists:usort(SC0),
-            io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
-            pn_lib:build_digraph(PN),
-            PNSlice = pn_yuetal:slice(PN, SC),
-            export(PNSlice, "_slc_yu");
+            slicing_common(PN, fun pn_yuetal:slice/2, "_slc_yu");
         Op7 ->
-            SC0 = ask_slicing_criterion(PN),
-            SC = lists:usort(SC0),
-            io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
-            pn_lib:build_digraph(PN),
-            PNSlice = pn_rakow:slice_ctl(PN, SC),
-            export(PNSlice, "_slc_rakow_ctl");
+            slicing_common(PN, fun pn_rakow:slice_ctl/2, "_slc_rakow_ctl");
         Op8 ->
-            SC0 = ask_slicing_criterion(PN),
-            SC = lists:usort(SC0),
-            io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
-            pn_lib:build_digraph(PN),
-            PNSlice = pn_rakow:slice_safety(PN, SC),
-            export(PNSlice, "_slc_rakow_safety")
+            slicing_common(PN, fun pn_rakow:slice_safety/2, "_slc_rakow_safety")
     end,
     ok.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slicing 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+slicing_common(PN, SliceFun, Suffix) ->
+    SC0 = ask_slicing_criterion(PN),
+    SC = lists:usort(SC0),
+    io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
+    pn_lib:build_digraph(PN),
+    PNSlice = SliceFun(PN, SC),
+    export(PNSlice, Suffix).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Slicing criterion
@@ -240,6 +227,18 @@ server_sequence([]) ->
             PidAns!{next, none}
     end.
 
+parse_sc(PN, SCStr) -> 
+    PsKeys = 
+        dict:fetch_keys(PN#petri_net.places),
+    SCParsed = string:tokens(SCStr, " ,"),
+    case [P || P <- SCParsed, lists:member(P, PsKeys)] of 
+        SCParsed ->
+            SCParsed;
+        SCFiltered ->
+            io:format("The slicing criterion contains unknown places. They will be ignored.\n"),       
+            SCFiltered
+    end.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Web
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -252,11 +251,6 @@ web([File, Alg, TimeoutStr, SCStr]) ->
                 pn_input:read_pn(File),
             io:format(
                 "Petri net ~s successfully read.\n\n", [PN0#petri_net.name]),
-            Ps = 
-                PN0#petri_net.places,
-            PsOnlyKey = 
-                [ K || {K, _} <- dict:to_list(Ps)],
-            SCParsed = string:tokens(SCStr, " ,"),
             Timeout0 = 
                 try 
                    case list_to_integer(TimeoutStr) of
@@ -271,13 +265,8 @@ web([File, Alg, TimeoutStr, SCStr]) ->
                         io:format("Timeout set to default value, i.e. 50 milisec.\n"),
                         50
                 end,
-            case [P || P <- SCParsed, lists:member(P, PsOnlyKey)] of 
-                SCParsed ->
-                    {PN0, SCParsed, Timeout0};
-                SCFiltered ->
-                    io:format("The slicing criterion contains unknown places. They will be ignored.\n"),       
-                    {PN0, SCFiltered, Timeout0}
-            end
+            SCParsed = parse_sc(PN0, SCStr),
+            {PN0, SCParsed, Timeout0}
         catch 
             _:_ ->
                 io:format("The input Petri net cannot be read.\n"),
@@ -484,11 +473,20 @@ ask_other_formats(PN, Suffix) ->
     pn_output:print_net(PN, false, dict:fetch(Answer, AnsDict), Suffix).
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Property-preserving slice
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
-
-
+slice_prop_preserving(Args) when length(Args) >= 3 -> 
+    [PNFile, PropsStr, SCStr | _] = Args,
+    io:format("~p\n", [{PNFile, PropsStr, SCStr}]),
+    PN = pn_input:read_pn(PNFile),
+    io:format(
+        "Petri net ~s successfully read.\n\n", [PN#petri_net.name]),
+    SCParsed = parse_sc(PN, SCStr),
+    PropsParsed = pn_properties:parse_property_list(PropsStr),
+    io:format("~p\n", [{SCParsed, PropsParsed}]),
+    {SCParsed, PropsParsed}.
 
 
 
