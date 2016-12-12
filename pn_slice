@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ $# != 3 ]
+then 
+	echo -e "Usage:\n\tpn_slice PNML_FILE PROPERTIES_LIST SLICING_CRITERION"
+else
+	erl -pa ebin -run pn_suite slice_prop_preserving $1 $2 $3 -noshell -s erlang halt
+fi
+
