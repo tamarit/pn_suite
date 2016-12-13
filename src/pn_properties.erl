@@ -4,7 +4,7 @@
     [
         apt_properties/2, compare_properties/2, 
         all_properties/0, check_reachable_sc/3,
-        parse_property_list/1
+        parse_property_list/1, check_formula/3
     ] ).
 
 -include("pn.hrl").
@@ -14,7 +14,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 parse_property_list(PropsStr) ->
-    TokPropsStr = string:tokens(PropsStr, " ,"),
+    TokPropsStr = string:tokens(PropsStr, ","),
     case 
         [   
             PS 
@@ -26,9 +26,23 @@ parse_property_list(PropsStr) ->
         TokPropsStr -> 
             TokPropsStr;
         PropsStrFiltered -> 
-            io:format("Some properties are unknown. They will be ignored.\n"),       
-            PropsStrFiltered
+            Rest = TokPropsStr -- PropsStrFiltered,
+            LolaExprs = 
+                [   {lola, element(2, is_lola(P))} 
+                ||  P <- Rest, element(1, is_lola(P))],
+            case length(LolaExprs) < length(Rest) of 
+                true -> 
+                    io:format("Some properties are unknown. They will be ignored.\n");
+                false -> 
+                    ok 
+            end,       
+            PropsStrFiltered ++ LolaExprs
     end.
+
+is_lola([$l, $o, $l, $a, $: | LolaExp]) ->
+    {true, LolaExp};
+is_lola(_) ->
+    {false, []}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % APT
@@ -137,3 +151,15 @@ check_reachable_sc([SC | SCs], File, Dir) ->
         false ->
             check_reachable_sc(SCs, File, Dir)
     end.
+
+check_formula(Formula, File, Dir) ->
+    JSONFile = 
+        Dir ++ "output.json",
+    os:cmd("lola " ++ File ++ " --formula=\"" ++ Formula ++ "\" --json=" ++ JSONFile),
+    {ok, IODev} = file:open(JSONFile, [read]),
+    [JSONContent|_] = pn_input:read_data(IODev),
+    JSON = mochijson:decode(JSONContent),
+    {struct, [{"analysis",{struct, [_, {"result", Answer} | _]}} | _]}  = 
+        JSON,
+    % io:format("~p\n", [Answer]),
+    Answer.

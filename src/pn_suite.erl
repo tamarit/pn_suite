@@ -497,12 +497,18 @@ slice_prop_preserving(Args) ->
             end,
             pn_lib:algorithms()
             ),
+    PNtoExportOri = 
+        pn_input:read_pos_from_svg(PN),
+    pn_output:print_lola(PNtoExportOri, "_temp_ori"),
     Slices = 
         lists:filter(
             fun({_, PNSlice}) ->
+                PNtoExportSlice = 
+                    pn_input:read_pos_from_svg(PNSlice),
+                pn_output:print_lola(PNtoExportSlice, "_temp_slice"),
                 {PropSlice, _} = 
                     pn_properties:apt_properties(PNSlice, TimeoutAnalysis),
-                are_properties_preserved(PropsParsed, PropOriginal, PropSlice)
+                are_properties_preserved(PropsParsed, PropOriginal, PropSlice, PN)
             end,
             Slices0
             ),
@@ -538,15 +544,27 @@ create_pn_and_prop(PNFile, Timeout, Silent) ->
         pn_properties:apt_properties(PN, Timeout),
     {PN, pn_lib:size(PN), PropOriginal}.
 
-are_properties_preserved(PropList, DictOri, DictMod) ->
+are_properties_preserved(PropList, DictOri, DictMod, PN) ->
     lists:all(
-        fun(Prop) -> 
-            is_property_preserved(Prop, DictOri, DictMod) 
+
+        fun
+            ({lola, LolaFormula}) ->
+                is_lola_property_preserved(LolaFormula, PN);
+            (Prop) -> 
+                is_property_preserved(Prop, DictOri, DictMod) 
         end, 
         PropList).
 
 is_property_preserved(Prop, DictOri, DictMod) ->
     dict:fetch(Prop, DictOri) == dict:fetch(Prop, DictMod).
+
+is_lola_property_preserved(Formula, PN) ->
+    Dir = PN#petri_net.dir ++ "/output/",
+    LOLAFile1 = 
+        Dir ++  PN#petri_net.name ++ "_temp_ori.lola", 
+    LOLAFile2 = 
+        Dir ++  PN#petri_net.name ++ "_temp_slice.lola", 
+    pn_properties:check_formula(Formula, LOLAFile1, Dir) == pn_properties:check_formula(Formula, LOLAFile2, Dir). 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Property-preservation info
@@ -555,7 +573,7 @@ is_property_preserved(Prop, DictOri, DictMod) ->
 prop_preservation(Args) -> 
     TimeoutAnalysis = 5000,
     [PNFile1, PNFile2 | TailArgs] = Args,
-    [{_, _, D1}, {_, _, D2}] = 
+    [{PN1, _, D1}, {_, _, D2}] = 
         lists:map(
             fun(PN) -> 
                 create_pn_and_prop(PN, TimeoutAnalysis, true) 
@@ -583,7 +601,7 @@ prop_preservation(Args) ->
             PropsParsed = 
                 pn_properties:parse_property_list(PropsStr),
             Preserved = 
-                are_properties_preserved(PropsParsed, D1, D2),
+                are_properties_preserved(PropsParsed, D1, D2, PN1),
             io:format("~p\n", [Preserved])
     end.
 
