@@ -2,7 +2,7 @@
 
 if [ $# -lt 2 ] || [ $# -gt 3 ] 
 then 
-	echo -e "Usage:\n\tpn_slice PNML_FILE PNML_FILE [PROPERTY]"
+	echo -e "Usage: \n\tpn_slice PNML_FILE PNML_FILE [PROPERTY]"
 else
 	if [ $# -eq 3 ]
 	then
