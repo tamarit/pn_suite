@@ -1,6 +1,10 @@
 -module( pn_suite ).
  
--export( [main/1, web/1, web_convert/1, slice_prop_preserving/1] ).
+-export( 
+    [
+        main/1, web/1, web_convert/1, 
+        slice_prop_preserving/1, prop_preservation/1
+    ]).
 
 -include("pn.hrl").
  
@@ -478,20 +482,14 @@ ask_other_formats(PN, Suffix) ->
 slice_prop_preserving(Args) -> 
     TimeoutAnalysis = 5000,
     [PNFile, PropsStr, SCStr | _] = Args,
-    io:format("~p\n", [{PNFile, PropsStr, SCStr}]),
-    PN = pn_input:read_pn(PNFile),
-    pn_lib:build_digraph(PN),
-    io:format(
-        "Petri net ~s successfully read.\n\n", [PN#petri_net.name]),
+    % io:format("~p\n", [{PNFile, PropsStr, SCStr}]),
+    {PN, SizeOriginal, PropOriginal} = 
+        create_pn_and_prop(PNFile, TimeoutAnalysis, false),
     SC = 
         parse_sc(PN, SCStr),
     PropsParsed = 
         pn_properties:parse_property_list(PropsStr),
     io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
-    SizeOriginal = 
-        pn_lib:size(PN),
-    {PropOriginal, _} = 
-        pn_properties:apt_properties(PN, TimeoutAnalysis),
     Slices0 = 
         lists:map(
             fun(#slicer{name = Name, function = Fun}) ->
@@ -517,7 +515,7 @@ slice_prop_preserving(Args) ->
             pn_output:print_pnml(PNtoExport, Suffix),
             pn_output:print_net(PNtoExport, false, "pdf", Suffix),
             ReductionStr = 
-                float_to_list(100 * pn_lib:size(PNSlice) / SizeOriginal,[{decimals,2}]),
+                float_to_list(100 - (100 * pn_lib:size(PNSlice) / SizeOriginal),[{decimals,2}]),
             io:format("~p.- ~s -> Reduction: ~s %\n", [Acc, Name, ReductionStr]),
             Acc + 1
         end,
@@ -526,6 +524,20 @@ slice_prop_preserving(Args) ->
         ),
     ok.
 
+create_pn_and_prop(PNFile, Timeout, Silent) ->
+    PN = pn_input:read_pn(PNFile),
+    pn_lib:build_digraph(PN),
+    case Silent of 
+        false -> 
+            io:format(
+                "Petri net named ~s successfully read.\n", [PN#petri_net.name]);
+        true ->
+            ok 
+    end,
+    {PropOriginal, _} = 
+        pn_properties:apt_properties(PN, Timeout),
+    {PN, pn_lib:size(PN), PropOriginal}.
+
 are_properties_preserved(PropList, DictOri, DictMod) ->
     lists:all(
         fun(Prop) -> 
@@ -533,8 +545,46 @@ are_properties_preserved(PropList, DictOri, DictMod) ->
         end, 
         PropList).
 
-
 is_property_preserved(Prop, DictOri, DictMod) ->
     dict:fetch(Prop, DictOri) == dict:fetch(Prop, DictMod).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Property-preservation info
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+prop_preservation(Args) -> 
+    TimeoutAnalysis = 5000,
+    [PNFile1, PNFile2 | TailArgs] = Args,
+    [{_, _, D1}, {_, _, D2}] = 
+        lists:map(
+            fun(PN) -> 
+                create_pn_and_prop(PN, TimeoutAnalysis, true) 
+            end, 
+            [PNFile1, PNFile2]),
+    case TailArgs of 
+        [] ->    
+            {Preserved, Changed} =
+                pn_properties:compare_properties(D1, D2),
+            {PreservedStr, ChangedStr} = 
+                case Changed of 
+                    [] ->
+                        {"All", "None"};
+                    _ ->
+                        {string:join(Preserved, ", "), string:join(Changed, ", ")}
+                end,
+            InfoAlg = 
+                [
+                    "Preserved properties:\n" ++ PreservedStr,
+                    "",
+                    "Changed properties:\n" ++ ChangedStr
+                ],
+            io:format("~s\n", [string:join(InfoAlg, "\n")]);
+        [PropsStr | _] ->
+            PropsParsed = 
+                pn_properties:parse_property_list(PropsStr),
+            Preserved = 
+                are_properties_preserved(PropsParsed, D1, D2),
+            io:format("~p\n", [Preserved])
+    end.
 
 

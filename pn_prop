@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ $# -lt 2 ] || [ $# -gt 3 ] 
+then 
+	echo -e "Usage:\n\tpn_slice PNML_FILE PNML_FILE [PROPERTY]"
+else
+	if [ $# -eq 3 ]
+	then
+		erl -pa ebin -run pn_suite prop_preservation $1 $2 $3 -noshell -s erlang halt
+	else 
+		erl -pa ebin -run pn_suite prop_preservation $1 $2 -noshell -s erlang halt
+	fi
+fi
+
