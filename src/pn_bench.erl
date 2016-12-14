@@ -15,6 +15,7 @@ bench() ->
     Directories = 
         [
             "examples/other"
+            % "examples/prova"
             % ,"examples/mcc_models/2011/Peterson"
         ],
     Timeout = 
@@ -64,11 +65,12 @@ bench_dir(Dir, Timeout, SlicesPerNet, MaxSC, OutDev) ->
 
 bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev) ->
     file:write(OutDev, list_to_binary("\nFile: " ++ File ++ sep() ++ "\n")),
-    io:format("File: " ++ File ++ "\n"),
+    io:format("Benchmarking with file " ++ File ++ "\n"),
     PN = 
         pn_input:read_pn(File),
     pn_lib:build_digraph(PN),
-    {DictPropOri, ResAnalyses} = pn_properties:apt_properties(PN, timeout_analysis()),
+    {DictPropOri, ResAnalyses} = 
+        pn_properties:apt_properties(PN, timeout_analysis()),
     file:write(OutDev, list_to_binary("Properties:\n" ++ ResAnalyses)),
     Ps = dict:fetch_keys(PN#petri_net.places),
     MaxSC = 
@@ -92,13 +94,27 @@ bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev) ->
     FinalDict.
 
 bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
-    file:write(OutDev, list_to_binary("\nSlicing criterion: " ++ pn_lib:format("~p\n\n", [SC]))),
+    file:write(
+        OutDev, 
+        list_to_binary(
+            pn_lib:format(
+                "\nSlicing criterion: ~s\n\n", 
+                [string:join(SC, ",")] ) ) ),
     ResAlg = 
         lists:map(
             fun(A) ->
                 bench_fun(A, PN, SC, Timeout, OutDev, DictPropOri)
             end,
             pn_lib:algorithms()),
+        % lists:map(
+            % fun(A = #slicer{name = Name, function = Fun}) ->
+            %     {Name, Fun(PN, SC)},
+            %     file:write(OutDev, list_to_binary(pn_lib:format("~s: ~p\n", [Name, pn_lib:size(Fun(PN, SC))]))),
+            %     bench_fun(A, PN, SC, Timeout, OutDev, DictPropOri),
+            %     none
+            % end,
+            % pn_lib:algorithms()
+            % ),
     case [R || R <- ResAlg, R /= none] of 
         [] ->
             Dict;
@@ -168,31 +184,46 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
 bench_fun(#slicer{name = AN, function = AF}, PN, SC, Timeout, OutDev, DictPropOri) ->
     Self = self(),
     pn_lib:flush(),
+    % Res = AF(PN, SC),
+    % file:write(OutDev, list_to_binary("\nPLACES: " ++ string:join(lists:map(fun(X) -> pn_lib:format("~p", [X]) end, dict:to_list(Res#petri_net.places)), ",") ++ "\nTRANSITIONS: " ++ string:join(lists:map(fun(X) -> pn_lib:format("~p", [X]) end, dict:to_list(Res#petri_net.transitions)), ",") ++ "\nSize:" ++  pn_lib:format("~p", [pn_lib:size(Res)]) ++ "\n")),
     Pid = 
         spawn(
             fun() -> 
-                Self!AF(PN, SC)
+                Self!AF(PN, SC),
+                receive 
+                    ok ->
+                        ok
+                end
             end),
     Res = 
         receive
             Res0 ->
-                Res0
+                Res0,
+                Res1 = pn_lib:new_pn_fresh_digraph(Res0),
+                Pid!ok,
+                Res1
         after
             Timeout ->
                 exit(Pid, kill),
                 none
         end,
+    % file:write(OutDev, list_to_binary(pn_lib:format("FUNCTION: ~p\n", [AF]) )),
     store_fun_info_and_return_size(Res, PN, AN, SC, OutDev, DictPropOri).
+    % none.
 
 store_fun_info_and_return_size(none, _, AN, _, OutDev, _) ->
     file:write(OutDev, list_to_binary(AN ++ ": timeouted\n")),
     none;
 store_fun_info_and_return_size(Res, PN, AN, SC, OutDev, DictPropOri) ->
     % io:format("~p\n", [Res]),
+    % io:format("~p\n", [digraph:info(Res#petri_net.digraph)]),
+    pn_lib:build_digraph(Res),
     NP = dict:size(Res#petri_net.places),
     NT = dict:size(Res#petri_net.transitions),
     Size = pn_lib:size(Res),
+    % file:write(OutDev, list_to_binary("\nPLACES: " ++ string:join(lists:map(fun(X) -> pn_lib:format("~p", [X]) end, dict:to_list(Res#petri_net.places)), ",") ++ "\nTRANSITIONS: " ++ string:join(lists:map(fun(X) -> pn_lib:format("~p", [X]) end, dict:to_list(Res#petri_net.transitions)), ",") ++ "\nSize:" ++  pn_lib:format("~p", [pn_lib:size(Res)]) ++ "\n")),
     FunOK = 
+        % fun() -> none end,
         fun() ->
             {Preserved, Changed} = 
                 case DictPropOri of 
@@ -208,8 +239,10 @@ store_fun_info_and_return_size(Res, PN, AN, SC, OutDev, DictPropOri) ->
                             {NP, NT} ->
                                 {dict:fetch_keys(DictPropOri), []};
                             _ ->
+                                % pn_properties:compare_properties(DictPropOri, DictPropOri)
                                 {DictSlice, _} = 
                                     pn_properties:apt_properties(Res, timeout_analysis()), 
+                                % file:write(OutDev, list_to_binary("\nDICT: " ++ string:join(lists:map(fun(X) -> pn_lib:format("~p", [X]) end, dict:to_list(DictSlice)), ","))),
                                 pn_properties:compare_properties(DictPropOri, DictSlice)
                         end
                 end,

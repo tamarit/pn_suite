@@ -51,12 +51,14 @@ is_lola(_) ->
 apt_properties(PN, TimeOut) ->
     Dir = PN#petri_net.dir ++ "/output/",
     AptFile = Dir ++ PN#petri_net.name ++ ".apt",
-    pn_lib:build_digraph(PN),
     pn_output:print_apt(PN, ""),
     Cmd = 
         "java -jar apt/apt.jar examine_pn "  ++ AptFile,
     pn_lib:flush(),
     cmd_run(Cmd, TimeOut).
+    % Res = os:cmd(Cmd), 
+    % {parse_properties(Res), Res}.
+    % {lists:foldl(fun(X, Acc) -> dict:store(X, "0", Acc) end, dict:new(), all_properties()), ""}.
 
 parse_properties(PropStr) ->
     Lines = string:tokens(PropStr, "\n"),
@@ -125,7 +127,6 @@ cmd_loop(Port, Data, Timeout) ->
             {none, "No analyzed (error).\n\n"}
     after 
         Timeout ->
-
             {none, "No analyzed (timeouted).\n\n"}
     end.
 

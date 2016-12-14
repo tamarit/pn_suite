@@ -493,10 +493,11 @@ slice_prop_preserving(Args) ->
     Slices0 = 
         lists:map(
             fun(#slicer{name = Name, function = Fun}) ->
-                {Name, Fun(PN, SC)}
+                PNS = Fun(PN, SC),
+                pn_lib:build_digraph(PNS),
+                {Name, PNS}
             end,
-            pn_lib:algorithms()
-            ),
+            pn_lib:algorithms() ),
     PNtoExportOri = 
         pn_input:read_pos_from_svg(PN),
     pn_output:print_lola(PNtoExportOri, "_temp_ori"),

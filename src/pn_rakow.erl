@@ -9,7 +9,8 @@
 % CTL Slicing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-slice_ctl(PN, SC) ->
+slice_ctl(PN0, SC) ->
+    PN = pn_lib:new_pn_fresh_digraph(PN0),
     {Ps, Ts} = 
         slice_rec(
             PN, 
@@ -73,7 +74,8 @@ slice_rec(PN = #petri_net{digraph = G}, P_, T_, PDone, TsFun, ValidTFun) ->
 % Safety Slicing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-slice_safety(PN = #petri_net{transitions = T, digraph = G}, SC) ->
+slice_safety(PN0, SC) ->
+    PN = #petri_net{transitions = T, digraph = G} = pn_lib:new_pn_fresh_digraph(PN0),
     PDone = 
         sets:from_list(SC),
     T_ = 

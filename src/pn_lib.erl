@@ -12,7 +12,9 @@
         format/2,
         flush/0,
         algorithms/0,
-        size/1
+        size/1,
+        new_pn_fresh_digraph/1
+
     ] ).
 
 -include("pn.hrl").
@@ -190,3 +192,7 @@ algorithms() ->
 
 size(#petri_net{places = Ps, transitions = Ts}) ->
     dict:size(Ps) + dict:size(Ts).
+
+new_pn_fresh_digraph(PN = #petri_net{digraph = G}) ->
+    NG = digraph_utils:subgraph(G, digraph:vertices(G)),
+    PN#petri_net{digraph = NG}.

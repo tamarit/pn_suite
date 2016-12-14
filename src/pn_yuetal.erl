@@ -14,7 +14,8 @@
 % Slice Yu et al
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-slice(PN, SC) ->
+slice(PN0, SC) ->
+    PN = pn_lib:new_pn_fresh_digraph(PN0),
     SDG = sdg_sim(PN, SC),
     BSG = bsg_sim(PN, SDG, SC),
     % write_sdg(SDG, "sdg_sim.dot"),

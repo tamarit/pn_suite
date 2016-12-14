@@ -13,3 +13,7 @@ bib/*
 *.class
 
 apt/*
+
+examples/prova/problem1.xml
+
+examples/other/pn_paper_prova.xml

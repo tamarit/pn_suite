@@ -8,7 +8,8 @@
 % Slicing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-slice(PN, SC) ->
+slice(PN0, SC) ->
+    PN = pn_lib:new_pn_fresh_digraph(PN0),
     {PsB, TsB} = backward_slice(PN, SC, [], {[], []}),
 
     % Without intersection
@@ -104,7 +105,8 @@ forward_slice(PN = #petri_net{transitions = Ts, digraph = G}, W, R, V) ->
 % Slicing Improved
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-slice_imp(PN, SC) ->
+slice_imp(PN0, SC) ->
+    PN = pn_lib:new_pn_fresh_digraph(PN0),
     ListOfPsBTsB = backward_slice_imp(PN, SC, [], {[], []}),
     % [ io:format("~p\n", [{P, [{T, {sets:to_list(PsT), sets:to_list(TsT)}} || {T, {PsT, TsT}} <- BI]}]) || {P, BI} <- Bif],
     % io:format("Bif: ~p\n", [Bif]),
