@@ -4,7 +4,8 @@
     [
         apt_properties/2, compare_properties/2, 
         all_properties/0, check_reachable_sc/3,
-        parse_property_list/1, check_formula/3
+        parse_property_list/1, check_formula/3,
+        apt_property/2
     ] ).
 
 -include("pn.hrl").
@@ -13,7 +14,16 @@
 % General
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 parse_property_list(PropsStr) ->
+    case PropsStr of 
+        [$a, $l, $g, $: |Alg] ->
+            {alg, Alg};
+        _ ->
+            parse_property_list_aux(PropsStr)
+    end.
+
+parse_property_list_aux(PropsStr) ->
     TokPropsStr = string:tokens(PropsStr, ","),
     case 
         [   
@@ -30,13 +40,24 @@ parse_property_list(PropsStr) ->
             LolaExprs = 
                 [   {lola, element(2, is_lola(P))} 
                 ||  P <- Rest, element(1, is_lola(P))],
-            case length(LolaExprs) < length(Rest) of 
-                true -> 
-                    io:format("Some properties are unknown. They will be ignored.\n");
-                false -> 
-                    ok 
-            end,       
-            PropsStrFiltered ++ LolaExprs
+            STExprs =
+                case length(LolaExprs) < length(Rest) of 
+                    true -> 
+                        Rest2 = Rest -- LolaExprs,
+                        STExprs0 = 
+                            [   {st, P}
+                            ||  P <- Rest2, P == "siphons" orelse P == "traps"],
+                        case length(STExprs0) < length(Rest2) of 
+                            true ->
+                                io:format("Some properties are unknown. They will be ignored.\n");
+                            false ->
+                                ok
+                        end,
+                        STExprs0;
+                    false -> 
+                        []
+                end,       
+            PropsStrFiltered ++ LolaExprs ++ STExprs
     end.
 
 is_lola([$l, $o, $l, $a, $: | LolaExp]) ->
@@ -59,6 +80,15 @@ apt_properties(PN, TimeOut) ->
     % Res = os:cmd(Cmd), 
     % {parse_properties(Res), Res}.
     % {lists:foldl(fun(X, Acc) -> dict:store(X, "0", Acc) end, dict:new(), all_properties()), ""}.
+
+apt_property(Prop, PN) ->
+    Dir = PN#petri_net.dir ++ "/output/",
+    AptFile = Dir ++ PN#petri_net.name ++ ".apt",
+    pn_output:print_apt(PN, ""),
+    Cmd = 
+        "java -jar apt/apt.jar " ++ Prop ++ " "  ++ AptFile,
+    os:cmd(Cmd).
+
 
 parse_properties(PropStr) ->
     Lines = string:tokens(PropStr, "\n"),
@@ -86,6 +116,7 @@ compare_properties(DictOri, DictSlice) ->
         end,
         {[], []},
         DictOri).
+
 
 all_properties() ->
     [ 
