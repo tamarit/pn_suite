@@ -1,0 +1,4077 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="ParamProductionCell-PT-4" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    
+    <page id="page0">
+      <name><text>DefaultPage</text></name>
+      <place id="ch_DC_full">
+        <name><text>ch_DC_full</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="ch_DC_free">
+        <name><text>ch_DC_free</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="ch_CF_free">
+        <name><text>ch_CF_free</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="ch_CF_full">
+        <name><text>ch_CF_full</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="ch_A1P_full">
+        <name><text>ch_A1P_full</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="ch_A1P_free">
+        <name><text>ch_A1P_free</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="ch_TA1_full">
+        <name><text>ch_TA1_full</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="ch_TA1_free">
+        <name><text>ch_TA1_free</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="ch_A2D_full">
+        <name><text>ch_A2D_full</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="ch_A2D_free">
+        <name><text>ch_A2D_free</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="ch_FT_free">
+        <name><text>ch_FT_free</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="ch_FT_full">
+        <name><text>ch_FT_full</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="ch_PA2_free">
+        <name><text>ch_PA2_free</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="ch_PA2_full">
+        <name><text>ch_PA2_full</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="swivel">
+        <name><text>swivel</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="press_ready_for_loading">
+        <name><text>press_ready_for_loading</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="press_ready_for_unloading">
+        <name><text>press_ready_for_unloading</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="PU_out">
+        <name><text>PU_out</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="press_stop">
+        <name><text>press_stop</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="press_down">
+        <name><text>press_down</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="press_at_upper_pos">
+        <name><text>press_at_upper_pos</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="press_at_lower_pos">
+        <name><text>press_at_lower_pos</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="blank_forged">
+        <name><text>blank_forged</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="PU_in">
+        <name><text>PU_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="press_upward">
+        <name><text>press_upward</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="press_at_middle_pos">
+        <name><text>press_at_middle_pos</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="PU_lower_rs">
+        <name><text>PU_lower_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="PU_lower_run">
+        <name><text>PU_lower_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="forge_rs">
+        <name><text>forge_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="forge_run">
+        <name><text>forge_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="PL_in">
+        <name><text>PL_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="press_up">
+        <name><text>press_up</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="PL_out">
+        <name><text>PL_out</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="PL_lower_rs">
+        <name><text>PL_lower_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="PL_lower_run">
+        <name><text>PL_lower_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="table_ready_for_loading">
+        <name><text>table_ready_for_loading</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="table_ready_for_unloading">
+        <name><text>table_ready_for_unloading</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="TL_out">
+        <name><text>TL_out</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="TL_in">
+        <name><text>TL_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="table_load_angle">
+        <name><text>table_load_angle</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="table_unload_angle">
+        <name><text>table_unload_angle</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="table_right">
+        <name><text>table_right</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="table_stop_h">
+        <name><text>table_stop_h</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="table_at_load_angle">
+        <name><text>table_at_load_angle</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="table_bottom_pos">
+        <name><text>table_bottom_pos</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="table_top_pos">
+        <name><text>table_top_pos</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="table_upward">
+        <name><text>table_upward</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="table_stop_v">
+        <name><text>table_stop_v</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="TL_rot_rs">
+        <name><text>TL_rot_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="TL_rot_run">
+        <name><text>TL_rot_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="TL_lower_rs">
+        <name><text>TL_lower_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="TL_lower_run">
+        <name><text>TL_lower_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="TU_in">
+        <name><text>TU_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="TU_out">
+        <name><text>TU_out</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="table_at_unload_angle">
+        <name><text>table_at_unload_angle</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="TU_lift_rs">
+        <name><text>TU_lift_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="TU_lift_run">
+        <name><text>TU_lift_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="TU_rot_rs">
+        <name><text>TU_rot_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="TU_rot_run">
+        <name><text>TU_rot_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="deposit_belt_idle">
+        <name><text>deposit_belt_idle</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="deposit_belt_occupied">
+        <name><text>deposit_belt_occupied</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="deposit_belt_empty">
+        <name><text>deposit_belt_empty</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="belt2_light_barrier_true">
+        <name><text>belt2_light_barrier_true</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="belt2_light_barrier_false">
+        <name><text>belt2_light_barrier_false</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="belt2_start">
+        <name><text>belt2_start</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="belt2_stop">
+        <name><text>belt2_stop</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="DB_in">
+        <name><text>DB_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="DB_at_end">
+        <name><text>DB_at_end</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="DB_out">
+        <name><text>DB_out</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="DB_trans_rs">
+        <name><text>DB_trans_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="DB_trans_run">
+        <name><text>DB_trans_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="DB_deliver_rs">
+        <name><text>DB_deliver_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="DB_deliver_run">
+        <name><text>DB_deliver_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="feed_belt_idle">
+        <name><text>feed_belt_idle</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="feed_belt_occupied">
+        <name><text>feed_belt_occupied</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="feed_belt_empty">
+        <name><text>feed_belt_empty</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="belt1_light_barrier_true">
+        <name><text>belt1_light_barrier_true</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="belt1_light_barrier_false">
+        <name><text>belt1_light_barrier_false</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="belt1_start">
+        <name><text>belt1_start</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="belt1_stop">
+        <name><text>belt1_stop</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="FB_in">
+        <name><text>FB_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="FB_at_end">
+        <name><text>FB_at_end</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="FB_out">
+        <name><text>FB_out</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="FB_trans_rs">
+        <name><text>FB_trans_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="FB_trans_run">
+        <name><text>FB_trans_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="FB_deliver_rs">
+        <name><text>FB_deliver_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="FB_deliver_run">
+        <name><text>FB_deliver_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm2_store_free">
+        <name><text>arm2_store_free</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="arm2_waiting_for_swivel_1">
+        <name><text>arm2_waiting_for_swivel_1</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm2_storing">
+        <name><text>arm2_storing</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm2_having_swivel_2">
+        <name><text>arm2_having_swivel_2</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm2_having_swivel_1">
+        <name><text>arm2_having_swivel_1</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm2_waiting_for_swivel_2">
+        <name><text>arm2_waiting_for_swivel_2</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2U_rotated">
+        <name><text>A2U_rotated</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2U_in">
+        <name><text>A2U_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2U_out">
+        <name><text>A2U_out</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm2_release_angle">
+        <name><text>arm2_release_angle</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="arm1_pick_up_angle">
+        <name><text>arm1_pick_up_angle</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="robot_right">
+        <name><text>robot_right</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="robot_stop">
+        <name><text>robot_stop</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="A2U_rot1_in">
+        <name><text>A2U_rot1_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="robot_left">
+        <name><text>robot_left</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2U_rot2_in">
+        <name><text>A2U_rot2_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2U_rot3_in">
+        <name><text>A2U_rot3_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm1_release_angle">
+        <name><text>arm1_release_angle</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm2_pick_up_angle">
+        <name><text>arm2_pick_up_angle</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2U_rot1_rs">
+        <name><text>A2U_rot1_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2U_rot1_run">
+        <name><text>A2U_rot1_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2U_rot2_rs">
+        <name><text>A2U_rot2_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2U_rot2_run">
+        <name><text>A2U_rot2_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2U_rot3_rs">
+        <name><text>A2U_rot3_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2U_rot3_run">
+        <name><text>A2U_rot3_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm2_release_ext">
+        <name><text>arm2_release_ext</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm2_retract_ext">
+        <name><text>arm2_retract_ext</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="arm2_forward">
+        <name><text>arm2_forward</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm2_stop">
+        <name><text>arm2_stop</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="A2U_extended">
+        <name><text>A2U_extended</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm2_backward">
+        <name><text>arm2_backward</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2U_unloaded">
+        <name><text>A2U_unloaded</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm2_magnet_off">
+        <name><text>arm2_magnet_off</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="arm2_magnet_on">
+        <name><text>arm2_magnet_on</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2U_ext_rs">
+        <name><text>A2U_ext_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2U_ext_run">
+        <name><text>A2U_ext_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2U_ret_rs">
+        <name><text>A2U_ret_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2U_ret_run">
+        <name><text>A2U_ret_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_rotated">
+        <name><text>A2L_rotated</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_in">
+        <name><text>A2L_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_out">
+        <name><text>A2L_out</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_rot1_in">
+        <name><text>A2L_rot1_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_rot2_in">
+        <name><text>A2L_rot2_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_rot3_in">
+        <name><text>A2L_rot3_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_rot1_rs">
+        <name><text>A2L_rot1_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_rot1_run">
+        <name><text>A2L_rot1_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_rot2_rs">
+        <name><text>A2L_rot2_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_rot2_run">
+        <name><text>A2L_rot2_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_rot3_rs">
+        <name><text>A2L_rot3_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_rot3_run">
+        <name><text>A2L_rot3_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm2_pick_up_ext">
+        <name><text>arm2_pick_up_ext</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_extended">
+        <name><text>A2L_extended</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_loaded">
+        <name><text>A2L_loaded</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_ext_rs">
+        <name><text>A2L_ext_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_ext_run">
+        <name><text>A2L_ext_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_ret_rs">
+        <name><text>A2L_ret_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A2L_ret_run">
+        <name><text>A2L_ret_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm1_store_free">
+        <name><text>arm1_store_free</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="arm1_waiting_for_swivel_1">
+        <name><text>arm1_waiting_for_swivel_1</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm1_storing">
+        <name><text>arm1_storing</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm1_having_swivel_2">
+        <name><text>arm1_having_swivel_2</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm1_having_swivel_1">
+        <name><text>arm1_having_swivel_1</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm1_waiting_for_swivel_2">
+        <name><text>arm1_waiting_for_swivel_2</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1L_rotated">
+        <name><text>A1L_rotated</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1L_in">
+        <name><text>A1L_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1L_out">
+        <name><text>A1L_out</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1L_rot1_in">
+        <name><text>A1L_rot1_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1L_rot2_in">
+        <name><text>A1L_rot2_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1L_rot3_in">
+        <name><text>A1L_rot3_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1L_rot1_rs">
+        <name><text>A1L_rot1_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1L_rot1_run">
+        <name><text>A1L_rot1_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1L_rot2_rs">
+        <name><text>A1L_rot2_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1L_rot2_run">
+        <name><text>A1L_rot2_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1L_rot3_rs">
+        <name><text>A1L_rot3_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1L_rot3_run">
+        <name><text>A1L_rot3_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm1_pick_up_ext">
+        <name><text>arm1_pick_up_ext</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm1_retract_ext">
+        <name><text>arm1_retract_ext</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="arm1_forward">
+        <name><text>arm1_forward</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm1_stop">
+        <name><text>arm1_stop</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="A1_extended">
+        <name><text>A1_extended</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm1_backward">
+        <name><text>arm1_backward</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1L_loaded">
+        <name><text>A1L_loaded</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm1_magnet_on">
+        <name><text>arm1_magnet_on</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm1_magnet_off">
+        <name><text>arm1_magnet_off</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="A1L_ext_rs">
+        <name><text>A1L_ext_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1L_ext_run">
+        <name><text>A1L_ext_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1L_ret_rs">
+        <name><text>A1L_ret_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1L_ret_run">
+        <name><text>A1L_ret_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_rotated">
+        <name><text>A1U_rotated</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_out">
+        <name><text>A1U_out</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_in">
+        <name><text>A1U_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_rot1_in">
+        <name><text>A1U_rot1_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_rot2_in">
+        <name><text>A1U_rot2_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_rot3_in">
+        <name><text>A1U_rot3_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_rot1_rs">
+        <name><text>A1U_rot1_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_rot1_run">
+        <name><text>A1U_rot1_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_rot2_rs">
+        <name><text>A1U_rot2_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_rot2_run">
+        <name><text>A1U_rot2_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_rot3_rs">
+        <name><text>A1U_rot3_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_rot3_run">
+        <name><text>A1U_rot3_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="arm1_release_ext">
+        <name><text>arm1_release_ext</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_extendet">
+        <name><text>A1U_extendet</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_unloadet">
+        <name><text>A1U_unloadet</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_ext_rs">
+        <name><text>A1U_ext_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_ext_run">
+        <name><text>A1U_ext_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_ret_rs">
+        <name><text>A1U_ret_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="A1U_ret_run">
+        <name><text>A1U_ret_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="crane_store_free">
+        <name><text>crane_store_free</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="crane_storing">
+        <name><text>crane_storing</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="crane_mag_off">
+        <name><text>crane_mag_off</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="crane_mag_on">
+        <name><text>crane_mag_on</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="crane_transport_height">
+        <name><text>crane_transport_height</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="crane_release_height">
+        <name><text>crane_release_height</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="crane_lift">
+        <name><text>crane_lift</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="crane_stop_v">
+        <name><text>crane_stop_v</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="CU_unloaded">
+        <name><text>CU_unloaded</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CU_ready_to_transport">
+        <name><text>CU_ready_to_transport</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="crane_above_deposit_belt">
+        <name><text>crane_above_deposit_belt</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="crane_above_feed_belt">
+        <name><text>crane_above_feed_belt</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="crane_to_belt2">
+        <name><text>crane_to_belt2</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="crane_stop_h">
+        <name><text>crane_stop_h</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="CU_out">
+        <name><text>CU_out</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CU_ready_to_ungrasp">
+        <name><text>CU_ready_to_ungrasp</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CU_in">
+        <name><text>CU_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="crane_lower">
+        <name><text>crane_lower</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CU_lift_rs">
+        <name><text>CU_lift_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CU_lift_run">
+        <name><text>CU_lift_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CU_trans_rs">
+        <name><text>CU_trans_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CU_trans_run">
+        <name><text>CU_trans_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CU_lower_rs">
+        <name><text>CU_lower_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CU_lower_run">
+        <name><text>CU_lower_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="crane_pick_up_height">
+        <name><text>crane_pick_up_height</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CL_in">
+        <name><text>CL_in</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CL_ready_to_grasp">
+        <name><text>CL_ready_to_grasp</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CL_out">
+        <name><text>CL_out</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="crane_to_belt1">
+        <name><text>crane_to_belt1</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CL_ready_to_transport">
+        <name><text>CL_ready_to_transport</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CL_loaded">
+        <name><text>CL_loaded</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CL_lower_rs">
+        <name><text>CL_lower_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CL_lower_run">
+        <name><text>CL_lower_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CL_trans_rs">
+        <name><text>CL_trans_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CL_trans_run">
+        <name><text>CL_trans_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CL_lift_rs">
+        <name><text>CL_lift_rs</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="CL_lift_run">
+        <name><text>CL_lift_run</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <transition id="press_lock_input_area">
+        <name><text>press_lock_input_area</text></name>
+      </transition>
+      <transition id="press_unlock_output_area">
+        <name><text>press_unlock_output_area</text></name>
+      </transition>
+      <transition id="press_lock_output_area">
+        <name><text>press_lock_output_area</text></name>
+      </transition>
+      <transition id="press_unlock_input_area">
+        <name><text>press_unlock_input_area</text></name>
+      </transition>
+      <transition id="PU_lower_Pstop">
+        <name><text>PU_lower_Pstop</text></name>
+      </transition>
+      <transition id="PU_lower_Cstop">
+        <name><text>PU_lower_Cstop</text></name>
+      </transition>
+      <transition id="PU_lower_Pstart">
+        <name><text>PU_lower_Pstart</text></name>
+      </transition>
+      <transition id="PU_lower_csc">
+        <name><text>PU_lower_csc</text></name>
+      </transition>
+      <transition id="forge_Pstop">
+        <name><text>forge_Pstop</text></name>
+      </transition>
+      <transition id="forge_Cstop">
+        <name><text>forge_Cstop</text></name>
+      </transition>
+      <transition id="forge_Pstart">
+        <name><text>forge_Pstart</text></name>
+      </transition>
+      <transition id="forge_csc">
+        <name><text>forge_csc</text></name>
+      </transition>
+      <transition id="PL_lower_Pstop">
+        <name><text>PL_lower_Pstop</text></name>
+      </transition>
+      <transition id="PL_lower_Cstop">
+        <name><text>PL_lower_Cstop</text></name>
+      </transition>
+      <transition id="PL_lower_Pstart">
+        <name><text>PL_lower_Pstart</text></name>
+      </transition>
+      <transition id="PL_lower_csc">
+        <name><text>PL_lower_csc</text></name>
+      </transition>
+      <transition id="table_lock_input_area">
+        <name><text>table_lock_input_area</text></name>
+      </transition>
+      <transition id="table_unlock_output_area">
+        <name><text>table_unlock_output_area</text></name>
+      </transition>
+      <transition id="table_lock_output_area">
+        <name><text>table_lock_output_area</text></name>
+      </transition>
+      <transition id="table_unlock_input_area">
+        <name><text>table_unlock_input_area</text></name>
+      </transition>
+      <transition id="TL_rot_Pstop">
+        <name><text>TL_rot_Pstop</text></name>
+      </transition>
+      <transition id="TL_rot_Cstop">
+        <name><text>TL_rot_Cstop</text></name>
+      </transition>
+      <transition id="TL_rot_Pstart">
+        <name><text>TL_rot_Pstart</text></name>
+      </transition>
+      <transition id="TL_rot_csc">
+        <name><text>TL_rot_csc</text></name>
+      </transition>
+      <transition id="TL_lower_Pstop">
+        <name><text>TL_lower_Pstop</text></name>
+      </transition>
+      <transition id="TL_lower_Cstop">
+        <name><text>TL_lower_Cstop</text></name>
+      </transition>
+      <transition id="TL_lower_Pstart">
+        <name><text>TL_lower_Pstart</text></name>
+      </transition>
+      <transition id="TL_lower_csc">
+        <name><text>TL_lower_csc</text></name>
+      </transition>
+      <transition id="TU_lift_Pstop">
+        <name><text>TU_lift_Pstop</text></name>
+      </transition>
+      <transition id="TU_lift_Cstop">
+        <name><text>TU_lift_Cstop</text></name>
+      </transition>
+      <transition id="TU_lift_Pstart">
+        <name><text>TU_lift_Pstart</text></name>
+      </transition>
+      <transition id="TU_lift_csc">
+        <name><text>TU_lift_csc</text></name>
+      </transition>
+      <transition id="TU_rot_Pstop">
+        <name><text>TU_rot_Pstop</text></name>
+      </transition>
+      <transition id="TU_rot_Cstop">
+        <name><text>TU_rot_Cstop</text></name>
+      </transition>
+      <transition id="TU_rot_Pstart">
+        <name><text>TU_rot_Pstart</text></name>
+      </transition>
+      <transition id="TU_rot_csc">
+        <name><text>TU_rot_csc</text></name>
+      </transition>
+      <transition id="deposit_belt_lock_input_area">
+        <name><text>deposit_belt_lock_input_area</text></name>
+      </transition>
+      <transition id="deposit_belt_lock_output_area">
+        <name><text>deposit_belt_lock_output_area</text></name>
+      </transition>
+      <transition id="deposit_belt_unlock_input_area">
+        <name><text>deposit_belt_unlock_input_area</text></name>
+      </transition>
+      <transition id="deposit_belt_unlock_output_area">
+        <name><text>deposit_belt_unlock_output_area</text></name>
+      </transition>
+      <transition id="DB_trans_Pstop">
+        <name><text>DB_trans_Pstop</text></name>
+      </transition>
+      <transition id="DB_trans_Cstop">
+        <name><text>DB_trans_Cstop</text></name>
+      </transition>
+      <transition id="DB_trans_Pstart">
+        <name><text>DB_trans_Pstart</text></name>
+      </transition>
+      <transition id="DB_trans_csc">
+        <name><text>DB_trans_csc</text></name>
+      </transition>
+      <transition id="DB_deliver_Pstop">
+        <name><text>DB_deliver_Pstop</text></name>
+      </transition>
+      <transition id="DB_deliver_Cstop">
+        <name><text>DB_deliver_Cstop</text></name>
+      </transition>
+      <transition id="DB_deliver_Pstart">
+        <name><text>DB_deliver_Pstart</text></name>
+      </transition>
+      <transition id="DB_deliver_csc">
+        <name><text>DB_deliver_csc</text></name>
+      </transition>
+      <transition id="feed_belt_lock_input_area">
+        <name><text>feed_belt_lock_input_area</text></name>
+      </transition>
+      <transition id="feed_belt_lock_output_area">
+        <name><text>feed_belt_lock_output_area</text></name>
+      </transition>
+      <transition id="feed_belt_unlock_input_area">
+        <name><text>feed_belt_unlock_input_area</text></name>
+      </transition>
+      <transition id="feed_belt_unlock_output_area">
+        <name><text>feed_belt_unlock_output_area</text></name>
+      </transition>
+      <transition id="FB_trans_Pstop">
+        <name><text>FB_trans_Pstop</text></name>
+      </transition>
+      <transition id="FB_trans_Cstop">
+        <name><text>FB_trans_Cstop</text></name>
+      </transition>
+      <transition id="FB_trans_Pstart">
+        <name><text>FB_trans_Pstart</text></name>
+      </transition>
+      <transition id="FB_trans_csc">
+        <name><text>FB_trans_csc</text></name>
+      </transition>
+      <transition id="FB_deliver_Pstop">
+        <name><text>FB_deliver_Pstop</text></name>
+      </transition>
+      <transition id="FB_deliver_Cstop">
+        <name><text>FB_deliver_Cstop</text></name>
+      </transition>
+      <transition id="FB_deliver_Pstart">
+        <name><text>FB_deliver_Pstart</text></name>
+      </transition>
+      <transition id="FB_deliver_csc">
+        <name><text>FB_deliver_csc</text></name>
+      </transition>
+      <transition id="arm2_lock_input_area">
+        <name><text>arm2_lock_input_area</text></name>
+      </transition>
+      <transition id="arm2_lock_swivel_1">
+        <name><text>arm2_lock_swivel_1</text></name>
+      </transition>
+      <transition id="arm2_unlock_swivel_1">
+        <name><text>arm2_unlock_swivel_1</text></name>
+      </transition>
+      <transition id="arm2_lock_output_area">
+        <name><text>arm2_lock_output_area</text></name>
+      </transition>
+      <transition id="arm2_unlock_output_area">
+        <name><text>arm2_unlock_output_area</text></name>
+      </transition>
+      <transition id="arm2_unlock_swivel_2">
+        <name><text>arm2_unlock_swivel_2</text></name>
+      </transition>
+      <transition id="arm2_unlock_input_area">
+        <name><text>arm2_unlock_input_area</text></name>
+      </transition>
+      <transition id="arm2_lock_swivel_2">
+        <name><text>arm2_lock_swivel_2</text></name>
+      </transition>
+      <transition id="A2U_c1">
+        <name><text>A2U_c1</text></name>
+      </transition>
+      <transition id="A2U_c2">
+        <name><text>A2U_c2</text></name>
+      </transition>
+      <transition id="A2U_c3">
+        <name><text>A2U_c3</text></name>
+      </transition>
+      <transition id="A2U_rot1_Pstop">
+        <name><text>A2U_rot1_Pstop</text></name>
+      </transition>
+      <transition id="A2U_rot1_Cstop">
+        <name><text>A2U_rot1_Cstop</text></name>
+      </transition>
+      <transition id="A2U_rot1_Pstart">
+        <name><text>A2U_rot1_Pstart</text></name>
+      </transition>
+      <transition id="A2U_rot1_csc">
+        <name><text>A2U_rot1_csc</text></name>
+      </transition>
+      <transition id="A2U_rot2_Pstop">
+        <name><text>A2U_rot2_Pstop</text></name>
+      </transition>
+      <transition id="A2U_rot2_Cstop">
+        <name><text>A2U_rot2_Cstop</text></name>
+      </transition>
+      <transition id="A2U_rot2_Pstart">
+        <name><text>A2U_rot2_Pstart</text></name>
+      </transition>
+      <transition id="A2U_rot2_csc">
+        <name><text>A2U_rot2_csc</text></name>
+      </transition>
+      <transition id="A2U_rot3_Pstop">
+        <name><text>A2U_rot3_Pstop</text></name>
+      </transition>
+      <transition id="A2U_rot3_Cstop">
+        <name><text>A2U_rot3_Cstop</text></name>
+      </transition>
+      <transition id="A2U_rot3_Pstart">
+        <name><text>A2U_rot3_Pstart</text></name>
+      </transition>
+      <transition id="A2U_rot3_csc">
+        <name><text>A2U_rot3_csc</text></name>
+      </transition>
+      <transition id="A2U_ungrasp">
+        <name><text>A2U_ungrasp</text></name>
+      </transition>
+      <transition id="A2U_ext_Pstop">
+        <name><text>A2U_ext_Pstop</text></name>
+      </transition>
+      <transition id="A2U_ext_Cstop">
+        <name><text>A2U_ext_Cstop</text></name>
+      </transition>
+      <transition id="A2U_ext_Pstart">
+        <name><text>A2U_ext_Pstart</text></name>
+      </transition>
+      <transition id="A2U_ext_csc">
+        <name><text>A2U_ext_csc</text></name>
+      </transition>
+      <transition id="A2U_ret_Pstop">
+        <name><text>A2U_ret_Pstop</text></name>
+      </transition>
+      <transition id="A2U_ret_Cstop">
+        <name><text>A2U_ret_Cstop</text></name>
+      </transition>
+      <transition id="A2U_ret_Pstart">
+        <name><text>A2U_ret_Pstart</text></name>
+      </transition>
+      <transition id="A2U_ret_csc">
+        <name><text>A2U_ret_csc</text></name>
+      </transition>
+      <transition id="A2L_c1">
+        <name><text>A2L_c1</text></name>
+      </transition>
+      <transition id="A2L_c2">
+        <name><text>A2L_c2</text></name>
+      </transition>
+      <transition id="A2L_c3">
+        <name><text>A2L_c3</text></name>
+      </transition>
+      <transition id="A2L_rot1_Pstop">
+        <name><text>A2L_rot1_Pstop</text></name>
+      </transition>
+      <transition id="A2L_rot1_Cstop">
+        <name><text>A2L_rot1_Cstop</text></name>
+      </transition>
+      <transition id="A2L_rot1_Pstart">
+        <name><text>A2L_rot1_Pstart</text></name>
+      </transition>
+      <transition id="A2L_rot1_csc">
+        <name><text>A2L_rot1_csc</text></name>
+      </transition>
+      <transition id="A2L_rot2_Pstop">
+        <name><text>A2L_rot2_Pstop</text></name>
+      </transition>
+      <transition id="A2L_rot2_Cstop">
+        <name><text>A2L_rot2_Cstop</text></name>
+      </transition>
+      <transition id="A2L_rot2_Pstart">
+        <name><text>A2L_rot2_Pstart</text></name>
+      </transition>
+      <transition id="A2L_rot2_csc">
+        <name><text>A2L_rot2_csc</text></name>
+      </transition>
+      <transition id="A2L_rot3_Pstop">
+        <name><text>A2L_rot3_Pstop</text></name>
+      </transition>
+      <transition id="A2L_rot3_Cstop">
+        <name><text>A2L_rot3_Cstop</text></name>
+      </transition>
+      <transition id="A2L_rot3_Pstart">
+        <name><text>A2L_rot3_Pstart</text></name>
+      </transition>
+      <transition id="A2L_rot3_csc">
+        <name><text>A2L_rot3_csc</text></name>
+      </transition>
+      <transition id="A2L_grasp">
+        <name><text>A2L_grasp</text></name>
+      </transition>
+      <transition id="A2L_ext_Pstop">
+        <name><text>A2L_ext_Pstop</text></name>
+      </transition>
+      <transition id="A2L_ext_Cstop">
+        <name><text>A2L_ext_Cstop</text></name>
+      </transition>
+      <transition id="A2L_ext_Pstart">
+        <name><text>A2L_ext_Pstart</text></name>
+      </transition>
+      <transition id="A2L_ext_csc">
+        <name><text>A2L_ext_csc</text></name>
+      </transition>
+      <transition id="A2L_ret_Pstop">
+        <name><text>A2L_ret_Pstop</text></name>
+      </transition>
+      <transition id="A2L_ret_Cstop">
+        <name><text>A2L_ret_Cstop</text></name>
+      </transition>
+      <transition id="A2L_ret_Pstart">
+        <name><text>A2L_ret_Pstart</text></name>
+      </transition>
+      <transition id="A2L_ret_csc">
+        <name><text>A2L_ret_csc</text></name>
+      </transition>
+      <transition id="arm1_lock_input_area">
+        <name><text>arm1_lock_input_area</text></name>
+      </transition>
+      <transition id="arm1_lock_swivel_1">
+        <name><text>arm1_lock_swivel_1</text></name>
+      </transition>
+      <transition id="arm1_unlock_swivel_1">
+        <name><text>arm1_unlock_swivel_1</text></name>
+      </transition>
+      <transition id="arm1_lock_output_area">
+        <name><text>arm1_lock_output_area</text></name>
+      </transition>
+      <transition id="arm1_unlock_output_area">
+        <name><text>arm1_unlock_output_area</text></name>
+      </transition>
+      <transition id="arm1_unlock_swivel_2">
+        <name><text>arm1_unlock_swivel_2</text></name>
+      </transition>
+      <transition id="arm1_unlock_input_area">
+        <name><text>arm1_unlock_input_area</text></name>
+      </transition>
+      <transition id="arm1_lock_swivel_2">
+        <name><text>arm1_lock_swivel_2</text></name>
+      </transition>
+      <transition id="A1L_c1">
+        <name><text>A1L_c1</text></name>
+      </transition>
+      <transition id="A1L_c2">
+        <name><text>A1L_c2</text></name>
+      </transition>
+      <transition id="A1L_c3">
+        <name><text>A1L_c3</text></name>
+      </transition>
+      <transition id="A1L_rot1_Pstop">
+        <name><text>A1L_rot1_Pstop</text></name>
+      </transition>
+      <transition id="A1L_rot1_Cstop">
+        <name><text>A1L_rot1_Cstop</text></name>
+      </transition>
+      <transition id="A1L_rot1_Pstart">
+        <name><text>A1L_rot1_Pstart</text></name>
+      </transition>
+      <transition id="A1L_rot1_csc">
+        <name><text>A1L_rot1_csc</text></name>
+      </transition>
+      <transition id="A1L_rot2_Pstop">
+        <name><text>A1L_rot2_Pstop</text></name>
+      </transition>
+      <transition id="A1L_rot2_Cstop">
+        <name><text>A1L_rot2_Cstop</text></name>
+      </transition>
+      <transition id="A1L_rot2_Pstart">
+        <name><text>A1L_rot2_Pstart</text></name>
+      </transition>
+      <transition id="A1L_rot2_csc">
+        <name><text>A1L_rot2_csc</text></name>
+      </transition>
+      <transition id="A1L_rot3_Pstop">
+        <name><text>A1L_rot3_Pstop</text></name>
+      </transition>
+      <transition id="A1L_rot3_Cstop">
+        <name><text>A1L_rot3_Cstop</text></name>
+      </transition>
+      <transition id="A1L_rot3_Pstart">
+        <name><text>A1L_rot3_Pstart</text></name>
+      </transition>
+      <transition id="A1L_rot3_csc">
+        <name><text>A1L_rot3_csc</text></name>
+      </transition>
+      <transition id="A1L_grasp">
+        <name><text>A1L_grasp</text></name>
+      </transition>
+      <transition id="A1L_ext_Pstop">
+        <name><text>A1L_ext_Pstop</text></name>
+      </transition>
+      <transition id="A1L_ext_Cstop">
+        <name><text>A1L_ext_Cstop</text></name>
+      </transition>
+      <transition id="A1L_ext_Pstart">
+        <name><text>A1L_ext_Pstart</text></name>
+      </transition>
+      <transition id="A1L_ext_csc">
+        <name><text>A1L_ext_csc</text></name>
+      </transition>
+      <transition id="A1L_ret_Pstop">
+        <name><text>A1L_ret_Pstop</text></name>
+      </transition>
+      <transition id="A1L_ret_Cstop">
+        <name><text>A1L_ret_Cstop</text></name>
+      </transition>
+      <transition id="A1L_ret_Pstart">
+        <name><text>A1L_ret_Pstart</text></name>
+      </transition>
+      <transition id="A1L_ret_csc">
+        <name><text>A1L_ret_csc</text></name>
+      </transition>
+      <transition id="A1U_c1">
+        <name><text>A1U_c1</text></name>
+      </transition>
+      <transition id="A1U_c2">
+        <name><text>A1U_c2</text></name>
+      </transition>
+      <transition id="A1U_c3">
+        <name><text>A1U_c3</text></name>
+      </transition>
+      <transition id="A1U_rot1_Pstop">
+        <name><text>A1U_rot1_Pstop</text></name>
+      </transition>
+      <transition id="A1U_rot1_Cstop">
+        <name><text>A1U_rot1_Cstop</text></name>
+      </transition>
+      <transition id="A1U_rot1_Pstart">
+        <name><text>A1U_rot1_Pstart</text></name>
+      </transition>
+      <transition id="A1U_rot1_csc">
+        <name><text>A1U_rot1_csc</text></name>
+      </transition>
+      <transition id="A1U_rot2_Pstop">
+        <name><text>A1U_rot2_Pstop</text></name>
+      </transition>
+      <transition id="A1U_rot2_Cstop">
+        <name><text>A1U_rot2_Cstop</text></name>
+      </transition>
+      <transition id="A1U_rot2_Pstart">
+        <name><text>A1U_rot2_Pstart</text></name>
+      </transition>
+      <transition id="A1U_rot2_csc">
+        <name><text>A1U_rot2_csc</text></name>
+      </transition>
+      <transition id="A1U_rot3_Pstop">
+        <name><text>A1U_rot3_Pstop</text></name>
+      </transition>
+      <transition id="A1U_rot3_Cstop">
+        <name><text>A1U_rot3_Cstop</text></name>
+      </transition>
+      <transition id="A1U_rot3_Pstart">
+        <name><text>A1U_rot3_Pstart</text></name>
+      </transition>
+      <transition id="A1U_rot3_csc">
+        <name><text>A1U_rot3_csc</text></name>
+      </transition>
+      <transition id="A1U_ungrasp">
+        <name><text>A1U_ungrasp</text></name>
+      </transition>
+      <transition id="A1U_ext_Pstop">
+        <name><text>A1U_ext_Pstop</text></name>
+      </transition>
+      <transition id="A1U_ext_Cstop">
+        <name><text>A1U_ext_Cstop</text></name>
+      </transition>
+      <transition id="A1U_ext_Pstart">
+        <name><text>A1U_ext_Pstart</text></name>
+      </transition>
+      <transition id="A1U_ext_csc">
+        <name><text>A1U_ext_csc</text></name>
+      </transition>
+      <transition id="A1U_ret_Pstop">
+        <name><text>A1U_ret_Pstop</text></name>
+      </transition>
+      <transition id="A1U_ret_Cstop">
+        <name><text>A1U_ret_Cstop</text></name>
+      </transition>
+      <transition id="A1U_ret_Pstart">
+        <name><text>A1U_ret_Pstart</text></name>
+      </transition>
+      <transition id="A1U_ret_csc">
+        <name><text>A1U_ret_csc</text></name>
+      </transition>
+      <transition id="crane_lock_input_area">
+        <name><text>crane_lock_input_area</text></name>
+      </transition>
+      <transition id="crane_lock_output_area">
+        <name><text>crane_lock_output_area</text></name>
+      </transition>
+      <transition id="crane_unlock_output_area">
+        <name><text>crane_unlock_output_area</text></name>
+      </transition>
+      <transition id="crane_unlock_input_area">
+        <name><text>crane_unlock_input_area</text></name>
+      </transition>
+      <transition id="CU_ungrasp">
+        <name><text>CU_ungrasp</text></name>
+      </transition>
+      <transition id="CU_lift_Pstop">
+        <name><text>CU_lift_Pstop</text></name>
+      </transition>
+      <transition id="CU_lift_Cstop">
+        <name><text>CU_lift_Cstop</text></name>
+      </transition>
+      <transition id="CU_lift_Pstart">
+        <name><text>CU_lift_Pstart</text></name>
+      </transition>
+      <transition id="CU_lift_csc">
+        <name><text>CU_lift_csc</text></name>
+      </transition>
+      <transition id="CU_trans_Pstop">
+        <name><text>CU_trans_Pstop</text></name>
+      </transition>
+      <transition id="CU_trans_Cstop">
+        <name><text>CU_trans_Cstop</text></name>
+      </transition>
+      <transition id="CU_trans_Pstart">
+        <name><text>CU_trans_Pstart</text></name>
+      </transition>
+      <transition id="CU_trans_csc">
+        <name><text>CU_trans_csc</text></name>
+      </transition>
+      <transition id="CU_lower_Pstop">
+        <name><text>CU_lower_Pstop</text></name>
+      </transition>
+      <transition id="CU_lower_Cstop">
+        <name><text>CU_lower_Cstop</text></name>
+      </transition>
+      <transition id="CU_lower_Pstart">
+        <name><text>CU_lower_Pstart</text></name>
+      </transition>
+      <transition id="CU_lower_csc">
+        <name><text>CU_lower_csc</text></name>
+      </transition>
+      <transition id="CL_grasp">
+        <name><text>CL_grasp</text></name>
+      </transition>
+      <transition id="CL_lower_Pstop">
+        <name><text>CL_lower_Pstop</text></name>
+      </transition>
+      <transition id="CL_lower_Cstop">
+        <name><text>CL_lower_Cstop</text></name>
+      </transition>
+      <transition id="CL_lower_Pstart">
+        <name><text>CL_lower_Pstart</text></name>
+      </transition>
+      <transition id="CL_lower_csc">
+        <name><text>CL_lower_csc</text></name>
+      </transition>
+      <transition id="CL_trans_Pstop">
+        <name><text>CL_trans_Pstop</text></name>
+      </transition>
+      <transition id="CL_trans_Cstop">
+        <name><text>CL_trans_Cstop</text></name>
+      </transition>
+      <transition id="CL_trans_Pstart">
+        <name><text>CL_trans_Pstart</text></name>
+      </transition>
+      <transition id="CL_trans_csc">
+        <name><text>CL_trans_csc</text></name>
+      </transition>
+      <transition id="CL_lift_Pstop">
+        <name><text>CL_lift_Pstop</text></name>
+      </transition>
+      <transition id="CL_lift_Cstop">
+        <name><text>CL_lift_Cstop</text></name>
+      </transition>
+      <transition id="CL_lift_Pstart">
+        <name><text>CL_lift_Pstart</text></name>
+      </transition>
+      <transition id="CL_lift_csc">
+        <name><text>CL_lift_csc</text></name>
+      </transition>
+      <arc id="e50388" source="CL_lift_Pstart" target="CL_lift_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50397" source="CL_lift_run" target="CL_lift_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50406" source="CL_lift_Cstop" target="CL_lift_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50415" source="CL_lift_rs" target="CL_lift_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50424" source="CL_lift_run" target="CL_lift_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50433" source="CL_lift_csc" target="CL_lift_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50442" source="CL_trans_Pstart" target="CL_trans_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50451" source="CL_trans_run" target="CL_trans_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50460" source="CL_trans_Cstop" target="CL_trans_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50469" source="CL_trans_rs" target="CL_trans_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50478" source="CL_trans_run" target="CL_trans_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50487" source="CL_trans_csc" target="CL_trans_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50496" source="CL_lower_Pstart" target="CL_lower_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50505" source="CL_lower_run" target="CL_lower_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50514" source="CL_lower_Cstop" target="CL_lower_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50523" source="CL_lower_rs" target="CL_lower_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50532" source="CL_lower_run" target="CL_lower_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50541" source="CL_lower_csc" target="CL_lower_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50550" source="CU_lower_Pstart" target="CU_lower_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50559" source="CU_lower_run" target="CU_lower_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50568" source="CU_lower_Cstop" target="CU_lower_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50577" source="CU_lower_rs" target="CU_lower_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50586" source="CU_lower_run" target="CU_lower_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50595" source="CU_lower_csc" target="CU_lower_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50604" source="CU_trans_Pstart" target="CU_trans_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50613" source="CU_trans_run" target="CU_trans_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50622" source="CU_trans_Cstop" target="CU_trans_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50631" source="CU_trans_rs" target="CU_trans_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50640" source="CU_trans_run" target="CU_trans_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50649" source="CU_trans_csc" target="CU_trans_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50658" source="CU_lift_Pstart" target="CU_lift_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50667" source="CU_lift_run" target="CU_lift_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50676" source="CU_lift_Cstop" target="CU_lift_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50685" source="CU_lift_rs" target="CU_lift_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50694" source="CU_lift_run" target="CU_lift_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50703" source="CU_lift_csc" target="CU_lift_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50712" source="crane_mag_off" target="CL_grasp">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50721" source="CL_grasp" target="crane_mag_on">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50730" source="CL_ready_to_grasp" target="CL_grasp">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50739" source="CL_grasp" target="CL_loaded">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50748" source="crane_stop_v" target="CL_lift_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50760" source="CL_lift_Pstart" target="crane_lift">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50772" source="CL_lift_Cstop" target="crane_transport_height">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50784" source="crane_transport_height" target="CL_lift_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50796" source="CL_lift_Pstop" target="crane_stop_v">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50808" source="crane_lift" target="CL_lift_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50820" source="CL_lift_csc" target="crane_lift">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50832" source="crane_lift" target="CL_lift_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50844" source="crane_pick_up_height" target="CL_lift_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50856" source="CL_lift_csc" target="crane_transport_height">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50868" source="CL_lift_Pstop" target="CL_ready_to_transport">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50880" source="CL_loaded" target="CL_lift_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50892" source="crane_stop_h" target="CL_trans_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50904" source="CL_trans_Pstart" target="crane_to_belt1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50916" source="CL_trans_Cstop" target="crane_above_feed_belt">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50928" source="crane_above_feed_belt" target="CL_trans_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50940" source="CL_trans_Pstop" target="crane_stop_h">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50952" source="crane_to_belt1" target="CL_trans_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50964" source="CL_trans_csc" target="crane_to_belt1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50976" source="crane_to_belt1" target="CL_trans_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e50988" source="crane_above_deposit_belt" target="CL_trans_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51000" source="CL_trans_csc" target="crane_above_feed_belt">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51012" source="CL_trans_Pstop" target="CL_out">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51024" source="CL_ready_to_transport" target="CL_trans_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51036" source="crane_stop_v" target="CL_lower_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51048" source="CL_lower_Pstart" target="crane_lower">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51060" source="CL_lower_Cstop" target="crane_pick_up_height">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51072" source="crane_pick_up_height" target="CL_lower_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51084" source="CL_lower_Pstop" target="crane_stop_v">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51096" source="crane_lower" target="CL_lower_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51108" source="CL_lower_csc" target="crane_lower">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51120" source="crane_lower" target="CL_lower_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51132" source="crane_transport_height" target="CL_lower_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51144" source="CL_lower_csc" target="crane_pick_up_height">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51156" source="CL_lower_Pstop" target="CL_ready_to_grasp">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51168" source="CL_in" target="CL_lower_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51180" source="crane_mag_on" target="CU_ungrasp">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51189" source="CU_ungrasp" target="crane_mag_off">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51198" source="CU_ready_to_ungrasp" target="CU_ungrasp">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51207" source="CU_ungrasp" target="CU_unloaded">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51216" source="crane_stop_v" target="CU_lower_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51228" source="CU_lower_Pstart" target="crane_lower">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51240" source="CU_lower_Cstop" target="crane_release_height">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51252" source="crane_release_height" target="CU_lower_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51264" source="CU_lower_Pstop" target="crane_stop_v">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51276" source="crane_lower" target="CU_lower_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51288" source="CU_lower_csc" target="crane_lower">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51300" source="crane_lower" target="CU_lower_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51312" source="crane_transport_height" target="CU_lower_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51324" source="CU_lower_csc" target="crane_release_height">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51336" source="CU_lower_Pstop" target="CU_ready_to_ungrasp">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51348" source="CU_in" target="CU_lower_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51360" source="crane_stop_h" target="CU_trans_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51372" source="CU_trans_Pstart" target="crane_to_belt2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51384" source="CU_trans_Cstop" target="crane_above_deposit_belt">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51396" source="crane_above_deposit_belt" target="CU_trans_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51408" source="CU_trans_Pstop" target="crane_stop_h">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51420" source="crane_to_belt2" target="CU_trans_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51432" source="CU_trans_csc" target="crane_to_belt2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51444" source="crane_to_belt2" target="CU_trans_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51456" source="crane_above_feed_belt" target="CU_trans_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51468" source="CU_trans_csc" target="crane_above_deposit_belt">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51480" source="CU_trans_Pstop" target="CU_out">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51492" source="CU_ready_to_transport" target="CU_trans_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51504" source="crane_stop_v" target="CU_lift_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51516" source="CU_lift_Pstart" target="crane_lift">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51528" source="CU_lift_Cstop" target="crane_transport_height">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51540" source="crane_transport_height" target="CU_lift_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51552" source="CU_lift_Pstop" target="crane_stop_v">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51564" source="crane_lift" target="CU_lift_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51576" source="CU_lift_csc" target="crane_lift">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51588" source="crane_lift" target="CU_lift_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51600" source="crane_release_height" target="CU_lift_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51612" source="CU_lift_csc" target="crane_transport_height">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51624" source="CU_lift_Pstop" target="CU_ready_to_transport">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51636" source="CU_unloaded" target="CU_lift_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51648" source="A1U_ret_Pstart" target="A1U_ret_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51657" source="A1U_ret_run" target="A1U_ret_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51666" source="A1U_ret_Cstop" target="A1U_ret_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51675" source="A1U_ret_rs" target="A1U_ret_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51684" source="A1U_ret_run" target="A1U_ret_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51693" source="A1U_ret_csc" target="A1U_ret_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51702" source="A1U_ext_Pstart" target="A1U_ext_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51711" source="A1U_ext_run" target="A1U_ext_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51720" source="A1U_ext_Cstop" target="A1U_ext_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51729" source="A1U_ext_rs" target="A1U_ext_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51738" source="A1U_ext_run" target="A1U_ext_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51747" source="A1U_ext_csc" target="A1U_ext_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51756" source="A1U_rot3_Pstart" target="A1U_rot3_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51765" source="A1U_rot3_run" target="A1U_rot3_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51774" source="A1U_rot3_Cstop" target="A1U_rot3_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51783" source="A1U_rot3_rs" target="A1U_rot3_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51792" source="A1U_rot3_run" target="A1U_rot3_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51801" source="A1U_rot3_csc" target="A1U_rot3_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51810" source="A1U_rot2_Pstart" target="A1U_rot2_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51819" source="A1U_rot2_run" target="A1U_rot2_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51828" source="A1U_rot2_Cstop" target="A1U_rot2_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51837" source="A1U_rot2_rs" target="A1U_rot2_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51846" source="A1U_rot2_run" target="A1U_rot2_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51855" source="A1U_rot2_csc" target="A1U_rot2_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51864" source="A1U_rot1_Pstart" target="A1U_rot1_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51873" source="A1U_rot1_run" target="A1U_rot1_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51882" source="A1U_rot1_Cstop" target="A1U_rot1_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51891" source="A1U_rot1_rs" target="A1U_rot1_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51900" source="A1U_rot1_run" target="A1U_rot1_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51909" source="A1U_rot1_csc" target="A1U_rot1_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51918" source="A1U_ext_Pstop" target="A1U_extendet">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51930" source="A1U_ext_csc" target="arm1_release_ext">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51942" source="arm1_retract_ext" target="A1U_ext_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51954" source="arm1_forward" target="A1U_ext_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51966" source="A1U_ext_csc" target="arm1_forward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51978" source="arm1_forward" target="A1U_ext_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51990" source="A1U_ext_Pstop" target="arm1_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52002" source="arm1_release_ext" target="A1U_ext_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52014" source="A1U_ext_Cstop" target="arm1_release_ext">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52026" source="A1U_ext_Pstart" target="arm1_forward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52038" source="arm1_stop" target="A1U_ext_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52050" source="A1U_unloadet" target="A1U_ret_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52062" source="A1U_ret_csc" target="arm1_retract_ext">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52074" source="arm1_release_ext" target="A1U_ret_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52086" source="arm1_backward" target="A1U_ret_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52098" source="A1U_ret_csc" target="arm1_backward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52110" source="arm1_backward" target="A1U_ret_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52122" source="A1U_ret_Pstop" target="arm1_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52134" source="arm1_retract_ext" target="A1U_ret_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52146" source="A1U_ret_Cstop" target="arm1_retract_ext">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52158" source="A1U_ret_Pstart" target="arm1_backward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52170" source="arm1_stop" target="A1U_ret_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52182" source="arm1_magnet_on" target="A1U_ungrasp">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52191" source="A1U_ungrasp" target="arm1_magnet_off">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52200" source="A1U_extendet" target="A1U_ungrasp">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52209" source="A1U_ungrasp" target="A1U_unloadet">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52218" source="A1U_rot1_in" target="A1U_rot1_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52230" source="A1U_rot1_csc" target="arm1_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52242" source="arm1_pick_up_angle" target="A1U_rot1_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52254" source="robot_right" target="A1U_rot1_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52266" source="A1U_rot1_csc" target="robot_right">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52278" source="robot_right" target="A1U_rot1_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52290" source="A1U_rot1_Pstop" target="robot_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52302" source="arm1_release_angle" target="A1U_rot1_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52314" source="A1U_rot1_Cstop" target="arm1_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52326" source="A1U_rot1_Pstart" target="robot_right">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52338" source="robot_stop" target="A1U_rot1_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52350" source="A1U_rot2_in" target="A1U_rot2_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52362" source="A1U_rot2_csc" target="arm1_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52374" source="arm2_pick_up_angle" target="A1U_rot2_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52386" source="robot_right" target="A1U_rot2_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52398" source="A1U_rot2_csc" target="robot_right">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52410" source="robot_right" target="A1U_rot2_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52422" source="A1U_rot2_Pstop" target="robot_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52434" source="arm1_release_angle" target="A1U_rot2_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52446" source="A1U_rot2_Cstop" target="arm1_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52458" source="A1U_rot2_Pstart" target="robot_right">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52470" source="robot_stop" target="A1U_rot2_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52482" source="A1U_rot3_in" target="A1U_rot3_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52494" source="A1U_rot3_csc" target="arm1_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52506" source="arm2_release_angle" target="A1U_rot3_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52518" source="robot_left" target="A1U_rot3_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52530" source="A1U_rot3_csc" target="robot_left">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52542" source="robot_left" target="A1U_rot3_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52554" source="A1U_rot3_Pstop" target="robot_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52566" source="arm1_release_angle" target="A1U_rot3_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52578" source="A1U_rot3_Cstop" target="arm1_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52590" source="A1U_rot3_Pstart" target="robot_left">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52602" source="robot_stop" target="A1U_rot3_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52614" source="A1U_c1" target="arm1_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52623" source="arm1_pick_up_angle" target="A1U_c1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52632" source="A1U_c2" target="arm2_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52641" source="arm2_pick_up_angle" target="A1U_c2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52650" source="A1U_c3" target="arm2_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52659" source="arm2_release_angle" target="A1U_c3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52668" source="A1U_c1" target="A1U_rot1_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52677" source="A1U_c2" target="A1U_rot2_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52686" source="A1U_c3" target="A1U_rot3_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52695" source="A1L_ret_Pstart" target="A1L_ret_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52704" source="A1L_ret_run" target="A1L_ret_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52713" source="A1L_ret_Cstop" target="A1L_ret_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52722" source="A1L_ret_rs" target="A1L_ret_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52731" source="A1L_ret_run" target="A1L_ret_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52740" source="A1L_ret_csc" target="A1L_ret_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52749" source="A1L_ext_Pstart" target="A1L_ext_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52758" source="A1L_ext_run" target="A1L_ext_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52767" source="A1L_ext_Cstop" target="A1L_ext_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52776" source="A1L_ext_rs" target="A1L_ext_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52785" source="A1L_ext_run" target="A1L_ext_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52794" source="A1L_ext_csc" target="A1L_ext_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52803" source="A1L_rot3_Pstart" target="A1L_rot3_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52812" source="A1L_rot3_run" target="A1L_rot3_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52821" source="A1L_rot3_Cstop" target="A1L_rot3_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52830" source="A1L_rot3_rs" target="A1L_rot3_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52839" source="A1L_rot3_run" target="A1L_rot3_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52848" source="A1L_rot3_csc" target="A1L_rot3_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52857" source="A1L_rot2_Pstart" target="A1L_rot2_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52866" source="A1L_rot2_run" target="A1L_rot2_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52875" source="A1L_rot2_Cstop" target="A1L_rot2_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52884" source="A1L_rot2_rs" target="A1L_rot2_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52893" source="A1L_rot2_run" target="A1L_rot2_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52902" source="A1L_rot2_csc" target="A1L_rot2_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52911" source="A1L_rot1_Pstart" target="A1L_rot1_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52920" source="A1L_rot1_run" target="A1L_rot1_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52929" source="A1L_rot1_Cstop" target="A1L_rot1_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52938" source="A1L_rot1_rs" target="A1L_rot1_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52947" source="A1L_rot1_run" target="A1L_rot1_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52956" source="A1L_rot1_csc" target="A1L_rot1_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52965" source="A1L_ext_Pstop" target="A1_extended">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52977" source="A1L_ext_csc" target="arm1_pick_up_ext">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e52989" source="arm1_retract_ext" target="A1L_ext_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53001" source="arm1_forward" target="A1L_ext_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53013" source="A1L_ext_csc" target="arm1_forward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53025" source="arm1_forward" target="A1L_ext_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53037" source="A1L_ext_Pstop" target="arm1_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53049" source="arm1_pick_up_ext" target="A1L_ext_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53061" source="A1L_ext_Cstop" target="arm1_pick_up_ext">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53073" source="A1L_ext_Pstart" target="arm1_forward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53085" source="arm1_stop" target="A1L_ext_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53097" source="A1L_loaded" target="A1L_ret_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53109" source="A1L_ret_csc" target="arm1_retract_ext">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53121" source="arm1_pick_up_ext" target="A1L_ret_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53133" source="arm1_backward" target="A1L_ret_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53145" source="A1L_ret_csc" target="arm1_backward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53157" source="arm1_backward" target="A1L_ret_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53169" source="A1L_ret_Pstop" target="arm1_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53181" source="arm1_retract_ext" target="A1L_ret_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53193" source="A1L_ret_Cstop" target="arm1_retract_ext">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53205" source="A1L_ret_Pstart" target="arm1_backward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53217" source="arm1_stop" target="A1L_ret_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53229" source="A1_extended" target="A1L_grasp">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53238" source="A1L_grasp" target="A1L_loaded">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53247" source="arm1_magnet_off" target="A1L_grasp">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53256" source="A1L_grasp" target="arm1_magnet_on">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53265" source="A1L_rot1_in" target="A1L_rot1_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53277" source="A1L_rot1_csc" target="arm1_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53289" source="arm1_release_angle" target="A1L_rot1_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53301" source="robot_left" target="A1L_rot1_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53313" source="A1L_rot1_csc" target="robot_left">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53325" source="robot_left" target="A1L_rot1_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53337" source="A1L_rot1_Pstop" target="robot_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53349" source="arm1_pick_up_angle" target="A1L_rot1_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53361" source="A1L_rot1_Cstop" target="arm1_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53373" source="A1L_rot1_Pstart" target="robot_left">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53385" source="robot_stop" target="A1L_rot1_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53397" source="A1L_rot2_in" target="A1L_rot2_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53409" source="A1L_rot2_csc" target="arm1_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53421" source="arm2_pick_up_angle" target="A1L_rot2_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53433" source="robot_left" target="A1L_rot2_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53445" source="A1L_rot2_csc" target="robot_left">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53457" source="robot_left" target="A1L_rot2_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53469" source="A1L_rot2_Pstop" target="robot_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53481" source="arm1_pick_up_angle" target="A1L_rot2_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53493" source="A1L_rot2_Cstop" target="arm1_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53505" source="A1L_rot2_Pstart" target="robot_left">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53517" source="robot_stop" target="A1L_rot2_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53529" source="A1L_rot3_in" target="A1L_rot3_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53541" source="A1L_rot3_csc" target="arm1_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53553" source="arm2_release_angle" target="A1L_rot3_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53565" source="robot_left" target="A1L_rot3_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53577" source="A1L_rot3_csc" target="robot_left">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53589" source="robot_left" target="A1L_rot3_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53601" source="A1L_rot3_Pstop" target="robot_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53613" source="arm1_pick_up_angle" target="A1L_rot3_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53625" source="A1L_rot3_Cstop" target="arm1_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53637" source="A1L_rot3_Pstart" target="robot_left">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53649" source="robot_stop" target="A1L_rot3_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53661" source="A1L_c1" target="arm1_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53670" source="arm1_release_angle" target="A1L_c1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53679" source="A1L_c2" target="arm2_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53688" source="arm2_pick_up_angle" target="A1L_c2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53697" source="A1L_c3" target="arm2_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53706" source="arm2_release_angle" target="A1L_c3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53715" source="A1L_c1" target="A1L_rot1_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53724" source="A1L_c2" target="A1L_rot2_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53733" source="A1L_c3" target="A1L_rot3_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53742" source="A1U_rot1_Pstop" target="A1U_rotated">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53757" source="A1U_rot2_Pstop" target="A1U_rotated">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53772" source="A1U_rot3_Pstop" target="A1U_rotated">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53787" source="A1U_in" target="A1U_c1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53799" source="A1U_in" target="A1U_c2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53811" source="A1U_in" target="A1U_c3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53823" source="A1U_rotated" target="A1U_ext_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53838" source="A1U_ret_Pstop" target="A1U_out">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53853" source="A1L_rot1_Pstop" target="A1L_rotated">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53868" source="A1L_rot2_Pstop" target="A1L_rotated">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53883" source="A1L_rot3_Pstop" target="A1L_rotated">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53898" source="A1L_in" target="A1L_c1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53910" source="A1L_in" target="A1L_c2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53922" source="A1L_in" target="A1L_c3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53934" source="A1L_rotated" target="A1L_ext_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53949" source="A1L_ret_Pstop" target="A1L_out">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53964" source="A2L_ret_Pstart" target="A2L_ret_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53973" source="A2L_ret_run" target="A2L_ret_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53982" source="A2L_ret_Cstop" target="A2L_ret_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e53991" source="A2L_ret_rs" target="A2L_ret_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54000" source="A2L_ret_run" target="A2L_ret_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54009" source="A2L_ret_csc" target="A2L_ret_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54018" source="A2L_ext_Pstart" target="A2L_ext_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54027" source="A2L_ext_run" target="A2L_ext_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54036" source="A2L_ext_Cstop" target="A2L_ext_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54045" source="A2L_ext_rs" target="A2L_ext_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54054" source="A2L_ext_run" target="A2L_ext_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54063" source="A2L_ext_csc" target="A2L_ext_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54072" source="A2L_rot3_Pstart" target="A2L_rot3_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54081" source="A2L_rot3_run" target="A2L_rot3_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54090" source="A2L_rot3_Cstop" target="A2L_rot3_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54099" source="A2L_rot3_rs" target="A2L_rot3_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54108" source="A2L_rot3_run" target="A2L_rot3_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54117" source="A2L_rot3_csc" target="A2L_rot3_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54126" source="A2L_rot2_Pstart" target="A2L_rot2_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54135" source="A2L_rot2_run" target="A2L_rot2_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54144" source="A2L_rot2_Cstop" target="A2L_rot2_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54153" source="A2L_rot2_rs" target="A2L_rot2_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54162" source="A2L_rot2_run" target="A2L_rot2_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54171" source="A2L_rot2_csc" target="A2L_rot2_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54180" source="A2L_rot1_Pstart" target="A2L_rot1_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54189" source="A2L_rot1_run" target="A2L_rot1_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54198" source="A2L_rot1_Cstop" target="A2L_rot1_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54207" source="A2L_rot1_rs" target="A2L_rot1_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54216" source="A2L_rot1_run" target="A2L_rot1_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54225" source="A2L_rot1_csc" target="A2L_rot1_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54234" source="A2L_ext_Pstop" target="A2L_extended">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54246" source="A2L_ext_csc" target="arm2_pick_up_ext">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54258" source="arm2_retract_ext" target="A2L_ext_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54270" source="arm2_forward" target="A2L_ext_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54282" source="A2L_ext_csc" target="arm2_forward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54294" source="arm2_forward" target="A2L_ext_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54306" source="A2L_ext_Pstop" target="arm2_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54318" source="arm2_pick_up_ext" target="A2L_ext_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54330" source="A2L_ext_Cstop" target="arm2_pick_up_ext">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54342" source="A2L_ext_Pstart" target="arm2_forward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54354" source="arm2_stop" target="A2L_ext_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54366" source="A2L_loaded" target="A2L_ret_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54378" source="A2L_ret_csc" target="arm2_retract_ext">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54390" source="arm2_pick_up_ext" target="A2L_ret_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54402" source="arm2_backward" target="A2L_ret_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54414" source="A2L_ret_csc" target="arm2_backward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54426" source="arm2_backward" target="A2L_ret_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54438" source="A2L_ret_Pstop" target="arm2_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54450" source="arm2_retract_ext" target="A2L_ret_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54462" source="A2L_ret_Cstop" target="arm2_retract_ext">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54474" source="A2L_ret_Pstart" target="arm2_backward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54486" source="arm2_stop" target="A2L_ret_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54498" source="arm2_magnet_off" target="A2L_grasp">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54507" source="A2L_grasp" target="arm2_magnet_on">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54516" source="A2L_extended" target="A2L_grasp">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54525" source="A2L_grasp" target="A2L_loaded">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54534" source="A2L_rot1_in" target="A2L_rot1_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54546" source="A2L_rot1_csc" target="arm2_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54558" source="arm1_pick_up_angle" target="A2L_rot1_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54570" source="robot_left" target="A2L_rot1_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54582" source="A2L_rot1_csc" target="robot_left">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54594" source="robot_left" target="A2L_rot1_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54606" source="A2L_rot1_Pstop" target="robot_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54618" source="arm2_pick_up_angle" target="A2L_rot1_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54630" source="A2L_rot1_Cstop" target="arm2_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54642" source="A2L_rot1_Pstart" target="robot_left">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54654" source="robot_stop" target="A2L_rot1_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54666" source="A2L_rot2_in" target="A2L_rot2_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54678" source="A2L_rot2_csc" target="arm2_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54690" source="arm1_release_angle" target="A2L_rot2_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54702" source="robot_left" target="A2L_rot2_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54714" source="A2L_rot2_csc" target="robot_left">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54726" source="robot_left" target="A2L_rot2_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54738" source="A2L_rot2_Pstop" target="robot_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54750" source="arm2_pick_up_angle" target="A2L_rot2_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54762" source="A2L_rot2_Cstop" target="arm2_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54774" source="A2L_rot2_Pstart" target="robot_left">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54786" source="robot_stop" target="A2L_rot2_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54798" source="A2L_rot3_in" target="A2L_rot3_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54810" source="A2L_rot3_csc" target="arm2_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54822" source="arm2_release_angle" target="A2L_rot3_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54834" source="robot_left" target="A2L_rot3_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54846" source="A2L_rot3_csc" target="robot_left">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54858" source="robot_left" target="A2L_rot3_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54870" source="A2L_rot3_Pstop" target="robot_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54882" source="arm2_pick_up_angle" target="A2L_rot3_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54894" source="A2L_rot3_Cstop" target="arm2_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54906" source="A2L_rot3_Pstart" target="robot_left">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54918" source="robot_stop" target="A2L_rot3_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54930" source="A2L_c1" target="arm1_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54939" source="arm1_pick_up_angle" target="A2L_c1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54948" source="A2L_c2" target="arm1_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54957" source="arm1_release_angle" target="A2L_c2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54966" source="A2L_c3" target="arm2_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54975" source="arm2_release_angle" target="A2L_c3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54984" source="A2L_c1" target="A2L_rot1_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e54993" source="A2L_c2" target="A2L_rot2_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55002" source="A2L_c3" target="A2L_rot3_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55011" source="A2U_ret_Pstart" target="A2U_ret_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55020" source="A2U_ret_run" target="A2U_ret_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55029" source="A2U_ret_Cstop" target="A2U_ret_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55038" source="A2U_ret_rs" target="A2U_ret_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55047" source="A2U_ret_run" target="A2U_ret_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55056" source="A2U_ret_csc" target="A2U_ret_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55065" source="A2U_ext_Pstart" target="A2U_ext_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55074" source="A2U_ext_run" target="A2U_ext_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55083" source="A2U_ext_Cstop" target="A2U_ext_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55092" source="A2U_ext_rs" target="A2U_ext_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55101" source="A2U_ext_run" target="A2U_ext_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55110" source="A2U_ext_csc" target="A2U_ext_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55119" source="A2U_rot3_Pstart" target="A2U_rot3_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55128" source="A2U_rot3_run" target="A2U_rot3_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55137" source="A2U_rot3_Cstop" target="A2U_rot3_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55146" source="A2U_rot3_rs" target="A2U_rot3_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55155" source="A2U_rot3_run" target="A2U_rot3_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55164" source="A2U_rot3_csc" target="A2U_rot3_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55173" source="A2U_rot2_Pstart" target="A2U_rot2_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55182" source="A2U_rot2_run" target="A2U_rot2_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55191" source="A2U_rot2_Cstop" target="A2U_rot2_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55200" source="A2U_rot2_rs" target="A2U_rot2_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55209" source="A2U_rot2_run" target="A2U_rot2_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55218" source="A2U_rot2_csc" target="A2U_rot2_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55227" source="A2U_rot1_Pstart" target="A2U_rot1_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55236" source="A2U_rot1_run" target="A2U_rot1_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55245" source="A2U_rot1_Cstop" target="A2U_rot1_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55254" source="A2U_rot1_rs" target="A2U_rot1_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55263" source="A2U_rot1_run" target="A2U_rot1_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55272" source="A2U_rot1_csc" target="A2U_rot1_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55281" source="A2U_ext_Pstop" target="A2U_extended">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55293" source="A2U_ext_csc" target="arm2_release_ext">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55305" source="arm2_retract_ext" target="A2U_ext_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55317" source="arm2_forward" target="A2U_ext_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55329" source="A2U_ext_csc" target="arm2_forward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55341" source="arm2_forward" target="A2U_ext_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55353" source="A2U_ext_Pstop" target="arm2_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55365" source="arm2_release_ext" target="A2U_ext_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55377" source="A2U_ext_Cstop" target="arm2_release_ext">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55389" source="A2U_ext_Pstart" target="arm2_forward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55401" source="arm2_stop" target="A2U_ext_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55413" source="A2U_unloaded" target="A2U_ret_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55425" source="A2U_ret_csc" target="arm2_retract_ext">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55437" source="arm2_release_ext" target="A2U_ret_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55449" source="arm2_backward" target="A2U_ret_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55461" source="A2U_ret_csc" target="arm2_backward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55473" source="arm2_backward" target="A2U_ret_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55485" source="A2U_ret_Pstop" target="arm2_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55497" source="arm2_retract_ext" target="A2U_ret_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55509" source="A2U_ret_Cstop" target="arm2_retract_ext">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55521" source="A2U_ret_Pstart" target="arm2_backward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55533" source="arm2_stop" target="A2U_ret_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55545" source="A2U_extended" target="A2U_ungrasp">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55554" source="A2U_ungrasp" target="A2U_unloaded">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55563" source="arm2_magnet_on" target="A2U_ungrasp">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55572" source="A2U_ungrasp" target="arm2_magnet_off">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55581" source="A2U_rot1_in" target="A2U_rot1_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55593" source="A2U_rot1_csc" target="arm2_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55605" source="arm1_pick_up_angle" target="A2U_rot1_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55617" source="robot_right" target="A2U_rot1_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55629" source="A2U_rot1_csc" target="robot_right">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55641" source="robot_right" target="A2U_rot1_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55653" source="A2U_rot1_Pstop" target="robot_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55665" source="arm2_release_angle" target="A2U_rot1_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55677" source="A2U_rot1_Cstop" target="arm2_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55689" source="A2U_rot1_Pstart" target="robot_right">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55701" source="robot_stop" target="A2U_rot1_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55713" source="A2U_rot2_in" target="A2U_rot2_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55725" source="A2U_rot2_csc" target="arm2_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55737" source="arm1_release_angle" target="A2U_rot2_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55749" source="robot_left" target="A2U_rot2_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55761" source="A2U_rot2_csc" target="robot_left">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55773" source="robot_left" target="A2U_rot2_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55785" source="A2U_rot2_Pstop" target="robot_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55797" source="arm2_release_angle" target="A2U_rot2_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55809" source="A2U_rot2_Cstop" target="arm2_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55821" source="A2U_rot2_Pstart" target="robot_left">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55833" source="robot_stop" target="A2U_rot2_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55845" source="A2U_rot3_in" target="A2U_rot3_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55857" source="A2U_rot3_csc" target="arm2_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55869" source="arm2_pick_up_angle" target="A2U_rot3_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55881" source="robot_right" target="A2U_rot3_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55893" source="A2U_rot3_csc" target="robot_right">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55905" source="robot_right" target="A2U_rot3_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55917" source="A2U_rot3_Pstop" target="robot_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55929" source="arm2_release_angle" target="A2U_rot3_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55941" source="A2U_rot3_Cstop" target="arm2_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55953" source="A2U_rot3_Pstart" target="robot_right">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55965" source="robot_stop" target="A2U_rot3_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55977" source="A2U_c1" target="arm1_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55986" source="arm1_pick_up_angle" target="A2U_c1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e55995" source="A2U_c2" target="arm1_release_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56004" source="arm1_release_angle" target="A2U_c2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56013" source="A2U_c3" target="arm2_pick_up_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56022" source="arm2_pick_up_angle" target="A2U_c3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56031" source="A2U_c1" target="A2U_rot1_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56040" source="A2U_c2" target="A2U_rot2_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56049" source="A2U_c3" target="A2U_rot3_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56058" source="A2L_rot1_Pstop" target="A2L_rotated">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56073" source="A2L_rot2_Pstop" target="A2L_rotated">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56088" source="A2L_rot3_Pstop" target="A2L_rotated">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56103" source="A2L_in" target="A2L_c1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56115" source="A2L_in" target="A2L_c2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56127" source="A2L_in" target="A2L_c3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56139" source="A2L_rotated" target="A2L_ext_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56154" source="A2L_ret_Pstop" target="A2L_out">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56169" source="A2U_rot1_Pstop" target="A2U_rotated">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56184" source="A2U_rot2_Pstop" target="A2U_rotated">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56199" source="A2U_rot3_Pstop" target="A2U_rotated">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56214" source="A2U_in" target="A2U_c1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56226" source="A2U_in" target="A2U_c2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56238" source="A2U_in" target="A2U_c3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56250" source="A2U_rotated" target="A2U_ext_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56265" source="A2U_ret_Pstop" target="A2U_out">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56280" source="FB_deliver_Pstart" target="FB_deliver_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56289" source="FB_deliver_run" target="FB_deliver_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56298" source="FB_deliver_Cstop" target="FB_deliver_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56307" source="FB_deliver_rs" target="FB_deliver_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56316" source="FB_deliver_run" target="FB_deliver_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56325" source="FB_deliver_csc" target="FB_deliver_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56334" source="FB_trans_Pstart" target="FB_trans_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56343" source="FB_trans_run" target="FB_trans_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56352" source="FB_trans_Cstop" target="FB_trans_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56361" source="FB_trans_rs" target="FB_trans_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56370" source="FB_trans_run" target="FB_trans_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56379" source="FB_trans_csc" target="FB_trans_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56388" source="belt1_stop" target="FB_deliver_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56400" source="FB_deliver_Pstart" target="belt1_start">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56412" source="FB_deliver_Cstop" target="belt1_light_barrier_false">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56424" source="belt1_light_barrier_false" target="FB_deliver_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56436" source="FB_deliver_Pstop" target="belt1_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56448" source="belt1_start" target="FB_deliver_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56460" source="FB_deliver_csc" target="belt1_start">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56472" source="belt1_start" target="FB_deliver_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56484" source="belt1_light_barrier_true" target="FB_deliver_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56496" source="FB_deliver_csc" target="belt1_light_barrier_false">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56508" source="FB_deliver_Pstop" target="FB_out">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56520" source="FB_at_end" target="FB_deliver_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56532" source="belt1_stop" target="FB_trans_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56544" source="FB_trans_Pstart" target="belt1_start">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56556" source="FB_trans_Cstop" target="belt1_light_barrier_true">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56568" source="belt1_light_barrier_true" target="FB_trans_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56580" source="FB_trans_Pstop" target="belt1_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56592" source="belt1_start" target="FB_trans_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56604" source="FB_trans_csc" target="belt1_start">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56616" source="belt1_start" target="FB_trans_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56628" source="belt1_light_barrier_false" target="FB_trans_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56640" source="FB_trans_csc" target="belt1_light_barrier_true">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56652" source="FB_trans_Pstop" target="FB_at_end">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56664" source="FB_in" target="FB_trans_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56676" source="DB_deliver_Pstart" target="DB_deliver_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56685" source="DB_deliver_run" target="DB_deliver_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56694" source="DB_deliver_Cstop" target="DB_deliver_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56703" source="DB_deliver_rs" target="DB_deliver_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56712" source="DB_deliver_run" target="DB_deliver_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56721" source="DB_deliver_csc" target="DB_deliver_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56730" source="DB_trans_Pstart" target="DB_trans_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56739" source="DB_trans_run" target="DB_trans_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56748" source="DB_trans_Cstop" target="DB_trans_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56757" source="DB_trans_rs" target="DB_trans_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56766" source="DB_trans_run" target="DB_trans_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56775" source="DB_trans_csc" target="DB_trans_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56784" source="belt2_stop" target="DB_deliver_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56796" source="DB_deliver_Pstart" target="belt2_start">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56808" source="DB_deliver_Cstop" target="belt2_light_barrier_false">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56820" source="belt2_light_barrier_false" target="DB_deliver_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56832" source="DB_deliver_Pstop" target="belt2_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56844" source="belt2_start" target="DB_deliver_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56856" source="DB_deliver_csc" target="belt2_start">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56868" source="belt2_start" target="DB_deliver_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56880" source="belt2_light_barrier_true" target="DB_deliver_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56892" source="DB_deliver_csc" target="belt2_light_barrier_false">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56904" source="DB_deliver_Pstop" target="DB_out">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56916" source="DB_at_end" target="DB_deliver_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56928" source="belt2_stop" target="DB_trans_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56940" source="DB_trans_Pstart" target="belt2_start">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56952" source="DB_trans_Cstop" target="belt2_light_barrier_true">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56964" source="belt2_light_barrier_true" target="DB_trans_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56976" source="DB_trans_Pstop" target="belt2_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e56988" source="belt2_start" target="DB_trans_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57000" source="DB_trans_csc" target="belt2_start">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57012" source="belt2_start" target="DB_trans_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57024" source="belt2_light_barrier_false" target="DB_trans_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57036" source="DB_trans_csc" target="belt2_light_barrier_true">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57048" source="DB_trans_Pstop" target="DB_at_end">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57060" source="DB_in" target="DB_trans_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57072" source="TU_rot_Pstart" target="TU_rot_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57081" source="TU_rot_run" target="TU_rot_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57090" source="TU_rot_Cstop" target="TU_rot_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57099" source="TU_rot_rs" target="TU_rot_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57108" source="TU_rot_run" target="TU_rot_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57117" source="TU_rot_csc" target="TU_rot_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57126" source="TU_lift_Pstart" target="TU_lift_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57135" source="TU_lift_run" target="TU_lift_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57144" source="TU_lift_Cstop" target="TU_lift_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57153" source="TU_lift_rs" target="TU_lift_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57162" source="TU_lift_run" target="TU_lift_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57171" source="TU_lift_csc" target="TU_lift_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57180" source="TL_lower_Pstart" target="TL_lower_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57189" source="TL_lower_run" target="TL_lower_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57198" source="TL_lower_Cstop" target="TL_lower_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57207" source="TL_lower_rs" target="TL_lower_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57216" source="TL_lower_run" target="TL_lower_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57225" source="TL_lower_csc" target="TL_lower_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57234" source="TL_rot_Pstart" target="TL_rot_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57243" source="TL_rot_run" target="TL_rot_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57252" source="TL_rot_Cstop" target="TL_rot_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57261" source="TL_rot_rs" target="TL_rot_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57270" source="TL_rot_run" target="TL_rot_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57279" source="TL_rot_csc" target="TL_rot_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57288" source="table_stop_v" target="TU_lift_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57300" source="TU_lift_Pstart" target="table_upward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57312" source="TU_lift_Cstop" target="table_top_pos">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57324" source="table_top_pos" target="TU_lift_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57336" source="TU_lift_Pstop" target="table_stop_v">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57348" source="table_upward" target="TU_lift_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57360" source="TU_lift_csc" target="table_upward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57372" source="table_upward" target="TU_lift_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57384" source="table_bottom_pos" target="TU_lift_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57396" source="TU_lift_csc" target="table_top_pos">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57408" source="table_at_unload_angle" target="TU_lift_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57420" source="table_stop_h" target="TU_rot_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57432" source="TU_rot_Pstart" target="table_right">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57444" source="TU_rot_Cstop" target="table_unload_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57456" source="table_unload_angle" target="TU_rot_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57468" source="TU_rot_Pstop" target="table_stop_h">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57480" source="table_right" target="TU_rot_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57492" source="TU_rot_csc" target="table_right">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57504" source="table_right" target="TU_rot_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57516" source="table_load_angle" target="TU_rot_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57528" source="TU_rot_csc" target="table_unload_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57540" source="TU_rot_Pstop" target="table_at_unload_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57552" source="TU_lift_Pstop" target="TU_out">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57564" source="TU_in" target="TU_rot_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57576" source="table_stop_h" target="TL_rot_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57588" source="TL_rot_Pstart" target="table_right">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57600" source="TL_rot_Cstop" target="table_load_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57612" source="table_load_angle" target="TL_rot_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57624" source="TL_rot_Pstop" target="table_stop_h">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57636" source="table_right" target="TL_rot_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57648" source="TL_rot_csc" target="table_right">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57660" source="table_right" target="TL_rot_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57672" source="table_unload_angle" target="TL_rot_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57684" source="TL_rot_csc" target="table_load_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57696" source="TL_rot_Pstop" target="table_at_load_angle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57708" source="table_stop_v" target="TL_lower_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57720" source="TL_lower_Pstart" target="table_upward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57732" source="TL_lower_Cstop" target="table_bottom_pos">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57744" source="table_bottom_pos" target="TL_lower_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57756" source="TL_lower_Pstop" target="table_stop_v">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57768" source="table_upward" target="TL_lower_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57780" source="TL_lower_csc" target="table_upward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57792" source="table_upward" target="TL_lower_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57804" source="table_top_pos" target="TL_lower_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57816" source="TL_lower_csc" target="table_bottom_pos">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57828" source="table_at_load_angle" target="TL_lower_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57840" source="TL_in" target="TL_rot_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57852" source="TL_lower_Pstop" target="TL_out">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57864" source="PL_lower_Pstart" target="PL_lower_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57873" source="PL_lower_run" target="PL_lower_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57882" source="PL_lower_Cstop" target="PL_lower_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57891" source="PL_lower_rs" target="PL_lower_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57900" source="PL_lower_run" target="PL_lower_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57909" source="PL_lower_csc" target="PL_lower_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57918" source="forge_Pstart" target="forge_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57927" source="forge_run" target="forge_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57936" source="forge_Cstop" target="forge_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57945" source="forge_rs" target="forge_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57954" source="forge_run" target="forge_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57963" source="forge_csc" target="forge_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57972" source="PU_lower_Pstart" target="PU_lower_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57981" source="PU_lower_run" target="PU_lower_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57990" source="PU_lower_Cstop" target="PU_lower_rs">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e57999" source="PU_lower_rs" target="PU_lower_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58008" source="PU_lower_run" target="PU_lower_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58017" source="PU_lower_csc" target="PU_lower_run">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58026" source="PL_in" target="PL_lower_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58038" source="PL_lower_Pstop" target="PL_out">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58050" source="PL_lower_csc" target="press_at_middle_pos">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58062" source="press_at_lower_pos" target="PL_lower_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58074" source="press_up" target="PL_lower_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58086" source="PL_lower_csc" target="press_up">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58098" source="press_up" target="PL_lower_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58110" source="PL_lower_Pstop" target="press_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58122" source="press_at_middle_pos" target="PL_lower_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58134" source="PL_lower_Cstop" target="press_at_middle_pos">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58146" source="PL_lower_Pstart" target="press_up">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58158" source="press_stop" target="PL_lower_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58170" source="PU_in" target="forge_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58182" source="forge_Pstop" target="blank_forged">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58194" source="forge_csc" target="press_at_upper_pos">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58206" source="press_at_middle_pos" target="forge_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58218" source="press_upward" target="forge_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58230" source="forge_csc" target="press_upward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58242" source="press_upward" target="forge_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58254" source="forge_Pstop" target="press_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58266" source="press_at_upper_pos" target="forge_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58278" source="forge_Cstop" target="press_at_upper_pos">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58290" source="forge_Pstart" target="press_upward">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58302" source="press_stop" target="forge_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58314" source="blank_forged" target="PU_lower_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58326" source="PU_lower_Pstop" target="PU_out">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58338" source="PU_lower_csc" target="press_at_lower_pos">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58350" source="press_at_upper_pos" target="PU_lower_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58362" source="press_down" target="PU_lower_csc">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58374" source="PU_lower_csc" target="press_down">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58386" source="press_down" target="PU_lower_Pstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58398" source="PU_lower_Pstop" target="press_stop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58410" source="press_at_lower_pos" target="PU_lower_Cstop">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58422" source="PU_lower_Cstop" target="press_at_lower_pos">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58434" source="PU_lower_Pstart" target="press_down">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58446" source="press_stop" target="PU_lower_Pstart">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58458" source="crane_store_free" target="crane_lock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58467" source="crane_storing" target="crane_lock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58476" source="crane_unlock_input_area" target="crane_storing">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58485" source="crane_unlock_output_area" target="crane_store_free">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58494" source="CU_out" target="crane_unlock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58506" source="crane_lock_output_area" target="CU_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58518" source="CL_out" target="crane_unlock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58530" source="crane_lock_input_area" target="CL_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58542" source="arm1_store_free" target="arm1_lock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58551" source="arm1_lock_input_area" target="arm1_waiting_for_swivel_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58560" source="arm1_waiting_for_swivel_1" target="arm1_lock_swivel_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58569" source="arm1_unlock_swivel_1" target="arm1_storing">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58578" source="arm1_storing" target="arm1_lock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58587" source="arm1_unlock_output_area" target="arm1_having_swivel_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58596" source="arm1_having_swivel_2" target="arm1_unlock_swivel_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58605" source="arm1_unlock_swivel_2" target="arm1_store_free">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58614" source="arm1_unlock_input_area" target="arm1_having_swivel_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58623" source="arm1_having_swivel_1" target="arm1_unlock_swivel_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58632" source="arm1_lock_output_area" target="arm1_waiting_for_swivel_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58641" source="arm1_waiting_for_swivel_2" target="arm1_lock_swivel_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58650" source="arm1_lock_swivel_1" target="A1L_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58662" source="A1L_out" target="arm1_unlock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58674" source="arm1_lock_swivel_2" target="A1U_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58686" source="A1U_out" target="arm1_unlock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58698" source="arm2_store_free" target="arm2_lock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58707" source="arm2_lock_input_area" target="arm2_waiting_for_swivel_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58716" source="arm2_waiting_for_swivel_1" target="arm2_lock_swivel_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58725" source="arm2_unlock_swivel_1" target="arm2_storing">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58734" source="arm2_storing" target="arm2_lock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58743" source="arm2_unlock_output_area" target="arm2_having_swivel_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58752" source="arm2_having_swivel_2" target="arm2_unlock_swivel_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58761" source="arm2_unlock_swivel_2" target="arm2_store_free">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58770" source="arm2_unlock_input_area" target="arm2_having_swivel_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58779" source="arm2_having_swivel_1" target="arm2_unlock_swivel_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58788" source="arm2_lock_output_area" target="arm2_waiting_for_swivel_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58797" source="arm2_waiting_for_swivel_2" target="arm2_lock_swivel_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58806" source="arm2_lock_swivel_2" target="A2U_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58818" source="A2U_out" target="arm2_unlock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58830" source="arm2_lock_swivel_1" target="A2L_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58842" source="A2L_out" target="arm2_unlock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58854" source="feed_belt_idle" target="feed_belt_lock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58863" source="feed_belt_lock_input_area" target="feed_belt_occupied">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58872" source="feed_belt_occupied" target="feed_belt_lock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58881" source="feed_belt_unlock_input_area" target="feed_belt_empty">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58890" source="feed_belt_empty" target="feed_belt_unlock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58899" source="feed_belt_unlock_output_area" target="feed_belt_idle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58908" source="FB_out" target="feed_belt_unlock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58920" source="feed_belt_lock_output_area" target="FB_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58932" source="deposit_belt_idle" target="deposit_belt_lock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58941" source="deposit_belt_lock_input_area" target="deposit_belt_occupied">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58950" source="deposit_belt_occupied" target="deposit_belt_lock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58959" source="deposit_belt_unlock_input_area" target="deposit_belt_empty">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58968" source="deposit_belt_empty" target="deposit_belt_unlock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58977" source="deposit_belt_unlock_output_area" target="deposit_belt_idle">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58986" source="DB_out" target="deposit_belt_unlock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e58998" source="deposit_belt_lock_output_area" target="DB_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59010" source="table_ready_for_loading" target="table_lock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59019" source="table_unlock_output_area" target="table_ready_for_unloading">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59028" source="table_ready_for_unloading" target="table_lock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59037" source="table_unlock_input_area" target="table_ready_for_loading">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59046" source="TL_out" target="table_unlock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59058" source="table_lock_output_area" target="TL_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59070" source="TU_out" target="table_unlock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59082" source="table_lock_input_area" target="TU_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59094" source="press_ready_for_loading" target="press_lock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59103" source="press_unlock_output_area" target="press_ready_for_unloading">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59112" source="press_ready_for_unloading" target="press_lock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59121" source="press_unlock_input_area" target="press_ready_for_loading">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59130" source="press_lock_output_area" target="PL_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59142" source="PL_out" target="press_unlock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59154" source="press_lock_input_area" target="PU_in">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59166" source="PU_out" target="press_unlock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59178" source="ch_FT_full" target="table_lock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59190" source="table_unlock_output_area" target="ch_TA1_full">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59202" source="ch_TA1_free" target="table_lock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59214" source="table_unlock_input_area" target="ch_FT_free">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59226" source="ch_A1P_full" target="press_lock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59238" source="press_unlock_output_area" target="ch_PA2_full">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59250" source="ch_PA2_free" target="press_lock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59262" source="press_unlock_input_area" target="ch_A1P_free">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59274" source="ch_CF_full" target="feed_belt_lock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59286" source="feed_belt_unlock_output_area" target="ch_CF_free">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59298" source="ch_FT_free" target="feed_belt_lock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59310" source="feed_belt_unlock_input_area" target="ch_FT_full">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59322" source="ch_A2D_full" target="deposit_belt_lock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59334" source="deposit_belt_unlock_output_area" target="ch_A2D_free">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59346" source="ch_DC_free" target="deposit_belt_lock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59358" source="deposit_belt_unlock_input_area" target="ch_DC_full">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59370" source="arm2_unlock_input_area" target="ch_PA2_free">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59382" source="arm2_unlock_output_area" target="ch_A2D_full">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59394" source="ch_PA2_full" target="arm2_lock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59406" source="ch_A2D_free" target="arm2_lock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59418" source="arm1_unlock_input_area" target="ch_TA1_free">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59430" source="arm1_unlock_output_area" target="ch_A1P_full">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59442" source="ch_TA1_full" target="arm1_lock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59454" source="ch_A1P_free" target="arm1_lock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59466" source="crane_unlock_input_area" target="ch_DC_free">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59478" source="crane_unlock_output_area" target="ch_CF_full">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59490" source="ch_DC_full" target="crane_lock_input_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59502" source="ch_CF_free" target="crane_lock_output_area">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59514" source="arm2_unlock_swivel_1" target="swivel">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59526" source="swivel" target="arm2_lock_swivel_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59538" source="swivel" target="arm1_lock_swivel_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59550" source="arm1_unlock_swivel_1" target="swivel">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59562" source="swivel" target="arm2_lock_swivel_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59574" source="arm2_unlock_swivel_2" target="swivel">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59586" source="swivel" target="arm1_lock_swivel_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e59598" source="arm1_unlock_swivel_2" target="swivel">
+        <inscription><text>1</text></inscription>
+      </arc>
+    </page>
+  <name><text>ParamProductionCell-PT-4</text></name></net>
+</pnml>

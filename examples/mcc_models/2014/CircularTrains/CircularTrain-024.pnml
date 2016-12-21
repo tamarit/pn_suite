@@ -1,0 +1,635 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="CircularTrains-PT-024" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <page id="page0">
+      <name>
+        <text>DefaultPage</text>
+      </name>
+      <transition id="t16_to_17">
+        <name>
+          <text>t16_to_17</text>
+        </name>
+      </transition>
+      <place id="Section_4">
+        <name>
+          <text>Section_4</text>
+        </name>
+      </place>
+      <transition id="t7_to_8">
+        <name>
+          <text>t7_to_8</text>
+        </name>
+      </transition>
+      <transition id="t10_to_11">
+        <name>
+          <text>t10_to_11</text>
+        </name>
+      </transition>
+      <transition id="t13_to_14">
+        <name>
+          <text>t13_to_14</text>
+        </name>
+      </transition>
+      <transition id="t22_to_23">
+        <name>
+          <text>t22_to_23</text>
+        </name>
+      </transition>
+      <transition id="t18_to_19">
+        <name>
+          <text>t18_to_19</text>
+        </name>
+      </transition>
+      <transition id="t4_to_5">
+        <name>
+          <text>t4_to_5</text>
+        </name>
+      </transition>
+      <transition id="t11_to_12">
+        <name>
+          <text>t11_to_12</text>
+        </name>
+      </transition>
+      <transition id="t6_to_7">
+        <name>
+          <text>t6_to_7</text>
+        </name>
+      </transition>
+      <transition id="t9_to_10">
+        <name>
+          <text>t9_to_10</text>
+        </name>
+      </transition>
+      <transition id="t8_to_9">
+        <name>
+          <text>t8_to_9</text>
+        </name>
+      </transition>
+      <place id="F7">
+        <name>
+          <text>F7</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="t20_to_21">
+        <name>
+          <text>t20_to_21</text>
+        </name>
+      </transition>
+      <place id="Section_2">
+        <name>
+          <text>Section_2</text>
+        </name>
+      </place>
+      <transition id="t23_to_24">
+        <name>
+          <text>t23_to_24</text>
+        </name>
+      </transition>
+      <place id="Section_9">
+        <name>
+          <text>Section_9</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="t15_to_16">
+        <name>
+          <text>t15_to_16</text>
+        </name>
+      </transition>
+      <transition id="t2_to_3">
+        <name>
+          <text>t2_to_3</text>
+        </name>
+      </transition>
+      <place id="F23">
+        <name>
+          <text>F23</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="Section_16">
+        <name>
+          <text>Section_16</text>
+        </name>
+      </place>
+      <transition id="t24_to_1">
+        <name>
+          <text>t24_to_1</text>
+        </name>
+      </transition>
+      <place id="F14">
+        <name>
+          <text>F14</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="t19_to_20">
+        <name>
+          <text>t19_to_20</text>
+        </name>
+      </transition>
+      <place id="F21">
+        <name>
+          <text>F21</text>
+        </name>
+      </place>
+      <transition id="t12_to_13">
+        <name>
+          <text>t12_to_13</text>
+        </name>
+      </transition>
+      <place id="Section_23">
+        <name>
+          <text>Section_23</text>
+        </name>
+      </place>
+      <transition id="t5_to_6">
+        <name>
+          <text>t5_to_6</text>
+        </name>
+      </transition>
+      <place id="Section_11">
+        <name>
+          <text>Section_11</text>
+        </name>
+      </place>
+      <transition id="t17_to_18">
+        <name>
+          <text>t17_to_18</text>
+        </name>
+      </transition>
+      <transition id="t21_to_22">
+        <name>
+          <text>t21_to_22</text>
+        </name>
+      </transition>
+      <place id="F2">
+        <name>
+          <text>F2</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="t3_to_4">
+        <name>
+          <text>t3_to_4</text>
+        </name>
+      </transition>
+      <place id="Section_6">
+        <name>
+          <text>Section_6</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="t14_to_15">
+        <name>
+          <text>t14_to_15</text>
+        </name>
+      </transition>
+      <place id="Section_14">
+        <name>
+          <text>Section_14</text>
+        </name>
+      </place>
+      <transition id="t1_to_2">
+        <name>
+          <text>t1_to_2</text>
+        </name>
+      </transition>
+      <place id="F19">
+        <name>
+          <text>F19</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="F16">
+        <name>
+          <text>F16</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="F18">
+        <name>
+          <text>F18</text>
+        </name>
+      </place>
+      <place id="F9">
+        <name>
+          <text>F9</text>
+        </name>
+      </place>
+      <place id="F3">
+        <name>
+          <text>F3</text>
+        </name>
+      </place>
+      <place id="Section_12">
+        <name>
+          <text>Section_12</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="Section_15">
+        <name>
+          <text>Section_15</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="Section_21">
+        <name>
+          <text>Section_21</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="Section_18">
+        <name>
+          <text>Section_18</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="Section_24">
+        <name>
+          <text>Section_24</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="F12">
+        <name>
+          <text>F12</text>
+        </name>
+      </place>
+      <place id="F6">
+        <name>
+          <text>F6</text>
+        </name>
+      </place>
+      <place id="Section_17">
+        <name>
+          <text>Section_17</text>
+        </name>
+      </place>
+      <place id="F1">
+        <name>
+          <text>F1</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="F15">
+        <name>
+          <text>F15</text>
+        </name>
+      </place>
+      <place id="Section_3">
+        <name>
+          <text>Section_3</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="Section_10">
+        <name>
+          <text>Section_10</text>
+        </name>
+      </place>
+      <place id="F8">
+        <name>
+          <text>F8</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="F24">
+        <name>
+          <text>F24</text>
+        </name>
+      </place>
+      <place id="F10">
+        <name>
+          <text>F10</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="Section_5">
+        <name>
+          <text>Section_5</text>
+        </name>
+      </place>
+      <place id="F13">
+        <name>
+          <text>F13</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="Section_19">
+        <name>
+          <text>Section_19</text>
+        </name>
+      </place>
+      <place id="Section_8">
+        <name>
+          <text>Section_8</text>
+        </name>
+      </place>
+      <place id="F22">
+        <name>
+          <text>F22</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="Section_7">
+        <name>
+          <text>Section_7</text>
+        </name>
+      </place>
+      <place id="F5">
+        <name>
+          <text>F5</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="Section_20">
+        <name>
+          <text>Section_20</text>
+        </name>
+      </place>
+      <place id="F11">
+        <name>
+          <text>F11</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="Section_13">
+        <name>
+          <text>Section_13</text>
+        </name>
+      </place>
+      <place id="Section_22">
+        <name>
+          <text>Section_22</text>
+        </name>
+      </place>
+      <place id="F4">
+        <name>
+          <text>F4</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="Section_1">
+        <name>
+          <text>Section_1</text>
+        </name>
+      </place>
+      <place id="F20">
+        <name>
+          <text>F20</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="F17">
+        <name>
+          <text>F17</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <arc id="cId-2491324398539705579153" source="t21_to_22" target="F20">
+      </arc>
+      <arc id="cId-2491324398539705579139" source="t17_to_18" target="Section_18">
+      </arc>
+      <arc id="cId-2488019432106337323100" source="F7" target="t6_to_7">
+      </arc>
+      <arc id="cId-2488019432106337323131" source="t15_to_16" target="Section_16">
+      </arc>
+      <arc id="cId-2488019432106337323109" source="t10_to_11" target="F9">
+      </arc>
+      <arc id="cId-2488019432106337323114" source="Section_11" target="t11_to_12">
+      </arc>
+      <arc id="cId-248801943210633732382" source="Section_3" target="t3_to_4">
+      </arc>
+      <arc id="cId-248801943210633732395" source="t6_to_7" target="Section_7">
+      </arc>
+      <arc id="cId-2488019432106337323134" source="Section_16" target="t16_to_17">
+      </arc>
+      <arc id="cId-2488019432106337323110" source="Section_10" target="t10_to_11">
+      </arc>
+      <arc id="cId-2488019432106337323152" source="F20" target="t19_to_20">
+      </arc>
+      <arc id="cId-2496281852484725259130" source="Section_15" target="t15_to_16">
+      </arc>
+      <arc id="cId-2496281852484725259144" source="F18" target="t17_to_18">
+      </arc>
+      <arc id="cId-249628185248472525989" source="t5_to_6" target="F4">
+      </arc>
+      <arc id="cId-2496281852484725259168" source="F24" target="t23_to_24">
+      </arc>
+      <arc id="cId-2496281852484725259157" source="t22_to_23" target="F21">
+      </arc>
+      <arc id="cId-249628185248472525986" source="Section_4" target="t4_to_5">
+      </arc>
+      <arc id="cId-249628185248472525975" source="t1_to_2" target="Section_2">
+      </arc>
+      <arc id="cId-2496281852484725259135" source="t16_to_17" target="Section_17">
+      </arc>
+      <arc id="cId-249628185248472525996" source="F6" target="t5_to_6">
+      </arc>
+      <arc id="cId-2496281852484725259161" source="t23_to_24" target="F22">
+      </arc>
+      <arc id="cId-2496281852484725259117" source="t12_to_13" target="F11">
+      </arc>
+      <arc id="cId-2496281852484725259154" source="Section_21" target="t21_to_22">
+      </arc>
+      <arc id="cId-2496281852484725259123" source="t13_to_14" target="Section_14">
+      </arc>
+      <arc id="cId-249628185248472525978" source="Section_2" target="t2_to_3">
+      </arc>
+      <arc id="cId-2496281852484725259124" source="F13" target="t12_to_13">
+      </arc>
+      <arc id="cId-2496281852484725259133" source="t16_to_17" target="F15">
+      </arc>
+      <arc id="cId-2496281852484725259164" source="F23" target="t22_to_23">
+      </arc>
+      <arc id="cId-2496281852484725259140" source="F17" target="t16_to_17">
+      </arc>
+      <arc id="cId-2496281852484725259148" source="F19" target="t18_to_19">
+      </arc>
+      <arc id="cId-249628185248472525992" source="F5" target="t4_to_5">
+      </arc>
+      <arc id="cId-2496281852484725259103" source="t8_to_9" target="Section_9">
+      </arc>
+      <arc id="cId-2496281852484725259147" source="t19_to_20" target="Section_20">
+      </arc>
+      <arc id="cId-249628185248472525983" source="t3_to_4" target="Section_4">
+      </arc>
+      <arc id="cId-249628185248472525985" source="t4_to_5" target="F3">
+      </arc>
+      <arc id="cId-2496281852484725259165" source="t24_to_1" target="F23">
+      </arc>
+      <arc id="cId-2496281852484725259169" source="t1_to_2" target="F24">
+      </arc>
+      <arc id="cId-2497934335701409387136" source="F16" target="t15_to_16">
+      </arc>
+      <arc id="cId-2497934335701409387160" source="F22" target="t21_to_22">
+      </arc>
+      <arc id="cId-249793433570140938780" source="F2" target="t1_to_2">
+      </arc>
+      <arc id="cId-2497934335701409387143" source="t18_to_19" target="Section_19">
+      </arc>
+      <arc id="cId-2497934335701409387120" source="F12" target="t11_to_12">
+      </arc>
+      <arc id="cId-249793433570140938797" source="t7_to_8" target="F6">
+      </arc>
+      <arc id="cId-2497934335701409387107" source="t9_to_10" target="Section_10">
+      </arc>
+      <arc id="cId-2497934335701409387125" source="t14_to_15" target="F13">
+      </arc>
+      <arc id="cId-2497934335701409387121" source="t13_to_14" target="F12">
+      </arc>
+      <arc id="cId-2497934335701409387150" source="Section_20" target="t20_to_21">
+      </arc>
+      <arc id="cId-2497934335701409387106" source="Section_9" target="t9_to_10">
+      </arc>
+      <arc id="cId-2497934335701409387111" source="t10_to_11" target="Section_11">
+      </arc>
+      <arc id="cId-249793433570140938779" source="t2_to_3" target="Section_3">
+      </arc>
+      <arc id="cId-2497934335701409387129" source="t15_to_16" target="F14">
+      </arc>
+      <arc id="cId-2497934335701409387132" source="F15" target="t14_to_15">
+      </arc>
+      <arc id="cId-249793433570140938793" source="t6_to_7" target="F5">
+      </arc>
+      <arc id="cId-249793433570140938784" source="F3" target="t2_to_3">
+      </arc>
+      <arc id="cId-2497934335701409387166" source="Section_24" target="t24_to_1">
+      </arc>
+      <arc id="cId-249793433570140938788" source="F4" target="t3_to_4">
+      </arc>
+      <arc id="cId-2497934335701409387155" source="t21_to_22" target="Section_22">
+      </arc>
+      <arc id="cId-249793433570140938774" source="Section_1" target="t1_to_2">
+      </arc>
+      <arc id="cId-2497934335701409387112" source="F10" target="t9_to_10">
+      </arc>
+      <arc id="cId-2497934335701409387116" source="F11" target="t10_to_11">
+      </arc>
+      <arc id="cId-2497934335701409387105" source="t9_to_10" target="F8">
+      </arc>
+      <arc id="cId-249793433570140938791" source="t5_to_6" target="Section_6">
+      </arc>
+      <arc id="cId-2497934335701409387159" source="t22_to_23" target="Section_23">
+      </arc>
+      <arc id="cId-2497934335701409387128" source="F14" target="t13_to_14">
+      </arc>
+      <arc id="cId-2492976881756389707141" source="t18_to_19" target="F17">
+      </arc>
+      <arc id="cId-2492976881756389707142" source="Section_18" target="t18_to_19">
+      </arc>
+      <arc id="cId-249297688175638970777" source="t2_to_3" target="F1">
+      </arc>
+      <arc id="cId-249297688175638970798" source="Section_7" target="t7_to_8">
+      </arc>
+      <arc id="cId-249297688175638970794" source="Section_6" target="t6_to_7">
+      </arc>
+      <arc id="cId-249297688175638970781" source="t3_to_4" target="F2">
+      </arc>
+      <arc id="cId-2492976881756389707122" source="Section_13" target="t13_to_14">
+      </arc>
+      <arc id="cId-2492976881756389707163" source="t23_to_24" target="Section_24">
+      </arc>
+      <arc id="cId-2492976881756389707146" source="Section_19" target="t19_to_20">
+      </arc>
+      <arc id="cId-2492976881756389707102" source="Section_8" target="t8_to_9">
+      </arc>
+      <arc id="cId-249297688175638970776" source="F1" target="t24_to_1">
+      </arc>
+      <arc id="cId-2492976881756389707151" source="t20_to_21" target="Section_21">
+      </arc>
+      <arc id="cId-2492976881756389707167" source="t24_to_1" target="Section_1">
+      </arc>
+      <arc id="cId-2492976881756389707101" source="t8_to_9" target="F7">
+      </arc>
+      <arc id="cId-2492976881756389707158" source="Section_22" target="t22_to_23">
+      </arc>
+      <arc id="cId-2492976881756389707126" source="Section_14" target="t14_to_15">
+      </arc>
+      <arc id="cId-2492976881756389707156" source="F21" target="t20_to_21">
+      </arc>
+      <arc id="cId-2492976881756389707108" source="F9" target="t8_to_9">
+      </arc>
+      <arc id="cId-2492976881756389707113" source="t11_to_12" target="F10">
+      </arc>
+      <arc id="cId-2492976881756389707145" source="t19_to_20" target="F18">
+      </arc>
+      <arc id="cId-2492976881756389707149" source="t20_to_21" target="F19">
+      </arc>
+      <arc id="cId-2492976881756389707119" source="t12_to_13" target="Section_13">
+      </arc>
+      <arc id="cId-2492976881756389707138" source="Section_17" target="t17_to_18">
+      </arc>
+      <arc id="cId-2492976881756389707137" source="t17_to_18" target="F16">
+      </arc>
+      <arc id="cId-2494629364973073835104" source="F8" target="t7_to_8">
+      </arc>
+      <arc id="cId-249462936497307383590" source="Section_5" target="t5_to_6">
+      </arc>
+      <arc id="cId-249462936497307383587" source="t4_to_5" target="Section_5">
+      </arc>
+      <arc id="cId-249462936497307383599" source="t7_to_8" target="Section_8">
+      </arc>
+      <arc id="cId-2494629364973073835115" source="t11_to_12" target="Section_12">
+      </arc>
+      <arc id="cId-2494629364973073835162" source="Section_23" target="t23_to_24">
+      </arc>
+      <arc id="cId-2494629364973073835118" source="Section_12" target="t12_to_13">
+      </arc>
+      <arc id="cId-2494629364973073835127" source="t14_to_15" target="Section_15">
+      </arc>
+    </page>
+    
+  <name><text>CircularTrains-PT-024</text></name></net>
+</pnml>

@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="Angiogenesis-PT-05" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    
+    <page id="page0">
+      <name><text>DefaultPage</text></name>
+      <place id="Akt">
+        <name><text>Akt</text></name>
+        <initialMarking><text>5</text></initialMarking>
+      </place>
+      <place id="AktP3">
+        <name><text>AktP3</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="AktStar">
+        <name><text>AktStar</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="DAG">
+        <name><text>DAG</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="DAGE">
+        <name><text>DAGE</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="Enz">
+        <name><text>Enz</text></name>
+        <initialMarking><text>5</text></initialMarking>
+      </place>
+      <place id="Gab1">
+        <name><text>Gab1</text></name>
+        <initialMarking><text>5</text></initialMarking>
+      </place>
+      <place id="GP3">
+        <name><text>GP3</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="GStarP3">
+        <name><text>GStarP3</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="GStarP3kP3">
+        <name><text>GStarP3kP3</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="GStarPgP3">
+        <name><text>GStarPgP3</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStar">
+        <name><text>KdStar</text></name>
+        <initialMarking><text>5</text></initialMarking>
+      </place>
+      <place id="KdStarG">
+        <name><text>KdStarG</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarGP3">
+        <name><text>KdStarGP3</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarGStar">
+        <name><text>KdStarGStar</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarGStarP3">
+        <name><text>KdStarGStarP3</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarGStarP3k">
+        <name><text>KdStarGStarP3k</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarGStarP3kP3">
+        <name><text>KdStarGStarP3kP3</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarGStarP3kStar">
+        <name><text>KdStarGStarP3kStar</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarGStarP3kStarP2">
+        <name><text>KdStarGStarP3kStarP2</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarGStarP3kStarP3">
+        <name><text>KdStarGStarP3kStarP3</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarGStarP3kStarP3P2">
+        <name><text>KdStarGStarP3kStarP3P2</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarGStarPg">
+        <name><text>KdStarGStarPg</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarGStarPgP3">
+        <name><text>KdStarGStarPgP3</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarGStarPgStar">
+        <name><text>KdStarGStarPgStar</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarGStarPgStarP2">
+        <name><text>KdStarGStarPgStarP2</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarGStarPgStarP3">
+        <name><text>KdStarGStarPgStarP3</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarGStarPgStarP3P2">
+        <name><text>KdStarGStarPgStarP3P2</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarPg">
+        <name><text>KdStarPg</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarPgStar">
+        <name><text>KdStarPgStar</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="KdStarPgStarP2">
+        <name><text>KdStarPgStarP2</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="Pip2">
+        <name><text>Pip2</text></name>
+        <initialMarking><text>5</text></initialMarking>
+      </place>
+      <place id="Pip3">
+        <name><text>Pip3</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="P3k">
+        <name><text>P3k</text></name>
+        <initialMarking><text>5</text></initialMarking>
+      </place>
+      <place id="Pg">
+        <name><text>Pg</text></name>
+        <initialMarking><text>5</text></initialMarking>
+      </place>
+      <place id="Pten">
+        <name><text>Pten</text></name>
+        <initialMarking><text>5</text></initialMarking>
+      </place>
+      <place id="PtP2">
+        <name><text>PtP2</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="PtP3">
+        <name><text>PtP3</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="PtP3P2">
+        <name><text>PtP3P2</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <transition id="t0">
+        <name><text>k0</text></name>
+      </transition>
+      <transition id="t1">
+        <name><text>k1</text></name>
+      </transition>
+      <transition id="k10">
+        <name><text>k10</text></name>
+      </transition>
+      <transition id="k11">
+        <name><text>k11</text></name>
+      </transition>
+      <transition id="k12">
+        <name><text>k12</text></name>
+      </transition>
+      <transition id="k13">
+        <name><text>k13</text></name>
+      </transition>
+      <transition id="k14">
+        <name><text>k14</text></name>
+      </transition>
+      <transition id="k15">
+        <name><text>k15</text></name>
+      </transition>
+      <transition id="k16">
+        <name><text>k16</text></name>
+      </transition>
+      <transition id="k17">
+        <name><text>k17</text></name>
+      </transition>
+      <transition id="k18">
+        <name><text>k18</text></name>
+      </transition>
+      <transition id="k19">
+        <name><text>k19</text></name>
+      </transition>
+      <transition id="k2">
+        <name><text>k2</text></name>
+      </transition>
+      <transition id="k20">
+        <name><text>k20</text></name>
+      </transition>
+      <transition id="k21">
+        <name><text>k21</text></name>
+      </transition>
+      <transition id="k22">
+        <name><text>k22</text></name>
+      </transition>
+      <transition id="k23">
+        <name><text>k23</text></name>
+      </transition>
+      <transition id="k24">
+        <name><text>k24</text></name>
+      </transition>
+      <transition id="k25">
+        <name><text>k25</text></name>
+      </transition>
+      <transition id="k26">
+        <name><text>k26</text></name>
+      </transition>
+      <transition id="k27">
+        <name><text>k27</text></name>
+      </transition>
+      <transition id="k28">
+        <name><text>k28</text></name>
+      </transition>
+      <transition id="k29">
+        <name><text>k29</text></name>
+      </transition>
+      <transition id="k3">
+        <name><text>k3</text></name>
+      </transition>
+      <transition id="k30">
+        <name><text>k30</text></name>
+      </transition>
+      <transition id="k31">
+        <name><text>k31</text></name>
+      </transition>
+      <transition id="k32">
+        <name><text>k32</text></name>
+      </transition>
+      <transition id="k33">
+        <name><text>k33</text></name>
+      </transition>
+      <transition id="k34">
+        <name><text>k34</text></name>
+      </transition>
+      <transition id="k35">
+        <name><text>k35</text></name>
+      </transition>
+      <transition id="k36">
+        <name><text>k36</text></name>
+      </transition>
+      <transition id="k37">
+        <name><text>k37</text></name>
+      </transition>
+      <transition id="k38">
+        <name><text>k38</text></name>
+      </transition>
+      <transition id="k39">
+        <name><text>k39</text></name>
+      </transition>
+      <transition id="k4">
+        <name><text>k4</text></name>
+      </transition>
+      <transition id="k40">
+        <name><text>k40</text></name>
+      </transition>
+      <transition id="k41">
+        <name><text>k41</text></name>
+      </transition>
+      <transition id="k42">
+        <name><text>k42</text></name>
+      </transition>
+      <transition id="k43">
+        <name><text>k43</text></name>
+      </transition>
+      <transition id="k44">
+        <name><text>k44</text></name>
+      </transition>
+      <transition id="k45">
+        <name><text>k45</text></name>
+      </transition>
+      <transition id="k46">
+        <name><text>k46</text></name>
+      </transition>
+      <transition id="k47">
+        <name><text>k47</text></name>
+      </transition>
+      <transition id="k48">
+        <name><text>k48</text></name>
+      </transition>
+      <transition id="k49">
+        <name><text>k49</text></name>
+      </transition>
+      <transition id="k5">
+        <name><text>k5</text></name>
+      </transition>
+      <transition id="k50">
+        <name><text>k50</text></name>
+      </transition>
+      <transition id="k51">
+        <name><text>k51</text></name>
+      </transition>
+      <transition id="k52">
+        <name><text>k52</text></name>
+      </transition>
+      <transition id="k53">
+        <name><text>k53</text></name>
+      </transition>
+      <transition id="k54">
+        <name><text>k54</text></name>
+      </transition>
+      <transition id="k55">
+        <name><text>k55</text></name>
+      </transition>
+      <transition id="k56">
+        <name><text>k56</text></name>
+      </transition>
+      <transition id="k57">
+        <name><text>k57</text></name>
+      </transition>
+      <transition id="k58">
+        <name><text>k58</text></name>
+      </transition>
+      <transition id="k59">
+        <name><text>k59</text></name>
+      </transition>
+      <transition id="k6">
+        <name><text>k6</text></name>
+      </transition>
+      <transition id="k60">
+        <name><text>k60</text></name>
+      </transition>
+      <transition id="k61">
+        <name><text>k61</text></name>
+      </transition>
+      <transition id="k62">
+        <name><text>k62</text></name>
+      </transition>
+      <transition id="k63">
+        <name><text>k63</text></name>
+      </transition>
+      <transition id="k7">
+        <name><text>k7</text></name>
+      </transition>
+      <transition id="k8">
+        <name><text>k8</text></name>
+      </transition>
+      <transition id="k9">
+        <name><text>k9</text></name>
+      </transition>
+      <arc id="e530" source="Gab1" target="k3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e536" source="k3" target="GP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e542" source="GP3" target="k4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e548" source="k4" target="Gab1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e554" source="Gab1" target="t0">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e560" source="t0" target="KdStarG">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e566" source="KdStarG" target="t1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e572" source="t1" target="Gab1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e578" source="GP3" target="k5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e590" source="KdStarGP3" target="k6">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e596" source="k6" target="GP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e616" source="k5" target="KdStarGP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e743" source="KdStarG" target="k2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e749" source="k2" target="KdStarGStar">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e755" source="KdStarGP3" target="k7">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e761" source="k7" target="KdStarGStarP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e767" source="KdStarGStar" target="k10">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e773" source="k10" target="KdStarGStarP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e779" source="KdStarGStarP3" target="k11">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e785" source="k11" target="KdStarGStar">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e791" source="KdStarGStarP3" target="k8">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e797" source="k8" target="GStarP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e803" source="GStarP3" target="k9">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e809" source="k9" target="KdStarGStarP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1202" source="GStarP3" target="k12">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1208" source="k13" target="GStarP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1214" source="k50" target="GStarP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1220" source="GStarP3" target="k49">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1226" source="k44" target="KdStarGStarP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1232" source="KdStarGStarP3" target="k43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1238" source="k38" target="KdStarGStar">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1244" source="KdStarGStar" target="k37">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1250" source="k32" target="KdStar">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1256" source="KdStar" target="k31">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1262" source="k23" target="KdStarGStarP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1268" source="KdStarGStarP3" target="k22">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1274" source="k17" target="KdStarGStar">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1280" source="KdStarGStar" target="k16">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1310" source="P3k" target="k12">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1316" source="k13" target="P3k">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1322" source="k50" target="Pg">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1328" source="Pg" target="k49">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1406" source="k16" target="KdStarGStarP3k">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1412" source="KdStarGStarP3k" target="k17">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1498" source="KdStarGStarP3kP3" target="k23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1504" source="k22" target="KdStarGStarP3kP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1510" source="k12" target="GStarP3kP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1516" source="GStarP3kP3" target="k13">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1565" source="GStarP3kP3" target="k14">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1571" source="k14" target="KdStarGStarP3kP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1577" source="KdStarGStarP3kP3" target="k15">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1583" source="k15" target="GStarP3kP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1623" source="KdStarGStarP3k" target="k18">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1629" source="KdStarGStarP3kP3" target="k24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1635" source="KdStar" target="k14">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1641" source="k15" target="KdStar">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1717" source="k49" target="GStarPgP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1723" source="GStarPgP3" target="k50">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1729" source="GStarPgP3" target="k51">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1735" source="k51" target="KdStarGStarPgP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1741" source="KdStarGStarPgP3" target="k52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1747" source="k52" target="GStarPgP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1753" source="k43" target="KdStarGStarPgP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1759" source="KdStarGStarPgP3" target="k44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1765" source="k37" target="KdStarGStarPg">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1771" source="KdStarGStarPg" target="k38">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1777" source="k31" target="KdStarPg">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1783" source="KdStarPg" target="k32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1874" source="KdStar" target="k51">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1880" source="k52" target="KdStar">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1964" source="k18" target="KdStarGStarP3kStar">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1970" source="k24" target="KdStarGStarP3kStarP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1976" source="KdStarGStarPgP3" target="k45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1982" source="k45" target="KdStarGStarPgStarP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1988" source="KdStarGStarPg" target="k39">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1994" source="k39" target="KdStarGStarPgStar">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2000" source="KdStarPg" target="k33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2006" source="k33" target="KdStarPgStar">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2122" source="KdStarGStarP3kStar" target="k19">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2128" source="k20" target="KdStarGStarP3kStar">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2134" source="KdStarGStarP3kStarP3" target="k25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2140" source="k26" target="KdStarGStarP3kStarP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2146" source="k47" target="KdStarGStarPgStarP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2152" source="KdStarGStarPgStarP3" target="k46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2158" source="k41" target="KdStarGStarPgStar">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2164" source="KdStarGStarPgStar" target="k40">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2170" source="k35" target="KdStarPgStar">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2176" source="KdStarPgStar" target="k34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2333" source="k19" target="KdStarGStarP3kStarP2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2339" source="KdStarGStarP3kStarP2" target="k20">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2345" source="k25" target="KdStarGStarP3kStarP3P2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2351" source="KdStarGStarP3kStarP3P2" target="k26">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2397" source="k46" target="KdStarGStarPgStarP3P2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2403" source="KdStarGStarPgStarP3P2" target="k47">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2409" source="k40" target="KdStarGStarPgStarP2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2415" source="KdStarGStarPgStarP2" target="k41">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2421" source="k34" target="KdStarPgStarP2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2427" source="KdStarPgStarP2" target="k35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2488" source="KdStarGStarP3kStarP2" target="k21">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2494" source="KdStarGStarP3kStarP3P2" target="k27">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2500" source="KdStarGStarPgStarP3P2" target="k48">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2506" source="KdStarGStarPgStarP2" target="k42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2512" source="KdStarPgStarP2" target="k36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2548" source="k21" target="KdStarGStarP3k">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2554" source="k27" target="KdStarGStarP3kP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2560" source="k48" target="KdStarGStarPgP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2566" source="k42" target="KdStarGStarPg">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2572" source="k36" target="KdStarPg">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2763" source="Pip2" target="k25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2769" source="k26" target="Pip2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2843" source="Pip2" target="k34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2849" source="k35" target="Pip2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2879" source="k48" target="DAG">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2885" source="k42" target="DAG">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2891" source="k36" target="DAG">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2897" source="k27" target="Pip3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2903" source="k21" target="Pip3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e2996" source="Pip3" target="k28">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3002" source="k29" target="Pip3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3008" source="Akt" target="k28">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3014" source="k29" target="Akt">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3020" source="k28" target="AktP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3026" source="AktP3" target="k29">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3032" source="AktP3" target="k30">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3038" source="k30" target="AktStar">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3044" source="k30" target="Pip3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3072" source="k57" target="Pip2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3078" source="Pip2" target="k56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3108" source="k56" target="PtP2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3114" source="PtP2" target="k57">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3176" source="k59" target="PtP2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3182" source="PtP2" target="k58">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3200" source="k58" target="PtP3P2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3206" source="PtP3P2" target="k59">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3247" source="PtP3P2" target="k60">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3253" source="k60" target="PtP2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3259" source="k60" target="Pip2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3295" source="DAGE" target="k63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3301" source="k63" target="Pip2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3307" source="PtP3" target="k55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3313" source="k55" target="Pip2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3343" source="k55" target="Pten">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3349" source="k63" target="Enz">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3399" source="DAG" target="k61">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3405" source="k62" target="DAG">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3411" source="k61" target="DAGE">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3417" source="DAGE" target="k62">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3423" source="k62" target="Enz">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3429" source="Enz" target="k61">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3435" source="Pip3" target="k53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3441" source="k53" target="PtP3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3447" source="PtP3" target="k54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3453" source="k54" target="Pip3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3471" source="Pten" target="k56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3477" source="k57" target="Pten">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3523" source="k54" target="Pten">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3529" source="Pten" target="k53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3592" source="Pip3" target="k3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3598" source="k4" target="Pip3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3604" source="Pip3" target="k10">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e3610" source="k11" target="Pip3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e5967" source="t1" target="KdStar">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e5973" source="KdStar" target="t0">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e5979" source="k6" target="KdStar">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e5985" source="KdStar" target="k5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e6057" source="k8" target="KdStar">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e6063" source="KdStar" target="k9">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e6135" source="k20" target="Pip2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e6141" source="Pip2" target="k19">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e6201" source="k47" target="Pip2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e6207" source="Pip2" target="k46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e6253" source="k41" target="Pip2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e6259" source="Pip2" target="k40">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e9729" source="k17" target="P3k">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e9735" source="P3k" target="k16">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e9741" source="k23" target="P3k">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e9747" source="P3k" target="k22">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e9878" source="k44" target="Pg">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e9884" source="Pg" target="k43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e9890" source="k38" target="Pg">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e9896" source="Pg" target="k37">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e9902" source="k32" target="Pg">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e9908" source="Pg" target="k31">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e10243" source="k59" target="Pip3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e10249" source="Pip3" target="k58">
+        <inscription><text>1</text></inscription>
+      </arc>
+    </page>
+  <name><text>Angiogenesis-PT-05</text></name></net>
+</pnml>

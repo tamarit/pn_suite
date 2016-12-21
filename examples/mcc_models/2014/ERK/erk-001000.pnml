@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="ERK-PT-001000" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    
+    <page id="page0">
+      <name><text>DefaultPage</text></name>
+      <place id="Raf1Star">
+        <name><text>Raf1Star</text></name>
+        <initialMarking><text>1000</text></initialMarking>
+      </place>
+      <place id="RKIP">
+        <name><text>RKIP</text></name>
+        <initialMarking><text>1000</text></initialMarking>
+      </place>
+      <place id="Raf1Star_RKIP">
+        <name><text>Raf1Star_RKIP</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="ERKPP">
+        <name><text>ERKPP</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="MEKPP_ERK">
+        <name><text>MEKPP_ERK</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="Raf1Star_RKIP_ERKPP">
+        <name><text>Raf1Star_RKIP_ERKPP</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="RKIPP_RP">
+        <name><text>RKIPP_RP</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="MEKPP">
+        <name><text>MEKPP</text></name>
+        <initialMarking><text>1000</text></initialMarking>
+      </place>
+      <place id="ERK">
+        <name><text>ERK</text></name>
+        <initialMarking><text>1000</text></initialMarking>
+      </place>
+      <place id="RKIPP">
+        <name><text>RKIPP</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="RP">
+        <name><text>RP</text></name>
+        <initialMarking><text>1000</text></initialMarking>
+      </place>
+      <transition id="r1">
+        <name><text>r1</text></name>
+      </transition>
+      <transition id="r2">
+        <name><text>r2</text></name>
+      </transition>
+      <transition id="r3">
+        <name><text>r3</text></name>
+      </transition>
+      <transition id="r4">
+        <name><text>r4</text></name>
+      </transition>
+      <transition id="r6">
+        <name><text>r6</text></name>
+      </transition>
+      <transition id="r7">
+        <name><text>r7</text></name>
+      </transition>
+      <transition id="r9">
+        <name><text>r9</text></name>
+      </transition>
+      <transition id="r10">
+        <name><text>r10</text></name>
+      </transition>
+      <transition id="r5">
+        <name><text>r5</text></name>
+      </transition>
+      <transition id="r8">
+        <name><text>r8</text></name>
+      </transition>
+      <transition id="r11">
+        <name><text>r11</text></name>
+      </transition>
+      <arc id="e51648" source="Raf1Star" target="r1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51657" source="RKIP" target="r1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51666" source="r1" target="Raf1Star_RKIP">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51675" source="Raf1Star_RKIP" target="r2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51684" source="r2" target="Raf1Star">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51693" source="r2" target="RKIP">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51702" source="Raf1Star_RKIP" target="r3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51711" source="ERKPP" target="r3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51720" source="r3" target="Raf1Star_RKIP_ERKPP">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51729" source="Raf1Star_RKIP_ERKPP" target="r4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51738" source="r4" target="Raf1Star_RKIP">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51747" source="r4" target="ERKPP">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51756" source="Raf1Star_RKIP_ERKPP" target="r5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51765" source="r5" target="ERK">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51774" source="r5" target="RKIPP">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51783" source="r5" target="Raf1Star">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51792" source="MEKPP_ERK" target="r7">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51801" source="r7" target="ERK">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51810" source="r7" target="MEKPP">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51819" source="MEKPP" target="r6">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51828" source="ERK" target="r6">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51837" source="r6" target="MEKPP_ERK">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51846" source="MEKPP_ERK" target="r8">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51855" source="r8" target="ERKPP">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51864" source="r8" target="MEKPP">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51873" source="RP" target="r9">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51882" source="r9" target="RKIPP_RP">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51891" source="RKIPP_RP" target="r10">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51900" source="r10" target="RP">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51909" source="RKIPP" target="r9">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51918" source="r10" target="RKIPP">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51927" source="r11" target="RKIP">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51936" source="RKIPP_RP" target="r11">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e51945" source="r11" target="RP">
+        <inscription><text>1</text></inscription>
+      </arc>
+    </page>
+  <name><text>ERK-PT-001000</text></name></net>
+</pnml>

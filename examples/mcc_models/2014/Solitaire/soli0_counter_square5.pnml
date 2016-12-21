@@ -1,0 +1,2085 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="Solitaire-PT-SqrCT5x5" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    
+    <page id="page0">
+      <name><text>DefaultPage</text></name>
+      <place id="T42">
+        <name><text>T42</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F42">
+        <name><text>F42</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T53">
+        <name><text>T53</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F53">
+        <name><text>F53</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T62">
+        <name><text>T62</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F62">
+        <name><text>F62</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="F52">
+        <name><text>F52</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T52">
+        <name><text>T52</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F43">
+        <name><text>F43</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T43">
+        <name><text>T43</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F32">
+        <name><text>F32</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T32">
+        <name><text>T32</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="T22">
+        <name><text>T22</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F22">
+        <name><text>F22</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T33">
+        <name><text>T33</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F33">
+        <name><text>F33</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="F34">
+        <name><text>F34</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T34">
+        <name><text>T34</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F25">
+        <name><text>F25</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T25">
+        <name><text>T25</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F23">
+        <name><text>F23</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T23">
+        <name><text>T23</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F44">
+        <name><text>F44</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T44">
+        <name><text>T44</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F35">
+        <name><text>F35</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T35">
+        <name><text>T35</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F24">
+        <name><text>F24</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T24">
+        <name><text>T24</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="T45">
+        <name><text>T45</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F45">
+        <name><text>F45</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T54">
+        <name><text>T54</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="F54">
+        <name><text>F54</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F64">
+        <name><text>F64</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T64">
+        <name><text>T64</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F55">
+        <name><text>F55</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T55">
+        <name><text>T55</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="T63">
+        <name><text>T63</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F63">
+        <name><text>F63</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T65">
+        <name><text>T65</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F65">
+        <name><text>F65</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="F46">
+        <name><text>F46</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T46">
+        <name><text>T46</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F26">
+        <name><text>F26</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T26">
+        <name><text>T26</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="T36">
+        <name><text>T36</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F36">
+        <name><text>F36</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T56">
+        <name><text>T56</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="F56">
+        <name><text>F56</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="F66">
+        <name><text>F66</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="T66">
+        <name><text>T66</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="counter">
+        <name><text>counter</text></name>
+        <initialMarking><text>24</text></initialMarking>
+      </place>
+      <transition id="left52">
+        <name><text>left52</text></name>
+      </transition>
+      <transition id="right52">
+        <name><text>right52</text></name>
+      </transition>
+      <transition id="up52">
+        <name><text>up52</text></name>
+      </transition>
+      <transition id="down52">
+        <name><text>down52</text></name>
+      </transition>
+      <transition id="left42">
+        <name><text>left42</text></name>
+      </transition>
+      <transition id="right42">
+        <name><text>right42</text></name>
+      </transition>
+      <transition id="up42">
+        <name><text>up42</text></name>
+      </transition>
+      <transition id="down42">
+        <name><text>down42</text></name>
+      </transition>
+      <transition id="left32">
+        <name><text>left32</text></name>
+      </transition>
+      <transition id="right32">
+        <name><text>right32</text></name>
+      </transition>
+      <transition id="up32">
+        <name><text>up32</text></name>
+      </transition>
+      <transition id="down32">
+        <name><text>down32</text></name>
+      </transition>
+      <transition id="left24">
+        <name><text>left24</text></name>
+      </transition>
+      <transition id="right24">
+        <name><text>right24</text></name>
+      </transition>
+      <transition id="up24">
+        <name><text>up24</text></name>
+      </transition>
+      <transition id="down24">
+        <name><text>down24</text></name>
+      </transition>
+      <transition id="left34">
+        <name><text>left34</text></name>
+      </transition>
+      <transition id="right34">
+        <name><text>right34</text></name>
+      </transition>
+      <transition id="up34">
+        <name><text>up34</text></name>
+      </transition>
+      <transition id="down34">
+        <name><text>down34</text></name>
+      </transition>
+      <transition id="left44">
+        <name><text>left44</text></name>
+      </transition>
+      <transition id="right44">
+        <name><text>right44</text></name>
+      </transition>
+      <transition id="up44">
+        <name><text>up44</text></name>
+      </transition>
+      <transition id="down44">
+        <name><text>down44</text></name>
+      </transition>
+      <transition id="left54">
+        <name><text>left54</text></name>
+      </transition>
+      <transition id="right54">
+        <name><text>right54</text></name>
+      </transition>
+      <transition id="up54">
+        <name><text>up54</text></name>
+      </transition>
+      <transition id="down54">
+        <name><text>down54</text></name>
+      </transition>
+      <transition id="left64">
+        <name><text>left64</text></name>
+      </transition>
+      <transition id="right64">
+        <name><text>right64</text></name>
+      </transition>
+      <transition id="up64">
+        <name><text>up64</text></name>
+      </transition>
+      <transition id="down64">
+        <name><text>down64</text></name>
+      </transition>
+      <transition id="left63">
+        <name><text>left63</text></name>
+      </transition>
+      <transition id="right63">
+        <name><text>right63</text></name>
+      </transition>
+      <transition id="up63">
+        <name><text>up63</text></name>
+      </transition>
+      <transition id="down63">
+        <name><text>down63</text></name>
+      </transition>
+      <transition id="left53">
+        <name><text>left53</text></name>
+      </transition>
+      <transition id="right53">
+        <name><text>right53</text></name>
+      </transition>
+      <transition id="up53">
+        <name><text>up53</text></name>
+      </transition>
+      <transition id="down53">
+        <name><text>down53</text></name>
+      </transition>
+      <transition id="left43">
+        <name><text>left43</text></name>
+      </transition>
+      <transition id="right43">
+        <name><text>right43</text></name>
+      </transition>
+      <transition id="up43">
+        <name><text>up43</text></name>
+      </transition>
+      <transition id="down43">
+        <name><text>down43</text></name>
+      </transition>
+      <transition id="left33">
+        <name><text>left33</text></name>
+      </transition>
+      <transition id="right33">
+        <name><text>right33</text></name>
+      </transition>
+      <transition id="up33">
+        <name><text>up33</text></name>
+      </transition>
+      <transition id="down33">
+        <name><text>down33</text></name>
+      </transition>
+      <transition id="left23">
+        <name><text>left23</text></name>
+      </transition>
+      <transition id="right23">
+        <name><text>right23</text></name>
+      </transition>
+      <transition id="up23">
+        <name><text>up23</text></name>
+      </transition>
+      <transition id="down23">
+        <name><text>down23</text></name>
+      </transition>
+      <transition id="left36">
+        <name><text>left36</text></name>
+      </transition>
+      <transition id="right36">
+        <name><text>right36</text></name>
+      </transition>
+      <transition id="up36">
+        <name><text>up36</text></name>
+      </transition>
+      <transition id="down36">
+        <name><text>down36</text></name>
+      </transition>
+      <transition id="left46">
+        <name><text>left46</text></name>
+      </transition>
+      <transition id="right46">
+        <name><text>right46</text></name>
+      </transition>
+      <transition id="up46">
+        <name><text>up46</text></name>
+      </transition>
+      <transition id="down46">
+        <name><text>down46</text></name>
+      </transition>
+      <transition id="left56">
+        <name><text>left56</text></name>
+      </transition>
+      <transition id="right56">
+        <name><text>right56</text></name>
+      </transition>
+      <transition id="up56">
+        <name><text>up56</text></name>
+      </transition>
+      <transition id="down56">
+        <name><text>down56</text></name>
+      </transition>
+      <transition id="left25">
+        <name><text>left25</text></name>
+      </transition>
+      <transition id="right25">
+        <name><text>right25</text></name>
+      </transition>
+      <transition id="up25">
+        <name><text>up25</text></name>
+      </transition>
+      <transition id="down25">
+        <name><text>down25</text></name>
+      </transition>
+      <transition id="left35">
+        <name><text>left35</text></name>
+      </transition>
+      <transition id="right35">
+        <name><text>right35</text></name>
+      </transition>
+      <transition id="up35">
+        <name><text>up35</text></name>
+      </transition>
+      <transition id="down35">
+        <name><text>down35</text></name>
+      </transition>
+      <transition id="left45">
+        <name><text>left45</text></name>
+      </transition>
+      <transition id="right45">
+        <name><text>right45</text></name>
+      </transition>
+      <transition id="up45">
+        <name><text>up45</text></name>
+      </transition>
+      <transition id="down45">
+        <name><text>down45</text></name>
+      </transition>
+      <transition id="left55">
+        <name><text>left55</text></name>
+      </transition>
+      <transition id="right55">
+        <name><text>right55</text></name>
+      </transition>
+      <transition id="up55">
+        <name><text>up55</text></name>
+      </transition>
+      <transition id="down55">
+        <name><text>down55</text></name>
+      </transition>
+      <transition id="left65">
+        <name><text>left65</text></name>
+      </transition>
+      <transition id="right65">
+        <name><text>right65</text></name>
+      </transition>
+      <transition id="up65">
+        <name><text>up65</text></name>
+      </transition>
+      <transition id="down65">
+        <name><text>down65</text></name>
+      </transition>
+      <arc id="e68342" source="T65" target="left65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68348" source="left65" target="F65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68354" source="T65" target="up65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68360" source="up65" target="F65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68366" source="T65" target="right65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68372" source="right65" target="F65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68378" source="T65" target="down65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68384" source="down65" target="F65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68390" source="counter" target="left65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68396" source="counter" target="up65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68402" source="counter" target="right65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68408" source="counter" target="down65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68414" source="T55" target="left55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68420" source="left55" target="F55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68426" source="T55" target="up55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68432" source="up55" target="F55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68438" source="T55" target="right55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68444" source="right55" target="F55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68450" source="T55" target="down55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68456" source="down55" target="F55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68462" source="counter" target="left55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68468" source="counter" target="up55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68474" source="counter" target="right55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68480" source="counter" target="down55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68486" source="T45" target="left45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68492" source="left45" target="F45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68498" source="T45" target="up45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68504" source="up45" target="F45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68510" source="T45" target="right45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68516" source="right45" target="F45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68522" source="T45" target="down45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68528" source="down45" target="F45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68534" source="counter" target="left45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68540" source="counter" target="up45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68546" source="counter" target="right45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68552" source="counter" target="down45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68558" source="T35" target="left35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68564" source="left35" target="F35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68570" source="T35" target="up35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68576" source="up35" target="F35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68582" source="T35" target="right35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68588" source="right35" target="F35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68594" source="T35" target="down35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68600" source="down35" target="F35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68606" source="counter" target="left35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68612" source="counter" target="up35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68618" source="counter" target="right35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68624" source="counter" target="down35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68630" source="T25" target="left25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68636" source="left25" target="F25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68642" source="T25" target="up25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68648" source="up25" target="F25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68654" source="T25" target="right25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68660" source="right25" target="F25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68666" source="T25" target="down25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68672" source="down25" target="F25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68678" source="counter" target="left25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68684" source="counter" target="up25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68690" source="counter" target="right25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68696" source="counter" target="down25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68738" source="T56" target="left56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68744" source="left56" target="F56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68750" source="T56" target="up56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68756" source="up56" target="F56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68762" source="T56" target="right56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68768" source="right56" target="F56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68774" source="T56" target="down56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68780" source="down56" target="F56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68786" source="counter" target="left56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68792" source="counter" target="up56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68798" source="counter" target="right56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68804" source="counter" target="down56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68810" source="T46" target="left46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68816" source="left46" target="F46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68822" source="T46" target="up46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68828" source="up46" target="F46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68834" source="T46" target="right46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68840" source="right46" target="F46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68846" source="T46" target="down46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68852" source="down46" target="F46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68858" source="counter" target="left46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68864" source="counter" target="up46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68870" source="counter" target="right46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68876" source="counter" target="down46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68882" source="T36" target="left36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68888" source="left36" target="F36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68894" source="T36" target="up36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68900" source="up36" target="F36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68906" source="T36" target="right36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68912" source="right36" target="F36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68918" source="T36" target="down36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68924" source="down36" target="F36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68930" source="counter" target="left36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68936" source="counter" target="up36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68942" source="counter" target="right36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68948" source="counter" target="down36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68954" source="T23" target="left23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68960" source="left23" target="F23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68966" source="T23" target="up23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68972" source="up23" target="F23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68978" source="T23" target="right23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68984" source="right23" target="F23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68990" source="T23" target="down23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e68996" source="down23" target="F23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69002" source="counter" target="left23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69008" source="counter" target="up23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69014" source="counter" target="right23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69020" source="counter" target="down23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69026" source="T33" target="left33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69032" source="left33" target="F33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69038" source="T33" target="up33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69044" source="up33" target="F33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69050" source="T33" target="right33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69056" source="right33" target="F33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69062" source="T33" target="down33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69068" source="down33" target="F33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69074" source="counter" target="left33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69080" source="counter" target="up33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69086" source="counter" target="right33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69092" source="counter" target="down33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69098" source="T43" target="left43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69104" source="left43" target="F43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69110" source="T43" target="up43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69116" source="up43" target="F43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69122" source="T43" target="right43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69128" source="right43" target="F43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69134" source="T43" target="down43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69140" source="down43" target="F43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69146" source="counter" target="left43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69152" source="counter" target="up43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69158" source="counter" target="right43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69164" source="counter" target="down43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69170" source="T53" target="left53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69176" source="left53" target="F53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69182" source="T53" target="up53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69188" source="up53" target="F53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69194" source="T53" target="right53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69200" source="right53" target="F53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69206" source="T53" target="down53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69212" source="down53" target="F53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69218" source="counter" target="left53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69224" source="counter" target="up53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69230" source="counter" target="right53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69236" source="counter" target="down53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69242" source="T63" target="left63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69248" source="left63" target="F63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69254" source="T63" target="up63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69260" source="up63" target="F63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69266" source="T63" target="right63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69272" source="right63" target="F63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69278" source="T63" target="down63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69284" source="down63" target="F63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69290" source="counter" target="left63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69296" source="counter" target="up63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69302" source="counter" target="right63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69308" source="counter" target="down63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69314" source="T64" target="left64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69320" source="left64" target="F64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69326" source="T64" target="up64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69332" source="up64" target="F64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69338" source="T64" target="right64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69344" source="right64" target="F64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69350" source="T64" target="down64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69356" source="down64" target="F64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69362" source="counter" target="left64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69368" source="counter" target="up64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69374" source="counter" target="right64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69380" source="counter" target="down64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69386" source="T54" target="left54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69392" source="left54" target="F54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69398" source="T54" target="up54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69404" source="up54" target="F54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69410" source="T54" target="right54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69416" source="right54" target="F54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69422" source="T54" target="down54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69428" source="down54" target="F54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69434" source="counter" target="left54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69440" source="counter" target="up54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69446" source="counter" target="right54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69452" source="counter" target="down54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69494" source="T44" target="left44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69500" source="left44" target="F44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69506" source="T44" target="up44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69512" source="up44" target="F44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69518" source="T44" target="right44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69524" source="right44" target="F44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69530" source="T44" target="down44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69536" source="down44" target="F44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69542" source="counter" target="left44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69548" source="counter" target="up44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69554" source="counter" target="right44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69560" source="counter" target="down44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69566" source="T34" target="left34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69572" source="left34" target="F34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69578" source="T34" target="up34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69584" source="up34" target="F34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69590" source="T34" target="right34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69596" source="right34" target="F34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69602" source="T34" target="down34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69608" source="down34" target="F34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69614" source="counter" target="left34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69620" source="counter" target="up34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69626" source="counter" target="right34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69632" source="counter" target="down34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69674" source="T24" target="left24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69680" source="left24" target="F24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69686" source="T24" target="up24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69692" source="up24" target="F24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69698" source="T24" target="right24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69704" source="right24" target="F24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69710" source="T24" target="down24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69716" source="down24" target="F24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69722" source="counter" target="left24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69728" source="counter" target="up24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69734" source="counter" target="right24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69740" source="counter" target="down24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69746" source="T32" target="left32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69752" source="left32" target="F32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69758" source="T32" target="up32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69764" source="up32" target="F32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69770" source="T32" target="right32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69776" source="right32" target="F32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69782" source="T32" target="down32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69788" source="down32" target="F32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69794" source="counter" target="left32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69800" source="counter" target="up32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69806" source="counter" target="right32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69812" source="counter" target="down32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69818" source="T42" target="left42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69824" source="left42" target="F42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69830" source="T42" target="up42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69836" source="up42" target="F42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69842" source="T42" target="right42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69848" source="right42" target="F42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69854" source="T42" target="down42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69860" source="down42" target="F42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69866" source="counter" target="left42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69872" source="counter" target="up42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69878" source="counter" target="right42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69884" source="counter" target="down42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69890" source="T52" target="left52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69896" source="left52" target="F52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69902" source="T52" target="up52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69908" source="up52" target="F52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69914" source="T52" target="right52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69920" source="right52" target="F52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69926" source="T52" target="down52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69932" source="down52" target="F52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69938" source="counter" target="left52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69944" source="counter" target="up52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69950" source="counter" target="right52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e69956" source="counter" target="down52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70062" source="T42" target="up52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70070" source="up52" target="F42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70078" source="F62" target="up52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70086" source="up52" target="T62">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70094" source="T62" target="down52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70102" source="down52" target="F62">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70110" source="F42" target="down52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70118" source="down52" target="T42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70142" source="F53" target="left52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70150" source="left52" target="T53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70158" source="T53" target="right52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70166" source="right52" target="F53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70190" source="T32" target="up42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70198" source="up42" target="F32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70206" source="F52" target="up42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70214" source="up42" target="T52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70222" source="T52" target="down42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70230" source="down42" target="F52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70238" source="F32" target="down42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70246" source="down42" target="T32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70270" source="F43" target="left42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70278" source="left42" target="T43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70286" source="T43" target="right42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70294" source="right42" target="F43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70318" source="T22" target="up32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70326" source="up32" target="F22">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70334" source="F42" target="up32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70342" source="up32" target="T42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70350" source="T42" target="down32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70358" source="down32" target="F42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70366" source="F22" target="down32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70374" source="down32" target="T22">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70398" source="F33" target="left32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70406" source="left32" target="T33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70414" source="T33" target="right32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70422" source="right32" target="F33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70462" source="F34" target="up24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70470" source="up24" target="T34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70478" source="T34" target="down24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70486" source="down24" target="F34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70510" source="T23" target="left24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70518" source="left24" target="F23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70526" source="F25" target="left24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70534" source="left24" target="T25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70542" source="T25" target="right24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70550" source="right24" target="F25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70558" source="F23" target="right24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70566" source="right24" target="T23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70638" source="T24" target="up34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70646" source="up34" target="F24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70654" source="F44" target="up34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70662" source="up34" target="T44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70670" source="T44" target="down34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70678" source="down34" target="F44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70686" source="F24" target="down34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70694" source="down34" target="T24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70702" source="T33" target="left34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70710" source="left34" target="F33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70718" source="F35" target="left34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70726" source="left34" target="T35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70734" source="T35" target="right34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70742" source="right34" target="F35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70750" source="F33" target="right34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70758" source="right34" target="T33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70766" source="T34" target="up44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70774" source="up44" target="F34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70782" source="F54" target="up44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70790" source="up44" target="T54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70798" source="T54" target="down44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70806" source="down44" target="F54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70814" source="F34" target="down44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70822" source="down44" target="T34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70830" source="T43" target="left44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70838" source="left44" target="F43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70846" source="F45" target="left44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70854" source="left44" target="T45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70862" source="T45" target="right44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70870" source="right44" target="F45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70878" source="F43" target="right44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70886" source="right44" target="T43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70958" source="T44" target="up54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70966" source="up54" target="F44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70974" source="F64" target="up54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70982" source="up54" target="T64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70990" source="T64" target="down54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e70998" source="down54" target="F64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71006" source="F44" target="down54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71014" source="down54" target="T44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71022" source="T53" target="left54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71030" source="left54" target="F53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71038" source="F55" target="left54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71046" source="left54" target="T55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71054" source="T55" target="right54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71062" source="right54" target="F55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71070" source="F53" target="right54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71078" source="right54" target="T53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71086" source="T54" target="up64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71094" source="up64" target="F54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71134" source="F54" target="down64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71142" source="down64" target="T54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71150" source="T63" target="left64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71158" source="left64" target="F63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71166" source="F65" target="left64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71174" source="left64" target="T65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71182" source="T65" target="right64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71190" source="right64" target="F65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71198" source="F63" target="right64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71206" source="right64" target="T63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71214" source="T53" target="up63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71222" source="up63" target="F53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71262" source="F53" target="down63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71270" source="down63" target="T53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71278" source="T62" target="left63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71286" source="left63" target="F62">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71294" source="F64" target="left63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71302" source="left63" target="T64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71310" source="T64" target="right63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71318" source="right63" target="F64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71326" source="F62" target="right63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71334" source="right63" target="T62">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71342" source="T43" target="up53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71350" source="up53" target="F43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71358" source="F63" target="up53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71366" source="up53" target="T63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71374" source="T63" target="down53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71382" source="down53" target="F63">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71390" source="F43" target="down53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71398" source="down53" target="T43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71406" source="T52" target="left53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71414" source="left53" target="F52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71422" source="F54" target="left53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71430" source="left53" target="T54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71438" source="T54" target="right53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71446" source="right53" target="F54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71454" source="F52" target="right53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71462" source="right53" target="T52">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71470" source="T33" target="up43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71478" source="up43" target="F33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71486" source="F53" target="up43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71494" source="up43" target="T53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71502" source="T53" target="down43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71510" source="down43" target="F53">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71518" source="F33" target="down43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71526" source="down43" target="T33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71534" source="T42" target="left43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71542" source="left43" target="F42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71550" source="F44" target="left43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71558" source="left43" target="T44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71566" source="T44" target="right43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71574" source="right43" target="F44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71582" source="F42" target="right43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71590" source="right43" target="T42">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71598" source="T23" target="up33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71606" source="up33" target="F23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71614" source="F43" target="up33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71622" source="up33" target="T43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71630" source="T43" target="down33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71638" source="down33" target="F43">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71646" source="F23" target="down33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71654" source="down33" target="T23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71662" source="T32" target="left33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71670" source="left33" target="F32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71678" source="F34" target="left33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71686" source="left33" target="T34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71694" source="T34" target="right33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71702" source="right33" target="F34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71710" source="F32" target="right33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71718" source="right33" target="T32">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71742" source="F33" target="up23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71750" source="up23" target="T33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71758" source="T33" target="down23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71766" source="down23" target="F33">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71790" source="T22" target="left23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71798" source="left23" target="F22">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71806" source="F24" target="left23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71814" source="left23" target="T24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71822" source="T24" target="right23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71830" source="right23" target="F24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71838" source="F22" target="right23">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71846" source="right23" target="T22">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71854" source="T26" target="up36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71862" source="up36" target="F26">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71870" source="F46" target="up36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71878" source="up36" target="T46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71886" source="T46" target="down36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71894" source="down36" target="F46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71902" source="F26" target="down36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71910" source="down36" target="T26">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71918" source="T35" target="left36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71926" source="left36" target="F35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71966" source="F35" target="right36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71974" source="right36" target="T35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71982" source="T36" target="up46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71990" source="up46" target="F36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e71998" source="F56" target="up46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72006" source="up46" target="T56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72014" source="T56" target="down46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72022" source="down46" target="F56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72030" source="F36" target="down46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72038" source="down46" target="T36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72046" source="T45" target="left46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72054" source="left46" target="F45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72094" source="F45" target="right46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72102" source="right46" target="T45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72110" source="T46" target="up56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72118" source="up56" target="F46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72126" source="F66" target="up56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72134" source="up56" target="T66">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72142" source="T66" target="down56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72150" source="down56" target="F66">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72158" source="F46" target="down56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72166" source="down56" target="T46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72174" source="T55" target="left56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72182" source="left56" target="F55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72222" source="F55" target="right56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72230" source="right56" target="T55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72318" source="F35" target="up25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72326" source="up25" target="T35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72334" source="T35" target="down25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72342" source="down25" target="F35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72366" source="T24" target="left25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72374" source="left25" target="F24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72382" source="F26" target="left25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72390" source="left25" target="T26">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72398" source="T26" target="right25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72406" source="right25" target="F26">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72414" source="F24" target="right25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72422" source="right25" target="T24">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72430" source="T25" target="up35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72438" source="up35" target="F25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72446" source="F45" target="up35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72454" source="up35" target="T45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72462" source="T45" target="down35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72470" source="down35" target="F45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72478" source="F25" target="down35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72486" source="down35" target="T25">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72494" source="T34" target="left35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72502" source="left35" target="F34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72510" source="F36" target="left35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72518" source="left35" target="T36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72526" source="T36" target="right35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72534" source="right35" target="F36">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72542" source="F34" target="right35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72550" source="right35" target="T34">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72558" source="T35" target="up45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72566" source="up45" target="F35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72574" source="F55" target="up45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72582" source="up45" target="T55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72590" source="T55" target="down45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72598" source="down45" target="F55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72606" source="F35" target="down45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72614" source="down45" target="T35">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72622" source="T44" target="left45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72630" source="left45" target="F44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72638" source="F46" target="left45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72646" source="left45" target="T46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72654" source="T46" target="right45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72662" source="right45" target="F46">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72670" source="F44" target="right45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72678" source="right45" target="T44">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72686" source="T45" target="up55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72694" source="up55" target="F45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72702" source="F65" target="up55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72710" source="up55" target="T65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72718" source="T65" target="down55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72726" source="down55" target="F65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72734" source="F45" target="down55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72742" source="down55" target="T45">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72750" source="T54" target="left55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72758" source="left55" target="F54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72766" source="F56" target="left55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72774" source="left55" target="T56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72782" source="T56" target="right55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72790" source="right55" target="F56">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72798" source="F54" target="right55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72806" source="right55" target="T54">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72814" source="T55" target="up65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72822" source="up65" target="F55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72862" source="F55" target="down65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72870" source="down65" target="T55">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72878" source="T64" target="left65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72886" source="left65" target="F64">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72894" source="F66" target="left65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72902" source="left65" target="T66">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72910" source="T66" target="right65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72918" source="right65" target="F66">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72926" source="F64" target="right65">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e72934" source="right65" target="T64">
+        <inscription><text>1</text></inscription>
+      </arc>
+    </page>
+  <name><text>Solitaire-PT-SqrCT5x5</text></name></net>
+</pnml>

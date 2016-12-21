@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="CircadianClock-PT-001000" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    
+    <page id="page0">
+      <name><text>DefaultPage</text></name>
+      <place id="a">
+        <name><text>a</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="c">
+        <name><text>c</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="da">
+        <name><text>da</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="da_a">
+        <name><text>da_a</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="dr">
+        <name><text>dr</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="dr_a">
+        <name><text>dr_a</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="ma">
+        <name><text>ma</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="mr">
+        <name><text>mr</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="r">
+        <name><text>r</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="r_cap">
+        <name><text>r_cap</text></name>
+        <initialMarking><text>1000</text></initialMarking>
+      </place>
+      <place id="mr_cap">
+        <name><text>mr_cap</text></name>
+        <initialMarking><text>1000</text></initialMarking>
+      </place>
+      <place id="ma_cap">
+        <name><text>ma_cap</text></name>
+        <initialMarking><text>1000</text></initialMarking>
+      </place>
+      <place id="c_cap">
+        <name><text>c_cap</text></name>
+        <initialMarking><text>1000</text></initialMarking>
+      </place>
+      <place id="a_cap">
+        <name><text>a_cap</text></name>
+        <initialMarking><text>1000</text></initialMarking>
+      </place>
+      <transition id="bind_a">
+        <name><text>bind_a</text></name>
+      </transition>
+      <transition id="bind_r">
+        <name><text>bind_r</text></name>
+      </transition>
+      <transition id="deactive">
+        <name><text>deactive</text></name>
+      </transition>
+      <transition id="deg_a">
+        <name><text>deg_a</text></name>
+      </transition>
+      <transition id="deg_c">
+        <name><text>deg_c</text></name>
+      </transition>
+      <transition id="deg_ma">
+        <name><text>deg_ma</text></name>
+      </transition>
+      <transition id="deg_mr">
+        <name><text>deg_mr</text></name>
+      </transition>
+      <transition id="deg_r">
+        <name><text>deg_r</text></name>
+      </transition>
+      <transition id="rel_a">
+        <name><text>rel_a</text></name>
+      </transition>
+      <transition id="rel_r">
+        <name><text>rel_r</text></name>
+      </transition>
+      <transition id="transc_da">
+        <name><text>transc_da</text></name>
+      </transition>
+      <transition id="transc_da_a">
+        <name><text>transc_da_a</text></name>
+      </transition>
+      <transition id="transc_dr">
+        <name><text>transc_dr</text></name>
+      </transition>
+      <transition id="transc_dr_a">
+        <name><text>transc_dr_a</text></name>
+      </transition>
+      <transition id="transl_a">
+        <name><text>transl_a</text></name>
+      </transition>
+      <transition id="transl_r">
+        <name><text>transl_r</text></name>
+      </transition>
+      <arc id="e303259" source="da" target="bind_a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303265" source="bind_a" target="da_a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303288" source="da_a" target="rel_a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303294" source="rel_a" target="da">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303389" source="transc_da" target="ma">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303395" source="transc_da_a" target="ma">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303453" source="ma" target="deg_ma">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303546" source="a" target="bind_a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303552" source="rel_a" target="a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303663" source="a" target="deactive">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303681" source="rel_r" target="a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303725" source="dr_a" target="rel_r">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303731" source="rel_r" target="dr">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303891" source="mr" target="deg_mr">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303903" source="transc_dr" target="mr">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303915" source="transc_dr_a" target="mr">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303927" source="a" target="bind_r">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303933" source="a" target="deg_a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303939" source="dr" target="bind_r">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303945" source="bind_r" target="dr_a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303993" source="r" target="deg_r">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e303999" source="r" target="deactive">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e304024" source="deactive" target="c">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e304047" source="deg_c" target="r">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e304053" source="c" target="deg_c">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e304545" source="transl_r" target="r">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e309382" source="transl_a" target="a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e308163" source="ma" target="transl_a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e383902" source="transl_a" target="ma">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e308201" source="da_a" target="transc_da_a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e383908" source="transc_da_a" target="da_a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e308239" source="mr" target="transl_r">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e383914" source="transl_r" target="mr">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e308277" source="dr_a" target="transc_dr_a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e383920" source="transc_dr_a" target="dr_a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e308315" source="dr" target="transc_dr">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e383926" source="transc_dr" target="dr">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e308353" source="da" target="transc_da">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e383932" source="transc_da" target="da">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386308" source="deg_mr" target="mr_cap">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386314" source="mr_cap" target="transc_dr_a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386328" source="mr_cap" target="transc_dr">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386342" source="r_cap" target="transl_r">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386356" source="deg_r" target="r_cap">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386370" source="r_cap" target="deg_c">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386376" source="deg_c" target="c_cap">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386382" source="c_cap" target="deactive">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386388" source="deactive" target="r_cap">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386426" source="a_cap" target="rel_r">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386432" source="bind_r" target="a_cap">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386454" source="deg_a" target="a_cap">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386468" source="a_cap" target="rel_a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386482" source="bind_a" target="a_cap">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386496" source="a_cap" target="transl_a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386534" source="deactive" target="a_cap">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386540" source="ma_cap" target="transc_da">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386554" source="ma_cap" target="transc_da_a">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e386568" source="deg_ma" target="ma_cap">
+        <inscription><text>1</text></inscription>
+      </arc>
+    </page>
+  <name><text>CircadianClock-PT-001000</text></name></net>
+</pnml>

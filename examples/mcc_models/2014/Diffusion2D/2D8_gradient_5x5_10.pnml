@@ -1,0 +1,1405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="Diffusion2D-PT-D05N010" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    
+    <page id="page0">
+      <name><text>DefaultPage</text></name>
+      <place id="cAMP__1_1_">
+        <name><text>cAMP__1_1_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__1_2_">
+        <name><text>cAMP__1_2_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__1_3_">
+        <name><text>cAMP__1_3_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__1_4_">
+        <name><text>cAMP__1_4_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__1_5_">
+        <name><text>cAMP__1_5_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__2_1_">
+        <name><text>cAMP__2_1_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__2_2_">
+        <name><text>cAMP__2_2_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__2_3_">
+        <name><text>cAMP__2_3_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__2_4_">
+        <name><text>cAMP__2_4_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__2_5_">
+        <name><text>cAMP__2_5_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__3_1_">
+        <name><text>cAMP__3_1_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__3_2_">
+        <name><text>cAMP__3_2_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__3_3_">
+        <name><text>cAMP__3_3_</text></name>
+        <initialMarking><text>10</text></initialMarking>
+      </place>
+      <place id="cAMP__3_4_">
+        <name><text>cAMP__3_4_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__3_5_">
+        <name><text>cAMP__3_5_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__4_1_">
+        <name><text>cAMP__4_1_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__4_2_">
+        <name><text>cAMP__4_2_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__4_3_">
+        <name><text>cAMP__4_3_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__4_4_">
+        <name><text>cAMP__4_4_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__4_5_">
+        <name><text>cAMP__4_5_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__5_1_">
+        <name><text>cAMP__5_1_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__5_2_">
+        <name><text>cAMP__5_2_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__5_3_">
+        <name><text>cAMP__5_3_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__5_4_">
+        <name><text>cAMP__5_4_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="cAMP__5_5_">
+        <name><text>cAMP__5_5_</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <transition id="t1_1_1_1_2">
+        <name><text>t1_1_1_1_2</text></name>
+      </transition>
+      <transition id="t1_1_1_2_1">
+        <name><text>t1_1_1_2_1</text></name>
+      </transition>
+      <transition id="t1_1_1_2_2">
+        <name><text>t1_1_1_2_2</text></name>
+      </transition>
+      <transition id="t1_1_2_1_1">
+        <name><text>t1_1_2_1_1</text></name>
+      </transition>
+      <transition id="t1_1_2_1_3">
+        <name><text>t1_1_2_1_3</text></name>
+      </transition>
+      <transition id="t1_1_2_2_1">
+        <name><text>t1_1_2_2_1</text></name>
+      </transition>
+      <transition id="t1_1_2_2_2">
+        <name><text>t1_1_2_2_2</text></name>
+      </transition>
+      <transition id="t1_1_2_2_3">
+        <name><text>t1_1_2_2_3</text></name>
+      </transition>
+      <transition id="t1_1_3_1_2">
+        <name><text>t1_1_3_1_2</text></name>
+      </transition>
+      <transition id="t1_1_3_1_4">
+        <name><text>t1_1_3_1_4</text></name>
+      </transition>
+      <transition id="t1_1_3_2_2">
+        <name><text>t1_1_3_2_2</text></name>
+      </transition>
+      <transition id="t1_1_3_2_3">
+        <name><text>t1_1_3_2_3</text></name>
+      </transition>
+      <transition id="t1_1_3_2_4">
+        <name><text>t1_1_3_2_4</text></name>
+      </transition>
+      <transition id="t1_1_4_1_3">
+        <name><text>t1_1_4_1_3</text></name>
+      </transition>
+      <transition id="t1_1_4_1_5">
+        <name><text>t1_1_4_1_5</text></name>
+      </transition>
+      <transition id="t1_1_4_2_3">
+        <name><text>t1_1_4_2_3</text></name>
+      </transition>
+      <transition id="t1_1_4_2_4">
+        <name><text>t1_1_4_2_4</text></name>
+      </transition>
+      <transition id="t1_1_4_2_5">
+        <name><text>t1_1_4_2_5</text></name>
+      </transition>
+      <transition id="t1_1_5_1_4">
+        <name><text>t1_1_5_1_4</text></name>
+      </transition>
+      <transition id="t1_1_5_2_4">
+        <name><text>t1_1_5_2_4</text></name>
+      </transition>
+      <transition id="t1_1_5_2_5">
+        <name><text>t1_1_5_2_5</text></name>
+      </transition>
+      <transition id="t1_2_1_1_1">
+        <name><text>t1_2_1_1_1</text></name>
+      </transition>
+      <transition id="t1_2_1_1_2">
+        <name><text>t1_2_1_1_2</text></name>
+      </transition>
+      <transition id="t1_2_1_2_2">
+        <name><text>t1_2_1_2_2</text></name>
+      </transition>
+      <transition id="t1_2_1_3_1">
+        <name><text>t1_2_1_3_1</text></name>
+      </transition>
+      <transition id="t1_2_1_3_2">
+        <name><text>t1_2_1_3_2</text></name>
+      </transition>
+      <transition id="t1_2_2_1_1">
+        <name><text>t1_2_2_1_1</text></name>
+      </transition>
+      <transition id="t1_2_2_1_2">
+        <name><text>t1_2_2_1_2</text></name>
+      </transition>
+      <transition id="t1_2_2_1_3">
+        <name><text>t1_2_2_1_3</text></name>
+      </transition>
+      <transition id="t1_2_2_2_1">
+        <name><text>t1_2_2_2_1</text></name>
+      </transition>
+      <transition id="t1_2_2_2_3">
+        <name><text>t1_2_2_2_3</text></name>
+      </transition>
+      <transition id="t1_2_2_3_1">
+        <name><text>t1_2_2_3_1</text></name>
+      </transition>
+      <transition id="t1_2_2_3_2">
+        <name><text>t1_2_2_3_2</text></name>
+      </transition>
+      <transition id="t1_2_2_3_3">
+        <name><text>t1_2_2_3_3</text></name>
+      </transition>
+      <transition id="t1_2_3_1_2">
+        <name><text>t1_2_3_1_2</text></name>
+      </transition>
+      <transition id="t1_2_3_1_3">
+        <name><text>t1_2_3_1_3</text></name>
+      </transition>
+      <transition id="t1_2_3_1_4">
+        <name><text>t1_2_3_1_4</text></name>
+      </transition>
+      <transition id="t1_2_3_2_2">
+        <name><text>t1_2_3_2_2</text></name>
+      </transition>
+      <transition id="t1_2_3_2_4">
+        <name><text>t1_2_3_2_4</text></name>
+      </transition>
+      <transition id="t1_2_3_3_2">
+        <name><text>t1_2_3_3_2</text></name>
+      </transition>
+      <transition id="t1_2_3_3_3">
+        <name><text>t1_2_3_3_3</text></name>
+      </transition>
+      <transition id="t1_2_3_3_4">
+        <name><text>t1_2_3_3_4</text></name>
+      </transition>
+      <transition id="t1_2_4_1_3">
+        <name><text>t1_2_4_1_3</text></name>
+      </transition>
+      <transition id="t1_2_4_1_4">
+        <name><text>t1_2_4_1_4</text></name>
+      </transition>
+      <transition id="t1_2_4_1_5">
+        <name><text>t1_2_4_1_5</text></name>
+      </transition>
+      <transition id="t1_2_4_2_3">
+        <name><text>t1_2_4_2_3</text></name>
+      </transition>
+      <transition id="t1_2_4_2_5">
+        <name><text>t1_2_4_2_5</text></name>
+      </transition>
+      <transition id="t1_2_4_3_3">
+        <name><text>t1_2_4_3_3</text></name>
+      </transition>
+      <transition id="t1_2_4_3_4">
+        <name><text>t1_2_4_3_4</text></name>
+      </transition>
+      <transition id="t1_2_4_3_5">
+        <name><text>t1_2_4_3_5</text></name>
+      </transition>
+      <transition id="t1_2_5_1_4">
+        <name><text>t1_2_5_1_4</text></name>
+      </transition>
+      <transition id="t1_2_5_1_5">
+        <name><text>t1_2_5_1_5</text></name>
+      </transition>
+      <transition id="t1_2_5_2_4">
+        <name><text>t1_2_5_2_4</text></name>
+      </transition>
+      <transition id="t1_2_5_3_4">
+        <name><text>t1_2_5_3_4</text></name>
+      </transition>
+      <transition id="t1_2_5_3_5">
+        <name><text>t1_2_5_3_5</text></name>
+      </transition>
+      <transition id="t1_3_1_2_1">
+        <name><text>t1_3_1_2_1</text></name>
+      </transition>
+      <transition id="t1_3_1_2_2">
+        <name><text>t1_3_1_2_2</text></name>
+      </transition>
+      <transition id="t1_3_1_3_2">
+        <name><text>t1_3_1_3_2</text></name>
+      </transition>
+      <transition id="t1_3_1_4_1">
+        <name><text>t1_3_1_4_1</text></name>
+      </transition>
+      <transition id="t1_3_1_4_2">
+        <name><text>t1_3_1_4_2</text></name>
+      </transition>
+      <transition id="t1_3_2_2_1">
+        <name><text>t1_3_2_2_1</text></name>
+      </transition>
+      <transition id="t1_3_2_2_2">
+        <name><text>t1_3_2_2_2</text></name>
+      </transition>
+      <transition id="t1_3_2_2_3">
+        <name><text>t1_3_2_2_3</text></name>
+      </transition>
+      <transition id="t1_3_2_3_1">
+        <name><text>t1_3_2_3_1</text></name>
+      </transition>
+      <transition id="t1_3_2_3_3">
+        <name><text>t1_3_2_3_3</text></name>
+      </transition>
+      <transition id="t1_3_2_4_1">
+        <name><text>t1_3_2_4_1</text></name>
+      </transition>
+      <transition id="t1_3_2_4_2">
+        <name><text>t1_3_2_4_2</text></name>
+      </transition>
+      <transition id="t1_3_2_4_3">
+        <name><text>t1_3_2_4_3</text></name>
+      </transition>
+      <transition id="t1_3_3_2_2">
+        <name><text>t1_3_3_2_2</text></name>
+      </transition>
+      <transition id="t1_3_3_2_3">
+        <name><text>t1_3_3_2_3</text></name>
+      </transition>
+      <transition id="t1_3_3_2_4">
+        <name><text>t1_3_3_2_4</text></name>
+      </transition>
+      <transition id="t1_3_3_3_2">
+        <name><text>t1_3_3_3_2</text></name>
+      </transition>
+      <transition id="t1_3_3_3_4">
+        <name><text>t1_3_3_3_4</text></name>
+      </transition>
+      <transition id="t1_3_3_4_2">
+        <name><text>t1_3_3_4_2</text></name>
+      </transition>
+      <transition id="t1_3_3_4_3">
+        <name><text>t1_3_3_4_3</text></name>
+      </transition>
+      <transition id="t1_3_3_4_4">
+        <name><text>t1_3_3_4_4</text></name>
+      </transition>
+      <transition id="t1_3_4_2_3">
+        <name><text>t1_3_4_2_3</text></name>
+      </transition>
+      <transition id="t1_3_4_2_4">
+        <name><text>t1_3_4_2_4</text></name>
+      </transition>
+      <transition id="t1_3_4_2_5">
+        <name><text>t1_3_4_2_5</text></name>
+      </transition>
+      <transition id="t1_3_4_3_3">
+        <name><text>t1_3_4_3_3</text></name>
+      </transition>
+      <transition id="t1_3_4_3_5">
+        <name><text>t1_3_4_3_5</text></name>
+      </transition>
+      <transition id="t1_3_4_4_3">
+        <name><text>t1_3_4_4_3</text></name>
+      </transition>
+      <transition id="t1_3_4_4_4">
+        <name><text>t1_3_4_4_4</text></name>
+      </transition>
+      <transition id="t1_3_4_4_5">
+        <name><text>t1_3_4_4_5</text></name>
+      </transition>
+      <transition id="t1_3_5_2_4">
+        <name><text>t1_3_5_2_4</text></name>
+      </transition>
+      <transition id="t1_3_5_2_5">
+        <name><text>t1_3_5_2_5</text></name>
+      </transition>
+      <transition id="t1_3_5_3_4">
+        <name><text>t1_3_5_3_4</text></name>
+      </transition>
+      <transition id="t1_3_5_4_4">
+        <name><text>t1_3_5_4_4</text></name>
+      </transition>
+      <transition id="t1_3_5_4_5">
+        <name><text>t1_3_5_4_5</text></name>
+      </transition>
+      <transition id="t1_4_1_3_1">
+        <name><text>t1_4_1_3_1</text></name>
+      </transition>
+      <transition id="t1_4_1_3_2">
+        <name><text>t1_4_1_3_2</text></name>
+      </transition>
+      <transition id="t1_4_1_4_2">
+        <name><text>t1_4_1_4_2</text></name>
+      </transition>
+      <transition id="t1_4_1_5_1">
+        <name><text>t1_4_1_5_1</text></name>
+      </transition>
+      <transition id="t1_4_1_5_2">
+        <name><text>t1_4_1_5_2</text></name>
+      </transition>
+      <transition id="t1_4_2_3_1">
+        <name><text>t1_4_2_3_1</text></name>
+      </transition>
+      <transition id="t1_4_2_3_2">
+        <name><text>t1_4_2_3_2</text></name>
+      </transition>
+      <transition id="t1_4_2_3_3">
+        <name><text>t1_4_2_3_3</text></name>
+      </transition>
+      <transition id="t1_4_2_4_1">
+        <name><text>t1_4_2_4_1</text></name>
+      </transition>
+      <transition id="t1_4_2_4_3">
+        <name><text>t1_4_2_4_3</text></name>
+      </transition>
+      <transition id="t1_4_2_5_1">
+        <name><text>t1_4_2_5_1</text></name>
+      </transition>
+      <transition id="t1_4_2_5_2">
+        <name><text>t1_4_2_5_2</text></name>
+      </transition>
+      <transition id="t1_4_2_5_3">
+        <name><text>t1_4_2_5_3</text></name>
+      </transition>
+      <transition id="t1_4_3_3_2">
+        <name><text>t1_4_3_3_2</text></name>
+      </transition>
+      <transition id="t1_4_3_3_3">
+        <name><text>t1_4_3_3_3</text></name>
+      </transition>
+      <transition id="t1_4_3_3_4">
+        <name><text>t1_4_3_3_4</text></name>
+      </transition>
+      <transition id="t1_4_3_4_2">
+        <name><text>t1_4_3_4_2</text></name>
+      </transition>
+      <transition id="t1_4_3_4_4">
+        <name><text>t1_4_3_4_4</text></name>
+      </transition>
+      <transition id="t1_4_3_5_2">
+        <name><text>t1_4_3_5_2</text></name>
+      </transition>
+      <transition id="t1_4_3_5_3">
+        <name><text>t1_4_3_5_3</text></name>
+      </transition>
+      <transition id="t1_4_3_5_4">
+        <name><text>t1_4_3_5_4</text></name>
+      </transition>
+      <transition id="t1_4_4_3_3">
+        <name><text>t1_4_4_3_3</text></name>
+      </transition>
+      <transition id="t1_4_4_3_4">
+        <name><text>t1_4_4_3_4</text></name>
+      </transition>
+      <transition id="t1_4_4_3_5">
+        <name><text>t1_4_4_3_5</text></name>
+      </transition>
+      <transition id="t1_4_4_4_3">
+        <name><text>t1_4_4_4_3</text></name>
+      </transition>
+      <transition id="t1_4_4_4_5">
+        <name><text>t1_4_4_4_5</text></name>
+      </transition>
+      <transition id="t1_4_4_5_3">
+        <name><text>t1_4_4_5_3</text></name>
+      </transition>
+      <transition id="t1_4_4_5_4">
+        <name><text>t1_4_4_5_4</text></name>
+      </transition>
+      <transition id="t1_4_4_5_5">
+        <name><text>t1_4_4_5_5</text></name>
+      </transition>
+      <transition id="t1_4_5_3_4">
+        <name><text>t1_4_5_3_4</text></name>
+      </transition>
+      <transition id="t1_4_5_3_5">
+        <name><text>t1_4_5_3_5</text></name>
+      </transition>
+      <transition id="t1_4_5_4_4">
+        <name><text>t1_4_5_4_4</text></name>
+      </transition>
+      <transition id="t1_4_5_5_4">
+        <name><text>t1_4_5_5_4</text></name>
+      </transition>
+      <transition id="t1_4_5_5_5">
+        <name><text>t1_4_5_5_5</text></name>
+      </transition>
+      <transition id="t1_5_1_4_1">
+        <name><text>t1_5_1_4_1</text></name>
+      </transition>
+      <transition id="t1_5_1_4_2">
+        <name><text>t1_5_1_4_2</text></name>
+      </transition>
+      <transition id="t1_5_1_5_2">
+        <name><text>t1_5_1_5_2</text></name>
+      </transition>
+      <transition id="t1_5_2_4_1">
+        <name><text>t1_5_2_4_1</text></name>
+      </transition>
+      <transition id="t1_5_2_4_2">
+        <name><text>t1_5_2_4_2</text></name>
+      </transition>
+      <transition id="t1_5_2_4_3">
+        <name><text>t1_5_2_4_3</text></name>
+      </transition>
+      <transition id="t1_5_2_5_1">
+        <name><text>t1_5_2_5_1</text></name>
+      </transition>
+      <transition id="t1_5_2_5_3">
+        <name><text>t1_5_2_5_3</text></name>
+      </transition>
+      <transition id="t1_5_3_4_2">
+        <name><text>t1_5_3_4_2</text></name>
+      </transition>
+      <transition id="t1_5_3_4_3">
+        <name><text>t1_5_3_4_3</text></name>
+      </transition>
+      <transition id="t1_5_3_4_4">
+        <name><text>t1_5_3_4_4</text></name>
+      </transition>
+      <transition id="t1_5_3_5_2">
+        <name><text>t1_5_3_5_2</text></name>
+      </transition>
+      <transition id="t1_5_3_5_4">
+        <name><text>t1_5_3_5_4</text></name>
+      </transition>
+      <transition id="t1_5_4_4_3">
+        <name><text>t1_5_4_4_3</text></name>
+      </transition>
+      <transition id="t1_5_4_4_4">
+        <name><text>t1_5_4_4_4</text></name>
+      </transition>
+      <transition id="t1_5_4_4_5">
+        <name><text>t1_5_4_4_5</text></name>
+      </transition>
+      <transition id="t1_5_4_5_3">
+        <name><text>t1_5_4_5_3</text></name>
+      </transition>
+      <transition id="t1_5_4_5_5">
+        <name><text>t1_5_4_5_5</text></name>
+      </transition>
+      <transition id="t1_5_5_4_4">
+        <name><text>t1_5_5_4_4</text></name>
+      </transition>
+      <transition id="t1_5_5_4_5">
+        <name><text>t1_5_5_4_5</text></name>
+      </transition>
+      <transition id="t1_5_5_5_4">
+        <name><text>t1_5_5_5_4</text></name>
+      </transition>
+      <arc id="e1021369" source="cAMP__1_1_" target="t1_1_1_1_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021377" source="t1_1_1_1_2" target="cAMP__1_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021396" source="cAMP__1_1_" target="t1_1_1_2_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021404" source="t1_1_1_2_1" target="cAMP__2_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021423" source="cAMP__1_1_" target="t1_1_1_2_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021431" source="t1_1_1_2_2" target="cAMP__2_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021450" source="cAMP__1_2_" target="t1_1_2_1_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021458" source="t1_1_2_1_1" target="cAMP__1_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021477" source="cAMP__1_2_" target="t1_1_2_1_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021485" source="t1_1_2_1_3" target="cAMP__1_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021504" source="cAMP__1_2_" target="t1_1_2_2_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021512" source="t1_1_2_2_1" target="cAMP__2_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021531" source="cAMP__1_2_" target="t1_1_2_2_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021539" source="t1_1_2_2_2" target="cAMP__2_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021558" source="cAMP__1_2_" target="t1_1_2_2_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021566" source="t1_1_2_2_3" target="cAMP__2_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021585" source="cAMP__1_3_" target="t1_1_3_1_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021593" source="t1_1_3_1_2" target="cAMP__1_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021612" source="cAMP__1_3_" target="t1_1_3_1_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021620" source="t1_1_3_1_4" target="cAMP__1_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021639" source="cAMP__1_3_" target="t1_1_3_2_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021647" source="t1_1_3_2_2" target="cAMP__2_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021666" source="cAMP__1_3_" target="t1_1_3_2_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021674" source="t1_1_3_2_3" target="cAMP__2_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021693" source="cAMP__1_3_" target="t1_1_3_2_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021701" source="t1_1_3_2_4" target="cAMP__2_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021720" source="cAMP__1_4_" target="t1_1_4_1_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021728" source="t1_1_4_1_3" target="cAMP__1_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021747" source="cAMP__1_4_" target="t1_1_4_1_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021755" source="t1_1_4_1_5" target="cAMP__1_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021774" source="cAMP__1_4_" target="t1_1_4_2_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021782" source="t1_1_4_2_3" target="cAMP__2_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021801" source="cAMP__1_4_" target="t1_1_4_2_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021809" source="t1_1_4_2_4" target="cAMP__2_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021828" source="cAMP__1_4_" target="t1_1_4_2_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021836" source="t1_1_4_2_5" target="cAMP__2_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021855" source="cAMP__1_5_" target="t1_1_5_1_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021863" source="t1_1_5_1_4" target="cAMP__1_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021882" source="cAMP__1_5_" target="t1_1_5_2_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021890" source="t1_1_5_2_4" target="cAMP__2_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021909" source="cAMP__1_5_" target="t1_1_5_2_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021917" source="t1_1_5_2_5" target="cAMP__2_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021936" source="cAMP__2_1_" target="t1_2_1_1_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021944" source="t1_2_1_1_1" target="cAMP__1_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021963" source="cAMP__2_1_" target="t1_2_1_1_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021971" source="t1_2_1_1_2" target="cAMP__1_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021990" source="cAMP__2_1_" target="t1_2_1_2_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1021998" source="t1_2_1_2_2" target="cAMP__2_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022017" source="cAMP__2_1_" target="t1_2_1_3_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022025" source="t1_2_1_3_1" target="cAMP__3_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022044" source="cAMP__2_1_" target="t1_2_1_3_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022052" source="t1_2_1_3_2" target="cAMP__3_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022071" source="cAMP__2_2_" target="t1_2_2_1_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022079" source="t1_2_2_1_1" target="cAMP__1_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022098" source="cAMP__2_2_" target="t1_2_2_1_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022106" source="t1_2_2_1_2" target="cAMP__1_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022125" source="cAMP__2_2_" target="t1_2_2_1_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022133" source="t1_2_2_1_3" target="cAMP__1_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022152" source="cAMP__2_2_" target="t1_2_2_2_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022160" source="t1_2_2_2_1" target="cAMP__2_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022179" source="cAMP__2_2_" target="t1_2_2_2_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022187" source="t1_2_2_2_3" target="cAMP__2_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022206" source="cAMP__2_2_" target="t1_2_2_3_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022214" source="t1_2_2_3_1" target="cAMP__3_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022233" source="cAMP__2_2_" target="t1_2_2_3_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022241" source="t1_2_2_3_2" target="cAMP__3_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022260" source="cAMP__2_2_" target="t1_2_2_3_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022268" source="t1_2_2_3_3" target="cAMP__3_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022287" source="cAMP__2_3_" target="t1_2_3_1_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022295" source="t1_2_3_1_2" target="cAMP__1_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022314" source="cAMP__2_3_" target="t1_2_3_1_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022322" source="t1_2_3_1_3" target="cAMP__1_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022341" source="cAMP__2_3_" target="t1_2_3_1_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022349" source="t1_2_3_1_4" target="cAMP__1_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022368" source="cAMP__2_3_" target="t1_2_3_2_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022376" source="t1_2_3_2_2" target="cAMP__2_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022395" source="cAMP__2_3_" target="t1_2_3_2_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022403" source="t1_2_3_2_4" target="cAMP__2_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022422" source="cAMP__2_3_" target="t1_2_3_3_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022430" source="t1_2_3_3_2" target="cAMP__3_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022449" source="cAMP__2_3_" target="t1_2_3_3_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022457" source="t1_2_3_3_3" target="cAMP__3_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022476" source="cAMP__2_3_" target="t1_2_3_3_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022484" source="t1_2_3_3_4" target="cAMP__3_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022503" source="cAMP__2_4_" target="t1_2_4_1_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022511" source="t1_2_4_1_3" target="cAMP__1_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022530" source="cAMP__2_4_" target="t1_2_4_1_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022538" source="t1_2_4_1_4" target="cAMP__1_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022557" source="cAMP__2_4_" target="t1_2_4_1_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022565" source="t1_2_4_1_5" target="cAMP__1_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022584" source="cAMP__2_4_" target="t1_2_4_2_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022592" source="t1_2_4_2_3" target="cAMP__2_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022611" source="cAMP__2_4_" target="t1_2_4_2_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022619" source="t1_2_4_2_5" target="cAMP__2_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022638" source="cAMP__2_4_" target="t1_2_4_3_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022646" source="t1_2_4_3_3" target="cAMP__3_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022665" source="cAMP__2_4_" target="t1_2_4_3_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022673" source="t1_2_4_3_4" target="cAMP__3_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022692" source="cAMP__2_4_" target="t1_2_4_3_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022700" source="t1_2_4_3_5" target="cAMP__3_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022719" source="cAMP__2_5_" target="t1_2_5_1_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022727" source="t1_2_5_1_4" target="cAMP__1_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022746" source="cAMP__2_5_" target="t1_2_5_1_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022754" source="t1_2_5_1_5" target="cAMP__1_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022773" source="cAMP__2_5_" target="t1_2_5_2_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022781" source="t1_2_5_2_4" target="cAMP__2_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022800" source="cAMP__2_5_" target="t1_2_5_3_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022808" source="t1_2_5_3_4" target="cAMP__3_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022827" source="cAMP__2_5_" target="t1_2_5_3_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022835" source="t1_2_5_3_5" target="cAMP__3_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022854" source="cAMP__3_1_" target="t1_3_1_2_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022862" source="t1_3_1_2_1" target="cAMP__2_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022881" source="cAMP__3_1_" target="t1_3_1_2_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022889" source="t1_3_1_2_2" target="cAMP__2_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022908" source="cAMP__3_1_" target="t1_3_1_3_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022916" source="t1_3_1_3_2" target="cAMP__3_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022935" source="cAMP__3_1_" target="t1_3_1_4_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022943" source="t1_3_1_4_1" target="cAMP__4_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022962" source="cAMP__3_1_" target="t1_3_1_4_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022970" source="t1_3_1_4_2" target="cAMP__4_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022989" source="cAMP__3_2_" target="t1_3_2_2_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1022997" source="t1_3_2_2_1" target="cAMP__2_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023016" source="cAMP__3_2_" target="t1_3_2_2_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023024" source="t1_3_2_2_2" target="cAMP__2_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023043" source="cAMP__3_2_" target="t1_3_2_2_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023051" source="t1_3_2_2_3" target="cAMP__2_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023070" source="cAMP__3_2_" target="t1_3_2_3_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023078" source="t1_3_2_3_1" target="cAMP__3_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023097" source="cAMP__3_2_" target="t1_3_2_3_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023105" source="t1_3_2_3_3" target="cAMP__3_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023124" source="cAMP__3_2_" target="t1_3_2_4_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023132" source="t1_3_2_4_1" target="cAMP__4_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023151" source="cAMP__3_2_" target="t1_3_2_4_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023159" source="t1_3_2_4_2" target="cAMP__4_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023178" source="cAMP__3_2_" target="t1_3_2_4_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023186" source="t1_3_2_4_3" target="cAMP__4_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023205" source="cAMP__3_3_" target="t1_3_3_2_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023213" source="t1_3_3_2_2" target="cAMP__2_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023232" source="cAMP__3_3_" target="t1_3_3_2_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023240" source="t1_3_3_2_3" target="cAMP__2_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023259" source="cAMP__3_3_" target="t1_3_3_2_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023267" source="t1_3_3_2_4" target="cAMP__2_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023286" source="cAMP__3_3_" target="t1_3_3_3_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023294" source="t1_3_3_3_2" target="cAMP__3_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023313" source="cAMP__3_3_" target="t1_3_3_3_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023321" source="t1_3_3_3_4" target="cAMP__3_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023340" source="cAMP__3_3_" target="t1_3_3_4_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023348" source="t1_3_3_4_2" target="cAMP__4_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023367" source="cAMP__3_3_" target="t1_3_3_4_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023375" source="t1_3_3_4_3" target="cAMP__4_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023394" source="cAMP__3_3_" target="t1_3_3_4_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023402" source="t1_3_3_4_4" target="cAMP__4_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023421" source="cAMP__3_4_" target="t1_3_4_2_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023429" source="t1_3_4_2_3" target="cAMP__2_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023448" source="cAMP__3_4_" target="t1_3_4_2_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023456" source="t1_3_4_2_4" target="cAMP__2_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023475" source="cAMP__3_4_" target="t1_3_4_2_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023483" source="t1_3_4_2_5" target="cAMP__2_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023502" source="cAMP__3_4_" target="t1_3_4_3_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023510" source="t1_3_4_3_3" target="cAMP__3_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023529" source="cAMP__3_4_" target="t1_3_4_3_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023537" source="t1_3_4_3_5" target="cAMP__3_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023556" source="cAMP__3_4_" target="t1_3_4_4_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023564" source="t1_3_4_4_3" target="cAMP__4_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023583" source="cAMP__3_4_" target="t1_3_4_4_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023591" source="t1_3_4_4_4" target="cAMP__4_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023610" source="cAMP__3_4_" target="t1_3_4_4_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023618" source="t1_3_4_4_5" target="cAMP__4_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023637" source="cAMP__3_5_" target="t1_3_5_2_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023645" source="t1_3_5_2_4" target="cAMP__2_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023664" source="cAMP__3_5_" target="t1_3_5_2_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023672" source="t1_3_5_2_5" target="cAMP__2_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023691" source="cAMP__3_5_" target="t1_3_5_3_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023699" source="t1_3_5_3_4" target="cAMP__3_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023718" source="cAMP__3_5_" target="t1_3_5_4_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023726" source="t1_3_5_4_4" target="cAMP__4_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023745" source="cAMP__3_5_" target="t1_3_5_4_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023753" source="t1_3_5_4_5" target="cAMP__4_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023772" source="cAMP__4_1_" target="t1_4_1_3_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023780" source="t1_4_1_3_1" target="cAMP__3_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023799" source="cAMP__4_1_" target="t1_4_1_3_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023807" source="t1_4_1_3_2" target="cAMP__3_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023826" source="cAMP__4_1_" target="t1_4_1_4_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023834" source="t1_4_1_4_2" target="cAMP__4_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023853" source="cAMP__4_1_" target="t1_4_1_5_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023861" source="t1_4_1_5_1" target="cAMP__5_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023880" source="cAMP__4_1_" target="t1_4_1_5_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023888" source="t1_4_1_5_2" target="cAMP__5_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023907" source="cAMP__4_2_" target="t1_4_2_3_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023915" source="t1_4_2_3_1" target="cAMP__3_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023934" source="cAMP__4_2_" target="t1_4_2_3_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023942" source="t1_4_2_3_2" target="cAMP__3_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023961" source="cAMP__4_2_" target="t1_4_2_3_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023969" source="t1_4_2_3_3" target="cAMP__3_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023988" source="cAMP__4_2_" target="t1_4_2_4_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1023996" source="t1_4_2_4_1" target="cAMP__4_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024015" source="cAMP__4_2_" target="t1_4_2_4_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024023" source="t1_4_2_4_3" target="cAMP__4_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024042" source="cAMP__4_2_" target="t1_4_2_5_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024050" source="t1_4_2_5_1" target="cAMP__5_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024069" source="cAMP__4_2_" target="t1_4_2_5_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024077" source="t1_4_2_5_2" target="cAMP__5_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024096" source="cAMP__4_2_" target="t1_4_2_5_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024104" source="t1_4_2_5_3" target="cAMP__5_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024123" source="cAMP__4_3_" target="t1_4_3_3_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024131" source="t1_4_3_3_2" target="cAMP__3_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024150" source="cAMP__4_3_" target="t1_4_3_3_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024158" source="t1_4_3_3_3" target="cAMP__3_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024177" source="cAMP__4_3_" target="t1_4_3_3_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024185" source="t1_4_3_3_4" target="cAMP__3_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024204" source="cAMP__4_3_" target="t1_4_3_4_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024212" source="t1_4_3_4_2" target="cAMP__4_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024231" source="cAMP__4_3_" target="t1_4_3_4_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024239" source="t1_4_3_4_4" target="cAMP__4_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024258" source="cAMP__4_3_" target="t1_4_3_5_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024266" source="t1_4_3_5_2" target="cAMP__5_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024285" source="cAMP__4_3_" target="t1_4_3_5_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024293" source="t1_4_3_5_3" target="cAMP__5_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024312" source="cAMP__4_3_" target="t1_4_3_5_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024320" source="t1_4_3_5_4" target="cAMP__5_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024339" source="cAMP__4_4_" target="t1_4_4_3_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024347" source="t1_4_4_3_3" target="cAMP__3_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024366" source="cAMP__4_4_" target="t1_4_4_3_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024374" source="t1_4_4_3_4" target="cAMP__3_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024393" source="cAMP__4_4_" target="t1_4_4_3_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024401" source="t1_4_4_3_5" target="cAMP__3_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024420" source="cAMP__4_4_" target="t1_4_4_4_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024428" source="t1_4_4_4_3" target="cAMP__4_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024447" source="cAMP__4_4_" target="t1_4_4_4_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024455" source="t1_4_4_4_5" target="cAMP__4_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024474" source="cAMP__4_4_" target="t1_4_4_5_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024482" source="t1_4_4_5_3" target="cAMP__5_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024501" source="cAMP__4_4_" target="t1_4_4_5_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024509" source="t1_4_4_5_4" target="cAMP__5_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024528" source="cAMP__4_4_" target="t1_4_4_5_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024536" source="t1_4_4_5_5" target="cAMP__5_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024555" source="cAMP__4_5_" target="t1_4_5_3_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024563" source="t1_4_5_3_4" target="cAMP__3_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024582" source="cAMP__4_5_" target="t1_4_5_3_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024590" source="t1_4_5_3_5" target="cAMP__3_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024609" source="cAMP__4_5_" target="t1_4_5_4_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024617" source="t1_4_5_4_4" target="cAMP__4_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024636" source="cAMP__4_5_" target="t1_4_5_5_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024644" source="t1_4_5_5_4" target="cAMP__5_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024663" source="cAMP__4_5_" target="t1_4_5_5_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024671" source="t1_4_5_5_5" target="cAMP__5_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024690" source="cAMP__5_1_" target="t1_5_1_4_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024698" source="t1_5_1_4_1" target="cAMP__4_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024717" source="cAMP__5_1_" target="t1_5_1_4_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024725" source="t1_5_1_4_2" target="cAMP__4_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024744" source="cAMP__5_1_" target="t1_5_1_5_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024752" source="t1_5_1_5_2" target="cAMP__5_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024771" source="cAMP__5_2_" target="t1_5_2_4_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024779" source="t1_5_2_4_1" target="cAMP__4_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024798" source="cAMP__5_2_" target="t1_5_2_4_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024806" source="t1_5_2_4_2" target="cAMP__4_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024825" source="cAMP__5_2_" target="t1_5_2_4_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024833" source="t1_5_2_4_3" target="cAMP__4_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024852" source="cAMP__5_2_" target="t1_5_2_5_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024860" source="t1_5_2_5_1" target="cAMP__5_1_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024879" source="cAMP__5_2_" target="t1_5_2_5_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024887" source="t1_5_2_5_3" target="cAMP__5_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024906" source="cAMP__5_3_" target="t1_5_3_4_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024914" source="t1_5_3_4_2" target="cAMP__4_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024933" source="cAMP__5_3_" target="t1_5_3_4_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024941" source="t1_5_3_4_3" target="cAMP__4_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024960" source="cAMP__5_3_" target="t1_5_3_4_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024968" source="t1_5_3_4_4" target="cAMP__4_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024987" source="cAMP__5_3_" target="t1_5_3_5_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1024995" source="t1_5_3_5_2" target="cAMP__5_2_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025014" source="cAMP__5_3_" target="t1_5_3_5_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025022" source="t1_5_3_5_4" target="cAMP__5_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025041" source="cAMP__5_4_" target="t1_5_4_4_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025049" source="t1_5_4_4_3" target="cAMP__4_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025068" source="cAMP__5_4_" target="t1_5_4_4_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025076" source="t1_5_4_4_4" target="cAMP__4_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025095" source="cAMP__5_4_" target="t1_5_4_4_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025103" source="t1_5_4_4_5" target="cAMP__4_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025122" source="cAMP__5_4_" target="t1_5_4_5_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025130" source="t1_5_4_5_3" target="cAMP__5_3_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025149" source="cAMP__5_4_" target="t1_5_4_5_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025157" source="t1_5_4_5_5" target="cAMP__5_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025176" source="cAMP__5_5_" target="t1_5_5_4_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025184" source="t1_5_5_4_4" target="cAMP__4_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025203" source="cAMP__5_5_" target="t1_5_5_4_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025211" source="t1_5_5_4_5" target="cAMP__4_5_">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025230" source="cAMP__5_5_" target="t1_5_5_5_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="e1025238" source="t1_5_5_5_4" target="cAMP__5_4_">
+        <inscription><text>1</text></inscription>
+      </arc>
+    </page>
+  <name><text>Diffusion2D-PT-D05N010</text></name></net>
+</pnml>
