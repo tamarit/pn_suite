@@ -1,0 +1,800 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="CSRepetitions-PT-02" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <page id="page0">
+      <name>
+        <text>DefaultPage</text>
+      </name>
+      <transition id="Read_Request_4_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Read_Request_4_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="RequestBuffer_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>RequestBuffer_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="Send_Request_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Send_Request_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Server_Anwering_3_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Server_Anwering_3_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="Send_Answer_3_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Send_Answer_3_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Server_Anwering_1_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Server_Anwering_1_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="Prepare_Request_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Prepare_Request_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="Read_Request_3_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Read_Request_3_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="Send_Answer_4_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Send_Answer_4_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="Send_Answer_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Send_Answer_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="Send_Request_4">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Send_Request_4</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="Prepare_Request_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Prepare_Request_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="Read_Request_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Read_Request_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="Read_Request_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Read_Request_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Client_Waiting_4">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Client_Waiting_4</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="Read_Request_1_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Read_Request_1_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="RequestBuffer_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>RequestBuffer_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="Lose_Request_4">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Lose_Request_4</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Server_Anwering_4_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Server_Anwering_4_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="Prepare_Request_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Prepare_Request_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Client_Waiting_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Client_Waiting_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="Send_Answer_3_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Send_Answer_3_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Server_Anwering_3_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Server_Anwering_3_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="Read_Request_4_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Read_Request_4_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Server_Waiting_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Server_Waiting_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="Send_Answer_2_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Send_Answer_2_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Client_Sending_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Client_Sending_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="Lose_Request_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Lose_Request_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Client_Sending_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Client_Sending_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="Read_Request_3_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Read_Request_3_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Server_Anwering_2_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Server_Anwering_2_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="Send_Answer_4_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Send_Answer_4_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Client_Sending_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Client_Sending_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="Send_Request_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Send_Request_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Server_Anwering_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Server_Anwering_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="Lose_Request_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Lose_Request_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Client_Sending_4">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Client_Sending_4</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="Read_Request_2_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Read_Request_2_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Server_Anwering_4_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Server_Anwering_4_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="Prepare_Request_4">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Prepare_Request_4</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="RequestBuffer_4">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>RequestBuffer_4</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="Send_Answer_1_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Send_Answer_1_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="Send_Request_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Send_Request_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Server_Waiting_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Server_Waiting_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="Send_Answer_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Send_Answer_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Server_Anwering_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Server_Anwering_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="Lose_Request_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Lose_Request_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="RequestBuffer_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>RequestBuffer_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="RequestBufferSlots">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>RequestBufferSlots</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>2</text>
+        </initialMarking>
+      </place>
+      <place id="Client_Waiting_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Client_Waiting_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="Client_Waiting_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Client_Waiting_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <arc id="cId-871726669508965684799" source="Server_Anwering_3_1" target="Send_Answer_3_1">
+      </arc>
+      <arc id="cId-8717266695089656847139" source="Prepare_Request_1" target="Client_Sending_1">
+      </arc>
+      <arc id="cId-8728834081901413039118" source="Client_Sending_4" target="Send_Answer_4_2">
+      </arc>
+      <arc id="cId-8728834081901413039131" source="RequestBufferSlots" target="Send_Request_3">
+      </arc>
+      <arc id="cId-8728834081901413039127" source="RequestBufferSlots" target="Send_Request_2">
+      </arc>
+      <arc id="cId-8728834081901413039114" source="Client_Sending_3" target="Send_Answer_3_2">
+      </arc>
+      <arc id="cId-872883408190141303963" source="Server_Waiting_1" target="Read_Request_2_1">
+      </arc>
+      <arc id="cId-872883408190141303995" source="Server_Anwering_2_1" target="Send_Answer_2_1">
+      </arc>
+      <arc id="cId-872883408190141303954" source="RequestBuffer_1" target="Lose_Request_1">
+      </arc>
+      <arc id="cId-872883408190141303967" source="Server_Waiting_1" target="Read_Request_3_1">
+      </arc>
+      <arc id="cId-8728834081901413039100" source="Send_Answer_3_1" target="Client_Waiting_3">
+      </arc>
+      <arc id="cId-8728834081901413039110" source="Client_Sending_2" target="Send_Answer_2_2">
+      </arc>
+      <arc id="cId-8728834081901413039109" source="Send_Answer_1_2" target="Server_Waiting_2">
+      </arc>
+      <arc id="cId-8728834081901413039130" source="Client_Sending_3" target="Send_Request_3">
+      </arc>
+      <arc id="cId-872883408190141303982" source="RequestBuffer_3" target="Read_Request_3_2">
+      </arc>
+      <arc id="cId-872883408190141303955" source="RequestBuffer_2" target="Lose_Request_2">
+      </arc>
+      <arc id="cId-872883408190141303972" source="Read_Request_4_1" target="RequestBufferSlots">
+      </arc>
+      <arc id="cId-872883408190141303989" source="Read_Request_4_2" target="Server_Anwering_4_2">
+      </arc>
+      <arc id="cId-8728834081901413039134" source="Client_Sending_4" target="Send_Request_4">
+      </arc>
+      <arc id="cId-872883408190141303975" source="Server_Waiting_2" target="Read_Request_1_2">
+      </arc>
+      <arc id="cId-8728834081901413039144" source="Client_Waiting_4" target="Prepare_Request_4">
+      </arc>
+      <arc id="cId-872883408190141303996" source="Send_Answer_2_1" target="Client_Waiting_2">
+      </arc>
+      <arc id="cId-872883408190141303986" source="RequestBuffer_4" target="Read_Request_4_2">
+      </arc>
+      <arc id="cId-8728834081901413039117" source="Send_Answer_3_2" target="Server_Waiting_2">
+      </arc>
+      <arc id="cId-8728834081901413039135" source="RequestBufferSlots" target="Send_Request_4">
+      </arc>
+      <arc id="cId-8728834081901413039123" source="RequestBufferSlots" target="Send_Request_1">
+      </arc>
+      <arc id="cId-872883408190141303958" source="RequestBuffer_1" target="Read_Request_1_1">
+      </arc>
+      <arc id="cId-8728834081901413039124" source="Send_Request_1" target="Client_Sending_1">
+      </arc>
+      <arc id="cId-872883408190141303978" source="RequestBuffer_2" target="Read_Request_2_2">
+      </arc>
+      <arc id="cId-872883408190141303968" source="Read_Request_3_1" target="RequestBufferSlots">
+      </arc>
+      <arc id="cId-8728834081901413039133" source="Send_Request_3" target="RequestBuffer_3">
+      </arc>
+      <arc id="cId-8728834081901413039103" source="Server_Anwering_4_1" target="Send_Answer_4_1">
+      </arc>
+      <arc id="cId-872883408190141303964" source="Read_Request_2_1" target="RequestBufferSlots">
+      </arc>
+      <arc id="cId-872883408190141303983" source="Server_Waiting_2" target="Read_Request_3_2">
+      </arc>
+      <arc id="cId-8728834081901413039140" source="Client_Waiting_2" target="Prepare_Request_2">
+      </arc>
+      <arc id="cId-872883408190141303962" source="RequestBuffer_2" target="Read_Request_2_1">
+      </arc>
+      <arc id="cId-872883408190141303992" source="Send_Answer_1_1" target="Client_Waiting_1">
+      </arc>
+      <arc id="cId-872883408190141303969" source="Read_Request_3_1" target="Server_Anwering_3_1">
+      </arc>
+      <arc id="cId-872883408190141303971" source="Server_Waiting_1" target="Read_Request_4_1">
+      </arc>
+      <arc id="cId-8728834081901413039136" source="Send_Request_4" target="Client_Sending_4">
+      </arc>
+      <arc id="cId-872883408190141303985" source="Read_Request_3_2" target="Server_Anwering_3_2">
+      </arc>
+      <arc id="cId-8728834081901413039143" source="Prepare_Request_3" target="Client_Sending_3">
+      </arc>
+      <arc id="cId-872387663225136065580" source="Read_Request_2_2" target="RequestBufferSlots">
+      </arc>
+      <arc id="cId-872387663225136065597" source="Send_Answer_2_1" target="Server_Waiting_1">
+      </arc>
+      <arc id="cId-872387663225136065557" source="RequestBuffer_4" target="Lose_Request_4">
+      </arc>
+      <arc id="cId-8723876632251360655125" source="Send_Request_1" target="RequestBuffer_1">
+      </arc>
+      <arc id="cId-8723876632251360655120" source="Send_Answer_4_2" target="Client_Waiting_4">
+      </arc>
+      <arc id="cId-8723876632251360655111" source="Server_Anwering_2_2" target="Send_Answer_2_2">
+      </arc>
+      <arc id="cId-8723876632251360655107" source="Server_Anwering_1_2" target="Send_Answer_1_2">
+      </arc>
+      <arc id="cId-8723876632251360655129" source="Send_Request_2" target="RequestBuffer_2">
+      </arc>
+      <arc id="cId-8723876632251360655121" source="Send_Answer_4_2" target="Server_Waiting_2">
+      </arc>
+      <arc id="cId-872387663225136065584" source="Read_Request_3_2" target="RequestBufferSlots">
+      </arc>
+      <arc id="cId-8723876632251360655106" source="Client_Sending_1" target="Send_Answer_1_2">
+      </arc>
+      <arc id="cId-872387663225136065588" source="Read_Request_4_2" target="RequestBufferSlots">
+      </arc>
+      <arc id="cId-872387663225136065579" source="Server_Waiting_2" target="Read_Request_2_2">
+      </arc>
+      <arc id="cId-872387663225136065556" source="RequestBuffer_3" target="Lose_Request_3">
+      </arc>
+      <arc id="cId-8723876632251360655132" source="Send_Request_3" target="Client_Sending_3">
+      </arc>
+      <arc id="cId-872387663225136065574" source="RequestBuffer_1" target="Read_Request_1_2">
+      </arc>
+      <arc id="cId-872387663225136065593" source="Send_Answer_1_1" target="Server_Waiting_1">
+      </arc>
+      <arc id="cId-8723876632251360655116" source="Send_Answer_3_2" target="Client_Waiting_3">
+      </arc>
+      <arc id="cId-872387663225136065565" source="Read_Request_2_1" target="Server_Anwering_2_1">
+      </arc>
+      <arc id="cId-872387663225136065561" source="Read_Request_1_1" target="Server_Anwering_1_1">
+      </arc>
+      <arc id="cId-8723876632251360655112" source="Send_Answer_2_2" target="Client_Waiting_2">
+      </arc>
+      <arc id="cId-872387663225136065591" source="Server_Anwering_1_1" target="Send_Answer_1_1">
+      </arc>
+      <arc id="cId-8723876632251360655105" source="Send_Answer_4_1" target="Server_Waiting_1">
+      </arc>
+      <arc id="cId-8723876632251360655128" source="Send_Request_2" target="Client_Sending_2">
+      </arc>
+      <arc id="cId-8723876632251360655141" source="Prepare_Request_2" target="Client_Sending_2">
+      </arc>
+      <arc id="cId-8723876632251360655142" source="Client_Waiting_3" target="Prepare_Request_3">
+      </arc>
+      <arc id="cId-872387663225136065560" source="Read_Request_1_1" target="RequestBufferSlots">
+      </arc>
+      <arc id="cId-872387663225136065570" source="RequestBuffer_4" target="Read_Request_4_1">
+      </arc>
+      <arc id="cId-872387663225136065577" source="Read_Request_1_2" target="Server_Anwering_1_2">
+      </arc>
+      <arc id="cId-872387663225136065598" source="Client_Sending_3" target="Send_Answer_3_1">
+      </arc>
+      <arc id="cId-872387663225136065566" source="RequestBuffer_3" target="Read_Request_3_1">
+      </arc>
+      <arc id="cId-872387663225136065581" source="Read_Request_2_2" target="Server_Anwering_2_2">
+      </arc>
+      <arc id="cId-872387663225136065594" source="Client_Sending_2" target="Send_Answer_2_1">
+      </arc>
+      <arc id="cId-8723876632251360655102" source="Client_Sending_4" target="Send_Answer_4_1">
+      </arc>
+      <arc id="cId-8723876632251360655122" source="Client_Sending_1" target="Send_Request_1">
+      </arc>
+      <arc id="cId-872387663225136065573" source="Read_Request_4_1" target="Server_Anwering_4_1">
+      </arc>
+      <arc id="cId-872387663225136065576" source="Read_Request_1_2" target="RequestBufferSlots">
+      </arc>
+      <arc id="cId-8723876632251360655101" source="Send_Answer_3_1" target="Server_Waiting_1">
+      </arc>
+      <arc id="cId-872387663225136065559" source="Server_Waiting_1" target="Read_Request_1_1">
+      </arc>
+      <arc id="cId-8723876632251360655126" source="Client_Sending_2" target="Send_Request_2">
+      </arc>
+      <arc id="cId-8725529115468044783113" source="Send_Answer_2_2" target="Server_Waiting_2">
+      </arc>
+      <arc id="cId-8725529115468044783108" source="Send_Answer_1_2" target="Client_Waiting_1">
+      </arc>
+      <arc id="cId-8725529115468044783138" source="Client_Waiting_1" target="Prepare_Request_1">
+      </arc>
+      <arc id="cId-8725529115468044783145" source="Prepare_Request_4" target="Client_Sending_4">
+      </arc>
+      <arc id="cId-8725529115468044783104" source="Send_Answer_4_1" target="Client_Waiting_4">
+      </arc>
+      <arc id="cId-8725529115468044783119" source="Server_Anwering_4_2" target="Send_Answer_4_2">
+      </arc>
+      <arc id="cId-872552911546804478387" source="Server_Waiting_2" target="Read_Request_4_2">
+      </arc>
+      <arc id="cId-8725529115468044783137" source="Send_Request_4" target="RequestBuffer_4">
+      </arc>
+      <arc id="cId-8725529115468044783115" source="Server_Anwering_3_2" target="Send_Answer_3_2">
+      </arc>
+      <arc id="cId-872552911546804478390" source="Client_Sending_1" target="Send_Answer_1_1">
+      </arc>
+    </page>
+    <name>
+      <text>CSRepetitions-PT-02</text>
+    </name>
+  </net>
+</pnml>

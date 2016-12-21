@@ -1,0 +1,764 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+<net id="SimpleLoadBal-PT-02" type="http://www.pnml.org/version-2009/grammar/ptnet">
+<page id="lb_2-page">
+<place id="P-client_idle_1">
+  <name><text>client_idle_1</text></name>
+  <initialMarking>
+    <text>1</text>
+  </initialMarking>
+</place>
+<place id="P-client_idle_2">
+  <name><text>client_idle_2</text></name>
+  <initialMarking>
+    <text>1</text>
+  </initialMarking>
+</place>
+<place id="P-client_waiting_1">
+  <name><text>client_waiting_1</text></name>
+</place>
+<place id="P-client_waiting_2">
+  <name><text>client_waiting_2</text></name>
+</place>
+<place id="P-client_request_1">
+  <name><text>client_request_1</text></name>
+</place>
+<place id="P-client_request_2">
+  <name><text>client_request_2</text></name>
+</place>
+<place id="P-client_ack_1">
+  <name><text>client_ack_1</text></name>
+</place>
+<place id="P-client_ack_2">
+  <name><text>client_ack_2</text></name>
+</place>
+<place id="P-server_idle_1">
+  <name><text>server_idle_1</text></name>
+  <initialMarking>
+    <text>1</text>
+  </initialMarking>
+</place>
+<place id="P-server_idle_2">
+  <name><text>server_idle_2</text></name>
+  <initialMarking>
+    <text>1</text>
+  </initialMarking>
+</place>
+<place id="P-server_waiting_1">
+  <name><text>server_waiting_1</text></name>
+</place>
+<place id="P-server_waiting_2">
+  <name><text>server_waiting_2</text></name>
+</place>
+<place id="P-server_processed_1">
+  <name><text>server_processed_1</text></name>
+</place>
+<place id="P-server_processed_2">
+  <name><text>server_processed_2</text></name>
+</place>
+<place id="P-server_notification_1">
+  <name><text>server_notification_1</text></name>
+</place>
+<place id="P-server_notification_2">
+  <name><text>server_notification_2</text></name>
+</place>
+<place id="P-server_notification_ack_1">
+  <name><text>server_notification_ack_1</text></name>
+</place>
+<place id="P-server_notification_ack_2">
+  <name><text>server_notification_ack_2</text></name>
+</place>
+<place id="P-server_request_1_1">
+  <name><text>server_request_1_1</text></name>
+</place>
+<place id="P-server_request_1_2">
+  <name><text>server_request_1_2</text></name>
+</place>
+<place id="P-server_request_2_1">
+  <name><text>server_request_2_1</text></name>
+</place>
+<place id="P-server_request_2_2">
+  <name><text>server_request_2_2</text></name>
+</place>
+<place id="P-lb_idle_1">
+  <name><text>lb_idle_1</text></name>
+  <initialMarking>
+    <text>1</text>
+  </initialMarking>
+</place>
+<place id="P-lb_routing_1_1">
+  <name><text>lb_routing_1_1</text></name>
+</place>
+<place id="P-lb_routing_1_2">
+  <name><text>lb_routing_1_2</text></name>
+</place>
+<place id="P-lb_balancing_1">
+  <name><text>lb_balancing_1</text></name>
+</place>
+<place id="P-lb_load_1_0">
+  <name><text>lb_load_1_0</text></name>
+  <initialMarking>
+    <text>1</text>
+  </initialMarking>
+</place>
+<place id="P-lb_load_1_1">
+  <name><text>lb_load_1_1</text></name>
+</place>
+<place id="P-lb_load_1_2">
+  <name><text>lb_load_1_2</text></name>
+</place>
+<place id="P-lb_load_2_0">
+  <name><text>lb_load_2_0</text></name>
+  <initialMarking>
+    <text>1</text>
+  </initialMarking>
+</place>
+<place id="P-lb_load_2_1">
+  <name><text>lb_load_2_1</text></name>
+</place>
+<place id="P-lb_load_2_2">
+  <name><text>lb_load_2_2</text></name>
+</place>
+<transition id="T-client_send_1">
+  <name><text>client_send_1</text></name>
+</transition>
+<transition id="T-client_send_2">
+  <name><text>client_send_2</text></name>
+</transition>
+<transition id="T-client_receive_1">
+  <name><text>client_receive_1</text></name>
+</transition>
+<transition id="T-client_receive_2">
+  <name><text>client_receive_2</text></name>
+</transition>
+<transition id="T-server_process_1">
+  <name><text>server_process_1</text></name>
+</transition>
+<transition id="T-server_process_2">
+  <name><text>server_process_2</text></name>
+</transition>
+<transition id="T-server_process_3">
+  <name><text>server_process_3</text></name>
+</transition>
+<transition id="T-server_process_4">
+  <name><text>server_process_4</text></name>
+</transition>
+<transition id="T-server_notify_1">
+  <name><text>server_notify_1</text></name>
+</transition>
+<transition id="T-server_notify_2">
+  <name><text>server_notify_2</text></name>
+</transition>
+<transition id="T-server_endloop_1">
+  <name><text>server_endloop_1</text></name>
+</transition>
+<transition id="T-server_endloop_2">
+  <name><text>server_endloop_2</text></name>
+</transition>
+<transition id="T-lb_receive_client_1">
+  <name><text>lb_receive_client_1</text></name>
+</transition>
+<transition id="T-lb_receive_client_2">
+  <name><text>lb_receive_client_2</text></name>
+</transition>
+<transition id="T-lb_route_to_1_1">
+  <name><text>lb_route_to_1_1</text></name>
+</transition>
+<transition id="T-lb_route_to_1_2">
+  <name><text>lb_route_to_1_2</text></name>
+</transition>
+<transition id="T-lb_route_to_1_5">
+  <name><text>lb_route_to_1_5</text></name>
+</transition>
+<transition id="T-lb_route_to_1_6">
+  <name><text>lb_route_to_1_6</text></name>
+</transition>
+<transition id="T-lb_route_to_1_10">
+  <name><text>lb_route_to_1_10</text></name>
+</transition>
+<transition id="T-lb_route_to_1_11">
+  <name><text>lb_route_to_1_11</text></name>
+</transition>
+<transition id="T-lb_route_to_1_14">
+  <name><text>lb_route_to_1_14</text></name>
+</transition>
+<transition id="T-lb_route_to_1_15">
+  <name><text>lb_route_to_1_15</text></name>
+</transition>
+<transition id="T-lb_route_to_2_4">
+  <name><text>lb_route_to_2_4</text></name>
+</transition>
+<transition id="T-lb_route_to_2_8">
+  <name><text>lb_route_to_2_8</text></name>
+</transition>
+<transition id="T-lb_route_to_2_13">
+  <name><text>lb_route_to_2_13</text></name>
+</transition>
+<transition id="T-lb_route_to_2_17">
+  <name><text>lb_route_to_2_17</text></name>
+</transition>
+<transition id="T-lb_idle_receive_notification_2">
+  <name><text>lb_idle_receive_notification_2</text></name>
+</transition>
+<transition id="T-lb_idle_receive_notification_3">
+  <name><text>lb_idle_receive_notification_3</text></name>
+</transition>
+<transition id="T-lb_idle_receive_notification_5">
+  <name><text>lb_idle_receive_notification_5</text></name>
+</transition>
+<transition id="T-lb_idle_receive_notification_6">
+  <name><text>lb_idle_receive_notification_6</text></name>
+</transition>
+<transition id="T-lb_no_balance_1">
+  <name><text>lb_no_balance_1</text></name>
+</transition>
+<transition id="T-lb_no_balance_2">
+  <name><text>lb_no_balance_2</text></name>
+</transition>
+<transition id="T-lb_no_balance_4">
+  <name><text>lb_no_balance_4</text></name>
+</transition>
+<transition id="T-lb_no_balance_5">
+  <name><text>lb_no_balance_5</text></name>
+</transition>
+<transition id="T-lb_no_balance_6">
+  <name><text>lb_no_balance_6</text></name>
+</transition>
+<transition id="T-lb_no_balance_8">
+  <name><text>lb_no_balance_8</text></name>
+</transition>
+<transition id="T-lb_no_balance_9">
+  <name><text>lb_no_balance_9</text></name>
+</transition>
+<transition id="T-lb_balance_to_1_5">
+  <name><text>lb_balance_to_1_5</text></name>
+</transition>
+<transition id="T-lb_balance_to_1_6">
+  <name><text>lb_balance_to_1_6</text></name>
+</transition>
+<transition id="T-lb_balance_to_2_13">
+  <name><text>lb_balance_to_2_13</text></name>
+</transition>
+<transition id="T-lb_balance_to_2_14">
+  <name><text>lb_balance_to_2_14</text></name>
+</transition>
+<transition id="T-lb_balancing_receive_notification_2">
+  <name><text>lb_balancing_receive_notification_2</text></name>
+</transition>
+<transition id="T-lb_balancing_receive_notification_3">
+  <name><text>lb_balancing_receive_notification_3</text></name>
+</transition>
+<transition id="T-lb_balancing_receive_notification_5">
+  <name><text>lb_balancing_receive_notification_5</text></name>
+</transition>
+<transition id="T-lb_balancing_receive_notification_6">
+  <name><text>lb_balancing_receive_notification_6</text></name>
+</transition>
+<arc id="P-client_idle_1-to-T-client_send_1" source="P-client_idle_1" target="T-client_send_1">
+</arc>
+<arc id="T-client_send_1-to-P-client_waiting_1" source="T-client_send_1" target="P-client_waiting_1">
+</arc>
+<arc id="T-client_send_1-to-P-client_request_1" source="T-client_send_1" target="P-client_request_1">
+</arc>
+<arc id="P-client_idle_2-to-T-client_send_2" source="P-client_idle_2" target="T-client_send_2">
+</arc>
+<arc id="T-client_send_2-to-P-client_waiting_2" source="T-client_send_2" target="P-client_waiting_2">
+</arc>
+<arc id="T-client_send_2-to-P-client_request_2" source="T-client_send_2" target="P-client_request_2">
+</arc>
+<arc id="T-client_receive_1-to-P-client_idle_1" source="T-client_receive_1" target="P-client_idle_1">
+</arc>
+<arc id="P-client_waiting_1-to-T-client_receive_1" source="P-client_waiting_1" target="T-client_receive_1">
+</arc>
+<arc id="P-client_ack_1-to-T-client_receive_1" source="P-client_ack_1" target="T-client_receive_1">
+</arc>
+<arc id="T-client_receive_2-to-P-client_idle_2" source="T-client_receive_2" target="P-client_idle_2">
+</arc>
+<arc id="P-client_waiting_2-to-T-client_receive_2" source="P-client_waiting_2" target="T-client_receive_2">
+</arc>
+<arc id="P-client_ack_2-to-T-client_receive_2" source="P-client_ack_2" target="T-client_receive_2">
+</arc>
+<arc id="T-server_process_1-to-P-client_ack_1" source="T-server_process_1" target="P-client_ack_1">
+</arc>
+<arc id="P-server_idle_1-to-T-server_process_1" source="P-server_idle_1" target="T-server_process_1">
+</arc>
+<arc id="T-server_process_1-to-P-server_processed_1" source="T-server_process_1" target="P-server_processed_1">
+</arc>
+<arc id="P-server_request_1_1-to-T-server_process_1" source="P-server_request_1_1" target="T-server_process_1">
+</arc>
+<arc id="T-server_process_2-to-P-client_ack_2" source="T-server_process_2" target="P-client_ack_2">
+</arc>
+<arc id="P-server_idle_1-to-T-server_process_2" source="P-server_idle_1" target="T-server_process_2">
+</arc>
+<arc id="T-server_process_2-to-P-server_processed_1" source="T-server_process_2" target="P-server_processed_1">
+</arc>
+<arc id="P-server_request_2_1-to-T-server_process_2" source="P-server_request_2_1" target="T-server_process_2">
+</arc>
+<arc id="T-server_process_3-to-P-client_ack_1" source="T-server_process_3" target="P-client_ack_1">
+</arc>
+<arc id="P-server_idle_2-to-T-server_process_3" source="P-server_idle_2" target="T-server_process_3">
+</arc>
+<arc id="T-server_process_3-to-P-server_processed_2" source="T-server_process_3" target="P-server_processed_2">
+</arc>
+<arc id="P-server_request_1_2-to-T-server_process_3" source="P-server_request_1_2" target="T-server_process_3">
+</arc>
+<arc id="T-server_process_4-to-P-client_ack_2" source="T-server_process_4" target="P-client_ack_2">
+</arc>
+<arc id="P-server_idle_2-to-T-server_process_4" source="P-server_idle_2" target="T-server_process_4">
+</arc>
+<arc id="T-server_process_4-to-P-server_processed_2" source="T-server_process_4" target="P-server_processed_2">
+</arc>
+<arc id="P-server_request_2_2-to-T-server_process_4" source="P-server_request_2_2" target="T-server_process_4">
+</arc>
+<arc id="T-server_notify_1-to-P-server_waiting_1" source="T-server_notify_1" target="P-server_waiting_1">
+</arc>
+<arc id="P-server_processed_1-to-T-server_notify_1" source="P-server_processed_1" target="T-server_notify_1">
+</arc>
+<arc id="T-server_notify_1-to-P-server_notification_1" source="T-server_notify_1" target="P-server_notification_1">
+</arc>
+<arc id="T-server_notify_2-to-P-server_waiting_2" source="T-server_notify_2" target="P-server_waiting_2">
+</arc>
+<arc id="P-server_processed_2-to-T-server_notify_2" source="P-server_processed_2" target="T-server_notify_2">
+</arc>
+<arc id="T-server_notify_2-to-P-server_notification_2" source="T-server_notify_2" target="P-server_notification_2">
+</arc>
+<arc id="T-server_endloop_1-to-P-server_idle_1" source="T-server_endloop_1" target="P-server_idle_1">
+</arc>
+<arc id="P-server_waiting_1-to-T-server_endloop_1" source="P-server_waiting_1" target="T-server_endloop_1">
+</arc>
+<arc id="P-server_notification_ack_1-to-T-server_endloop_1" source="P-server_notification_ack_1" target="T-server_endloop_1">
+</arc>
+<arc id="T-server_endloop_2-to-P-server_idle_2" source="T-server_endloop_2" target="P-server_idle_2">
+</arc>
+<arc id="P-server_waiting_2-to-T-server_endloop_2" source="P-server_waiting_2" target="T-server_endloop_2">
+</arc>
+<arc id="P-server_notification_ack_2-to-T-server_endloop_2" source="P-server_notification_ack_2" target="T-server_endloop_2">
+</arc>
+<arc id="P-client_request_1-to-T-lb_receive_client_1" source="P-client_request_1" target="T-lb_receive_client_1">
+</arc>
+<arc id="P-lb_idle_1-to-T-lb_receive_client_1" source="P-lb_idle_1" target="T-lb_receive_client_1">
+</arc>
+<arc id="T-lb_receive_client_1-to-P-lb_routing_1_1" source="T-lb_receive_client_1" target="P-lb_routing_1_1">
+</arc>
+<arc id="P-client_request_2-to-T-lb_receive_client_2" source="P-client_request_2" target="T-lb_receive_client_2">
+</arc>
+<arc id="P-lb_idle_1-to-T-lb_receive_client_2" source="P-lb_idle_1" target="T-lb_receive_client_2">
+</arc>
+<arc id="T-lb_receive_client_2-to-P-lb_routing_1_2" source="T-lb_receive_client_2" target="P-lb_routing_1_2">
+</arc>
+<arc id="T-lb_route_to_1_1-to-P-server_request_1_1" source="T-lb_route_to_1_1" target="P-server_request_1_1">
+</arc>
+<arc id="T-lb_route_to_1_1-to-P-lb_idle_1" source="T-lb_route_to_1_1" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_routing_1_1-to-T-lb_route_to_1_1" source="P-lb_routing_1_1" target="T-lb_route_to_1_1">
+</arc>
+<arc id="P-lb_load_1_0-to-T-lb_route_to_1_1" source="P-lb_load_1_0" target="T-lb_route_to_1_1">
+</arc>
+<arc id="T-lb_route_to_1_1-to-P-lb_load_1_1" source="T-lb_route_to_1_1" target="P-lb_load_1_1">
+</arc>
+<arc id="P-lb_load_2_0-to-T-lb_route_to_1_1" source="P-lb_load_2_0" target="T-lb_route_to_1_1">
+</arc>
+<arc id="T-lb_route_to_1_1-to-P-lb_load_2_0" source="T-lb_route_to_1_1" target="P-lb_load_2_0">
+</arc>
+<arc id="T-lb_route_to_1_2-to-P-server_request_1_1" source="T-lb_route_to_1_2" target="P-server_request_1_1">
+</arc>
+<arc id="T-lb_route_to_1_2-to-P-lb_idle_1" source="T-lb_route_to_1_2" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_routing_1_1-to-T-lb_route_to_1_2" source="P-lb_routing_1_1" target="T-lb_route_to_1_2">
+</arc>
+<arc id="P-lb_load_1_0-to-T-lb_route_to_1_2" source="P-lb_load_1_0" target="T-lb_route_to_1_2">
+</arc>
+<arc id="T-lb_route_to_1_2-to-P-lb_load_1_1" source="T-lb_route_to_1_2" target="P-lb_load_1_1">
+</arc>
+<arc id="P-lb_load_2_1-to-T-lb_route_to_1_2" source="P-lb_load_2_1" target="T-lb_route_to_1_2">
+</arc>
+<arc id="T-lb_route_to_1_2-to-P-lb_load_2_1" source="T-lb_route_to_1_2" target="P-lb_load_2_1">
+</arc>
+<arc id="T-lb_route_to_1_5-to-P-server_request_1_1" source="T-lb_route_to_1_5" target="P-server_request_1_1">
+</arc>
+<arc id="T-lb_route_to_1_5-to-P-lb_idle_1" source="T-lb_route_to_1_5" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_routing_1_1-to-T-lb_route_to_1_5" source="P-lb_routing_1_1" target="T-lb_route_to_1_5">
+</arc>
+<arc id="P-lb_load_1_1-to-T-lb_route_to_1_5" source="P-lb_load_1_1" target="T-lb_route_to_1_5">
+</arc>
+<arc id="T-lb_route_to_1_5-to-P-lb_load_1_2" source="T-lb_route_to_1_5" target="P-lb_load_1_2">
+</arc>
+<arc id="P-lb_load_2_1-to-T-lb_route_to_1_5" source="P-lb_load_2_1" target="T-lb_route_to_1_5">
+</arc>
+<arc id="T-lb_route_to_1_5-to-P-lb_load_2_1" source="T-lb_route_to_1_5" target="P-lb_load_2_1">
+</arc>
+<arc id="T-lb_route_to_1_6-to-P-server_request_1_1" source="T-lb_route_to_1_6" target="P-server_request_1_1">
+</arc>
+<arc id="T-lb_route_to_1_6-to-P-lb_idle_1" source="T-lb_route_to_1_6" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_routing_1_1-to-T-lb_route_to_1_6" source="P-lb_routing_1_1" target="T-lb_route_to_1_6">
+</arc>
+<arc id="P-lb_load_1_1-to-T-lb_route_to_1_6" source="P-lb_load_1_1" target="T-lb_route_to_1_6">
+</arc>
+<arc id="T-lb_route_to_1_6-to-P-lb_load_1_2" source="T-lb_route_to_1_6" target="P-lb_load_1_2">
+</arc>
+<arc id="P-lb_load_2_2-to-T-lb_route_to_1_6" source="P-lb_load_2_2" target="T-lb_route_to_1_6">
+</arc>
+<arc id="T-lb_route_to_1_6-to-P-lb_load_2_2" source="T-lb_route_to_1_6" target="P-lb_load_2_2">
+</arc>
+<arc id="T-lb_route_to_1_10-to-P-server_request_2_1" source="T-lb_route_to_1_10" target="P-server_request_2_1">
+</arc>
+<arc id="T-lb_route_to_1_10-to-P-lb_idle_1" source="T-lb_route_to_1_10" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_routing_1_2-to-T-lb_route_to_1_10" source="P-lb_routing_1_2" target="T-lb_route_to_1_10">
+</arc>
+<arc id="P-lb_load_1_0-to-T-lb_route_to_1_10" source="P-lb_load_1_0" target="T-lb_route_to_1_10">
+</arc>
+<arc id="T-lb_route_to_1_10-to-P-lb_load_1_1" source="T-lb_route_to_1_10" target="P-lb_load_1_1">
+</arc>
+<arc id="P-lb_load_2_0-to-T-lb_route_to_1_10" source="P-lb_load_2_0" target="T-lb_route_to_1_10">
+</arc>
+<arc id="T-lb_route_to_1_10-to-P-lb_load_2_0" source="T-lb_route_to_1_10" target="P-lb_load_2_0">
+</arc>
+<arc id="T-lb_route_to_1_11-to-P-server_request_2_1" source="T-lb_route_to_1_11" target="P-server_request_2_1">
+</arc>
+<arc id="T-lb_route_to_1_11-to-P-lb_idle_1" source="T-lb_route_to_1_11" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_routing_1_2-to-T-lb_route_to_1_11" source="P-lb_routing_1_2" target="T-lb_route_to_1_11">
+</arc>
+<arc id="P-lb_load_1_0-to-T-lb_route_to_1_11" source="P-lb_load_1_0" target="T-lb_route_to_1_11">
+</arc>
+<arc id="T-lb_route_to_1_11-to-P-lb_load_1_1" source="T-lb_route_to_1_11" target="P-lb_load_1_1">
+</arc>
+<arc id="P-lb_load_2_1-to-T-lb_route_to_1_11" source="P-lb_load_2_1" target="T-lb_route_to_1_11">
+</arc>
+<arc id="T-lb_route_to_1_11-to-P-lb_load_2_1" source="T-lb_route_to_1_11" target="P-lb_load_2_1">
+</arc>
+<arc id="T-lb_route_to_1_14-to-P-server_request_2_1" source="T-lb_route_to_1_14" target="P-server_request_2_1">
+</arc>
+<arc id="T-lb_route_to_1_14-to-P-lb_idle_1" source="T-lb_route_to_1_14" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_routing_1_2-to-T-lb_route_to_1_14" source="P-lb_routing_1_2" target="T-lb_route_to_1_14">
+</arc>
+<arc id="P-lb_load_1_1-to-T-lb_route_to_1_14" source="P-lb_load_1_1" target="T-lb_route_to_1_14">
+</arc>
+<arc id="T-lb_route_to_1_14-to-P-lb_load_1_2" source="T-lb_route_to_1_14" target="P-lb_load_1_2">
+</arc>
+<arc id="P-lb_load_2_1-to-T-lb_route_to_1_14" source="P-lb_load_2_1" target="T-lb_route_to_1_14">
+</arc>
+<arc id="T-lb_route_to_1_14-to-P-lb_load_2_1" source="T-lb_route_to_1_14" target="P-lb_load_2_1">
+</arc>
+<arc id="T-lb_route_to_1_15-to-P-server_request_2_1" source="T-lb_route_to_1_15" target="P-server_request_2_1">
+</arc>
+<arc id="T-lb_route_to_1_15-to-P-lb_idle_1" source="T-lb_route_to_1_15" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_routing_1_2-to-T-lb_route_to_1_15" source="P-lb_routing_1_2" target="T-lb_route_to_1_15">
+</arc>
+<arc id="P-lb_load_1_1-to-T-lb_route_to_1_15" source="P-lb_load_1_1" target="T-lb_route_to_1_15">
+</arc>
+<arc id="T-lb_route_to_1_15-to-P-lb_load_1_2" source="T-lb_route_to_1_15" target="P-lb_load_1_2">
+</arc>
+<arc id="P-lb_load_2_2-to-T-lb_route_to_1_15" source="P-lb_load_2_2" target="T-lb_route_to_1_15">
+</arc>
+<arc id="T-lb_route_to_1_15-to-P-lb_load_2_2" source="T-lb_route_to_1_15" target="P-lb_load_2_2">
+</arc>
+<arc id="T-lb_route_to_2_4-to-P-server_request_1_2" source="T-lb_route_to_2_4" target="P-server_request_1_2">
+</arc>
+<arc id="T-lb_route_to_2_4-to-P-lb_idle_1" source="T-lb_route_to_2_4" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_routing_1_1-to-T-lb_route_to_2_4" source="P-lb_routing_1_1" target="T-lb_route_to_2_4">
+</arc>
+<arc id="P-lb_load_1_1-to-T-lb_route_to_2_4" source="P-lb_load_1_1" target="T-lb_route_to_2_4">
+</arc>
+<arc id="T-lb_route_to_2_4-to-P-lb_load_1_1" source="T-lb_route_to_2_4" target="P-lb_load_1_1">
+</arc>
+<arc id="P-lb_load_2_0-to-T-lb_route_to_2_4" source="P-lb_load_2_0" target="T-lb_route_to_2_4">
+</arc>
+<arc id="T-lb_route_to_2_4-to-P-lb_load_2_1" source="T-lb_route_to_2_4" target="P-lb_load_2_1">
+</arc>
+<arc id="T-lb_route_to_2_8-to-P-server_request_1_2" source="T-lb_route_to_2_8" target="P-server_request_1_2">
+</arc>
+<arc id="T-lb_route_to_2_8-to-P-lb_idle_1" source="T-lb_route_to_2_8" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_routing_1_1-to-T-lb_route_to_2_8" source="P-lb_routing_1_1" target="T-lb_route_to_2_8">
+</arc>
+<arc id="P-lb_load_1_2-to-T-lb_route_to_2_8" source="P-lb_load_1_2" target="T-lb_route_to_2_8">
+</arc>
+<arc id="T-lb_route_to_2_8-to-P-lb_load_1_2" source="T-lb_route_to_2_8" target="P-lb_load_1_2">
+</arc>
+<arc id="P-lb_load_2_1-to-T-lb_route_to_2_8" source="P-lb_load_2_1" target="T-lb_route_to_2_8">
+</arc>
+<arc id="T-lb_route_to_2_8-to-P-lb_load_2_2" source="T-lb_route_to_2_8" target="P-lb_load_2_2">
+</arc>
+<arc id="T-lb_route_to_2_13-to-P-server_request_2_2" source="T-lb_route_to_2_13" target="P-server_request_2_2">
+</arc>
+<arc id="T-lb_route_to_2_13-to-P-lb_idle_1" source="T-lb_route_to_2_13" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_routing_1_2-to-T-lb_route_to_2_13" source="P-lb_routing_1_2" target="T-lb_route_to_2_13">
+</arc>
+<arc id="P-lb_load_1_1-to-T-lb_route_to_2_13" source="P-lb_load_1_1" target="T-lb_route_to_2_13">
+</arc>
+<arc id="T-lb_route_to_2_13-to-P-lb_load_1_1" source="T-lb_route_to_2_13" target="P-lb_load_1_1">
+</arc>
+<arc id="P-lb_load_2_0-to-T-lb_route_to_2_13" source="P-lb_load_2_0" target="T-lb_route_to_2_13">
+</arc>
+<arc id="T-lb_route_to_2_13-to-P-lb_load_2_1" source="T-lb_route_to_2_13" target="P-lb_load_2_1">
+</arc>
+<arc id="T-lb_route_to_2_17-to-P-server_request_2_2" source="T-lb_route_to_2_17" target="P-server_request_2_2">
+</arc>
+<arc id="T-lb_route_to_2_17-to-P-lb_idle_1" source="T-lb_route_to_2_17" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_routing_1_2-to-T-lb_route_to_2_17" source="P-lb_routing_1_2" target="T-lb_route_to_2_17">
+</arc>
+<arc id="P-lb_load_1_2-to-T-lb_route_to_2_17" source="P-lb_load_1_2" target="T-lb_route_to_2_17">
+</arc>
+<arc id="T-lb_route_to_2_17-to-P-lb_load_1_2" source="T-lb_route_to_2_17" target="P-lb_load_1_2">
+</arc>
+<arc id="P-lb_load_2_1-to-T-lb_route_to_2_17" source="P-lb_load_2_1" target="T-lb_route_to_2_17">
+</arc>
+<arc id="T-lb_route_to_2_17-to-P-lb_load_2_2" source="T-lb_route_to_2_17" target="P-lb_load_2_2">
+</arc>
+<arc id="P-server_notification_1-to-T-lb_idle_receive_notification_2" source="P-server_notification_1" target="T-lb_idle_receive_notification_2">
+</arc>
+<arc id="T-lb_idle_receive_notification_2-to-P-server_notification_ack_1" source="T-lb_idle_receive_notification_2" target="P-server_notification_ack_1">
+</arc>
+<arc id="P-lb_idle_1-to-T-lb_idle_receive_notification_2" source="P-lb_idle_1" target="T-lb_idle_receive_notification_2">
+</arc>
+<arc id="T-lb_idle_receive_notification_2-to-P-lb_balancing_1" source="T-lb_idle_receive_notification_2" target="P-lb_balancing_1">
+</arc>
+<arc id="T-lb_idle_receive_notification_2-to-P-lb_load_1_0" source="T-lb_idle_receive_notification_2" target="P-lb_load_1_0">
+</arc>
+<arc id="P-lb_load_1_1-to-T-lb_idle_receive_notification_2" source="P-lb_load_1_1" target="T-lb_idle_receive_notification_2">
+</arc>
+<arc id="P-server_notification_1-to-T-lb_idle_receive_notification_3" source="P-server_notification_1" target="T-lb_idle_receive_notification_3">
+</arc>
+<arc id="T-lb_idle_receive_notification_3-to-P-server_notification_ack_1" source="T-lb_idle_receive_notification_3" target="P-server_notification_ack_1">
+</arc>
+<arc id="P-lb_idle_1-to-T-lb_idle_receive_notification_3" source="P-lb_idle_1" target="T-lb_idle_receive_notification_3">
+</arc>
+<arc id="T-lb_idle_receive_notification_3-to-P-lb_balancing_1" source="T-lb_idle_receive_notification_3" target="P-lb_balancing_1">
+</arc>
+<arc id="T-lb_idle_receive_notification_3-to-P-lb_load_1_1" source="T-lb_idle_receive_notification_3" target="P-lb_load_1_1">
+</arc>
+<arc id="P-lb_load_1_2-to-T-lb_idle_receive_notification_3" source="P-lb_load_1_2" target="T-lb_idle_receive_notification_3">
+</arc>
+<arc id="P-server_notification_2-to-T-lb_idle_receive_notification_5" source="P-server_notification_2" target="T-lb_idle_receive_notification_5">
+</arc>
+<arc id="T-lb_idle_receive_notification_5-to-P-server_notification_ack_2" source="T-lb_idle_receive_notification_5" target="P-server_notification_ack_2">
+</arc>
+<arc id="P-lb_idle_1-to-T-lb_idle_receive_notification_5" source="P-lb_idle_1" target="T-lb_idle_receive_notification_5">
+</arc>
+<arc id="T-lb_idle_receive_notification_5-to-P-lb_balancing_1" source="T-lb_idle_receive_notification_5" target="P-lb_balancing_1">
+</arc>
+<arc id="T-lb_idle_receive_notification_5-to-P-lb_load_2_0" source="T-lb_idle_receive_notification_5" target="P-lb_load_2_0">
+</arc>
+<arc id="P-lb_load_2_1-to-T-lb_idle_receive_notification_5" source="P-lb_load_2_1" target="T-lb_idle_receive_notification_5">
+</arc>
+<arc id="P-server_notification_2-to-T-lb_idle_receive_notification_6" source="P-server_notification_2" target="T-lb_idle_receive_notification_6">
+</arc>
+<arc id="T-lb_idle_receive_notification_6-to-P-server_notification_ack_2" source="T-lb_idle_receive_notification_6" target="P-server_notification_ack_2">
+</arc>
+<arc id="P-lb_idle_1-to-T-lb_idle_receive_notification_6" source="P-lb_idle_1" target="T-lb_idle_receive_notification_6">
+</arc>
+<arc id="T-lb_idle_receive_notification_6-to-P-lb_balancing_1" source="T-lb_idle_receive_notification_6" target="P-lb_balancing_1">
+</arc>
+<arc id="T-lb_idle_receive_notification_6-to-P-lb_load_2_1" source="T-lb_idle_receive_notification_6" target="P-lb_load_2_1">
+</arc>
+<arc id="P-lb_load_2_2-to-T-lb_idle_receive_notification_6" source="P-lb_load_2_2" target="T-lb_idle_receive_notification_6">
+</arc>
+<arc id="T-lb_no_balance_1-to-P-lb_idle_1" source="T-lb_no_balance_1" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_balancing_1-to-T-lb_no_balance_1" source="P-lb_balancing_1" target="T-lb_no_balance_1">
+</arc>
+<arc id="P-lb_load_1_0-to-T-lb_no_balance_1" source="P-lb_load_1_0" target="T-lb_no_balance_1">
+</arc>
+<arc id="T-lb_no_balance_1-to-P-lb_load_1_0" source="T-lb_no_balance_1" target="P-lb_load_1_0">
+</arc>
+<arc id="P-lb_load_2_0-to-T-lb_no_balance_1" source="P-lb_load_2_0" target="T-lb_no_balance_1">
+</arc>
+<arc id="T-lb_no_balance_1-to-P-lb_load_2_0" source="T-lb_no_balance_1" target="P-lb_load_2_0">
+</arc>
+<arc id="T-lb_no_balance_2-to-P-lb_idle_1" source="T-lb_no_balance_2" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_balancing_1-to-T-lb_no_balance_2" source="P-lb_balancing_1" target="T-lb_no_balance_2">
+</arc>
+<arc id="P-lb_load_1_0-to-T-lb_no_balance_2" source="P-lb_load_1_0" target="T-lb_no_balance_2">
+</arc>
+<arc id="T-lb_no_balance_2-to-P-lb_load_1_0" source="T-lb_no_balance_2" target="P-lb_load_1_0">
+</arc>
+<arc id="P-lb_load_2_1-to-T-lb_no_balance_2" source="P-lb_load_2_1" target="T-lb_no_balance_2">
+</arc>
+<arc id="T-lb_no_balance_2-to-P-lb_load_2_1" source="T-lb_no_balance_2" target="P-lb_load_2_1">
+</arc>
+<arc id="T-lb_no_balance_4-to-P-lb_idle_1" source="T-lb_no_balance_4" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_balancing_1-to-T-lb_no_balance_4" source="P-lb_balancing_1" target="T-lb_no_balance_4">
+</arc>
+<arc id="P-lb_load_1_1-to-T-lb_no_balance_4" source="P-lb_load_1_1" target="T-lb_no_balance_4">
+</arc>
+<arc id="T-lb_no_balance_4-to-P-lb_load_1_1" source="T-lb_no_balance_4" target="P-lb_load_1_1">
+</arc>
+<arc id="P-lb_load_2_0-to-T-lb_no_balance_4" source="P-lb_load_2_0" target="T-lb_no_balance_4">
+</arc>
+<arc id="T-lb_no_balance_4-to-P-lb_load_2_0" source="T-lb_no_balance_4" target="P-lb_load_2_0">
+</arc>
+<arc id="T-lb_no_balance_5-to-P-lb_idle_1" source="T-lb_no_balance_5" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_balancing_1-to-T-lb_no_balance_5" source="P-lb_balancing_1" target="T-lb_no_balance_5">
+</arc>
+<arc id="P-lb_load_1_1-to-T-lb_no_balance_5" source="P-lb_load_1_1" target="T-lb_no_balance_5">
+</arc>
+<arc id="T-lb_no_balance_5-to-P-lb_load_1_1" source="T-lb_no_balance_5" target="P-lb_load_1_1">
+</arc>
+<arc id="P-lb_load_2_1-to-T-lb_no_balance_5" source="P-lb_load_2_1" target="T-lb_no_balance_5">
+</arc>
+<arc id="T-lb_no_balance_5-to-P-lb_load_2_1" source="T-lb_no_balance_5" target="P-lb_load_2_1">
+</arc>
+<arc id="T-lb_no_balance_6-to-P-lb_idle_1" source="T-lb_no_balance_6" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_balancing_1-to-T-lb_no_balance_6" source="P-lb_balancing_1" target="T-lb_no_balance_6">
+</arc>
+<arc id="P-lb_load_1_1-to-T-lb_no_balance_6" source="P-lb_load_1_1" target="T-lb_no_balance_6">
+</arc>
+<arc id="T-lb_no_balance_6-to-P-lb_load_1_1" source="T-lb_no_balance_6" target="P-lb_load_1_1">
+</arc>
+<arc id="P-lb_load_2_2-to-T-lb_no_balance_6" source="P-lb_load_2_2" target="T-lb_no_balance_6">
+</arc>
+<arc id="T-lb_no_balance_6-to-P-lb_load_2_2" source="T-lb_no_balance_6" target="P-lb_load_2_2">
+</arc>
+<arc id="T-lb_no_balance_8-to-P-lb_idle_1" source="T-lb_no_balance_8" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_balancing_1-to-T-lb_no_balance_8" source="P-lb_balancing_1" target="T-lb_no_balance_8">
+</arc>
+<arc id="P-lb_load_1_2-to-T-lb_no_balance_8" source="P-lb_load_1_2" target="T-lb_no_balance_8">
+</arc>
+<arc id="T-lb_no_balance_8-to-P-lb_load_1_2" source="T-lb_no_balance_8" target="P-lb_load_1_2">
+</arc>
+<arc id="P-lb_load_2_1-to-T-lb_no_balance_8" source="P-lb_load_2_1" target="T-lb_no_balance_8">
+</arc>
+<arc id="T-lb_no_balance_8-to-P-lb_load_2_1" source="T-lb_no_balance_8" target="P-lb_load_2_1">
+</arc>
+<arc id="T-lb_no_balance_9-to-P-lb_idle_1" source="T-lb_no_balance_9" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_balancing_1-to-T-lb_no_balance_9" source="P-lb_balancing_1" target="T-lb_no_balance_9">
+</arc>
+<arc id="P-lb_load_1_2-to-T-lb_no_balance_9" source="P-lb_load_1_2" target="T-lb_no_balance_9">
+</arc>
+<arc id="T-lb_no_balance_9-to-P-lb_load_1_2" source="T-lb_no_balance_9" target="P-lb_load_1_2">
+</arc>
+<arc id="P-lb_load_2_2-to-T-lb_no_balance_9" source="P-lb_load_2_2" target="T-lb_no_balance_9">
+</arc>
+<arc id="T-lb_no_balance_9-to-P-lb_load_2_2" source="T-lb_no_balance_9" target="P-lb_load_2_2">
+</arc>
+<arc id="T-lb_balance_to_1_5-to-P-server_request_1_1" source="T-lb_balance_to_1_5" target="P-server_request_1_1">
+</arc>
+<arc id="P-server_request_1_2-to-T-lb_balance_to_1_5" source="P-server_request_1_2" target="T-lb_balance_to_1_5">
+</arc>
+<arc id="T-lb_balance_to_1_5-to-P-lb_idle_1" source="T-lb_balance_to_1_5" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_balancing_1-to-T-lb_balance_to_1_5" source="P-lb_balancing_1" target="T-lb_balance_to_1_5">
+</arc>
+<arc id="P-lb_load_1_0-to-T-lb_balance_to_1_5" source="P-lb_load_1_0" target="T-lb_balance_to_1_5">
+</arc>
+<arc id="T-lb_balance_to_1_5-to-P-lb_load_1_1" source="T-lb_balance_to_1_5" target="P-lb_load_1_1">
+</arc>
+<arc id="T-lb_balance_to_1_5-to-P-lb_load_2_1" source="T-lb_balance_to_1_5" target="P-lb_load_2_1">
+</arc>
+<arc id="P-lb_load_2_2-to-T-lb_balance_to_1_5" source="P-lb_load_2_2" target="T-lb_balance_to_1_5">
+</arc>
+<arc id="T-lb_balance_to_1_6-to-P-server_request_2_1" source="T-lb_balance_to_1_6" target="P-server_request_2_1">
+</arc>
+<arc id="P-server_request_2_2-to-T-lb_balance_to_1_6" source="P-server_request_2_2" target="T-lb_balance_to_1_6">
+</arc>
+<arc id="T-lb_balance_to_1_6-to-P-lb_idle_1" source="T-lb_balance_to_1_6" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_balancing_1-to-T-lb_balance_to_1_6" source="P-lb_balancing_1" target="T-lb_balance_to_1_6">
+</arc>
+<arc id="P-lb_load_1_0-to-T-lb_balance_to_1_6" source="P-lb_load_1_0" target="T-lb_balance_to_1_6">
+</arc>
+<arc id="T-lb_balance_to_1_6-to-P-lb_load_1_1" source="T-lb_balance_to_1_6" target="P-lb_load_1_1">
+</arc>
+<arc id="T-lb_balance_to_1_6-to-P-lb_load_2_1" source="T-lb_balance_to_1_6" target="P-lb_load_2_1">
+</arc>
+<arc id="P-lb_load_2_2-to-T-lb_balance_to_1_6" source="P-lb_load_2_2" target="T-lb_balance_to_1_6">
+</arc>
+<arc id="P-server_request_1_1-to-T-lb_balance_to_2_13" source="P-server_request_1_1" target="T-lb_balance_to_2_13">
+</arc>
+<arc id="T-lb_balance_to_2_13-to-P-server_request_1_2" source="T-lb_balance_to_2_13" target="P-server_request_1_2">
+</arc>
+<arc id="T-lb_balance_to_2_13-to-P-lb_idle_1" source="T-lb_balance_to_2_13" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_balancing_1-to-T-lb_balance_to_2_13" source="P-lb_balancing_1" target="T-lb_balance_to_2_13">
+</arc>
+<arc id="T-lb_balance_to_2_13-to-P-lb_load_1_1" source="T-lb_balance_to_2_13" target="P-lb_load_1_1">
+</arc>
+<arc id="P-lb_load_1_2-to-T-lb_balance_to_2_13" source="P-lb_load_1_2" target="T-lb_balance_to_2_13">
+</arc>
+<arc id="P-lb_load_2_0-to-T-lb_balance_to_2_13" source="P-lb_load_2_0" target="T-lb_balance_to_2_13">
+</arc>
+<arc id="T-lb_balance_to_2_13-to-P-lb_load_2_1" source="T-lb_balance_to_2_13" target="P-lb_load_2_1">
+</arc>
+<arc id="P-server_request_2_1-to-T-lb_balance_to_2_14" source="P-server_request_2_1" target="T-lb_balance_to_2_14">
+</arc>
+<arc id="T-lb_balance_to_2_14-to-P-server_request_2_2" source="T-lb_balance_to_2_14" target="P-server_request_2_2">
+</arc>
+<arc id="T-lb_balance_to_2_14-to-P-lb_idle_1" source="T-lb_balance_to_2_14" target="P-lb_idle_1">
+</arc>
+<arc id="P-lb_balancing_1-to-T-lb_balance_to_2_14" source="P-lb_balancing_1" target="T-lb_balance_to_2_14">
+</arc>
+<arc id="T-lb_balance_to_2_14-to-P-lb_load_1_1" source="T-lb_balance_to_2_14" target="P-lb_load_1_1">
+</arc>
+<arc id="P-lb_load_1_2-to-T-lb_balance_to_2_14" source="P-lb_load_1_2" target="T-lb_balance_to_2_14">
+</arc>
+<arc id="P-lb_load_2_0-to-T-lb_balance_to_2_14" source="P-lb_load_2_0" target="T-lb_balance_to_2_14">
+</arc>
+<arc id="T-lb_balance_to_2_14-to-P-lb_load_2_1" source="T-lb_balance_to_2_14" target="P-lb_load_2_1">
+</arc>
+<arc id="P-server_notification_1-to-T-lb_balancing_receive_notification_2" source="P-server_notification_1" target="T-lb_balancing_receive_notification_2">
+</arc>
+<arc id="T-lb_balancing_receive_notification_2-to-P-server_notification_ack_1" source="T-lb_balancing_receive_notification_2" target="P-server_notification_ack_1">
+</arc>
+<arc id="P-lb_balancing_1-to-T-lb_balancing_receive_notification_2" source="P-lb_balancing_1" target="T-lb_balancing_receive_notification_2">
+</arc>
+<arc id="T-lb_balancing_receive_notification_2-to-P-lb_balancing_1" source="T-lb_balancing_receive_notification_2" target="P-lb_balancing_1">
+</arc>
+<arc id="T-lb_balancing_receive_notification_2-to-P-lb_load_1_0" source="T-lb_balancing_receive_notification_2" target="P-lb_load_1_0">
+</arc>
+<arc id="P-lb_load_1_1-to-T-lb_balancing_receive_notification_2" source="P-lb_load_1_1" target="T-lb_balancing_receive_notification_2">
+</arc>
+<arc id="P-server_notification_1-to-T-lb_balancing_receive_notification_3" source="P-server_notification_1" target="T-lb_balancing_receive_notification_3">
+</arc>
+<arc id="T-lb_balancing_receive_notification_3-to-P-server_notification_ack_1" source="T-lb_balancing_receive_notification_3" target="P-server_notification_ack_1">
+</arc>
+<arc id="P-lb_balancing_1-to-T-lb_balancing_receive_notification_3" source="P-lb_balancing_1" target="T-lb_balancing_receive_notification_3">
+</arc>
+<arc id="T-lb_balancing_receive_notification_3-to-P-lb_balancing_1" source="T-lb_balancing_receive_notification_3" target="P-lb_balancing_1">
+</arc>
+<arc id="T-lb_balancing_receive_notification_3-to-P-lb_load_1_1" source="T-lb_balancing_receive_notification_3" target="P-lb_load_1_1">
+</arc>
+<arc id="P-lb_load_1_2-to-T-lb_balancing_receive_notification_3" source="P-lb_load_1_2" target="T-lb_balancing_receive_notification_3">
+</arc>
+<arc id="P-server_notification_2-to-T-lb_balancing_receive_notification_5" source="P-server_notification_2" target="T-lb_balancing_receive_notification_5">
+</arc>
+<arc id="T-lb_balancing_receive_notification_5-to-P-server_notification_ack_2" source="T-lb_balancing_receive_notification_5" target="P-server_notification_ack_2">
+</arc>
+<arc id="P-lb_balancing_1-to-T-lb_balancing_receive_notification_5" source="P-lb_balancing_1" target="T-lb_balancing_receive_notification_5">
+</arc>
+<arc id="T-lb_balancing_receive_notification_5-to-P-lb_balancing_1" source="T-lb_balancing_receive_notification_5" target="P-lb_balancing_1">
+</arc>
+<arc id="T-lb_balancing_receive_notification_5-to-P-lb_load_2_0" source="T-lb_balancing_receive_notification_5" target="P-lb_load_2_0">
+</arc>
+<arc id="P-lb_load_2_1-to-T-lb_balancing_receive_notification_5" source="P-lb_load_2_1" target="T-lb_balancing_receive_notification_5">
+</arc>
+<arc id="P-server_notification_2-to-T-lb_balancing_receive_notification_6" source="P-server_notification_2" target="T-lb_balancing_receive_notification_6">
+</arc>
+<arc id="T-lb_balancing_receive_notification_6-to-P-server_notification_ack_2" source="T-lb_balancing_receive_notification_6" target="P-server_notification_ack_2">
+</arc>
+<arc id="P-lb_balancing_1-to-T-lb_balancing_receive_notification_6" source="P-lb_balancing_1" target="T-lb_balancing_receive_notification_6">
+</arc>
+<arc id="T-lb_balancing_receive_notification_6-to-P-lb_balancing_1" source="T-lb_balancing_receive_notification_6" target="P-lb_balancing_1">
+</arc>
+<arc id="T-lb_balancing_receive_notification_6-to-P-lb_load_2_1" source="T-lb_balancing_receive_notification_6" target="P-lb_load_2_1">
+</arc>
+<arc id="P-lb_load_2_2-to-T-lb_balancing_receive_notification_6" source="P-lb_load_2_2" target="T-lb_balancing_receive_notification_6">
+</arc>
+</page>
+<name><text>SimpleLoadBal-PT-02</text></name>
+</net>
+</pnml>
