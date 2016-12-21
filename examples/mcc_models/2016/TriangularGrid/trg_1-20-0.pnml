@@ -1,0 +1,441 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+ <net id="TriangularGrid-PT-1200" type="http://www.pnml.org/version-2009/grammar/ptnet">
+  <name>
+   <text>TriangularGrid-PT-1200</text>
+  </name>
+ <page id="g-8A4-70EA3-1">
+  <place id="pb1_1_1">
+  <name>
+   <text>pb1^1.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>20</text>
+   </initialMarking>
+   <graphics>
+    <position x="195" y="190"/>
+   </graphics>
+  </place>
+  <place id="pb2_1_1">
+  <name>
+   <text>pb2^1.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>20</text>
+   </initialMarking>
+   <graphics>
+    <position x="315" y="190"/>
+   </graphics>
+  </place>
+  <place id="pb3_1_1">
+  <name>
+   <text>pb3^1.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>20</text>
+   </initialMarking>
+   <graphics>
+    <position x="255" y="310"/>
+   </graphics>
+  </place>
+  <place id="pbl_1_1">
+  <name>
+   <text>pbl^1.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="255" y="225"/>
+   </graphics>
+  </place>
+  <place id="pi1_1_1">
+  <name>
+   <text>pi1^1.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="195" y="50"/>
+   </graphics>
+  </place>
+  <place id="pi2_1_1">
+  <name>
+   <text>pi2^1.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="475" y="330"/>
+   </graphics>
+  </place>
+  <place id="pi3_1_1">
+  <name>
+   <text>pi3^1.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="95" y="435"/>
+   </graphics>
+  </place>
+  <place id="pil1_1_1">
+  <name>
+   <text>pil1^1.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="150" y="120"/>
+   </graphics>
+  </place>
+  <place id="pil2_1_1">
+  <name>
+   <text>pil2^1.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="435" y="265"/>
+   </graphics>
+  </place>
+  <place id="pil3_1_1">
+  <name>
+   <text>pil3^1.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="175" y="435"/>
+   </graphics>
+  </place>
+  <place id="po1_1_1">
+  <name>
+   <text>po1^1.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="75" y="265"/>
+   </graphics>
+  </place>
+  <place id="po2_1_1">
+  <name>
+   <text>po2^1.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="350" y="120"/>
+   </graphics>
+  </place>
+  <place id="po3_1_1">
+  <name>
+   <text>po3^1.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="335" y="435"/>
+   </graphics>
+  </place>
+  <place id="pol1_1_1">
+  <name>
+   <text>pol1^1.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="35" y="330"/>
+   </graphics>
+  </place>
+  <place id="pol2_1_1">
+  <name>
+   <text>pol2^1.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="310" y="50"/>
+   </graphics>
+  </place>
+  <place id="pol3_1_1">
+  <name>
+   <text>pol3^1.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="455" y="435"/>
+   </graphics>
+  </place>
+  <transition id="t_1_0">
+  <name>
+   <text>t^1.0</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="55" y="115"/>
+   </graphics>
+  </transition>
+  <transition id="t_1_2">
+  <name>
+   <text>t^1.2</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="455" y="115"/>
+   </graphics>
+  </transition>
+  <transition id="t_2_1">
+  <name>
+   <text>t^2.1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="255" y="520"/>
+   </graphics>
+  </transition>
+  <transition id="ti1_2_1_1">
+  <name>
+   <text>ti1,2^1.1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="255" y="45"/>
+   </graphics>
+  </transition>
+  <transition id="ti1_3_1_1">
+  <name>
+   <text>ti1,3^1.1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="215" y="125"/>
+   </graphics>
+  </transition>
+  <transition id="ti2_1_1_1">
+  <name>
+   <text>ti2,1^1.1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="375" y="245"/>
+   </graphics>
+  </transition>
+  <transition id="ti2_3_1_1">
+  <name>
+   <text>ti2,3^1.1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="415" y="310"/>
+   </graphics>
+  </transition>
+  <transition id="ti3_1_1_1">
+  <name>
+   <text>ti3,1^1.1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="175" y="365"/>
+   </graphics>
+  </transition>
+  <transition id="ti3_2_1_1">
+  <name>
+   <text>ti3,2^1.1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="275" y="365"/>
+   </graphics>
+  </transition>
+  <transition id="to1_1_1">
+  <name>
+   <text>to1^1.1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="110" y="320"/>
+   </graphics>
+  </transition>
+  <transition id="to2_1_1">
+  <name>
+   <text>to2^1.1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="295" y="105"/>
+   </graphics>
+  </transition>
+  <transition id="to3_1_1">
+  <name>
+   <text>to3^1.1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="395" y="365"/>
+   </graphics>
+  </transition>
+  <arc id="e-8A4-713BB-30" source="pil3_1_1" target="t_2_1">
+  </arc>
+  <arc id="e-8A4-713D6-31" source="po1_1_1" target="t_1_0">
+  </arc>
+  <arc id="e-8A4-713E1-32" source="t_1_0" target="pol1_1_1">
+  </arc>
+  <arc id="e-8A4-713EB-33" source="t_1_0" target="pi1_1_1">
+  </arc>
+  <arc id="e-8A4-713F5-34" source="ti3_2_1_1" target="pb2_1_1">
+  </arc>
+  <arc id="e-8A4-71403-35" source="pi3_1_1" target="ti3_2_1_1">
+  </arc>
+  <arc id="e-8A4-7140D-36" source="ti3_2_1_1" target="pil3_1_1">
+  </arc>
+  <arc id="e-8A4-71416-37" source="pbl_1_1" target="ti3_2_1_1">
+  </arc>
+  <arc id="e-8A4-71420-38" source="ti3_1_1_1" target="pb1_1_1">
+  </arc>
+  <arc id="e-8A4-71429-39" source="pi3_1_1" target="ti3_1_1_1">
+  </arc>
+  <arc id="e-8A4-71433-40" source="ti3_1_1_1" target="pil3_1_1">
+  </arc>
+  <arc id="e-8A4-7143C-41" source="po3_1_1" target="t_2_1">
+  </arc>
+  <arc id="e-8A4-71446-42" source="pbl_1_1" target="ti3_1_1_1">
+  </arc>
+  <arc id="e-8A4-7144E-43" source="ti2_3_1_1" target="pb3_1_1">
+  </arc>
+  <arc id="e-8A4-7145C-44" source="pi2_1_1" target="ti2_3_1_1">
+  </arc>
+  <arc id="e-8A4-71466-45" source="ti2_3_1_1" target="pil2_1_1">
+  </arc>
+  <arc id="e-8A4-71470-46" source="pbl_1_1" target="ti2_3_1_1">
+  </arc>
+  <arc id="e-8A4-71479-47" source="ti2_1_1_1" target="pb1_1_1">
+  </arc>
+  <arc id="e-8A4-71483-48" source="pi2_1_1" target="ti2_1_1_1">
+  </arc>
+  <arc id="e-8A4-7152A-49" source="ti2_1_1_1" target="pil2_1_1">
+  </arc>
+  <arc id="e-8A4-71536-50" source="pbl_1_1" target="ti2_1_1_1">
+  </arc>
+  <arc id="e-8A4-71540-51" source="ti1_3_1_1" target="pb3_1_1">
+  </arc>
+  <arc id="e-8A4-7154A-52" source="t_2_1" target="pol3_1_1">
+  </arc>
+  <arc id="e-8A4-71553-53" source="pi1_1_1" target="ti1_3_1_1">
+  </arc>
+  <arc id="e-8A4-71562-54" source="ti1_3_1_1" target="pil1_1_1">
+  </arc>
+  <arc id="e-8A4-7156C-55" source="pbl_1_1" target="ti1_3_1_1">
+  </arc>
+  <arc id="e-8A4-71575-56" source="ti1_2_1_1" target="pb2_1_1">
+  </arc>
+  <arc id="e-8A4-7157F-57" source="pi1_1_1" target="ti1_2_1_1">
+  </arc>
+  <arc id="e-8A4-71588-58" source="ti1_2_1_1" target="pil1_1_1">
+  </arc>
+  <arc id="e-8A4-71591-59" source="pbl_1_1" target="ti1_2_1_1">
+  </arc>
+  <arc id="e-8A4-7159A-60" source="to3_1_1" target="pbl_1_1">
+  </arc>
+  <arc id="e-8A4-715A4-61" source="pol3_1_1" target="to3_1_1">
+  </arc>
+  <arc id="e-8A4-715AD-62" source="to3_1_1" target="po3_1_1">
+  </arc>
+  <arc id="e-8A4-715BA-63" source="t_2_1" target="pi3_1_1">
+  </arc>
+  <arc id="e-8A4-715C5-64" source="pb3_1_1" target="to3_1_1">
+  </arc>
+  <arc id="e-8A4-715CF-65" source="to2_1_1" target="pbl_1_1">
+  </arc>
+  <arc id="e-8A4-715D8-66" source="pol2_1_1" target="to2_1_1">
+  </arc>
+  <arc id="e-8A4-715E2-67" source="to2_1_1" target="po2_1_1">
+  </arc>
+  <arc id="e-8A4-715EB-68" source="pb2_1_1" target="to2_1_1">
+  </arc>
+  <arc id="e-8A4-715F4-69" source="to1_1_1" target="pbl_1_1">
+  </arc>
+  <arc id="e-8A4-715FE-70" source="pol1_1_1" target="to1_1_1">
+  </arc>
+  <arc id="e-8A4-71607-71" source="to1_1_1" target="po1_1_1">
+  </arc>
+  <arc id="e-8A4-71611-72" source="pb1_1_1" target="to1_1_1">
+  </arc>
+  <arc id="e-8A4-7161E-73" source="pil2_1_1" target="t_1_2">
+  </arc>
+  <arc id="e-8A4-71627-74" source="po2_1_1" target="t_1_2">
+  </arc>
+  <arc id="e-8A4-71631-75" source="t_1_2" target="pol2_1_1">
+  </arc>
+  <arc id="e-8A4-7163A-76" source="t_1_2" target="pi2_1_1">
+  </arc>
+  <arc id="e-8A4-71643-77" source="pil1_1_1" target="t_1_0">
+  </arc>
+ </page>
+ </net>
+</pnml>

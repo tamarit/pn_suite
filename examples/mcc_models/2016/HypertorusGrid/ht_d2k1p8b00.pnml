@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+ <net id="HypertorusGrid-PT-d2k1p8b00" type="http://www.pnml.org/version-2009/grammar/ptnet">
+  <name>
+   <text>HypertorusGrid-PT-d2k1p8b00</text>
+  </name>
+ <page id="g-1724-3E660-1">
+  <place id="pb_d1_n1_1_1">
+  <name>
+   <text>pb.d1.n1.1.1</text>
+  </name>
+   <initialMarking>
+    <text>8</text>
+   </initialMarking>
+  </place>
+  <place id="pb_d1_n2_1_1">
+  <name>
+   <text>pb.d1.n2.1.1</text>
+  </name>
+   <initialMarking>
+    <text>8</text>
+   </initialMarking>
+  </place>
+  <place id="pb_d2_n1_1_1">
+  <name>
+   <text>pb.d2.n1.1.1</text>
+  </name>
+   <initialMarking>
+    <text>8</text>
+   </initialMarking>
+  </place>
+  <place id="pb_d2_n2_1_1">
+  <name>
+   <text>pb.d2.n2.1.1</text>
+  </name>
+   <initialMarking>
+    <text>8</text>
+   </initialMarking>
+  </place>
+  <place id="pbl_1_1">
+  <name>
+   <text>pbl.1.1</text>
+  </name>
+  </place>
+  <place id="pi_d1_n1_1_1">
+  <name>
+   <text>pi.d1.n1.1.1</text>
+  </name>
+  </place>
+  <place id="pi_d2_n1_1_1">
+  <name>
+   <text>pi.d2.n1.1.1</text>
+  </name>
+  </place>
+  <place id="pil_d1_n1_1_1">
+  <name>
+   <text>pil.d1.n1.1.1</text>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+  </place>
+  <place id="pil_d2_n1_1_1">
+  <name>
+   <text>pil.d2.n1.1.1</text>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+  </place>
+  <place id="po_d1_n1_1_1">
+  <name>
+   <text>po.d1.n1.1.1</text>
+  </name>
+  </place>
+  <place id="po_d2_n1_1_1">
+  <name>
+   <text>po.d2.n1.1.1</text>
+  </name>
+  </place>
+  <place id="pol_d1_n1_1_1">
+  <name>
+   <text>pol.d1.n1.1.1</text>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+  </place>
+  <place id="pol_d2_n1_1_1">
+  <name>
+   <text>pol.d2.n1.1.1</text>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+  </place>
+  <transition id="ti_d1_n1_d1_n2_1_1">
+  <name>
+   <text>ti.d1.n1.d1.n2.1.1</text>
+  </name>
+  </transition>
+  <transition id="ti_d1_n1_d2_n1_1_1">
+  <name>
+   <text>ti.d1.n1.d2.n1.1.1</text>
+  </name>
+  </transition>
+  <transition id="ti_d1_n1_d2_n2_1_1">
+  <name>
+   <text>ti.d1.n1.d2.n2.1.1</text>
+  </name>
+  </transition>
+  <transition id="ti_d1_n2_d1_n1_1_1">
+  <name>
+   <text>ti.d1.n2.d1.n1.1.1</text>
+  </name>
+  </transition>
+  <transition id="ti_d1_n2_d2_n1_1_1">
+  <name>
+   <text>ti.d1.n2.d2.n1.1.1</text>
+  </name>
+  </transition>
+  <transition id="ti_d1_n2_d2_n2_1_1">
+  <name>
+   <text>ti.d1.n2.d2.n2.1.1</text>
+  </name>
+  </transition>
+  <transition id="ti_d2_n1_d1_n1_1_1">
+  <name>
+   <text>ti.d2.n1.d1.n1.1.1</text>
+  </name>
+  </transition>
+  <transition id="ti_d2_n1_d1_n2_1_1">
+  <name>
+   <text>ti.d2.n1.d1.n2.1.1</text>
+  </name>
+  </transition>
+  <transition id="ti_d2_n1_d2_n2_1_1">
+  <name>
+   <text>ti.d2.n1.d2.n2.1.1</text>
+  </name>
+  </transition>
+  <transition id="ti_d2_n2_d1_n1_1_1">
+  <name>
+   <text>ti.d2.n2.d1.n1.1.1</text>
+  </name>
+  </transition>
+  <transition id="ti_d2_n2_d1_n2_1_1">
+  <name>
+   <text>ti.d2.n2.d1.n2.1.1</text>
+  </name>
+  </transition>
+  <transition id="ti_d2_n2_d2_n1_1_1">
+  <name>
+   <text>ti.d2.n2.d2.n1.1.1</text>
+  </name>
+  </transition>
+  <transition id="to_d1_n1_1_1">
+  <name>
+   <text>to.d1.n1.1.1</text>
+  </name>
+  </transition>
+  <transition id="to_d1_n2_1_1">
+  <name>
+   <text>to.d1.n2.1.1</text>
+  </name>
+  </transition>
+  <transition id="to_d2_n1_1_1">
+  <name>
+   <text>to.d2.n1.1.1</text>
+  </name>
+  </transition>
+  <transition id="to_d2_n2_1_1">
+  <name>
+   <text>to.d2.n2.1.1</text>
+  </name>
+  </transition>
+  <arc id="e-1724-3E6C6-31" source="pi_d1_n1_1_1" target="ti_d1_n1_d1_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E6CC-32" source="pbl_1_1" target="ti_d1_n1_d2_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E6CD-33" source="ti_d1_n1_d2_n2_1_1" target="pil_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E6CE-34" source="ti_d1_n1_d2_n2_1_1" target="pb_d2_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E6CF-35" source="po_d1_n1_1_1" target="ti_d1_n2_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E6D0-36" source="pbl_1_1" target="ti_d1_n2_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E6D1-37" source="ti_d1_n2_d1_n1_1_1" target="pol_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E73F-38" source="ti_d1_n2_d1_n1_1_1" target="pb_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E741-39" source="po_d1_n1_1_1" target="ti_d1_n2_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E743-40" source="pbl_1_1" target="ti_d1_n2_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E744-41" source="ti_d1_n2_d2_n1_1_1" target="pol_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E744-42" source="pbl_1_1" target="ti_d1_n1_d1_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E745-43" source="ti_d1_n2_d2_n1_1_1" target="pb_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E746-44" source="po_d1_n1_1_1" target="ti_d1_n2_d2_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E747-45" source="pbl_1_1" target="ti_d1_n2_d2_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E748-46" source="ti_d1_n2_d2_n2_1_1" target="pol_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E74A-47" source="ti_d1_n2_d2_n2_1_1" target="pb_d2_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E74B-48" source="pi_d2_n1_1_1" target="ti_d2_n1_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E74C-49" source="pbl_1_1" target="ti_d2_n1_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E74D-50" source="ti_d2_n1_d1_n1_1_1" target="pil_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E74E-51" source="ti_d2_n1_d1_n1_1_1" target="pb_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E74F-52" source="pi_d2_n1_1_1" target="ti_d2_n1_d1_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E74F-53" source="ti_d1_n1_d1_n2_1_1" target="pil_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E750-54" source="pbl_1_1" target="ti_d2_n1_d1_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E752-55" source="ti_d2_n1_d1_n2_1_1" target="pil_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E753-56" source="ti_d2_n1_d1_n2_1_1" target="pb_d1_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E754-57" source="pi_d2_n1_1_1" target="ti_d2_n1_d2_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E755-58" source="pbl_1_1" target="ti_d2_n1_d2_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E756-59" source="ti_d2_n1_d2_n2_1_1" target="pil_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E756-60" source="ti_d2_n1_d2_n2_1_1" target="pb_d2_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E757-61" source="po_d2_n1_1_1" target="ti_d2_n2_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E759-62" source="pbl_1_1" target="ti_d2_n2_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E75A-63" source="ti_d2_n2_d1_n1_1_1" target="pol_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E75C-64" source="ti_d1_n1_d1_n2_1_1" target="pb_d1_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E75D-65" source="ti_d2_n2_d1_n1_1_1" target="pb_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E75D-66" source="po_d2_n1_1_1" target="ti_d2_n2_d1_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E75E-67" source="pbl_1_1" target="ti_d2_n2_d1_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E75F-68" source="ti_d2_n2_d1_n2_1_1" target="pol_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E760-69" source="ti_d2_n2_d1_n2_1_1" target="pb_d1_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E761-70" source="po_d2_n1_1_1" target="ti_d2_n2_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E762-71" source="pbl_1_1" target="ti_d2_n2_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E763-72" source="ti_d2_n2_d2_n1_1_1" target="pol_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E764-73" source="ti_d2_n2_d2_n1_1_1" target="pb_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E765-74" source="pol_d1_n1_1_1" target="to_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E766-75" source="pi_d1_n1_1_1" target="ti_d1_n1_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E767-76" source="pb_d1_n1_1_1" target="to_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E768-77" source="to_d1_n1_1_1" target="po_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E769-78" source="to_d1_n1_1_1" target="pbl_1_1">
+  </arc>
+  <arc id="e-1724-3E76A-79" source="pil_d1_n1_1_1" target="to_d1_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E76B-80" source="pb_d1_n2_1_1" target="to_d1_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E76C-81" source="to_d1_n2_1_1" target="pi_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E76D-82" source="to_d1_n2_1_1" target="pbl_1_1">
+  </arc>
+  <arc id="e-1724-3E76E-83" source="pol_d2_n1_1_1" target="to_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E76E-84" source="pb_d2_n1_1_1" target="to_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E78F-85" source="to_d2_n1_1_1" target="po_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E790-86" source="pbl_1_1" target="ti_d1_n1_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E791-87" source="to_d2_n1_1_1" target="pbl_1_1">
+  </arc>
+  <arc id="e-1724-3E792-88" source="pil_d2_n1_1_1" target="to_d2_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E793-89" source="pb_d2_n2_1_1" target="to_d2_n2_1_1">
+  </arc>
+  <arc id="e-1724-3E794-90" source="to_d2_n2_1_1" target="pi_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E795-91" source="to_d2_n2_1_1" target="pbl_1_1">
+  </arc>
+  <arc id="e-1724-3E795-92" source="ti_d1_n1_d2_n1_1_1" target="pil_d1_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E797-93" source="ti_d1_n1_d2_n1_1_1" target="pb_d2_n1_1_1">
+  </arc>
+  <arc id="e-1724-3E798-94" source="pi_d1_n1_1_1" target="ti_d1_n1_d2_n2_1_1">
+  </arc>
+ </page>
+ </net>
+</pnml>

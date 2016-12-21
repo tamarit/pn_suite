@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="DNAwalker-PT-01track12Block1" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <page id="page0">
+      <name><text>DefaultPage</text></name>
+      <place id="A1">
+        <name><text>A1</text></name>
+        <initialMarking><text>2</text></initialMarking>
+      </place>
+      <place id="A2">
+        <name><text>A2</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="A3">
+        <name><text>A3</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="A4">
+        <name><text>A4</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="A5">
+        <name><text>A5</text></name>
+        <initialMarking><text>0</text></initialMarking>
+      </place>
+      <place id="B5">
+        <name><text>B5</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="A6">
+        <name><text>A6</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="A7">
+        <name><text>A7</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="A8">
+        <name><text>A8</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="A9">
+        <name><text>A9</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="A10">
+        <name><text>A10</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="A11">
+        <name><text>A11</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <place id="A12">
+        <name><text>A12</text></name>
+        <initialMarking><text>1</text></initialMarking>
+      </place>
+      <transition id="tb5">
+        <name><text>tb5</text></name>
+      </transition>
+      <transition id="tAb5">
+        <name><text>tAb5</text></name>
+      </transition>
+      <transition id="t1_2">
+        <name><text>t1_2</text></name>
+      </transition>
+      <transition id="t1_3">
+        <name><text>t1_3</text></name>
+      </transition>
+      <transition id="t1_4">
+        <name><text>t1_4</text></name>
+      </transition>
+      <transition id="t1_5">
+        <name><text>t1_5</text></name>
+      </transition>
+      <transition id="t1_9">
+        <name><text>t1_9</text></name>
+      </transition>
+      <transition id="t2_1">
+        <name><text>t2_1</text></name>
+      </transition>
+      <transition id="t2_3">
+        <name><text>t2_3</text></name>
+      </transition>
+      <transition id="t2_4">
+        <name><text>t2_4</text></name>
+      </transition>
+      <transition id="t2_5">
+        <name><text>t2_5</text></name>
+      </transition>
+      <transition id="t2_6">
+        <name><text>t2_6</text></name>
+      </transition>
+      <transition id="t2_9">
+        <name><text>t2_9</text></name>
+      </transition>
+      <transition id="t2_10">
+        <name><text>t2_10</text></name>
+      </transition>
+      <transition id="t3_1">
+        <name><text>t3_1</text></name>
+      </transition>
+      <transition id="t3_2">
+        <name><text>t3_2</text></name>
+      </transition>
+      <transition id="t3_4">
+        <name><text>t3_4</text></name>
+      </transition>
+      <transition id="t3_5">
+        <name><text>t3_5</text></name>
+      </transition>
+      <transition id="t3_6">
+        <name><text>t3_6</text></name>
+      </transition>
+      <transition id="t3_7">
+        <name><text>t3_7</text></name>
+      </transition>
+      <transition id="t3_9">
+        <name><text>t3_9</text></name>
+      </transition>
+      <transition id="t3_10">
+        <name><text>t3_10</text></name>
+      </transition>
+      <transition id="t3_11">
+        <name><text>t3_11</text></name>
+      </transition>
+      <transition id="t4_1">
+        <name><text>t4_1</text></name>
+      </transition>
+      <transition id="t4_2">
+        <name><text>t4_2</text></name>
+      </transition>
+      <transition id="t4_3">
+        <name><text>t4_3</text></name>
+      </transition>
+      <transition id="t4_5">
+        <name><text>t4_5</text></name>
+      </transition>
+      <transition id="t4_6">
+        <name><text>t4_6</text></name>
+      </transition>
+      <transition id="t4_7">
+        <name><text>t4_7</text></name>
+      </transition>
+      <transition id="t4_9">
+        <name><text>t4_9</text></name>
+      </transition>
+      <transition id="t4_10">
+        <name><text>t4_10</text></name>
+      </transition>
+      <transition id="t4_11">
+        <name><text>t4_11</text></name>
+      </transition>
+      <transition id="t5_1">
+        <name><text>t5_1</text></name>
+      </transition>
+      <transition id="t5_2">
+        <name><text>t5_2</text></name>
+      </transition>
+      <transition id="t5_3">
+        <name><text>t5_3</text></name>
+      </transition>
+      <transition id="t5_4">
+        <name><text>t5_4</text></name>
+      </transition>
+      <transition id="t5_6">
+        <name><text>t5_6</text></name>
+      </transition>
+      <transition id="t5_7">
+        <name><text>t5_7</text></name>
+      </transition>
+      <transition id="t5_8">
+        <name><text>t5_8</text></name>
+      </transition>
+      <transition id="t5_9">
+        <name><text>t5_9</text></name>
+      </transition>
+      <transition id="t5_10">
+        <name><text>t5_10</text></name>
+      </transition>
+      <transition id="t5_11">
+        <name><text>t5_11</text></name>
+      </transition>
+      <transition id="t6_2">
+        <name><text>t6_2</text></name>
+      </transition>
+      <transition id="t6_3">
+        <name><text>t6_3</text></name>
+      </transition>
+      <transition id="t6_4">
+        <name><text>t6_4</text></name>
+      </transition>
+      <transition id="t6_5">
+        <name><text>t6_5</text></name>
+      </transition>
+      <transition id="t6_7">
+        <name><text>t6_7</text></name>
+      </transition>
+      <transition id="t6_8">
+        <name><text>t6_8</text></name>
+      </transition>
+      <transition id="t6_9">
+        <name><text>t6_9</text></name>
+      </transition>
+      <transition id="t6_10">
+        <name><text>t6_10</text></name>
+      </transition>
+      <transition id="t7_3">
+        <name><text>t7_3</text></name>
+      </transition>
+      <transition id="t7_4">
+        <name><text>t7_4</text></name>
+      </transition>
+      <transition id="t7_5">
+        <name><text>t7_5</text></name>
+      </transition>
+      <transition id="t7_6">
+        <name><text>t7_6</text></name>
+      </transition>
+      <transition id="t7_8">
+        <name><text>t7_8</text></name>
+      </transition>
+      <transition id="t7_9">
+        <name><text>t7_9</text></name>
+      </transition>
+      <transition id="t9_1">
+        <name><text>t9_1</text></name>
+      </transition>
+      <transition id="t9_2">
+        <name><text>t9_2</text></name>
+      </transition>
+      <transition id="t9_3">
+        <name><text>t9_3</text></name>
+      </transition>
+      <transition id="t9_4">
+        <name><text>t9_4</text></name>
+      </transition>
+      <transition id="t9_5">
+        <name><text>t9_5</text></name>
+      </transition>
+      <transition id="t9_6">
+        <name><text>t9_6</text></name>
+      </transition>
+      <transition id="t9_7">
+        <name><text>t9_7</text></name>
+      </transition>
+      <transition id="t9_10">
+        <name><text>t9_10</text></name>
+      </transition>
+      <transition id="t9_11">
+        <name><text>t9_11</text></name>
+      </transition>
+      <transition id="t9_12">
+        <name><text>t9_12</text></name>
+      </transition>
+      <transition id="t10_2">
+        <name><text>t10_2</text></name>
+      </transition>
+      <transition id="t10_3">
+        <name><text>t10_3</text></name>
+      </transition>
+      <transition id="t10_4">
+        <name><text>t10_4</text></name>
+      </transition>
+      <transition id="t10_5">
+        <name><text>t10_5</text></name>
+      </transition>
+      <transition id="t10_6">
+        <name><text>t10_6</text></name>
+      </transition>
+      <transition id="t10_9">
+        <name><text>t10_9</text></name>
+      </transition>
+      <transition id="t10_11">
+        <name><text>t10_11</text></name>
+      </transition>
+      <transition id="t10_12">
+        <name><text>t10_12</text></name>
+      </transition>
+      <transition id="t11_3">
+        <name><text>t11_3</text></name>
+      </transition>
+      <transition id="t11_4">
+        <name><text>t11_4</text></name>
+      </transition>
+      <transition id="t11_5">
+        <name><text>t11_5</text></name>
+      </transition>
+      <transition id="t11_9">
+        <name><text>t11_9</text></name>
+      </transition>
+      <transition id="t11_10">
+        <name><text>t11_10</text></name>
+      </transition>
+      <transition id="t11_12">
+        <name><text>t11_12</text></name>
+      </transition>
+      <transition id="tloop8">
+        <name><text>tloop8</text></name>
+      </transition>
+      <transition id="tloop12">
+        <name><text>tloop12</text></name>
+      </transition>
+      <arc id="A_95" source="B5" target="tb5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_96" source="B5" target="tAb5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_97" source="A1" target="t1_2">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_98" source="A2" target="t1_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_99" source="A1" target="t1_3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_100" source="A3" target="t1_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_101" source="A1" target="t1_4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_102" source="A4" target="t1_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_103" source="A1" target="t1_5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_104" source="A5" target="t1_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_105" source="A1" target="t1_9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_106" source="A9" target="t1_9">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_107" source="A2" target="t2_1">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_108" source="A1" target="t2_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_109" source="A2" target="t2_3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_110" source="A3" target="t2_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_111" source="A2" target="t2_4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_112" source="A4" target="t2_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_113" source="A2" target="t2_5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_114" source="A5" target="t2_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_115" source="A2" target="t2_6">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_116" source="A6" target="t2_6">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_117" source="A2" target="t2_9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_118" source="A9" target="t2_9">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_119" source="A2" target="t2_10">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_120" source="A10" target="t2_10">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_121" source="A3" target="t3_1">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_122" source="A1" target="t3_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_123" source="A3" target="t3_2">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_124" source="A2" target="t3_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_125" source="A3" target="t3_4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_126" source="A4" target="t3_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_127" source="A3" target="t3_5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_128" source="A5" target="t3_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_129" source="A3" target="t3_6">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_130" source="A6" target="t3_6">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_131" source="A3" target="t3_7">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_132" source="A7" target="t3_7">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_133" source="A3" target="t3_9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_134" source="A9" target="t3_9">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_135" source="A3" target="t3_10">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_136" source="A10" target="t3_10">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_137" source="A3" target="t3_11">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_138" source="A11" target="t3_11">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_139" source="A4" target="t4_1">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_140" source="A1" target="t4_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_141" source="A4" target="t4_2">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_142" source="A2" target="t4_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_143" source="A4" target="t4_3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_144" source="A3" target="t4_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_145" source="A4" target="t4_5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_146" source="A5" target="t4_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_147" source="A4" target="t4_6">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_148" source="A6" target="t4_6">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_149" source="A4" target="t4_7">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_150" source="A7" target="t4_7">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_151" source="A4" target="t4_9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_152" source="A9" target="t4_9">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_153" source="A4" target="t4_10">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_154" source="A10" target="t4_10">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_155" source="A4" target="t4_11">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_156" source="A11" target="t4_11">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_157" source="A5" target="t5_1">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_158" source="A1" target="t5_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_159" source="A5" target="t5_2">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_160" source="A2" target="t5_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_161" source="A5" target="t5_3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_162" source="A3" target="t5_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_163" source="A5" target="t5_4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_164" source="A4" target="t5_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_165" source="A5" target="t5_6">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_166" source="A6" target="t5_6">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_167" source="A5" target="t5_7">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_168" source="A7" target="t5_7">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_169" source="A5" target="t5_8">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_170" source="A8" target="t5_8">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_171" source="A5" target="t5_9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_172" source="A9" target="t5_9">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_173" source="A5" target="t5_10">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_174" source="A10" target="t5_10">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_175" source="A5" target="t5_11">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_176" source="A11" target="t5_11">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_177" source="A6" target="t6_2">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_178" source="A2" target="t6_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_179" source="A6" target="t6_3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_180" source="A3" target="t6_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_181" source="A6" target="t6_4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_182" source="A4" target="t6_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_183" source="A6" target="t6_5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_184" source="A5" target="t6_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_185" source="A6" target="t6_7">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_186" source="A7" target="t6_7">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_187" source="A6" target="t6_8">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_188" source="A8" target="t6_8">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_189" source="A6" target="t6_9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_190" source="A9" target="t6_9">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_191" source="A6" target="t6_10">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_192" source="A10" target="t6_10">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_193" source="A7" target="t7_3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_194" source="A3" target="t7_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_195" source="A7" target="t7_4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_196" source="A4" target="t7_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_197" source="A7" target="t7_5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_198" source="A5" target="t7_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_199" source="A7" target="t7_6">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_200" source="A6" target="t7_6">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_201" source="A7" target="t7_8">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_202" source="A8" target="t7_8">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_203" source="A7" target="t7_9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_204" source="A9" target="t7_9">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_205" source="A9" target="t9_1">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_206" source="A1" target="t9_1">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_207" source="A9" target="t9_2">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_208" source="A2" target="t9_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_209" source="A9" target="t9_3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_210" source="A3" target="t9_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_211" source="A9" target="t9_4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_212" source="A4" target="t9_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_213" source="A9" target="t9_5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_214" source="A5" target="t9_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_215" source="A9" target="t9_6">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_216" source="A6" target="t9_6">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_217" source="A9" target="t9_7">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_218" source="A7" target="t9_7">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_219" source="A9" target="t9_10">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_220" source="A10" target="t9_10">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_221" source="A9" target="t9_11">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_222" source="A11" target="t9_11">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_223" source="A9" target="t9_12">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_224" source="A12" target="t9_12">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_225" source="A10" target="t10_2">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_226" source="A2" target="t10_2">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_227" source="A10" target="t10_3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_228" source="A3" target="t10_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_229" source="A10" target="t10_4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_230" source="A4" target="t10_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_231" source="A10" target="t10_5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_232" source="A5" target="t10_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_233" source="A10" target="t10_6">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_234" source="A6" target="t10_6">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_235" source="A10" target="t10_9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_236" source="A9" target="t10_9">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_237" source="A10" target="t10_11">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_238" source="A11" target="t10_11">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_239" source="A10" target="t10_12">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_240" source="A12" target="t10_12">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_241" source="A11" target="t11_3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_242" source="A3" target="t11_3">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_243" source="A11" target="t11_4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_244" source="A4" target="t11_4">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_245" source="A11" target="t11_5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_246" source="A5" target="t11_5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_247" source="A11" target="t11_9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_248" source="A9" target="t11_9">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_249" source="A11" target="t11_10">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_250" source="A10" target="t11_10">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_251" source="A11" target="t11_12">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_252" source="A12" target="t11_12">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_253" source="A8" target="tloop8">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_254" source="A12" target="tloop12">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_255" source="tb5" target="A5">
+        <inscription><text>1</text></inscription>
+      </arc>
+      <arc id="A_256" source="t1_2" target="A2">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_257" source="t1_3" target="A3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_258" source="t1_4" target="A4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_259" source="t1_5" target="A5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_260" source="t1_9" target="A9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_261" source="t2_1" target="A1">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_262" source="t2_3" target="A3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_263" source="t2_4" target="A4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_264" source="t2_5" target="A5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_265" source="t2_6" target="A6">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_266" source="t2_9" target="A9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_267" source="t2_10" target="A10">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_268" source="t3_1" target="A1">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_269" source="t3_2" target="A2">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_270" source="t3_4" target="A4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_271" source="t3_5" target="A5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_272" source="t3_6" target="A6">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_273" source="t3_7" target="A7">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_274" source="t3_9" target="A9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_275" source="t3_10" target="A10">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_276" source="t3_11" target="A11">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_277" source="t4_1" target="A1">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_278" source="t4_2" target="A2">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_279" source="t4_3" target="A3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_280" source="t4_5" target="A5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_281" source="t4_6" target="A6">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_282" source="t4_7" target="A7">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_283" source="t4_9" target="A9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_284" source="t4_10" target="A10">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_285" source="t4_11" target="A11">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_286" source="t5_1" target="A1">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_287" source="t5_2" target="A2">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_288" source="t5_3" target="A3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_289" source="t5_4" target="A4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_290" source="t5_6" target="A6">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_291" source="t5_7" target="A7">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_292" source="t5_8" target="A8">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_293" source="t5_9" target="A9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_294" source="t5_10" target="A10">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_295" source="t5_11" target="A11">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_296" source="t6_2" target="A2">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_297" source="t6_3" target="A3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_298" source="t6_4" target="A4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_299" source="t6_5" target="A5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_300" source="t6_7" target="A7">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_301" source="t6_8" target="A8">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_302" source="t6_9" target="A9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_303" source="t6_10" target="A10">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_304" source="t7_3" target="A3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_305" source="t7_4" target="A4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_306" source="t7_5" target="A5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_307" source="t7_6" target="A6">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_308" source="t7_8" target="A8">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_309" source="t7_9" target="A9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_310" source="t9_1" target="A1">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_311" source="t9_2" target="A2">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_312" source="t9_3" target="A3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_313" source="t9_4" target="A4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_314" source="t9_5" target="A5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_315" source="t9_6" target="A6">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_316" source="t9_7" target="A7">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_317" source="t9_10" target="A10">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_318" source="t9_11" target="A11">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_319" source="t9_12" target="A12">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_320" source="t10_2" target="A2">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_321" source="t10_3" target="A3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_322" source="t10_4" target="A4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_323" source="t10_5" target="A5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_324" source="t10_6" target="A6">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_325" source="t10_9" target="A9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_326" source="t10_11" target="A11">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_327" source="t10_12" target="A12">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_328" source="t11_3" target="A3">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_329" source="t11_4" target="A4">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_330" source="t11_5" target="A5">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_331" source="t11_9" target="A9">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_332" source="t11_10" target="A10">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_333" source="t11_12" target="A12">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_334" source="tloop8" target="A8">
+        <inscription><text>2</text></inscription>
+      </arc>
+      <arc id="A_335" source="tloop12" target="A12">
+        <inscription><text>2</text></inscription>
+      </arc>
+    </page>
+  <name><text>DNAwalker-PT-01track12Block1</text></name></net>
+</pnml>

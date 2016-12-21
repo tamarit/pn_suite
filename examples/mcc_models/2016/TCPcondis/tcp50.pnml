@@ -1,0 +1,1056 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+ <net id="TCPcondis-PT-50" type="http://www.pnml.org/version-2009/grammar/ptnet">
+  <toolspecific tool="Tina" version="3.3.0">
+   <size>small</size>
+   <color/>
+  </toolspecific>
+  <name>
+   <text>TCPcondis-PT-50</text>
+  </name>
+ <page id="g-BBC-7F72B-1">
+  <transition id="AOPEN">
+  <name>
+   <text>AOPEN</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="115" y="185"/>
+   </graphics>
+  </transition>
+  <transition id="CLOSE2">
+  <name>
+   <text>CLOSE2</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="255" y="395"/>
+   </graphics>
+  </transition>
+  <transition id="CLOSE3">
+  <name>
+   <text>CLOSE3</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="115" y="495"/>
+   </graphics>
+  </transition>
+  <place id="CLOSED">
+  <name>
+   <text>CLOSED</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>50</text>
+   </initialMarking>
+   <graphics>
+    <position x="215" y="105"/>
+   </graphics>
+  </place>
+  <place id="CLOSEWAIT">
+  <name>
+   <text>CLOSEWAIT</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="115" y="425"/>
+   </graphics>
+  </place>
+  <place id="CLOSING">
+  <name>
+   <text>CLOSING</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="205" y="555"/>
+   </graphics>
+  </place>
+  <place id="ESTAB">
+  <name>
+   <text>ESTAB</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="215" y="365"/>
+   </graphics>
+  </place>
+  <place id="FIN">
+  <name>
+   <text>FIN</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="425" y="435"/>
+   </graphics>
+  </place>
+  <place id="FINACK">
+  <name>
+   <text>FINACK</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="425" y="575"/>
+   </graphics>
+  </place>
+  <place id="FINWAIT1">
+  <name>
+   <text>FINWAIT1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="315" y="435"/>
+   </graphics>
+  </place>
+  <place id="FINWAIT2">
+  <name>
+   <text>FINWAIT2</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="315" y="555"/>
+   </graphics>
+  </place>
+  <place id="LASTACK">
+  <name>
+   <text>LASTACK</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="115" y="555"/>
+   </graphics>
+  </place>
+  <place id="LISTEN">
+  <name>
+   <text>LISTEN</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="215" y="215"/>
+   </graphics>
+  </place>
+  <transition id="POPEN">
+  <name>
+   <text>POPEN</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="215" y="155"/>
+   </graphics>
+  </transition>
+  <transition id="SEND">
+  <name>
+   <text>SEND</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="175" y="245"/>
+   </graphics>
+  </transition>
+  <place id="SYN">
+  <name>
+   <text>SYN</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="425" y="125"/>
+   </graphics>
+  </place>
+  <place id="SYNACK">
+  <name>
+   <text>SYNACK</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="425" y="245"/>
+   </graphics>
+  </place>
+  <place id="SYNRCVD">
+  <name>
+   <text>SYNRCVD</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="305" y="285"/>
+   </graphics>
+  </place>
+  <place id="SYNSENT">
+  <name>
+   <text>SYNSENT</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="115" y="285"/>
+   </graphics>
+  </place>
+  <place id="TIMEWAIT">
+  <name>
+   <text>TIMEWAIT</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="315" y="675"/>
+   </graphics>
+  </place>
+  <transition id="end">
+  <name>
+   <text>end</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="215" y="675"/>
+   </graphics>
+  </transition>
+  <transition id="raf">
+  <name>
+   <text>raf</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="315" y="495"/>
+   </graphics>
+  </transition>
+  <transition id="raf1">
+  <name>
+   <text>raf1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="265" y="615"/>
+   </graphics>
+  </transition>
+  <transition id="raf2">
+  <name>
+   <text>raf2</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="115" y="625"/>
+   </graphics>
+  </transition>
+  <transition id="ras">
+  <name>
+   <text>ras</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="265" y="325"/>
+   </graphics>
+  </transition>
+  <transition id="rf">
+  <name>
+   <text>rf</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="165" y="395"/>
+   </graphics>
+  </transition>
+  <transition id="rf1">
+  <name>
+   <text>rf1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="265" y="495"/>
+   </graphics>
+  </transition>
+  <transition id="rf2">
+  <name>
+   <text>rf2</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="315" y="615"/>
+   </graphics>
+  </transition>
+  <transition id="rs">
+  <name>
+   <text>rs</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="255" y="245"/>
+   </graphics>
+  </transition>
+  <transition id="rs1">
+  <name>
+   <text>rs1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="215" y="285"/>
+   </graphics>
+  </transition>
+  <transition id="rsa">
+  <name>
+   <text>rsa</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="165" y="325"/>
+   </graphics>
+  </transition>
+  <transition id="xAOPEN">
+  <name>
+   <text>xAOPEN</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="755" y="185"/>
+   </graphics>
+  </transition>
+  <transition id="xCLOSE2">
+  <name>
+   <text>xCLOSE2</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="605" y="395"/>
+   </graphics>
+  </transition>
+  <transition id="xCLOSE3">
+  <name>
+   <text>xCLOSE3</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="765" y="485"/>
+   </graphics>
+  </transition>
+  <place id="xCLOSED">
+  <name>
+   <text>xCLOSED</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>50</text>
+   </initialMarking>
+   <graphics>
+    <position x="645" y="105"/>
+   </graphics>
+  </place>
+  <place id="xCLOSEWAIT">
+  <name>
+   <text>xCLOSEWAIT</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="765" y="435"/>
+   </graphics>
+  </place>
+  <place id="xCLOSING">
+  <name>
+   <text>xCLOSING</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="665" y="555"/>
+   </graphics>
+  </place>
+  <place id="xESTAB">
+  <name>
+   <text>xESTAB</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="655" y="365"/>
+   </graphics>
+  </place>
+  <place id="xFIN">
+  <name>
+   <text>xFIN</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="425" y="505"/>
+   </graphics>
+  </place>
+  <place id="xFINACK">
+  <name>
+   <text>xFINACK</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="425" y="645"/>
+   </graphics>
+  </place>
+  <place id="xFINWAIT1">
+  <name>
+   <text>xFINWAIT1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="545" y="435"/>
+   </graphics>
+  </place>
+  <place id="xFINWAIT2">
+  <name>
+   <text>xFINWAIT2</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="545" y="555"/>
+   </graphics>
+  </place>
+  <place id="xLASTACK">
+  <name>
+   <text>xLASTACK</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="765" y="555"/>
+   </graphics>
+  </place>
+  <place id="xLISTEN">
+  <name>
+   <text>xLISTEN</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="645" y="215"/>
+   </graphics>
+  </place>
+  <transition id="xPOPEN">
+  <name>
+   <text>xPOPEN</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="645" y="155"/>
+   </graphics>
+  </transition>
+  <transition id="xSEND">
+  <name>
+   <text>xSEND</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="695" y="245"/>
+   </graphics>
+  </transition>
+  <place id="xSYN">
+  <name>
+   <text>xSYN</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="425" y="185"/>
+   </graphics>
+  </place>
+  <place id="xSYNACK">
+  <name>
+   <text>xSYNACK</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="425" y="305"/>
+   </graphics>
+  </place>
+  <place id="xSYNRCVD">
+  <name>
+   <text>xSYNRCVD</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="555" y="285"/>
+   </graphics>
+  </place>
+  <place id="xSYNSENT">
+  <name>
+   <text>xSYNSENT</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="755" y="285"/>
+   </graphics>
+  </place>
+  <place id="xTIMEWAIT">
+  <name>
+   <text>xTIMEWAIT</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="545" y="675"/>
+   </graphics>
+  </place>
+  <transition id="xend">
+  <name>
+   <text>xend</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="665" y="675"/>
+   </graphics>
+  </transition>
+  <transition id="xraf">
+  <name>
+   <text>xraf</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="545" y="485"/>
+   </graphics>
+  </transition>
+  <transition id="xraf1">
+  <name>
+   <text>xraf1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="625" y="605"/>
+   </graphics>
+  </transition>
+  <transition id="xraf2">
+  <name>
+   <text>xraf2</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="765" y="615"/>
+   </graphics>
+  </transition>
+  <transition id="xras">
+  <name>
+   <text>xras</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="605" y="325"/>
+   </graphics>
+  </transition>
+  <transition id="xrf">
+  <name>
+   <text>xrf</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="705" y="395"/>
+   </graphics>
+  </transition>
+  <transition id="xrf1">
+  <name>
+   <text>xrf1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="605" y="485"/>
+   </graphics>
+  </transition>
+  <transition id="xrf2">
+  <name>
+   <text>xrf2</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="545" y="605"/>
+   </graphics>
+  </transition>
+  <transition id="xrs">
+  <name>
+   <text>xrs</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="605" y="245"/>
+   </graphics>
+  </transition>
+  <transition id="xrs1">
+  <name>
+   <text>xrs1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="655" y="285"/>
+   </graphics>
+  </transition>
+  <transition id="xrsa">
+  <name>
+   <text>xrsa</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="715" y="315"/>
+   </graphics>
+  </transition>
+  <arc id="e-BBC-7F906-64" source="CLOSED" target="POPEN">
+  </arc>
+  <arc id="e-BBC-7F909-65" source="ras" target="ESTAB">
+  </arc>
+  <arc id="e-BBC-7F90A-66" source="rs1" target="SYNACK">
+   <graphics>
+    <position x="247" y="297"/>
+    <position x="333" y="297"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7F912-67" source="rsa" target="SYNACK">
+   <graphics>
+    <position x="217" y="325"/>
+    <position x="341" y="341"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7F918-68" source="SYNACK" target="xrsa">
+   <graphics>
+    <position x="525" y="301"/>
+    <position x="657" y="301"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7F91E-69" source="SYNACK" target="xras">
+   <graphics>
+    <position x="457" y="281"/>
+    <position x="569" y="321"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7F924-70" source="xrs" target="xSYNACK">
+   <graphics>
+    <position x="557" y="233"/>
+    <position x="497" y="281"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7F929-71" source="xrs1" target="xSYNACK">
+   <graphics>
+    <position x="627" y="349"/>
+    <position x="469" y="305"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7F92E-72" source="xrsa" target="xSYNACK">
+   <graphics>
+    <position x="663" y="331"/>
+    <position x="541" y="353"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7F934-73" source="xSYNACK" target="ras">
+  </arc>
+  <arc id="e-BBC-7F935-74" source="xSYNACK" target="rsa">
+   <graphics>
+    <position x="385" y="317"/>
+    <position x="285" y="365"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7F93A-75" source="SYNSENT" target="rsa">
+  </arc>
+  <arc id="e-BBC-7F93C-76" source="rsa" target="ESTAB">
+  </arc>
+  <arc id="e-BBC-7F93D-77" source="ESTAB" target="rf">
+  </arc>
+  <arc id="e-BBC-7F93E-78" source="rf" target="CLOSEWAIT">
+  </arc>
+  <arc id="e-BBC-7F940-79" source="ESTAB" target="CLOSE2">
+  </arc>
+  <arc id="e-BBC-7F941-80" source="CLOSE2" target="FINWAIT1">
+  </arc>
+  <arc id="e-BBC-7F942-81" source="CLOSEWAIT" target="CLOSE3">
+  </arc>
+  <arc id="e-BBC-7F943-82" source="CLOSE3" target="LASTACK">
+  </arc>
+  <arc id="e-BBC-7F944-83" source="FINWAIT1" target="raf">
+  </arc>
+  <arc id="e-BBC-7F945-84" source="POPEN" target="LISTEN">
+  </arc>
+  <arc id="e-BBC-7F946-85" source="raf" target="FINWAIT2">
+  </arc>
+  <arc id="e-BBC-7F948-86" source="FINWAIT1" target="rf1">
+  </arc>
+  <arc id="e-BBC-7F949-87" source="rf1" target="CLOSING">
+  </arc>
+  <arc id="e-BBC-7F94A-88" source="FINWAIT2" target="rf2">
+  </arc>
+  <arc id="e-BBC-7F94B-89" source="CLOSING" target="raf1">
+  </arc>
+  <arc id="e-BBC-7F94C-90" source="rf2" target="TIMEWAIT">
+  </arc>
+  <arc id="e-BBC-7F984-91" source="raf1" target="TIMEWAIT">
+  </arc>
+  <arc id="e-BBC-7F985-92" source="LASTACK" target="raf2">
+  </arc>
+  <arc id="e-BBC-7F987-93" source="raf2" target="CLOSED">
+   <graphics>
+    <position x="71" y="573"/>
+    <position x="95" y="113"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7F98D-94" source="TIMEWAIT" target="end">
+  </arc>
+  <arc id="e-BBC-7F98E-95" source="SYNSENT" target="rs1">
+  </arc>
+  <arc id="e-BBC-7F990-96" source="end" target="CLOSED">
+   <graphics>
+    <position x="51" y="683"/>
+    <position x="99" y="65"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7F995-97" source="CLOSED" target="AOPEN">
+  </arc>
+  <arc id="e-BBC-7F997-98" source="AOPEN" target="SYNSENT">
+  </arc>
+  <arc id="e-BBC-7F998-99" source="xCLOSED" target="xPOPEN">
+  </arc>
+  <arc id="e-BBC-7F999-100" source="xPOPEN" target="xLISTEN">
+  </arc>
+  <arc id="e-BBC-7F99A-101" source="xLISTEN" target="xrs">
+  </arc>
+  <arc id="e-BBC-7F99B-102" source="xrs" target="xSYNRCVD">
+  </arc>
+  <arc id="e-BBC-7F99C-103" source="xLISTEN" target="xSEND">
+  </arc>
+  <arc id="e-BBC-7F99D-104" source="xSEND" target="xSYNSENT">
+  </arc>
+  <arc id="e-BBC-7F99F-105" source="xSYNSENT" target="xrs1">
+  </arc>
+  <arc id="e-BBC-7F9A0-106" source="rs1" target="SYNRCVD">
+  </arc>
+  <arc id="e-BBC-7F9A1-107" source="xrs1" target="xSYNRCVD">
+  </arc>
+  <arc id="e-BBC-7F9A2-108" source="xCLOSED" target="xAOPEN">
+  </arc>
+  <arc id="e-BBC-7F9A3-109" source="xAOPEN" target="xSYNSENT">
+  </arc>
+  <arc id="e-BBC-7F9A4-110" source="xSYNSENT" target="xrsa">
+  </arc>
+  <arc id="e-BBC-7F9A5-111" source="xrsa" target="xESTAB">
+  </arc>
+  <arc id="e-BBC-7F9A6-112" source="xSYNRCVD" target="xras">
+  </arc>
+  <arc id="e-BBC-7F9A7-113" source="xras" target="xESTAB">
+  </arc>
+  <arc id="e-BBC-7F9A9-114" source="xESTAB" target="xCLOSE2">
+  </arc>
+  <arc id="e-BBC-7F9AA-115" source="xCLOSE2" target="xFINWAIT1">
+  </arc>
+  <arc id="e-BBC-7F9AB-116" source="xESTAB" target="xrf">
+  </arc>
+  <arc id="e-BBC-7F9AC-117" source="LISTEN" target="SEND">
+  </arc>
+  <arc id="e-BBC-7F9AD-118" source="xrf" target="xCLOSEWAIT">
+  </arc>
+  <arc id="e-BBC-7F9AE-119" source="xFINWAIT1" target="xraf">
+  </arc>
+  <arc id="e-BBC-7F9B0-120" source="xraf" target="xFINWAIT2">
+  </arc>
+  <arc id="e-BBC-7F9B1-121" source="xFINWAIT2" target="xrf2">
+  </arc>
+  <arc id="e-BBC-7F9B1-122" source="xrf2" target="xTIMEWAIT">
+  </arc>
+  <arc id="e-BBC-7F9B3-123" source="xCLOSEWAIT" target="xCLOSE3">
+  </arc>
+  <arc id="e-BBC-7F9B4-124" source="xCLOSE3" target="xLASTACK">
+  </arc>
+  <arc id="e-BBC-7F9B5-125" source="xrf1" target="xCLOSING">
+  </arc>
+  <arc id="e-BBC-7F9B6-126" source="xLASTACK" target="xraf2">
+  </arc>
+  <arc id="e-BBC-7F9B8-127" source="xFINWAIT1" target="xrf1">
+  </arc>
+  <arc id="e-BBC-7F9B9-128" source="SEND" target="SYNSENT">
+  </arc>
+  <arc id="e-BBC-7F9BA-129" source="xCLOSING" target="xraf1">
+  </arc>
+  <arc id="e-BBC-7F9BB-130" source="xraf1" target="xTIMEWAIT">
+  </arc>
+  <arc id="e-BBC-7F9BC-131" source="xTIMEWAIT" target="xend">
+  </arc>
+  <arc id="e-BBC-7F9BD-132" source="xraf2" target="xCLOSED">
+   <graphics>
+    <position x="833" y="559"/>
+    <position x="777" y="125"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7F9C3-133" source="xend" target="xCLOSED">
+   <graphics>
+    <position x="865" y="651"/>
+    <position x="781" y="73"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7F9C9-134" source="CLOSE2" target="FIN">
+   <graphics>
+    <position x="283" y="407"/>
+    <position x="393" y="403"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7F9F7-135" source="CLOSE3" target="FIN">
+   <graphics>
+    <position x="171" y="467"/>
+    <position x="369" y="459"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7F9FE-136" source="FIN" target="xrf">
+   <graphics>
+    <position x="481" y="399"/>
+    <position x="665" y="419"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA04-137" source="FIN" target="xrf1">
+   <graphics>
+    <position x="489" y="431"/>
+    <position x="581" y="485"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA09-138" source="FIN" target="xrf2">
+   <graphics>
+    <position x="473" y="451"/>
+    <position x="521" y="557"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA0E-139" source="LISTEN" target="rs">
+  </arc>
+  <arc id="e-BBC-7FA10-140" source="xCLOSE2" target="xFIN">
+   <graphics>
+    <position x="557" y="379"/>
+    <position x="453" y="493"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA16-141" source="xCLOSE3" target="xFIN">
+   <graphics>
+    <position x="721" y="513"/>
+    <position x="465" y="517"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA1C-142" source="xFIN" target="rf1">
+   <graphics>
+    <position x="373" y="513"/>
+    <position x="297" y="511"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA21-143" source="xFIN" target="rf">
+   <graphics>
+    <position x="397" y="485"/>
+    <position x="217" y="417"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA27-144" source="xFIN" target="rf2">
+   <graphics>
+    <position x="409" y="525"/>
+    <position x="335" y="575"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA2D-145" source="rf1" target="FINACK">
+   <graphics>
+    <position x="269" y="559"/>
+    <position x="389" y="575"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA32-146" source="rf" target="FINACK">
+   <graphics>
+    <position x="181" y="479"/>
+    <position x="385" y="535"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA38-147" source="rf2" target="FINACK">
+   <graphics>
+    <position x="343" y="615"/>
+    <position x="413" y="591"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA3E-148" source="FINACK" target="xraf">
+   <graphics>
+    <position x="449" y="557"/>
+    <position x="513" y="477"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA43-149" source="FINACK" target="xraf1">
+   <graphics>
+    <position x="465" y="581"/>
+    <position x="617" y="581"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA49-150" source="rs" target="SYNRCVD">
+  </arc>
+  <arc id="e-BBC-7FA4A-151" source="FINACK" target="xraf2">
+   <graphics>
+    <position x="501" y="623"/>
+    <position x="709" y="623"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA50-152" source="xrf1" target="xFINACK">
+   <graphics>
+    <position x="605" y="549"/>
+    <position x="545" y="645"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA55-153" source="xrf" target="xFINACK">
+   <graphics>
+    <position x="717" y="595"/>
+    <position x="481" y="701"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA5B-154" source="xrf2" target="xFINACK">
+   <graphics>
+    <position x="513" y="601"/>
+    <position x="449" y="629"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA61-155" source="xFINACK" target="raf">
+   <graphics>
+    <position x="401" y="629"/>
+    <position x="351" y="491"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA67-156" source="xFINACK" target="raf1">
+   <graphics>
+    <position x="397" y="645"/>
+    <position x="293" y="627"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA6C-157" source="xFINACK" target="raf2">
+   <graphics>
+    <position x="405" y="653"/>
+    <position x="175" y="621"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FA72-158" source="AOPEN" target="SYN">
+   <graphics>
+    <position x="171" y="65"/>
+    <position x="393" y="109"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FAA0-159" source="SEND" target="SYN">
+   <graphics>
+    <position x="251" y="221"/>
+    <position x="349" y="129"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FAA7-160" source="rs" target="SYN">
+   <graphics>
+    <position x="311" y="181"/>
+    <position x="393" y="149"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FAAD-161" source="SYNRCVD" target="ras">
+  </arc>
+  <arc id="e-BBC-7FAAE-162" source="SYN" target="xrsa">
+   <graphics>
+    <position x="533" y="161"/>
+    <position x="703" y="283"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FAB4-163" source="SYN" target="xrs1">
+   <graphics>
+    <position x="485" y="157"/>
+    <position x="643" y="237"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FAB9-164" source="SYN" target="xrs">
+   <graphics>
+    <position x="449" y="149"/>
+    <position x="597" y="225"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FAC0-165" source="xAOPEN" target="xSYN">
+   <graphics>
+    <position x="679" y="45"/>
+    <position x="481" y="165"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FAC5-166" source="xrs" target="xSYN">
+   <graphics>
+    <position x="569" y="225"/>
+    <position x="477" y="189"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FACA-167" source="xSEND" target="xSYN">
+   <graphics>
+    <position x="619" y="269"/>
+    <position x="473" y="209"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FAD0-168" source="xSYN" target="rsa">
+   <graphics>
+    <position x="325" y="225"/>
+    <position x="217" y="313"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FAD6-169" source="xSYN" target="rs1">
+   <graphics>
+    <position x="369" y="189"/>
+    <position x="251" y="273"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FADC-170" source="xSYN" target="rs">
+   <graphics>
+    <position x="393" y="173"/>
+    <position x="295" y="225"/>
+   </graphics>  </arc>
+  <arc id="e-BBC-7FAE1-171" source="rs" target="SYNACK">
+  </arc>
+ </page>
+ </net>
+</pnml>
