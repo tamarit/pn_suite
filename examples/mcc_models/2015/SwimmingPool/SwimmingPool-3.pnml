@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="SwimmingPool-PT-03" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <page id="page0">
+      <name>
+        <text>DefaultPage</text>
+      </name>
+      <place id="Entered">
+        <name>
+          <text>Entered</text>
+        </name>
+      </place>
+      <transition id="GetK">
+        <name>
+          <text>GetK</text>
+        </name>
+      </transition>
+      <place id="WaitBag">
+        <name>
+          <text>WaitBag</text>
+        </name>
+      </place>
+      <transition id="GetB">
+        <name>
+          <text>GetB</text>
+        </name>
+      </transition>
+      <place id="Undress">
+        <name>
+          <text>Undress</text>
+        </name>
+      </place>
+      <transition id="RelK">
+        <name>
+          <text>RelK</text>
+        </name>
+      </transition>
+      <place id="InBath">
+        <name>
+          <text>InBath</text>
+        </name>
+      </place>
+      <transition id="GetK2">
+        <name>
+          <text>GetK2</text>
+        </name>
+      </transition>
+      <place id="Dress">
+        <name>
+          <text>Dress</text>
+        </name>
+      </place>
+      <transition id="RBag">
+        <name>
+          <text>RBag</text>
+        </name>
+      </transition>
+      <place id="Dressed">
+        <name>
+          <text>Dressed</text>
+        </name>
+      </place>
+      <transition id="RKey">
+        <name>
+          <text>RKey</text>
+        </name>
+      </transition>
+      <transition id="Enter">
+        <name>
+          <text>Enter</text>
+        </name>
+      </transition>
+      <place id="Out">
+        <name>
+          <text>Out</text>
+        </name>
+        <initialMarking>
+          <text>60</text>
+        </initialMarking>
+      </place>
+      <place id="Cabins">
+        <name>
+          <text>Cabins</text>
+        </name>
+        <initialMarking>
+          <text>30</text>
+        </initialMarking>
+      </place>
+      <place id="Bags">
+        <name>
+          <text>Bags</text>
+        </name>
+        <initialMarking>
+          <text>45</text>
+        </initialMarking>
+      </place>
+      <arc id="cId-320140627783173468328" source="Dressed" target="RKey">
+      </arc>
+      <arc id="cId-320140627783173468318" source="Entered" target="GetK">
+      </arc>
+      <arc id="cId-319810130710339913129" source="RKey" target="Out">
+      </arc>
+      <arc id="cId-319810130710339913119" source="GetK" target="WaitBag">
+      </arc>
+      <arc id="cId-319810130710339913130" source="Out" target="Enter">
+      </arc>
+      <arc id="cId-319810130710339913120" source="WaitBag" target="GetB">
+      </arc>
+      <arc id="cId-319810130710339913121" source="GetB" target="Undress">
+      </arc>
+      <arc id="cId-319810130710339913131" source="Enter" target="Entered">
+      </arc>
+      <arc id="cId-319810130710339913122" source="Undress" target="RelK">
+      </arc>
+      <arc id="cId-319810130710339913133" source="RelK" target="Cabins">
+      </arc>
+      <arc id="cId-319810130710339913123" source="RelK" target="InBath">
+      </arc>
+      <arc id="cId-319810130710339913134" source="Cabins" target="GetK2">
+      </arc>
+      <arc id="cId-319810130710339913124" source="InBath" target="GetK2">
+      </arc>
+      <arc id="cId-319975379032008325935" source="RKey" target="Cabins">
+      </arc>
+      <arc id="cId-319975379032008325925" source="GetK2" target="Dress">
+      </arc>
+      <arc id="cId-319975379032008325936" source="Bags" target="GetB">
+      </arc>
+      <arc id="cId-319975379032008325926" source="Dress" target="RBag">
+      </arc>
+      <arc id="cId-319975379032008325937" source="RBag" target="Bags">
+      </arc>
+      <arc id="cId-319975379032008325927" source="RBag" target="Dressed">
+      </arc>
+      <arc id="cId-319975379032008325948" source="Cabins" target="GetK">
+      </arc>
+    </page>
+    <name>
+      <text>SwimmingPool-PT-03</text>
+    </name>
+  </net>
+</pnml>

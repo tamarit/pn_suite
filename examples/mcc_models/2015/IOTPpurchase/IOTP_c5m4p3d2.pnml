@@ -1,0 +1,2420 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+ <net id="IOTPpurchase-PT-C05M04P03D02" type="http://www.pnml.org/version-2009/grammar/ptnet">
+  <name>
+   <text>IOTPpurchase-PT-C05M04P03D02</text>
+  </name>
+ <page id="g-13F4-C84E-1">
+  <transition id="BrandDecision_t4_1">
+  <name>
+   <text>BrandDecision.t4.1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="940"/>
+   </graphics>
+  </transition>
+  <place id="BrandList_p11_2">
+  <name>
+   <text>BrandList.p11.2</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="525" y="1010"/>
+   </graphics>
+  </place>
+  <place id="BrandSelection_p11_5">
+  <name>
+   <text>BrandSelection.p11.5</text>
+    <graphics>
+     <offset x="0" y="10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="625" y="1330"/>
+   </graphics>
+  </place>
+  <transition id="CheckBrandSelection_t4_4">
+  <name>
+   <text>CheckBrandSelection.t4.4</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="1420"/>
+   </graphics>
+  </transition>
+  <transition id="CheckDeliveryInfo_t6_3">
+  <name>
+   <text>CheckDeliveryInfo.t6.3</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="2860"/>
+   </graphics>
+  </transition>
+  <transition id="CheckDeliveryNote_t6_6">
+  <name>
+   <text>CheckDeliveryNote.t6.6</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="3340"/>
+   </graphics>
+  </transition>
+  <transition id="CheckDeliveryRequest_t8_1">
+  <name>
+   <text>CheckDeliveryRequest.t8.1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1225" y="3100"/>
+   </graphics>
+  </transition>
+  <transition id="CheckOffer_t3">
+  <name>
+   <text>CheckOffer.t3</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="580"/>
+   </graphics>
+  </transition>
+  <transition id="CheckPaymentAmount_t3_6">
+  <name>
+   <text>CheckPaymentAmount.t3.6</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="1660"/>
+   </graphics>
+  </transition>
+  <transition id="CheckPaymentRequest_t5_1">
+  <name>
+   <text>CheckPaymentRequest.t5.1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1225" y="1900"/>
+   </graphics>
+  </transition>
+  <transition id="CheckPaymentReseitp_t3_10">
+  <name>
+   <text>CheckPaymentReseitp.t3.10</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="2260"/>
+   </graphics>
+  </transition>
+  <transition id="CheckRequest_t2">
+  <name>
+   <text>CheckRequest.t2</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="330"/>
+   </graphics>
+  </transition>
+  <transition id="CheckWhatDeliver_t7_1">
+  <name>
+   <text>CheckWhatDeliver.t7.1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="2620"/>
+   </graphics>
+  </transition>
+  <place id="ConsumerDelivery_p6_0">
+  <name>
+   <text>ConsumerDelivery.p6.0</text>
+    <graphics>
+     <offset x="-10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="2320"/>
+   </graphics>
+  </place>
+  <place id="ConsumerOffer_p1">
+  <name>
+   <text>ConsumerOffer.p1</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>5</text>
+   </initialMarking>
+   <graphics>
+    <position x="325" y="30"/>
+   </graphics>
+  </place>
+  <place id="ConsumerPayment_p3">
+  <name>
+   <text>ConsumerPayment.p3</text>
+    <graphics>
+     <offset x="-10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="640"/>
+   </graphics>
+  </place>
+  <place id="Delivery_p20">
+  <name>
+   <text>Delivery.p20</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="965" y="600"/>
+   </graphics>
+  </place>
+  <place id="Delivery_p20_10">
+  <name>
+   <text>Delivery.p20,10</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="185" y="610"/>
+   </graphics>
+  </place>
+  <place id="Delivery_p22_1">
+  <name>
+   <text>Delivery.p22.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="945" y="2670"/>
+   </graphics>
+  </place>
+  <place id="Delivery_p22_4">
+  <name>
+   <text>Delivery.p22.4</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="205" y="2670"/>
+   </graphics>
+  </place>
+  <place id="Delivery_p22_8">
+  <name>
+   <text>Delivery.p22.8</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1425" y="2890"/>
+   </graphics>
+  </place>
+  <place id="DeliveryHandlerDelivery_p8_0">
+  <name>
+   <text>DeliveryHandlerDelivery.p8.0</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>2</text>
+   </initialMarking>
+   <graphics>
+    <position x="1225" y="2920"/>
+   </graphics>
+  </place>
+  <place id="DeliveryNote_p22_12">
+  <name>
+   <text>DeliveryNote.p22.12</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1425" y="3260"/>
+   </graphics>
+  </place>
+  <place id="DeliveryNote_p22_14">
+  <name>
+   <text>DeliveryNote.p22.14</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="205" y="3220"/>
+   </graphics>
+  </place>
+  <place id="DeliveryRequest_p12_5">
+  <name>
+   <text>DeliveryRequest.p12.5</text>
+    <graphics>
+     <offset x="0" y="10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="665" y="3010"/>
+   </graphics>
+  </place>
+  <place id="DeliveryResponse_p12_6">
+  <name>
+   <text>DeliveryResponse.p12.6</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="585" y="3170"/>
+   </graphics>
+  </place>
+  <transition id="GetBrandList_t3_2">
+  <name>
+   <text>GetBrandList.t3.2</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="1060"/>
+   </graphics>
+  </transition>
+  <transition id="GetBrandSelection_t4_3">
+  <name>
+   <text>GetBrandSelection.t4.3</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="1300"/>
+   </graphics>
+  </transition>
+  <transition id="GetDeliveryRequest_t8_0">
+  <name>
+   <text>GetDeliveryRequest.t8.0</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1225" y="2980"/>
+   </graphics>
+  </transition>
+  <transition id="GetDeliveryResponse_t6_5">
+  <name>
+   <text>GetDeliveryResponse.t6.5</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="3220"/>
+   </graphics>
+  </transition>
+  <transition id="GetHowDeliver_t6_2">
+  <name>
+   <text>GetHowDeliver.t6.2</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="2740"/>
+   </graphics>
+  </transition>
+  <transition id="GetOfferRequest_t2">
+  <name>
+   <text>GetOfferRequest.t2</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="210"/>
+   </graphics>
+  </transition>
+  <transition id="GetOfferResponse_t1">
+  <name>
+   <text>GetOfferResponse.t1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="450"/>
+   </graphics>
+  </transition>
+  <transition id="GetPaidFor_t4_0">
+  <name>
+   <text>GetPaidFor.t4.0</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="820"/>
+   </graphics>
+  </transition>
+  <transition id="GetPaymentAmount_t3_5">
+  <name>
+   <text>GetPaymentAmount.t3.5</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="1540"/>
+   </graphics>
+  </transition>
+  <transition id="GetPaymentRequest_t5_0">
+  <name>
+   <text>GetPaymentRequest.t5.0</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1225" y="1780"/>
+   </graphics>
+  </transition>
+  <transition id="GetWhatDeliver_t7_0">
+  <name>
+   <text>GetWhatDeliver.t7.0</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="2500"/>
+   </graphics>
+  </transition>
+  <place id="HowDeliver_p12_2">
+  <name>
+   <text>HowDeliver.p12.2</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="505" y="2710"/>
+   </graphics>
+  </place>
+  <transition id="MakeChoice_t1">
+  <name>
+   <text>MakeChoice.t1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="90"/>
+   </graphics>
+  </transition>
+  <place id="MerchantDelivery_p4_6">
+  <name>
+   <text>MerchantDelivery.p4.6</text>
+    <graphics>
+     <offset x="-10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="2320"/>
+   </graphics>
+  </place>
+  <place id="MerchantOffer_p2">
+  <name>
+   <text>MerchantOffer.p2</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>4</text>
+   </initialMarking>
+   <graphics>
+    <position x="805" y="150"/>
+   </graphics>
+  </place>
+  <place id="MerchantPayment_p4_0">
+  <name>
+   <text>MerchantPayment.p4.0</text>
+    <graphics>
+     <offset x="-10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="640"/>
+   </graphics>
+  </place>
+  <place id="OfferRequest_p10">
+  <name>
+   <text>OfferRequest.p10</text>
+    <graphics>
+     <offset x="0" y="10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="545" y="240"/>
+   </graphics>
+  </place>
+  <place id="OfferResponce_p10">
+  <name>
+   <text>OfferResponce.p10</text>
+    <graphics>
+     <offset x="0" y="10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="545" y="480"/>
+   </graphics>
+  </place>
+  <place id="Order_p20">
+  <name>
+   <text>Order.p20</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="965" y="440"/>
+   </graphics>
+  </place>
+  <place id="Order_p20_8">
+  <name>
+   <text>Order.p20,8</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="185" y="450"/>
+   </graphics>
+  </place>
+  <place id="Order_p22_10">
+  <name>
+   <text>Order.p22.10</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1425" y="3030"/>
+   </graphics>
+  </place>
+  <place id="Order_p22_3">
+  <name>
+   <text>Order.p22.3</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="945" y="2810"/>
+   </graphics>
+  </place>
+  <place id="Order_p22_6">
+  <name>
+   <text>Order.p22.6</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="205" y="2810"/>
+   </graphics>
+  </place>
+  <place id="Organization_p20_7">
+  <name>
+   <text>Organization.p20,7</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="185" y="370"/>
+   </graphics>
+  </place>
+  <place id="Organization_p20_2">
+  <name>
+   <text>Organization.p20.2</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="965" y="360"/>
+   </graphics>
+  </place>
+  <place id="Organization_p21_2">
+  <name>
+   <text>Organization.p21.2</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="945" y="1590"/>
+   </graphics>
+  </place>
+  <place id="Organization_p21_4">
+  <name>
+   <text>Organization.p21.4</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="185" y="1590"/>
+   </graphics>
+  </place>
+  <place id="Organization_p21_8">
+  <name>
+   <text>Organization.p21.8</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1465" y="1750"/>
+   </graphics>
+  </place>
+  <place id="Organization_p22_2">
+  <name>
+   <text>Organization.p22.2</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="945" y="2740"/>
+   </graphics>
+  </place>
+  <place id="Organization_p22_5">
+  <name>
+   <text>Organization.p22.5</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="205" y="2740"/>
+   </graphics>
+  </place>
+  <place id="Organization_p22_9">
+  <name>
+   <text>Organization.p22.9</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1425" y="2960"/>
+   </graphics>
+  </place>
+  <place id="PaidFor_p11_1">
+  <name>
+   <text>PaidFor.p11.1</text>
+    <graphics>
+     <offset x="0" y="10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="625" y="850"/>
+   </graphics>
+  </place>
+  <place id="PayReceipt_p21_12">
+  <name>
+   <text>PayReceipt.p21.12</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1465" y="2130"/>
+   </graphics>
+  </place>
+  <place id="PayReceipt_p21_15">
+  <name>
+   <text>PayReceipt.p21.15</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="185" y="2140"/>
+   </graphics>
+  </place>
+  <place id="PaySchemeData_p11_10">
+  <name>
+   <text>PaySchemeData.p11.10</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="565" y="1970"/>
+   </graphics>
+  </place>
+  <place id="PaySchemeData_p21_10">
+  <name>
+   <text>PaySchemeData.p21.10</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1465" y="1890"/>
+   </graphics>
+  </place>
+  <place id="PaySchemeData_p21_6">
+  <name>
+   <text>PaySchemeData.p21.6</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="185" y="1830"/>
+   </graphics>
+  </place>
+  <place id="Payment_p20">
+  <name>
+   <text>Payment.p20</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="965" y="520"/>
+   </graphics>
+  </place>
+  <place id="Payment_p20_9">
+  <name>
+   <text>Payment.p20,9</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="185" y="530"/>
+   </graphics>
+  </place>
+  <place id="Payment_p21_1">
+  <name>
+   <text>Payment.p21.1</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="945" y="1500"/>
+   </graphics>
+  </place>
+  <place id="Payment_p21_3">
+  <name>
+   <text>Payment.p21.3</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="185" y="1490"/>
+   </graphics>
+  </place>
+  <place id="Payment_p21_7">
+  <name>
+   <text>Payment.p21.7</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1465" y="1680"/>
+   </graphics>
+  </place>
+  <place id="PaymentAmount_p11_6">
+  <name>
+   <text>PaymentAmount.p11.6</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="525" y="1490"/>
+   </graphics>
+  </place>
+  <transition id="PaymentExchange_t3_8">
+  <name>
+   <text>PaymentExchange.t3.8</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="2020"/>
+   </graphics>
+  </transition>
+  <transition id="PaymentExchange_t5_2">
+  <name>
+   <text>PaymentExchange.t5.2</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1225" y="2020"/>
+   </graphics>
+  </transition>
+  <place id="PaymentHandlerPayment_p5_0">
+  <name>
+   <text>PaymentHandlerPayment.p5.0</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>3</text>
+   </initialMarking>
+   <graphics>
+    <position x="1225" y="1720"/>
+   </graphics>
+  </place>
+  <place id="PaymentNote_p21_13">
+  <name>
+   <text>PaymentNote.p21.13</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1465" y="2200"/>
+   </graphics>
+  </place>
+  <place id="PaymentNote_p21_16">
+  <name>
+   <text>PaymentNote.p21.16</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="185" y="2210"/>
+   </graphics>
+  </place>
+  <place id="PaymentRequest_p11_9">
+  <name>
+   <text>PaymentRequest.p11.9</text>
+    <graphics>
+     <offset x="0" y="10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="625" y="1810"/>
+   </graphics>
+  </place>
+  <place id="PaymentResponse_p11_12">
+  <name>
+   <text>PaymentResponse.p11.12</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="565" y="2110"/>
+   </graphics>
+  </place>
+  <transition id="PaymentResponse_t3_9">
+  <name>
+   <text>PaymentResponse.t3.9</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="2140"/>
+   </graphics>
+  </transition>
+  <transition id="PaymentResponse_t5_3">
+  <name>
+   <text>PaymentResponse.t5.3</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1225" y="2140"/>
+   </graphics>
+  </transition>
+  <transition id="PutBrandList_t4_2">
+  <name>
+   <text>PutBrandList.t4.2</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="1060"/>
+   </graphics>
+  </transition>
+  <transition id="PutBrandSelection_t3_4">
+  <name>
+   <text>PutBrandSelection.t3.4</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="1300"/>
+   </graphics>
+  </transition>
+  <transition id="PutDeliveryRequest_t6_4">
+  <name>
+   <text>PutDeliveryRequest.t6.4</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="2980"/>
+   </graphics>
+  </transition>
+  <transition id="PutDeliveryResponse_t8_2">
+  <name>
+   <text>PutDeliveryResponse.t8.2</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1225" y="3220"/>
+   </graphics>
+  </transition>
+  <transition id="PutHowDeliver_t7_2">
+  <name>
+   <text>PutHowDeliver.t7.2</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="2740"/>
+   </graphics>
+  </transition>
+  <transition id="PutOfferRequest_t1">
+  <name>
+   <text>PutOfferRequest.t1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="210"/>
+   </graphics>
+  </transition>
+  <transition id="PutOfferResponse_t2">
+  <name>
+   <text>PutOfferResponse.t2</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="450"/>
+   </graphics>
+  </transition>
+  <transition id="PutPaidFor_t3_1">
+  <name>
+   <text>PutPaidFor.t3.1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="820"/>
+   </graphics>
+  </transition>
+  <transition id="PutPaymentAmount_t4_5">
+  <name>
+   <text>PutPaymentAmount.t4.5</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="1540"/>
+   </graphics>
+  </transition>
+  <transition id="PutPaymentRequest_t3_7">
+  <name>
+   <text>PutPaymentRequest.t3.7</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="1780"/>
+   </graphics>
+  </transition>
+  <transition id="PutWhatDeliver_t6_1">
+  <name>
+   <text>PutWhatDeliver.t6.1</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="2500"/>
+   </graphics>
+  </transition>
+  <transition id="SelectBrand_t3_3">
+  <name>
+   <text>SelectBrand.t3.3</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="1180"/>
+   </graphics>
+  </transition>
+  <place id="Status_p20">
+  <name>
+   <text>Status.p20</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="965" y="290"/>
+   </graphics>
+  </place>
+  <place id="Status_p20_6">
+  <name>
+   <text>Status.p20,6</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="185" y="300"/>
+   </graphics>
+  </place>
+  <place id="Status_p21_11">
+  <name>
+   <text>Status.p21.11</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1465" y="2060"/>
+   </graphics>
+  </place>
+  <place id="Status_p21_14">
+  <name>
+   <text>Status.p21.14</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="185" y="2070"/>
+   </graphics>
+  </place>
+  <place id="Status_p21_5">
+  <name>
+   <text>Status.p21.5</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="185" y="1750"/>
+   </graphics>
+  </place>
+  <place id="Status_p21_9">
+  <name>
+   <text>Status.p21.9</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1465" y="1820"/>
+   </graphics>
+  </place>
+  <place id="Status_p22_11">
+  <name>
+   <text>Status.p22.11</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1425" y="3100"/>
+   </graphics>
+  </place>
+  <place id="Status_p22_13">
+  <name>
+   <text>Status.p22.13</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="205" y="3150"/>
+   </graphics>
+  </place>
+  <place id="Status_p22_7">
+  <name>
+   <text>Status.p22.7</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="205" y="2970"/>
+   </graphics>
+  </place>
+  <transition id="TradeDecision_t3_0">
+  <name>
+   <text>TradeDecision.t3,0</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="700"/>
+   </graphics>
+  </transition>
+  <place id="WhatDeliver_p12_1">
+  <name>
+   <text>WhatDeliver.p12.1</text>
+    <graphics>
+     <offset x="0" y="10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="605" y="2530"/>
+   </graphics>
+  </place>
+  <transition id="WhatDeliverDecision_t6_0">
+  <name>
+   <text>WhatDeliverDecision.t6.0</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="2380"/>
+   </graphics>
+  </transition>
+  <place id="p1_1">
+  <name>
+   <text>p1.1</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="150"/>
+   </graphics>
+  </place>
+  <place id="p1_2">
+  <name>
+   <text>p1.2</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="270"/>
+   </graphics>
+  </place>
+  <place id="p1_3">
+  <name>
+   <text>p1.3</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="510"/>
+   </graphics>
+  </place>
+  <place id="p10_0">
+  <name>
+   <text>p10.0</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="485" y="160"/>
+   </graphics>
+  </place>
+  <place id="p10_2">
+  <name>
+   <text>p10.2</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="485" y="400"/>
+   </graphics>
+  </place>
+  <place id="p11_0">
+  <name>
+   <text>p11.0</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="525" y="770"/>
+   </graphics>
+  </place>
+  <place id="p11_11">
+  <name>
+   <text>p11.11</text>
+    <graphics>
+     <offset x="0" y="10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="625" y="2050"/>
+   </graphics>
+  </place>
+  <place id="p11_13">
+  <name>
+   <text>p11.13</text>
+    <graphics>
+     <offset x="0" y="10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="625" y="2190"/>
+   </graphics>
+  </place>
+  <place id="p11_3">
+  <name>
+   <text>p11.3</text>
+    <graphics>
+     <offset x="0" y="10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="625" y="1090"/>
+   </graphics>
+  </place>
+  <place id="p11_4">
+  <name>
+   <text>p11.4</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="525" y="1250"/>
+   </graphics>
+  </place>
+  <place id="p11_7">
+  <name>
+   <text>p11.7</text>
+    <graphics>
+     <offset x="0" y="10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="625" y="1570"/>
+   </graphics>
+  </place>
+  <place id="p11_8">
+  <name>
+   <text>p11.8</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="525" y="1730"/>
+   </graphics>
+  </place>
+  <place id="p12_0">
+  <name>
+   <text>p12.0</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="505" y="2470"/>
+   </graphics>
+  </place>
+  <place id="p12_3">
+  <name>
+   <text>p12.3</text>
+    <graphics>
+     <offset x="0" y="10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="605" y="2770"/>
+   </graphics>
+  </place>
+  <place id="p12_4">
+  <name>
+   <text>p12.4</text>
+    <graphics>
+     <offset x="0" y="-10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="585" y="2930"/>
+   </graphics>
+  </place>
+  <place id="p12_7">
+  <name>
+   <text>p12.7</text>
+    <graphics>
+     <offset x="0" y="10"/>
+    </graphics>
+  </name>
+   <initialMarking>
+    <text>1</text>
+   </initialMarking>
+   <graphics>
+    <position x="665" y="3250"/>
+   </graphics>
+  </place>
+  <place id="p2_1">
+  <name>
+   <text>p2.1</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="270"/>
+   </graphics>
+  </place>
+  <place id="p2_2">
+  <name>
+   <text>p2.2</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="390"/>
+   </graphics>
+  </place>
+  <place id="p3_1">
+  <name>
+   <text>p3.1</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="760"/>
+   </graphics>
+  </place>
+  <place id="p3_10">
+  <name>
+   <text>p3.10</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="2200"/>
+   </graphics>
+  </place>
+  <place id="p3_2">
+  <name>
+   <text>p3.2</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="1000"/>
+   </graphics>
+  </place>
+  <place id="p3_3">
+  <name>
+   <text>p3.3</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="1120"/>
+   </graphics>
+  </place>
+  <place id="p3_4">
+  <name>
+   <text>p3.4</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="1240"/>
+   </graphics>
+  </place>
+  <place id="p3_5">
+  <name>
+   <text>p3.5</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="1360"/>
+   </graphics>
+  </place>
+  <place id="p3_6">
+  <name>
+   <text>p3.6</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="1600"/>
+   </graphics>
+  </place>
+  <place id="p3_7">
+  <name>
+   <text>p3.7</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="1720"/>
+   </graphics>
+  </place>
+  <place id="p3_8">
+  <name>
+   <text>p3.8</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="1840"/>
+   </graphics>
+  </place>
+  <place id="p3_9">
+  <name>
+   <text>p3.9</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="2080"/>
+   </graphics>
+  </place>
+  <place id="p4_1">
+  <name>
+   <text>p4.1</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="880"/>
+   </graphics>
+  </place>
+  <place id="p4_2">
+  <name>
+   <text>p4.2</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="1000"/>
+   </graphics>
+  </place>
+  <place id="p4_3">
+  <name>
+   <text>p4.3</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="1120"/>
+   </graphics>
+  </place>
+  <place id="p4_4">
+  <name>
+   <text>p4.4</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="1360"/>
+   </graphics>
+  </place>
+  <place id="p4_5">
+  <name>
+   <text>p4.5</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="1480"/>
+   </graphics>
+  </place>
+  <place id="p5_1">
+  <name>
+   <text>p5.1</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1225" y="1840"/>
+   </graphics>
+  </place>
+  <place id="p5_2">
+  <name>
+   <text>p5.2</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1225" y="1960"/>
+   </graphics>
+  </place>
+  <place id="p5_3">
+  <name>
+   <text>p5.3</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1225" y="2080"/>
+   </graphics>
+  </place>
+  <place id="p5_4">
+  <name>
+   <text>p5.4</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1225" y="2200"/>
+   </graphics>
+  </place>
+  <place id="p6_1">
+  <name>
+   <text>p6.1</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="2440"/>
+   </graphics>
+  </place>
+  <place id="p6_2">
+  <name>
+   <text>p6.2</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="2560"/>
+   </graphics>
+  </place>
+  <place id="p6_3">
+  <name>
+   <text>p6.3</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="2800"/>
+   </graphics>
+  </place>
+  <place id="p6_4">
+  <name>
+   <text>p6.4</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="2920"/>
+   </graphics>
+  </place>
+  <place id="p6_5">
+  <name>
+   <text>p6.5</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="3040"/>
+   </graphics>
+  </place>
+  <place id="p6_6">
+  <name>
+   <text>p6.6</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="3280"/>
+   </graphics>
+  </place>
+  <place id="p6_7">
+  <name>
+   <text>p6.7</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="325" y="3400"/>
+   </graphics>
+  </place>
+  <place id="p7_1">
+  <name>
+   <text>p7.1</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="2560"/>
+   </graphics>
+  </place>
+  <place id="p7_2">
+  <name>
+   <text>p7.2</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="2680"/>
+   </graphics>
+  </place>
+  <place id="p7_3">
+  <name>
+   <text>p7.3</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="805" y="2840"/>
+   </graphics>
+  </place>
+  <place id="p8_1">
+  <name>
+   <text>p8.1</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1225" y="3040"/>
+   </graphics>
+  </place>
+  <place id="p8_2">
+  <name>
+   <text>p8.2</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1225" y="3160"/>
+   </graphics>
+  </place>
+  <place id="p8_3">
+  <name>
+   <text>p8.3</text>
+    <graphics>
+     <offset x="10" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1225" y="3280"/>
+   </graphics>
+  </place>
+  <transition id="t5_4">
+  <name>
+   <text>t5.4</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1625" y="1960"/>
+   </graphics>
+  </transition>
+  <transition id="t6_7">
+  <name>
+   <text>t6.7</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="25" y="1940"/>
+   </graphics>
+  </transition>
+  <transition id="t7_4">
+  <name>
+   <text>t7.4</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1105" y="2320"/>
+   </graphics>
+  </transition>
+  <transition id="t8_4">
+  <name>
+   <text>t8.4</text>
+    <graphics>
+     <offset x="0" y="0"/>
+    </graphics>
+  </name>
+   <graphics>
+    <position x="1625" y="3100"/>
+   </graphics>
+  </transition>
+  <arc id="e-13F4-CEEB-158" source="ConsumerOffer_p1" target="MakeChoice_t1">
+  </arc>
+  <arc id="e-13F4-CEED-159" source="p11_13" target="PaymentResponse_t5_3">
+   <graphics>
+    <position x="693" y="2186"/>
+    <position x="1161" y="2160"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CEF7-160" source="Status_p22_7" target="PutDeliveryRequest_t6_4">
+  </arc>
+  <arc id="e-13F4-CEF9-161" source="PutOfferResponse_t2" target="p10_2">
+   <graphics>
+    <position x="765" y="426"/>
+    <position x="529" y="404"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CEFF-162" source="CheckDeliveryInfo_t6_3" target="Status_p22_7">
+  </arc>
+  <arc id="e-13F4-CF01-163" source="Order_p22_6" target="PutDeliveryRequest_t6_4">
+  </arc>
+  <arc id="e-13F4-CF02-164" source="Organization_p22_5" target="PutDeliveryRequest_t6_4">
+  </arc>
+  <arc id="e-13F4-CF03-165" source="Delivery_p22_4" target="PutDeliveryRequest_t6_4">
+  </arc>
+  <arc id="e-13F4-CF05-166" source="GetDeliveryRequest_t8_0" target="Delivery_p22_8">
+  </arc>
+  <arc id="e-13F4-CF06-167" source="GetDeliveryRequest_t8_0" target="Organization_p22_9">
+  </arc>
+  <arc id="e-13F4-CF08-168" source="GetDeliveryRequest_t8_0" target="Order_p22_10">
+  </arc>
+  <arc id="e-13F4-CF09-169" source="GetDeliveryRequest_t8_0" target="Status_p22_11">
+  </arc>
+  <arc id="e-13F4-CF0A-170" source="PaymentResponse_t5_3" target="PaymentResponse_p11_12">
+   <graphics>
+    <position x="1137" y="2124"/>
+    <position x="693" y="2110"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CF11-171" source="PutDeliveryResponse_t8_2" target="DeliveryResponse_p12_6">
+   <graphics>
+    <position x="1161" y="3200"/>
+    <position x="673" y="3170"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CF17-172" source="p12_7" target="PutDeliveryResponse_t8_2">
+   <graphics>
+    <position x="713" y="3250"/>
+    <position x="1177" y="3232"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CF1E-173" source="MakeChoice_t1" target="p1_1">
+  </arc>
+  <arc id="e-13F4-CF1F-174" source="GetOfferResponse_t1" target="Status_p20_6">
+  </arc>
+  <arc id="e-13F4-CF20-175" source="DeliveryResponse_p12_6" target="GetDeliveryResponse_t6_5">
+   <graphics>
+    <position x="529" y="3174"/>
+    <position x="393" y="3196"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CF52-176" source="GetDeliveryResponse_t6_5" target="p12_7">
+   <graphics>
+    <position x="397" y="3240"/>
+    <position x="573" y="3258"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CF5A-177" source="Order_p22_10" target="CheckDeliveryRequest_t8_1">
+  </arc>
+  <arc id="e-13F4-CF5B-178" source="Organization_p22_9" target="CheckDeliveryRequest_t8_1">
+  </arc>
+  <arc id="e-13F4-CF5D-179" source="Delivery_p22_8" target="CheckDeliveryRequest_t8_1">
+  </arc>
+  <arc id="e-13F4-CF5E-180" source="CheckDeliveryRequest_t8_1" target="DeliveryNote_p22_12">
+  </arc>
+  <arc id="e-13F4-CF5F-181" source="Payment_p21_1" target="PutPaymentAmount_t4_5">
+  </arc>
+  <arc id="e-13F4-CF61-182" source="DeliveryNote_p22_12" target="PutDeliveryResponse_t8_2">
+   <graphics>
+    <position x="1345" y="3256"/>
+    <position x="1269" y="3236"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CF68-183" source="GetDeliveryResponse_t6_5" target="Status_p22_13">
+  </arc>
+  <arc id="e-13F4-CF69-184" source="GetDeliveryResponse_t6_5" target="DeliveryNote_p22_14">
+  </arc>
+  <arc id="e-13F4-CF6A-185" source="Status_p22_13" target="CheckDeliveryNote_t6_6">
+  </arc>
+  <arc id="e-13F4-CF6C-186" source="GetOfferResponse_t1" target="Organization_p20_7">
+  </arc>
+  <arc id="e-13F4-CF6D-187" source="DeliveryNote_p22_14" target="CheckDeliveryNote_t6_6">
+  </arc>
+  <arc id="e-13F4-CF6E-188" source="Status_p22_11" target="CheckDeliveryRequest_t8_1">
+   <graphics>
+    <position x="1381" y="3084"/>
+    <position x="1313" y="3084"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CF75-189" source="CheckDeliveryRequest_t8_1" target="Status_p22_11">
+   <graphics>
+    <position x="1297" y="3116"/>
+    <position x="1385" y="3112"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CF7B-190" source="Status_p22_11" target="PutDeliveryResponse_t8_2">
+  </arc>
+  <arc id="e-13F4-CF7D-191" source="MerchantDelivery_p4_6" target="GetWhatDeliver_t7_0">
+  </arc>
+  <arc id="e-13F4-CF7E-192" source="CheckRequest_t2" target="p2_2">
+  </arc>
+  <arc id="e-13F4-CF7F-193" source="p6_7" target="t6_7">
+   <graphics>
+    <position x="101" y="3408"/>
+    <position x="25" y="2160"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CF85-194" source="t6_7" target="ConsumerOffer_p1">
+   <graphics>
+    <position x="37" y="1264"/>
+    <position x="85" y="146"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CF8B-195" source="p7_3" target="t7_4">
+   <graphics>
+    <position x="1021" y="2876"/>
+    <position x="1105" y="2436"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CF91-196" source="p8_3" target="t8_4">
+   <graphics>
+    <position x="1425" y="3320"/>
+    <position x="1629" y="3180"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CF97-197" source="t8_4" target="DeliveryHandlerDelivery_p8_0">
+   <graphics>
+    <position x="1621" y="2976"/>
+    <position x="1401" y="2812"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CF9E-198" source="GetOfferResponse_t1" target="Order_p20_8">
+  </arc>
+  <arc id="e-13F4-CF9F-199" source="t7_4" target="MerchantOffer_p2">
+   <graphics>
+    <position x="1129" y="1816"/>
+    <position x="1109" y="178"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CFA5-200" source="p5_4" target="t5_4">
+   <graphics>
+    <position x="1509" y="2260"/>
+    <position x="1633" y="2068"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CFAB-201" source="t5_4" target="PaymentHandlerPayment_p5_0">
+   <graphics>
+    <position x="1633" y="1840"/>
+    <position x="1457" y="1572"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CFB2-202" source="GetOfferRequest_t2" target="p10_0">
+   <graphics>
+    <position x="741" y="178"/>
+    <position x="585" y="160"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-CFB8-203" source="Organization_p21_2" target="PutPaymentAmount_t4_5">
+  </arc>
+  <arc id="e-13F4-CFB9-204" source="CheckPaymentReseitp_t3_10" target="ConsumerDelivery_p6_0">
+  </arc>
+  <arc id="e-13F4-CFBA-205" source="GetOfferResponse_t1" target="Payment_p20_9">
+  </arc>
+  <arc id="e-13F4-CFBC-206" source="GetOfferResponse_t1" target="Delivery_p20_10">
+  </arc>
+  <arc id="e-13F4-CFBD-207" source="Status_p20" target="PutOfferResponse_t2">
+  </arc>
+  <arc id="e-13F4-CFBE-208" source="Organization_p20_2" target="PutOfferResponse_t2">
+  </arc>
+  <arc id="e-13F4-CFEA-209" source="Order_p20" target="PutOfferResponse_t2">
+  </arc>
+  <arc id="e-13F4-CFEC-210" source="Payment_p20" target="PutOfferResponse_t2">
+  </arc>
+  <arc id="e-13F4-CFEE-211" source="Delivery_p20" target="PutOfferResponse_t2">
+  </arc>
+  <arc id="e-13F4-CFEF-212" source="p1_1" target="PutOfferRequest_t1">
+  </arc>
+  <arc id="e-13F4-CFF0-213" source="CheckRequest_t2" target="Status_p20">
+  </arc>
+  <arc id="e-13F4-CFF2-214" source="CheckBrandSelection_t4_4" target="Payment_p21_1">
+  </arc>
+  <arc id="e-13F4-CFF3-215" source="CheckRequest_t2" target="Organization_p20_2">
+  </arc>
+  <arc id="e-13F4-CFF4-216" source="CheckRequest_t2" target="Order_p20">
+  </arc>
+  <arc id="e-13F4-CFF5-217" source="CheckRequest_t2" target="Payment_p20">
+  </arc>
+  <arc id="e-13F4-CFF6-218" source="CheckRequest_t2" target="Delivery_p20">
+  </arc>
+  <arc id="e-13F4-CFF8-219" source="Delivery_p20_10" target="CheckOffer_t3">
+  </arc>
+  <arc id="e-13F4-CFF9-220" source="Payment_p20_9" target="CheckOffer_t3">
+  </arc>
+  <arc id="e-13F4-CFFA-221" source="Order_p20_8" target="CheckOffer_t3">
+  </arc>
+  <arc id="e-13F4-CFFB-222" source="Organization_p20_7" target="CheckOffer_t3">
+  </arc>
+  <arc id="e-13F4-CFFC-223" source="Status_p20_6" target="CheckOffer_t3">
+  </arc>
+  <arc id="e-13F4-CFFD-224" source="PutOfferRequest_t1" target="p1_2">
+  </arc>
+  <arc id="e-13F4-CFFF-225" source="CheckBrandSelection_t4_4" target="Organization_p21_2">
+  </arc>
+  <arc id="e-13F4-D000-226" source="ConsumerPayment_p3" target="TradeDecision_t3_0">
+  </arc>
+  <arc id="e-13F4-D001-227" source="TradeDecision_t3_0" target="p3_1">
+  </arc>
+  <arc id="e-13F4-D002-228" source="p3_1" target="PutPaidFor_t3_1">
+  </arc>
+  <arc id="e-13F4-D004-229" source="PutPaidFor_t3_1" target="p3_2">
+  </arc>
+  <arc id="e-13F4-D005-230" source="p3_2" target="GetBrandList_t3_2">
+  </arc>
+  <arc id="e-13F4-D006-231" source="GetBrandList_t3_2" target="p3_3">
+  </arc>
+  <arc id="e-13F4-D008-232" source="p3_3" target="SelectBrand_t3_3">
+  </arc>
+  <arc id="e-13F4-D009-233" source="SelectBrand_t3_3" target="p3_4">
+  </arc>
+  <arc id="e-13F4-D00A-234" source="p3_4" target="PutBrandSelection_t3_4">
+  </arc>
+  <arc id="e-13F4-D00B-235" source="PutBrandSelection_t3_4" target="p3_5">
+  </arc>
+  <arc id="e-13F4-D00C-236" source="GetPaymentAmount_t3_5" target="Payment_p21_3">
+  </arc>
+  <arc id="e-13F4-D00D-237" source="p1_2" target="GetOfferResponse_t1">
+  </arc>
+  <arc id="e-13F4-D00F-238" source="p3_5" target="GetPaymentAmount_t3_5">
+  </arc>
+  <arc id="e-13F4-D010-239" source="GetPaymentAmount_t3_5" target="p3_6">
+  </arc>
+  <arc id="e-13F4-D012-240" source="p3_6" target="CheckPaymentAmount_t3_6">
+  </arc>
+  <arc id="e-13F4-D013-241" source="CheckPaymentAmount_t3_6" target="p3_7">
+  </arc>
+  <arc id="e-13F4-D014-242" source="p3_7" target="PutPaymentRequest_t3_7">
+  </arc>
+  <arc id="e-13F4-D015-243" source="PutPaymentRequest_t3_7" target="p3_8">
+  </arc>
+  <arc id="e-13F4-D016-244" source="p3_8" target="PaymentExchange_t3_8">
+  </arc>
+  <arc id="e-13F4-D017-245" source="PaymentExchange_t3_8" target="p3_9">
+  </arc>
+  <arc id="e-13F4-D019-246" source="p3_9" target="PaymentResponse_t3_9">
+  </arc>
+  <arc id="e-13F4-D01A-247" source="GetPaymentAmount_t3_5" target="Organization_p21_4">
+  </arc>
+  <arc id="e-13F4-D01C-248" source="PaymentResponse_t3_9" target="p3_10">
+  </arc>
+  <arc id="e-13F4-D01D-249" source="GetOfferResponse_t1" target="p1_3">
+  </arc>
+  <arc id="e-13F4-D01E-250" source="p3_10" target="CheckPaymentReseitp_t3_10">
+  </arc>
+  <arc id="e-13F4-D020-251" source="MerchantPayment_p4_0" target="GetPaidFor_t4_0">
+  </arc>
+  <arc id="e-13F4-D021-252" source="GetPaidFor_t4_0" target="p4_1">
+  </arc>
+  <arc id="e-13F4-D022-253" source="p4_1" target="BrandDecision_t4_1">
+  </arc>
+  <arc id="e-13F4-D023-254" source="BrandDecision_t4_1" target="p4_2">
+  </arc>
+  <arc id="e-13F4-D025-255" source="p4_2" target="PutBrandList_t4_2">
+  </arc>
+  <arc id="e-13F4-D04D-256" source="PutBrandList_t4_2" target="p4_3">
+  </arc>
+  <arc id="e-13F4-D050-257" source="p4_3" target="GetBrandSelection_t4_3">
+  </arc>
+  <arc id="e-13F4-D051-258" source="Payment_p21_3" target="PutPaymentRequest_t3_7">
+  </arc>
+  <arc id="e-13F4-D052-259" source="GetBrandSelection_t4_3" target="p4_4">
+  </arc>
+  <arc id="e-13F4-D053-260" source="p4_4" target="CheckBrandSelection_t4_4">
+  </arc>
+  <arc id="e-13F4-D054-261" source="p1_3" target="CheckOffer_t3">
+  </arc>
+  <arc id="e-13F4-D055-262" source="CheckBrandSelection_t4_4" target="p4_5">
+  </arc>
+  <arc id="e-13F4-D057-263" source="p4_5" target="PutPaymentAmount_t4_5">
+  </arc>
+  <arc id="e-13F4-D058-264" source="PutPaymentAmount_t4_5" target="MerchantDelivery_p4_6">
+  </arc>
+  <arc id="e-13F4-D059-265" source="PaymentHandlerPayment_p5_0" target="GetPaymentRequest_t5_0">
+  </arc>
+  <arc id="e-13F4-D05A-266" source="GetPaymentRequest_t5_0" target="p5_1">
+  </arc>
+  <arc id="e-13F4-D05C-267" source="p5_1" target="CheckPaymentRequest_t5_1">
+  </arc>
+  <arc id="e-13F4-D05D-268" source="CheckPaymentRequest_t5_1" target="p5_2">
+  </arc>
+  <arc id="e-13F4-D05E-269" source="p2_1" target="CheckRequest_t2">
+  </arc>
+  <arc id="e-13F4-D05F-270" source="Organization_p21_4" target="PutPaymentRequest_t3_7">
+  </arc>
+  <arc id="e-13F4-D061-271" source="p5_2" target="PaymentExchange_t5_2">
+  </arc>
+  <arc id="e-13F4-D062-272" source="PaymentExchange_t5_2" target="p5_3">
+  </arc>
+  <arc id="e-13F4-D063-273" source="p5_3" target="PaymentResponse_t5_3">
+  </arc>
+  <arc id="e-13F4-D064-274" source="MerchantOffer_p2" target="GetOfferRequest_t2">
+  </arc>
+  <arc id="e-13F4-D066-275" source="PaymentResponse_t5_3" target="p5_4">
+  </arc>
+  <arc id="e-13F4-D067-276" source="PaidFor_p11_1" target="GetPaidFor_t4_0">
+   <graphics>
+    <position x="665" y="850"/>
+    <position x="769" y="832"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D06E-277" source="GetPaidFor_t4_0" target="p11_0">
+   <graphics>
+    <position x="745" y="800"/>
+    <position x="589" y="770"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D074-278" source="p11_0" target="PutPaidFor_t3_1">
+   <graphics>
+    <position x="473" y="774"/>
+    <position x="377" y="792"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D07A-279" source="PutPaidFor_t3_1" target="PaidFor_p11_1">
+   <graphics>
+    <position x="389" y="840"/>
+    <position x="569" y="854"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D080-280" source="BrandList_p11_2" target="GetBrandList_t3_2">
+   <graphics>
+    <position x="481" y="1010"/>
+    <position x="373" y="1032"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D086-281" source="Status_p21_5" target="PutPaymentRequest_t3_7">
+  </arc>
+  <arc id="e-13F4-D087-282" source="GetBrandList_t3_2" target="p11_3">
+   <graphics>
+    <position x="381" y="1076"/>
+    <position x="569" y="1098"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D08D-283" source="p11_3" target="PutBrandList_t4_2">
+   <graphics>
+    <position x="665" y="1090"/>
+    <position x="757" y="1072"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D094-284" source="PutBrandList_t4_2" target="BrandList_p11_2">
+   <graphics>
+    <position x="733" y="1036"/>
+    <position x="605" y="1010"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D099-285" source="PutBrandSelection_t3_4" target="BrandSelection_p11_5">
+   <graphics>
+    <position x="381" y="1316"/>
+    <position x="553" y="1334"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D09F-286" source="GetOfferRequest_t2" target="p2_1">
+  </arc>
+  <arc id="e-13F4-D0A1-287" source="BrandSelection_p11_5" target="GetBrandSelection_t4_3">
+   <graphics>
+    <position x="669" y="1330"/>
+    <position x="761" y="1316"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D0A7-288" source="GetBrandSelection_t4_3" target="p11_4">
+   <graphics>
+    <position x="745" y="1280"/>
+    <position x="597" y="1250"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D0AE-289" source="p11_4" target="PutBrandSelection_t3_4">
+   <graphics>
+    <position x="489" y="1254"/>
+    <position x="361" y="1276"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D0B5-290" source="PaymentAmount_p11_6" target="GetPaymentAmount_t3_5">
+   <graphics>
+    <position x="485" y="1490"/>
+    <position x="373" y="1512"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D0E5-291" source="GetPaymentAmount_t3_5" target="p11_7">
+   <graphics>
+    <position x="385" y="1564"/>
+    <position x="557" y="1578"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D0EC-292" source="PaySchemeData_p21_6" target="PutPaymentRequest_t3_7">
+  </arc>
+  <arc id="e-13F4-D0EE-293" source="p11_7" target="PutPaymentAmount_t4_5">
+   <graphics>
+    <position x="677" y="1570"/>
+    <position x="765" y="1556"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D0F5-294" source="PutPaymentAmount_t4_5" target="PaymentAmount_p11_6">
+   <graphics>
+    <position x="741" y="1516"/>
+    <position x="609" y="1494"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D0FB-295" source="PaymentRequest_p11_9" target="GetPaymentRequest_t5_0">
+   <graphics>
+    <position x="697" y="1814"/>
+    <position x="1165" y="1796"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D102-296" source="GetPaymentRequest_t5_0" target="p11_8">
+   <graphics>
+    <position x="1141" y="1756"/>
+    <position x="629" y="1734"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D108-297" source="p11_8" target="PutPaymentRequest_t3_7">
+   <graphics>
+    <position x="481" y="1734"/>
+    <position x="365" y="1756"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D10E-298" source="CheckPaymentAmount_t3_6" target="Status_p21_5">
+  </arc>
+  <arc id="e-13F4-D110-299" source="p2_2" target="PutOfferResponse_t2">
+  </arc>
+  <arc id="e-13F4-D111-300" source="CheckPaymentAmount_t3_6" target="PaySchemeData_p21_6">
+  </arc>
+  <arc id="e-13F4-D113-301" source="GetPaymentRequest_t5_0" target="Payment_p21_7">
+  </arc>
+  <arc id="e-13F4-D114-302" source="GetPaymentRequest_t5_0" target="Organization_p21_8">
+  </arc>
+  <arc id="e-13F4-D115-303" source="GetPaymentRequest_t5_0" target="Status_p21_9">
+  </arc>
+  <arc id="e-13F4-D117-304" source="GetPaymentRequest_t5_0" target="PaySchemeData_p21_10">
+  </arc>
+  <arc id="e-13F4-D118-305" source="PutPaymentRequest_t3_7" target="PaymentRequest_p11_9">
+   <graphics>
+    <position x="385" y="1800"/>
+    <position x="565" y="1814"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D11E-306" source="PaySchemeData_p21_10" target="PaymentExchange_t5_2">
+  </arc>
+  <arc id="e-13F4-D11F-307" source="Status_p21_9" target="CheckPaymentRequest_t5_1">
+  </arc>
+  <arc id="e-13F4-D120-308" source="Organization_p21_8" target="CheckPaymentRequest_t5_1">
+  </arc>
+  <arc id="e-13F4-D121-309" source="Payment_p21_7" target="CheckPaymentRequest_t5_1">
+  </arc>
+  <arc id="e-13F4-D123-310" source="PaymentExchange_t5_2" target="Status_p21_11">
+  </arc>
+  <arc id="e-13F4-D125-311" source="p10_0" target="PutOfferRequest_t1">
+   <graphics>
+    <position x="433" y="164"/>
+    <position x="361" y="186"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D12A-312" source="PaymentExchange_t5_2" target="PayReceipt_p21_12">
+  </arc>
+  <arc id="e-13F4-D12C-313" source="PaymentExchange_t5_2" target="PaymentNote_p21_13">
+  </arc>
+  <arc id="e-13F4-D12D-314" source="Status_p21_11" target="PaymentResponse_t5_3">
+  </arc>
+  <arc id="e-13F4-D12E-315" source="PayReceipt_p21_12" target="PaymentResponse_t5_3">
+  </arc>
+  <arc id="e-13F4-D130-316" source="PaymentExchange_t5_2" target="PaySchemeData_p11_10">
+   <graphics>
+    <position x="1149" y="2000"/>
+    <position x="677" y="1974"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D136-317" source="PaymentNote_p21_13" target="PaymentResponse_t5_3">
+  </arc>
+  <arc id="e-13F4-D138-318" source="PaymentResponse_t3_9" target="Status_p21_14">
+  </arc>
+  <arc id="e-13F4-D139-319" source="PaymentResponse_t3_9" target="PayReceipt_p21_15">
+  </arc>
+  <arc id="e-13F4-D13B-320" source="PaymentResponse_t3_9" target="PaymentNote_p21_16">
+  </arc>
+  <arc id="e-13F4-D13C-321" source="PaymentNote_p21_16" target="CheckPaymentReseitp_t3_10">
+  </arc>
+  <arc id="e-13F4-D13D-322" source="PayReceipt_p21_15" target="CheckPaymentReseitp_t3_10">
+  </arc>
+  <arc id="e-13F4-D13E-323" source="PutOfferRequest_t1" target="OfferRequest_p10">
+   <graphics>
+    <position x="357" y="226"/>
+    <position x="505" y="244"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D145-324" source="Status_p21_14" target="CheckPaymentReseitp_t3_10">
+  </arc>
+  <arc id="e-13F4-D146-325" source="CheckOffer_t3" target="ConsumerPayment_p3">
+  </arc>
+  <arc id="e-13F4-D171-326" source="PutOfferResponse_t2" target="MerchantPayment_p4_0">
+  </arc>
+  <arc id="e-13F4-D173-327" source="PaySchemeData_p11_10" target="PaymentExchange_t3_8">
+   <graphics>
+    <position x="521" y="1974"/>
+    <position x="369" y="2000"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D17A-328" source="ConsumerDelivery_p6_0" target="WhatDeliverDecision_t6_0">
+  </arc>
+  <arc id="e-13F4-D17B-329" source="WhatDeliverDecision_t6_0" target="p6_1">
+  </arc>
+  <arc id="e-13F4-D17D-330" source="p6_1" target="PutWhatDeliver_t6_1">
+  </arc>
+  <arc id="e-13F4-D17E-331" source="PutWhatDeliver_t6_1" target="p6_2">
+  </arc>
+  <arc id="e-13F4-D180-332" source="p6_2" target="GetHowDeliver_t6_2">
+  </arc>
+  <arc id="e-13F4-D181-333" source="GetHowDeliver_t6_2" target="p6_3">
+  </arc>
+  <arc id="e-13F4-D182-334" source="p6_3" target="CheckDeliveryInfo_t6_3">
+  </arc>
+  <arc id="e-13F4-D183-335" source="OfferRequest_p10" target="GetOfferRequest_t2">
+   <graphics>
+    <position x="577" y="240"/>
+    <position x="769" y="226"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D189-336" source="CheckDeliveryInfo_t6_3" target="p6_4">
+  </arc>
+  <arc id="e-13F4-D18B-337" source="p6_4" target="PutDeliveryRequest_t6_4">
+  </arc>
+  <arc id="e-13F4-D18C-338" source="PaymentExchange_t3_8" target="p11_11">
+   <graphics>
+    <position x="389" y="2036"/>
+    <position x="557" y="2054"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D193-339" source="PutDeliveryRequest_t6_4" target="p6_5">
+  </arc>
+  <arc id="e-13F4-D194-340" source="p6_5" target="GetDeliveryResponse_t6_5">
+  </arc>
+  <arc id="e-13F4-D195-341" source="GetDeliveryResponse_t6_5" target="p6_6">
+  </arc>
+  <arc id="e-13F4-D196-342" source="p6_6" target="CheckDeliveryNote_t6_6">
+  </arc>
+  <arc id="e-13F4-D198-343" source="CheckDeliveryNote_t6_6" target="p6_7">
+  </arc>
+  <arc id="e-13F4-D199-344" source="GetWhatDeliver_t7_0" target="p7_1">
+  </arc>
+  <arc id="e-13F4-D19A-345" source="p7_1" target="CheckWhatDeliver_t7_1">
+  </arc>
+  <arc id="e-13F4-D19C-346" source="CheckWhatDeliver_t7_1" target="p7_2">
+  </arc>
+  <arc id="e-13F4-D19D-347" source="p10_2" target="GetOfferResponse_t1">
+   <graphics>
+    <position x="437" y="404"/>
+    <position x="365" y="422"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D1A3-348" source="p7_2" target="PutHowDeliver_t7_2">
+  </arc>
+  <arc id="e-13F4-D1A4-349" source="p11_11" target="PaymentExchange_t5_2">
+   <graphics>
+    <position x="697" y="2050"/>
+    <position x="1169" y="2032"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D1AB-350" source="PutHowDeliver_t7_2" target="p7_3">
+  </arc>
+  <arc id="e-13F4-D1AC-351" source="DeliveryHandlerDelivery_p8_0" target="GetDeliveryRequest_t8_0">
+  </arc>
+  <arc id="e-13F4-D1AE-352" source="GetDeliveryRequest_t8_0" target="p8_1">
+  </arc>
+  <arc id="e-13F4-D1AF-353" source="p8_1" target="CheckDeliveryRequest_t8_1">
+  </arc>
+  <arc id="e-13F4-D1B0-354" source="CheckDeliveryRequest_t8_1" target="p8_2">
+  </arc>
+  <arc id="e-13F4-D1B1-355" source="p8_2" target="PutDeliveryResponse_t8_2">
+  </arc>
+  <arc id="e-13F4-D1B3-356" source="PutDeliveryResponse_t8_2" target="p8_3">
+  </arc>
+  <arc id="e-13F4-D1B4-357" source="PutWhatDeliver_t6_1" target="WhatDeliver_p12_1">
+   <graphics>
+    <position x="385" y="2520"/>
+    <position x="549" y="2538"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D1BA-358" source="WhatDeliver_p12_1" target="GetWhatDeliver_t7_0">
+   <graphics>
+    <position x="669" y="2526"/>
+    <position x="761" y="2512"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D1C0-359" source="GetOfferResponse_t1" target="OfferResponce_p10">
+   <graphics>
+    <position x="353" y="470"/>
+    <position x="505" y="488"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D1C6-360" source="PaymentResponse_p11_12" target="PaymentResponse_t3_9">
+   <graphics>
+    <position x="509" y="2114"/>
+    <position x="385" y="2124"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D1CD-361" source="GetWhatDeliver_t7_0" target="p12_0">
+   <graphics>
+    <position x="741" y="2484"/>
+    <position x="589" y="2470"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D1FC-362" source="p12_0" target="PutWhatDeliver_t6_1">
+   <graphics>
+    <position x="469" y="2466"/>
+    <position x="381" y="2480"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D204-363" source="HowDeliver_p12_2" target="GetHowDeliver_t6_2">
+   <graphics>
+    <position x="469" y="2706"/>
+    <position x="377" y="2720"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D20A-364" source="GetHowDeliver_t6_2" target="p12_3">
+   <graphics>
+    <position x="381" y="2760"/>
+    <position x="549" y="2778"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D211-365" source="p12_3" target="PutHowDeliver_t7_2">
+   <graphics>
+    <position x="661" y="2770"/>
+    <position x="765" y="2752"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D216-366" source="PutHowDeliver_t7_2" target="HowDeliver_p12_2">
+   <graphics>
+    <position x="737" y="2724"/>
+    <position x="569" y="2706"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D21C-367" source="CheckWhatDeliver_t7_1" target="Delivery_p22_1">
+  </arc>
+  <arc id="e-13F4-D21E-368" source="CheckWhatDeliver_t7_1" target="Organization_p22_2">
+  </arc>
+  <arc id="e-13F4-D21F-369" source="CheckWhatDeliver_t7_1" target="Order_p22_3">
+  </arc>
+  <arc id="e-13F4-D221-370" source="Delivery_p22_1" target="PutHowDeliver_t7_2">
+  </arc>
+  <arc id="e-13F4-D222-371" source="PaymentResponse_t3_9" target="p11_13">
+   <graphics>
+    <position x="385" y="2168"/>
+    <position x="537" y="2190"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D228-372" source="OfferResponce_p10" target="PutOfferResponse_t2">
+   <graphics>
+    <position x="585" y="480"/>
+    <position x="769" y="462"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D22E-373" source="Organization_p22_2" target="PutHowDeliver_t7_2">
+   <graphics>
+    <position x="925" y="2752"/>
+    <position x="869" y="2756"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D234-374" source="Order_p22_3" target="PutHowDeliver_t7_2">
+   <graphics>
+    <position x="921" y="2794"/>
+    <position x="833" y="2764"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D23A-375" source="GetHowDeliver_t6_2" target="Delivery_p22_4">
+  </arc>
+  <arc id="e-13F4-D23C-376" source="GetHowDeliver_t6_2" target="Organization_p22_5">
+  </arc>
+  <arc id="e-13F4-D23D-377" source="GetHowDeliver_t6_2" target="Order_p22_6">
+  </arc>
+  <arc id="e-13F4-D23E-378" source="DeliveryRequest_p12_5" target="GetDeliveryRequest_t8_0">
+   <graphics>
+    <position x="713" y="3010"/>
+    <position x="1189" y="2992"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D244-379" source="GetDeliveryRequest_t8_0" target="p12_4">
+   <graphics>
+    <position x="1157" y="2956"/>
+    <position x="669" y="2930"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D24A-380" source="p12_4" target="PutDeliveryRequest_t6_4">
+   <graphics>
+    <position x="525" y="2934"/>
+    <position x="385" y="2956"/>
+   </graphics>  </arc>
+  <arc id="e-13F4-D251-381" source="PutDeliveryRequest_t6_4" target="DeliveryRequest_p12_5">
+   <graphics>
+    <position x="393" y="2996"/>
+    <position x="601" y="3010"/>
+   </graphics>  </arc>
+ </page>
+ </net>
+</pnml>

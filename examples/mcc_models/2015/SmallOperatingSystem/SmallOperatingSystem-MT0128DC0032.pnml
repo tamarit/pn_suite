@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="SmallOperatingSystem-PT-MT0128DC0032" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <page id="page0">
+      <name>
+        <text>DefaultPage</text>
+      </name>
+      <place id="TaskOnDisk">
+        <name>
+          <graphics>
+            <offset x="-41" y="290"/>
+          </graphics>
+          <text>TaskOnDisk</text>
+        </name>
+        <graphics>
+          <position x="340" y="340"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="-68" y="271"/>
+          </graphics>
+          <text>128</text>
+        </initialMarking>
+      </place>
+      <place id="FreeMemSegment">
+        <name>
+          <graphics>
+            <offset x="-153" y="-144"/>
+          </graphics>
+          <text>FreeMemSegment</text>
+        </name>
+        <graphics>
+          <position x="-10" y="-10"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="-133" y="-144"/>
+          </graphics>
+          <text>128</text>
+        </initialMarking>
+      </place>
+      <place id="DiskControllerUnit">
+        <name>
+          <graphics>
+            <offset x="-170" y="-40"/>
+          </graphics>
+          <text>DiskControllerUnit</text>
+        </name>
+        <graphics>
+          <position x="195" y="195"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="-216" y="-19"/>
+          </graphics>
+          <text>32</text>
+        </initialMarking>
+      </place>
+      <place id="TransferToDisk">
+        <name>
+          <graphics>
+            <offset x="-20" y="-2"/>
+          </graphics>
+          <text>TransferToDisk</text>
+        </name>
+        <graphics>
+          <position x="566" y="161"/>
+        </graphics>
+      </place>
+      <place id="TaskReady">
+        <name>
+          <graphics>
+            <offset x="62" y="-16"/>
+          </graphics>
+          <text>TaskReady</text>
+        </name>
+        <graphics>
+          <position x="246" y="266"/>
+        </graphics>
+      </place>
+      <place id="TaskSuspended">
+        <name>
+          <graphics>
+            <offset x="-20" y="-2"/>
+          </graphics>
+          <text>TaskSuspended</text>
+        </name>
+        <graphics>
+          <position x="566" y="291"/>
+        </graphics>
+      </place>
+      <place id="CPUUnit">
+        <name>
+          <graphics>
+            <offset x="-314" y="-280"/>
+          </graphics>
+          <text>CPUUnit</text>
+        </name>
+        <graphics>
+          <position x="75" y="75"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="-333" y="-259"/>
+          </graphics>
+          <text>64</text>
+        </initialMarking>
+      </place>
+      <place id="ExecutingTask">
+        <name>
+          <graphics>
+            <offset x="26" y="-21"/>
+          </graphics>
+          <text>ExecutingTask</text>
+        </name>
+        <graphics>
+          <position x="406" y="386"/>
+        </graphics>
+      </place>
+      <place id="LoadingMem">
+        <name>
+          <graphics>
+            <offset x="75" y="-3"/>
+          </graphics>
+          <text>LoadingMem</text>
+        </name>
+        <graphics>
+          <position x="246" y="161"/>
+        </graphics>
+      </place>
+      <transition id="startLoading">
+        <name>
+          <graphics>
+            <offset x="-22" y="3"/>
+          </graphics>
+          <text>startLoading</text>
+        </name>
+        <graphics>
+          <position x="245" y="102"/>
+        </graphics>
+      </transition>
+      <transition id="endLoading">
+        <name>
+          <graphics>
+            <offset x="68" y="3"/>
+          </graphics>
+          <text>endLoading</text>
+        </name>
+        <graphics>
+          <position x="245" y="217"/>
+        </graphics>
+      </transition>
+      <transition id="endUnload">
+        <name>
+          <graphics>
+            <offset x="-22" y="5"/>
+          </graphics>
+          <text>endUnload</text>
+        </name>
+        <graphics>
+          <position x="565" y="102"/>
+        </graphics>
+      </transition>
+      <transition id="startUnload">
+        <name>
+          <graphics>
+            <offset x="-22" y="3"/>
+          </graphics>
+          <text>startUnload</text>
+        </name>
+        <graphics>
+          <position x="565" y="217"/>
+        </graphics>
+      </transition>
+      <transition id="startFirst">
+        <name>
+          <graphics>
+            <offset x="55" y="3"/>
+          </graphics>
+          <text>startFirst</text>
+        </name>
+        <graphics>
+          <position x="245" y="337"/>
+        </graphics>
+      </transition>
+      <transition id="startNext">
+        <name>
+          <graphics>
+            <offset x="19" y="15"/>
+          </graphics>
+          <text>startNext</text>
+        </name>
+        <graphics>
+          <position x="445" y="297"/>
+        </graphics>
+      </transition>
+      <transition id="suspend">
+        <name>
+          <graphics>
+            <offset x="-22" y="3"/>
+          </graphics>
+          <text>suspend</text>
+        </name>
+        <graphics>
+          <position x="565" y="337"/>
+        </graphics>
+      </transition>
+      <transition id="freeMemory">
+        <name>
+          <graphics>
+            <offset x="-23" y="4"/>
+          </graphics>
+          <text>freeMemory</text>
+        </name>
+        <graphics>
+          <position x="120" y="242"/>
+        </graphics>
+      </transition>
+      <arc id="cId-194232006019760373119" source="TaskOnDisk" target="startLoading">
+      </arc>
+      <arc id="cId-193901509376423547520" source="startLoading" target="LoadingMem">
+      </arc>
+      <arc id="cId-193901509376423547521" source="LoadingMem" target="endLoading">
+      </arc>
+      <arc id="cId-193901509376423547522" source="endLoading" target="TaskReady">
+      </arc>
+      <arc id="cId-193901509376423547523" source="FreeMemSegment" target="startLoading">
+      </arc>
+      <arc id="cId-193901509376423547526" source="TaskReady" target="startFirst">
+      </arc>
+      <arc id="cId-193901509376423547527" source="startFirst" target="ExecutingTask">
+      </arc>
+      <arc id="cId-193901509376423547528" source="CPUUnit" target="startFirst">
+      </arc>
+      <arc id="cId-193901509376423547529" source="CPUUnit" target="startNext">
+      </arc>
+      <arc id="cId-193901509376423547530" source="suspend" target="CPUUnit">
+      </arc>
+      <arc id="cId-193901509376423547531" source="ExecutingTask" target="suspend">
+      </arc>
+      <arc id="cId-193901509376423547532" source="TaskSuspended" target="startNext">
+      </arc>
+      <arc id="cId-193901509376423547533" source="startNext" target="ExecutingTask">
+      </arc>
+      <arc id="cId-193901509376423547534" source="suspend" target="TaskSuspended">
+      </arc>
+      <arc id="cId-193901509376423547535" source="TaskSuspended" target="startUnload">
+      </arc>
+      <arc id="cId-193901509376423547536" source="startUnload" target="TransferToDisk">
+      </arc>
+      <arc id="cId-193901509376423547537" source="TransferToDisk" target="endUnload">
+      </arc>
+      <arc id="cId-193901509376423547538" source="endUnload" target="TaskOnDisk">
+      </arc>
+      <arc id="cId-194066757698091960339" source="DiskControllerUnit" target="startLoading">
+      </arc>
+      <arc id="cId-194066757698091960340" source="endLoading" target="DiskControllerUnit">
+      </arc>
+      <arc id="cId-194066757698091960341" source="DiskControllerUnit" target="startUnload">
+      </arc>
+      <arc id="cId-194066757698091960342" source="endUnload" target="DiskControllerUnit">
+      </arc>
+      <arc id="cId-194066757698091960343" source="endLoading" target="TaskOnDisk">
+      </arc>
+      <arc id="cId-194066757698091960344" source="TaskOnDisk" target="startUnload">
+      </arc>
+      <arc id="cId-194066757698091960358" source="TaskReady" target="freeMemory">
+      </arc>
+      <arc id="cId-194066757698091960359" source="freeMemory" target="FreeMemSegment">
+      </arc>
+      <arc id="cId-194066757698091960360" source="endUnload" target="TaskReady">
+      </arc>
+    </page>
+    <name>
+      <text>SmallOperatingSystem-PT-MT0128DC0032</text>
+    </name>
+  </net>
+</pnml>

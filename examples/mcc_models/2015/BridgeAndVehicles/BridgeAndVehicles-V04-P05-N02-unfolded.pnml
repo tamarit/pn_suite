@@ -1,0 +1,1599 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="BridgeAndVehicles-PT-V04P05N02" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <page id="page0">
+      <name>
+        <text>DefaultPage</text>
+      </name>
+      <place id="ROUTE_A">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>ROUTE_A</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>4</text>
+        </initialMarking>
+      </place>
+      <place id="NB_ATTENTE_A_0">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>NB_ATTENTE_A_0</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="NB_ATTENTE_A_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>NB_ATTENTE_A_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="NB_ATTENTE_A_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>NB_ATTENTE_A_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="NB_ATTENTE_A_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>NB_ATTENTE_A_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="NB_ATTENTE_A_4">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>NB_ATTENTE_A_4</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="ATTENTE_A">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>ATTENTE_A</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="SUR_PONT_A">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>SUR_PONT_A</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="SORTI_A">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>SORTI_A</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="CAPACITE">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>CAPACITE</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>5</text>
+        </initialMarking>
+      </place>
+      <place id="CONTROLEUR_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>CONTROLEUR_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="CONTROLEUR_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>CONTROLEUR_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="NB_ATTENTE_B_0">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>NB_ATTENTE_B_0</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="NB_ATTENTE_B_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>NB_ATTENTE_B_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="NB_ATTENTE_B_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>NB_ATTENTE_B_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="NB_ATTENTE_B_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>NB_ATTENTE_B_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="NB_ATTENTE_B_4">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>NB_ATTENTE_B_4</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="ATTENTE_B">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>ATTENTE_B</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="CHOIX_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>CHOIX_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="CHOIX_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>CHOIX_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="SUR_PONT_B">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>SUR_PONT_B</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="VIDANGE_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>VIDANGE_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="VIDANGE_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>VIDANGE_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="SORTI_B">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>SORTI_B</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="ROUTE_B">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>ROUTE_B</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>4</text>
+        </initialMarking>
+      </place>
+      <place id="COMPTEUR_0">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>COMPTEUR_0</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="COMPTEUR_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>COMPTEUR_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="COMPTEUR_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>COMPTEUR_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="enregistrement_A_0">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>enregistrement_A_0</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="enregistrement_A_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>enregistrement_A_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="enregistrement_A_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>enregistrement_A_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="enregistrement_A_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>enregistrement_A_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="enregistrement_A_4">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>enregistrement_A_4</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="liberation_A">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>liberation_A</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="autorisation_B_2_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>autorisation_B_2_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="autorisation_B_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>autorisation_B_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="autorisation_B_2_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>autorisation_B_2_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="autorisation_B_2_4">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>autorisation_B_2_4</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="basculement_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>basculement_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="basculement_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>basculement_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="liberation_B">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>liberation_B</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="enregistrement_B_0">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>enregistrement_B_0</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="enregistrement_B_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>enregistrement_B_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="enregistrement_B_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>enregistrement_B_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="enregistrement_B_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>enregistrement_B_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="enregistrement_B_4">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>enregistrement_B_4</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="decision_0_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>decision_0_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="decision_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>decision_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="decision_0_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>decision_0_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="decision_1_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>decision_1_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="altern_cpt_2_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>altern_cpt_2_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="altern_cpt_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>altern_cpt_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_A_0_1_0_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_A_0_1_0_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_A_1_1_0_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_A_1_1_0_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_A_2_1_0_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_A_2_1_0_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_A_0_1_0_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_A_0_1_0_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_A_1_1_0_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_A_1_1_0_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_A_2_1_0_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_A_2_1_0_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_A_0_1_0_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_A_0_1_0_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_A_1_1_0_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_A_1_1_0_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_A_2_1_0_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_A_2_1_0_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_A_0_1_0_4">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_A_0_1_0_4</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_A_1_1_0_4">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_A_1_1_0_4</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_A_2_1_0_4">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_A_2_1_0_4</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_B_0_2_1_0">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_B_0_2_1_0</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_B_1_2_1_0">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_B_1_2_1_0</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_B_2_2_1_0">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_B_2_2_1_0</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_B_0_2_2_0">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_B_0_2_2_0</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_B_1_2_2_0">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_B_1_2_2_0</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_B_2_2_2_0">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_B_2_2_2_0</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_B_0_2_3_0">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_B_0_2_3_0</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_B_1_2_3_0">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_B_1_2_3_0</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_B_2_2_3_0">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_B_2_2_3_0</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_B_0_2_4_0">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_B_0_2_4_0</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_B_1_2_4_0">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_B_1_2_4_0</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="timeout_B_2_2_4_0">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>timeout_B_2_2_4_0</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="autorisation_A_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>autorisation_A_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="autorisation_A_1_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>autorisation_A_1_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="autorisation_A_1_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>autorisation_A_1_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="autorisation_A_1_4">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>autorisation_A_1_4</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <arc id="cId558509022312742318783" source="CHOIX_1" target="altern_cpt_2_1">
+      </arc>
+      <arc id="cId557517532382731841984" source="COMPTEUR_2" target="altern_cpt_2_1">
+      </arc>
+      <arc id="cId557517532382731841985" source="altern_cpt_2_1" target="VIDANGE_2">
+      </arc>
+      <arc id="cId557517532382731841986" source="altern_cpt_2_1" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId557517532382731841987" source="CHOIX_2" target="altern_cpt_2_2">
+      </arc>
+      <arc id="cId557517532382731841988" source="COMPTEUR_2" target="altern_cpt_2_2">
+      </arc>
+      <arc id="cId557517532382731841989" source="altern_cpt_2_2" target="VIDANGE_1">
+      </arc>
+      <arc id="cId557517532382731841990" source="altern_cpt_2_2" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId557517532382731841991" source="CHOIX_1" target="decision_0_1">
+      </arc>
+      <arc id="cId557517532382731841992" source="COMPTEUR_0" target="decision_0_1">
+      </arc>
+      <arc id="cId557517532382731841993" source="decision_0_1" target="CONTROLEUR_1">
+      </arc>
+      <arc id="cId557517532382731841994" source="decision_0_1" target="COMPTEUR_1">
+      </arc>
+      <arc id="cId557517532382731841995" source="CHOIX_1" target="decision_1_1">
+      </arc>
+      <arc id="cId557517532382731841996" source="COMPTEUR_1" target="decision_1_1">
+      </arc>
+      <arc id="cId558013277347737080397" source="decision_1_1" target="CONTROLEUR_1">
+      </arc>
+      <arc id="cId558013277347737080398" source="decision_1_1" target="COMPTEUR_2">
+      </arc>
+      <arc id="cId558013277347737080399" source="CHOIX_2" target="decision_0_2">
+      </arc>
+      <arc id="cId5580132773477370803100" source="COMPTEUR_0" target="decision_0_2">
+      </arc>
+      <arc id="cId5580132773477370803101" source="decision_0_2" target="CONTROLEUR_2">
+      </arc>
+      <arc id="cId5580132773477370803102" source="decision_0_2" target="COMPTEUR_1">
+      </arc>
+      <arc id="cId5580132773477370803103" source="CHOIX_2" target="decision_1_2">
+      </arc>
+      <arc id="cId5580132773477370803104" source="COMPTEUR_1" target="decision_1_2">
+      </arc>
+      <arc id="cId5580132773477370803105" source="decision_1_2" target="CONTROLEUR_2">
+      </arc>
+      <arc id="cId5580132773477370803106" source="decision_1_2" target="COMPTEUR_2">
+      </arc>
+      <arc id="cId5580132773477370803107" source="NB_ATTENTE_B_0" target="enregistrement_B_0">
+      </arc>
+      <arc id="cId5580132773477370803108" source="ROUTE_B" target="enregistrement_B_0">
+      </arc>
+      <arc id="cId5580132773477370803109" source="enregistrement_B_0" target="NB_ATTENTE_B_1">
+      </arc>
+      <arc id="cId5580132773477370803110" source="enregistrement_B_0" target="ATTENTE_B">
+      </arc>
+      <arc id="cId5580132773477370803111" source="NB_ATTENTE_B_1" target="enregistrement_B_1">
+      </arc>
+      <arc id="cId5580132773477370803112" source="ROUTE_B" target="enregistrement_B_1">
+      </arc>
+      <arc id="cId5580132773477370803113" source="enregistrement_B_1" target="NB_ATTENTE_B_2">
+      </arc>
+      <arc id="cId5580132773477370803114" source="enregistrement_B_1" target="ATTENTE_B">
+      </arc>
+      <arc id="cId5580132773477370803115" source="NB_ATTENTE_B_2" target="enregistrement_B_2">
+      </arc>
+      <arc id="cId5580132773477370803116" source="ROUTE_B" target="enregistrement_B_2">
+      </arc>
+      <arc id="cId5580132773477370803117" source="enregistrement_B_2" target="NB_ATTENTE_B_3">
+      </arc>
+      <arc id="cId5580132773477370803118" source="enregistrement_B_2" target="ATTENTE_B">
+      </arc>
+      <arc id="cId5580132773477370803119" source="NB_ATTENTE_B_3" target="enregistrement_B_3">
+      </arc>
+      <arc id="cId5580132773477370803120" source="ROUTE_B" target="enregistrement_B_3">
+      </arc>
+      <arc id="cId5580132773477370803121" source="enregistrement_B_3" target="NB_ATTENTE_B_4">
+      </arc>
+      <arc id="cId5580132773477370803122" source="enregistrement_B_3" target="ATTENTE_B">
+      </arc>
+      <arc id="cId5580132773477370803123" source="NB_ATTENTE_B_4" target="enregistrement_B_4">
+      </arc>
+      <arc id="cId5580132773477370803124" source="ROUTE_B" target="enregistrement_B_4">
+      </arc>
+      <arc id="cId5580132773477370803125" source="enregistrement_B_4" target="NB_ATTENTE_B_0">
+      </arc>
+      <arc id="cId5580132773477370803126" source="enregistrement_B_4" target="ATTENTE_B">
+      </arc>
+      <arc id="cId5580132773477370803127" source="SUR_PONT_B" target="liberation_B">
+      </arc>
+      <arc id="cId5580132773477370803128" source="liberation_B" target="CAPACITE">
+      </arc>
+      <arc id="cId5580132773477370803129" source="liberation_B" target="SORTI_B">
+      </arc>
+      <arc id="cId5580132773477370803130" source="CAPACITE" target="basculement_1">
+        <inscription>
+          <text>5</text>
+        </inscription>
+      </arc>
+      <arc id="cId4248230716714411346131" source="VIDANGE_1" target="basculement_1">
+      </arc>
+      <arc id="cId4248230716714411346132" source="basculement_1" target="CAPACITE">
+        <inscription>
+          <text>5</text>
+        </inscription>
+      </arc>
+      <arc id="cId4248230716714411346133" source="basculement_1" target="CHOIX_1">
+      </arc>
+      <arc id="cId4248230716714411346134" source="CAPACITE" target="basculement_2">
+        <inscription>
+          <text>5</text>
+        </inscription>
+      </arc>
+      <arc id="cId4248230716714411346135" source="VIDANGE_2" target="basculement_2">
+      </arc>
+      <arc id="cId4248230716714411346136" source="basculement_2" target="CAPACITE">
+        <inscription>
+          <text>5</text>
+        </inscription>
+      </arc>
+      <arc id="cId4248230716714411346137" source="basculement_2" target="CHOIX_2">
+      </arc>
+      <arc id="cId4248230716714411346138" source="CAPACITE" target="autorisation_B_2_1">
+      </arc>
+      <arc id="cId4248230716714411346139" source="CONTROLEUR_2" target="autorisation_B_2_1">
+      </arc>
+      <arc id="cId4248230716714411346140" source="NB_ATTENTE_B_1" target="autorisation_B_2_1">
+      </arc>
+      <arc id="cId4248230716714411346141" source="ATTENTE_B" target="autorisation_B_2_1">
+      </arc>
+      <arc id="cId4248230716714411346142" source="autorisation_B_2_1" target="NB_ATTENTE_B_0">
+      </arc>
+      <arc id="cId4248230716714411346143" source="autorisation_B_2_1" target="CHOIX_2">
+      </arc>
+      <arc id="cId4248230716714411346144" source="autorisation_B_2_1" target="SUR_PONT_B">
+      </arc>
+      <arc id="cId4248230716714411346145" source="CAPACITE" target="autorisation_B_2_2">
+      </arc>
+      <arc id="cId4248230716714411346146" source="CONTROLEUR_2" target="autorisation_B_2_2">
+      </arc>
+      <arc id="cId4248230716714411346147" source="NB_ATTENTE_B_2" target="autorisation_B_2_2">
+      </arc>
+      <arc id="cId4248230716714411346148" source="ATTENTE_B" target="autorisation_B_2_2">
+      </arc>
+      <arc id="cId4248230716714411346149" source="autorisation_B_2_2" target="NB_ATTENTE_B_1">
+      </arc>
+      <arc id="cId4248230716714411346150" source="autorisation_B_2_2" target="CHOIX_2">
+      </arc>
+      <arc id="cId4248230716714411346151" source="autorisation_B_2_2" target="SUR_PONT_B">
+      </arc>
+      <arc id="cId4248230716714411346152" source="CAPACITE" target="autorisation_B_2_3">
+      </arc>
+      <arc id="cId4248230716714411346153" source="CONTROLEUR_2" target="autorisation_B_2_3">
+      </arc>
+      <arc id="cId4248230716714411346154" source="NB_ATTENTE_B_3" target="autorisation_B_2_3">
+      </arc>
+      <arc id="cId4248230716714411346155" source="ATTENTE_B" target="autorisation_B_2_3">
+      </arc>
+      <arc id="cId4248230716714411346156" source="autorisation_B_2_3" target="NB_ATTENTE_B_2">
+      </arc>
+      <arc id="cId4248230716714411346157" source="autorisation_B_2_3" target="CHOIX_2">
+      </arc>
+      <arc id="cId4248230716714411346158" source="autorisation_B_2_3" target="SUR_PONT_B">
+      </arc>
+      <arc id="cId4248230716714411346159" source="CAPACITE" target="autorisation_B_2_4">
+      </arc>
+      <arc id="cId4248230716714411346160" source="CONTROLEUR_2" target="autorisation_B_2_4">
+      </arc>
+      <arc id="cId4246578233497727218161" source="NB_ATTENTE_B_4" target="autorisation_B_2_4">
+      </arc>
+      <arc id="cId4246578233497727218162" source="ATTENTE_B" target="autorisation_B_2_4">
+      </arc>
+      <arc id="cId4246578233497727218163" source="autorisation_B_2_4" target="NB_ATTENTE_B_3">
+      </arc>
+      <arc id="cId4246578233497727218164" source="autorisation_B_2_4" target="CHOIX_2">
+      </arc>
+      <arc id="cId4246578233497727218165" source="autorisation_B_2_4" target="SUR_PONT_B">
+      </arc>
+      <arc id="cId4246578233497727218166" source="SUR_PONT_A" target="liberation_A">
+      </arc>
+      <arc id="cId4246578233497727218167" source="liberation_A" target="SORTI_A">
+      </arc>
+      <arc id="cId4246578233497727218168" source="liberation_A" target="CAPACITE">
+      </arc>
+      <arc id="cId4246578233497727218169" source="ROUTE_A" target="enregistrement_A_0">
+      </arc>
+      <arc id="cId4246578233497727218170" source="NB_ATTENTE_A_0" target="enregistrement_A_0">
+      </arc>
+      <arc id="cId4246578233497727218171" source="enregistrement_A_0" target="NB_ATTENTE_A_1">
+      </arc>
+      <arc id="cId4246578233497727218172" source="enregistrement_A_0" target="ATTENTE_A">
+      </arc>
+      <arc id="cId4246578233497727218173" source="ROUTE_A" target="enregistrement_A_1">
+      </arc>
+      <arc id="cId4246578233497727218174" source="NB_ATTENTE_A_1" target="enregistrement_A_1">
+      </arc>
+      <arc id="cId4246578233497727218175" source="enregistrement_A_1" target="NB_ATTENTE_A_2">
+      </arc>
+      <arc id="cId4246578233497727218176" source="enregistrement_A_1" target="ATTENTE_A">
+      </arc>
+      <arc id="cId4246578233497727218177" source="ROUTE_A" target="enregistrement_A_2">
+      </arc>
+      <arc id="cId4246578233497727218178" source="NB_ATTENTE_A_2" target="enregistrement_A_2">
+      </arc>
+      <arc id="cId4246578233497727218179" source="enregistrement_A_2" target="NB_ATTENTE_A_3">
+      </arc>
+      <arc id="cId4246578233497727218180" source="enregistrement_A_2" target="ATTENTE_A">
+      </arc>
+      <arc id="cId4246578233497727218181" source="ROUTE_A" target="enregistrement_A_3">
+      </arc>
+      <arc id="cId4246578233497727218182" source="NB_ATTENTE_A_3" target="enregistrement_A_3">
+      </arc>
+      <arc id="cId4246578233497727218183" source="enregistrement_A_3" target="NB_ATTENTE_A_4">
+      </arc>
+      <arc id="cId4246578233497727218184" source="enregistrement_A_3" target="ATTENTE_A">
+      </arc>
+      <arc id="cId4246578233497727218185" source="ROUTE_A" target="enregistrement_A_4">
+      </arc>
+      <arc id="cId4246578233497727218186" source="NB_ATTENTE_A_4" target="enregistrement_A_4">
+      </arc>
+      <arc id="cId4246578233497727218187" source="enregistrement_A_4" target="NB_ATTENTE_A_0">
+      </arc>
+      <arc id="cId4246578233497727218188" source="enregistrement_A_4" target="ATTENTE_A">
+      </arc>
+      <arc id="cId4246578233497727218189" source="NB_ATTENTE_A_1" target="autorisation_A_1_1">
+      </arc>
+      <arc id="cId4246578233497727218190" source="ATTENTE_A" target="autorisation_A_1_1">
+      </arc>
+      <arc id="cId4246578233497727218191" source="CAPACITE" target="autorisation_A_1_1">
+      </arc>
+      <arc id="cId4246578233497727218192" source="CONTROLEUR_1" target="autorisation_A_1_1">
+      </arc>
+      <arc id="cId4246578233497727218193" source="autorisation_A_1_1" target="NB_ATTENTE_A_0">
+      </arc>
+      <arc id="cId4246578233497727218194" source="autorisation_A_1_1" target="SUR_PONT_A">
+      </arc>
+      <arc id="cId4246578233497727218195" source="autorisation_A_1_1" target="CHOIX_1">
+      </arc>
+      <arc id="cId4246578233497727218196" source="NB_ATTENTE_A_2" target="autorisation_A_1_2">
+      </arc>
+      <arc id="cId4246578233497727218197" source="ATTENTE_A" target="autorisation_A_1_2">
+      </arc>
+      <arc id="cId4246578233497727218198" source="CAPACITE" target="autorisation_A_1_2">
+      </arc>
+      <arc id="cId4251535683147779602199" source="CONTROLEUR_1" target="autorisation_A_1_2">
+      </arc>
+      <arc id="cId4251535683147779602200" source="autorisation_A_1_2" target="NB_ATTENTE_A_1">
+      </arc>
+      <arc id="cId4251535683147779602201" source="autorisation_A_1_2" target="SUR_PONT_A">
+      </arc>
+      <arc id="cId4251535683147779602202" source="autorisation_A_1_2" target="CHOIX_1">
+      </arc>
+      <arc id="cId4251535683147779602203" source="NB_ATTENTE_A_3" target="autorisation_A_1_3">
+      </arc>
+      <arc id="cId4251535683147779602204" source="ATTENTE_A" target="autorisation_A_1_3">
+      </arc>
+      <arc id="cId4251535683147779602205" source="CAPACITE" target="autorisation_A_1_3">
+      </arc>
+      <arc id="cId4251535683147779602206" source="CONTROLEUR_1" target="autorisation_A_1_3">
+      </arc>
+      <arc id="cId4251535683147779602207" source="autorisation_A_1_3" target="NB_ATTENTE_A_2">
+      </arc>
+      <arc id="cId4251535683147779602208" source="autorisation_A_1_3" target="SUR_PONT_A">
+      </arc>
+      <arc id="cId4251535683147779602209" source="autorisation_A_1_3" target="CHOIX_1">
+      </arc>
+      <arc id="cId4251535683147779602210" source="NB_ATTENTE_A_4" target="autorisation_A_1_4">
+      </arc>
+      <arc id="cId4251535683147779602211" source="ATTENTE_A" target="autorisation_A_1_4">
+      </arc>
+      <arc id="cId4251535683147779602212" source="CAPACITE" target="autorisation_A_1_4">
+      </arc>
+      <arc id="cId4251535683147779602213" source="CONTROLEUR_1" target="autorisation_A_1_4">
+      </arc>
+      <arc id="cId4251535683147779602214" source="autorisation_A_1_4" target="NB_ATTENTE_A_3">
+      </arc>
+      <arc id="cId4251535683147779602215" source="autorisation_A_1_4" target="SUR_PONT_A">
+      </arc>
+      <arc id="cId4251535683147779602216" source="autorisation_A_1_4" target="CHOIX_1">
+      </arc>
+      <arc id="cId4251535683147779602217" source="NB_ATTENTE_A_1" target="timeout_B_0_2_1_0">
+      </arc>
+      <arc id="cId4251535683147779602218" source="CONTROLEUR_2" target="timeout_B_0_2_1_0">
+      </arc>
+      <arc id="cId4251535683147779602219" source="NB_ATTENTE_B_0" target="timeout_B_0_2_1_0">
+      </arc>
+      <arc id="cId4251535683147779602220" source="COMPTEUR_0" target="timeout_B_0_2_1_0">
+      </arc>
+      <arc id="cId4251535683147779602221" source="timeout_B_0_2_1_0" target="NB_ATTENTE_A_1">
+      </arc>
+      <arc id="cId4251535683147779602222" source="timeout_B_0_2_1_0" target="NB_ATTENTE_B_0">
+      </arc>
+      <arc id="cId4251535683147779602223" source="timeout_B_0_2_1_0" target="VIDANGE_1">
+      </arc>
+      <arc id="cId4251535683147779602224" source="timeout_B_0_2_1_0" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4251535683147779602225" source="NB_ATTENTE_A_1" target="timeout_B_1_2_1_0">
+      </arc>
+      <arc id="cId4251535683147779602226" source="CONTROLEUR_2" target="timeout_B_1_2_1_0">
+      </arc>
+      <arc id="cId4251535683147779602227" source="NB_ATTENTE_B_0" target="timeout_B_1_2_1_0">
+      </arc>
+      <arc id="cId4251535683147779602228" source="COMPTEUR_1" target="timeout_B_1_2_1_0">
+      </arc>
+      <arc id="cId4251535683147779602229" source="timeout_B_1_2_1_0" target="NB_ATTENTE_A_1">
+      </arc>
+      <arc id="cId4251535683147779602230" source="timeout_B_1_2_1_0" target="NB_ATTENTE_B_0">
+      </arc>
+      <arc id="cId4251535683147779602231" source="timeout_B_1_2_1_0" target="VIDANGE_1">
+      </arc>
+      <arc id="cId4251535683147779602232" source="timeout_B_1_2_1_0" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4251535683147779602233" source="NB_ATTENTE_A_1" target="timeout_B_2_2_1_0">
+      </arc>
+      <arc id="cId4251535683147779602234" source="CONTROLEUR_2" target="timeout_B_2_2_1_0">
+      </arc>
+      <arc id="cId4251535683147779602235" source="NB_ATTENTE_B_0" target="timeout_B_2_2_1_0">
+      </arc>
+      <arc id="cId4251535683147779602236" source="COMPTEUR_2" target="timeout_B_2_2_1_0">
+      </arc>
+      <arc id="cId4251535683147779602237" source="timeout_B_2_2_1_0" target="NB_ATTENTE_A_1">
+      </arc>
+      <arc id="cId4251535683147779602238" source="timeout_B_2_2_1_0" target="NB_ATTENTE_B_0">
+      </arc>
+      <arc id="cId4251535683147779602239" source="timeout_B_2_2_1_0" target="VIDANGE_1">
+      </arc>
+      <arc id="cId4251535683147779602240" source="timeout_B_2_2_1_0" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4251535683147779602241" source="NB_ATTENTE_A_2" target="timeout_B_0_2_2_0">
+      </arc>
+      <arc id="cId4251535683147779602242" source="CONTROLEUR_2" target="timeout_B_0_2_2_0">
+      </arc>
+      <arc id="cId4251535683147779602243" source="NB_ATTENTE_B_0" target="timeout_B_0_2_2_0">
+      </arc>
+      <arc id="cId4251535683147779602244" source="COMPTEUR_0" target="timeout_B_0_2_2_0">
+      </arc>
+      <arc id="cId4251535683147779602245" source="timeout_B_0_2_2_0" target="NB_ATTENTE_A_2">
+      </arc>
+      <arc id="cId4251535683147779602246" source="timeout_B_0_2_2_0" target="NB_ATTENTE_B_0">
+      </arc>
+      <arc id="cId4251535683147779602247" source="timeout_B_0_2_2_0" target="VIDANGE_1">
+      </arc>
+      <arc id="cId4249883199931095474248" source="timeout_B_0_2_2_0" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4249883199931095474249" source="NB_ATTENTE_A_2" target="timeout_B_1_2_2_0">
+      </arc>
+      <arc id="cId4249883199931095474250" source="CONTROLEUR_2" target="timeout_B_1_2_2_0">
+      </arc>
+      <arc id="cId4249883199931095474251" source="NB_ATTENTE_B_0" target="timeout_B_1_2_2_0">
+      </arc>
+      <arc id="cId4249883199931095474252" source="COMPTEUR_1" target="timeout_B_1_2_2_0">
+      </arc>
+      <arc id="cId4249883199931095474253" source="timeout_B_1_2_2_0" target="NB_ATTENTE_A_2">
+      </arc>
+      <arc id="cId4249883199931095474254" source="timeout_B_1_2_2_0" target="NB_ATTENTE_B_0">
+      </arc>
+      <arc id="cId4249883199931095474255" source="timeout_B_1_2_2_0" target="VIDANGE_1">
+      </arc>
+      <arc id="cId4249883199931095474256" source="timeout_B_1_2_2_0" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4249883199931095474257" source="NB_ATTENTE_A_2" target="timeout_B_2_2_2_0">
+      </arc>
+      <arc id="cId4249883199931095474258" source="CONTROLEUR_2" target="timeout_B_2_2_2_0">
+      </arc>
+      <arc id="cId4249883199931095474259" source="NB_ATTENTE_B_0" target="timeout_B_2_2_2_0">
+      </arc>
+      <arc id="cId4249883199931095474260" source="COMPTEUR_2" target="timeout_B_2_2_2_0">
+      </arc>
+      <arc id="cId4249883199931095474261" source="timeout_B_2_2_2_0" target="NB_ATTENTE_A_2">
+      </arc>
+      <arc id="cId4249883199931095474262" source="timeout_B_2_2_2_0" target="NB_ATTENTE_B_0">
+      </arc>
+      <arc id="cId4249883199931095474263" source="timeout_B_2_2_2_0" target="VIDANGE_1">
+      </arc>
+      <arc id="cId4249883199931095474264" source="timeout_B_2_2_2_0" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4249883199931095474265" source="NB_ATTENTE_A_3" target="timeout_B_0_2_3_0">
+      </arc>
+      <arc id="cId4249883199931095474266" source="CONTROLEUR_2" target="timeout_B_0_2_3_0">
+      </arc>
+      <arc id="cId4249883199931095474267" source="NB_ATTENTE_B_0" target="timeout_B_0_2_3_0">
+      </arc>
+      <arc id="cId4241620779552707538268" source="COMPTEUR_0" target="timeout_B_0_2_3_0">
+      </arc>
+      <arc id="cId4241620779552707538269" source="timeout_B_0_2_3_0" target="NB_ATTENTE_A_3">
+      </arc>
+      <arc id="cId4241620779552707538270" source="timeout_B_0_2_3_0" target="NB_ATTENTE_B_0">
+      </arc>
+      <arc id="cId4241620779552707538271" source="timeout_B_0_2_3_0" target="VIDANGE_1">
+      </arc>
+      <arc id="cId4241620779552707538272" source="timeout_B_0_2_3_0" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4241620779552707538273" source="NB_ATTENTE_A_3" target="timeout_B_1_2_3_0">
+      </arc>
+      <arc id="cId4241620779552707538274" source="CONTROLEUR_2" target="timeout_B_1_2_3_0">
+      </arc>
+      <arc id="cId4241620779552707538275" source="NB_ATTENTE_B_0" target="timeout_B_1_2_3_0">
+      </arc>
+      <arc id="cId4241620779552707538276" source="COMPTEUR_1" target="timeout_B_1_2_3_0">
+      </arc>
+      <arc id="cId4241620779552707538277" source="timeout_B_1_2_3_0" target="NB_ATTENTE_A_3">
+      </arc>
+      <arc id="cId4241620779552707538278" source="timeout_B_1_2_3_0" target="NB_ATTENTE_B_0">
+      </arc>
+      <arc id="cId4241620779552707538279" source="timeout_B_1_2_3_0" target="VIDANGE_1">
+      </arc>
+      <arc id="cId4241620779552707538280" source="timeout_B_1_2_3_0" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4241620779552707538281" source="NB_ATTENTE_A_3" target="timeout_B_2_2_3_0">
+      </arc>
+      <arc id="cId4241620779552707538282" source="CONTROLEUR_2" target="timeout_B_2_2_3_0">
+      </arc>
+      <arc id="cId4241620779552707538283" source="NB_ATTENTE_B_0" target="timeout_B_2_2_3_0">
+      </arc>
+      <arc id="cId4241620779552707538284" source="COMPTEUR_2" target="timeout_B_2_2_3_0">
+      </arc>
+      <arc id="cId4241620779552707538285" source="timeout_B_2_2_3_0" target="NB_ATTENTE_A_3">
+      </arc>
+      <arc id="cId4241620779552707538286" source="timeout_B_2_2_3_0" target="NB_ATTENTE_B_0">
+      </arc>
+      <arc id="cId4241620779552707538287" source="timeout_B_2_2_3_0" target="VIDANGE_1">
+      </arc>
+      <arc id="cId4241620779552707538288" source="timeout_B_2_2_3_0" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4241620779552707538289" source="NB_ATTENTE_A_4" target="timeout_B_0_2_4_0">
+      </arc>
+      <arc id="cId4241620779552707538290" source="CONTROLEUR_2" target="timeout_B_0_2_4_0">
+      </arc>
+      <arc id="cId4241620779552707538291" source="NB_ATTENTE_B_0" target="timeout_B_0_2_4_0">
+      </arc>
+      <arc id="cId4241620779552707538292" source="COMPTEUR_0" target="timeout_B_0_2_4_0">
+      </arc>
+      <arc id="cId4241620779552707538293" source="timeout_B_0_2_4_0" target="NB_ATTENTE_A_4">
+      </arc>
+      <arc id="cId4241620779552707538294" source="timeout_B_0_2_4_0" target="NB_ATTENTE_B_0">
+      </arc>
+      <arc id="cId4241620779552707538295" source="timeout_B_0_2_4_0" target="VIDANGE_1">
+      </arc>
+      <arc id="cId4239968296336023410296" source="timeout_B_0_2_4_0" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4239968296336023410297" source="NB_ATTENTE_A_4" target="timeout_B_1_2_4_0">
+      </arc>
+      <arc id="cId4239968296336023410298" source="CONTROLEUR_2" target="timeout_B_1_2_4_0">
+      </arc>
+      <arc id="cId4239968296336023410299" source="NB_ATTENTE_B_0" target="timeout_B_1_2_4_0">
+      </arc>
+      <arc id="cId4239968296336023410300" source="COMPTEUR_1" target="timeout_B_1_2_4_0">
+      </arc>
+      <arc id="cId4239968296336023410301" source="timeout_B_1_2_4_0" target="NB_ATTENTE_A_4">
+      </arc>
+      <arc id="cId4239968296336023410302" source="timeout_B_1_2_4_0" target="NB_ATTENTE_B_0">
+      </arc>
+      <arc id="cId4239968296336023410303" source="timeout_B_1_2_4_0" target="VIDANGE_1">
+      </arc>
+      <arc id="cId4239968296336023410304" source="timeout_B_1_2_4_0" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4239968296336023410305" source="NB_ATTENTE_A_4" target="timeout_B_2_2_4_0">
+      </arc>
+      <arc id="cId4239968296336023410306" source="CONTROLEUR_2" target="timeout_B_2_2_4_0">
+      </arc>
+      <arc id="cId4239968296336023410307" source="NB_ATTENTE_B_0" target="timeout_B_2_2_4_0">
+      </arc>
+      <arc id="cId4239968296336023410308" source="COMPTEUR_2" target="timeout_B_2_2_4_0">
+      </arc>
+      <arc id="cId4239968296336023410309" source="timeout_B_2_2_4_0" target="NB_ATTENTE_A_4">
+      </arc>
+      <arc id="cId4239968296336023410310" source="timeout_B_2_2_4_0" target="NB_ATTENTE_B_0">
+      </arc>
+      <arc id="cId4239968296336023410311" source="timeout_B_2_2_4_0" target="VIDANGE_1">
+      </arc>
+      <arc id="cId4239968296336023410312" source="timeout_B_2_2_4_0" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4239968296336023410313" source="NB_ATTENTE_A_0" target="timeout_A_0_1_0_1">
+      </arc>
+      <arc id="cId4239968296336023410314" source="CONTROLEUR_1" target="timeout_A_0_1_0_1">
+      </arc>
+      <arc id="cId4239968296336023410315" source="NB_ATTENTE_B_1" target="timeout_A_0_1_0_1">
+      </arc>
+      <arc id="cId4239968296336023410316" source="COMPTEUR_0" target="timeout_A_0_1_0_1">
+      </arc>
+      <arc id="cId4239968296336023410317" source="timeout_A_0_1_0_1" target="NB_ATTENTE_A_0">
+      </arc>
+      <arc id="cId4239968296336023410318" source="timeout_A_0_1_0_1" target="NB_ATTENTE_B_1">
+      </arc>
+      <arc id="cId4239968296336023410319" source="timeout_A_0_1_0_1" target="VIDANGE_2">
+      </arc>
+      <arc id="cId4239968296336023410320" source="timeout_A_0_1_0_1" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4239968296336023410321" source="NB_ATTENTE_A_0" target="timeout_A_1_1_0_1">
+      </arc>
+      <arc id="cId4239968296336023410322" source="CONTROLEUR_1" target="timeout_A_1_1_0_1">
+      </arc>
+      <arc id="cId4239968296336023410323" source="NB_ATTENTE_B_1" target="timeout_A_1_1_0_1">
+      </arc>
+      <arc id="cId4239968296336023410324" source="COMPTEUR_1" target="timeout_A_1_1_0_1">
+      </arc>
+      <arc id="cId4239968296336023410325" source="timeout_A_1_1_0_1" target="NB_ATTENTE_A_0">
+      </arc>
+      <arc id="cId4239968296336023410326" source="timeout_A_1_1_0_1" target="NB_ATTENTE_B_1">
+      </arc>
+      <arc id="cId4239968296336023410327" source="timeout_A_1_1_0_1" target="VIDANGE_2">
+      </arc>
+      <arc id="cId4239968296336023410328" source="timeout_A_1_1_0_1" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4239968296336023410329" source="NB_ATTENTE_A_0" target="timeout_A_2_1_0_1">
+      </arc>
+      <arc id="cId4239968296336023410330" source="CONTROLEUR_1" target="timeout_A_2_1_0_1">
+      </arc>
+      <arc id="cId4239968296336023410331" source="NB_ATTENTE_B_1" target="timeout_A_2_1_0_1">
+      </arc>
+      <arc id="cId4239968296336023410332" source="COMPTEUR_2" target="timeout_A_2_1_0_1">
+      </arc>
+      <arc id="cId4239968296336023410333" source="timeout_A_2_1_0_1" target="NB_ATTENTE_A_0">
+      </arc>
+      <arc id="cId4239968296336023410334" source="timeout_A_2_1_0_1" target="NB_ATTENTE_B_1">
+      </arc>
+      <arc id="cId4239968296336023410335" source="timeout_A_2_1_0_1" target="VIDANGE_2">
+      </arc>
+      <arc id="cId4239968296336023410336" source="timeout_A_2_1_0_1" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4239968296336023410337" source="NB_ATTENTE_A_0" target="timeout_A_0_1_0_2">
+      </arc>
+      <arc id="cId4239968296336023410338" source="CONTROLEUR_1" target="timeout_A_0_1_0_2">
+      </arc>
+      <arc id="cId4239968296336023410339" source="NB_ATTENTE_B_2" target="timeout_A_0_1_0_2">
+      </arc>
+      <arc id="cId4239968296336023410340" source="COMPTEUR_0" target="timeout_A_0_1_0_2">
+      </arc>
+      <arc id="cId4239968296336023410341" source="timeout_A_0_1_0_2" target="NB_ATTENTE_A_0">
+      </arc>
+      <arc id="cId4239968296336023410342" source="timeout_A_0_1_0_2" target="NB_ATTENTE_B_2">
+      </arc>
+      <arc id="cId4239968296336023410343" source="timeout_A_0_1_0_2" target="VIDANGE_2">
+      </arc>
+      <arc id="cId4239968296336023410344" source="timeout_A_0_1_0_2" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4239968296336023410345" source="NB_ATTENTE_A_0" target="timeout_A_1_1_0_2">
+      </arc>
+      <arc id="cId4239968296336023410346" source="CONTROLEUR_1" target="timeout_A_1_1_0_2">
+      </arc>
+      <arc id="cId4239968296336023410347" source="NB_ATTENTE_B_2" target="timeout_A_1_1_0_2">
+      </arc>
+      <arc id="cId4239968296336023410348" source="COMPTEUR_1" target="timeout_A_1_1_0_2">
+      </arc>
+      <arc id="cId4239968296336023410349" source="timeout_A_1_1_0_2" target="NB_ATTENTE_A_0">
+      </arc>
+      <arc id="cId4239968296336023410350" source="timeout_A_1_1_0_2" target="NB_ATTENTE_B_2">
+      </arc>
+      <arc id="cId4239968296336023410351" source="timeout_A_1_1_0_2" target="VIDANGE_2">
+      </arc>
+      <arc id="cId4239968296336023410352" source="timeout_A_1_1_0_2" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4239968296336023410353" source="NB_ATTENTE_A_0" target="timeout_A_2_1_0_2">
+      </arc>
+      <arc id="cId4239968296336023410354" source="CONTROLEUR_1" target="timeout_A_2_1_0_2">
+      </arc>
+      <arc id="cId4239968296336023410355" source="NB_ATTENTE_B_2" target="timeout_A_2_1_0_2">
+      </arc>
+      <arc id="cId4239968296336023410356" source="COMPTEUR_2" target="timeout_A_2_1_0_2">
+      </arc>
+      <arc id="cId4239968296336023410357" source="timeout_A_2_1_0_2" target="NB_ATTENTE_A_0">
+      </arc>
+      <arc id="cId4239968296336023410358" source="timeout_A_2_1_0_2" target="NB_ATTENTE_B_2">
+      </arc>
+      <arc id="cId4239968296336023410359" source="timeout_A_2_1_0_2" target="VIDANGE_2">
+      </arc>
+      <arc id="cId4239968296336023410360" source="timeout_A_2_1_0_2" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4239968296336023410361" source="NB_ATTENTE_A_0" target="timeout_A_0_1_0_3">
+      </arc>
+      <arc id="cId4239968296336023410362" source="CONTROLEUR_1" target="timeout_A_0_1_0_3">
+      </arc>
+      <arc id="cId4239968296336023410363" source="NB_ATTENTE_B_3" target="timeout_A_0_1_0_3">
+      </arc>
+      <arc id="cId4239968296336023410364" source="COMPTEUR_0" target="timeout_A_0_1_0_3">
+      </arc>
+      <arc id="cId4244925745986075794365" source="timeout_A_0_1_0_3" target="NB_ATTENTE_A_0">
+      </arc>
+      <arc id="cId4244925745986075794366" source="timeout_A_0_1_0_3" target="NB_ATTENTE_B_3">
+      </arc>
+      <arc id="cId4244925745986075794367" source="timeout_A_0_1_0_3" target="VIDANGE_2">
+      </arc>
+      <arc id="cId4244925745986075794368" source="timeout_A_0_1_0_3" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4244925745986075794369" source="NB_ATTENTE_A_0" target="timeout_A_1_1_0_3">
+      </arc>
+      <arc id="cId4244925745986075794370" source="CONTROLEUR_1" target="timeout_A_1_1_0_3">
+      </arc>
+      <arc id="cId4244925745986075794371" source="NB_ATTENTE_B_3" target="timeout_A_1_1_0_3">
+      </arc>
+      <arc id="cId4244925745986075794372" source="COMPTEUR_1" target="timeout_A_1_1_0_3">
+      </arc>
+      <arc id="cId4244925745986075794373" source="timeout_A_1_1_0_3" target="NB_ATTENTE_A_0">
+      </arc>
+      <arc id="cId4244925745986075794374" source="timeout_A_1_1_0_3" target="NB_ATTENTE_B_3">
+      </arc>
+      <arc id="cId4244925745986075794375" source="timeout_A_1_1_0_3" target="VIDANGE_2">
+      </arc>
+      <arc id="cId4244925745986075794376" source="timeout_A_1_1_0_3" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4244925745986075794377" source="NB_ATTENTE_A_0" target="timeout_A_2_1_0_3">
+      </arc>
+      <arc id="cId4244925745986075794378" source="CONTROLEUR_1" target="timeout_A_2_1_0_3">
+      </arc>
+      <arc id="cId4244925745986075794379" source="NB_ATTENTE_B_3" target="timeout_A_2_1_0_3">
+      </arc>
+      <arc id="cId4244925745986075794380" source="COMPTEUR_2" target="timeout_A_2_1_0_3">
+      </arc>
+      <arc id="cId4244925745986075794381" source="timeout_A_2_1_0_3" target="NB_ATTENTE_A_0">
+      </arc>
+      <arc id="cId4244925745986075794382" source="timeout_A_2_1_0_3" target="NB_ATTENTE_B_3">
+      </arc>
+      <arc id="cId4244925745986075794383" source="timeout_A_2_1_0_3" target="VIDANGE_2">
+      </arc>
+      <arc id="cId4244925745986075794384" source="timeout_A_2_1_0_3" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4244925745986075794385" source="NB_ATTENTE_A_0" target="timeout_A_0_1_0_4">
+      </arc>
+      <arc id="cId4244925745986075794386" source="CONTROLEUR_1" target="timeout_A_0_1_0_4">
+      </arc>
+      <arc id="cId4244925745986075794387" source="NB_ATTENTE_B_4" target="timeout_A_0_1_0_4">
+      </arc>
+      <arc id="cId4244925745986075794388" source="COMPTEUR_0" target="timeout_A_0_1_0_4">
+      </arc>
+      <arc id="cId4244925745986075794389" source="timeout_A_0_1_0_4" target="NB_ATTENTE_A_0">
+      </arc>
+      <arc id="cId4244925745986075794390" source="timeout_A_0_1_0_4" target="NB_ATTENTE_B_4">
+      </arc>
+      <arc id="cId4244925745986075794391" source="timeout_A_0_1_0_4" target="VIDANGE_2">
+      </arc>
+      <arc id="cId4244925745986075794392" source="timeout_A_0_1_0_4" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4244925745986075794393" source="NB_ATTENTE_A_0" target="timeout_A_1_1_0_4">
+      </arc>
+      <arc id="cId4244925745986075794394" source="CONTROLEUR_1" target="timeout_A_1_1_0_4">
+      </arc>
+      <arc id="cId4244925745986075794395" source="NB_ATTENTE_B_4" target="timeout_A_1_1_0_4">
+      </arc>
+      <arc id="cId4244925745986075794396" source="COMPTEUR_1" target="timeout_A_1_1_0_4">
+      </arc>
+      <arc id="cId4244925745986075794397" source="timeout_A_1_1_0_4" target="NB_ATTENTE_A_0">
+      </arc>
+      <arc id="cId4244925745986075794398" source="timeout_A_1_1_0_4" target="NB_ATTENTE_B_4">
+      </arc>
+      <arc id="cId4244925745986075794399" source="timeout_A_1_1_0_4" target="VIDANGE_2">
+      </arc>
+      <arc id="cId4244925745986075794400" source="timeout_A_1_1_0_4" target="COMPTEUR_0">
+      </arc>
+      <arc id="cId4244925745986075794401" source="NB_ATTENTE_A_0" target="timeout_A_2_1_0_4">
+      </arc>
+      <arc id="cId4244925745986075794402" source="CONTROLEUR_1" target="timeout_A_2_1_0_4">
+      </arc>
+      <arc id="cId4244925745986075794403" source="NB_ATTENTE_B_4" target="timeout_A_2_1_0_4">
+      </arc>
+      <arc id="cId4244925745986075794404" source="COMPTEUR_2" target="timeout_A_2_1_0_4">
+      </arc>
+      <arc id="cId4244925745986075794405" source="timeout_A_2_1_0_4" target="NB_ATTENTE_A_0">
+      </arc>
+      <arc id="cId4244925745986075794406" source="timeout_A_2_1_0_4" target="NB_ATTENTE_B_4">
+      </arc>
+      <arc id="cId4244925745986075794407" source="timeout_A_2_1_0_4" target="VIDANGE_2">
+      </arc>
+      <arc id="cId4244925745986075794408" source="timeout_A_2_1_0_4" target="COMPTEUR_0">
+      </arc>
+    </page>
+    <name>
+      <text>BridgeAndVehicles-PT-V04P05N02</text>
+    </name>
+  </net>
+</pnml>

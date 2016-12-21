@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+<net id="Raft-PT-04" type="http://www.pnml.org/version-2009/grammar/ptnet">
+<name><text>Raft-PT-04</text></name>
+<page id="page">
+<place id="p0"><initialMarking><text>1</text></initialMarking><name><text>p0</text></name></place>
+<place id="p1"><name><text>p1</text></name></place>
+<place id="p2"><name><text>p2</text></name></place>
+<place id="p3"><name><text>p3</text></name></place>
+<place id="p4"><name><text>p4</text></name></place>
+<place id="p5"><name><text>p5</text></name></place>
+<place id="p6"><name><text>p6</text></name></place>
+<place id="p7"><name><text>p7</text></name></place>
+<place id="p8"><name><text>p8</text></name></place>
+<place id="p9"><name><text>p9</text></name></place>
+<place id="p10"><name><text>p10</text></name></place>
+<place id="p11"><name><text>p11</text></name></place>
+<place id="p12"><name><text>p12</text></name></place>
+<place id="p13"><name><text>p13</text></name></place>
+<place id="p14"><name><text>p14</text></name></place>
+<place id="p15"><name><text>p15</text></name></place>
+<place id="p16"><name><text>p16</text></name></place>
+<place id="p17"><name><text>p17</text></name></place>
+<place id="p18"><name><text>p18</text></name></place>
+<place id="p19"><name><text>p19</text></name></place>
+<place id="p20"><name><text>p20</text></name></place>
+<place id="p21"><name><text>p21</text></name></place>
+<place id="p22"><name><text>p22</text></name></place>
+<place id="p23"><name><text>p23</text></name></place>
+<place id="p24"><name><text>p24</text></name></place>
+<place id="p25"><name><text>p25</text></name></place>
+<place id="p26"><name><text>p26</text></name></place>
+<place id="p27"><name><text>p27</text></name></place>
+<place id="p28"><name><text>p28</text></name></place>
+<place id="p29"><name><text>p29</text></name></place>
+<place id="p30"><name><text>p30</text></name></place>
+<place id="p31"><name><text>p31</text></name></place>
+<place id="p32"><name><text>p32</text></name></place>
+<place id="p33"><name><text>p33</text></name></place>
+<place id="p34"><name><text>p34</text></name></place>
+<place id="p35"><name><text>p35</text></name></place>
+<place id="p36"><name><text>p36</text></name></place>
+<place id="p37"><name><text>p37</text></name></place>
+<place id="p38"><name><text>p38</text></name></place>
+<place id="p39"><name><text>p39</text></name></place>
+<place id="p40"><name><text>p40</text></name></place>
+<place id="p41"><name><text>p41</text></name></place>
+<place id="p42"><name><text>p42</text></name></place>
+<place id="p43"><name><text>p43</text></name></place>
+<place id="p44"><name><text>p44</text></name></place>
+<place id="p45"><name><text>p45</text></name></place>
+<place id="p46"><name><text>p46</text></name></place>
+<place id="p47"><name><text>p47</text></name></place>
+<place id="p48"><name><text>p48</text></name></place>
+<place id="p49"><name><text>p49</text></name></place>
+<place id="p50"><name><text>p50</text></name></place>
+<place id="p51"><name><text>p51</text></name></place>
+<place id="p52"><name><text>p52</text></name></place>
+<place id="p53"><name><text>p53</text></name></place>
+<place id="p54"><name><text>p54</text></name></place>
+<place id="p55"><name><text>p55</text></name></place>
+<place id="p56"><name><text>p56</text></name></place>
+<place id="p57"><name><text>p57</text></name></place>
+<place id="p58"><name><text>p58</text></name></place>
+<place id="p59"><name><text>p59</text></name></place>
+<place id="p60"><name><text>p60</text></name></place>
+<place id="p61"><name><text>p61</text></name></place>
+<place id="p62"><name><text>p62</text></name></place>
+<place id="p63"><name><text>p63</text></name></place>
+<place id="p64"><name><text>p64</text></name></place>
+<place id="p65"><name><text>p65</text></name></place>
+<place id="p66"><name><text>p66</text></name></place>
+<place id="p67"><name><text>p67</text></name></place>
+<place id="p68"><name><text>p68</text></name></place>
+<place id="p69"><name><text>p69</text></name></place>
+<place id="p70"><name><text>p70</text></name></place>
+<place id="p71"><name><text>p71</text></name></place>
+<place id="p72"><name><text>p72</text></name></place>
+<place id="p73"><name><text>p73</text></name></place>
+<place id="p74"><name><text>p74</text></name></place>
+<place id="p75"><name><text>p75</text></name></place>
+<place id="p76"><name><text>p76</text></name></place>
+<place id="p77"><name><text>p77</text></name></place>
+<place id="p78"><name><text>p78</text></name></place>
+<place id="p79"><name><text>p79</text></name></place>
+<place id="p80"><name><text>p80</text></name></place>
+<place id="p81"><name><text>p81</text></name></place>
+<place id="p82"><name><text>p82</text></name></place>
+<place id="p83"><name><text>p83</text></name></place>
+<place id="p84"><name><text>p84</text></name></place>
+<place id="p85"><name><text>p85</text></name></place>
+<place id="p86"><name><text>p86</text></name></place>
+<place id="p87"><name><text>p87</text></name></place>
+<transition id="t0"><name><text>t0</text></name></transition>
+<arc id="a0" source="p0" target="t0"/>
+<arc id="a1" source="t0" target="p81"/>
+<arc id="a2" source="t0" target="p87"/>
+<arc id="a3" source="t0" target="p80"/>
+<arc id="a4" source="t0" target="p75"/>
+<arc id="a5" source="t0" target="p70"/>
+<arc id="a6" source="t0" target="p65"/>
+<arc id="a7" source="t0" target="p60"/>
+<arc id="a8" source="t0" target="p55"/>
+<arc id="a9" source="t0" target="p50"/>
+<arc id="a10" source="t0" target="p45"/>
+<arc id="a11" source="t0" target="p40"/>
+<arc id="a12" source="t0" target="p35"/>
+<arc id="a13" source="t0" target="p30"/>
+<arc id="a14" source="t0" target="p25"/>
+<arc id="a15" source="t0" target="p20"/>
+<arc id="a16" source="t0" target="p15"/>
+<arc id="a17" source="t0" target="p10"/>
+<arc id="a18" source="t0" target="p5"/>
+<transition id="t1"><name><text>t1</text></name></transition>
+<arc id="a19" source="p86" target="t1"/>
+<arc id="a20" source="t1" target="p85"/>
+<transition id="t2"><name><text>t2</text></name></transition>
+<arc id="a21" source="p85" target="t2"/>
+<arc id="a22" source="t2" target="p87"/>
+<transition id="t3"><name><text>t3</text></name></transition>
+<arc id="a23" source="p85" target="t3"/>
+<arc id="a24" source="t3" target="p87"/>
+<transition id="t4"><name><text>t4</text></name></transition>
+<arc id="a25" source="p86" target="t4"/>
+<arc id="a26" source="t4" target="p85"/>
+<transition id="t5"><name><text>t5</text></name></transition>
+<arc id="a27" source="p79" target="t5"/>
+<arc id="a28" source="t5" target="p80"/>
+<transition id="t6"><name><text>t6</text></name></transition>
+<arc id="a29" source="p79" target="t6"/>
+<arc id="a30" source="t6" target="p80"/>
+<transition id="t7"><name><text>t7</text></name></transition>
+<arc id="a31" source="p78" target="t7"/>
+<arc id="a32" source="t7" target="p80"/>
+<transition id="t8"><name><text>t8</text></name></transition>
+<arc id="a33" source="p77" target="t8"/>
+<arc id="a34" source="t8" target="p80"/>
+<transition id="t9"><name><text>t9</text></name></transition>
+<arc id="a35" source="p77" target="t9"/>
+<arc id="a36" source="t9" target="p76"/>
+<transition id="t10"><name><text>t10</text></name></transition>
+<arc id="a37" source="p76" target="t10"/>
+<arc id="a38" source="t10" target="p80"/>
+<transition id="t11"><name><text>t11</text></name></transition>
+<arc id="a39" source="p74" target="t11"/>
+<arc id="a40" source="t11" target="p75"/>
+<transition id="t12"><name><text>t12</text></name></transition>
+<arc id="a41" source="p74" target="t12"/>
+<arc id="a42" source="t12" target="p75"/>
+<transition id="t13"><name><text>t13</text></name></transition>
+<arc id="a43" source="p73" target="t13"/>
+<arc id="a44" source="t13" target="p75"/>
+<transition id="t14"><name><text>t14</text></name></transition>
+<arc id="a45" source="p72" target="t14"/>
+<arc id="a46" source="t14" target="p75"/>
+<transition id="t15"><name><text>t15</text></name></transition>
+<arc id="a47" source="p72" target="t15"/>
+<arc id="a48" source="t15" target="p71"/>
+<transition id="t16"><name><text>t16</text></name></transition>
+<arc id="a49" source="p71" target="t16"/>
+<arc id="a50" source="t16" target="p75"/>
+<transition id="t17"><name><text>t17</text></name></transition>
+<arc id="a51" source="p69" target="t17"/>
+<arc id="a52" source="t17" target="p70"/>
+<transition id="t18"><name><text>t18</text></name></transition>
+<arc id="a53" source="p69" target="t18"/>
+<arc id="a54" source="t18" target="p70"/>
+<transition id="t19"><name><text>t19</text></name></transition>
+<arc id="a55" source="p68" target="t19"/>
+<arc id="a56" source="t19" target="p70"/>
+<transition id="t20"><name><text>t20</text></name></transition>
+<arc id="a57" source="p67" target="t20"/>
+<arc id="a58" source="t20" target="p70"/>
+<transition id="t21"><name><text>t21</text></name></transition>
+<arc id="a59" source="p67" target="t21"/>
+<arc id="a60" source="t21" target="p66"/>
+<transition id="t22"><name><text>t22</text></name></transition>
+<arc id="a61" source="p66" target="t22"/>
+<arc id="a62" source="t22" target="p70"/>
+<transition id="t23"><name><text>t23</text></name></transition>
+<arc id="a63" source="p64" target="t23"/>
+<arc id="a64" source="t23" target="p65"/>
+<transition id="t24"><name><text>t24</text></name></transition>
+<arc id="a65" source="p64" target="t24"/>
+<arc id="a66" source="t24" target="p65"/>
+<transition id="t25"><name><text>t25</text></name></transition>
+<arc id="a67" source="p63" target="t25"/>
+<arc id="a68" source="t25" target="p65"/>
+<transition id="t26"><name><text>t26</text></name></transition>
+<arc id="a69" source="p62" target="t26"/>
+<arc id="a70" source="t26" target="p65"/>
+<transition id="t27"><name><text>t27</text></name></transition>
+<arc id="a71" source="p62" target="t27"/>
+<arc id="a72" source="t27" target="p61"/>
+<transition id="t28"><name><text>t28</text></name></transition>
+<arc id="a73" source="p61" target="t28"/>
+<arc id="a74" source="t28" target="p65"/>
+<transition id="t29"><name><text>t29</text></name></transition>
+<arc id="a75" source="p73" target="t29"/>
+<arc id="a76" source="p87" target="t29"/>
+<arc id="a77" source="t29" target="p86"/>
+<arc id="a78" source="t29" target="p73"/>
+<transition id="t30"><name><text>t30</text></name></transition>
+<arc id="a79" source="p71" target="t30"/>
+<arc id="a80" source="p87" target="t30"/>
+<arc id="a81" source="t30" target="p86"/>
+<arc id="a82" source="t30" target="p71"/>
+<transition id="t31"><name><text>t31</text></name></transition>
+<arc id="a83" source="p61" target="t31"/>
+<arc id="a84" source="p87" target="t31"/>
+<arc id="a85" source="t31" target="p86"/>
+<arc id="a86" source="t31" target="p61"/>
+<transition id="t32"><name><text>t32</text></name></transition>
+<arc id="a87" source="p63" target="t32"/>
+<arc id="a88" source="p87" target="t32"/>
+<arc id="a89" source="t32" target="p86"/>
+<arc id="a90" source="t32" target="p63"/>
+<transition id="t33"><name><text>t33</text></name></transition>
+<arc id="a91" source="p66" target="t33"/>
+<arc id="a92" source="p87" target="t33"/>
+<arc id="a93" source="t33" target="p86"/>
+<arc id="a94" source="t33" target="p66"/>
+<transition id="t34"><name><text>t34</text></name></transition>
+<arc id="a95" source="p68" target="t34"/>
+<arc id="a96" source="p87" target="t34"/>
+<arc id="a97" source="t34" target="p86"/>
+<arc id="a98" source="t34" target="p68"/>
+<transition id="t35"><name><text>t35</text></name></transition>
+<arc id="a99" source="p76" target="t35"/>
+<arc id="a100" source="p87" target="t35"/>
+<arc id="a101" source="t35" target="p86"/>
+<arc id="a102" source="t35" target="p76"/>
+<transition id="t36"><name><text>t36</text></name></transition>
+<arc id="a103" source="p78" target="t36"/>
+<arc id="a104" source="p87" target="t36"/>
+<arc id="a105" source="t36" target="p86"/>
+<arc id="a106" source="t36" target="p78"/>
+<transition id="t37"><name><text>t37</text></name></transition>
+<arc id="a107" source="p75" target="t37"/>
+<arc id="a108" source="p81" target="t37"/>
+<arc id="a109" source="t37" target="p84"/>
+<arc id="a110" source="t37" target="p75"/>
+<transition id="t38"><name><text>t38</text></name></transition>
+<arc id="a111" source="p65" target="t38"/>
+<arc id="a112" source="p81" target="t38"/>
+<arc id="a113" source="t38" target="p84"/>
+<arc id="a114" source="t38" target="p65"/>
+<transition id="t39"><name><text>t39</text></name></transition>
+<arc id="a115" source="p70" target="t39"/>
+<arc id="a116" source="p81" target="t39"/>
+<arc id="a117" source="t39" target="p84"/>
+<arc id="a118" source="t39" target="p70"/>
+<transition id="t40"><name><text>t40</text></name></transition>
+<arc id="a119" source="p80" target="t40"/>
+<arc id="a120" source="p81" target="t40"/>
+<arc id="a121" source="t40" target="p84"/>
+<arc id="a122" source="t40" target="p80"/>
+<transition id="t41"><name><text>t41</text></name></transition>
+<arc id="a123" source="p75" target="t41"/>
+<arc id="a124" source="p83" target="t41"/>
+<arc id="a125" source="t41" target="p82"/>
+<arc id="a126" source="t41" target="p75"/>
+<transition id="t42"><name><text>t42</text></name></transition>
+<arc id="a127" source="p65" target="t42"/>
+<arc id="a128" source="p83" target="t42"/>
+<arc id="a129" source="t42" target="p82"/>
+<arc id="a130" source="t42" target="p65"/>
+<transition id="t43"><name><text>t43</text></name></transition>
+<arc id="a131" source="p70" target="t43"/>
+<arc id="a132" source="p83" target="t43"/>
+<arc id="a133" source="t43" target="p82"/>
+<arc id="a134" source="t43" target="p70"/>
+<transition id="t44"><name><text>t44</text></name></transition>
+<arc id="a135" source="p80" target="t44"/>
+<arc id="a136" source="p83" target="t44"/>
+<arc id="a137" source="t44" target="p82"/>
+<arc id="a138" source="t44" target="p80"/>
+<transition id="t45"><name><text>t45</text></name></transition>
+<arc id="a139" source="p75" target="t45"/>
+<arc id="a140" source="t45" target="p75"/>
+<transition id="t46"><name><text>t46</text></name></transition>
+<arc id="a141" source="p75" target="t46"/>
+<arc id="a142" source="t46" target="p75"/>
+<transition id="t47"><name><text>t47</text></name></transition>
+<arc id="a143" source="p75" target="t47"/>
+<arc id="a144" source="t47" target="p75"/>
+<transition id="t48"><name><text>t48</text></name></transition>
+<arc id="a145" source="p75" target="t48"/>
+<arc id="a146" source="t48" target="p75"/>
+<transition id="t49"><name><text>t49</text></name></transition>
+<arc id="a147" source="p65" target="t49"/>
+<arc id="a148" source="t49" target="p65"/>
+<transition id="t50"><name><text>t50</text></name></transition>
+<arc id="a149" source="p65" target="t50"/>
+<arc id="a150" source="t50" target="p65"/>
+<transition id="t51"><name><text>t51</text></name></transition>
+<arc id="a151" source="p65" target="t51"/>
+<arc id="a152" source="t51" target="p65"/>
+<transition id="t52"><name><text>t52</text></name></transition>
+<arc id="a153" source="p65" target="t52"/>
+<arc id="a154" source="t52" target="p65"/>
+<transition id="t53"><name><text>t53</text></name></transition>
+<arc id="a155" source="p70" target="t53"/>
+<arc id="a156" source="t53" target="p70"/>
+<transition id="t54"><name><text>t54</text></name></transition>
+<arc id="a157" source="p70" target="t54"/>
+<arc id="a158" source="t54" target="p70"/>
+<transition id="t55"><name><text>t55</text></name></transition>
+<arc id="a159" source="p70" target="t55"/>
+<arc id="a160" source="t55" target="p70"/>
+<transition id="t56"><name><text>t56</text></name></transition>
+<arc id="a161" source="p70" target="t56"/>
+<arc id="a162" source="t56" target="p70"/>
+<transition id="t57"><name><text>t57</text></name></transition>
+<arc id="a163" source="p80" target="t57"/>
+<arc id="a164" source="t57" target="p80"/>
+<transition id="t58"><name><text>t58</text></name></transition>
+<arc id="a165" source="p80" target="t58"/>
+<arc id="a166" source="t58" target="p80"/>
+<transition id="t59"><name><text>t59</text></name></transition>
+<arc id="a167" source="p80" target="t59"/>
+<arc id="a168" source="t59" target="p80"/>
+<transition id="t60"><name><text>t60</text></name></transition>
+<arc id="a169" source="p80" target="t60"/>
+<arc id="a170" source="t60" target="p80"/>
+<transition id="t61"><name><text>t61</text></name></transition>
+<arc id="a171" source="p75" target="t61"/>
+<arc id="a172" source="p24" target="t61"/>
+<arc id="a173" source="t61" target="p75"/>
+<arc id="a174" source="t61" target="p25"/>
+<transition id="t62"><name><text>t62</text></name></transition>
+<arc id="a175" source="p75" target="t62"/>
+<arc id="a176" source="p9" target="t62"/>
+<arc id="a177" source="t62" target="p75"/>
+<arc id="a178" source="t62" target="p10"/>
+<transition id="t63"><name><text>t63</text></name></transition>
+<arc id="a179" source="p75" target="t63"/>
+<arc id="a180" source="p59" target="t63"/>
+<arc id="a181" source="t63" target="p75"/>
+<arc id="a182" source="t63" target="p60"/>
+<transition id="t64"><name><text>t64</text></name></transition>
+<arc id="a183" source="p75" target="t64"/>
+<arc id="a184" source="p23" target="t64"/>
+<arc id="a185" source="t64" target="p74"/>
+<arc id="a186" source="t64" target="p25"/>
+<transition id="t65"><name><text>t65</text></name></transition>
+<arc id="a187" source="p75" target="t65"/>
+<arc id="a188" source="p8" target="t65"/>
+<arc id="a189" source="t65" target="p74"/>
+<arc id="a190" source="t65" target="p10"/>
+<transition id="t66"><name><text>t66</text></name></transition>
+<arc id="a191" source="p75" target="t66"/>
+<arc id="a192" source="p58" target="t66"/>
+<arc id="a193" source="t66" target="p74"/>
+<arc id="a194" source="t66" target="p60"/>
+<transition id="t67"><name><text>t67</text></name></transition>
+<arc id="a195" source="p75" target="t67"/>
+<arc id="a196" source="p22" target="t67"/>
+<arc id="a197" source="t67" target="p73"/>
+<arc id="a198" source="t67" target="p25"/>
+<transition id="t68"><name><text>t68</text></name></transition>
+<arc id="a199" source="p75" target="t68"/>
+<arc id="a200" source="p7" target="t68"/>
+<arc id="a201" source="t68" target="p73"/>
+<arc id="a202" source="t68" target="p10"/>
+<transition id="t69"><name><text>t69</text></name></transition>
+<arc id="a203" source="p75" target="t69"/>
+<arc id="a204" source="p57" target="t69"/>
+<arc id="a205" source="t69" target="p73"/>
+<arc id="a206" source="t69" target="p60"/>
+<transition id="t70"><name><text>t70</text></name></transition>
+<arc id="a207" source="p75" target="t70"/>
+<arc id="a208" source="p21" target="t70"/>
+<arc id="a209" source="t70" target="p72"/>
+<arc id="a210" source="t70" target="p25"/>
+<transition id="t71"><name><text>t71</text></name></transition>
+<arc id="a211" source="p75" target="t71"/>
+<arc id="a212" source="p6" target="t71"/>
+<arc id="a213" source="t71" target="p72"/>
+<arc id="a214" source="t71" target="p10"/>
+<transition id="t72"><name><text>t72</text></name></transition>
+<arc id="a215" source="p75" target="t72"/>
+<arc id="a216" source="p56" target="t72"/>
+<arc id="a217" source="t72" target="p72"/>
+<arc id="a218" source="t72" target="p60"/>
+<transition id="t73"><name><text>t73</text></name></transition>
+<arc id="a219" source="p75" target="t73"/>
+<arc id="a220" source="p45" target="t73"/>
+<arc id="a221" source="t73" target="p44"/>
+<arc id="a222" source="t73" target="p75"/>
+<transition id="t74"><name><text>t74</text></name></transition>
+<arc id="a223" source="p75" target="t74"/>
+<arc id="a224" source="p35" target="t74"/>
+<arc id="a225" source="t74" target="p34"/>
+<arc id="a226" source="t74" target="p75"/>
+<transition id="t75"><name><text>t75</text></name></transition>
+<arc id="a227" source="p75" target="t75"/>
+<arc id="a228" source="p40" target="t75"/>
+<arc id="a229" source="t75" target="p39"/>
+<arc id="a230" source="t75" target="p75"/>
+<transition id="t76"><name><text>t76</text></name></transition>
+<arc id="a231" source="p75" target="t76"/>
+<arc id="a232" source="p45" target="t76"/>
+<arc id="a233" source="t76" target="p43"/>
+<arc id="a234" source="t76" target="p75"/>
+<transition id="t77"><name><text>t77</text></name></transition>
+<arc id="a235" source="p75" target="t77"/>
+<arc id="a236" source="p35" target="t77"/>
+<arc id="a237" source="t77" target="p33"/>
+<arc id="a238" source="t77" target="p75"/>
+<transition id="t78"><name><text>t78</text></name></transition>
+<arc id="a239" source="p75" target="t78"/>
+<arc id="a240" source="p40" target="t78"/>
+<arc id="a241" source="t78" target="p38"/>
+<arc id="a242" source="t78" target="p75"/>
+<transition id="t79"><name><text>t79</text></name></transition>
+<arc id="a243" source="p75" target="t79"/>
+<arc id="a244" source="p45" target="t79"/>
+<arc id="a245" source="t79" target="p42"/>
+<arc id="a246" source="t79" target="p75"/>
+<transition id="t80"><name><text>t80</text></name></transition>
+<arc id="a247" source="p75" target="t80"/>
+<arc id="a248" source="p35" target="t80"/>
+<arc id="a249" source="t80" target="p32"/>
+<arc id="a250" source="t80" target="p75"/>
+<transition id="t81"><name><text>t81</text></name></transition>
+<arc id="a251" source="p75" target="t81"/>
+<arc id="a252" source="p40" target="t81"/>
+<arc id="a253" source="t81" target="p37"/>
+<arc id="a254" source="t81" target="p75"/>
+<transition id="t82"><name><text>t82</text></name></transition>
+<arc id="a255" source="p75" target="t82"/>
+<arc id="a256" source="p45" target="t82"/>
+<arc id="a257" source="t82" target="p41"/>
+<arc id="a258" source="t82" target="p75"/>
+<transition id="t83"><name><text>t83</text></name></transition>
+<arc id="a259" source="p75" target="t83"/>
+<arc id="a260" source="p35" target="t83"/>
+<arc id="a261" source="t83" target="p31"/>
+<arc id="a262" source="t83" target="p75"/>
+<transition id="t84"><name><text>t84</text></name></transition>
+<arc id="a263" source="p75" target="t84"/>
+<arc id="a264" source="p40" target="t84"/>
+<arc id="a265" source="t84" target="p36"/>
+<arc id="a266" source="t84" target="p75"/>
+<transition id="t85"><name><text>t85</text></name></transition>
+<arc id="a267" source="p65" target="t85"/>
+<arc id="a268" source="p15" target="t85"/>
+<arc id="a269" source="t85" target="p11"/>
+<arc id="a270" source="t85" target="p65"/>
+<transition id="t86"><name><text>t86</text></name></transition>
+<arc id="a271" source="p65" target="t86"/>
+<arc id="a272" source="p5" target="t86"/>
+<arc id="a273" source="t86" target="p1"/>
+<arc id="a274" source="t86" target="p65"/>
+<transition id="t87"><name><text>t87</text></name></transition>
+<arc id="a275" source="p65" target="t87"/>
+<arc id="a276" source="p10" target="t87"/>
+<arc id="a277" source="t87" target="p6"/>
+<arc id="a278" source="t87" target="p65"/>
+<transition id="t88"><name><text>t88</text></name></transition>
+<arc id="a279" source="p65" target="t88"/>
+<arc id="a280" source="p15" target="t88"/>
+<arc id="a281" source="t88" target="p12"/>
+<arc id="a282" source="t88" target="p65"/>
+<transition id="t89"><name><text>t89</text></name></transition>
+<arc id="a283" source="p65" target="t89"/>
+<arc id="a284" source="p5" target="t89"/>
+<arc id="a285" source="t89" target="p2"/>
+<arc id="a286" source="t89" target="p65"/>
+<transition id="t90"><name><text>t90</text></name></transition>
+<arc id="a287" source="p65" target="t90"/>
+<arc id="a288" source="p10" target="t90"/>
+<arc id="a289" source="t90" target="p7"/>
+<arc id="a290" source="t90" target="p65"/>
+<transition id="t91"><name><text>t91</text></name></transition>
+<arc id="a291" source="p65" target="t91"/>
+<arc id="a292" source="p15" target="t91"/>
+<arc id="a293" source="t91" target="p13"/>
+<arc id="a294" source="t91" target="p65"/>
+<transition id="t92"><name><text>t92</text></name></transition>
+<arc id="a295" source="p65" target="t92"/>
+<arc id="a296" source="p5" target="t92"/>
+<arc id="a297" source="t92" target="p3"/>
+<arc id="a298" source="t92" target="p65"/>
+<transition id="t93"><name><text>t93</text></name></transition>
+<arc id="a299" source="p65" target="t93"/>
+<arc id="a300" source="p10" target="t93"/>
+<arc id="a301" source="t93" target="p8"/>
+<arc id="a302" source="t93" target="p65"/>
+<transition id="t94"><name><text>t94</text></name></transition>
+<arc id="a303" source="p65" target="t94"/>
+<arc id="a304" source="p15" target="t94"/>
+<arc id="a305" source="t94" target="p14"/>
+<arc id="a306" source="t94" target="p65"/>
+<transition id="t95"><name><text>t95</text></name></transition>
+<arc id="a307" source="p65" target="t95"/>
+<arc id="a308" source="p5" target="t95"/>
+<arc id="a309" source="t95" target="p4"/>
+<arc id="a310" source="t95" target="p65"/>
+<transition id="t96"><name><text>t96</text></name></transition>
+<arc id="a311" source="p65" target="t96"/>
+<arc id="a312" source="p10" target="t96"/>
+<arc id="a313" source="t96" target="p9"/>
+<arc id="a314" source="t96" target="p65"/>
+<transition id="t97"><name><text>t97</text></name></transition>
+<arc id="a315" source="p65" target="t97"/>
+<arc id="a316" source="p31" target="t97"/>
+<arc id="a317" source="t97" target="p62"/>
+<arc id="a318" source="t97" target="p35"/>
+<transition id="t98"><name><text>t98</text></name></transition>
+<arc id="a319" source="p65" target="t98"/>
+<arc id="a320" source="p16" target="t98"/>
+<arc id="a321" source="t98" target="p62"/>
+<arc id="a322" source="t98" target="p20"/>
+<transition id="t99"><name><text>t99</text></name></transition>
+<arc id="a323" source="p65" target="t99"/>
+<arc id="a324" source="p46" target="t99"/>
+<arc id="a325" source="t99" target="p62"/>
+<arc id="a326" source="t99" target="p50"/>
+<transition id="t100"><name><text>t100</text></name></transition>
+<arc id="a327" source="p65" target="t100"/>
+<arc id="a328" source="p32" target="t100"/>
+<arc id="a329" source="t100" target="p63"/>
+<arc id="a330" source="t100" target="p35"/>
+<transition id="t101"><name><text>t101</text></name></transition>
+<arc id="a331" source="p65" target="t101"/>
+<arc id="a332" source="p17" target="t101"/>
+<arc id="a333" source="t101" target="p63"/>
+<arc id="a334" source="t101" target="p20"/>
+<transition id="t102"><name><text>t102</text></name></transition>
+<arc id="a335" source="p65" target="t102"/>
+<arc id="a336" source="p47" target="t102"/>
+<arc id="a337" source="t102" target="p63"/>
+<arc id="a338" source="t102" target="p50"/>
+<transition id="t103"><name><text>t103</text></name></transition>
+<arc id="a339" source="p65" target="t103"/>
+<arc id="a340" source="p33" target="t103"/>
+<arc id="a341" source="t103" target="p64"/>
+<arc id="a342" source="t103" target="p35"/>
+<transition id="t104"><name><text>t104</text></name></transition>
+<arc id="a343" source="p65" target="t104"/>
+<arc id="a344" source="p18" target="t104"/>
+<arc id="a345" source="t104" target="p64"/>
+<arc id="a346" source="t104" target="p20"/>
+<transition id="t105"><name><text>t105</text></name></transition>
+<arc id="a347" source="p65" target="t105"/>
+<arc id="a348" source="p48" target="t105"/>
+<arc id="a349" source="t105" target="p64"/>
+<arc id="a350" source="t105" target="p50"/>
+<transition id="t106"><name><text>t106</text></name></transition>
+<arc id="a351" source="p65" target="t106"/>
+<arc id="a352" source="p34" target="t106"/>
+<arc id="a353" source="t106" target="p65"/>
+<arc id="a354" source="t106" target="p35"/>
+<transition id="t107"><name><text>t107</text></name></transition>
+<arc id="a355" source="p65" target="t107"/>
+<arc id="a356" source="p19" target="t107"/>
+<arc id="a357" source="t107" target="p65"/>
+<arc id="a358" source="t107" target="p20"/>
+<transition id="t108"><name><text>t108</text></name></transition>
+<arc id="a359" source="p65" target="t108"/>
+<arc id="a360" source="p49" target="t108"/>
+<arc id="a361" source="t108" target="p65"/>
+<arc id="a362" source="t108" target="p50"/>
+<transition id="t109"><name><text>t109</text></name></transition>
+<arc id="a363" source="p70" target="t109"/>
+<arc id="a364" source="p25" target="t109"/>
+<arc id="a365" source="t109" target="p21"/>
+<arc id="a366" source="t109" target="p70"/>
+<transition id="t110"><name><text>t110</text></name></transition>
+<arc id="a367" source="p70" target="t110"/>
+<arc id="a368" source="p20" target="t110"/>
+<arc id="a369" source="t110" target="p16"/>
+<arc id="a370" source="t110" target="p70"/>
+<transition id="t111"><name><text>t111</text></name></transition>
+<arc id="a371" source="p70" target="t111"/>
+<arc id="a372" source="p30" target="t111"/>
+<arc id="a373" source="t111" target="p26"/>
+<arc id="a374" source="t111" target="p70"/>
+<transition id="t112"><name><text>t112</text></name></transition>
+<arc id="a375" source="p70" target="t112"/>
+<arc id="a376" source="p25" target="t112"/>
+<arc id="a377" source="t112" target="p22"/>
+<arc id="a378" source="t112" target="p70"/>
+<transition id="t113"><name><text>t113</text></name></transition>
+<arc id="a379" source="p70" target="t113"/>
+<arc id="a380" source="p20" target="t113"/>
+<arc id="a381" source="t113" target="p17"/>
+<arc id="a382" source="t113" target="p70"/>
+<transition id="t114"><name><text>t114</text></name></transition>
+<arc id="a383" source="p70" target="t114"/>
+<arc id="a384" source="p30" target="t114"/>
+<arc id="a385" source="t114" target="p27"/>
+<arc id="a386" source="t114" target="p70"/>
+<transition id="t115"><name><text>t115</text></name></transition>
+<arc id="a387" source="p70" target="t115"/>
+<arc id="a388" source="p25" target="t115"/>
+<arc id="a389" source="t115" target="p23"/>
+<arc id="a390" source="t115" target="p70"/>
+<transition id="t116"><name><text>t116</text></name></transition>
+<arc id="a391" source="p70" target="t116"/>
+<arc id="a392" source="p20" target="t116"/>
+<arc id="a393" source="t116" target="p18"/>
+<arc id="a394" source="t116" target="p70"/>
+<transition id="t117"><name><text>t117</text></name></transition>
+<arc id="a395" source="p70" target="t117"/>
+<arc id="a396" source="p30" target="t117"/>
+<arc id="a397" source="t117" target="p28"/>
+<arc id="a398" source="t117" target="p70"/>
+<transition id="t118"><name><text>t118</text></name></transition>
+<arc id="a399" source="p70" target="t118"/>
+<arc id="a400" source="p25" target="t118"/>
+<arc id="a401" source="t118" target="p24"/>
+<arc id="a402" source="t118" target="p70"/>
+<transition id="t119"><name><text>t119</text></name></transition>
+<arc id="a403" source="p70" target="t119"/>
+<arc id="a404" source="p20" target="t119"/>
+<arc id="a405" source="t119" target="p19"/>
+<arc id="a406" source="t119" target="p70"/>
+<transition id="t120"><name><text>t120</text></name></transition>
+<arc id="a407" source="p70" target="t120"/>
+<arc id="a408" source="p30" target="t120"/>
+<arc id="a409" source="t120" target="p29"/>
+<arc id="a410" source="t120" target="p70"/>
+<transition id="t121"><name><text>t121</text></name></transition>
+<arc id="a411" source="p70" target="t121"/>
+<arc id="a412" source="p51" target="t121"/>
+<arc id="a413" source="t121" target="p67"/>
+<arc id="a414" source="t121" target="p55"/>
+<transition id="t122"><name><text>t122</text></name></transition>
+<arc id="a415" source="p70" target="t122"/>
+<arc id="a416" source="p1" target="t122"/>
+<arc id="a417" source="t122" target="p67"/>
+<arc id="a418" source="t122" target="p5"/>
+<transition id="t123"><name><text>t123</text></name></transition>
+<arc id="a419" source="p70" target="t123"/>
+<arc id="a420" source="p36" target="t123"/>
+<arc id="a421" source="t123" target="p67"/>
+<arc id="a422" source="t123" target="p40"/>
+<transition id="t124"><name><text>t124</text></name></transition>
+<arc id="a423" source="p70" target="t124"/>
+<arc id="a424" source="p52" target="t124"/>
+<arc id="a425" source="t124" target="p68"/>
+<arc id="a426" source="t124" target="p55"/>
+<transition id="t125"><name><text>t125</text></name></transition>
+<arc id="a427" source="p70" target="t125"/>
+<arc id="a428" source="p2" target="t125"/>
+<arc id="a429" source="t125" target="p68"/>
+<arc id="a430" source="t125" target="p5"/>
+<transition id="t126"><name><text>t126</text></name></transition>
+<arc id="a431" source="p70" target="t126"/>
+<arc id="a432" source="p37" target="t126"/>
+<arc id="a433" source="t126" target="p68"/>
+<arc id="a434" source="t126" target="p40"/>
+<transition id="t127"><name><text>t127</text></name></transition>
+<arc id="a435" source="p70" target="t127"/>
+<arc id="a436" source="p53" target="t127"/>
+<arc id="a437" source="t127" target="p69"/>
+<arc id="a438" source="t127" target="p55"/>
+<transition id="t128"><name><text>t128</text></name></transition>
+<arc id="a439" source="p70" target="t128"/>
+<arc id="a440" source="p3" target="t128"/>
+<arc id="a441" source="t128" target="p69"/>
+<arc id="a442" source="t128" target="p5"/>
+<transition id="t129"><name><text>t129</text></name></transition>
+<arc id="a443" source="p70" target="t129"/>
+<arc id="a444" source="p38" target="t129"/>
+<arc id="a445" source="t129" target="p69"/>
+<arc id="a446" source="t129" target="p40"/>
+<transition id="t130"><name><text>t130</text></name></transition>
+<arc id="a447" source="p70" target="t130"/>
+<arc id="a448" source="p54" target="t130"/>
+<arc id="a449" source="t130" target="p70"/>
+<arc id="a450" source="t130" target="p55"/>
+<transition id="t131"><name><text>t131</text></name></transition>
+<arc id="a451" source="p70" target="t131"/>
+<arc id="a452" source="p4" target="t131"/>
+<arc id="a453" source="t131" target="p70"/>
+<arc id="a454" source="t131" target="p5"/>
+<transition id="t132"><name><text>t132</text></name></transition>
+<arc id="a455" source="p70" target="t132"/>
+<arc id="a456" source="p39" target="t132"/>
+<arc id="a457" source="t132" target="p70"/>
+<arc id="a458" source="t132" target="p40"/>
+<transition id="t133"><name><text>t133</text></name></transition>
+<arc id="a459" source="p80" target="t133"/>
+<arc id="a460" source="p55" target="t133"/>
+<arc id="a461" source="t133" target="p51"/>
+<arc id="a462" source="t133" target="p80"/>
+<transition id="t134"><name><text>t134</text></name></transition>
+<arc id="a463" source="p80" target="t134"/>
+<arc id="a464" source="p50" target="t134"/>
+<arc id="a465" source="t134" target="p46"/>
+<arc id="a466" source="t134" target="p80"/>
+<transition id="t135"><name><text>t135</text></name></transition>
+<arc id="a467" source="p80" target="t135"/>
+<arc id="a468" source="p60" target="t135"/>
+<arc id="a469" source="t135" target="p56"/>
+<arc id="a470" source="t135" target="p80"/>
+<transition id="t136"><name><text>t136</text></name></transition>
+<arc id="a471" source="p80" target="t136"/>
+<arc id="a472" source="p55" target="t136"/>
+<arc id="a473" source="t136" target="p52"/>
+<arc id="a474" source="t136" target="p80"/>
+<transition id="t137"><name><text>t137</text></name></transition>
+<arc id="a475" source="p80" target="t137"/>
+<arc id="a476" source="p50" target="t137"/>
+<arc id="a477" source="t137" target="p47"/>
+<arc id="a478" source="t137" target="p80"/>
+<transition id="t138"><name><text>t138</text></name></transition>
+<arc id="a479" source="p80" target="t138"/>
+<arc id="a480" source="p60" target="t138"/>
+<arc id="a481" source="t138" target="p57"/>
+<arc id="a482" source="t138" target="p80"/>
+<transition id="t139"><name><text>t139</text></name></transition>
+<arc id="a483" source="p80" target="t139"/>
+<arc id="a484" source="p55" target="t139"/>
+<arc id="a485" source="t139" target="p53"/>
+<arc id="a486" source="t139" target="p80"/>
+<transition id="t140"><name><text>t140</text></name></transition>
+<arc id="a487" source="p80" target="t140"/>
+<arc id="a488" source="p50" target="t140"/>
+<arc id="a489" source="t140" target="p48"/>
+<arc id="a490" source="t140" target="p80"/>
+<transition id="t141"><name><text>t141</text></name></transition>
+<arc id="a491" source="p80" target="t141"/>
+<arc id="a492" source="p60" target="t141"/>
+<arc id="a493" source="t141" target="p58"/>
+<arc id="a494" source="t141" target="p80"/>
+<transition id="t142"><name><text>t142</text></name></transition>
+<arc id="a495" source="p80" target="t142"/>
+<arc id="a496" source="p55" target="t142"/>
+<arc id="a497" source="t142" target="p54"/>
+<arc id="a498" source="t142" target="p80"/>
+<transition id="t143"><name><text>t143</text></name></transition>
+<arc id="a499" source="p80" target="t143"/>
+<arc id="a500" source="p50" target="t143"/>
+<arc id="a501" source="t143" target="p49"/>
+<arc id="a502" source="t143" target="p80"/>
+<transition id="t144"><name><text>t144</text></name></transition>
+<arc id="a503" source="p80" target="t144"/>
+<arc id="a504" source="p60" target="t144"/>
+<arc id="a505" source="t144" target="p59"/>
+<arc id="a506" source="t144" target="p80"/>
+<transition id="t145"><name><text>t145</text></name></transition>
+<arc id="a507" source="p80" target="t145"/>
+<arc id="a508" source="p41" target="t145"/>
+<arc id="a509" source="t145" target="p77"/>
+<arc id="a510" source="t145" target="p45"/>
+<transition id="t146"><name><text>t146</text></name></transition>
+<arc id="a511" source="p80" target="t146"/>
+<arc id="a512" source="p11" target="t146"/>
+<arc id="a513" source="t146" target="p77"/>
+<arc id="a514" source="t146" target="p15"/>
+<transition id="t147"><name><text>t147</text></name></transition>
+<arc id="a515" source="p80" target="t147"/>
+<arc id="a516" source="p26" target="t147"/>
+<arc id="a517" source="t147" target="p77"/>
+<arc id="a518" source="t147" target="p30"/>
+<transition id="t148"><name><text>t148</text></name></transition>
+<arc id="a519" source="p80" target="t148"/>
+<arc id="a520" source="p42" target="t148"/>
+<arc id="a521" source="t148" target="p78"/>
+<arc id="a522" source="t148" target="p45"/>
+<transition id="t149"><name><text>t149</text></name></transition>
+<arc id="a523" source="p80" target="t149"/>
+<arc id="a524" source="p12" target="t149"/>
+<arc id="a525" source="t149" target="p78"/>
+<arc id="a526" source="t149" target="p15"/>
+<transition id="t150"><name><text>t150</text></name></transition>
+<arc id="a527" source="p80" target="t150"/>
+<arc id="a528" source="p27" target="t150"/>
+<arc id="a529" source="t150" target="p78"/>
+<arc id="a530" source="t150" target="p30"/>
+<transition id="t151"><name><text>t151</text></name></transition>
+<arc id="a531" source="p80" target="t151"/>
+<arc id="a532" source="p43" target="t151"/>
+<arc id="a533" source="t151" target="p79"/>
+<arc id="a534" source="t151" target="p45"/>
+<transition id="t152"><name><text>t152</text></name></transition>
+<arc id="a535" source="p80" target="t152"/>
+<arc id="a536" source="p13" target="t152"/>
+<arc id="a537" source="t152" target="p79"/>
+<arc id="a538" source="t152" target="p15"/>
+<transition id="t153"><name><text>t153</text></name></transition>
+<arc id="a539" source="p80" target="t153"/>
+<arc id="a540" source="p28" target="t153"/>
+<arc id="a541" source="t153" target="p79"/>
+<arc id="a542" source="t153" target="p30"/>
+<transition id="t154"><name><text>t154</text></name></transition>
+<arc id="a543" source="p80" target="t154"/>
+<arc id="a544" source="p44" target="t154"/>
+<arc id="a545" source="t154" target="p80"/>
+<arc id="a546" source="t154" target="p45"/>
+<transition id="t155"><name><text>t155</text></name></transition>
+<arc id="a547" source="p80" target="t155"/>
+<arc id="a548" source="p14" target="t155"/>
+<arc id="a549" source="t155" target="p80"/>
+<arc id="a550" source="t155" target="p15"/>
+<transition id="t156"><name><text>t156</text></name></transition>
+<arc id="a551" source="p80" target="t156"/>
+<arc id="a552" source="p29" target="t156"/>
+<arc id="a553" source="t156" target="p80"/>
+<arc id="a554" source="t156" target="p30"/>
+<transition id="t157"><name><text>t157</text></name></transition>
+<arc id="a555" source="p86" target="t157"/>
+<transition id="t158"><name><text>t158</text></name></transition>
+<arc id="a556" source="p85" target="t158"/>
+<arc id="a557" source="p84" target="t158"/>
+<arc id="a558" source="t158" target="p83"/>
+<arc id="a559" source="t158" target="p87"/>
+<transition id="t159"><name><text>t159</text></name></transition>
+<arc id="a560" source="p85" target="t159"/>
+<arc id="a561" source="p82" target="t159"/>
+<arc id="a562" source="t159" target="p87"/>
+<toolspecific tool="nupn" version="1.1">
+<size places="88" transitions="160" arcs="563"/>
+<structure units="19" root="u0" safe="true">
+<unit id="u0">
+<places>p0</places>
+<subunits>u1 u2 u3 u4 u5 u6 u7 u8 u9 u10 u11 u12 u13 u14 u15 u16
+ u17 u18</subunits>
+</unit>
+<unit id="u1">
+<places>p1 p2 p3 p4 p5</places>
+<subunits/>
+</unit>
+<unit id="u2">
+<places>p6 p7 p8 p9 p10</places>
+<subunits/>
+</unit>
+<unit id="u3">
+<places>p11 p12 p13 p14 p15</places>
+<subunits/>
+</unit>
+<unit id="u4">
+<places>p16 p17 p18 p19 p20</places>
+<subunits/>
+</unit>
+<unit id="u5">
+<places>p21 p22 p23 p24 p25</places>
+<subunits/>
+</unit>
+<unit id="u6">
+<places>p26 p27 p28 p29 p30</places>
+<subunits/>
+</unit>
+<unit id="u7">
+<places>p31 p32 p33 p34 p35</places>
+<subunits/>
+</unit>
+<unit id="u8">
+<places>p36 p37 p38 p39 p40</places>
+<subunits/>
+</unit>
+<unit id="u9">
+<places>p41 p42 p43 p44 p45</places>
+<subunits/>
+</unit>
+<unit id="u10">
+<places>p46 p47 p48 p49 p50</places>
+<subunits/>
+</unit>
+<unit id="u11">
+<places>p51 p52 p53 p54 p55</places>
+<subunits/>
+</unit>
+<unit id="u12">
+<places>p56 p57 p58 p59 p60</places>
+<subunits/>
+</unit>
+<unit id="u13">
+<places>p61 p62 p63 p64 p65</places>
+<subunits/>
+</unit>
+<unit id="u14">
+<places>p66 p67 p68 p69 p70</places>
+<subunits/>
+</unit>
+<unit id="u15">
+<places>p71 p72 p73 p74 p75</places>
+<subunits/>
+</unit>
+<unit id="u16">
+<places>p76 p77 p78 p79 p80</places>
+<subunits/>
+</unit>
+<unit id="u17">
+<places>p81 p82 p83 p84</places>
+<subunits/>
+</unit>
+<unit id="u18">
+<places>p85 p86 p87</places>
+<subunits/>
+</unit>
+</structure>
+</toolspecific>
+</page>
+</net>
+</pnml>

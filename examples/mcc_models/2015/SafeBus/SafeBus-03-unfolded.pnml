@@ -1,0 +1,2789 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="SafeBus-PT-03" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <page id="page0">
+      <name>
+        <text>DefaultPage</text>
+      </name>
+      <transition id="loss_a">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>loss_a</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="ACK">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>ACK</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="I_reemit_2_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_reemit_2_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_reemit_3_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_reemit_3_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_reemit_1_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_reemit_1_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_reemit_3_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_reemit_3_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_reemit_1_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_reemit_1_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_reemit_2_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_reemit_2_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="C_refuse_1_1_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_1_1_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="C_refuse_2_1_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_2_1_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="C_refuse_3_1_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_3_1_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="C_refuse_1_2_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_1_2_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="C_refuse_2_2_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_2_2_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="C_refuse_3_2_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_3_2_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="C_refuse_1_3_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_1_3_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="R_tout">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>R_tout</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="C_refuse_2_3_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_2_3_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="T_out">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>T_out</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_refuse_3_3_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_3_3_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="S_tout">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>S_tout</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_refuse_1_1_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_1_1_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="C_refuse_2_1_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_2_1_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="wait_ack_2_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>wait_ack_2_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_refuse_3_1_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_3_1_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="wait_ack_3_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>wait_ack_3_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_refuse_1_2_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_1_2_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="wait_ack_1_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>wait_ack_1_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_refuse_2_2_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_2_2_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="wait_ack_3_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>wait_ack_3_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_refuse_3_2_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_3_2_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="wait_ack_1_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>wait_ack_1_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_refuse_1_3_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_1_3_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="wait_ack_2_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>wait_ack_2_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_refuse_2_3_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_2_3_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="MSG_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>MSG_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_refuse_3_3_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_3_3_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="MSG_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>MSG_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_refuse_1_1_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_1_1_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="MSG_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>MSG_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_refuse_2_1_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_2_1_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Cpt2_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Cpt2_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="C_refuse_3_1_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_3_1_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Cpt2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Cpt2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_refuse_1_2_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_1_2_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Cpt2_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Cpt2_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_refuse_2_2_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_2_2_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="AMC_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>AMC_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_refuse_3_2_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_3_2_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="AMC_2_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>AMC_2_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_refuse_1_3_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_1_3_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="AMC_3_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>AMC_3_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_refuse_2_3_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_2_3_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="AMC_1_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>AMC_1_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_refuse_3_3_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_refuse_3_3_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="AMC_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>AMC_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_free_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_free_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="AMC_3_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>AMC_3_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_free_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_free_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="AMC_1_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>AMC_1_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_free_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_free_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="AMC_2_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>AMC_2_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_provide_1_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_provide_1_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="C_provide_2_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_provide_2_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="AMC_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>AMC_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_provide_3_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_provide_3_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="cable_used_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>cable_used_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_provide_1_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_provide_1_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="cable_used_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>cable_used_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_provide_2_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_provide_2_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="cable_used_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>cable_used_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_provide_3_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_provide_3_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="FMCb">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>FMCb</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="C_provide_1_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_provide_1_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="RMC_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>RMC_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="C_provide_2_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_provide_2_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="C_provide_3_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>C_provide_3_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="RMC_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>RMC_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="I_rec1_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_rec1_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="RMC_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>RMC_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="I_rec1_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_rec1_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="FMC_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>FMC_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="I_rec1_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_rec1_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="FMC_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>FMC_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <place id="FMC_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>FMC_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="I_free_2_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_free_2_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="cable_free">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>cable_free</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="I_free_3_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_free_3_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="PMC_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>PMC_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="I_free_1_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_free_1_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="PMC_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>PMC_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="I_free_3_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_free_3_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="PMC_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>PMC_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="I_free_1_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_free_1_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="listen_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>listen_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="I_free_2_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_free_2_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="listen_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>listen_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="I_emit_2_2_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_emit_2_2_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="listen_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>listen_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="I_emit_3_3_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_emit_3_3_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_emit_1_1_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_emit_1_1_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="msgl_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>msgl_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="I_emit_3_3_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_emit_3_3_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="msgl_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>msgl_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="I_emit_1_1_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_emit_1_1_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="msgl_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>msgl_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="I_emit_2_2_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_emit_2_2_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_refused_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_refused_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="wait_cable_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>wait_cable_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="I_refused_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_refused_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="wait_cable_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>wait_cable_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="I_refused_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_refused_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="wait_cable_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>wait_cable_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="I_ask1_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask1_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="wait_msg_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>wait_msg_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="I_ask1_2_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask1_2_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="wait_msg_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>wait_msg_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="I_ask1_3_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask1_3_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="wait_msg_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>wait_msg_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="I_ask1_1_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask1_1_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Cpt1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Cpt1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+        <initialMarking>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="I_ask1_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask1_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Cpt1_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Cpt1_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="I_ask1_3_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask1_3_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="Cpt1_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Cpt1_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="I_ask1_1_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask1_1_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_ask1_2_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask1_2_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="loop_em_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>loop_em_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="I_ask1_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask1_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="loop_em_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>loop_em_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="loss_m_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>loss_m_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <place id="loop_em_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>loop_em_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </place>
+      <transition id="loss_m_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>loss_m_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="loss_m_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>loss_m_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="Gto_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Gto_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="Gto_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Gto_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="Gto_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>Gto_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_rec2_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_rec2_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_rec2_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_rec2_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_rec2_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_rec2_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_ask2_1_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask2_1_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_ask2_2_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask2_2_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_ask2_3_1">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask2_3_1</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_ask2_1_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask2_1_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_ask2_2_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask2_2_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_ask2_3_2">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask2_3_2</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_ask2_1_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask2_1_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_ask2_2_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask2_2_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <transition id="I_ask2_3_3">
+        <name>
+          <graphics>
+            <offset x="0" y="0"/>
+          </graphics>
+          <text>I_ask2_3_3</text>
+        </name>
+        <graphics>
+          <position x="100" y="100"/>
+        </graphics>
+      </transition>
+      <arc id="cId8564288392705644626421" source="C_refuse_2_2_2_2" target="Cpt2_3">
+      </arc>
+      <arc id="cId8556025972327256689151" source="PMC_2" target="I_emit_2_2_1">
+      </arc>
+      <arc id="cId8557678455543940817422" source="C_refuse_2_2_2_2" target="cable_used_2">
+      </arc>
+      <arc id="cId8557678455543940817152" source="msgl_1" target="I_emit_2_2_1">
+      </arc>
+      <arc id="cId8557678455543940817423" source="C_refuse_2_2_2_2" target="FMCb">
+      </arc>
+      <arc id="cId8557678455543940817153" source="wait_cable_2" target="I_emit_2_2_1">
+      </arc>
+      <arc id="cId8557678455543940817424" source="C_refuse_2_2_2_2" target="RMC_2">
+      </arc>
+      <arc id="cId8557678455543940817154" source="I_emit_2_2_1" target="wait_ack_2_1">
+      </arc>
+      <arc id="cId8557678455543940817425" source="Cpt2_2" target="C_refuse_3_2_2_2">
+      </arc>
+      <arc id="cId8557678455543940817155" source="I_emit_2_2_1" target="MSG_1">
+      </arc>
+      <arc id="cId8557678455543940817426" source="AMC_3_2" target="C_refuse_3_2_2_2">
+      </arc>
+      <arc id="cId8557678455543940817156" source="I_emit_2_2_1" target="msgl_1">
+      </arc>
+      <arc id="cId8557678455543940817427" source="cable_used_2" target="C_refuse_3_2_2_2">
+      </arc>
+      <arc id="cId8557678455543940817157" source="PMC_3" target="I_emit_3_3_1">
+      </arc>
+      <arc id="cId8557678455543940817428" source="FMCb" target="C_refuse_3_2_2_2">
+      </arc>
+      <arc id="cId8557678455543940817158" source="msgl_1" target="I_emit_3_3_1">
+      </arc>
+      <arc id="cId8557678455543940817429" source="C_refuse_3_2_2_2" target="Cpt2_3">
+      </arc>
+      <arc id="cId8549416039460520177159" source="wait_cable_3" target="I_emit_3_3_1">
+      </arc>
+      <arc id="cId8549416039460520177430" source="C_refuse_3_2_2_2" target="cable_used_2">
+      </arc>
+      <arc id="cId8549416039460520177160" source="I_emit_3_3_1" target="wait_ack_3_1">
+      </arc>
+      <arc id="cId8549416039460520177431" source="C_refuse_3_2_2_2" target="FMCb">
+      </arc>
+      <arc id="cId8549416039460520177161" source="I_emit_3_3_1" target="MSG_1">
+      </arc>
+      <arc id="cId8549416039460520177432" source="C_refuse_3_2_2_2" target="RMC_3">
+      </arc>
+      <arc id="cId8549416039460520177162" source="I_emit_3_3_1" target="msgl_1">
+      </arc>
+      <arc id="cId8549416039460520177433" source="Cpt2_2" target="C_refuse_1_3_2_2">
+      </arc>
+      <arc id="cId8549416039460520177163" source="PMC_1" target="I_emit_1_1_2">
+      </arc>
+      <arc id="cId8549416039460520177434" source="AMC_1_2" target="C_refuse_1_3_2_2">
+      </arc>
+      <arc id="cId8549416039460520177164" source="msgl_2" target="I_emit_1_1_2">
+      </arc>
+      <arc id="cId8549416039460520177435" source="cable_used_3" target="C_refuse_1_3_2_2">
+      </arc>
+      <arc id="cId8549416039460520177165" source="wait_cable_1" target="I_emit_1_1_2">
+      </arc>
+      <arc id="cId8549416039460520177436" source="FMCb" target="C_refuse_1_3_2_2">
+      </arc>
+      <arc id="cId8549416039460520177166" source="I_emit_1_1_2" target="wait_ack_1_2">
+      </arc>
+      <arc id="cId8549416039460520177437" source="C_refuse_1_3_2_2" target="Cpt2_3">
+      </arc>
+      <arc id="cId8549416039460520177167" source="I_emit_1_1_2" target="MSG_2">
+      </arc>
+      <arc id="cId8549416039460520177438" source="C_refuse_1_3_2_2" target="cable_used_3">
+      </arc>
+      <arc id="cId8549416039460520177168" source="I_emit_1_1_2" target="msgl_2">
+      </arc>
+      <arc id="cId8549416039460520177439" source="C_refuse_1_3_2_2" target="FMCb">
+      </arc>
+      <arc id="cId8549416039460520177169" source="PMC_3" target="I_emit_3_3_2">
+      </arc>
+      <arc id="cId8549416039460520177440" source="C_refuse_1_3_2_2" target="RMC_1">
+      </arc>
+      <arc id="cId8549416039460520177170" source="msgl_2" target="I_emit_3_3_2">
+      </arc>
+      <arc id="cId8549416039460520177441" source="Cpt2_2" target="C_refuse_2_3_2_2">
+      </arc>
+      <arc id="cId8549416039460520177171" source="wait_cable_3" target="I_emit_3_3_2">
+      </arc>
+      <arc id="cId8549416039460520177442" source="AMC_2_2" target="C_refuse_2_3_2_2">
+      </arc>
+      <arc id="cId8549416039460520177172" source="I_emit_3_3_2" target="wait_ack_3_2">
+      </arc>
+      <arc id="cId8549416039460520177443" source="cable_used_3" target="C_refuse_2_3_2_2">
+      </arc>
+      <arc id="cId8549416039460520177173" source="I_emit_3_3_2" target="MSG_2">
+      </arc>
+      <arc id="cId8549416039460520177444" source="FMCb" target="C_refuse_2_3_2_2">
+      </arc>
+      <arc id="cId8549416039460520177174" source="I_emit_3_3_2" target="msgl_2">
+      </arc>
+      <arc id="cId8549416039460520177445" source="C_refuse_2_3_2_2" target="Cpt2_3">
+      </arc>
+      <arc id="cId8549416039460520177175" source="PMC_1" target="I_emit_1_1_3">
+      </arc>
+      <arc id="cId8549416039460520177446" source="C_refuse_2_3_2_2" target="cable_used_3">
+      </arc>
+      <arc id="cId8549416039460520177176" source="msgl_3" target="I_emit_1_1_3">
+      </arc>
+      <arc id="cId8549416039460520177447" source="C_refuse_2_3_2_2" target="FMCb">
+      </arc>
+      <arc id="cId8549416039460520177177" source="wait_cable_1" target="I_emit_1_1_3">
+      </arc>
+      <arc id="cId8549416039460520177448" source="C_refuse_2_3_2_2" target="RMC_2">
+      </arc>
+      <arc id="cId8549416039460520177178" source="I_emit_1_1_3" target="wait_ack_1_3">
+      </arc>
+      <arc id="cId8549416039460520177449" source="Cpt2_2" target="C_refuse_3_3_2_2">
+      </arc>
+      <arc id="cId8549416039460520177179" source="I_emit_1_1_3" target="MSG_3">
+      </arc>
+      <arc id="cId8549416039460520177450" source="AMC_3_2" target="C_refuse_3_3_2_2">
+      </arc>
+      <arc id="cId8549416039460520177451" source="cable_used_3" target="C_refuse_3_3_2_2">
+      </arc>
+      <arc id="cId8549416039460520177180" source="I_emit_1_1_3" target="msgl_3">
+      </arc>
+      <arc id="cId8549416039460520177452" source="FMCb" target="C_refuse_3_3_2_2">
+      </arc>
+      <arc id="cId8549416039460520177181" source="PMC_2" target="I_emit_2_2_3">
+      </arc>
+      <arc id="cId8549416039460520177453" source="C_refuse_3_3_2_2" target="Cpt2_3">
+      </arc>
+      <arc id="cId8549416039460520177182" source="msgl_3" target="I_emit_2_2_3">
+      </arc>
+      <arc id="cId8549416039460520177454" source="C_refuse_3_3_2_2" target="cable_used_3">
+      </arc>
+      <arc id="cId8549416039460520177183" source="wait_cable_2" target="I_emit_2_2_3">
+      </arc>
+      <arc id="cId8549416039460520177455" source="C_refuse_3_3_2_2" target="FMCb">
+      </arc>
+      <arc id="cId8549416039460520177184" source="I_emit_2_2_3" target="wait_ack_2_3">
+      </arc>
+      <arc id="cId8549416039460520177456" source="C_refuse_3_3_2_2" target="RMC_3">
+      </arc>
+      <arc id="cId8549416039460520177185" source="I_emit_2_2_3" target="MSG_3">
+      </arc>
+      <arc id="cId8549416039460520177457" source="Cpt2_3" target="C_refuse_1_1_3_3">
+      </arc>
+      <arc id="cId8549416039460520177186" source="I_emit_2_2_3" target="msgl_3">
+      </arc>
+      <arc id="cId8549416039460520177458" source="AMC_1_3" target="C_refuse_1_1_3_3">
+      </arc>
+      <arc id="cId8549416039460520177187" source="ACK" target="I_free_2_1">
+      </arc>
+      <arc id="cId8549416039460520177459" source="cable_used_1" target="C_refuse_1_1_3_3">
+      </arc>
+      <arc id="cId8549416039460520177188" source="wait_ack_2_1" target="I_free_2_1">
+      </arc>
+      <arc id="cId8549416039460520177460" source="FMCb" target="C_refuse_1_1_3_3">
+      </arc>
+      <arc id="cId8549416039460520177189" source="FMCb" target="I_free_2_1">
+      </arc>
+      <arc id="cId8549416039460520177461" source="C_refuse_1_1_3_3" target="Cpt2_1">
+      </arc>
+      <arc id="cId8549416039460520177190" source="I_free_2_1" target="FMC_2">
+      </arc>
+      <arc id="cId8549416039460520177462" source="C_refuse_1_1_3_3" target="cable_used_1">
+      </arc>
+      <arc id="cId8547763551948868753191" source="I_free_2_1" target="listen_2">
+      </arc>
+      <arc id="cId8547763551948868753463" source="C_refuse_1_1_3_3" target="FMCb">
+      </arc>
+      <arc id="cId8547763551948868753192" source="ACK" target="I_free_3_1">
+      </arc>
+      <arc id="cId8547763551948868753464" source="C_refuse_1_1_3_3" target="RMC_1">
+      </arc>
+      <arc id="cId8547763551948868753193" source="wait_ack_3_1" target="I_free_3_1">
+      </arc>
+      <arc id="cId8547763551948868753465" source="Cpt2_3" target="C_refuse_2_1_3_3">
+      </arc>
+      <arc id="cId8547763551948868753194" source="FMCb" target="I_free_3_1">
+      </arc>
+      <arc id="cId8547763551948868753466" source="AMC_2_3" target="C_refuse_2_1_3_3">
+      </arc>
+      <arc id="cId8547763551948868753195" source="I_free_3_1" target="FMC_3">
+      </arc>
+      <arc id="cId8547763551948868753467" source="cable_used_1" target="C_refuse_2_1_3_3">
+      </arc>
+      <arc id="cId8547763551948868753196" source="I_free_3_1" target="listen_3">
+      </arc>
+      <arc id="cId8547763551948868753468" source="FMCb" target="C_refuse_2_1_3_3">
+      </arc>
+      <arc id="cId8547763551948868753197" source="ACK" target="I_free_1_2">
+      </arc>
+      <arc id="cId8547763551948868753469" source="C_refuse_2_1_3_3" target="Cpt2_1">
+      </arc>
+      <arc id="cId8547763551948868753470" source="C_refuse_2_1_3_3" target="cable_used_1">
+      </arc>
+      <arc id="cId8547763551948868753198" source="wait_ack_1_2" target="I_free_1_2">
+      </arc>
+      <arc id="cId8547763551948868753471" source="C_refuse_2_1_3_3" target="FMCb">
+      </arc>
+      <arc id="cId8547763551948868753199" source="FMCb" target="I_free_1_2">
+      </arc>
+      <arc id="cId8547763551948868753472" source="C_refuse_2_1_3_3" target="RMC_2">
+      </arc>
+      <arc id="cId8552721001598921137200" source="I_free_1_2" target="FMC_1">
+      </arc>
+      <arc id="cId8552721001598921137473" source="Cpt2_3" target="C_refuse_3_1_3_3">
+      </arc>
+      <arc id="cId8552721001598921137474" source="AMC_3_3" target="C_refuse_3_1_3_3">
+      </arc>
+      <arc id="cId8552721001598921137201" source="I_free_1_2" target="listen_1">
+      </arc>
+      <arc id="cId8552721001598921137475" source="cable_used_1" target="C_refuse_3_1_3_3">
+      </arc>
+      <arc id="cId8552721001598921137202" source="ACK" target="I_free_3_2">
+      </arc>
+      <arc id="cId8552721001598921137476" source="FMCb" target="C_refuse_3_1_3_3">
+      </arc>
+      <arc id="cId8552721001598921137203" source="wait_ack_3_2" target="I_free_3_2">
+      </arc>
+      <arc id="cId8552721001598921137477" source="C_refuse_3_1_3_3" target="Cpt2_1">
+      </arc>
+      <arc id="cId8552721001598921137204" source="FMCb" target="I_free_3_2">
+      </arc>
+      <arc id="cId8552721001598921137478" source="C_refuse_3_1_3_3" target="cable_used_1">
+      </arc>
+      <arc id="cId8552721001598921137205" source="I_free_3_2" target="FMC_3">
+      </arc>
+      <arc id="cId8552721001598921137479" source="C_refuse_3_1_3_3" target="FMCb">
+      </arc>
+      <arc id="cId8552721001598921137206" source="I_free_3_2" target="listen_3">
+      </arc>
+      <arc id="cId8552721001598921137480" source="C_refuse_3_1_3_3" target="RMC_3">
+      </arc>
+      <arc id="cId8552721001598921137207" source="ACK" target="I_free_1_3">
+      </arc>
+      <arc id="cId8552721001598921137481" source="Cpt2_3" target="C_refuse_1_2_3_3">
+      </arc>
+      <arc id="cId8552721001598921137208" source="wait_ack_1_3" target="I_free_1_3">
+      </arc>
+      <arc id="cId8551068522677204305482" source="AMC_1_3" target="C_refuse_1_2_3_3">
+      </arc>
+      <arc id="cId8551068522677204305209" source="FMCb" target="I_free_1_3">
+      </arc>
+      <arc id="cId8551068522677204305483" source="cable_used_2" target="C_refuse_1_2_3_3">
+      </arc>
+      <arc id="cId8551068522677204305210" source="I_free_1_3" target="FMC_1">
+      </arc>
+      <arc id="cId8551068522677204305484" source="FMCb" target="C_refuse_1_2_3_3">
+      </arc>
+      <arc id="cId8551068522677204305211" source="I_free_1_3" target="listen_1">
+      </arc>
+      <arc id="cId8551068522677204305485" source="C_refuse_1_2_3_3" target="Cpt2_1">
+      </arc>
+      <arc id="cId8551068522677204305212" source="ACK" target="I_free_2_3">
+      </arc>
+      <arc id="cId8551068522677204305486" source="C_refuse_1_2_3_3" target="cable_used_2">
+      </arc>
+      <arc id="cId8551068522677204305213" source="wait_ack_2_3" target="I_free_2_3">
+      </arc>
+      <arc id="cId8551068522677204305487" source="C_refuse_1_2_3_3" target="FMCb">
+      </arc>
+      <arc id="cId8551068522677204305214" source="FMCb" target="I_free_2_3">
+      </arc>
+      <arc id="cId8551068522677204305488" source="C_refuse_1_2_3_3" target="RMC_1">
+      </arc>
+      <arc id="cId8551068522677204305215" source="I_free_2_3" target="FMC_2">
+      </arc>
+      <arc id="cId8551068522677204305489" source="Cpt2_3" target="C_refuse_2_2_3_3">
+      </arc>
+      <arc id="cId8551068522677204305216" source="I_free_2_3" target="listen_2">
+      </arc>
+      <arc id="cId8551068522677204305490" source="AMC_2_3" target="C_refuse_2_2_3_3">
+      </arc>
+      <arc id="cId8551068522677204305217" source="MSG_1" target="I_rec1_1_1">
+      </arc>
+      <arc id="cId8551068522677204305491" source="cable_used_2" target="C_refuse_2_2_3_3">
+      </arc>
+      <arc id="cId8551068522677204305218" source="listen_1" target="I_rec1_1_1">
+      </arc>
+      <arc id="cId8551068522677204305492" source="FMCb" target="C_refuse_2_2_3_3">
+      </arc>
+      <arc id="cId8551068522677204305219" source="I_rec1_1_1" target="ACK">
+      </arc>
+      <arc id="cId8551068522677204305493" source="C_refuse_2_2_3_3" target="Cpt2_1">
+      </arc>
+      <arc id="cId8551068522677204305220" source="I_rec1_1_1" target="listen_1">
+      </arc>
+      <arc id="cId8551068522677204305494" source="C_refuse_2_2_3_3" target="cable_used_2">
+      </arc>
+      <arc id="cId8551068522677204305221" source="MSG_2" target="I_rec1_2_2">
+      </arc>
+      <arc id="cId8551068522677204305495" source="C_refuse_2_2_3_3" target="FMCb">
+      </arc>
+      <arc id="cId8551068522677204305222" source="listen_2" target="I_rec1_2_2">
+      </arc>
+      <arc id="cId8551068522677204305496" source="C_refuse_2_2_3_3" target="RMC_2">
+      </arc>
+      <arc id="cId8551068522677204305223" source="I_rec1_2_2" target="ACK">
+      </arc>
+      <arc id="cId8551068522677204305497" source="Cpt2_3" target="C_refuse_3_2_3_3">
+      </arc>
+      <arc id="cId8551068522677204305224" source="I_rec1_2_2" target="listen_2">
+      </arc>
+      <arc id="cId8551068522677204305498" source="AMC_3_3" target="C_refuse_3_2_3_3">
+      </arc>
+      <arc id="cId8551068522677204305225" source="MSG_3" target="I_rec1_3_3">
+      </arc>
+      <arc id="cId8551068522677204305499" source="cable_used_2" target="C_refuse_3_2_3_3">
+      </arc>
+      <arc id="cId8551068522677204305226" source="listen_3" target="I_rec1_3_3">
+      </arc>
+      <arc id="cId8551068522677204305500" source="FMCb" target="C_refuse_3_2_3_3">
+      </arc>
+      <arc id="cId8551068522677204305227" source="I_rec1_3_3" target="ACK">
+      </arc>
+      <arc id="cId8551068522677204305501" source="C_refuse_3_2_3_3" target="Cpt2_1">
+      </arc>
+      <arc id="cId8551068522677204305228" source="I_rec1_3_3" target="listen_3">
+      </arc>
+      <arc id="cId8551068522677204305502" source="C_refuse_3_2_3_3" target="cable_used_2">
+      </arc>
+      <arc id="cId8551068522677204305229" source="Cpt2_1" target="C_provide_1_1_1">
+      </arc>
+      <arc id="cId8551068522677204305503" source="C_refuse_3_2_3_3" target="FMCb">
+      </arc>
+      <arc id="cId8551068522677204305230" source="AMC_1_1" target="C_provide_1_1_1">
+      </arc>
+      <arc id="cId8551068522677204305504" source="C_refuse_3_2_3_3" target="RMC_3">
+      </arc>
+      <arc id="cId8551068522677204305231" source="FMCb" target="C_provide_1_1_1">
+      </arc>
+      <arc id="cId8551068522677204305505" source="Cpt2_3" target="C_refuse_1_3_3_3">
+      </arc>
+      <arc id="cId8551068522677204305232" source="cable_free" target="C_provide_1_1_1">
+      </arc>
+      <arc id="cId8551068522677204305506" source="AMC_1_3" target="C_refuse_1_3_3_3">
+      </arc>
+      <arc id="cId8551068522677204305233" source="C_provide_1_1_1" target="Cpt2_2">
+      </arc>
+      <arc id="cId8551068522677204305507" source="cable_used_3" target="C_refuse_1_3_3_3">
+      </arc>
+      <arc id="cId8551068522677204305234" source="C_provide_1_1_1" target="cable_used_1">
+      </arc>
+      <arc id="cId8551068522677204305508" source="FMCb" target="C_refuse_1_3_3_3">
+      </arc>
+      <arc id="cId8551068522677204305235" source="C_provide_1_1_1" target="FMCb">
+      </arc>
+      <arc id="cId8551068522677204305509" source="C_refuse_1_3_3_3" target="Cpt2_1">
+      </arc>
+      <arc id="cId8551068522677204305236" source="C_provide_1_1_1" target="PMC_1">
+      </arc>
+      <arc id="cId8551068522677204305510" source="C_refuse_1_3_3_3" target="cable_used_3">
+      </arc>
+      <arc id="cId8551068522677204305237" source="Cpt2_1" target="C_provide_2_1_1">
+      </arc>
+      <arc id="cId8551068522677204305511" source="C_refuse_1_3_3_3" target="FMCb">
+      </arc>
+      <arc id="cId8551068522677204305238" source="AMC_2_1" target="C_provide_2_1_1">
+      </arc>
+      <arc id="cId8551068522677204305512" source="C_refuse_1_3_3_3" target="RMC_1">
+      </arc>
+      <arc id="cId8551068522677204305239" source="FMCb" target="C_provide_2_1_1">
+      </arc>
+      <arc id="cId8551068522677204305513" source="Cpt2_3" target="C_refuse_2_3_3_3">
+      </arc>
+      <arc id="cId8551068522677204305514" source="AMC_2_3" target="C_refuse_2_3_3_3">
+      </arc>
+      <arc id="cId8551068522677204305240" source="cable_free" target="C_provide_2_1_1">
+      </arc>
+      <arc id="cId8551068522677204305515" source="cable_used_3" target="C_refuse_2_3_3_3">
+      </arc>
+      <arc id="cId8551068522677204305241" source="C_provide_2_1_1" target="Cpt2_2">
+      </arc>
+      <arc id="cId8551068522677204305516" source="FMCb" target="C_refuse_2_3_3_3">
+      </arc>
+      <arc id="cId8551068522677204305242" source="C_provide_2_1_1" target="cable_used_2">
+      </arc>
+      <arc id="cId8551068522677204305517" source="C_refuse_2_3_3_3" target="Cpt2_1">
+      </arc>
+      <arc id="cId8551068522677204305243" source="C_provide_2_1_1" target="FMCb">
+      </arc>
+      <arc id="cId8551068522677204305518" source="C_refuse_2_3_3_3" target="cable_used_3">
+      </arc>
+      <arc id="cId8551068522677204305244" source="C_provide_2_1_1" target="PMC_2">
+      </arc>
+      <arc id="cId8551068522677204305519" source="C_refuse_2_3_3_3" target="FMCb">
+      </arc>
+      <arc id="cId8551068522677204305245" source="Cpt2_1" target="C_provide_3_1_1">
+      </arc>
+      <arc id="cId8551068522677204305520" source="C_refuse_2_3_3_3" target="RMC_2">
+      </arc>
+      <arc id="cId8551068522677204305246" source="AMC_3_1" target="C_provide_3_1_1">
+      </arc>
+      <arc id="cId8551068522677204305521" source="Cpt2_3" target="C_refuse_3_3_3_3">
+      </arc>
+      <arc id="cId8551068522677204305247" source="FMCb" target="C_provide_3_1_1">
+      </arc>
+      <arc id="cId8551068522677204305248" source="cable_free" target="C_provide_3_1_1">
+      </arc>
+      <arc id="cId8551068522677204305522" source="AMC_3_3" target="C_refuse_3_3_3_3">
+      </arc>
+      <arc id="cId8551068522677204305249" source="C_provide_3_1_1" target="Cpt2_2">
+      </arc>
+      <arc id="cId8551068522677204305523" source="cable_used_3" target="C_refuse_3_3_3_3">
+      </arc>
+      <arc id="cId8551068522677204305250" source="C_provide_3_1_1" target="cable_used_3">
+      </arc>
+      <arc id="cId8551068522677204305524" source="FMCb" target="C_refuse_3_3_3_3">
+      </arc>
+      <arc id="cId8551068522677204305251" source="C_provide_3_1_1" target="FMCb">
+      </arc>
+      <arc id="cId8551068522677204305525" source="C_refuse_3_3_3_3" target="Cpt2_1">
+      </arc>
+      <arc id="cId8551068522677204305526" source="C_refuse_3_3_3_3" target="cable_used_3">
+      </arc>
+      <arc id="cId8551068522677204305252" source="C_provide_3_1_1" target="PMC_3">
+      </arc>
+      <arc id="cId8551068522677204305527" source="C_refuse_3_3_3_3" target="FMCb">
+      </arc>
+      <arc id="cId8551068522677204305528" source="C_refuse_3_3_3_3" target="RMC_3">
+      </arc>
+      <arc id="cId8551068522677204305253" source="Cpt2_2" target="C_provide_1_2_2">
+      </arc>
+      <arc id="cId8595685586707544946529" source="T_out" target="I_reemit_2_1">
+      </arc>
+      <arc id="cId8595685586707544946254" source="AMC_1_2" target="C_provide_1_2_2">
+      </arc>
+      <arc id="cId8595685586707544946530" source="wait_ack_2_1" target="I_reemit_2_1">
+      </arc>
+      <arc id="cId8595685586707544946255" source="FMCb" target="C_provide_1_2_2">
+      </arc>
+      <arc id="cId8595685586707544946531" source="I_reemit_2_1" target="wait_ack_2_1">
+      </arc>
+      <arc id="cId8595685586707544946256" source="cable_free" target="C_provide_1_2_2">
+      </arc>
+      <arc id="cId8595685586707544946532" source="I_reemit_2_1" target="MSG_1">
+      </arc>
+      <arc id="cId8595685586707544946533" source="T_out" target="I_reemit_3_1">
+      </arc>
+      <arc id="cId8595685586707544946257" source="C_provide_1_2_2" target="Cpt2_3">
+      </arc>
+      <arc id="cId8595685586707544946534" source="wait_ack_3_1" target="I_reemit_3_1">
+      </arc>
+      <arc id="cId8595685586707544946258" source="C_provide_1_2_2" target="cable_used_1">
+      </arc>
+      <arc id="cId8595685586707544946535" source="I_reemit_3_1" target="wait_ack_3_1">
+      </arc>
+      <arc id="cId8595685586707544946259" source="C_provide_1_2_2" target="FMCb">
+      </arc>
+      <arc id="cId8595685586707544946536" source="I_reemit_3_1" target="MSG_1">
+      </arc>
+      <arc id="cId8595685586707544946260" source="C_provide_1_2_2" target="PMC_1">
+      </arc>
+      <arc id="cId8595685586707544946537" source="T_out" target="I_reemit_1_2">
+      </arc>
+      <arc id="cId8595685586707544946538" source="wait_ack_1_2" target="I_reemit_1_2">
+      </arc>
+      <arc id="cId8595685586707544946261" source="Cpt2_2" target="C_provide_2_2_2">
+      </arc>
+      <arc id="cId8595685586707544946539" source="I_reemit_1_2" target="wait_ack_1_2">
+      </arc>
+      <arc id="cId8595685586707544946540" source="I_reemit_1_2" target="MSG_2">
+      </arc>
+      <arc id="cId8595685586707544946262" source="AMC_2_2" target="C_provide_2_2_2">
+      </arc>
+      <arc id="cId8595685586707544946541" source="T_out" target="I_reemit_3_2">
+      </arc>
+      <arc id="cId8595685586707544946263" source="FMCb" target="C_provide_2_2_2">
+      </arc>
+      <arc id="cId8595685586707544946264" source="cable_free" target="C_provide_2_2_2">
+      </arc>
+      <arc id="cId8595685586707544946542" source="wait_ack_3_2" target="I_reemit_3_2">
+      </arc>
+      <arc id="cId8595685586707544946265" source="C_provide_2_2_2" target="Cpt2_3">
+      </arc>
+      <arc id="cId8595685586707544946543" source="I_reemit_3_2" target="wait_ack_3_2">
+      </arc>
+      <arc id="cId8595685586707544946266" source="C_provide_2_2_2" target="cable_used_2">
+      </arc>
+      <arc id="cId8595685586707544946544" source="I_reemit_3_2" target="MSG_2">
+      </arc>
+      <arc id="cId8595685586707544946267" source="C_provide_2_2_2" target="FMCb">
+      </arc>
+      <arc id="cId8595685586707544946545" source="T_out" target="I_reemit_1_3">
+      </arc>
+      <arc id="cId8595685586707544946268" source="C_provide_2_2_2" target="PMC_2">
+      </arc>
+      <arc id="cId8595685586707544946546" source="wait_ack_1_3" target="I_reemit_1_3">
+      </arc>
+      <arc id="cId8595685586707544946269" source="Cpt2_2" target="C_provide_3_2_2">
+      </arc>
+      <arc id="cId8595685586707544946547" source="I_reemit_1_3" target="wait_ack_1_3">
+      </arc>
+      <arc id="cId8595685586707544946270" source="AMC_3_2" target="C_provide_3_2_2">
+      </arc>
+      <arc id="cId8595685586707544946548" source="I_reemit_1_3" target="MSG_3">
+      </arc>
+      <arc id="cId8595685586707544946271" source="FMCb" target="C_provide_3_2_2">
+      </arc>
+      <arc id="cId8595685586707544946272" source="cable_free" target="C_provide_3_2_2">
+      </arc>
+      <arc id="cId8595685586707544946549" source="T_out" target="I_reemit_2_3">
+      </arc>
+      <arc id="cId8595685586707544946273" source="C_provide_3_2_2" target="Cpt2_3">
+      </arc>
+      <arc id="cId8595685586707544946550" source="wait_ack_2_3" target="I_reemit_2_3">
+      </arc>
+      <arc id="cId8595685586707544946274" source="C_provide_3_2_2" target="cable_used_3">
+      </arc>
+      <arc id="cId8595685586707544946551" source="I_reemit_2_3" target="wait_ack_2_3">
+      </arc>
+      <arc id="cId8595685586707544946275" source="C_provide_3_2_2" target="FMCb">
+      </arc>
+      <arc id="cId8595685586707544946552" source="I_reemit_2_3" target="MSG_3">
+      </arc>
+      <arc id="cId8595685586707544946276" source="C_provide_3_2_2" target="PMC_3">
+      </arc>
+      <arc id="cId8595685586707544946553" source="ACK" target="loss_a">
+      </arc>
+      <arc id="cId8595685586707544946277" source="Cpt2_3" target="C_provide_1_3_3">
+      </arc>
+      <arc id="cId8595685586707544946554" source="R_tout" target="loss_a">
+      </arc>
+      <arc id="cId8595685586707544946278" source="AMC_1_3" target="C_provide_1_3_3">
+      </arc>
+      <arc id="cId8595685586707544946555" source="loss_a" target="T_out">
+      </arc>
+      <arc id="cId8595685586707544946279" source="FMCb" target="C_provide_1_3_3">
+      </arc>
+      <arc id="cId8595685586707544946556" source="loss_a" target="S_tout">
+      </arc>
+      <arc id="cId8595685586707544946280" source="cable_free" target="C_provide_1_3_3">
+      </arc>
+      <arc id="cId8595685586707544946557" source="Cpt1_1" target="I_ask2_1_1">
+      </arc>
+      <arc id="cId8595685586707544946281" source="C_provide_1_3_3" target="Cpt2_1">
+      </arc>
+      <arc id="cId8595685586707544946558" source="loop_em_1" target="I_ask2_1_1">
+      </arc>
+      <arc id="cId8595685586707544946282" source="C_provide_1_3_3" target="cable_used_1">
+      </arc>
+      <arc id="cId8595685586707544946559" source="I_ask2_1_1" target="AMC_1_1">
+      </arc>
+      <arc id="cId8595685586707544946283" source="C_provide_1_3_3" target="FMCb">
+      </arc>
+      <arc id="cId8594033103490860818560" source="I_ask2_1_1" target="wait_cable_1">
+      </arc>
+      <arc id="cId8594033103490860818284" source="C_provide_1_3_3" target="PMC_1">
+      </arc>
+      <arc id="cId8594033103490860818561" source="I_ask2_1_1" target="Cpt1_2">
+      </arc>
+      <arc id="cId8594033103490860818285" source="Cpt2_3" target="C_provide_2_3_3">
+      </arc>
+      <arc id="cId8594033103490860818562" source="Cpt1_1" target="I_ask2_2_1">
+      </arc>
+      <arc id="cId8594033103490860818286" source="AMC_2_3" target="C_provide_2_3_3">
+      </arc>
+      <arc id="cId8594033103490860818563" source="loop_em_2" target="I_ask2_2_1">
+      </arc>
+      <arc id="cId8594033103490860818287" source="FMCb" target="C_provide_2_3_3">
+      </arc>
+      <arc id="cId8594033103490860818288" source="cable_free" target="C_provide_2_3_3">
+      </arc>
+      <arc id="cId8594033103490860818564" source="I_ask2_2_1" target="AMC_2_1">
+      </arc>
+      <arc id="cId8594033103490860818289" source="C_provide_2_3_3" target="Cpt2_1">
+      </arc>
+      <arc id="cId8594033103490860818565" source="I_ask2_2_1" target="wait_cable_2">
+      </arc>
+      <arc id="cId8594033103490860818290" source="C_provide_2_3_3" target="cable_used_2">
+      </arc>
+      <arc id="cId8594033103490860818566" source="I_ask2_2_1" target="Cpt1_2">
+      </arc>
+      <arc id="cId8594033103490860818291" source="C_provide_2_3_3" target="FMCb">
+      </arc>
+      <arc id="cId8594033103490860818567" source="Cpt1_1" target="I_ask2_3_1">
+      </arc>
+      <arc id="cId8594033103490860818292" source="C_provide_2_3_3" target="PMC_2">
+      </arc>
+      <arc id="cId8594033103490860818568" source="loop_em_3" target="I_ask2_3_1">
+      </arc>
+      <arc id="cId8594033103490860818293" source="Cpt2_3" target="C_provide_3_3_3">
+      </arc>
+      <arc id="cId8594033103490860818569" source="I_ask2_3_1" target="AMC_3_1">
+      </arc>
+      <arc id="cId8594033103490860818294" source="AMC_3_3" target="C_provide_3_3_3">
+      </arc>
+      <arc id="cId8594033103490860818570" source="I_ask2_3_1" target="wait_cable_3">
+      </arc>
+      <arc id="cId8594033103490860818295" source="FMCb" target="C_provide_3_3_3">
+      </arc>
+      <arc id="cId8594033103490860818571" source="I_ask2_3_1" target="Cpt1_2">
+      </arc>
+      <arc id="cId8594033103490860818296" source="cable_free" target="C_provide_3_3_3">
+      </arc>
+      <arc id="cId8594033103490860818572" source="Cpt1_2" target="I_ask2_1_2">
+      </arc>
+      <arc id="cId8594033103490860818297" source="C_provide_3_3_3" target="Cpt2_1">
+      </arc>
+      <arc id="cId8594033103490860818573" source="loop_em_1" target="I_ask2_1_2">
+      </arc>
+      <arc id="cId8594033103490860818298" source="C_provide_3_3_3" target="cable_used_3">
+      </arc>
+      <arc id="cId8594033103490860818574" source="I_ask2_1_2" target="AMC_1_2">
+      </arc>
+      <arc id="cId8594033103490860818299" source="C_provide_3_3_3" target="FMCb">
+      </arc>
+      <arc id="cId8594033103490860818575" source="I_ask2_1_2" target="wait_cable_1">
+      </arc>
+      <arc id="cId8594033103490860818300" source="C_provide_3_3_3" target="PMC_3">
+      </arc>
+      <arc id="cId8594033103490860818576" source="I_ask2_1_2" target="Cpt1_3">
+      </arc>
+      <arc id="cId8594033103490860818301" source="cable_used_1" target="C_free_1_1">
+      </arc>
+      <arc id="cId8594033103490860818577" source="Cpt1_2" target="I_ask2_2_2">
+      </arc>
+      <arc id="cId8594033103490860818302" source="FMC_1" target="C_free_1_1">
+      </arc>
+      <arc id="cId8594033103490860818303" source="C_free_1_1" target="FMCb">
+      </arc>
+      <arc id="cId8594033103490860818578" source="loop_em_2" target="I_ask2_2_2">
+      </arc>
+      <arc id="cId8594033103490860818304" source="C_free_1_1" target="cable_free">
+      </arc>
+      <arc id="cId8594033103490860818579" source="I_ask2_2_2" target="AMC_2_2">
+      </arc>
+      <arc id="cId8594033103490860818305" source="cable_used_2" target="C_free_2_2">
+      </arc>
+      <arc id="cId8594033103490860818580" source="I_ask2_2_2" target="wait_cable_2">
+      </arc>
+      <arc id="cId8594033103490860818306" source="FMC_2" target="C_free_2_2">
+      </arc>
+      <arc id="cId8594033103490860818581" source="I_ask2_2_2" target="Cpt1_3">
+      </arc>
+      <arc id="cId8594033103490860818307" source="C_free_2_2" target="FMCb">
+      </arc>
+      <arc id="cId8594033103490860818582" source="Cpt1_2" target="I_ask2_3_2">
+      </arc>
+      <arc id="cId8594033103490860818308" source="C_free_2_2" target="cable_free">
+      </arc>
+      <arc id="cId8594033103490860818583" source="loop_em_3" target="I_ask2_3_2">
+      </arc>
+      <arc id="cId8594033103490860818309" source="cable_used_3" target="C_free_3_3">
+      </arc>
+      <arc id="cId8594033103490860818584" source="I_ask2_3_2" target="AMC_3_2">
+      </arc>
+      <arc id="cId8594033103490860818310" source="FMC_3" target="C_free_3_3">
+      </arc>
+      <arc id="cId8594033103490860818585" source="I_ask2_3_2" target="wait_cable_3">
+      </arc>
+      <arc id="cId8594033103490860818311" source="C_free_3_3" target="FMCb">
+      </arc>
+      <arc id="cId8594033103490860818586" source="I_ask2_3_2" target="Cpt1_3">
+      </arc>
+      <arc id="cId8594033103490860818312" source="C_free_3_3" target="cable_free">
+      </arc>
+      <arc id="cId8594033103490860818587" source="Cpt1_3" target="I_ask2_1_3">
+      </arc>
+      <arc id="cId8594033103490860818313" source="Cpt2_1" target="C_refuse_1_1_1_1">
+      </arc>
+      <arc id="cId8594033103490860818588" source="loop_em_1" target="I_ask2_1_3">
+      </arc>
+      <arc id="cId8594033103490860818314" source="AMC_1_1" target="C_refuse_1_1_1_1">
+      </arc>
+      <arc id="cId8594033103490860818589" source="I_ask2_1_3" target="AMC_1_3">
+      </arc>
+      <arc id="cId8594033103490860818315" source="cable_used_1" target="C_refuse_1_1_1_1">
+      </arc>
+      <arc id="cId8594033103490860818590" source="I_ask2_1_3" target="wait_cable_1">
+      </arc>
+      <arc id="cId8594033103490860818316" source="FMCb" target="C_refuse_1_1_1_1">
+      </arc>
+      <arc id="cId8594033103490860818591" source="I_ask2_1_3" target="Cpt1_1">
+      </arc>
+      <arc id="cId8594033103490860818317" source="C_refuse_1_1_1_1" target="Cpt2_2">
+      </arc>
+      <arc id="cId8594033103490860818592" source="Cpt1_3" target="I_ask2_2_3">
+      </arc>
+      <arc id="cId8594033103490860818318" source="C_refuse_1_1_1_1" target="cable_used_1">
+      </arc>
+      <arc id="cId8594033103490860818593" source="loop_em_2" target="I_ask2_2_3">
+      </arc>
+      <arc id="cId8594033103490860818319" source="C_refuse_1_1_1_1" target="FMCb">
+      </arc>
+      <arc id="cId8594033103490860818594" source="I_ask2_2_3" target="AMC_2_3">
+      </arc>
+      <arc id="cId8594033103490860818320" source="C_refuse_1_1_1_1" target="RMC_1">
+      </arc>
+      <arc id="cId8594033103490860818595" source="I_ask2_2_3" target="wait_cable_2">
+      </arc>
+      <arc id="cId8598990557435880498321" source="Cpt2_1" target="C_refuse_2_1_1_1">
+      </arc>
+      <arc id="cId8598990557435880498596" source="I_ask2_2_3" target="Cpt1_1">
+      </arc>
+      <arc id="cId8598990557435880498322" source="AMC_2_1" target="C_refuse_2_1_1_1">
+      </arc>
+      <arc id="cId8598990557435880498597" source="Cpt1_3" target="I_ask2_3_3">
+      </arc>
+      <arc id="cId8598990557435880498323" source="cable_used_1" target="C_refuse_2_1_1_1">
+      </arc>
+      <arc id="cId8598990557435880498598" source="loop_em_3" target="I_ask2_3_3">
+      </arc>
+      <arc id="cId8598990557435880498324" source="FMCb" target="C_refuse_2_1_1_1">
+      </arc>
+      <arc id="cId8598990557435880498599" source="I_ask2_3_3" target="AMC_3_3">
+      </arc>
+      <arc id="cId8598990557435880498325" source="C_refuse_2_1_1_1" target="Cpt2_2">
+      </arc>
+      <arc id="cId8598990557435880498600" source="I_ask2_3_3" target="wait_cable_3">
+      </arc>
+      <arc id="cId8598990557435880498326" source="C_refuse_2_1_1_1" target="cable_used_1">
+      </arc>
+      <arc id="cId8598990557435880498601" source="I_ask2_3_3" target="Cpt1_1">
+      </arc>
+      <arc id="cId8598990557435880498327" source="C_refuse_2_1_1_1" target="FMCb">
+      </arc>
+      <arc id="cId8598990557435880498602" source="MSG_1" target="I_rec2_1_1">
+      </arc>
+      <arc id="cId8598990557435880498328" source="C_refuse_2_1_1_1" target="RMC_2">
+      </arc>
+      <arc id="cId8598990557435880498603" source="wait_msg_1" target="I_rec2_1_1">
+      </arc>
+      <arc id="cId8598990557435880498329" source="Cpt2_1" target="C_refuse_3_1_1_1">
+      </arc>
+      <arc id="cId8598990557435880498330" source="AMC_3_1" target="C_refuse_3_1_1_1">
+      </arc>
+      <arc id="cId8598990557435880498604" source="I_rec2_1_1" target="ACK">
+      </arc>
+      <arc id="cId8598990557435880498331" source="cable_used_1" target="C_refuse_3_1_1_1">
+      </arc>
+      <arc id="cId8598990557435880498332" source="FMCb" target="C_refuse_3_1_1_1">
+      </arc>
+      <arc id="cId8598990557435880498333" source="C_refuse_3_1_1_1" target="Cpt2_2">
+      </arc>
+      <arc id="cId8598990557435880498334" source="C_refuse_3_1_1_1" target="cable_used_1">
+      </arc>
+      <arc id="cId8598990557435880498335" source="C_refuse_3_1_1_1" target="FMCb">
+      </arc>
+      <arc id="cId8598990557435880498336" source="C_refuse_3_1_1_1" target="RMC_3">
+      </arc>
+      <arc id="cId8598990557435880498337" source="Cpt2_1" target="C_refuse_1_2_1_1">
+      </arc>
+      <arc id="cId8598990557435880498338" source="AMC_1_1" target="C_refuse_1_2_1_1">
+      </arc>
+      <arc id="cId8598990557435880498339" source="cable_used_2" target="C_refuse_1_2_1_1">
+      </arc>
+      <arc id="cId8598990557435880498340" source="FMCb" target="C_refuse_1_2_1_1">
+      </arc>
+      <arc id="cId8598990557435880498341" source="C_refuse_1_2_1_1" target="Cpt2_2">
+      </arc>
+      <arc id="cId8598990557435880498342" source="C_refuse_1_2_1_1" target="cable_used_2">
+      </arc>
+      <arc id="cId8598990557435880498343" source="C_refuse_1_2_1_1" target="FMCb">
+      </arc>
+      <arc id="cId8598990557435880498344" source="C_refuse_1_2_1_1" target="RMC_1">
+      </arc>
+      <arc id="cId8598990557435880498345" source="Cpt2_1" target="C_refuse_2_2_1_1">
+      </arc>
+      <arc id="cId8598990557435880498346" source="AMC_2_1" target="C_refuse_2_2_1_1">
+      </arc>
+      <arc id="cId8598990557435880498347" source="cable_used_2" target="C_refuse_2_2_1_1">
+      </arc>
+      <arc id="cId8598990557435880498348" source="FMCb" target="C_refuse_2_2_1_1">
+      </arc>
+      <arc id="cId8598990557435880498349" source="C_refuse_2_2_1_1" target="Cpt2_2">
+      </arc>
+      <arc id="cId8598990557435880498350" source="C_refuse_2_2_1_1" target="cable_used_2">
+      </arc>
+      <arc id="cId8598990557435880498351" source="C_refuse_2_2_1_1" target="FMCb">
+      </arc>
+      <arc id="cId8598990557435880498605" source="I_rec2_1_1" target="loop_em_1">
+      </arc>
+      <arc id="cId8598990557435880498352" source="C_refuse_2_2_1_1" target="RMC_2">
+      </arc>
+      <arc id="cId8598990557435880498606" source="MSG_2" target="I_rec2_2_2">
+      </arc>
+      <arc id="cId8598990557435880498353" source="Cpt2_1" target="C_refuse_3_2_1_1">
+      </arc>
+      <arc id="cId8598990557435880498607" source="wait_msg_2" target="I_rec2_2_2">
+      </arc>
+      <arc id="cId8597338069924229074608" source="I_rec2_2_2" target="ACK">
+      </arc>
+      <arc id="cId8597338069924229074354" source="AMC_3_1" target="C_refuse_3_2_1_1">
+      </arc>
+      <arc id="cId8597338069924229074609" source="I_rec2_2_2" target="loop_em_2">
+      </arc>
+      <arc id="cId8597338069924229074355" source="cable_used_2" target="C_refuse_3_2_1_1">
+      </arc>
+      <arc id="cId8597338069924229074356" source="FMCb" target="C_refuse_3_2_1_1">
+      </arc>
+      <arc id="cId8597338069924229074610" source="MSG_3" target="I_rec2_3_3">
+      </arc>
+      <arc id="cId8597338069924229074357" source="C_refuse_3_2_1_1" target="Cpt2_2">
+      </arc>
+      <arc id="cId8597338069924229074611" source="wait_msg_3" target="I_rec2_3_3">
+      </arc>
+      <arc id="cId8597338069924229074358" source="C_refuse_3_2_1_1" target="cable_used_2">
+      </arc>
+      <arc id="cId8597338069924229074612" source="I_rec2_3_3" target="ACK">
+      </arc>
+      <arc id="cId8597338069924229074359" source="C_refuse_3_2_1_1" target="FMCb">
+      </arc>
+      <arc id="cId8597338069924229074613" source="I_rec2_3_3" target="loop_em_3">
+      </arc>
+      <arc id="cId8597338069924229074360" source="C_refuse_3_2_1_1" target="RMC_3">
+      </arc>
+      <arc id="cId8597338069924229074361" source="Cpt2_1" target="C_refuse_1_3_1_1">
+      </arc>
+      <arc id="cId8597338069924229074614" source="S_tout" target="Gto_1">
+      </arc>
+      <arc id="cId8597338069924229074362" source="AMC_1_1" target="C_refuse_1_3_1_1">
+      </arc>
+      <arc id="cId8597338069924229074615" source="FMC_1" target="Gto_1">
+      </arc>
+      <arc id="cId8597338069924229074363" source="cable_used_3" target="C_refuse_1_3_1_1">
+      </arc>
+      <arc id="cId8597338069924229074616" source="Gto_1" target="R_tout">
+      </arc>
+      <arc id="cId8597338069924229074364" source="FMCb" target="C_refuse_1_3_1_1">
+      </arc>
+      <arc id="cId8597338069924229074617" source="Gto_1" target="FMC_1">
+      </arc>
+      <arc id="cId8597338069924229074365" source="C_refuse_1_3_1_1" target="Cpt2_2">
+      </arc>
+      <arc id="cId8597338069924229074366" source="C_refuse_1_3_1_1" target="cable_used_3">
+      </arc>
+      <arc id="cId8597338069924229074618" source="S_tout" target="Gto_2">
+      </arc>
+      <arc id="cId8597338069924229074367" source="C_refuse_1_3_1_1" target="FMCb">
+      </arc>
+      <arc id="cId8597338069924229074368" source="C_refuse_1_3_1_1" target="RMC_1">
+      </arc>
+      <arc id="cId8597338069924229074619" source="FMC_2" target="Gto_2">
+      </arc>
+      <arc id="cId8597338069924229074369" source="Cpt2_1" target="C_refuse_2_3_1_1">
+      </arc>
+      <arc id="cId8597338069924229074620" source="Gto_2" target="R_tout">
+      </arc>
+      <arc id="cId8597338069924229074370" source="AMC_2_1" target="C_refuse_2_3_1_1">
+      </arc>
+      <arc id="cId8597338069924229074621" source="Gto_2" target="FMC_2">
+      </arc>
+      <arc id="cId8597338069924229074622" source="S_tout" target="Gto_3">
+      </arc>
+      <arc id="cId8597338069924229074371" source="cable_used_3" target="C_refuse_2_3_1_1">
+      </arc>
+      <arc id="cId8597338069924229074623" source="FMC_3" target="Gto_3">
+      </arc>
+      <arc id="cId8597338069924229074372" source="FMCb" target="C_refuse_2_3_1_1">
+      </arc>
+      <arc id="cId8597338069924229074373" source="C_refuse_2_3_1_1" target="Cpt2_2">
+      </arc>
+      <arc id="cId8597338069924229074374" source="C_refuse_2_3_1_1" target="cable_used_3">
+      </arc>
+      <arc id="cId8597338069924229074375" source="C_refuse_2_3_1_1" target="FMCb">
+      </arc>
+      <arc id="cId8597338069924229074376" source="C_refuse_2_3_1_1" target="RMC_2">
+      </arc>
+      <arc id="cId8597338069924229074377" source="Cpt2_1" target="C_refuse_3_3_1_1">
+      </arc>
+      <arc id="cId8597338069924229074378" source="AMC_3_1" target="C_refuse_3_3_1_1">
+      </arc>
+      <arc id="cId8597338069924229074379" source="cable_used_3" target="C_refuse_3_3_1_1">
+      </arc>
+      <arc id="cId8597338069924229074380" source="FMCb" target="C_refuse_3_3_1_1">
+      </arc>
+      <arc id="cId8597338069924229074381" source="C_refuse_3_3_1_1" target="Cpt2_2">
+      </arc>
+      <arc id="cId8597338069924229074382" source="C_refuse_3_3_1_1" target="cable_used_3">
+      </arc>
+      <arc id="cId8597338069924229074383" source="C_refuse_3_3_1_1" target="FMCb">
+      </arc>
+      <arc id="cId8597338069924229074384" source="C_refuse_3_3_1_1" target="RMC_3">
+      </arc>
+      <arc id="cId8597338069924229074385" source="Cpt2_2" target="C_refuse_1_1_2_2">
+      </arc>
+      <arc id="cId8597338069924229074386" source="AMC_1_2" target="C_refuse_1_1_2_2">
+      </arc>
+      <arc id="cId8597338069924229074387" source="cable_used_1" target="C_refuse_1_1_2_2">
+      </arc>
+      <arc id="cId8597338069924229074624" source="Gto_3" target="R_tout">
+      </arc>
+      <arc id="cId8597338069924229074625" source="Gto_3" target="FMC_3">
+      </arc>
+      <arc id="cId8597338069924229074388" source="FMCb" target="C_refuse_1_1_2_2">
+      </arc>
+      <arc id="cId8597338069924229074389" source="C_refuse_1_1_2_2" target="Cpt2_3">
+      </arc>
+      <arc id="cId8597338069924229074390" source="C_refuse_1_1_2_2" target="cable_used_1">
+      </arc>
+      <arc id="cId8597338069924229074626" source="R_tout" target="loss_m_1">
+      </arc>
+      <arc id="cId8597338069924229074391" source="C_refuse_1_1_2_2" target="FMCb">
+      </arc>
+      <arc id="cId8597338069924229074627" source="MSG_1" target="loss_m_1">
+      </arc>
+      <arc id="cId8597338069924229074392" source="C_refuse_1_1_2_2" target="RMC_1">
+      </arc>
+      <arc id="cId8597338069924229074628" source="loss_m_1" target="T_out">
+      </arc>
+      <arc id="cId8589075649545841138629" source="loss_m_1" target="S_tout">
+      </arc>
+      <arc id="cId8589075649545841138393" source="Cpt2_2" target="C_refuse_2_1_2_2">
+      </arc>
+      <arc id="cId8589075649545841138630" source="R_tout" target="loss_m_2">
+      </arc>
+      <arc id="cId8589075649545841138394" source="AMC_2_2" target="C_refuse_2_1_2_2">
+      </arc>
+      <arc id="cId8589075649545841138631" source="MSG_2" target="loss_m_2">
+      </arc>
+      <arc id="cId8589075649545841138632" source="loss_m_2" target="T_out">
+      </arc>
+      <arc id="cId8589075649545841138633" source="loss_m_2" target="S_tout">
+      </arc>
+      <arc id="cId8589075649545841138634" source="R_tout" target="loss_m_3">
+      </arc>
+      <arc id="cId8589075649545841138395" source="cable_used_1" target="C_refuse_2_1_2_2">
+      </arc>
+      <arc id="cId8589075649545841138635" source="MSG_3" target="loss_m_3">
+      </arc>
+      <arc id="cId8589075649545841138636" source="loss_m_3" target="T_out">
+      </arc>
+      <arc id="cId8589075649545841138396" source="FMCb" target="C_refuse_2_1_2_2">
+      </arc>
+      <arc id="cId8589075649545841138637" source="loss_m_3" target="S_tout">
+      </arc>
+      <arc id="cId8589075649545841138638" source="listen_1" target="I_ask1_1_1">
+      </arc>
+      <arc id="cId8589075649545841138397" source="C_refuse_2_1_2_2" target="Cpt2_3">
+      </arc>
+      <arc id="cId8589075649545841138639" source="Cpt1_1" target="I_ask1_1_1">
+      </arc>
+      <arc id="cId8589075649545841138398" source="C_refuse_2_1_2_2" target="cable_used_1">
+      </arc>
+      <arc id="cId8589075649545841138640" source="I_ask1_1_1" target="AMC_1_1">
+      </arc>
+      <arc id="cId8589075649545841138399" source="C_refuse_2_1_2_2" target="FMCb">
+      </arc>
+      <arc id="cId8589075649545841138641" source="I_ask1_1_1" target="wait_cable_1">
+      </arc>
+      <arc id="cId8589075649545841138400" source="C_refuse_2_1_2_2" target="RMC_2">
+      </arc>
+      <arc id="cId8589075649545841138642" source="I_ask1_1_1" target="Cpt1_2">
+      </arc>
+      <arc id="cId8589075649545841138401" source="Cpt2_2" target="C_refuse_3_1_2_2">
+      </arc>
+      <arc id="cId8589075649545841138643" source="listen_2" target="I_ask1_2_1">
+      </arc>
+      <arc id="cId8589075649545841138402" source="AMC_3_2" target="C_refuse_3_1_2_2">
+      </arc>
+      <arc id="cId8589075649545841138644" source="Cpt1_1" target="I_ask1_2_1">
+      </arc>
+      <arc id="cId8589075649545841138403" source="cable_used_1" target="C_refuse_3_1_2_2">
+      </arc>
+      <arc id="cId8589075649545841138645" source="I_ask1_2_1" target="AMC_2_1">
+      </arc>
+      <arc id="cId8589075649545841138404" source="FMCb" target="C_refuse_3_1_2_2">
+      </arc>
+      <arc id="cId8589075649545841138646" source="I_ask1_2_1" target="wait_cable_2">
+      </arc>
+      <arc id="cId8589075649545841138405" source="C_refuse_3_1_2_2" target="Cpt2_3">
+      </arc>
+      <arc id="cId8589075649545841138647" source="I_ask1_2_1" target="Cpt1_2">
+      </arc>
+      <arc id="cId8589075649545841138406" source="C_refuse_3_1_2_2" target="cable_used_1">
+      </arc>
+      <arc id="cId8589075649545841138648" source="listen_3" target="I_ask1_3_1">
+      </arc>
+      <arc id="cId8589075649545841138407" source="C_refuse_3_1_2_2" target="FMCb">
+      </arc>
+      <arc id="cId8589075649545841138649" source="Cpt1_1" target="I_ask1_3_1">
+      </arc>
+      <arc id="cId8589075649545841138408" source="C_refuse_3_1_2_2" target="RMC_3">
+      </arc>
+      <arc id="cId8589075649545841138650" source="I_ask1_3_1" target="AMC_3_1">
+      </arc>
+      <arc id="cId8589075649545841138409" source="Cpt2_2" target="C_refuse_1_2_2_2">
+      </arc>
+      <arc id="cId8589075649545841138651" source="I_ask1_3_1" target="wait_cable_3">
+      </arc>
+      <arc id="cId8589075649545841138410" source="AMC_1_2" target="C_refuse_1_2_2_2">
+      </arc>
+      <arc id="cId8589075649545841138652" source="I_ask1_3_1" target="Cpt1_2">
+      </arc>
+      <arc id="cId8589075649545841138411" source="cable_used_2" target="C_refuse_1_2_2_2">
+      </arc>
+      <arc id="cId8589075649545841138653" source="listen_1" target="I_ask1_1_2">
+      </arc>
+      <arc id="cId8589075649545841138412" source="FMCb" target="C_refuse_1_2_2_2">
+      </arc>
+      <arc id="cId8589075649545841138654" source="Cpt1_2" target="I_ask1_1_2">
+      </arc>
+      <arc id="cId8589075649545841138413" source="C_refuse_1_2_2_2" target="Cpt2_3">
+      </arc>
+      <arc id="cId8589075649545841138655" source="I_ask1_1_2" target="AMC_1_2">
+      </arc>
+      <arc id="cId8589075649545841138414" source="C_refuse_1_2_2_2" target="cable_used_2">
+      </arc>
+      <arc id="cId8589075649545841138656" source="I_ask1_1_2" target="wait_cable_1">
+      </arc>
+      <arc id="cId8589075649545841138415" source="C_refuse_1_2_2_2" target="FMCb">
+      </arc>
+      <arc id="cId8589075649545841138657" source="I_ask1_1_2" target="Cpt1_3">
+      </arc>
+      <arc id="cId8589075649545841138416" source="C_refuse_1_2_2_2" target="RMC_1">
+      </arc>
+      <arc id="cId8589075649545841138658" source="listen_2" target="I_ask1_2_2">
+      </arc>
+      <arc id="cId8589075649545841138417" source="Cpt2_2" target="C_refuse_2_2_2_2">
+      </arc>
+      <arc id="cId8589075649545841138659" source="Cpt1_2" target="I_ask1_2_2">
+      </arc>
+      <arc id="cId8589075649545841138418" source="AMC_2_2" target="C_refuse_2_2_2_2">
+      </arc>
+      <arc id="cId8589075649545841138660" source="I_ask1_2_2" target="AMC_2_2">
+      </arc>
+      <arc id="cId8589075649545841138419" source="cable_used_2" target="C_refuse_2_2_2_2">
+      </arc>
+      <arc id="cId8589075649545841138661" source="I_ask1_2_2" target="wait_cable_2">
+      </arc>
+      <arc id="cId8589075649545841138420" source="FMCb" target="C_refuse_2_2_2_2">
+      </arc>
+      <arc id="cId8589075649545841138662" source="I_ask1_2_2" target="Cpt1_3">
+      </arc>
+      <arc id="cId8589075649545841138663" source="listen_3" target="I_ask1_3_2">
+      </arc>
+      <arc id="cId8589075649545841138664" source="Cpt1_2" target="I_ask1_3_2">
+      </arc>
+      <arc id="cId8589075649545841138665" source="I_ask1_3_2" target="AMC_3_2">
+      </arc>
+      <arc id="cId8589075649545841138666" source="I_ask1_3_2" target="wait_cable_3">
+      </arc>
+      <arc id="cId8589075649545841138667" source="I_ask1_3_2" target="Cpt1_3">
+      </arc>
+      <arc id="cId8589075649545841138668" source="listen_1" target="I_ask1_1_3">
+      </arc>
+      <arc id="cId8589075649545841138669" source="Cpt1_3" target="I_ask1_1_3">
+      </arc>
+      <arc id="cId8589075649545841138670" source="I_ask1_1_3" target="AMC_1_3">
+      </arc>
+      <arc id="cId8589075649545841138671" source="I_ask1_1_3" target="wait_cable_1">
+      </arc>
+      <arc id="cId8589075649545841138672" source="I_ask1_1_3" target="Cpt1_1">
+      </arc>
+      <arc id="cId8589075649545841138673" source="listen_2" target="I_ask1_2_3">
+      </arc>
+      <arc id="cId8589075649545841138674" source="Cpt1_3" target="I_ask1_2_3">
+      </arc>
+      <arc id="cId8589075649545841138675" source="I_ask1_2_3" target="AMC_2_3">
+      </arc>
+      <arc id="cId8589075649545841138676" source="I_ask1_2_3" target="wait_cable_2">
+      </arc>
+      <arc id="cId8589075649545841138677" source="I_ask1_2_3" target="Cpt1_1">
+      </arc>
+      <arc id="cId8589075649545841138678" source="listen_3" target="I_ask1_3_3">
+      </arc>
+      <arc id="cId8589075649545841138679" source="Cpt1_3" target="I_ask1_3_3">
+      </arc>
+      <arc id="cId8589075649545841138680" source="I_ask1_3_3" target="AMC_3_3">
+      </arc>
+      <arc id="cId8589075649545841138681" source="I_ask1_3_3" target="wait_cable_3">
+      </arc>
+      <arc id="cId8589075649545841138682" source="I_ask1_3_3" target="Cpt1_1">
+      </arc>
+      <arc id="cId8589075649545841138683" source="RMC_1" target="I_refused_1_1">
+      </arc>
+      <arc id="cId8589075649545841138684" source="wait_cable_1" target="I_refused_1_1">
+      </arc>
+      <arc id="cId8589075649545841138685" source="I_refused_1_1" target="wait_msg_1">
+      </arc>
+      <arc id="cId8589075649545841138686" source="RMC_2" target="I_refused_2_2">
+      </arc>
+      <arc id="cId8589075649545841138687" source="wait_cable_2" target="I_refused_2_2">
+      </arc>
+      <arc id="cId8589075649545841138688" source="I_refused_2_2" target="wait_msg_2">
+      </arc>
+      <arc id="cId8589075649545841138689" source="RMC_3" target="I_refused_3_3">
+      </arc>
+      <arc id="cId8589075649545841138690" source="wait_cable_3" target="I_refused_3_3">
+      </arc>
+      <arc id="cId8589075649545841138691" source="I_refused_3_3" target="wait_msg_3">
+      </arc>
+    </page>
+    <name>
+      <text>SafeBus-PT-03</text>
+    </name>
+  </net>
+</pnml>
