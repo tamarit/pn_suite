@@ -1,0 +1,2982 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+	<net id="ResAllocation-PT-R003C010" type="http://www.pnml.org/version-2009/grammar/ptnet">
+		<page id="main-page">
+			<transition id="t_0_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_0_0</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<place id="p_0_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_0_0</text>
+				</name>
+				<graphics>
+					<position x="100" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_0_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_0_0</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="170" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-0" source="t_0_0" target="p_0_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-1" source="r_0_0" target="t_0_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-2" source="t_1_0" target="r_0_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-3" source="r_0_0" target="t_1_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_0_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_0_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="240"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-4" source="p_0_0" target="t_0_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-5" source="t_0_1" target="r_0_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_0_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_0_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_0_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_0_1</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="170" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-6" source="t_0_1" target="p_0_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-7" source="r_0_1" target="t_0_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-8" source="t_1_1" target="r_0_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-9" source="r_0_1" target="t_1_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_0_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_0_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="380"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-10" source="p_0_1" target="t_0_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-11" source="t_0_2" target="r_0_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_0_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_0_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_0_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_0_2</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="170" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-12" source="t_0_2" target="p_0_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-13" source="r_0_2" target="t_0_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-14" source="t_1_2" target="r_0_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-15" source="r_0_2" target="t_1_3">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_0_3">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_0_3</text>
+				</name>
+				<graphics>
+					<position x="100" y="520"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-16" source="p_0_2" target="t_0_3">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-17" source="t_0_3" target="r_0_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_1_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_1_0</text>
+				</name>
+				<graphics>
+					<position x="240" y="100"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<place id="p_1_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_1_0</text>
+				</name>
+				<graphics>
+					<position x="240" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_1_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_1_0</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="310" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-18" source="p_1_0" target="t_1_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-19" source="t_1_0" target="r_1_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-20" source="r_1_0" target="t_2_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-21" source="t_2_1" target="r_1_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_1_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_1_1</text>
+				</name>
+				<graphics>
+					<position x="240" y="240"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-22" source="t_1_1" target="p_1_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-23" source="r_1_0" target="t_1_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_1_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_1_1</text>
+				</name>
+				<graphics>
+					<position x="240" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_1_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_1_1</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="310" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-24" source="p_1_1" target="t_1_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-25" source="t_1_1" target="r_1_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-26" source="r_1_1" target="t_2_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-27" source="t_2_2" target="r_1_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_1_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_1_2</text>
+				</name>
+				<graphics>
+					<position x="240" y="380"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-28" source="t_1_2" target="p_1_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-29" source="r_1_1" target="t_1_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_1_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_1_2</text>
+				</name>
+				<graphics>
+					<position x="240" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_1_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_1_2</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="310" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-30" source="p_1_2" target="t_1_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-31" source="t_1_2" target="r_1_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-32" source="r_1_2" target="t_2_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-33" source="t_2_3" target="r_1_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_1_3">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_1_3</text>
+				</name>
+				<graphics>
+					<position x="240" y="520"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-34" source="t_1_3" target="p_1_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-35" source="r_1_2" target="t_1_3">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_2_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_2_0</text>
+				</name>
+				<graphics>
+					<position x="380" y="100"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<place id="p_2_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_2_0</text>
+				</name>
+				<graphics>
+					<position x="380" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_2_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_2_0</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="450" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-36" source="t_2_0" target="p_2_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-37" source="r_2_0" target="t_2_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-38" source="t_3_0" target="r_2_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-39" source="r_2_0" target="t_3_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_2_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_2_1</text>
+				</name>
+				<graphics>
+					<position x="380" y="240"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-40" source="p_2_0" target="t_2_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-41" source="t_2_1" target="r_2_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_2_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_2_1</text>
+				</name>
+				<graphics>
+					<position x="380" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_2_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_2_1</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="450" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-42" source="t_2_1" target="p_2_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-43" source="r_2_1" target="t_2_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-44" source="t_3_1" target="r_2_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-45" source="r_2_1" target="t_3_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_2_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_2_2</text>
+				</name>
+				<graphics>
+					<position x="380" y="380"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-46" source="p_2_1" target="t_2_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-47" source="t_2_2" target="r_2_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_2_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_2_2</text>
+				</name>
+				<graphics>
+					<position x="380" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_2_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_2_2</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="450" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-48" source="t_2_2" target="p_2_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-49" source="r_2_2" target="t_2_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-50" source="t_3_2" target="r_2_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-51" source="r_2_2" target="t_3_3">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_2_3">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_2_3</text>
+				</name>
+				<graphics>
+					<position x="380" y="520"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-52" source="p_2_2" target="t_2_3">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-53" source="t_2_3" target="r_2_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_3_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_3_0</text>
+				</name>
+				<graphics>
+					<position x="520" y="100"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<place id="p_3_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_3_0</text>
+				</name>
+				<graphics>
+					<position x="520" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_3_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_3_0</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="590" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-54" source="p_3_0" target="t_3_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-55" source="t_3_0" target="r_3_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-56" source="r_3_0" target="t_4_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-57" source="t_4_1" target="r_3_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_3_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_3_1</text>
+				</name>
+				<graphics>
+					<position x="520" y="240"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-58" source="t_3_1" target="p_3_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-59" source="r_3_0" target="t_3_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_3_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_3_1</text>
+				</name>
+				<graphics>
+					<position x="520" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_3_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_3_1</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="590" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-60" source="p_3_1" target="t_3_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-61" source="t_3_1" target="r_3_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-62" source="r_3_1" target="t_4_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-63" source="t_4_2" target="r_3_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_3_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_3_2</text>
+				</name>
+				<graphics>
+					<position x="520" y="380"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-64" source="t_3_2" target="p_3_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-65" source="r_3_1" target="t_3_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_3_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_3_2</text>
+				</name>
+				<graphics>
+					<position x="520" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_3_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_3_2</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="590" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-66" source="p_3_2" target="t_3_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-67" source="t_3_2" target="r_3_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-68" source="r_3_2" target="t_4_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-69" source="t_4_3" target="r_3_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_3_3">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_3_3</text>
+				</name>
+				<graphics>
+					<position x="520" y="520"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-70" source="t_3_3" target="p_3_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-71" source="r_3_2" target="t_3_3">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_4_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_4_0</text>
+				</name>
+				<graphics>
+					<position x="660" y="100"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<place id="p_4_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_4_0</text>
+				</name>
+				<graphics>
+					<position x="660" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_4_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_4_0</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="730" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-72" source="t_4_0" target="p_4_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-73" source="r_4_0" target="t_4_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-74" source="t_5_0" target="r_4_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-75" source="r_4_0" target="t_5_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_4_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_4_1</text>
+				</name>
+				<graphics>
+					<position x="660" y="240"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-76" source="p_4_0" target="t_4_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-77" source="t_4_1" target="r_4_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_4_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_4_1</text>
+				</name>
+				<graphics>
+					<position x="660" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_4_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_4_1</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="730" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-78" source="t_4_1" target="p_4_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-79" source="r_4_1" target="t_4_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-80" source="t_5_1" target="r_4_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-81" source="r_4_1" target="t_5_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_4_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_4_2</text>
+				</name>
+				<graphics>
+					<position x="660" y="380"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-82" source="p_4_1" target="t_4_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-83" source="t_4_2" target="r_4_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_4_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_4_2</text>
+				</name>
+				<graphics>
+					<position x="660" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_4_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_4_2</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="730" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-84" source="t_4_2" target="p_4_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-85" source="r_4_2" target="t_4_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-86" source="t_5_2" target="r_4_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-87" source="r_4_2" target="t_5_3">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_4_3">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_4_3</text>
+				</name>
+				<graphics>
+					<position x="660" y="520"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-88" source="p_4_2" target="t_4_3">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-89" source="t_4_3" target="r_4_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_5_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_5_0</text>
+				</name>
+				<graphics>
+					<position x="800" y="100"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<place id="p_5_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_5_0</text>
+				</name>
+				<graphics>
+					<position x="800" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_5_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_5_0</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="870" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-90" source="p_5_0" target="t_5_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-91" source="t_5_0" target="r_5_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-92" source="r_5_0" target="t_6_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-93" source="t_6_1" target="r_5_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_5_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_5_1</text>
+				</name>
+				<graphics>
+					<position x="800" y="240"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-94" source="t_5_1" target="p_5_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-95" source="r_5_0" target="t_5_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_5_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_5_1</text>
+				</name>
+				<graphics>
+					<position x="800" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_5_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_5_1</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="870" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-96" source="p_5_1" target="t_5_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-97" source="t_5_1" target="r_5_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-98" source="r_5_1" target="t_6_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-99" source="t_6_2" target="r_5_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_5_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_5_2</text>
+				</name>
+				<graphics>
+					<position x="800" y="380"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-100" source="t_5_2" target="p_5_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-101" source="r_5_1" target="t_5_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_5_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_5_2</text>
+				</name>
+				<graphics>
+					<position x="800" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_5_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_5_2</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="870" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-102" source="p_5_2" target="t_5_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-103" source="t_5_2" target="r_5_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-104" source="r_5_2" target="t_6_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-105" source="t_6_3" target="r_5_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_5_3">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_5_3</text>
+				</name>
+				<graphics>
+					<position x="800" y="520"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-106" source="t_5_3" target="p_5_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-107" source="r_5_2" target="t_5_3">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_6_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_6_0</text>
+				</name>
+				<graphics>
+					<position x="940" y="100"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<place id="p_6_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_6_0</text>
+				</name>
+				<graphics>
+					<position x="940" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_6_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_6_0</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="1010" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-108" source="t_6_0" target="p_6_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-109" source="r_6_0" target="t_6_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-110" source="t_7_0" target="r_6_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-111" source="r_6_0" target="t_7_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_6_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_6_1</text>
+				</name>
+				<graphics>
+					<position x="940" y="240"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-112" source="p_6_0" target="t_6_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-113" source="t_6_1" target="r_6_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_6_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_6_1</text>
+				</name>
+				<graphics>
+					<position x="940" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_6_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_6_1</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="1010" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-114" source="t_6_1" target="p_6_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-115" source="r_6_1" target="t_6_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-116" source="t_7_1" target="r_6_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-117" source="r_6_1" target="t_7_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_6_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_6_2</text>
+				</name>
+				<graphics>
+					<position x="940" y="380"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-118" source="p_6_1" target="t_6_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-119" source="t_6_2" target="r_6_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_6_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_6_2</text>
+				</name>
+				<graphics>
+					<position x="940" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_6_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_6_2</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="1010" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-120" source="t_6_2" target="p_6_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-121" source="r_6_2" target="t_6_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-122" source="t_7_2" target="r_6_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-123" source="r_6_2" target="t_7_3">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_6_3">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_6_3</text>
+				</name>
+				<graphics>
+					<position x="940" y="520"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-124" source="p_6_2" target="t_6_3">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-125" source="t_6_3" target="r_6_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_7_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_7_0</text>
+				</name>
+				<graphics>
+					<position x="1080" y="100"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<place id="p_7_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_7_0</text>
+				</name>
+				<graphics>
+					<position x="1080" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_7_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_7_0</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="1150" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-126" source="p_7_0" target="t_7_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-127" source="t_7_0" target="r_7_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-128" source="r_7_0" target="t_8_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-129" source="t_8_1" target="r_7_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_7_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_7_1</text>
+				</name>
+				<graphics>
+					<position x="1080" y="240"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-130" source="t_7_1" target="p_7_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-131" source="r_7_0" target="t_7_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_7_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_7_1</text>
+				</name>
+				<graphics>
+					<position x="1080" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_7_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_7_1</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="1150" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-132" source="p_7_1" target="t_7_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-133" source="t_7_1" target="r_7_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-134" source="r_7_1" target="t_8_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-135" source="t_8_2" target="r_7_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_7_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_7_2</text>
+				</name>
+				<graphics>
+					<position x="1080" y="380"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-136" source="t_7_2" target="p_7_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-137" source="r_7_1" target="t_7_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_7_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_7_2</text>
+				</name>
+				<graphics>
+					<position x="1080" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_7_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_7_2</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="1150" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-138" source="p_7_2" target="t_7_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-139" source="t_7_2" target="r_7_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-140" source="r_7_2" target="t_8_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-141" source="t_8_3" target="r_7_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_7_3">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_7_3</text>
+				</name>
+				<graphics>
+					<position x="1080" y="520"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-142" source="t_7_3" target="p_7_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-143" source="r_7_2" target="t_7_3">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_8_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_8_0</text>
+				</name>
+				<graphics>
+					<position x="1220" y="100"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<place id="p_8_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_8_0</text>
+				</name>
+				<graphics>
+					<position x="1220" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_8_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_8_0</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="1290" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-144" source="t_8_0" target="p_8_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-145" source="r_8_0" target="t_8_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-146" source="t_9_0" target="r_8_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-147" source="r_8_0" target="t_9_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_8_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_8_1</text>
+				</name>
+				<graphics>
+					<position x="1220" y="240"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-148" source="p_8_0" target="t_8_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-149" source="t_8_1" target="r_8_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_8_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_8_1</text>
+				</name>
+				<graphics>
+					<position x="1220" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_8_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_8_1</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="1290" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-150" source="t_8_1" target="p_8_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-151" source="r_8_1" target="t_8_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-152" source="t_9_1" target="r_8_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-153" source="r_8_1" target="t_9_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_8_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_8_2</text>
+				</name>
+				<graphics>
+					<position x="1220" y="380"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-154" source="p_8_1" target="t_8_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-155" source="t_8_2" target="r_8_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_8_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_8_2</text>
+				</name>
+				<graphics>
+					<position x="1220" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_8_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_8_2</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="1290" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-156" source="t_8_2" target="p_8_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-157" source="r_8_2" target="t_8_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-158" source="t_9_2" target="r_8_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-159" source="r_8_2" target="t_9_3">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_8_3">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_8_3</text>
+				</name>
+				<graphics>
+					<position x="1220" y="520"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-160" source="p_8_2" target="t_8_3">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-161" source="t_8_3" target="r_8_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_9_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_9_0</text>
+				</name>
+				<graphics>
+					<position x="1360" y="100"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<place id="p_9_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_9_0</text>
+				</name>
+				<graphics>
+					<position x="1360" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_9_0">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_9_0</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="1430" y="170"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-162" source="p_9_0" target="t_9_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-163" source="t_9_0" target="r_9_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_9_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_9_1</text>
+				</name>
+				<graphics>
+					<position x="1360" y="240"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-164" source="t_9_1" target="p_9_0">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-165" source="r_9_0" target="t_9_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_9_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_9_1</text>
+				</name>
+				<graphics>
+					<position x="1360" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_9_1">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_9_1</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="1430" y="310"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-166" source="p_9_1" target="t_9_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-167" source="t_9_1" target="r_9_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_9_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_9_2</text>
+				</name>
+				<graphics>
+					<position x="1360" y="380"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-168" source="t_9_2" target="p_9_1">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-169" source="r_9_1" target="t_9_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<place id="p_9_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>p_9_2</text>
+				</name>
+				<graphics>
+					<position x="1360" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<place id="r_9_2">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>r_9_2</text>
+				</name>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+						<text>1</text>
+				</initialMarking>
+				<graphics>
+					<position x="1430" y="450"/>
+					<dimension x="20" y="20"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</place>
+			<arc id="ras-170" source="p_9_2" target="t_9_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-171" source="t_9_2" target="r_9_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<transition id="t_9_3">
+				<name>
+					<graphics>
+						<offset x="30" y="0"/>
+					</graphics>
+					<text>t_9_3</text>
+				</name>
+				<graphics>
+					<position x="1360" y="520"/>
+					<dimension x="24" y="16"/>
+					<fill color="rgb(255,255,255)"/>
+					<line color="rgb(0,0,0)"/>
+				</graphics>
+			</transition>
+			<arc id="ras-172" source="t_9_3" target="p_9_2">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+			<arc id="ras-173" source="r_9_2" target="t_9_3">
+				<inscription>
+					<text>1</text>
+				</inscription>
+				<graphics>
+					<line color="rgb(0,0,0)" style="solid"/>
+				</graphics>
+			</arc>
+		</page>
+		<name>
+			<text>ResAllocation-PT-R003C010</text>
+		</name>
+	</net>
+</pnml>

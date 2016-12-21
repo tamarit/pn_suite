@@ -1,0 +1,1901 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+	<net id="DrinkVendingMachine-PT-02" type="http://www.pnml.org/version-2009/grammar/ptnet">
+		<page id="page0">
+			<name>
+				<text>DefaultPage</text>
+			</name>
+			<place id="wait_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>wait_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>1</text>
+				</initialMarking>
+			</place>
+			<place id="wait_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>wait_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>1</text>
+				</initialMarking>
+			</place>
+			<place id="wait_3">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>wait_3</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>1</text>
+				</initialMarking>
+			</place>
+			<place id="wait_4">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>wait_4</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>1</text>
+				</initialMarking>
+			</place>
+			<place id="wait_5">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>wait_5</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>1</text>
+				</initialMarking>
+			</place>
+			<place id="wait_6">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>wait_6</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>1</text>
+				</initialMarking>
+			</place>
+			<place id="wait_7">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>wait_7</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>1</text>
+				</initialMarking>
+			</place>
+			<place id="wait_8">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>wait_8</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>1</text>
+				</initialMarking>
+			</place>
+			<place id="theProducts_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>theProducts_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>1</text>
+				</initialMarking>
+			</place>
+			<place id="theProducts_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>theProducts_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>1</text>
+				</initialMarking>
+			</place>
+			<place id="theOptions_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>theOptions_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>1</text>
+				</initialMarking>
+			</place>
+			<place id="theOptions_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>theOptions_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+				<initialMarking>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>1</text>
+				</initialMarking>
+			</place>
+			<place id="ready_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>ready_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</place>
+			<place id="ready_3">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>ready_3</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</place>
+			<place id="ready_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>ready_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</place>
+			<place id="ready_5">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>ready_5</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</place>
+			<place id="ready_4">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>ready_4</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</place>
+			<place id="ready_7">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>ready_7</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</place>
+			<place id="ready_6">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>ready_6</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</place>
+			<place id="productSlots_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>productSlots_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</place>
+			<place id="ready_8">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>ready_8</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</place>
+			<place id="optionSlots_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>optionSlots_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</place>
+			<place id="productSlots_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>productSlots_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</place>
+			<place id="optionSlots_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>optionSlots_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</place>
+			<transition id="elaborate3_1_1_7_1_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_1_1_7_1_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_1_2_7_1_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_1_2_7_1_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_2_1_7_1_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_2_1_7_1_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_1_1_8_1_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_1_1_8_1_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_2_2_7_1_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_2_2_7_1_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_2_2_8_1_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_2_2_8_1_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_1_1_7_2_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_1_1_7_2_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_2_1_8_1_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_2_1_8_1_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_1_2_8_1_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_1_2_8_1_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_2_2_7_2_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_2_2_7_2_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_1_1_8_2_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_1_1_8_2_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_2_1_7_2_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_2_1_7_2_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_1_2_7_2_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_1_2_7_2_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_2_2_8_2_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_2_2_8_2_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_1_1_7_1_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_1_1_7_1_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_2_1_8_2_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_2_1_8_2_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_1_2_8_2_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_1_2_8_2_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_2_2_7_1_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_2_2_7_1_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_1_1_8_1_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_1_1_8_1_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_2_1_7_1_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_2_1_7_1_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_1_2_7_1_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_1_2_7_1_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_1_1_7_2_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_1_1_7_2_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_2_2_8_1_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_2_2_8_1_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_1_2_8_1_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_1_2_8_1_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_2_1_8_1_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_2_1_8_1_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_1_1_8_2_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_1_1_8_2_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_2_2_7_2_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_2_2_7_2_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_1_2_7_2_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_1_2_7_2_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_2_1_7_2_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_2_1_7_2_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate2_1_1_5_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate2_1_1_5_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_2_2_8_2_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_2_2_8_2_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_1_2_8_2_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_1_2_8_2_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate3_2_1_8_2_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate3_2_1_8_2_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate2_1_1_6_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate2_1_1_6_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate2_2_2_5_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate2_2_2_5_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate2_1_2_5_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate2_1_2_5_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate2_2_1_5_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate2_2_1_5_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate2_2_1_5_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate2_2_1_5_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate2_1_2_5_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate2_1_2_5_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate2_2_2_5_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate2_2_2_5_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate2_1_1_6_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate2_1_1_6_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate2_2_1_6_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate2_2_1_6_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate2_1_2_6_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate2_1_2_6_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate2_2_2_6_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate2_2_2_6_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate2_1_1_5_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate2_1_1_5_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate1_2_3_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate1_2_3_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate1_1_4_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate1_1_4_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate1_2_4_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate1_2_4_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate1_1_3_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate1_1_3_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate2_2_1_6_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate2_2_1_6_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate2_1_2_6_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate2_1_2_6_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate2_2_2_6_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate2_2_2_6_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate1_1_3_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate1_1_3_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="serve_3">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>serve_3</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="serve_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>serve_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="serve_5">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>serve_5</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="serve_4">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>serve_4</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate1_1_4_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate1_1_4_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate1_2_3_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate1_2_3_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="serve_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>serve_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate1_2_4_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate1_2_4_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate0_1_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate0_1_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate0_2_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate0_2_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="addProduct_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>addProduct_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate0_2_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate0_2_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="serve_7">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>serve_7</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="serve_6">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>serve_6</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="elaborate0_1_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>elaborate0_1_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="serve_8">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>serve_8</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="addOption_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>addOption_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="addProduct_2">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>addProduct_2</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<transition id="addOption_1">
+				<name>
+					<graphics>
+						<offset x="0" y="0"/>
+					</graphics>
+					<text>addOption_1</text>
+				</name>
+				<graphics>
+					<position x="100" y="100"/>
+				</graphics>
+			</transition>
+			<arc id="cId552226148813673341516" source="elaborate3_1_1_8_2_2" target="optionSlots_2"/>
+			<arc id="cId545616211651969532517" source="wait_8" target="elaborate3_2_1_8_2_2"/>
+			<arc id="cId545616211651969532518" source="theProducts_2" target="elaborate3_2_1_8_2_2"/>
+			<arc id="cId545616211651969532519" source="theOptions_2" target="elaborate3_2_1_8_2_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId548921182380305084512" source="theOptions_2" target="elaborate3_1_1_8_2_2"/>
+			<arc id="cId548921182380305084513" source="elaborate3_1_1_8_2_2" target="ready_8"/>
+			<arc id="cId548921182380305084514" source="elaborate3_1_1_8_2_2" target="productSlots_2"/>
+			<arc id="cId548921182380305084515" source="elaborate3_1_1_8_2_2" target="optionSlots_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId548921182380305084524" source="elaborate3_2_1_8_2_2" target="optionSlots_1"/>
+			<arc id="cId548921182380305084525" source="wait_8" target="elaborate3_1_2_8_2_2"/>
+			<arc id="cId548921182380305084526" source="theProducts_2" target="elaborate3_1_2_8_2_2"/>
+			<arc id="cId548921182380305084527" source="theOptions_1" target="elaborate3_1_2_8_2_2"/>
+			<arc id="cId593538246410645726520" source="theOptions_1" target="elaborate3_2_1_8_2_2"/>
+			<arc id="cId593538246410645726521" source="elaborate3_2_1_8_2_2" target="ready_8"/>
+			<arc id="cId593538246410645726522" source="elaborate3_2_1_8_2_2" target="productSlots_2"/>
+			<arc id="cId593538246410645726523" source="elaborate3_2_1_8_2_2" target="optionSlots_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId593538246410645726533" source="wait_8" target="elaborate3_2_2_8_2_2"/>
+			<arc id="cId593538246410645726532" source="elaborate3_1_2_8_2_2" target="optionSlots_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId593538246410645726535" source="theOptions_2" target="elaborate3_2_2_8_2_2">
+				<inscription>
+					<text>3</text>
+				</inscription>
+			</arc>
+			<arc id="cId593538246410645726534" source="theProducts_2" target="elaborate3_2_2_8_2_2"/>
+			<arc id="cId593538246410645726529" source="elaborate3_1_2_8_2_2" target="ready_8"/>
+			<arc id="cId593538246410645726528" source="theOptions_2" target="elaborate3_1_2_8_2_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId593538246410645726531" source="elaborate3_1_2_8_2_2" target="optionSlots_1"/>
+			<arc id="cId593538246410645726530" source="elaborate3_1_2_8_2_2" target="productSlots_2"/>
+			<arc id="cId593538246410645726537" source="elaborate3_2_2_8_2_2" target="productSlots_2"/>
+			<arc id="cId593538246410645726536" source="elaborate3_2_2_8_2_2" target="ready_8"/>
+			<arc id="cId593538246410645726538" source="elaborate3_2_2_8_2_2" target="optionSlots_2">
+				<inscription>
+					<text>3</text>
+				</inscription>
+			</arc>
+			<arc id="cId593538246410645726102" source="addOption_2" target="theOptions_2"/>
+			<arc id="cId591885767488928894103" source="productSlots_1" target="addProduct_1"/>
+			<arc id="cId591885767488928894100" source="addOption_1" target="theOptions_1"/>
+			<arc id="cId591885767488928894101" source="optionSlots_2" target="addOption_2"/>
+			<arc id="cId59188576748892889499" source="optionSlots_1" target="addOption_1"/>
+			<arc id="cId591885767488928894110" source="elaborate0_1_1" target="productSlots_1"/>
+			<arc id="cId591885767488928894111" source="wait_2" target="elaborate0_2_1"/>
+			<arc id="cId591885767488928894108" source="theProducts_1" target="elaborate0_1_1"/>
+			<arc id="cId591885767488928894109" source="elaborate0_1_1" target="ready_1"/>
+			<arc id="cId591885767488928894106" source="addProduct_2" target="theProducts_2"/>
+			<arc id="cId591885767488928894107" source="wait_1" target="elaborate0_1_1"/>
+			<arc id="cId591885767488928894104" source="addProduct_1" target="theProducts_1"/>
+			<arc id="cId591885767488928894105" source="productSlots_2" target="addProduct_2"/>
+			<arc id="cId591885767488928894119" source="wait_2" target="elaborate0_2_2"/>
+			<arc id="cId591885767488928894118" source="elaborate0_1_2" target="productSlots_2"/>
+			<arc id="cId591885767488928894117" source="elaborate0_1_2" target="ready_1"/>
+			<arc id="cId591885767488928894116" source="theProducts_2" target="elaborate0_1_2"/>
+			<arc id="cId591885767488928894115" source="wait_1" target="elaborate0_1_2"/>
+			<arc id="cId591885767488928894114" source="elaborate0_2_1" target="productSlots_1"/>
+			<arc id="cId591885767488928894113" source="elaborate0_2_1" target="ready_2"/>
+			<arc id="cId591885767488928894112" source="theProducts_1" target="elaborate0_2_1"/>
+			<arc id="cId591885767488928894127" source="ready_3" target="serve_3"/>
+			<arc id="cId591885767488928894126" source="serve_2" target="wait_2"/>
+			<arc id="cId591885767488928894125" source="ready_2" target="serve_2"/>
+			<arc id="cId591885767488928894124" source="serve_1" target="wait_1"/>
+			<arc id="cId591885767488928894123" source="ready_1" target="serve_1"/>
+			<arc id="cId591885767488928894122" source="elaborate0_2_2" target="productSlots_2"/>
+			<arc id="cId591885767488928894121" source="elaborate0_2_2" target="ready_2"/>
+			<arc id="cId591885767488928894120" source="theProducts_2" target="elaborate0_2_2"/>
+			<arc id="cId591885767488928894137" source="ready_8" target="serve_8"/>
+			<arc id="cId596843217138981278136" source="serve_7" target="wait_7"/>
+			<arc id="cId596843217138981278139" source="wait_3" target="elaborate1_1_3_1"/>
+			<arc id="cId596843217138981278138" source="serve_8" target="wait_8"/>
+			<arc id="cId596843217138981278141" source="theOptions_1" target="elaborate1_1_3_1"/>
+			<arc id="cId596843217138981278140" source="theProducts_1" target="elaborate1_1_3_1"/>
+			<arc id="cId596843217138981278143" source="elaborate1_1_3_1" target="productSlots_1"/>
+			<arc id="cId596843217138981278142" source="elaborate1_1_3_1" target="ready_3"/>
+			<arc id="cId596843217138981278129" source="ready_4" target="serve_4"/>
+			<arc id="cId596843217138981278128" source="serve_3" target="wait_3"/>
+			<arc id="cId596843217138981278131" source="ready_5" target="serve_5"/>
+			<arc id="cId596843217138981278130" source="serve_4" target="wait_4"/>
+			<arc id="cId596843217138981278133" source="ready_6" target="serve_6"/>
+			<arc id="cId596843217138981278132" source="serve_5" target="wait_5"/>
+			<arc id="cId596843217138981278135" source="ready_7" target="serve_7"/>
+			<arc id="cId596843217138981278134" source="serve_6" target="wait_6"/>
+			<arc id="cId596843217138981278152" source="theProducts_1" target="elaborate1_1_4_1"/>
+			<arc id="cId596843217138981278153" source="theOptions_1" target="elaborate1_1_4_1"/>
+			<arc id="cId596843217138981278154" source="elaborate1_1_4_1" target="ready_4"/>
+			<arc id="cId596843217138981278155" source="elaborate1_1_4_1" target="productSlots_1"/>
+			<arc id="cId596843217138981278156" source="elaborate1_1_4_1" target="optionSlots_1"/>
+			<arc id="cId596843217138981278157" source="wait_4" target="elaborate1_2_4_1"/>
+			<arc id="cId596843217138981278158" source="theProducts_1" target="elaborate1_2_4_1"/>
+			<arc id="cId596843217138981278159" source="theOptions_2" target="elaborate1_2_4_1"/>
+			<arc id="cId596843217138981278144" source="elaborate1_1_3_1" target="optionSlots_1"/>
+			<arc id="cId596843217138981278145" source="wait_3" target="elaborate1_2_3_1"/>
+			<arc id="cId596843217138981278146" source="theProducts_1" target="elaborate1_2_3_1"/>
+			<arc id="cId596843217138981278147" source="theOptions_2" target="elaborate1_2_3_1"/>
+			<arc id="cId596843217138981278148" source="elaborate1_2_3_1" target="ready_3"/>
+			<arc id="cId595190729627329854149" source="elaborate1_2_3_1" target="productSlots_1"/>
+			<arc id="cId595190729627329854150" source="elaborate1_2_3_1" target="optionSlots_2"/>
+			<arc id="cId595190729627329854151" source="wait_4" target="elaborate1_1_4_1"/>
+			<arc id="cId595190729627329854171" source="theOptions_2" target="elaborate1_2_3_2"/>
+			<arc id="cId595190729627329854170" source="theProducts_2" target="elaborate1_2_3_2"/>
+			<arc id="cId595190729627329854169" source="wait_3" target="elaborate1_2_3_2"/>
+			<arc id="cId595190729627329854168" source="elaborate1_1_3_2" target="optionSlots_1"/>
+			<arc id="cId595190729627329854175" source="wait_4" target="elaborate1_1_4_2"/>
+			<arc id="cId595190729627329854174" source="elaborate1_2_3_2" target="optionSlots_2"/>
+			<arc id="cId595190729627329854173" source="elaborate1_2_3_2" target="productSlots_2"/>
+			<arc id="cId595190729627329854172" source="elaborate1_2_3_2" target="ready_3"/>
+			<arc id="cId595190729627329854163" source="wait_3" target="elaborate1_1_3_2"/>
+			<arc id="cId595190729627329854162" source="elaborate1_2_4_1" target="optionSlots_2"/>
+			<arc id="cId595190729627329854161" source="elaborate1_2_4_1" target="productSlots_1"/>
+			<arc id="cId595190729627329854160" source="elaborate1_2_4_1" target="ready_4"/>
+			<arc id="cId595190729627329854167" source="elaborate1_1_3_2" target="productSlots_2"/>
+			<arc id="cId595190729627329854166" source="elaborate1_1_3_2" target="ready_3"/>
+			<arc id="cId595190729627329854165" source="theOptions_1" target="elaborate1_1_3_2"/>
+			<arc id="cId595190729627329854164" source="theProducts_2" target="elaborate1_1_3_2"/>
+			<arc id="cId595190729627329854186" source="elaborate1_2_4_2" target="optionSlots_2"/>
+			<arc id="cId595190729627329854187" source="wait_5" target="elaborate2_1_1_5_1"/>
+			<arc id="cId595190729627329854184" source="elaborate1_2_4_2" target="ready_4"/>
+			<arc id="cId595190729627329854185" source="elaborate1_2_4_2" target="productSlots_2"/>
+			<arc id="cId595190729627329854190" source="elaborate2_1_1_5_1" target="ready_5"/>
+			<arc id="cId595190729627329854191" source="elaborate2_1_1_5_1" target="productSlots_1"/>
+			<arc id="cId595190729627329854188" source="theProducts_1" target="elaborate2_1_1_5_1"/>
+			<arc id="cId595190729627329854189" source="theOptions_1" target="elaborate2_1_1_5_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId586928313543909213178" source="elaborate1_1_4_2" target="ready_4"/>
+			<arc id="cId586928313543909213179" source="elaborate1_1_4_2" target="productSlots_2"/>
+			<arc id="cId586928313543909213176" source="theProducts_2" target="elaborate1_1_4_2"/>
+			<arc id="cId586928313543909213177" source="theOptions_1" target="elaborate1_1_4_2"/>
+			<arc id="cId586928313543909213182" source="theProducts_2" target="elaborate1_2_4_2"/>
+			<arc id="cId586928313543909213183" source="theOptions_2" target="elaborate1_2_4_2"/>
+			<arc id="cId586928313543909213180" source="elaborate1_1_4_2" target="optionSlots_1"/>
+			<arc id="cId586928313543909213181" source="wait_4" target="elaborate1_2_4_2"/>
+			<arc id="cId586928313543909213205" source="elaborate2_1_2_5_1" target="ready_5"/>
+			<arc id="cId586928313543909213204" source="theOptions_2" target="elaborate2_1_2_5_1"/>
+			<arc id="cId586928313543909213207" source="elaborate2_1_2_5_1" target="optionSlots_1"/>
+			<arc id="cId586928313543909213206" source="elaborate2_1_2_5_1" target="productSlots_1"/>
+			<arc id="cId586928313543909213201" source="wait_5" target="elaborate2_1_2_5_1"/>
+			<arc id="cId586928313543909213200" source="elaborate2_2_1_5_1" target="optionSlots_1"/>
+			<arc id="cId586928313543909213203" source="theOptions_1" target="elaborate2_1_2_5_1"/>
+			<arc id="cId586928313543909213202" source="theProducts_1" target="elaborate2_1_2_5_1"/>
+			<arc id="cId586928313543909213197" source="elaborate2_2_1_5_1" target="ready_5"/>
+			<arc id="cId586928313543909213196" source="theOptions_1" target="elaborate2_2_1_5_1"/>
+			<arc id="cId586928313543909213199" source="elaborate2_2_1_5_1" target="optionSlots_2"/>
+			<arc id="cId586928313543909213198" source="elaborate2_2_1_5_1" target="productSlots_1"/>
+			<arc id="cId586928313543909213193" source="wait_5" target="elaborate2_2_1_5_1"/>
+			<arc id="cId586928313543909213192" source="elaborate2_1_1_5_1" target="optionSlots_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId586928313543909213195" source="theOptions_2" target="elaborate2_2_1_5_1"/>
+			<arc id="cId586928313543909213194" source="theProducts_1" target="elaborate2_2_1_5_1"/>
+			<arc id="cId586928313543909213220" source="elaborate2_1_1_6_1" target="optionSlots_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId585275830327225085221" source="wait_6" target="elaborate2_2_1_6_1"/>
+			<arc id="cId585275830327225085222" source="theProducts_1" target="elaborate2_2_1_6_1"/>
+			<arc id="cId585275830327225085223" source="theOptions_2" target="elaborate2_2_1_6_1"/>
+			<arc id="cId585275830327225085216" source="theProducts_1" target="elaborate2_1_1_6_1"/>
+			<arc id="cId585275830327225085217" source="theOptions_1" target="elaborate2_1_1_6_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId585275830327225085218" source="elaborate2_1_1_6_1" target="ready_6"/>
+			<arc id="cId585275830327225085219" source="elaborate2_1_1_6_1" target="productSlots_1"/>
+			<arc id="cId585275830327225085212" source="elaborate2_2_2_5_1" target="ready_5"/>
+			<arc id="cId585275830327225085213" source="elaborate2_2_2_5_1" target="productSlots_1"/>
+			<arc id="cId585275830327225085214" source="elaborate2_2_2_5_1" target="optionSlots_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId585275830327225085215" source="wait_6" target="elaborate2_1_1_6_1"/>
+			<arc id="cId585275830327225085208" source="elaborate2_1_2_5_1" target="optionSlots_2"/>
+			<arc id="cId585275830327225085209" source="wait_5" target="elaborate2_2_2_5_1"/>
+			<arc id="cId585275830327225085210" source="theProducts_1" target="elaborate2_2_2_5_1"/>
+			<arc id="cId585275830327225085211" source="theOptions_2" target="elaborate2_2_2_5_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId585275830327225085239" source="theOptions_2" target="elaborate2_2_2_6_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId590233284272244765238" source="theProducts_1" target="elaborate2_2_2_6_1"/>
+			<arc id="cId590233284272244765237" source="wait_6" target="elaborate2_2_2_6_1"/>
+			<arc id="cId590233284272244765236" source="elaborate2_1_2_6_1" target="optionSlots_2"/>
+			<arc id="cId590233284272244765235" source="elaborate2_1_2_6_1" target="optionSlots_1"/>
+			<arc id="cId590233284272244765234" source="elaborate2_1_2_6_1" target="productSlots_1"/>
+			<arc id="cId590233284272244765233" source="elaborate2_1_2_6_1" target="ready_6"/>
+			<arc id="cId590233284272244765232" source="theOptions_2" target="elaborate2_1_2_6_1"/>
+			<arc id="cId590233284272244765231" source="theOptions_1" target="elaborate2_1_2_6_1"/>
+			<arc id="cId590233284272244765230" source="theProducts_1" target="elaborate2_1_2_6_1"/>
+			<arc id="cId590233284272244765229" source="wait_6" target="elaborate2_1_2_6_1"/>
+			<arc id="cId590233284272244765228" source="elaborate2_2_1_6_1" target="optionSlots_1"/>
+			<arc id="cId590233284272244765227" source="elaborate2_2_1_6_1" target="optionSlots_2"/>
+			<arc id="cId590233284272244765226" source="elaborate2_2_1_6_1" target="productSlots_1"/>
+			<arc id="cId590233284272244765225" source="elaborate2_2_1_6_1" target="ready_6"/>
+			<arc id="cId590233284272244765224" source="theOptions_1" target="elaborate2_2_1_6_1"/>
+			<arc id="cId590233284272244765254" source="elaborate2_2_1_5_2" target="productSlots_2"/>
+			<arc id="cId590233284272244765255" source="elaborate2_2_1_5_2" target="optionSlots_2"/>
+			<arc id="cId590233284272244765252" source="theOptions_1" target="elaborate2_2_1_5_2"/>
+			<arc id="cId590233284272244765253" source="elaborate2_2_1_5_2" target="ready_5"/>
+			<arc id="cId590233284272244765250" source="theProducts_2" target="elaborate2_2_1_5_2"/>
+			<arc id="cId590233284272244765251" source="theOptions_2" target="elaborate2_2_1_5_2"/>
+			<arc id="cId590233284272244765248" source="elaborate2_1_1_5_2" target="optionSlots_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId590233284272244765249" source="wait_5" target="elaborate2_2_1_5_2"/>
+			<arc id="cId590233284272244765246" source="elaborate2_1_1_5_2" target="ready_5"/>
+			<arc id="cId590233284272244765247" source="elaborate2_1_1_5_2" target="productSlots_2"/>
+			<arc id="cId590233284272244765244" source="theProducts_2" target="elaborate2_1_1_5_2"/>
+			<arc id="cId588580796760593341245" source="theOptions_1" target="elaborate2_1_1_5_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId588580796760593341242" source="elaborate2_2_2_6_1" target="optionSlots_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId588580796760593341243" source="wait_5" target="elaborate2_1_1_5_2"/>
+			<arc id="cId588580796760593341240" source="elaborate2_2_2_6_1" target="ready_6"/>
+			<arc id="cId588580796760593341241" source="elaborate2_2_2_6_1" target="productSlots_1"/>
+			<arc id="cId588580796760593341275" source="elaborate2_1_1_6_2" target="productSlots_2"/>
+			<arc id="cId588580796760593341274" source="elaborate2_1_1_6_2" target="ready_6"/>
+			<arc id="cId588580796760593341273" source="theOptions_1" target="elaborate2_1_1_6_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId588580796760593341272" source="theProducts_2" target="elaborate2_1_1_6_2"/>
+			<arc id="cId588580796760593341279" source="theOptions_2" target="elaborate2_2_1_6_2"/>
+			<arc id="cId588580796760593341278" source="theProducts_2" target="elaborate2_2_1_6_2"/>
+			<arc id="cId588580796760593341277" source="wait_6" target="elaborate2_2_1_6_2"/>
+			<arc id="cId588580796760593341276" source="elaborate2_1_1_6_2" target="optionSlots_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId588580796760593341283" source="elaborate2_2_1_6_2" target="optionSlots_2"/>
+			<arc id="cId588580796760593341282" source="elaborate2_2_1_6_2" target="productSlots_2"/>
+			<arc id="cId588580796760593341281" source="elaborate2_2_1_6_2" target="ready_6"/>
+			<arc id="cId588580796760593341280" source="theOptions_1" target="elaborate2_2_1_6_2"/>
+			<arc id="cId588580796760593341287" source="theOptions_1" target="elaborate2_1_2_6_2"/>
+			<arc id="cId588580796760593341286" source="theProducts_2" target="elaborate2_1_2_6_2"/>
+			<arc id="cId588580796760593341285" source="wait_6" target="elaborate2_1_2_6_2"/>
+			<arc id="cId588580796760593341284" source="elaborate2_2_1_6_2" target="optionSlots_1"/>
+			<arc id="cId588580796760593341258" source="theProducts_2" target="elaborate2_1_2_5_2"/>
+			<arc id="cId580318376382205405259" source="theOptions_1" target="elaborate2_1_2_5_2"/>
+			<arc id="cId580318376382205405256" source="elaborate2_2_1_5_2" target="optionSlots_1"/>
+			<arc id="cId580318376382205405257" source="wait_5" target="elaborate2_1_2_5_2"/>
+			<arc id="cId580318376382205405262" source="elaborate2_1_2_5_2" target="productSlots_2"/>
+			<arc id="cId580318376382205405263" source="elaborate2_1_2_5_2" target="optionSlots_1"/>
+			<arc id="cId580318376382205405260" source="theOptions_2" target="elaborate2_1_2_5_2"/>
+			<arc id="cId580318376382205405261" source="elaborate2_1_2_5_2" target="ready_5"/>
+			<arc id="cId580318376382205405266" source="theProducts_2" target="elaborate2_2_2_5_2"/>
+			<arc id="cId580318376382205405267" source="theOptions_2" target="elaborate2_2_2_5_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId580318376382205405264" source="elaborate2_1_2_5_2" target="optionSlots_2"/>
+			<arc id="cId580318376382205405265" source="wait_5" target="elaborate2_2_2_5_2"/>
+			<arc id="cId580318376382205405270" source="elaborate2_2_2_5_2" target="optionSlots_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId580318376382205405271" source="wait_6" target="elaborate2_1_1_6_2"/>
+			<arc id="cId580318376382205405268" source="elaborate2_2_2_5_2" target="ready_5"/>
+			<arc id="cId580318376382205405269" source="elaborate2_2_2_5_2" target="productSlots_2"/>
+			<arc id="cId580318376382205405305" source="wait_7" target="elaborate3_2_1_7_1_1"/>
+			<arc id="cId580318376382205405304" source="elaborate3_1_1_7_1_1" target="optionSlots_1">
+				<inscription>
+					<text>3</text>
+				</inscription>
+			</arc>
+			<arc id="cId580318376382205405307" source="theOptions_2" target="elaborate3_2_1_7_1_1"/>
+			<arc id="cId580318376382205405306" source="theProducts_1" target="elaborate3_2_1_7_1_1"/>
+			<arc id="cId580318376382205405309" source="elaborate3_2_1_7_1_1" target="ready_7"/>
+			<arc id="cId580318376382205405308" source="theOptions_1" target="elaborate3_2_1_7_1_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId578665893165521277311" source="elaborate3_2_1_7_1_1" target="optionSlots_2"/>
+			<arc id="cId578665893165521277310" source="elaborate3_2_1_7_1_1" target="productSlots_1"/>
+			<arc id="cId578665893165521277313" source="wait_7" target="elaborate3_1_2_7_1_1"/>
+			<arc id="cId578665893165521277312" source="elaborate3_2_1_7_1_1" target="optionSlots_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId578665893165521277315" source="theOptions_1" target="elaborate3_1_2_7_1_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId578665893165521277314" source="theProducts_1" target="elaborate3_1_2_7_1_1"/>
+			<arc id="cId578665893165521277317" source="elaborate3_1_2_7_1_1" target="ready_7"/>
+			<arc id="cId578665893165521277316" source="theOptions_2" target="elaborate3_1_2_7_1_1"/>
+			<arc id="cId578665893165521277319" source="elaborate3_1_2_7_1_1" target="optionSlots_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId578665893165521277318" source="elaborate3_1_2_7_1_1" target="productSlots_1"/>
+			<arc id="cId578665893165521277288" source="theOptions_2" target="elaborate2_1_2_6_2"/>
+			<arc id="cId578665893165521277289" source="elaborate2_1_2_6_2" target="ready_6"/>
+			<arc id="cId578665893165521277290" source="elaborate2_1_2_6_2" target="productSlots_2"/>
+			<arc id="cId578665893165521277291" source="elaborate2_1_2_6_2" target="optionSlots_1"/>
+			<arc id="cId578665893165521277292" source="elaborate2_1_2_6_2" target="optionSlots_2"/>
+			<arc id="cId578665893165521277293" source="wait_6" target="elaborate2_2_2_6_2"/>
+			<arc id="cId578665893165521277294" source="theProducts_2" target="elaborate2_2_2_6_2"/>
+			<arc id="cId578665893165521277295" source="theOptions_2" target="elaborate2_2_2_6_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId578665893165521277296" source="elaborate2_2_2_6_2" target="ready_6"/>
+			<arc id="cId578665893165521277297" source="elaborate2_2_2_6_2" target="productSlots_2"/>
+			<arc id="cId578665893165521277298" source="elaborate2_2_2_6_2" target="optionSlots_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId583623342815573661299" source="wait_7" target="elaborate3_1_1_7_1_1"/>
+			<arc id="cId583623342815573661300" source="theProducts_1" target="elaborate3_1_1_7_1_1"/>
+			<arc id="cId583623342815573661301" source="theOptions_1" target="elaborate3_1_1_7_1_1">
+				<inscription>
+					<text>3</text>
+				</inscription>
+			</arc>
+			<arc id="cId583623342815573661302" source="elaborate3_1_1_7_1_1" target="ready_7"/>
+			<arc id="cId583623342815573661303" source="elaborate3_1_1_7_1_1" target="productSlots_1"/>
+			<arc id="cId583623342815573661343" source="wait_8" target="elaborate3_1_2_8_1_1"/>
+			<arc id="cId583623342815573661342" source="elaborate3_2_1_8_1_1" target="optionSlots_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId583623342815573661341" source="elaborate3_2_1_8_1_1" target="optionSlots_2"/>
+			<arc id="cId583623342815573661340" source="elaborate3_2_1_8_1_1" target="productSlots_1"/>
+			<arc id="cId583623342815573661339" source="elaborate3_2_1_8_1_1" target="ready_8"/>
+			<arc id="cId583623342815573661338" source="theOptions_1" target="elaborate3_2_1_8_1_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId583623342815573661337" source="theOptions_2" target="elaborate3_2_1_8_1_1"/>
+			<arc id="cId583623342815573661336" source="theProducts_1" target="elaborate3_2_1_8_1_1"/>
+			<arc id="cId583623342815573661351" source="wait_8" target="elaborate3_2_2_8_1_1"/>
+			<arc id="cId583623342815573661350" source="elaborate3_1_2_8_1_1" target="optionSlots_2"/>
+			<arc id="cId583623342815573661349" source="elaborate3_1_2_8_1_1" target="optionSlots_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId583623342815573661348" source="elaborate3_1_2_8_1_1" target="productSlots_1"/>
+			<arc id="cId583623342815573661347" source="elaborate3_1_2_8_1_1" target="ready_8"/>
+			<arc id="cId583623342815573661346" source="theOptions_2" target="elaborate3_1_2_8_1_1"/>
+			<arc id="cId583623342815573661345" source="theOptions_1" target="elaborate3_1_2_8_1_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId583623342815573661344" source="theProducts_1" target="elaborate3_1_2_8_1_1"/>
+			<arc id="cId583623342815573661326" source="elaborate3_2_2_7_1_1" target="productSlots_1"/>
+			<arc id="cId583623342815573661327" source="elaborate3_2_2_7_1_1" target="optionSlots_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId583623342815573661324" source="theOptions_1" target="elaborate3_2_2_7_1_1"/>
+			<arc id="cId581970859598889533325" source="elaborate3_2_2_7_1_1" target="ready_7"/>
+			<arc id="cId581970859598889533322" source="theProducts_1" target="elaborate3_2_2_7_1_1"/>
+			<arc id="cId581970859598889533323" source="theOptions_2" target="elaborate3_2_2_7_1_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId581970859598889533320" source="elaborate3_1_2_7_1_1" target="optionSlots_2"/>
+			<arc id="cId581970859598889533321" source="wait_7" target="elaborate3_2_2_7_1_1"/>
+			<arc id="cId581970859598889533334" source="elaborate3_1_1_8_1_1" target="optionSlots_1">
+				<inscription>
+					<text>3</text>
+				</inscription>
+			</arc>
+			<arc id="cId581970859598889533335" source="wait_8" target="elaborate3_2_1_8_1_1"/>
+			<arc id="cId581970859598889533332" source="elaborate3_1_1_8_1_1" target="ready_8"/>
+			<arc id="cId581970859598889533333" source="elaborate3_1_1_8_1_1" target="productSlots_1"/>
+			<arc id="cId581970859598889533330" source="theProducts_1" target="elaborate3_1_1_8_1_1"/>
+			<arc id="cId581970859598889533331" source="theOptions_1" target="elaborate3_1_1_8_1_1">
+				<inscription>
+					<text>3</text>
+				</inscription>
+			</arc>
+			<arc id="cId581970859598889533328" source="elaborate3_2_2_7_1_1" target="optionSlots_1"/>
+			<arc id="cId581970859598889533329" source="wait_8" target="elaborate3_1_1_8_1_1"/>
+			<arc id="cId581970859598889533373" source="wait_7" target="elaborate3_1_2_7_2_1"/>
+			<arc id="cId581970859598889533372" source="elaborate3_2_1_7_2_1" target="optionSlots_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId581970859598889533375" source="theOptions_1" target="elaborate3_1_2_7_2_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId581970859598889533374" source="theProducts_2" target="elaborate3_1_2_7_2_1"/>
+			<arc id="cId581970859598889533369" source="elaborate3_2_1_7_2_1" target="ready_7"/>
+			<arc id="cId573708443515468893368" source="theOptions_1" target="elaborate3_2_1_7_2_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId573708443515468893371" source="elaborate3_2_1_7_2_1" target="optionSlots_2"/>
+			<arc id="cId573708443515468893370" source="elaborate3_2_1_7_2_1" target="productSlots_2"/>
+			<arc id="cId573708443515468893381" source="wait_7" target="elaborate3_2_2_7_2_1"/>
+			<arc id="cId573708443515468893380" source="elaborate3_1_2_7_2_1" target="optionSlots_2"/>
+			<arc id="cId573708443515468893383" source="theOptions_2" target="elaborate3_2_2_7_2_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId573708443515468893382" source="theProducts_2" target="elaborate3_2_2_7_2_1"/>
+			<arc id="cId573708443515468893377" source="elaborate3_1_2_7_2_1" target="ready_7"/>
+			<arc id="cId573708443515468893376" source="theOptions_2" target="elaborate3_1_2_7_2_1"/>
+			<arc id="cId573708443515468893379" source="elaborate3_1_2_7_2_1" target="optionSlots_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId573708443515468893378" source="elaborate3_1_2_7_2_1" target="productSlots_2"/>
+			<arc id="cId573708443515468893356" source="elaborate3_2_2_8_1_1" target="productSlots_1"/>
+			<arc id="cId573708443515468893357" source="elaborate3_2_2_8_1_1" target="optionSlots_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId573708443515468893358" source="elaborate3_2_2_8_1_1" target="optionSlots_1"/>
+			<arc id="cId573708443515468893359" source="wait_7" target="elaborate3_1_1_7_2_1"/>
+			<arc id="cId573708443515468893352" source="theProducts_1" target="elaborate3_2_2_8_1_1"/>
+			<arc id="cId573708443515468893353" source="theOptions_2" target="elaborate3_2_2_8_1_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId573708443515468893354" source="theOptions_1" target="elaborate3_2_2_8_1_1"/>
+			<arc id="cId573708443515468893355" source="elaborate3_2_2_8_1_1" target="ready_8"/>
+			<arc id="cId573708443515468893364" source="elaborate3_1_1_7_2_1" target="optionSlots_1">
+				<inscription>
+					<text>3</text>
+				</inscription>
+			</arc>
+			<arc id="cId572055960298784765365" source="wait_7" target="elaborate3_2_1_7_2_1"/>
+			<arc id="cId572055960298784765366" source="theProducts_2" target="elaborate3_2_1_7_2_1"/>
+			<arc id="cId572055960298784765367" source="theOptions_2" target="elaborate3_2_1_7_2_1"/>
+			<arc id="cId572055960298784765360" source="theProducts_2" target="elaborate3_1_1_7_2_1"/>
+			<arc id="cId572055960298784765361" source="theOptions_1" target="elaborate3_1_1_7_2_1">
+				<inscription>
+					<text>3</text>
+				</inscription>
+			</arc>
+			<arc id="cId572055960298784765362" source="elaborate3_1_1_7_2_1" target="ready_7"/>
+			<arc id="cId572055960298784765363" source="elaborate3_1_1_7_2_1" target="productSlots_2"/>
+			<arc id="cId572055960298784765410" source="elaborate3_1_2_8_2_1" target="optionSlots_2"/>
+			<arc id="cId572055960298784765411" source="wait_8" target="elaborate3_2_2_8_2_1"/>
+			<arc id="cId572055960298784765408" source="elaborate3_1_2_8_2_1" target="productSlots_2"/>
+			<arc id="cId572055960298784765409" source="elaborate3_1_2_8_2_1" target="optionSlots_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId572055960298784765414" source="theOptions_1" target="elaborate3_2_2_8_2_1"/>
+			<arc id="cId572055960298784765415" source="elaborate3_2_2_8_2_1" target="ready_8"/>
+			<arc id="cId572055960298784765412" source="theProducts_2" target="elaborate3_2_2_8_2_1"/>
+			<arc id="cId572055960298784765413" source="theOptions_2" target="elaborate3_2_2_8_2_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId572055960298784765402" source="elaborate3_2_1_8_2_1" target="optionSlots_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId572055960298784765403" source="wait_8" target="elaborate3_1_2_8_2_1"/>
+			<arc id="cId577013405653869853400" source="elaborate3_2_1_8_2_1" target="productSlots_2"/>
+			<arc id="cId577013405653869853401" source="elaborate3_2_1_8_2_1" target="optionSlots_2"/>
+			<arc id="cId577013405653869853406" source="theOptions_2" target="elaborate3_1_2_8_2_1"/>
+			<arc id="cId577013405653869853407" source="elaborate3_1_2_8_2_1" target="ready_8"/>
+			<arc id="cId577013405653869853404" source="theProducts_2" target="elaborate3_1_2_8_2_1"/>
+			<arc id="cId577013405653869853405" source="theOptions_1" target="elaborate3_1_2_8_2_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId577013405653869853395" source="wait_8" target="elaborate3_2_1_8_2_1"/>
+			<arc id="cId577013405653869853394" source="elaborate3_1_1_8_2_1" target="optionSlots_1">
+				<inscription>
+					<text>3</text>
+				</inscription>
+			</arc>
+			<arc id="cId577013405653869853393" source="elaborate3_1_1_8_2_1" target="productSlots_2"/>
+			<arc id="cId577013405653869853392" source="elaborate3_1_1_8_2_1" target="ready_8"/>
+			<arc id="cId577013405653869853399" source="elaborate3_2_1_8_2_1" target="ready_8"/>
+			<arc id="cId577013405653869853398" source="theOptions_1" target="elaborate3_2_1_8_2_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId577013405653869853397" source="theOptions_2" target="elaborate3_2_1_8_2_1"/>
+			<arc id="cId577013405653869853396" source="theProducts_2" target="elaborate3_2_1_8_2_1"/>
+			<arc id="cId577013405653869853387" source="elaborate3_2_2_7_2_1" target="optionSlots_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId577013405653869853386" source="elaborate3_2_2_7_2_1" target="productSlots_2"/>
+			<arc id="cId577013405653869853385" source="elaborate3_2_2_7_2_1" target="ready_7"/>
+			<arc id="cId577013405653869853384" source="theOptions_1" target="elaborate3_2_2_7_2_1"/>
+			<arc id="cId577013405653869853391" source="theOptions_1" target="elaborate3_1_1_8_2_1">
+				<inscription>
+					<text>3</text>
+				</inscription>
+			</arc>
+			<arc id="cId577013405653869853390" source="theProducts_2" target="elaborate3_1_1_8_2_1"/>
+			<arc id="cId575360926732153021389" source="wait_8" target="elaborate3_1_1_8_2_1"/>
+			<arc id="cId575360926732153021388" source="elaborate3_2_2_7_2_1" target="optionSlots_1"/>
+			<arc id="cId575360926732153021440" source="elaborate3_1_2_7_1_2" target="productSlots_1"/>
+			<arc id="cId575360926732153021441" source="elaborate3_1_2_7_1_2" target="optionSlots_1"/>
+			<arc id="cId575360926732153021442" source="elaborate3_1_2_7_1_2" target="optionSlots_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId575360926732153021443" source="wait_7" target="elaborate3_2_2_7_1_2"/>
+			<arc id="cId575360926732153021444" source="theProducts_1" target="elaborate3_2_2_7_1_2"/>
+			<arc id="cId575360926732153021445" source="theOptions_2" target="elaborate3_2_2_7_1_2">
+				<inscription>
+					<text>3</text>
+				</inscription>
+			</arc>
+			<arc id="cId575360926732153021446" source="elaborate3_2_2_7_1_2" target="ready_7"/>
+			<arc id="cId575360926732153021447" source="elaborate3_2_2_7_1_2" target="productSlots_1"/>
+			<arc id="cId575360926732153021432" source="elaborate3_2_1_7_1_2" target="productSlots_1"/>
+			<arc id="cId575360926732153021433" source="elaborate3_2_1_7_1_2" target="optionSlots_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId575360926732153021434" source="elaborate3_2_1_7_1_2" target="optionSlots_1"/>
+			<arc id="cId575360926732153021435" source="wait_7" target="elaborate3_1_2_7_1_2"/>
+			<arc id="cId575360926732153021436" source="theProducts_1" target="elaborate3_1_2_7_1_2"/>
+			<arc id="cId575360926732153021437" source="theOptions_1" target="elaborate3_1_2_7_1_2"/>
+			<arc id="cId575360926732153021438" source="theOptions_2" target="elaborate3_1_2_7_1_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId575360926732153021439" source="elaborate3_1_2_7_1_2" target="ready_7"/>
+			<arc id="cId575360926732153021425" source="elaborate3_1_1_7_1_2" target="optionSlots_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId575360926732153021424" source="elaborate3_1_1_7_1_2" target="productSlots_1"/>
+			<arc id="cId575360926732153021427" source="wait_7" target="elaborate3_2_1_7_1_2"/>
+			<arc id="cId575360926732153021426" source="elaborate3_1_1_7_1_2" target="optionSlots_2"/>
+			<arc id="cId575360926732153021429" source="theOptions_2" target="elaborate3_2_1_7_1_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId514219017650069212428" source="theProducts_1" target="elaborate3_2_1_7_1_2"/>
+			<arc id="cId514219017650069212431" source="elaborate3_2_1_7_1_2" target="ready_7"/>
+			<arc id="cId514219017650069212430" source="theOptions_1" target="elaborate3_2_1_7_1_2"/>
+			<arc id="cId514219017650069212417" source="elaborate3_2_2_8_2_1" target="optionSlots_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId514219017650069212416" source="elaborate3_2_2_8_2_1" target="productSlots_2"/>
+			<arc id="cId514219017650069212419" source="wait_7" target="elaborate3_1_1_7_1_2"/>
+			<arc id="cId514219017650069212418" source="elaborate3_2_2_8_2_1" target="optionSlots_1"/>
+			<arc id="cId514219017650069212421" source="theOptions_1" target="elaborate3_1_1_7_1_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId514219017650069212420" source="theProducts_1" target="elaborate3_1_1_7_1_2"/>
+			<arc id="cId514219017650069212423" source="elaborate3_1_1_7_1_2" target="ready_7"/>
+			<arc id="cId514219017650069212422" source="theOptions_2" target="elaborate3_1_1_7_1_2"/>
+			<arc id="cId514219017650069212478" source="elaborate3_2_2_8_1_2" target="optionSlots_2">
+				<inscription>
+					<text>3</text>
+				</inscription>
+			</arc>
+			<arc id="cId514219017650069212479" source="wait_7" target="elaborate3_1_1_7_2_2"/>
+			<arc id="cId514219017650069212476" source="elaborate3_2_2_8_1_2" target="ready_8"/>
+			<arc id="cId514219017650069212477" source="elaborate3_2_2_8_1_2" target="productSlots_1"/>
+			<arc id="cId514219017650069212474" source="theProducts_1" target="elaborate3_2_2_8_1_2"/>
+			<arc id="cId514219017650069212475" source="theOptions_2" target="elaborate3_2_2_8_1_2">
+				<inscription>
+					<text>3</text>
+				</inscription>
+			</arc>
+			<arc id="cId514219017650069212472" source="elaborate3_1_2_8_1_2" target="optionSlots_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId514219017650069212473" source="wait_8" target="elaborate3_2_2_8_1_2"/>
+			<arc id="cId514219017650069212470" source="elaborate3_1_2_8_1_2" target="productSlots_1"/>
+			<arc id="cId514219017650069212471" source="elaborate3_1_2_8_1_2" target="optionSlots_1"/>
+			<arc id="cId514219017650069212468" source="theOptions_2" target="elaborate3_1_2_8_1_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId512566534433385084469" source="elaborate3_1_2_8_1_2" target="ready_8"/>
+			<arc id="cId512566534433385084466" source="theProducts_1" target="elaborate3_1_2_8_1_2"/>
+			<arc id="cId512566534433385084467" source="theOptions_1" target="elaborate3_1_2_8_1_2"/>
+			<arc id="cId512566534433385084464" source="elaborate3_2_1_8_1_2" target="optionSlots_1"/>
+			<arc id="cId512566534433385084465" source="wait_8" target="elaborate3_1_2_8_1_2"/>
+			<arc id="cId512566534433385084463" source="elaborate3_2_1_8_1_2" target="optionSlots_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId512566534433385084462" source="elaborate3_2_1_8_1_2" target="productSlots_1"/>
+			<arc id="cId512566534433385084461" source="elaborate3_2_1_8_1_2" target="ready_8"/>
+			<arc id="cId512566534433385084460" source="theOptions_1" target="elaborate3_2_1_8_1_2"/>
+			<arc id="cId512566534433385084459" source="theOptions_2" target="elaborate3_2_1_8_1_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId512566534433385084458" source="theProducts_1" target="elaborate3_2_1_8_1_2"/>
+			<arc id="cId512566534433385084457" source="wait_8" target="elaborate3_2_1_8_1_2"/>
+			<arc id="cId512566534433385084456" source="elaborate3_1_1_8_1_2" target="optionSlots_2"/>
+			<arc id="cId512566534433385084455" source="elaborate3_1_1_8_1_2" target="optionSlots_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId512566534433385084454" source="elaborate3_1_1_8_1_2" target="productSlots_1"/>
+			<arc id="cId512566534433385084453" source="elaborate3_1_1_8_1_2" target="ready_8"/>
+			<arc id="cId512566534433385084452" source="theOptions_2" target="elaborate3_1_1_8_1_2"/>
+			<arc id="cId512566534433385084451" source="theOptions_1" target="elaborate3_1_1_8_1_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId512566534433385084450" source="theProducts_1" target="elaborate3_1_1_8_1_2"/>
+			<arc id="cId517523988378404764449" source="wait_8" target="elaborate3_1_1_8_1_2"/>
+			<arc id="cId517523988378404764448" source="elaborate3_2_2_7_1_2" target="optionSlots_2">
+				<inscription>
+					<text>3</text>
+				</inscription>
+			</arc>
+			<arc id="cId517523988378404764508" source="elaborate3_2_2_7_2_2" target="optionSlots_2">
+				<inscription>
+					<text>3</text>
+				</inscription>
+			</arc>
+			<arc id="cId517523988378404764509" source="wait_8" target="elaborate3_1_1_8_2_2"/>
+			<arc id="cId517523988378404764510" source="theProducts_2" target="elaborate3_1_1_8_2_2"/>
+			<arc id="cId517523988378404764511" source="theOptions_1" target="elaborate3_1_1_8_2_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId517523988378404764504" source="theProducts_2" target="elaborate3_2_2_7_2_2"/>
+			<arc id="cId517523988378404764505" source="theOptions_2" target="elaborate3_2_2_7_2_2">
+				<inscription>
+					<text>3</text>
+				</inscription>
+			</arc>
+			<arc id="cId517523988378404764506" source="elaborate3_2_2_7_2_2" target="ready_7"/>
+			<arc id="cId517523988378404764507" source="elaborate3_2_2_7_2_2" target="productSlots_2"/>
+			<arc id="cId517523988378404764500" source="elaborate3_1_2_7_2_2" target="productSlots_2"/>
+			<arc id="cId517523988378404764501" source="elaborate3_1_2_7_2_2" target="optionSlots_1"/>
+			<arc id="cId517523988378404764502" source="elaborate3_1_2_7_2_2" target="optionSlots_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId517523988378404764503" source="wait_7" target="elaborate3_2_2_7_2_2"/>
+			<arc id="cId517523988378404764496" source="theProducts_2" target="elaborate3_1_2_7_2_2"/>
+			<arc id="cId517523988378404764497" source="theOptions_1" target="elaborate3_1_2_7_2_2"/>
+			<arc id="cId517523988378404764498" source="theOptions_2" target="elaborate3_1_2_7_2_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId517523988378404764499" source="elaborate3_1_2_7_2_2" target="ready_7"/>
+			<arc id="cId517523988378404764493" source="elaborate3_2_1_7_2_2" target="optionSlots_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId517523988378404764492" source="elaborate3_2_1_7_2_2" target="productSlots_2"/>
+			<arc id="cId517523988378404764495" source="wait_7" target="elaborate3_1_2_7_2_2"/>
+			<arc id="cId517523988378404764494" source="elaborate3_2_1_7_2_2" target="optionSlots_1"/>
+			<arc id="cId515871500866753340489" source="theOptions_2" target="elaborate3_2_1_7_2_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId515871500866753340488" source="theProducts_2" target="elaborate3_2_1_7_2_2"/>
+			<arc id="cId515871500866753340491" source="elaborate3_2_1_7_2_2" target="ready_7"/>
+			<arc id="cId515871500866753340490" source="theOptions_1" target="elaborate3_2_1_7_2_2"/>
+			<arc id="cId515871500866753340485" source="elaborate3_1_1_7_2_2" target="optionSlots_1">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId515871500866753340484" source="elaborate3_1_1_7_2_2" target="productSlots_2"/>
+			<arc id="cId515871500866753340487" source="wait_7" target="elaborate3_2_1_7_2_2"/>
+			<arc id="cId515871500866753340486" source="elaborate3_1_1_7_2_2" target="optionSlots_2"/>
+			<arc id="cId515871500866753340481" source="theOptions_1" target="elaborate3_1_1_7_2_2">
+				<inscription>
+					<text>2</text>
+				</inscription>
+			</arc>
+			<arc id="cId515871500866753340480" source="theProducts_2" target="elaborate3_1_1_7_2_2"/>
+			<arc id="cId515871500866753340483" source="elaborate3_1_1_7_2_2" target="ready_7"/>
+			<arc id="cId515871500866753340482" source="theOptions_2" target="elaborate3_1_1_7_2_2"/>
+		</page>
+		<name>
+			<text>DrinkVendingMachine-PT-02</text>
+		</name>
+	</net>
+</pnml>
