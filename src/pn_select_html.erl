@@ -98,7 +98,7 @@ create_options_dir(Dir) ->
         lists:foldl(
             fun(File, CMin) ->
                 LF = length(File),
-                case {LF < CMin, is_valid(File)} of 
+                case {LF < CMin, pn_input:is_pnml_file(File)} of 
                     {true, true} ->
                         LF;
                     _ ->
@@ -108,18 +108,9 @@ create_options_dir(Dir) ->
             100,
             FileList),
     [Selected|_] = 
-        lists:sort([File || File <- FileList, length(File) == MinLenght, is_valid(File)]),
+        lists:sort([File || File <- FileList, length(File) == MinLenght, pn_input:is_pnml_file(File)]),
     NetFile = Dir ++ "/" ++ Selected,
     create_option_file(NetFile).
-
-is_valid(File) ->
-        (length(File) >= 5)
-    andalso
-        (
-            (string:substr(File, length(File) - 3, 4) == ".xml") 
-        orelse 
-            (string:substr(File, length(File) - 4, 5) == ".pnml")
-        ).
 
 create_option_file(File) ->
     Opt = 

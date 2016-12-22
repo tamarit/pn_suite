@@ -1,4 +1,4 @@
--module( pn_bench ).
+-module( pn_bench_prop ).
  
 -export( [bench/0] ).
 
@@ -9,79 +9,79 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 timeout_analysis() ->
-    2000.
+    5000.
 
 bench() ->
     Directories = 
         [
-            "other"
-            % "mcc_models/2011/FMS",
-            % "mcc_models/2011/Kanban",
-            % "mcc_models/2011/MAPK",
-            % "mcc_models/2011/Peterson",
-            % "mcc_models/2011/Philosophers",
-            % "mcc_models/2011/TokenRing",
-            % "mcc_models/2012/CSRepetitions",
-            % "mcc_models/2012/Echo",
-            % "mcc_models/2012/Eratosthenes",
-            % "mcc_models/2012/GlobalResAllocation",
-            % "mcc_models/2012/LamportFastMutEx",
-            % "mcc_models/2012/NeoElection",
-            % "mcc_models/2012/PhilosophersDyn",
-            % "mcc_models/2012/Planning",
-            % "mcc_models/2012/Railroad",
-            % "mcc_models/2012/Ring",
-            % "mcc_models/2012/RwMutex",
-            % "mcc_models/2012/SimpleLoadBal",
-            % "mcc_models/2013/Dekker",
-            % "mcc_models/2013/DrinkVendingMachine",
-            % "mcc_models/2013/HouseConstruction",
-            % "mcc_models/2013/IBMB2S565S3960",
-            % "mcc_models/2013/PermAdmissibility",
-            % "mcc_models/2013/QuasiCertifProtocol",
-            % "mcc_models/2013/ResAllocation",
-            % "mcc_models/2013/Vasy2003",
-            % "mcc_models/2014/ARMCacheCoherence",
-            % "mcc_models/2014/Angiogenesis",
-            % "mcc_models/2014/CircadianClock",
-            % "mcc_models/2014/CircularTrains",
-            % "mcc_models/2014/DatabaseWithMutex",
-            % "mcc_models/2014/Diffusion2D",
-            % "mcc_models/2014/ERK",
-            % "mcc_models/2014/MultiwaySync",
-            % "mcc_models/2014/ParamProductionCell",
-            % "mcc_models/2014/PolyORBLF",
-            % "mcc_models/2014/PolyORBNT",
-            % "mcc_models/2014/ProductionCell",
-            % "mcc_models/2014/Solitaire",
-            % "mcc_models/2014/UtahNoC",
-            % "mcc_models/2015/BridgeAndVehicles",
-            % "mcc_models/2015/HypercubeGrid",
-            % "mcc_models/2015/IBM319",
-            % "mcc_models/2015/IBM5964",
-            % "mcc_models/2015/IBM703",
-            % "mcc_models/2015/IOTPpurchase",
-            % "mcc_models/2015/Parking",
-            % "mcc_models/2015/PhaseVariation",
-            % "mcc_models/2015/Raft",
-            % "mcc_models/2015/SafeBus",
-            % "mcc_models/2015/SmallOperatingSystem",
-            % "mcc_models/2015/SquareGrid",
-            % "mcc_models/2015/SwimmingPool",
-            % "mcc_models/2016/AirplaneLD",
-            % "mcc_models/2016/AutoFlight",
-            % "mcc_models/2016/CloudDeployment",
-            % "mcc_models/2016/DES",
-            % "mcc_models/2016/DLCshifumi",
-            % "mcc_models/2016/DNAwalker",
-            % "mcc_models/2016/GPPP",
-            % "mcc_models/2016/HypertorusGrid",
-            % "mcc_models/2016/PaceMaker",
-            % "mcc_models/2016/TCPcondis",
-            % "mcc_models/2016/TriangularGrid"
+            % {"other", all},
+            "mcc_models/2011/FMS",
+            "mcc_models/2011/Kanban",
+            "mcc_models/2011/MAPK",
+            "mcc_models/2011/Peterson",
+            "mcc_models/2011/Philosophers",
+            "mcc_models/2011/TokenRing",
+            "mcc_models/2012/CSRepetitions",
+            "mcc_models/2012/Echo",
+            "mcc_models/2012/Eratosthenes",
+            "mcc_models/2012/GlobalResAllocation",
+            "mcc_models/2012/LamportFastMutEx",
+            "mcc_models/2012/NeoElection",
+            "mcc_models/2012/PhilosophersDyn",
+            "mcc_models/2012/Planning",
+            "mcc_models/2012/Railroad",
+            "mcc_models/2012/Ring",
+            "mcc_models/2012/RwMutex",
+            "mcc_models/2012/SimpleLoadBal",
+            "mcc_models/2013/Dekker",
+            "mcc_models/2013/DrinkVendingMachine",
+            "mcc_models/2013/HouseConstruction",
+            "mcc_models/2013/IBMB2S565S3960",
+            "mcc_models/2013/PermAdmissibility",
+            "mcc_models/2013/QuasiCertifProtocol",
+            "mcc_models/2013/ResAllocation",
+            "mcc_models/2013/Vasy2003",
+            "mcc_models/2014/ARMCacheCoherence",
+            "mcc_models/2014/Angiogenesis",
+            "mcc_models/2014/CircadianClock",
+            "mcc_models/2014/CircularTrains",
+            "mcc_models/2014/DatabaseWithMutex",
+            "mcc_models/2014/Diffusion2D",
+            "mcc_models/2014/ERK",
+            "mcc_models/2014/MultiwaySync",
+            "mcc_models/2014/ParamProductionCell",
+            "mcc_models/2014/PolyORBLF",
+            "mcc_models/2014/PolyORBNT",
+            "mcc_models/2014/ProductionCell",
+            "mcc_models/2014/Solitaire",
+            "mcc_models/2014/UtahNoC",
+            "mcc_models/2015/BridgeAndVehicles",
+            "mcc_models/2015/HypercubeGrid",
+            "mcc_models/2015/IBM319",
+            "mcc_models/2015/IBM5964",
+            "mcc_models/2015/IBM703",
+            "mcc_models/2015/IOTPpurchase",
+            "mcc_models/2015/Parking",
+            "mcc_models/2015/PhaseVariation",
+            "mcc_models/2015/Raft",
+            "mcc_models/2015/SafeBus",
+            "mcc_models/2015/SmallOperatingSystem",
+            "mcc_models/2015/SquareGrid",
+            "mcc_models/2015/SwimmingPool",
+            "mcc_models/2016/AirplaneLD",
+            "mcc_models/2016/AutoFlight",
+            "mcc_models/2016/CloudDeployment",
+            "mcc_models/2016/DES",
+            "mcc_models/2016/DLCshifumi",
+            "mcc_models/2016/DNAwalker",
+            "mcc_models/2016/GPPP",
+            "mcc_models/2016/HypertorusGrid",
+            "mcc_models/2016/PaceMaker",
+            "mcc_models/2016/TCPcondis",
+            "mcc_models/2016/TriangularGrid"
         ],
     Timeout = 
-        1000,
+        5000,
     SlicesPerNet = 
         10,
     MaxSC = 
@@ -96,34 +96,39 @@ bench(Directories, Timeout, SlicesPerNet, MaxSC) ->
     FinalDict = 
         lists:foldl(
             fun(Dir, CDict) ->
-                DirDict = bench_dir(Dir, Timeout, SlicesPerNet, MaxSC, OutDev),     
-                update_total_dict(CDict, DirDict)     
+                DirDict = 
+                    bench_dir(Dir, Timeout, SlicesPerNet, MaxSC, OutDev),     
+                % update_total_dict(CDict, DirDict)
+                DirDict     
             end,
             new_alg_dict({{0, 0}, []}),
             Directories),
     final_report(FinalDict, "Final report", OutDev),
     file:close(OutDev).
 
-bench_dir(Dir, Timeout, SlicesPerNet, MaxSC, OutDev) ->
+bench_dir(Dir0, Timeout, SlicesPerNet, MaxSC, OutDev) ->
+    Dir = 
+        "examples/" ++ Dir0,
     file:write(OutDev, list_to_binary(sep() ++ "Dir: " ++ Dir ++ sep() ++ "\n")),
     {ok, FileList} = 
         file:list_dir(Dir),
-    NetFiles = 
-        [ Dir ++ "/" ++ File
-        ||  File <- FileList,
-            length(File) >= 5,
-            (string:substr(File, length(File) - 3, 4) == ".xml") or 
-            (string:substr(File, length(File) - 4, 5) == ".pnml")],
-    FDict = 
+    MinLenght = 
         lists:foldl(
-            fun(File, CDict) ->
-                DictFile = bench_file(File, Timeout, SlicesPerNet, MaxSC, OutDev),
-                update_total_dict(CDict, DictFile)
+            fun(File, CMin) ->
+                LF = length(File),
+                case {LF < CMin, pn_input:is_pnml_file(File)} of 
+                    {true, true} ->
+                        LF;
+                    _ ->
+                        CMin
+                end
             end,
-            new_alg_dict({{0, 0}, []}),
-            NetFiles),
-    final_report(FDict, "Directory report", OutDev),
-    FDict.
+            100,
+            FileList),
+    [Selected|_] = 
+        lists:sort([File || File <- FileList, length(File) == MinLenght, pn_input:is_pnml_file(File)]),
+    NetFile =  Dir ++ "/" ++ Selected,
+    bench_file(NetFile, Timeout, SlicesPerNet, MaxSC, OutDev).
 
 bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev) ->
     file:write(OutDev, list_to_binary("\nFile: " ++ File ++ sep() ++ "\n")),
@@ -131,29 +136,37 @@ bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev) ->
     PN = 
         pn_input:read_pn(File),
     pn_lib:build_digraph(PN),
-    {DictPropOri, ResAnalyses} = 
+    build_lola(PN),
+    {DictPropOri0, ResAnalyses} = 
         pn_properties:apt_properties(PN, timeout_analysis()),
-    file:write(OutDev, list_to_binary("Properties:\n" ++ ResAnalyses)),
-    Ps = dict:fetch_keys(PN#petri_net.places),
-    MaxSC = 
-        case MaxSC0 > length(Ps) of 
-            true ->
-                length(Ps);
-            false ->
-                MaxSC0
-        end,
-    SCS = 
-        build_scs(Ps, SlicesPerNet, MaxSC, []),
-    FinalDict = 
-        lists:foldl(
-            fun(SC, CDict) ->
-                DictSC = bench_sc(PN, SC, Timeout, OutDev, DictPropOri, CDict),
-                update_total_dict(CDict, DictSC)
-            end,
-            new_alg_dict({{0, 0}, []}),
-            SCS),
-    final_report(FinalDict, "File report", OutDev),
-    FinalDict.
+    case DictPropOri0 of 
+        none -> 
+            none; 
+        _ ->
+            file:write(OutDev, list_to_binary("Properties:\n" ++ ResAnalyses)),
+            DictPropOri = 
+                build_other_properties(PN, DictPropOri0),
+            Ps = dict:fetch_keys(PN#petri_net.places),
+            MaxSC = 
+                case MaxSC0 > length(Ps) of 
+                    true ->
+                        length(Ps);
+                    false ->
+                        MaxSC0
+                end,
+            SCS = 
+                build_scs(Ps, SlicesPerNet, MaxSC, []),
+            FinalDict = 
+                lists:foldl(
+                    fun(SC, CDict) ->
+                        DictSC = bench_sc(PN, SC, Timeout, OutDev, DictPropOri, CDict),
+                        update_total_dict(CDict, DictSC)
+                    end,
+                    new_alg_dict({{0, 0}, []}),
+                    SCS),
+            final_report(FinalDict, "File report", OutDev),
+            FinalDict
+    end.
 
 bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
     file:write(
@@ -302,8 +315,11 @@ store_fun_info_and_return_size(Res, PN, AN, SC, OutDev, DictPropOri) ->
                                 {dict:fetch_keys(DictPropOri), []};
                             _ ->
                                 % pn_properties:compare_properties(DictPropOri, DictPropOri)
-                                {DictSlice, _} = 
+                                {DictSlice0, _} = 
                                     pn_properties:apt_properties(Res, timeout_analysis()), 
+                                build_lola(Res),
+                                DictSlice = 
+                                    build_other_properties(Res, DictSlice0),
                                 % file:write(OutDev, list_to_binary("\nDICT: " ++ string:join(lists:map(fun(X) -> pn_lib:format("~p", [X]) end, dict:to_list(DictSlice)), ","))),
                                 pn_properties:compare_properties(DictPropOri, DictSlice)
                         end
@@ -324,14 +340,15 @@ store_fun_info_and_return_size(Res, PN, AN, SC, OutDev, DictPropOri) ->
                     "\t- Changed properties: " ++ string:join(Changed, ", "),
                     ""
                 ],
-            file:write(OutDev, list_to_binary(AN ++ ":\n" ++ string:join(InfoAlg, "\n") ++ "\n")),
+            file:write(
+                OutDev, 
+                list_to_binary(
+                    AN ++ ":\n" ++ string:join(InfoAlg, "\n") ++ "\n")),
             {Size, Changed}
         end,
     % io:format("Res: ~p\n", [Res]),
     case Size of 
         0 ->
-            pn_lib:build_digraph(PN),
-            pn_output:print_lola(PN, ""),
             Dir = PN#petri_net.dir ++ "/output/",
             LOLAFile = 
                 Dir ++  PN#petri_net.name ++ ".lola", 
@@ -339,7 +356,10 @@ store_fun_info_and_return_size(Res, PN, AN, SC, OutDev, DictPropOri) ->
                 false -> 
                     FunOK();
                 true ->
-                    file:write(OutDev, list_to_binary(AN ++ ": null when it should not be\n")),
+                    file:write(
+                        OutDev, 
+                        list_to_binary(
+                            AN ++ ": null when it should not be\n")),
                     none
             end;
         _ ->
@@ -471,6 +491,34 @@ build_sc(List, Max, Acc) ->
                     build_sc(List, Max - 1, [C | Acc])
             end 
     end.
+
+siphons_and_traps(PN) ->
+    {
+        pn_properties:apt_property("siphons", PN),
+        pn_properties:apt_property("traps", PN)
+    }.
+
+
+build_lola(PN) ->
+    pn_lib:build_digraph(PN),
+    pn_output:print_lola(PN, "").
+
+build_other_properties(PN, DictProp) ->
+    {SiphonsValue, TrapsValue} = 
+        siphons_and_traps(PN),
+    Dir = PN#petri_net.dir ++ "/output/",
+    LOLAFile = 
+        Dir ++  PN#petri_net.name ++ ".lola",
+    DeadlockRes = 
+        pn_properties:check_formula("EF DEADLOCK", LOLAFile, Dir),
+    lists:foldl(
+        fun({K, V}, CDict) ->
+            dict:store(K, V, CDict)
+        end,
+        DictProp,
+        [{"siphons", SiphonsValue}, 
+         {"traps", TrapsValue}, 
+         {"deadlock", DeadlockRes}]).
 
 get_time_string() ->
     {{Yea, Mon, Day}, {Hou, Min, Sec}} = 

@@ -168,16 +168,7 @@ cmd_loop(Port, Data, Timeout) ->
 check_reachable_sc([], _, _) ->
     false;
 check_reachable_sc([SC | SCs], File, Dir) ->
-    JSONFile = 
-        Dir ++ "output.json",
-    os:cmd("lola " ++ File ++ " --formula=\"EF " ++ SC ++ " > 0\" --json=" ++ JSONFile),
-    {ok, IODev} = file:open(JSONFile, [read]),
-    [JSONContent|_] = pn_input:read_data(IODev),
-    JSON = mochijson:decode(JSONContent),
-    {struct, [{"analysis",{struct, [_, {"result", Reachable} | _]}} | _]}  = 
-        JSON,
-    % io:format("~s: ~p\n", [SC, Reachable]),
-    case Reachable of 
+    case check_formula("EF " ++ SC ++ " > 0", File, Dir) of 
         true -> 
             true;
         false ->
@@ -191,7 +182,9 @@ check_formula(Formula, File, Dir) ->
     {ok, IODev} = file:open(JSONFile, [read]),
     [JSONContent|_] = pn_input:read_data(IODev),
     JSON = mochijson:decode(JSONContent),
-    {struct, [{"analysis",{struct, [_, {"result", Answer} | _]}} | _]}  = 
-        JSON,
-    % io:format("~p\n", [Answer]),
-    Answer.
+    case JSON of 
+        {struct, [{"analysis",{struct, [_, {"result", Answer} | _]}} | _]} -> 
+            Answer; 
+        _ -> 
+            none 
+    end.    

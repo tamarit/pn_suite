@@ -1,7 +1,8 @@
 -module( pn_input ).
  
 -export( [  read_pn/1, read_pos_from_svg/1, 
-            read_pos_from_svg_web/1, read_data/1] ).
+            read_pos_from_svg_web/1, read_data/1,
+            is_pnml_file/1] ).
 
 -include("pn.hrl").
  
@@ -252,3 +253,12 @@ read(Device, Acc) ->
         eof ->
             Acc
     end.
+
+is_pnml_file(File) ->
+        (length(File) >= 5)
+    andalso
+        (
+            (string:substr(File, length(File) - 3, 4) == ".xml") 
+        orelse 
+            (string:substr(File, length(File) - 4, 5) == ".pnml")
+        ).
