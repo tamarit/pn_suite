@@ -535,7 +535,7 @@ slice_prop_preserving(Args) ->
                         pn_output:print_lola(PNtoExportSlice, "_temp_slice"),
                         {PropSlice, _} = 
                             pn_properties:apt_properties(PNSlice, TimeoutAnalysis),
-                        are_properties_preserved(PropsParsed, PropOriginal, PropSlice, PN, PNSlice)
+                        are_properties_preserved(PropsParsed, PropOriginal, PropSlice, PN, PNSlice, TimeoutAnalysis)
                     end,
                     Slices0
                     ),
@@ -572,13 +572,13 @@ create_pn_and_prop(PNFile, Timeout, Silent) ->
         pn_properties:apt_properties(PN, Timeout),
     {PN, pn_lib:size(PN), PropOriginal}.
 
-are_properties_preserved(PropList, DictOri, DictMod, PN, PNSlice) ->
+are_properties_preserved(PropList, DictOri, DictMod, PN, PNSlice, TimeoutAnalysis) ->
     lists:all(
         fun
             ({lola, LolaFormula}) ->
-                is_lola_property_preserved(LolaFormula, PN);
+                is_lola_property_preserved(LolaFormula, PN, TimeoutAnalysis);
             ({st, ST}) ->
-                is_apt_property_preserved(ST, PN, PNSlice);
+                pn_properties:is_apt_property_preserved(ST, PN, PNSlice, TimeoutAnalysis);
             (Prop) -> 
                 is_property_preserved(Prop, DictOri, DictMod) 
         end, 
@@ -587,35 +587,15 @@ are_properties_preserved(PropList, DictOri, DictMod, PN, PNSlice) ->
 is_property_preserved(Prop, DictOri, DictMod) ->
     dict:fetch(Prop, DictOri) == dict:fetch(Prop, DictMod).
 
-is_lola_property_preserved(Formula, PN) ->
+is_lola_property_preserved(Formula, PN, TimeoutAnalysis) ->
     Dir = PN#petri_net.dir ++ "/output/",
     LOLAFile1 = 
         Dir ++  PN#petri_net.name ++ "_temp_ori.lola", 
     LOLAFile2 = 
         Dir ++  PN#petri_net.name ++ "_temp_slice.lola", 
-    pn_properties:check_formula(Formula, LOLAFile1, Dir) == pn_properties:check_formula(Formula, LOLAFile2, Dir). 
-
-is_apt_property_preserved(ST, PN, PNSlice) ->
-    [PropOri, PropSlice] = 
-        lists:map(
-            fun(N) ->
-                StrProp = 
-                    string:to_lower(
-                        string:substr(
-                            pn_properties:apt_property(ST, N), length(ST) + 11)),
-                % io:format("~s\n", [StrProp]),
-                % io:format("~p\n", [erl_scan:string(StrProp ++ ".")]),
-                {ok, Prop} = 
-                    erl_parse:parse_term(
-                        element(2, erl_scan:string(StrProp ++ "."))),
-                lists:sort(
-                    [   lists:sort(tuple_to_list(T)) 
-                    ||  T <- tuple_to_list(Prop)])
-            end,
-            [PN, PNSlice]
-            ),
-    % io:format("~p - ~p\n", [PropOri, PropSlice]),
-    PropOri == PropSlice.
+    pn_properties:check_formula(Formula, LOLAFile1, Dir, TimeoutAnalysis) 
+    == 
+    pn_properties:check_formula(Formula, LOLAFile2, Dir, TimeoutAnalysis). 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Property-preservation info
@@ -652,7 +632,7 @@ prop_preservation(Args) ->
             PropsParsed = 
                 pn_properties:parse_property_list(PropsStr),
             Preserved = 
-                are_properties_preserved(PropsParsed, D1, D2, PN1, PN2),
+                are_properties_preserved(PropsParsed, D1, D2, PN1, PN2, TimeoutAnalysis),
             io:format("~p\n", [Preserved])
     end.
 

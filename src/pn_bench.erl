@@ -335,7 +335,7 @@ store_fun_info_and_return_size(Res, PN, AN, SC, OutDev, DictPropOri) ->
             Dir = PN#petri_net.dir ++ "/output/",
             LOLAFile = 
                 Dir ++  PN#petri_net.name ++ ".lola", 
-            case pn_properties:check_reachable_sc(SC, LOLAFile, Dir) of 
+            case pn_properties:check_reachable_sc(SC, LOLAFile, Dir, timeout_analysis()) of 
                 false -> 
                     FunOK();
                 true ->

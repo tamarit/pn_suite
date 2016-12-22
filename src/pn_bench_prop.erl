@@ -9,81 +9,81 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 timeout_analysis() ->
-    5000.
+    10000.
 
 bench() ->
     Directories = 
         [
             % {"other", all},
-            "mcc_models/2011/FMS",
-            "mcc_models/2011/Kanban",
-            "mcc_models/2011/MAPK",
-            "mcc_models/2011/Peterson",
-            "mcc_models/2011/Philosophers",
-            "mcc_models/2011/TokenRing",
-            "mcc_models/2012/CSRepetitions",
-            "mcc_models/2012/Echo",
-            "mcc_models/2012/Eratosthenes",
-            "mcc_models/2012/GlobalResAllocation",
-            "mcc_models/2012/LamportFastMutEx",
-            "mcc_models/2012/NeoElection",
-            "mcc_models/2012/PhilosophersDyn",
-            "mcc_models/2012/Planning",
-            "mcc_models/2012/Railroad",
-            "mcc_models/2012/Ring",
-            "mcc_models/2012/RwMutex",
-            "mcc_models/2012/SimpleLoadBal",
-            "mcc_models/2013/Dekker",
-            "mcc_models/2013/DrinkVendingMachine",
-            "mcc_models/2013/HouseConstruction",
-            "mcc_models/2013/IBMB2S565S3960",
-            "mcc_models/2013/PermAdmissibility",
-            "mcc_models/2013/QuasiCertifProtocol",
-            "mcc_models/2013/ResAllocation",
-            "mcc_models/2013/Vasy2003",
-            "mcc_models/2014/ARMCacheCoherence",
-            "mcc_models/2014/Angiogenesis",
-            "mcc_models/2014/CircadianClock",
-            "mcc_models/2014/CircularTrains",
-            "mcc_models/2014/DatabaseWithMutex",
-            "mcc_models/2014/Diffusion2D",
-            "mcc_models/2014/ERK",
-            "mcc_models/2014/MultiwaySync",
-            "mcc_models/2014/ParamProductionCell",
-            "mcc_models/2014/PolyORBLF",
-            "mcc_models/2014/PolyORBNT",
-            "mcc_models/2014/ProductionCell",
-            "mcc_models/2014/Solitaire",
-            "mcc_models/2014/UtahNoC",
-            "mcc_models/2015/BridgeAndVehicles",
-            "mcc_models/2015/HypercubeGrid",
-            "mcc_models/2015/IBM319",
-            "mcc_models/2015/IBM5964",
-            "mcc_models/2015/IBM703",
-            "mcc_models/2015/IOTPpurchase",
-            "mcc_models/2015/Parking",
-            "mcc_models/2015/PhaseVariation",
-            "mcc_models/2015/Raft",
-            "mcc_models/2015/SafeBus",
-            "mcc_models/2015/SmallOperatingSystem",
-            "mcc_models/2015/SquareGrid",
-            "mcc_models/2015/SwimmingPool",
-            "mcc_models/2016/AirplaneLD",
-            "mcc_models/2016/AutoFlight",
-            "mcc_models/2016/CloudDeployment",
-            "mcc_models/2016/DES",
-            "mcc_models/2016/DLCshifumi",
-            "mcc_models/2016/DNAwalker",
-            "mcc_models/2016/GPPP",
-            "mcc_models/2016/HypertorusGrid",
-            "mcc_models/2016/PaceMaker",
-            "mcc_models/2016/TCPcondis",
-            "mcc_models/2016/TriangularGrid"
+              "mcc_models/2011/FMS"
+            , "mcc_models/2011/Kanban"
+            , "mcc_models/2011/MAPK"
+            , "mcc_models/2011/Peterson"
+            , "mcc_models/2011/Philosophers"
+            , "mcc_models/2011/TokenRing"
+            , "mcc_models/2012/CSRepetitions"
+            , "mcc_models/2012/Echo"
+            , "mcc_models/2012/Eratosthenes"
+            , "mcc_models/2012/GlobalResAllocation"
+            , "mcc_models/2012/LamportFastMutEx"
+            , "mcc_models/2012/NeoElection"
+            , "mcc_models/2012/PhilosophersDyn"
+            , "mcc_models/2012/Planning"
+            , "mcc_models/2012/Railroad"
+            , "mcc_models/2012/Ring"
+            , "mcc_models/2012/RwMutex"
+            , "mcc_models/2012/SimpleLoadBal"
+            , "mcc_models/2013/Dekker"
+            , "mcc_models/2013/DrinkVendingMachine"
+            , "mcc_models/2013/HouseConstruction"
+            , "mcc_models/2013/IBMB2S565S3960"
+            , "mcc_models/2013/PermAdmissibility"
+            , "mcc_models/2013/QuasiCertifProtocol"
+            , "mcc_models/2013/ResAllocation"
+            , "mcc_models/2013/Vasy2003"
+            , "mcc_models/2014/ARMCacheCoherence"
+            , "mcc_models/2014/Angiogenesis"
+            , "mcc_models/2014/CircadianClock"
+            , "mcc_models/2014/CircularTrains"
+            , "mcc_models/2014/DatabaseWithMutex"
+            , "mcc_models/2014/Diffusion2D"
+            , "mcc_models/2014/ERK"
+            , "mcc_models/2014/MultiwaySync"
+            , "mcc_models/2014/ParamProductionCell"
+            , "mcc_models/2014/PolyORBLF"
+            , "mcc_models/2014/PolyORBNT"
+            , "mcc_models/2014/ProductionCell"
+            , "mcc_models/2014/Solitaire"
+            , "mcc_models/2014/UtahNoC"
+            , "mcc_models/2015/BridgeAndVehicles"
+            , "mcc_models/2015/HypercubeGrid"
+            , "mcc_models/2015/IBM319"
+            , "mcc_models/2015/IBM5964"
+            , "mcc_models/2015/IBM703"
+            , "mcc_models/2015/IOTPpurchase"
+            , "mcc_models/2015/Parking"
+            , "mcc_models/2015/PhaseVariation"
+            , "mcc_models/2015/Raft"
+            , "mcc_models/2015/SafeBus"
+            , "mcc_models/2015/SmallOperatingSystem"
+            , "mcc_models/2015/SquareGrid"
+            , "mcc_models/2015/SwimmingPool"
+            , "mcc_models/2016/AirplaneLD"
+            , "mcc_models/2016/AutoFlight"
+            , "mcc_models/2016/CloudDeployment"
+            , "mcc_models/2016/DES"
+            , "mcc_models/2016/DLCshifumi"
+            , "mcc_models/2016/DNAwalker"
+            , "mcc_models/2016/GPPP"
+            , "mcc_models/2016/HypertorusGrid"
+            , "mcc_models/2016/PaceMaker"
+            , "mcc_models/2016/TCPcondis"
+            , "mcc_models/2016/TriangularGrid"
         ],
     Timeout = 
         5000,
     SlicesPerNet = 
-        10,
+        5,
     MaxSC = 
         5,
     bench(Directories, Timeout, SlicesPerNet, MaxSC).
@@ -96,20 +96,18 @@ bench(Directories, Timeout, SlicesPerNet, MaxSC) ->
     FinalDict = 
         lists:foldl(
             fun(Dir, CDict) ->
-                DirDict = 
-                    bench_dir(Dir, Timeout, SlicesPerNet, MaxSC, OutDev),     
-                % update_total_dict(CDict, DirDict)
-                DirDict     
+                bench_dir(Dir, Timeout, SlicesPerNet, MaxSC, OutDev, CDict)        
             end,
-            new_alg_dict({{0, 0}, []}),
+            new_alg_dict({0, 0}),
             Directories),
-    final_report(FinalDict, "Final report", OutDev),
+    [io:format("~p: ~p\n\n", [A, dict:to_list(DL)]) || {A, DL} <- dict:to_list(FinalDict)],
+    % final_report(FinalDict, "Final report", OutDev),
     file:close(OutDev).
 
-bench_dir(Dir0, Timeout, SlicesPerNet, MaxSC, OutDev) ->
+bench_dir(Dir0, Timeout, SlicesPerNet, MaxSC, OutDev, TotalDict) ->
     Dir = 
         "examples/" ++ Dir0,
-    file:write(OutDev, list_to_binary(sep() ++ "Dir: " ++ Dir ++ sep() ++ "\n")),
+    % file:write(OutDev, list_to_binary(sep() ++ "Dir: " ++ Dir ++ sep() ++ "\n")),
     {ok, FileList} = 
         file:list_dir(Dir),
     MinLenght = 
@@ -128,9 +126,9 @@ bench_dir(Dir0, Timeout, SlicesPerNet, MaxSC, OutDev) ->
     [Selected|_] = 
         lists:sort([File || File <- FileList, length(File) == MinLenght, pn_input:is_pnml_file(File)]),
     NetFile =  Dir ++ "/" ++ Selected,
-    bench_file(NetFile, Timeout, SlicesPerNet, MaxSC, OutDev).
+    bench_file(NetFile, Timeout, SlicesPerNet, MaxSC, OutDev, TotalDict).
 
-bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev) ->
+bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev, TotalDict) ->
     file:write(OutDev, list_to_binary("\nFile: " ++ File ++ sep() ++ "\n")),
     io:format("Benchmarking with file " ++ File ++ "\n"),
     PN = 
@@ -139,13 +137,13 @@ bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev) ->
     build_lola(PN),
     {DictPropOri0, ResAnalyses} = 
         pn_properties:apt_properties(PN, timeout_analysis()),
-    case DictPropOri0 of 
+    DictPropOri = 
+        build_other_properties(PN, DictPropOri0, none),
+    case DictPropOri of 
         none -> 
-            none; 
+            TotalDict; 
         _ ->
             file:write(OutDev, list_to_binary("Properties:\n" ++ ResAnalyses)),
-            DictPropOri = 
-                build_other_properties(PN, DictPropOri0),
             Ps = dict:fetch_keys(PN#petri_net.places),
             MaxSC = 
                 case MaxSC0 > length(Ps) of 
@@ -156,16 +154,12 @@ bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev) ->
                 end,
             SCS = 
                 build_scs(Ps, SlicesPerNet, MaxSC, []),
-            FinalDict = 
-                lists:foldl(
-                    fun(SC, CDict) ->
-                        DictSC = bench_sc(PN, SC, Timeout, OutDev, DictPropOri, CDict),
-                        update_total_dict(CDict, DictSC)
-                    end,
-                    new_alg_dict({{0, 0}, []}),
-                    SCS),
-            final_report(FinalDict, "File report", OutDev),
-            FinalDict
+            lists:foldl(
+                fun(SC, CDict) ->
+                    bench_sc(PN, SC, Timeout, OutDev, DictPropOri, CDict)
+                end,
+                TotalDict,
+                SCS)
     end.
 
 bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
@@ -178,82 +172,22 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
     ResAlg = 
         lists:map(
             fun(A) ->
-                bench_fun(A, PN, SC, Timeout, OutDev, DictPropOri)
+                {A#slicer.name, bench_fun(A, PN, SC, Timeout, OutDev, DictPropOri)}
             end,
             pn_lib:algorithms()),
-        % lists:map(
-            % fun(A = #slicer{name = Name, function = Fun}) ->
-            %     {Name, Fun(PN, SC)},
-            %     file:write(OutDev, list_to_binary(pn_lib:format("~s: ~p\n", [Name, pn_lib:size(Fun(PN, SC))]))),
-            %     bench_fun(A, PN, SC, Timeout, OutDev, DictPropOri),
-            %     none
-            % end,
-            % pn_lib:algorithms()
-            % ),
-    case [R || R <- ResAlg, R /= none] of 
+    case [R || R = {_, RD} <- ResAlg, RD /= none] of 
         [] ->
             Dict;
         NoNone ->
-            {Max, _} = lists:max(NoNone),
-            TotalChanged = 
-                case NoNone of 
-                    ResAlg ->
-                        lists:foldl(
-                            fun({_, IP}, PropAcc) ->
-                                SIP = lists:sort(IP),
-                                case PropAcc of 
-                                    none ->
-                                        [SIP];
-                                    % repeated ->
-                                    %     repeated;
-                                    _ ->
-                                        case lists:member(SIP, PropAcc) of 
-                                            true ->
-                                                PropAcc;
-                                            false ->
-                                                [SIP | PropAcc]
-                                        end
-                                end
-                            end,
-                            none,
-                            ResAlg);
-                    _ ->
-                        none
-                end,
-            case TotalChanged of 
-                none ->
-                    ok;
-                _ ->
-                    file:write(OutDev, list_to_binary("Groups of changed properties: ")),
-                    [file:write(OutDev, list_to_binary("\n\tGroup " ++ (integer_to_list(Id)) ++ ": " ++ string:join(Changed, ", "))) 
-                    || {Id,Changed} <- lists:zip(lists:seq(1, length(TotalChanged)),TotalChanged)],
-                    case length(TotalChanged) == length(ResAlg) of 
-                        true ->
-                            file:write(OutDev, list_to_binary("\nNOTE: Petri Net where each algorithm changes different properties.\n"));
-                        false ->
-                            file:write(OutDev, list_to_binary("\n"))
-                    end
-            end,
-            NormRes = 
-                lists:map(
-                    fun
-                        (none) ->
-                            none;
-                        ({V, IP}) -> 
-                            % io:format("~p / ~p\n", [V, Max]),
-                            {V / Max, IP}
-                    end, 
-                    ResAlg),
             lists:foldl(
                 fun
-                    ({_, none}, CDict) ->
-                            CDict;
-                    ({#slicer{name = A}, {V, IP}}, CDict) ->
-                        {{OldValue, Count}, OldIP} = dict:fetch(A, CDict),
-                        dict:store(A, {{OldValue + V, Count + 1}, IP ++ OldIP}, CDict)
+                    ({A, DictA}, CDict) ->
+                        % io:format("~p\n", [dict:to_list(DictA)]),
+                        OldValue = dict:fetch(A, CDict),
+                        dict:store(A, merge_prop_dict(OldValue, DictA), CDict)
                 end,
                 Dict,
-                lists:zip(pn_lib:algorithms(), NormRes))
+                NoNone)
     end.
 
 bench_fun(#slicer{name = AN, function = AF}, PN, SC, Timeout, OutDev, DictPropOri) ->
@@ -264,95 +198,55 @@ bench_fun(#slicer{name = AN, function = AF}, PN, SC, Timeout, OutDev, DictPropOr
     Pid = 
         spawn(
             fun() -> 
-                Self!AF(PN, SC),
+                TimeBeforeExecuting = erlang:monotonic_time(),
+                TempRes = AF(PN, SC),
+                TimeAfterExecuting = erlang:monotonic_time(),
+                TimeExecuting = TimeAfterExecuting - TimeBeforeExecuting,
+                Self!{TempRes, TimeExecuting},
                 receive 
                     ok ->
                         ok
                 end
             end),
-    Res = 
+    {Res, TimeInfo} = 
         receive
-            Res0 ->
-                Res0,
+            {Res0, TimeInfo_} ->
                 Res1 = pn_lib:new_pn_fresh_digraph(Res0),
                 Pid!ok,
-                Res1
+                {Res1, TimeInfo_}
         after
             Timeout ->
                 exit(Pid, kill),
-                none
+                {none, none}
         end,
-    % file:write(OutDev, list_to_binary(pn_lib:format("FUNCTION: ~p\n", [AF]) )),
-    store_fun_info_and_return_size(Res, PN, AN, SC, OutDev, DictPropOri).
-    % none.
+    store_fun_info(Res, PN, AN, SC, OutDev, DictPropOri, TimeInfo).
 
-store_fun_info_and_return_size(none, _, AN, _, OutDev, _) ->
+store_fun_info(none, _, AN, _, OutDev, _, _) ->
     file:write(OutDev, list_to_binary(AN ++ ": timeouted\n")),
     none;
-store_fun_info_and_return_size(Res, PN, AN, SC, OutDev, DictPropOri) ->
-    % io:format("~p\n", [Res]),
-    % io:format("~p\n", [digraph:info(Res#petri_net.digraph)]),
+store_fun_info(Res, PN, AN, SC, OutDev, DictPropOri, TimeInfo) ->
     pn_lib:build_digraph(Res),
-    NP = dict:size(Res#petri_net.places),
-    NT = dict:size(Res#petri_net.transitions),
-    Size = pn_lib:size(Res),
-    % file:write(OutDev, list_to_binary("\nPLACES: " ++ string:join(lists:map(fun(X) -> pn_lib:format("~p", [X]) end, dict:to_list(Res#petri_net.places)), ",") ++ "\nTRANSITIONS: " ++ string:join(lists:map(fun(X) -> pn_lib:format("~p", [X]) end, dict:to_list(Res#petri_net.transitions)), ",") ++ "\nSize:" ++  pn_lib:format("~p", [pn_lib:size(Res)]) ++ "\n")),
     FunOK = 
-        % fun() -> none end,
-        fun() ->
-            {Preserved, Changed} = 
-                case DictPropOri of 
-                    none ->
-                        {[], []};
-                    _ ->
-                        case 
-                            {
-                                list_to_integer(dict:fetch("num_places", DictPropOri)), 
-                                list_to_integer(dict:fetch("num_transitions", DictPropOri))
-                            } 
-                        of 
-                            {NP, NT} ->
-                                {dict:fetch_keys(DictPropOri), []};
-                            _ ->
-                                % pn_properties:compare_properties(DictPropOri, DictPropOri)
-                                {DictSlice0, _} = 
-                                    pn_properties:apt_properties(Res, timeout_analysis()), 
-                                build_lola(Res),
-                                DictSlice = 
-                                    build_other_properties(Res, DictSlice0),
-                                % file:write(OutDev, list_to_binary("\nDICT: " ++ string:join(lists:map(fun(X) -> pn_lib:format("~p", [X]) end, dict:to_list(DictSlice)), ","))),
-                                pn_properties:compare_properties(DictPropOri, DictSlice)
-                        end
-                end,
-            PreservedStr = 
-                case Changed of 
-                    [] ->
-                        "All";
-                    _ ->
-                        string:join(Preserved, ", ")
-                end,
-            InfoAlg = 
-                [
-                    "\t- Size: " ++ integer_to_list(Size),
-                    "",
-                    "\t- Preserved properties: " ++ PreservedStr,
-                    "",
-                    "\t- Changed properties: " ++ string:join(Changed, ", "),
-                    ""
-                ],
-            file:write(
-                OutDev, 
-                list_to_binary(
-                    AN ++ ":\n" ++ string:join(InfoAlg, "\n") ++ "\n")),
-            {Size, Changed}
+        fun() -> 
+            case DictPropOri of 
+                none ->
+                    none;
+                _ ->
+                    {DictSlice0, _} = 
+                        pn_properties:apt_properties(Res, timeout_analysis()), 
+                    build_lola(Res),
+                    DictSlice = 
+                        build_other_properties(Res, DictSlice0, TimeInfo),
+                    % file:write(OutDev, list_to_binary("\nDICT: " ++ string:join(lists:map(fun(X) -> pn_lib:format("~p", [X]) end, dict:to_list(DictSlice)), ","))),
+                    pn_properties:compare_properties_all(DictPropOri, DictSlice)
+            end
         end,
-    % io:format("Res: ~p\n", [Res]),
-    case Size of 
+    case pn_lib:size(Res) of 
         0 ->
             Dir = PN#petri_net.dir ++ "/output/",
             LOLAFile = 
                 Dir ++  PN#petri_net.name ++ ".lola", 
-            case pn_properties:check_reachable_sc(SC, LOLAFile, Dir) of 
+            case pn_properties:check_reachable_sc(SC, LOLAFile, Dir, timeout_analysis()) of 
                 false -> 
                     FunOK();
                 true ->
@@ -450,21 +344,22 @@ final_report(Dict, Msg, OutDev) ->
 sep() ->
     "\n************************\n".
 
-update_total_dict(TotalDict, DirDict) ->  
-    dict:map(
-        fun(K, {{T, Count}, IP}) ->
-            {{NT, NCount}, NIP} = dict:fetch(K, DirDict),
-            {{T + NT, Count + NCount}, IP ++ NIP}
-        end,
-        TotalDict).
-
 new_alg_dict(Value) ->
     dict:from_list(
         lists:map(
             fun(#slicer{name = AN}) -> 
-                {AN, Value} 
+                {AN, create_alg_dict(Value)} 
             end, 
             pn_lib:algorithms())).
+
+create_alg_dict(Value) ->
+    Props = 
+        pn_properties:all_properties() ++ ["siphons", "traps", "deadlock", "size", "time"],
+    dict:from_list(
+        lists:zip(
+            Props,
+            lists:duplicate(length(Props), Value) )
+        ).
 
 build_scs(_, 0, _, Acc) ->
     Acc;
@@ -494,8 +389,8 @@ build_sc(List, Max, Acc) ->
 
 siphons_and_traps(PN) ->
     {
-        pn_properties:apt_property("siphons", PN),
-        pn_properties:apt_property("traps", PN)
+        pn_properties:apt_property("siphons", PN, timeout_analysis()),
+        pn_properties:apt_property("traps", PN, timeout_analysis())
     }.
 
 
@@ -503,22 +398,31 @@ build_lola(PN) ->
     pn_lib:build_digraph(PN),
     pn_output:print_lola(PN, "").
 
-build_other_properties(PN, DictProp) ->
+build_other_properties(_, none, _) ->
+    none;
+build_other_properties(PN, DictProp, TimeInfo) ->
     {SiphonsValue, TrapsValue} = 
         siphons_and_traps(PN),
     Dir = PN#petri_net.dir ++ "/output/",
     LOLAFile = 
         Dir ++  PN#petri_net.name ++ ".lola",
     DeadlockRes = 
-        pn_properties:check_formula("EF DEADLOCK", LOLAFile, Dir),
-    lists:foldl(
-        fun({K, V}, CDict) ->
-            dict:store(K, V, CDict)
-        end,
-        DictProp,
-        [{"siphons", SiphonsValue}, 
-         {"traps", TrapsValue}, 
-         {"deadlock", DeadlockRes}]).
+        pn_properties:check_formula("EF DEADLOCK", LOLAFile, Dir, timeout_analysis()),
+    % case lists:some(fun(none) -> true; (_) -> false end, [SiphonsValue, TrapsValue, DeadlockRes]) of 
+    %     [] -> 
+            lists:foldl(
+                fun({K, V}, CDict) ->
+                    dict:store(K, V, CDict)
+                end,
+                DictProp,
+                [{"siphons", SiphonsValue}, 
+                 {"traps", TrapsValue}, 
+                 {"deadlock", DeadlockRes},
+                 {"size", pn_lib:size(PN)},
+                 {"time", TimeInfo}]).
+    %     _ ->
+    %         none
+    % end.
 
 get_time_string() ->
     {{Yea, Mon, Day}, {Hou, Min, Sec}} = 
@@ -536,3 +440,23 @@ get_time_string() ->
             end, 
             [Yea, Mon, Day, Hou, Min, Sec]),
         "_").
+
+merge_prop_dict(DictAlg, DictProp) -> 
+    dict:fold(
+        fun
+            (K, {Count, CountTotal}, CDict) -> 
+                case dict:fetch(K, DictProp) of 
+                    none -> 
+                        dict:store(K, {Count, CountTotal}, CDict);
+                    {preserved, _} ->
+                        dict:store(K, {Count + 1, CountTotal + 1}, CDict);
+                    {no_preserved, _, _} ->
+                        dict:store(K, {Count, CountTotal + 1}, CDict);
+                    Num ->
+                        dict:store(K, {Count + Num, CountTotal + 1}, CDict)
+                end
+        end,
+        dict:new(),
+        DictAlg).
+
+
