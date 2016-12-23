@@ -126,7 +126,13 @@ bench_dir(Dir0, Timeout, SlicesPerNet, MaxSC, OutDev, TotalDict) ->
     [Selected|_] = 
         lists:sort([File || File <- FileList, length(File) == MinLenght, pn_input:is_pnml_file(File)]),
     NetFile =  Dir ++ "/" ++ Selected,
-    bench_file(NetFile, Timeout, SlicesPerNet, MaxSC, OutDev, TotalDict).
+    try
+        bench_file(NetFile, Timeout, SlicesPerNet, MaxSC, OutDev, TotalDict)
+    catch 
+        _:_ ->
+            file:write(OutDev, list_to_binary("\nFile " ++ NetFile ++ " cannot be analyzed." ++ "\n")),
+            TotalDict
+    end.
 
 bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev, TotalDict) ->
     file:write(OutDev, list_to_binary("\nFile: " ++ File ++ sep() ++ "\n")),
@@ -141,6 +147,7 @@ bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev, TotalDict) ->
         build_other_properties(PN, DictPropOri0, none),
     case DictPropOri of 
         none -> 
+            file:write(OutDev, list_to_binary("Property analysys timeouted.\n")),
             TotalDict; 
         _ ->
             file:write(OutDev, list_to_binary("Properties:\n" ++ ResAnalyses)),
@@ -156,7 +163,13 @@ bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev, TotalDict) ->
                 build_scs(Ps, SlicesPerNet, MaxSC, []),
             lists:foldl(
                 fun(SC, CDict) ->
-                    bench_sc(PN, SC, Timeout, OutDev, DictPropOri, CDict)
+                    try
+                        bench_sc(PN, SC, Timeout, OutDev, DictPropOri, CDict)
+                    catch 
+                        _:_ ->
+                            file:write(OutDev, list_to_binary("\nSomething went wrong. Ingnoring results.\n")),
+                            CDict
+                    end
                 end,
                 TotalDict,
                 SCS)
@@ -172,7 +185,14 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
     ResAlg = 
         lists:map(
             fun(A) ->
-                {A#slicer.name, bench_fun(A, PN, SC, Timeout, OutDev, DictPropOri)}
+                ResFun = 
+                    try 
+                        bench_fun(A, PN, SC, Timeout, OutDev, DictPropOri)
+                    catch 
+                        _:_ ->
+                            none 
+                    end,
+                {A#slicer.name, ResFun}
             end,
             pn_lib:algorithms()),
     case [R || R = {_, RD} <- ResAlg, RD /= none] of 
@@ -182,8 +202,12 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
             lists:foldl(
                 fun
                     ({A, DictA}, CDict) ->
+                        % io:format("~p\n", [DictA]),
+                        % io:format("~p\n", [CDict]),
                         % io:format("~p\n", [dict:to_list(DictA)]),
+                        % io:format("~p\n", [dict:to_list(CDict)]),
                         OldValue = dict:fetch(A, CDict),
+                        % io:format("~p\n", [merge_prop_dict(OldValue, DictA)]),
                         dict:store(A, merge_prop_dict(OldValue, DictA), CDict)
                 end,
                 Dict,
@@ -445,14 +469,17 @@ merge_prop_dict(DictAlg, DictProp) ->
     dict:fold(
         fun
             (K, {Count, CountTotal}, CDict) -> 
-                case dict:fetch(K, DictProp) of 
-                    none -> 
+                % io:format("~p\n", [dict:fetch_keys(DictProp)]),
+                case dict:find(K, DictProp) of 
+                    error ->
                         dict:store(K, {Count, CountTotal}, CDict);
-                    {preserved, _} ->
+                    {ok, none} -> 
+                        dict:store(K, {Count, CountTotal}, CDict);
+                    {ok, {preserved, _}} ->
                         dict:store(K, {Count + 1, CountTotal + 1}, CDict);
-                    {no_preserved, _, _} ->
+                    {ok, {no_preserved, _, _}} ->
                         dict:store(K, {Count, CountTotal + 1}, CDict);
-                    Num ->
+                    {ok, Num} ->
                         dict:store(K, {Count + Num, CountTotal + 1}, CDict)
                 end
         end,

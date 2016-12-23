@@ -102,25 +102,25 @@ print_net_file(PN, File, Format) ->
     file:write_file(
         "pn_slicer_temp.dot",  
         list_to_binary(to_dot(PN, false))),
-    os:cmd( "dot -T" ++ Format ++ " " 
+    cmd_try( "dot -T" ++ Format ++ " " 
         ++  "pn_slicer_temp.dot > "
         ++   File ++ "." ++ Format),
-    os:cmd("rm -f pn_slicer_temp.dot").
+    cmd_try("rm -f pn_slicer_temp.dot").
 
 print_net(PN, ShowEnabled, Format, Suffix) ->
     Output = PN#petri_net.dir ++ "/output",
-    os:cmd("mkdir " ++ Output),
+    cmd_try("mkdir " ++ Output),
     file:write_file(
             Output ++ "/" 
         ++  PN#petri_net.name ++ "_temp.dot",  
         list_to_binary(to_dot(PN, ShowEnabled))),
-    os:cmd(
+    cmd_try(
             "dot -T" ++ Format ++ " " 
         ++  Output ++ "/" 
         ++  PN#petri_net.name ++ "_temp.dot > "
         ++  Output ++ "/"  
         ++  PN#petri_net.name ++ Suffix ++ "." ++ Format),
-    os:cmd(
+    cmd_try(
             "rm -f " ++  Output ++ "/" 
         ++  PN#petri_net.name ++ "_temp.dot").
 
@@ -137,7 +137,7 @@ formats() ->
 %     lists:map(
 %         fun(Format) -> 
 %             StrFormat = atom_to_list(Format),
-%             os:cmd("dot -T" ++ StrFormat ++ " "++ PN#petri_net.name ++".dot > formats/"++ PN#petri_net.name ++"." ++ StrFormat) 
+%             cmd_try("dot -T" ++ StrFormat ++ " "++ PN#petri_net.name ++".dot > formats/"++ PN#petri_net.name ++"." ++ StrFormat) 
 %         end,
 %         Formats).
 
@@ -151,7 +151,7 @@ print_pnml_file(PN, File) ->
         list_to_binary(to_pnml(PN))).
 
 print_pnml(PN, Suffix) ->
-    os:cmd("mkdir " ++ PN#petri_net.dir ++ "/output"),
+    cmd_try("mkdir " ++ PN#petri_net.dir ++ "/output"),
     file:write_file(
             PN#petri_net.dir ++ "/output/" 
         ++  PN#petri_net.name ++ Suffix ++ ".pnml", 
@@ -266,7 +266,7 @@ print_lola_file(PN, File) ->
         list_to_binary(to_lola(PN))).
 
 print_lola(PN, Suffix) ->
-    os:cmd("mkdir " ++ PN#petri_net.dir ++ "/output"),
+    cmd_try("mkdir " ++ PN#petri_net.dir ++ "/output"),
     file:write_file(
             PN#petri_net.dir ++ "/output/" 
         ++  PN#petri_net.name ++ Suffix ++ ".lola", 
@@ -328,7 +328,7 @@ print_apt_file(PN, File) ->
         list_to_binary(to_apt(PN))).
 
 print_apt(PN, Suffix) ->
-    os:cmd("mkdir " ++ PN#petri_net.dir ++ "/output"),
+    cmd_try("mkdir " ++ PN#petri_net.dir ++ "/output"),
     file:write_file(
             PN#petri_net.dir ++ "/output/" 
         ++  PN#petri_net.name ++ Suffix ++ ".apt", 
@@ -387,3 +387,11 @@ marking_to_apt([#place{name = N, marking = M} | Ps], Acc) ->
 marking_to_apt([], Acc) ->
     Acc.
 
+
+cmd_try(Cmd) ->
+    try 
+        os:cmd(Cmd)
+    catch 
+        _:_ -> 
+            ok
+    end.

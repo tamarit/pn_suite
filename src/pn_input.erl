@@ -233,6 +233,7 @@ read_xml_document(File) ->
         xmerl_scan:string(
             lists:concat(read_data(InpDev)), 
             [{encoding, "iso-10646-utf-1"}]),
+    file:close(InpDev),
     XML.
 
 read_data(Device) ->

@@ -135,7 +135,7 @@ apt_properties(PN, TimeOut) ->
     Cmd = 
         "java -jar apt/apt.jar examine_pn "  ++ AptFile,
     pn_lib:flush(),
-    cmd_run(Cmd, fun cmd_loop_dict_building/3, TimeOut).
+    cmd_run(Cmd, fun cmd_loop_dict_building/3, TimeOut, {none, "No analyzed (error).\n\n"}).
     % Res = os:cmd(Cmd), 
     % {parse_properties(Res), Res}.
     % {lists:foldl(fun(X, Acc) -> dict:store(X, "0", Acc) end, dict:new(), all_properties()), ""}.
@@ -146,7 +146,7 @@ apt_property(Prop, PN, TimeOut) ->
     pn_output:print_apt(PN, ""),
     Cmd = 
         "java -jar apt/apt.jar " ++ Prop ++ " "  ++ AptFile,
-    cmd_run(Cmd, fun cmd_loop/3, TimeOut).
+    cmd_run(Cmd, fun cmd_loop/3, TimeOut, none).
 
 
 parse_properties(PropStr) ->
@@ -246,7 +246,7 @@ check_formula(Formula, File, Dir, TimeOut) ->
     Cmd = 
         "lola " ++ File ++ " --formula=\"" ++ Formula ++ "\" --json=" ++ JSONFile ++ " 2> " ++ OutFile,
     Res = 
-        cmd_run(Cmd, fun cmd_loop/3, TimeOut),
+        cmd_run(Cmd, fun cmd_loop/3, TimeOut, none),
     case Res of 
         none -> 
             none;
@@ -259,26 +259,32 @@ check_formula(Formula, File, Dir, TimeOut) ->
                     Answer; 
                 _ -> 
                     none 
-            end
+            end,
+            file:close(JSONFile)
     end.    
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Command run
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-cmd_run(Cmd, CmdLoop, Timeout) ->
-    Port = erlang:open_port({spawn, Cmd},[exit_status]),
-    [PidOs] = 
-        [PidOs0 || {os_pid,PidOs0} <- erlang:port_info(Port)],
-    Res = CmdLoop(Port, [], Timeout),
-    try 
-        port_close(Port),
-        os:cmd("kill -9 " ++ integer_to_list(PidOs))
+cmd_run(Cmd, CmdLoop, Timeout, ErrorAns) ->
+    try
+        Port = erlang:open_port({spawn, Cmd},[exit_status]),
+        [PidOs] = 
+            [PidOs0 || {os_pid,PidOs0} <- erlang:port_info(Port)],
+        Res = CmdLoop(Port, [], Timeout),
+        try 
+            port_close(Port),
+            os:cmd("kill -9 " ++ integer_to_list(PidOs))
+        catch 
+            _:_ ->
+                ok
+        end,
+        Res
     catch 
         _:_ ->
-            ok
-    end,
-    Res.
+            ErrorAns
+    end.
 
 cmd_loop(Port, Data, Timeout) ->
     receive
