@@ -101,8 +101,8 @@ compare_properties_all(DictOri, DictSlice) ->
         end,
     dict:fold(
         fun
-            (K = "size", _, CDict) ->
-                dict:store(K, dict:fetch(K, DictSlice), CDict);
+            (K = "size", V, CDict) ->
+                dict:store(K, dict:fetch(K, DictSlice) / V, CDict);
             (K = "time", _, CDict) ->
                 dict:store(K, dict:fetch(K, DictSlice), CDict);
             (K, none, CDict) ->

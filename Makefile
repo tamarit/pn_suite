@@ -25,9 +25,29 @@ bench:
 bench_prop:
 	@erl -pa ebin -run pn_bench_prop bench -noshell -s erlang halt
 
+bench_2011:
+	@erl -pa ebin -run pn_bench_prop bench 2011 -noshell -s erlang halt
+
+bench_2012:
+	@erl -pa ebin -run pn_bench_prop bench 2012 -noshell -s erlang halt
+
+bench_2013:
+	@erl -pa ebin -run pn_bench_prop bench 2013 -noshell -s erlang halt
+
+bench_2014:
+	@erl -pa ebin -run pn_bench_prop bench 2014 -noshell -s erlang halt
+
+bench_2015:
+	@erl -pa ebin -run pn_bench_prop bench 2015 -noshell -s erlang halt
+
+bench_2016:
+	@erl -pa ebin -run pn_bench_prop bench 2016 -noshell -s erlang halt
+
 select:
 	@erl -pa ebin -run pn_select_html create -noshell -s erlang halt
 
+print:
+	@erl -pa ebin -run pn_results_printer print -noshell -s erlang halt
 
 # ***********************************
 # ************** Tests **************

@@ -1,6 +1,6 @@
 -module( pn_bench_prop ).
  
--export( [bench/0] ).
+-export( [bench/0, bench/1] ).
 
 -include("pn.hrl").
 
@@ -9,88 +9,101 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 timeout_analysis() ->
-    10000.
+    15000.
+
+directories() ->
+    [
+        % {"other", all},
+         "mcc_models/2011/FMS"
+        , "mcc_models/2011/Kanban"
+        , "mcc_models/2011/MAPK"
+        , "mcc_models/2011/Peterson"
+        , "mcc_models/2011/Philosophers"
+        , "mcc_models/2011/TokenRing"
+        , "mcc_models/2012/CSRepetitions"
+        , "mcc_models/2012/Echo"
+        , "mcc_models/2012/Eratosthenes"
+        , "mcc_models/2012/GlobalResAllocation"
+        , "mcc_models/2012/LamportFastMutEx"
+        , "mcc_models/2012/NeoElection"
+        , "mcc_models/2012/PhilosophersDyn"
+        , "mcc_models/2012/Planning"
+        , "mcc_models/2012/Railroad"
+        , "mcc_models/2012/Ring"
+        , "mcc_models/2012/RwMutex"
+        , "mcc_models/2012/SimpleLoadBal"
+        , "mcc_models/2013/Dekker"
+        , "mcc_models/2013/DrinkVendingMachine"
+        , "mcc_models/2013/HouseConstruction"
+        , "mcc_models/2013/IBMB2S565S3960"
+        , "mcc_models/2013/PermAdmissibility"
+        , "mcc_models/2013/QuasiCertifProtocol"
+        , "mcc_models/2013/ResAllocation"
+        , "mcc_models/2013/Vasy2003"
+        , "mcc_models/2014/ARMCacheCoherence"
+        , "mcc_models/2014/Angiogenesis"
+        , "mcc_models/2014/CircadianClock"
+        , "mcc_models/2014/CircularTrains"
+        , "mcc_models/2014/DatabaseWithMutex"
+        , "mcc_models/2014/Diffusion2D"
+        , "mcc_models/2014/ERK"
+        , "mcc_models/2014/MultiwaySync"
+        , "mcc_models/2014/ParamProductionCell"
+        , "mcc_models/2014/PolyORBLF"
+        , "mcc_models/2014/PolyORBNT"
+        , "mcc_models/2014/ProductionCell"
+        , "mcc_models/2014/Solitaire"
+        , "mcc_models/2014/UtahNoC"
+        , "mcc_models/2015/BridgeAndVehicles"
+        , "mcc_models/2015/HypercubeGrid"
+        , "mcc_models/2015/IBM319"
+        , "mcc_models/2015/IBM5964"
+        , "mcc_models/2015/IBM703"
+        , "mcc_models/2015/IOTPpurchase"
+        , "mcc_models/2015/Parking"
+        , "mcc_models/2015/PhaseVariation"
+        , "mcc_models/2015/Raft"
+        , "mcc_models/2015/SafeBus"
+        , "mcc_models/2015/SmallOperatingSystem"
+        , "mcc_models/2015/SquareGrid"
+        , "mcc_models/2015/SwimmingPool"
+        , "mcc_models/2016/AirplaneLD"
+        , "mcc_models/2016/AutoFlight"
+        , "mcc_models/2016/CloudDeployment"
+        , "mcc_models/2016/DES"
+        , "mcc_models/2016/DLCshifumi"
+        , "mcc_models/2016/DNAwalker"
+        , "mcc_models/2016/GPPP"
+        , "mcc_models/2016/HypertorusGrid"
+        , "mcc_models/2016/PaceMaker"
+        , "mcc_models/2016/TCPcondis"
+        , "mcc_models/2016/TriangularGrid"
+    ].
+
+
+bench([Year | _]) ->
+    bench_common([Dir || Dir <- directories(), string:substr(Dir, 12, 4) == Year], Year).
 
 bench() ->
-    Directories = 
-        [
-            % {"other", all},
-              "mcc_models/2011/FMS"
-            , "mcc_models/2011/Kanban"
-            , "mcc_models/2011/MAPK"
-            , "mcc_models/2011/Peterson"
-            , "mcc_models/2011/Philosophers"
-            , "mcc_models/2011/TokenRing"
-            , "mcc_models/2012/CSRepetitions"
-            , "mcc_models/2012/Echo"
-            , "mcc_models/2012/Eratosthenes"
-            , "mcc_models/2012/GlobalResAllocation"
-            , "mcc_models/2012/LamportFastMutEx"
-            , "mcc_models/2012/NeoElection"
-            , "mcc_models/2012/PhilosophersDyn"
-            , "mcc_models/2012/Planning"
-            , "mcc_models/2012/Railroad"
-            , "mcc_models/2012/Ring"
-            , "mcc_models/2012/RwMutex"
-            , "mcc_models/2012/SimpleLoadBal"
-            , "mcc_models/2013/Dekker"
-            , "mcc_models/2013/DrinkVendingMachine"
-            , "mcc_models/2013/HouseConstruction"
-            , "mcc_models/2013/IBMB2S565S3960"
-            , "mcc_models/2013/PermAdmissibility"
-            , "mcc_models/2013/QuasiCertifProtocol"
-            , "mcc_models/2013/ResAllocation"
-            , "mcc_models/2013/Vasy2003"
-            , "mcc_models/2014/ARMCacheCoherence"
-            , "mcc_models/2014/Angiogenesis"
-            , "mcc_models/2014/CircadianClock"
-            , "mcc_models/2014/CircularTrains"
-            , "mcc_models/2014/DatabaseWithMutex"
-            , "mcc_models/2014/Diffusion2D"
-            , "mcc_models/2014/ERK"
-            , "mcc_models/2014/MultiwaySync"
-            , "mcc_models/2014/ParamProductionCell"
-            , "mcc_models/2014/PolyORBLF"
-            , "mcc_models/2014/PolyORBNT"
-            , "mcc_models/2014/ProductionCell"
-            , "mcc_models/2014/Solitaire"
-            , "mcc_models/2014/UtahNoC"
-            , "mcc_models/2015/BridgeAndVehicles"
-            , "mcc_models/2015/HypercubeGrid"
-            , "mcc_models/2015/IBM319"
-            , "mcc_models/2015/IBM5964"
-            , "mcc_models/2015/IBM703"
-            , "mcc_models/2015/IOTPpurchase"
-            , "mcc_models/2015/Parking"
-            , "mcc_models/2015/PhaseVariation"
-            , "mcc_models/2015/Raft"
-            , "mcc_models/2015/SafeBus"
-            , "mcc_models/2015/SmallOperatingSystem"
-            , "mcc_models/2015/SquareGrid"
-            , "mcc_models/2015/SwimmingPool"
-            , "mcc_models/2016/AirplaneLD"
-            , "mcc_models/2016/AutoFlight"
-            , "mcc_models/2016/CloudDeployment"
-            , "mcc_models/2016/DES"
-            , "mcc_models/2016/DLCshifumi"
-            , "mcc_models/2016/DNAwalker"
-            , "mcc_models/2016/GPPP"
-            , "mcc_models/2016/HypertorusGrid"
-            , "mcc_models/2016/PaceMaker"
-            , "mcc_models/2016/TCPcondis"
-            , "mcc_models/2016/TriangularGrid"
-        ],
+    bench_common(directories(), "").
+
+bench_common(Dirs, Filename) ->
     Timeout = 
-        5000,
+        10000,
     SlicesPerNet = 
-        5,
+        10,
     MaxSC = 
         5,
-    bench(Directories, Timeout, SlicesPerNet, MaxSC).
+    bench(Dirs, Timeout, SlicesPerNet, MaxSC, Filename).
 
-bench(Directories, Timeout, SlicesPerNet, MaxSC) ->
+bench(Directories, Timeout, SlicesPerNet, MaxSC, Filename0) ->
     Filename = 
-        "report_" ++ get_time_string() ++ ".txt",
+        case Filename0 of 
+            [] ->
+                "report_" ++ get_time_string() ++ ".txt";
+            _ ->
+                Filename0
+        end,
     {ok, OutDev} = 
         file:open(Filename, [write]),
     FinalDict = 
@@ -100,10 +113,12 @@ bench(Directories, Timeout, SlicesPerNet, MaxSC) ->
             end,
             new_alg_dict({0, 0}),
             Directories),
-    [io:format("~p: ~p\n\n", [A, dict:to_list(DL)]) || {A, DL} <- dict:to_list(FinalDict)],
+    [file:write(OutDev, list_to_binary(pn_lib:format( "{~p, ~p},\n", [A, dict:to_list(DL)]))) || {A, DL} <- dict:to_list(FinalDict)],
     % final_report(FinalDict, "Final report", OutDev),
     file:close(OutDev).
 
+bench_dir([], _, _, _, _, TotalDict) ->
+    TotalDict;
 bench_dir(Dir0, Timeout, SlicesPerNet, MaxSC, OutDev, TotalDict) ->
     Dir = 
         "examples/" ++ Dir0,
@@ -222,9 +237,9 @@ bench_fun(#slicer{name = AN, function = AF}, PN, SC, Timeout, OutDev, DictPropOr
     Pid = 
         spawn(
             fun() -> 
-                TimeBeforeExecuting = erlang:monotonic_time(),
+                TimeBeforeExecuting = erlang:monotonic_time(millisecond),
                 TempRes = AF(PN, SC),
-                TimeAfterExecuting = erlang:monotonic_time(),
+                TimeAfterExecuting = erlang:monotonic_time(millisecond),
                 TimeExecuting = TimeAfterExecuting - TimeBeforeExecuting,
                 Self!{TempRes, TimeExecuting},
                 receive 
@@ -288,82 +303,6 @@ store_fun_info(Res, PN, AN, SC, OutDev, DictPropOri, TimeInfo) ->
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Helper functions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-final_report(Dict, Msg, OutDev) ->
-    ListDict = 
-        dict:to_list(Dict),
-    Considered = 
-        [Item || Item = {_, {{N,_}, _}} <- ListDict, N > 0],
-    NotConsidered = 
-        ListDict -- Considered,
-    Processed = 
-        [{A, {(N / C), IP}} || {A, {{N,C}, IP}} <- Considered],
-    Sorted = 
-        lists:sort(
-            fun({_, {N1,_}}, {_, {N2, _}}) ->
-                N1 =< N2
-            end,
-            Processed),
-    Classification = 
-        case Sorted of 
-            [] ->
-                "";
-            _ ->
-                    "\nClassification (from smallest to biggest):\n"
-                ++  string:join(
-                        lists:map(
-                            fun({A, {N, CP}}) -> 
-                                Changed = 
-                                    lists:usort(CP),
-                                NotChanged = 
-                                    pn_properties:all_properties() -- Changed, 
-                                NotChangedStr = 
-                                    case Changed of 
-                                        [] ->
-                                            "All";
-                                        _ ->
-                                            string:join(NotChanged, ", ")
-                                    end,
-                                InfoAlg = 
-                                    [
-                                        A, 
-                                        "\t- Size: " ++ pn_lib:format("~.3f", [N]) ,
-                                        "",
-                                        "\t- Preserved properties: " ++ NotChangedStr,
-                                        "",
-                                        "\t- Changed properties: " ++ string:join(Changed, ", "),
-                                        ""
-                                    ],
-                                string:join(InfoAlg, "\n")
-                            end,
-                            Sorted),
-                        "\n")
-        end,
-    NotExecutedReport = 
-        case NotConsidered of 
-            [] ->
-                "";
-            _ ->
-                    "Not executed, i.e. always timeouted or null:\n" 
-                ++  string:join(
-                        lists:map(
-                            fun({A, _}) -> 
-                                A
-                            end,
-                            NotConsidered),
-                        "\n")
-        end,
-    FinalReport = 
-            sep()
-        ++  "\t" 
-        ++  Msg
-        ++  sep()
-        ++  Classification
-        ++  "\n\n" 
-        ++  NotExecutedReport
-        ++  sep(),
-    file:write(OutDev, list_to_binary(FinalReport)).
-
 
 sep() ->
     "\n************************\n".
