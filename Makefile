@@ -56,7 +56,7 @@ print:
 all:
 	@make paper
 	@make csp2pn
-	@make web
+	@make unbound
 	@make yu1
 	@make yu2
 	@make rakow1
@@ -77,11 +77,11 @@ paper:
 	@echo "*************************************" 
 	@./pn_suite examples/other/pn_paper.xml
 
-web:
+unbound:
 	@echo "*************************************" 
 	@echo "*********** Test external ***********"
 	@echo "*************************************" 	
-	@./pn_suite examples/other/pn_web.pnml
+	@./pn_suite examples/other/pn_unbound.xml
 
 yu1:
 	@echo "*************************************" 
