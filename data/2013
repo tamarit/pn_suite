@@ -1,0 +1,475 @@
+
+File: examples/mcc_models/2013/Dekker/dekker-10.pnml
+************************
+
+Property analysys timeouted.
+
+File: examples/mcc_models/2013/DrinkVendingMachine/distributeur-01-unfolded-02.pnml
+************************
+
+Properties:
+num_places: 24
+num_transitions: 72
+num_labels: 72
+num_arcs: 440
+num_tokens: 12
+plain: Yes
+pure: Yes
+nonpure_only_simple_side_conditions: No
+free_choice: No
+restricted_free_choice: No
+t_net: No
+s_net: No
+output_nonbranching: No
+conflict_free: No
+k-marking: 1
+safe: Yes
+bounded: Yes
+k-bounded: 1
+isolated_elements: No
+strongly_connected: Yes
+weakly_connected: Yes
+bcf: No
+bicf: No
+strongly_live: Yes
+weakly_live: Yes
+simply_live: Yes
+persistent: No
+backwards_persistent: No
+reversible: Yes
+homogeneous: Yes
+asymmetric_choice: No
+
+Slicing criterion: theOptions_1,ready_6,wait_7,optionSlots_2,ready_1
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: wait_3,ready_7,productSlots_2,wait_2,optionSlots_2
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: ready_4,ready_5,ready_6,theProducts_1
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: wait_6,ready_3,optionSlots_1,theProducts_1,theOptions_2
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: optionSlots_2,ready_4,ready_2,wait_8,theOptions_1
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: wait_8
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: ready_8,wait_6
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: theProducts_1
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: theProducts_1,ready_3,ready_7
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: wait_4,wait_1
+
+Llorens et al's slicer improved: timeouted
+
+File: examples/mcc_models/2013/HouseConstruction/HouseConstruction-002.pnml
+************************
+
+Properties:
+num_places: 26
+num_transitions: 18
+num_labels: 18
+num_arcs: 51
+num_tokens: 2
+plain: Yes
+pure: Yes
+nonpure_only_simple_side_conditions: No
+free_choice: Yes
+restricted_free_choice: No
+t_net: Yes
+s_net: No
+output_nonbranching: Yes
+conflict_free: Yes
+k-marking: 2
+safe: No
+bounded: Yes
+k-bounded: 2
+isolated_elements: No
+strongly_connected: No
+weakly_connected: Yes
+bcf: Yes
+bicf: Yes
+strongly_live: No
+weakly_live: No
+simply_live: Yes
+persistent: Yes
+backwards_persistent: Yes
+reversible: No
+homogeneous: Yes
+asymmetric_choice: Yes
+
+Slicing criterion: p5,p15
+
+
+Slicing criterion: p12
+
+
+Slicing criterion: p20
+
+
+Slicing criterion: p16,p25,p1,p4
+
+
+Slicing criterion: p9,p14,p2,p3,p5
+
+
+Slicing criterion: p19,p6
+
+
+Slicing criterion: p15,p27,p23
+
+
+Slicing criterion: p9,p3
+
+
+Slicing criterion: p9,p10,p13
+
+
+Slicing criterion: p8,p9
+
+
+File: examples/mcc_models/2013/IBMB2S565S3960/IBMB2S565S3960.pnml
+************************
+
+Property analysys timeouted.
+
+File: examples/mcc_models/2013/PermAdmissibility/unf-8x8-4stageSEN-01.pnml
+************************
+
+Property analysys timeouted.
+
+File: examples/mcc_models/2013/QuasiCertifProtocol/QCertifProtocol_02-unfold.pnml
+************************
+
+Properties:
+num_places: 86
+num_transitions: 56
+num_labels: 56
+num_arcs: 223
+num_tokens: 8
+plain: Yes
+pure: Yes
+nonpure_only_simple_side_conditions: No
+free_choice: No
+restricted_free_choice: No
+t_net: No
+s_net: No
+output_nonbranching: No
+conflict_free: No
+k-marking: 1
+safe: Yes
+bounded: Yes
+k-bounded: 1
+isolated_elements: No
+strongly_connected: No
+weakly_connected: Yes
+bcf: No
+bicf: No
+strongly_live: No
+weakly_live: No
+simply_live: Yes
+persistent: No
+backwards_persistent: Yes
+reversible: No
+homogeneous: Yes
+asymmetric_choice: No
+
+Slicing criterion: c1_2,s2_1,a2,Cstart_2,Astart
+
+
+Slicing criterion: n5_2,SstopAbort,n8_2_0
+
+
+Slicing criterion: n8_1_0,s4_0,n8_1_2,n3_0
+
+
+Slicing criterion: s4_2,n7_0_2,n8_2_2,n9_1_1,s2_1
+
+
+Slicing criterion: CstopOK_2,n5_1,Cstart_2,n4_2,s2_2
+
+
+Slicing criterion: n5_0,n6_1
+
+
+Slicing criterion: n6_0,n7_1_1
+
+
+Slicing criterion: n7_1_1,CstopOK_2,n7_2_0,Cstart_0,CstopOK_0
+
+
+Slicing criterion: n3_1
+
+
+Slicing criterion: n9_2_0,s3_2
+
+
+File: examples/mcc_models/2013/ResAllocation/RAS-C-3.pnml
+************************
+
+Properties:
+num_places: 18
+num_transitions: 12
+num_labels: 12
+num_arcs: 48
+num_tokens: 9
+plain: Yes
+pure: Yes
+nonpure_only_simple_side_conditions: No
+free_choice: No
+restricted_free_choice: No
+t_net: No
+s_net: No
+output_nonbranching: No
+conflict_free: No
+k-marking: 1
+safe: Yes
+bounded: Yes
+k-bounded: 1
+isolated_elements: No
+strongly_connected: Yes
+weakly_connected: Yes
+bcf: No
+bicf: No
+strongly_live: No
+weakly_live: Yes
+simply_live: Yes
+persistent: No
+backwards_persistent: No
+reversible: No
+homogeneous: Yes
+asymmetric_choice: No
+
+Slicing criterion: p_2_0
+
+
+Slicing criterion: r_2_1
+
+
+Slicing criterion: r_1_2,p_1_1
+
+
+Slicing criterion: r_2_0,p_1_1,p_0_0,p_2_2,r_1_1
+
+
+Slicing criterion: p_0_0,r_2_2,r_0_2,r_2_1
+
+
+Slicing criterion: r_1_2,p_1_0,r_1_1,p_0_2
+
+
+Slicing criterion: r_0_1,r_0_2
+
+
+Slicing criterion: p_0_2,p_1_2
+
+
+Slicing criterion: p_0_0,r_2_0
+
+
+Slicing criterion: p_2_2,r_1_2
+
+
+File: examples/mcc_models/2013/Vasy2003/Vasy2003.pnml
+************************
+
+Property analysys timeouted.
+{"Rakow's slicer CTL", [{"backwards_persistent",{40,40}},
+                        {"num_places",{22,40}},
+                        {"weakly_connected",{40,40}},
+                        {"output_nonbranching",{40,40}},
+                        {"siphons",{40,40}},
+                        {"plain",{40,40}},
+                        {"pure",{40,40}},
+                        {"free_choice",{40,40}},
+                        {"strongly_connected",{40,40}},
+                        {"bicf",{40,40}},
+                        {"s_net",{40,40}},
+                        {"k-marking",{40,40}},
+                        {"strongly_live",{40,40}},
+                        {"persistent",{40,40}},
+                        {"nonpure_only_simple_side_conditions",{40,40}},
+                        {"size",{34.25864276568502,40}},
+                        {"num_tokens",{40,40}},
+                        {"bcf",{40,40}},
+                        {"num_arcs",{22,40}},
+                        {"asymmetric_choice",{40,40}},
+                        {"num_transitions",{24,40}},
+                        {"simply_live",{40,40}},
+                        {"traps",{30,40}},
+                        {"num_labels",{24,40}},
+                        {"t_net",{40,40}},
+                        {"time",{150,40}},
+                        {"deadlock",{40,40}},
+                        {"safe",{40,40}},
+                        {"restricted_free_choice",{40,40}},
+                        {"weakly_live",{40,40}},
+                        {"isolated_elements",{40,40}},
+                        {"bounded",{40,40}},
+                        {"k-bounded",{40,40}},
+                        {"homogeneous",{40,40}},
+                        {"conflict_free",{40,40}},
+                        {"reversible",{40,40}}]},
+{"Yu et al's slicer", [{"backwards_persistent",{30,40}},
+                       {"num_places",{10,40}},
+                       {"weakly_connected",{23,40}},
+                       {"output_nonbranching",{31,40}},
+                       {"siphons",{21,40}},
+                       {"plain",{40,40}},
+                       {"pure",{40,40}},
+                       {"free_choice",{31,40}},
+                       {"strongly_connected",{30,40}},
+                       {"bicf",{31,40}},
+                       {"s_net",{38,40}},
+                       {"k-marking",{40,40}},
+                       {"strongly_live",{40,40}},
+                       {"persistent",{31,40}},
+                       {"nonpure_only_simple_side_conditions",{40,40}},
+                       {"size",{18.91442594963722,40}},
+                       {"num_tokens",{31,40}},
+                       {"bcf",{31,40}},
+                       {"num_arcs",{0,40}},
+                       {"asymmetric_choice",{21,40}},
+                       {"num_transitions",{0,40}},
+                       {"simply_live",{40,40}},
+                       {"traps",{10,40}},
+                       {"num_labels",{0,40}},
+                       {"t_net",{31,40}},
+                       {"time",{619,40}},
+                       {"deadlock",{40,40}},
+                       {"safe",{40,40}},
+                       {"restricted_free_choice",{36,40}},
+                       {"weakly_live",{30,40}},
+                       {"isolated_elements",{23,40}},
+                       {"bounded",{40,40}},
+                       {"k-bounded",{40,40}},
+                       {"homogeneous",{40,40}},
+                       {"conflict_free",{31,40}},
+                       {"reversible",{40,40}}]},
+{"Llorens et al's slicer improved", [{"backwards_persistent",{21,30}},
+                                     {"num_places",{0,30}},
+                                     {"weakly_connected",{28,30}},
+                                     {"output_nonbranching",{13,30}},
+                                     {"siphons",{10,30}},
+                                     {"plain",{30,30}},
+                                     {"pure",{30,30}},
+                                     {"free_choice",{13,30}},
+                                     {"strongly_connected",{25,30}},
+                                     {"bicf",{13,30}},
+                                     {"s_net",{28,30}},
+                                     {"k-marking",{30,30}},
+                                     {"strongly_live",{23,30}},
+                                     {"persistent",{13,30}},
+                                     {"nonpure_only_simple_side_conditions",
+                                      {30,30}},
+                                     {"size",{13.904865556978235,30}},
+                                     {"num_tokens",{13,30}},
+                                     {"bcf",{13,30}},
+                                     {"num_arcs",{0,30}},
+                                     {"asymmetric_choice",{11,30}},
+                                     {"num_transitions",{0,30}},
+                                     {"simply_live",{30,30}},
+                                     {"traps",{0,30}},
+                                     {"num_labels",{0,30}},
+                                     {"t_net",{13,30}},
+                                     {"time",{249,30}},
+                                     {"deadlock",{30,30}},
+                                     {"safe",{30,30}},
+                                     {"restricted_free_choice",{26,30}},
+                                     {"weakly_live",{27,30}},
+                                     {"isolated_elements",{30,30}},
+                                     {"bounded",{30,30}},
+                                     {"k-bounded",{30,30}},
+                                     {"homogeneous",{30,30}},
+                                     {"conflict_free",{13,30}},
+                                     {"reversible",{23,30}}]},
+{"Rakow's slicer safety", [{"backwards_persistent",{40,40}},
+                           {"num_places",{22,40}},
+                           {"weakly_connected",{40,40}},
+                           {"output_nonbranching",{36,40}},
+                           {"siphons",{36,40}},
+                           {"plain",{40,40}},
+                           {"pure",{40,40}},
+                           {"free_choice",{36,40}},
+                           {"strongly_connected",{40,40}},
+                           {"bicf",{36,40}},
+                           {"s_net",{40,40}},
+                           {"k-marking",{40,40}},
+                           {"strongly_live",{40,40}},
+                           {"persistent",{36,40}},
+                           {"nonpure_only_simple_side_conditions",{40,40}},
+                           {"size",{30.695262483994874,40}},
+                           {"num_tokens",{36,40}},
+                           {"bcf",{36,40}},
+                           {"num_arcs",{22,40}},
+                           {"asymmetric_choice",{33,40}},
+                           {"num_transitions",{22,40}},
+                           {"simply_live",{40,40}},
+                           {"traps",{30,40}},
+                           {"num_labels",{22,40}},
+                           {"t_net",{36,40}},
+                           {"time",{108,40}},
+                           {"deadlock",{40,40}},
+                           {"safe",{40,40}},
+                           {"restricted_free_choice",{40,40}},
+                           {"weakly_live",{40,40}},
+                           {"isolated_elements",{40,40}},
+                           {"bounded",{40,40}},
+                           {"k-bounded",{40,40}},
+                           {"homogeneous",{40,40}},
+                           {"conflict_free",{36,40}},
+                           {"reversible",{40,40}}]},
+{"Llorens et al's slicer", [{"backwards_persistent",{39,39}},
+                            {"num_places",{19,39}},
+                            {"weakly_connected",{39,39}},
+                            {"output_nonbranching",{30,39}},
+                            {"siphons",{30,39}},
+                            {"plain",{39,39}},
+                            {"pure",{39,39}},
+                            {"free_choice",{30,39}},
+                            {"strongly_connected",{39,39}},
+                            {"bicf",{30,39}},
+                            {"s_net",{37,39}},
+                            {"k-marking",{39,39}},
+                            {"strongly_live",{39,39}},
+                            {"persistent",{30,39}},
+                            {"nonpure_only_simple_side_conditions",{39,39}},
+                            {"size",{27.507682458386686,39}},
+                            {"num_tokens",{30,39}},
+                            {"bcf",{30,39}},
+                            {"num_arcs",{19,39}},
+                            {"asymmetric_choice",{30,39}},
+                            {"num_transitions",{19,39}},
+                            {"simply_live",{39,39}},
+                            {"traps",{19,39}},
+                            {"num_labels",{19,39}},
+                            {"t_net",{30,39}},
+                            {"time",{114,39}},
+                            {"deadlock",{39,39}},
+                            {"safe",{39,39}},
+                            {"restricted_free_choice",{35,39}},
+                            {"weakly_live",{39,39}},
+                            {"isolated_elements",{39,39}},
+                            {"bounded",{39,39}},
+                            {"k-bounded",{39,39}},
+                            {"homogeneous",{39,39}},
+                            {"conflict_free",{30,39}},
+                            {"reversible",{39,39}}]},
