@@ -63,9 +63,9 @@ place_to_dot(
         end,
     Highlighted = 
         case lists:member(N, HighlightedList) of 
-            0 -> 
+            false -> 
                 "";
-            _ -> 
+            true -> 
                 " style=filled color=\"blue\" fontcolor=\"white\" fillcolor=\"blue\""
         end,       
     Name = 
