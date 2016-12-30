@@ -332,14 +332,7 @@ web([File, Alg, TimeoutStr, SCStr]) ->
                             io:format("0")
                     end
             end
-    end;
-web([File]) ->
-    PNtoExport = 
-        pn_input:read_pos_from_svg_web(PN),
-    pn_output:print_pnml_file(
-        PNtoExport, 
-        "pn_slicer_slice.xml"),
-    io:format("1").
+    end.
 
 web_convert() ->
     PN = pn_input:read_pn("pn_slicer_temp.xml"),
