@@ -18,8 +18,8 @@ directories() ->
         , "mcc_models/2011/Kanban"
         , "mcc_models/2011/MAPK"
         , "mcc_models/2011/Peterson"
-        , "mcc_models/2011/Philosophers"
-        , "mcc_models/2011/TokenRing"
+        % , "mcc_models/2011/Philosophers"
+        % , "mcc_models/2011/TokenRing"
         , "mcc_models/2012/CSRepetitions"
         , "mcc_models/2012/Echo"
         , "mcc_models/2012/Eratosthenes"
@@ -155,17 +155,21 @@ bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev, TotalDict) ->
     PN = 
         pn_input:read_pn(File),
     pn_lib:build_digraph(PN),
-    build_lola(PN),
+    build_lola(PN, ""),
     {DictPropOri0, ResAnalyses} = 
         pn_properties:apt_properties(PN, timeout_analysis()),
     DictPropOri = 
-        build_other_properties(PN, DictPropOri0, none),
+        build_other_properties(PN, DictPropOri0, none, ""),
     case DictPropOri of 
         none -> 
-            file:write(OutDev, list_to_binary("Property analysys timeouted.\n")),
+            file:write(OutDev, list_to_binary("Property analysis timeouted.\n")),
             TotalDict; 
         _ ->
             file:write(OutDev, list_to_binary("Properties:\n" ++ ResAnalyses)),
+            file:write(OutDev, list_to_binary(dict:fetch("traps", DictPropOri))),
+            file:write(OutDev, list_to_binary(dict:fetch("siphons", DictPropOri))),
+            file:write(OutDev, list_to_binary(pn_lib:format("Deadlock: ~p\n" , [dict:fetch("deadlock", DictPropOri)]))),
+            file:write(OutDev, list_to_binary(pn_lib:format("Size: ~p\n\n" , [dict:fetch("size", DictPropOri)]))),
             Ps = dict:fetch_keys(PN#petri_net.places),
             MaxSC = 
                 case MaxSC0 > length(Ps) of 
@@ -210,10 +214,10 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
                 {A#slicer.name, ResFun}
             end,
             pn_lib:algorithms()),
-    case [R || R = {_, RD} <- ResAlg, RD /= none] of 
-        [] ->
+    case length([R || R = {_, RD} <- ResAlg, RD /= none]) == length(ResAlg) of 
+        false ->
             Dict;
-        NoNone ->
+        true ->
             lists:foldl(
                 fun
                     ({A, DictA}, CDict) ->
@@ -226,7 +230,7 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
                         dict:store(A, merge_prop_dict(OldValue, DictA), CDict)
                 end,
                 Dict,
-                NoNone)
+                ResAlg)
     end.
 
 bench_fun(#slicer{name = AN, function = AF}, PN, SC, Timeout, OutDev, DictPropOri) ->
@@ -273,18 +277,18 @@ store_fun_info(Res, PN, AN, SC, OutDev, DictPropOri, TimeInfo) ->
                 _ ->
                     {DictSlice0, _} = 
                         pn_properties:apt_properties(Res, timeout_analysis()), 
-                    build_lola(Res),
                     DictSlice = 
-                        build_other_properties(Res, DictSlice0, TimeInfo),
+                        build_other_properties(Res, DictSlice0, TimeInfo, ".slice"),
                     % file:write(OutDev, list_to_binary("\nDICT: " ++ string:join(lists:map(fun(X) -> pn_lib:format("~p", [X]) end, dict:to_list(DictSlice)), ","))),
                     pn_properties:compare_properties_all(DictPropOri, DictSlice)
             end
         end,
     case pn_lib:size(Res) of 
         0 ->
+            build_lola(Res, ".slice"),
             Dir = PN#petri_net.dir ++ "/output/",
             LOLAFile = 
-                Dir ++  PN#petri_net.name ++ ".lola", 
+                Dir ++  PN#petri_net.name ++ ".slice.lola", 
             case pn_properties:check_reachable_sc(SC, LOLAFile, Dir, timeout_analysis()) of 
                 false -> 
                     FunOK();
@@ -296,6 +300,7 @@ store_fun_info(Res, PN, AN, SC, OutDev, DictPropOri, TimeInfo) ->
                     none
             end;
         _ ->
+            build_lola(Res, ".slice"),
             FunOK()
     end.
 
@@ -357,22 +362,23 @@ siphons_and_traps(PN) ->
     }.
 
 
-build_lola(PN) ->
+build_lola(PN, Suffix) ->
     pn_lib:build_digraph(PN),
-    pn_output:print_lola(PN, "").
+    pn_output:print_lola(PN, Suffix).
 
-build_other_properties(_, none, _) ->
+build_other_properties(_, none, _, _) ->
     none;
-build_other_properties(PN, DictProp, TimeInfo) ->
+build_other_properties(PN, DictProp, TimeInfo, Suffix) ->
     {SiphonsValue, TrapsValue} = 
         siphons_and_traps(PN),
     Dir = PN#petri_net.dir ++ "/output/",
     LOLAFile = 
-        Dir ++  PN#petri_net.name ++ ".lola",
+        Dir ++  PN#petri_net.name ++ Suffix ++".lola",
     DeadlockRes = 
         pn_properties:check_formula("EF DEADLOCK", LOLAFile, Dir, timeout_analysis()),
-    % case lists:some(fun(none) -> true; (_) -> false end, [SiphonsValue, TrapsValue, DeadlockRes]) of 
-    %     [] -> 
+    % io:format("~p\n", [DeadlockRes]),
+    case lists:any(fun(none) -> true; (_) -> false end, [SiphonsValue, TrapsValue, DeadlockRes]) of 
+        false -> 
             lists:foldl(
                 fun({K, V}, CDict) ->
                     dict:store(K, V, CDict)
@@ -382,10 +388,10 @@ build_other_properties(PN, DictProp, TimeInfo) ->
                  {"traps", TrapsValue}, 
                  {"deadlock", DeadlockRes},
                  {"size", pn_lib:size(PN)},
-                 {"time", TimeInfo}]).
-    %     _ ->
-    %         none
-    % end.
+                 {"time", TimeInfo}]);
+        true ->
+            none
+    end.
 
 get_time_string() ->
     {{Yea, Mon, Day}, {Hou, Min, Sec}} = 

@@ -254,13 +254,15 @@ check_formula(Formula, File, Dir, TimeOut) ->
             {ok, IODev} = file:open(JSONFile, [read]),
             [JSONContent|_] = pn_input:read_data(IODev),
             JSON = mochijson:decode(JSONContent),
-            case JSON of 
-                {struct, [{"analysis",{struct, [_, {"result", Answer} | _]}} | _]} -> 
-                    Answer; 
-                _ -> 
-                    none 
-            end,
-            file:close(JSONFile)
+            Answer = 
+                case JSON of 
+                    {struct, [{"analysis",{struct, [_, {"result", Answer0} | _]}} | _]} -> 
+                        Answer0; 
+                    _ -> 
+                        none 
+                end,
+            file:close(JSONFile),
+            Answer
     end.    
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
