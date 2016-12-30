@@ -1,6 +1,7 @@
 -module( pn_output ).
  
--export( [  print_net_run/1, print_net/4, print_net_file/3, 
+-export( [  print_net_run/1, print_net/4, 
+            print_net_file/3, print_net_file/4,
             print_pnml/2, print_pnml_file/2,
             print_lola/2, print_lola_file/2, 
             print_apt/2, print_apt_file/2, 
@@ -19,13 +20,14 @@ to_dot(
         places = Ps0, 
         transitions = Ts0,
         arcs = As},
-    ShowEnabled) ->
+    ShowEnabled,
+    Highlighted) ->
 
     Ps = pn_lib:get_value_list_from_dict(Ps0),
     Ts = pn_lib:get_value_list_from_dict(Ts0),
 
     PsDot = 
-        lists:map(fun place_to_dot/1, Ps),
+        lists:map(fun(P) -> place_to_dot(P, Highlighted) end, Ps),
     TsDot = 
         lists:map(
             fun(T) -> 
@@ -49,21 +51,30 @@ place_to_dot(
         name = N,
         showed_name = SN,
         marking = IM
-    }) ->
+    },
+    HighlightedList) ->
     Filled = 
         case IM of 
             0 -> 
                 "";
             _ -> 
-                " style=filled color=\"blue\" fontcolor=\"white\" fillcolor=\"blue\""
+                " penwidth=8"
+                % " style=filled color=\"blue\" fontcolor=\"white\" fillcolor=\"blue\""
         end,
+    Highlighted = 
+        case lists:member(N, HighlightedList) of 
+            0 -> 
+                "";
+            _ -> 
+                " style=filled color=\"blue\" fontcolor=\"white\" fillcolor=\"blue\""
+        end,       
     Name = 
         if 
             SN == N -> SN;
             true -> SN ++ " (id: "  ++ N ++ ")"
         end,
         N ++ " [shape=ellipse, label=\"" ++ Name
-    ++  "\\l(" ++ integer_to_list(IM) ++ ")\""++ Filled ++ "];".
+    ++  "\\l(" ++ integer_to_list(IM) ++ ")\""++ Filled ++ Highlighted ++ "];".
 
 transition_to_dot(
     #transition
@@ -98,10 +109,16 @@ arc_to_dot(
 print_net_run(PN) ->
     print_net(PN, true, "pdf", "_run").   
 
+print_net_file(PN, File, Format, SC) ->
+    print_net_file_common(PN, File, Format, SC).
 print_net_file(PN, File, Format) ->
+    print_net_file_common(PN, File, Format, []).
+
+
+print_net_file_common(PN, File, Format, Highlighted) ->
     file:write_file(
         "pn_slicer_temp.dot",  
-        list_to_binary(to_dot(PN, false))),
+        list_to_binary(to_dot(PN, false, Highlighted))),
     cmd_try( "dot -T" ++ Format ++ " " 
         ++  "pn_slicer_temp.dot > "
         ++   File ++ "." ++ Format),
@@ -113,7 +130,7 @@ print_net(PN, ShowEnabled, Format, Suffix) ->
     file:write_file(
             Output ++ "/" 
         ++  PN#petri_net.name ++ "_temp.dot",  
-        list_to_binary(to_dot(PN, ShowEnabled))),
+        list_to_binary(to_dot(PN, ShowEnabled, []))),
     cmd_try(
             "dot -T" ++ Format ++ " " 
         ++  Output ++ "/" 

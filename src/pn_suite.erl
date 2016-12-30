@@ -2,7 +2,7 @@
  
 -export( 
     [
-        main/1, web/1, web_convert/0, web_convert/1, 
+        main/1, web/1, web_convert/0, web_convert/2, 
         slice_prop_preserving/1, prop_preservation/1
     ]).
 
@@ -341,7 +341,7 @@ web_convert() ->
         PN,
         "pn_slicer_net", "pdf").  
 
-web_convert(Format) ->
+web_convert(Format, SC) ->
     case Format of 
         "xml" ->
             ok;
@@ -359,10 +359,11 @@ web_convert(Format) ->
                 "pn_slicer_slice.apt");   
         _ ->
             PN = pn_input:read_pn("pn_slicer_slice.xml"),
+            SCParsed = parse_sc(PN, SC),
             pn_lib:build_digraph(PN),
             pn_output:print_net_file(
                 PN,
-                "pn_slicer_slice", Format)      
+                "pn_slicer_slice", Format, SCParsed)      
     end.
     
 
