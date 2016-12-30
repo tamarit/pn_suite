@@ -34,51 +34,94 @@ backwards_persistent: No
 reversible: No
 homogeneous: Yes
 asymmetric_choice: No
+Deadlock: true
+Size: 80
 
-Slicing criterion: SORTI_A,NB_ATTENTE_A_2,ATTENTE_A,ATTENTE_B,NB_ATTENTE_A_3
 
-Llorens et al's slicer improved: timeouted
-
-Slicing criterion: ATTENTE_A,VIDANGE_1,COMPTEUR_1,NB_ATTENTE_B_3,CHOIX_1
-
-Llorens et al's slicer improved: timeouted
-
-Slicing criterion: CHOIX_2
+Slicing criterion: NB_ATTENTE_A_2,VIDANGE_1,VIDANGE_2,CHOIX_2
 
 Llorens et al's slicer improved: timeouted
 
-Slicing criterion: COMPTEUR_1
+Slicing criterion: CONTROLEUR_1,NB_ATTENTE_A_0
 
 Llorens et al's slicer improved: timeouted
 
-Slicing criterion: VIDANGE_1
+Slicing criterion: COMPTEUR_2,NB_ATTENTE_A_1
 
 Llorens et al's slicer improved: timeouted
 
-Slicing criterion: CAPACITE,NB_ATTENTE_B_4,ATTENTE_B,NB_ATTENTE_B_3
+Slicing criterion: CAPACITE,COMPTEUR_2
 
 Llorens et al's slicer improved: timeouted
 
-Slicing criterion: NB_ATTENTE_A_4,VIDANGE_2
+Slicing criterion: COMPTEUR_1,SORTI_A
 
 Llorens et al's slicer improved: timeouted
 
-Slicing criterion: NB_ATTENTE_B_0,ATTENTE_A
+Slicing criterion: NB_ATTENTE_B_2,CAPACITE,SUR_PONT_B,NB_ATTENTE_A_3
 
 Llorens et al's slicer improved: timeouted
 
-Slicing criterion: NB_ATTENTE_B_2,CHOIX_2
+Slicing criterion: ATTENTE_A,VIDANGE_2
 
 Llorens et al's slicer improved: timeouted
 
-Slicing criterion: COMPTEUR_2
+Slicing criterion: NB_ATTENTE_A_4,COMPTEUR_1,CAPACITE,SUR_PONT_A
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: VIDANGE_1,ROUTE_B
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: SUR_PONT_B,NB_ATTENTE_A_3,CAPACITE,NB_ATTENTE_B_2
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: NB_ATTENTE_A_3,NB_ATTENTE_B_3,CONTROLEUR_1
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: NB_ATTENTE_B_0,SUR_PONT_B,ROUTE_B,COMPTEUR_0
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: ROUTE_B,NB_ATTENTE_B_2,ATTENTE_A,SUR_PONT_A
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: VIDANGE_2,ATTENTE_A,NB_ATTENTE_B_3,NB_ATTENTE_B_1
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: SORTI_A,COMPTEUR_0,SORTI_B,NB_ATTENTE_A_3,ATTENTE_A
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: VIDANGE_2,NB_ATTENTE_A_2,CAPACITE
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: ATTENTE_A,NB_ATTENTE_B_0,COMPTEUR_0
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: ROUTE_A,CONTROLEUR_2,COMPTEUR_1,NB_ATTENTE_B_4,CHOIX_2
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: NB_ATTENTE_A_0,ROUTE_A,COMPTEUR_0,CAPACITE,NB_ATTENTE_A_1
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: ROUTE_A,COMPTEUR_2,NB_ATTENTE_A_2
 
 Llorens et al's slicer improved: timeouted
 
 File: examples/mcc_models/2015/HypercubeGrid/hc3k4p4b12.pnml
 ************************
 
-Property analysys timeouted.
+Property analysis timeouted.
 
 File: examples/mcc_models/2015/IBM319/IBM319.pnml
 ************************
@@ -115,35 +158,70 @@ backwards_persistent: No
 reversible: No
 homogeneous: Yes
 asymmetric_choice: Yes
-
-Slicing criterion: join_s00001164_input_s00001068
-
-
-Slicing criterion: merge_s00001161_input_s00001052,join_s00001164_input_s00001068,callToTask_s00002962_output_s00001077,callToProcess_s00002944_output_s00001077,callToTask_s00002960_input_s00001066
+Deadlock: true
+Size: 431
 
 
-Slicing criterion: callToTask_s00002953_input_s00001066,merge_s00002238_input_s00001068,callToTask_s00002953_inputCriterion_s00001053_used
+Slicing criterion: callToTask_s00002959_input_s00001052,callToTask_s00002966_input_s00001066
 
 
-Slicing criterion: callToProcess_s00002038_inputCriterion_s00001053_used,callToTask_s00002956_output_s00001054,process_s00000343__s00003019_input_s00001109,decision_s00001157_activated
+Slicing criterion: alpha
 
 
-Slicing criterion: callToTask_s00001168_inputCriterion_s00001053_used,callToTask_s00002961_output_s00001054,merge_s00001162_input_s00001068,callToTask_s00002667_output_s00001077
+Slicing criterion: fork_s00001403_activated_s00001073,callToTask_s00002954_output_s00001077,decision_s00002948_activated
 
 
-Slicing criterion: callToTask_s00002957_inputCriterion_s00001053_used,decision_s00001157_activated,callToProcess_s00002499_input_s00001052,merge_s00001162_input_s00001068,endNode_s00001401_input_default
+Slicing criterion: callToProcess_s00002944_inputCriterion_s00001053_used,callToTask_s00002959_output_s00001077,fork_s00001403_activated_s00001075,decision_s00001159_activated,callToTask_s00002962_input_s00001066
 
 
-Slicing criterion: join_s00001163_input_s00001128,callToProcess_s00002038_inputCriterion_s00001053_used,merge_s00002240_input_s00001052,callToTask_s00002962_output_s00001054
+Slicing criterion: callToTask_s00002954_inputCriterion_s00001053_used,callToTask_s00002963_inputCriterion_s00001053_used,callToProcess_s00002499_output_s00001083
 
 
-Slicing criterion: merge_s00002239_input_s00001129,callToTask_s00002957_input_s00001066,callToTask_s00002869_input_s00001066
+Slicing criterion: callToTask_s00002063_output_s00001077,merge_s00002240_input_s00001052
 
 
-Slicing criterion: decision_s00002055_activated,decision_s00001123_activated,decision_s00001126_input_s00001066
+Slicing criterion: callToTask_s00002965_output_s00001077,callToTask_s00002952_input_s00001066
 
 
-Slicing criterion: fork_s00001071_activated_s00001073,callToTask_s00002957_output_s00001077,callToProcess_s00002802_output_s00001054,callToTask_s00002952_inputCriterion_s00001053_used,callToTask_s00002953_inputCriterion_s00001053_used
+Slicing criterion: callToProcess_s00002499_input_s00001052
+
+
+Slicing criterion: callToTask_s00002824_inputCriterion_s00001053_used,callToTask_s00002949_inputCriterion_s00001053_used,callToTask_s00001852_inputCriterion_s00001053_used
+
+
+Slicing criterion: callToTask_s00002962_inputCriterion_s00001053_used,callToTask_s00002966_inputCriterion_s00001053_used
+
+
+Slicing criterion: callToTask_s00002896_inputCriterion_s00001053_used,callToProcess_s00002944_inputCriterion_s00001053_used,callToTask_s00002950_output_s00001077,join_s00001163_input_s00001127
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: callToProcess_s00002882_output_s00001054,merge_s00002239_input_s00001068,callToTask_s00002964_inputCriterion_s00001053_used,merge_s00001162_input_s00001068,callToTask_s00002956_input_s00001052
+
+
+Slicing criterion: fork_s00001298_activated_s00001078,callToTask_s00002896_inputCriterion_s00001053_used,merge_s00001160_input_s00001052,join_s00001163_input_s00001128,decision_s00002948_activated
+
+
+Slicing criterion: callToTask_s00002063_output_s00001077,callToTask_s00001852_output_s00001077
+
+
+Slicing criterion: callToTask_s00002953_inputCriterion_s00001053_used,callToTask_s00002953_input_s00001066,endNode_s00001401_input_default,callToTask_s00002870_inputCriterion_s00001053_used
+
+
+Slicing criterion: callToProcess_s00002882_inputCriterion_s00001053_used,callToProcess_s00002943_inputCriterion_s00001053_used,callToTask_s00002962_input_s00001066
+
+
+Slicing criterion: callToProcess_s00001108_input_s00001052,callToTask_s00002966_output_s00001077,decision_s00001123_input_s00001052,merge_s00001162_input_s00001052,callToTask_s00001168_input_s00001066
+
+
+Slicing criterion: callToTask_s00002950_inputCriterion_s00001053_used,merge_s00002238_input_s00001068,merge_s00001160_input_s00001052
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: callToTask_s00002956_input_s00001066,merge_s00002239_input_s00001066,callToTask_s00002966_input_s00001066,callToTask_s00002963_output_s00001054
+
+
+Slicing criterion: callToTask_s00002957_input_s00001066,callToTask_s00002949_output_s00001077
 
 
 File: examples/mcc_models/2015/IBM5964/IBM5964.pnml
@@ -181,35 +259,68 @@ backwards_persistent: No
 reversible: No
 homogeneous: Yes
 asymmetric_choice: Yes
-
-Slicing criterion: callToProcess_s00002411_output_s00000938,callToTask_s00001746_input_s00000935,fork_s00001536_activated_s00000991
-
-
-Slicing criterion: merge_s00001291_input_s00000986
+Deadlock: true
+Size: 402
 
 
-Slicing criterion: callToTask_s00005966_output_s00000979
+Slicing criterion: callToTask_s00001746_input_s00000935,callToTask_s00002526_inputCriterion_s00000937_used,callToTask_s00005969_output_s00000959,callToProcess_s00002411_input_s00000935
 
 
-Slicing criterion: merge_s00001066_input_s00000950,callToTask_s00005968_input_s00000952
+Slicing criterion: callToTask_s00001632_output_s00000938
 
 
-Slicing criterion: callToProcess_s00002538_output_s00000961
+Slicing criterion: callToTask_s00005972_output_s00000938
 
 
-Slicing criterion: callToTask_s00002183_output_s00000938,callToTask_s00005967_output_s00000979,callToProcess_s00004075_output_s00000938,callToTask_s00005967_output_s00000938
+Slicing criterion: callToProcess_s00004075_input_s00000935,join_s00001295_input_s00000985
 
 
-Slicing criterion: callToTask_s00005897_output_s00000938,fork_s00001067_activated_s00000993,callToProcess_s00005925_output_s00000956,callToTask_s00001746_input_s00000935
+Slicing criterion: callToProcess_s00004075_output_s00000938,callToTask_s00005968_output_s00000956
 
 
-Slicing criterion: callToTask_s00005972_input_s00000935,callToProcess_s00005925_output_s00000938
+Slicing criterion: callToProcess_s00004075_input_s00000950,callToTask_s00002186_input_s00000935,callToTask_s00005965_input_s00000952,decision_s00001616_activated
 
 
-Slicing criterion: callToTask_s00002186_output_s00000938,fork_s00001293_input_s00000952,callToTask_s00005967_output_s00000979,merge_s00001066_input_s00000985
+Slicing criterion: callToProcess_s00002538_input_s00000950,callToTask_s00005967_input_s00000935,callToProcess_s00004075_output_s00000956
 
 
-Slicing criterion: callToTask_s00005970_input_s00000950,callToTask_s00002526_output_s00000981,merge_s00001120_input_s00001012,callToTask_s00002186_input_s00000950
+Slicing criterion: callToTask_s00002189_inputCriterion_s00000937_used
+
+
+Slicing criterion: callToTask_s00002183_output_s00000981,callToTask_s00001971_output_s00000956
+
+
+Slicing criterion: callToProcess_s00002411_input_s00000935,callToProcess_s00005925_output_s00000938,callToTask_s00005970_input_s00000952
+
+
+Slicing criterion: callToTask_s00001746_output_s00000956,merge_s00001120_input_s00000935
+
+
+Slicing criterion: merge_s00001120_input_s00000952,callToTask_s00005972_output_s00000979
+
+
+Slicing criterion: merge_s00001066_input_s00000985,callToProcess_s00002538_inputCriterion_s00000937_used,callToTask_s00002427_inputCriterion_s00000937_used,callToTask_s00005897_output_s00000938
+
+
+Slicing criterion: callToTask_s00005897_input_s00000950,merge_s00001290_activated
+
+
+Slicing criterion: merge_s00001292_activated,merge_s00000945_input_s00000935,callToProcess_s00002316_inputCriterion_s00000937_used
+
+
+Slicing criterion: callToTask_s00001971_output_s00000938,callToTask_s00002741_output_s00000960,callToTask_s00002190_output_s00000938,callToTask_s00002186_input_s00000950,merge_s00000945_input_s00000986
+
+
+Slicing criterion: callToTask_s00005969_output_s00000938,decision_s00001289_activated,callToTask_s00005965_input_s00000952
+
+
+Slicing criterion: callToProcess_s00002538_output_s00000961,callToTask_s00002526_input_s00000935,merge_s00001066_input_s00000987,merge_s00001291_input_s00000952,callToProcess_s00005925_input_s00000952
+
+
+Slicing criterion: callToTask_s00001305_output_s00000956,merge_s00003354_activated
+
+
+Slicing criterion: callToTask_s00002741_output_s00000956,callToTask_s00005897_output_s00000979
 
 
 File: examples/mcc_models/2015/IBM703/IBM703.pnml
@@ -247,316 +358,113 @@ backwards_persistent: No
 reversible: No
 homogeneous: Yes
 asymmetric_choice: Yes
-
-Slicing criterion: task_s00000758_output_s00000264,merge_s00000449_activated,task_s00000761_input_s00000263
-
-
-Slicing criterion: task_s00000753_input_s00000263,task_s00000710_output_s00000264,task_s00000740_inputCriterion_s00000257_used
+Deadlock: true
+Size: 546
 
 
-Slicing criterion: task_s00000763_inputCriterion_s00000257_used,task_s00000747_output_s00000264,task_s00000706_input_s00000263,task_s00000720_inputCriterion_s00000257_used
+Slicing criterion: task_s00000763_inputCriterion_s00000257_used,fork_s00000466_activated_s00000272
 
 
-Slicing criterion: fork_s00000463_activated_s00000274,task_s00000751_inputCriterion_s00000257_used,merge_s00000319_input_s00000290
-
-
-Slicing criterion: task_s00000733_output_s00000264,task_s00000724_output_s00000264,task_s00000706_input_s00000263,task_s00000735_output_s00000264,task_s00000754_input_s00000263
-
-
-Slicing criterion: task_s00000743_output_s00000264
-
-
-Slicing criterion: fork_s00000463_activated_s00000272,fork_s00000465_activated_s00000272
-
-
-Slicing criterion: merge_s00000452_input_s00000285,task_s00000720_inputCriterion_s00000257_used,task_s00000720_output_s00000264,decision_s00000784_activated
-
-
-Slicing criterion: task_s00000736_output_s00000264,task_s00000741_output_s00000264,task_s00000744_input_s00000263
-
-
-Slicing criterion: task_s00000738_inputCriterion_s00000257_used,task_s00000713_inputCriterion_s00000257_used,task_s00000755_inputCriterion_s00000257_used,task_s00000746_output_s00000264,merge_s00000446_input_s00000290
+Slicing criterion: merge_s00000288_activated,task_s00000753_output_s00000264,decision_s00000773_activated
 
 Llorens et al's slicer improved: timeouted
+
+Slicing criterion: task_s00000722_output_s00000264
+
+
+Slicing criterion: merge_s00000453_activated,task_s00000723_inputCriterion_s00000257_used
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: task_s00000753_input_s00000263
+
+
+Slicing criterion: merge_s00000456_input_s00000290,task_s00000720_output_s00000264,task_s00000713_inputCriterion_s00000257_used,task_s00000713_output_s00000264,fork_s00000465_input_s00000263
+
+
+Slicing criterion: fork_s00000464_input_s00000263,decision_s00000773_input_s00000263,decision_s00000799_activated
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: task_s00000741_inputCriterion_s00000257_used,task_s00000740_output_s00000264,task_s00000751_output_s00000264
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: task_s00000723_inputCriterion_s00000257_used
+
+
+Slicing criterion: task_s00000708_inputCriterion_s00000257_used,task_s00000727_output_s00000264,task_s00000740_output_s00000264
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: task_s00000732_input_s00000263,callToProcess_s00000596_output_s00000264,decision_s00000764_input_s00000263,task_s00000725_input_s00000263
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: callToProcess_s00000808_output_s00000264,decision_s00000773_input_s00000263,merge_s00000446_input_s00000285,task_s00000741_input_s00000263
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: merge_s00000446_input_s00000447,decision_s00000775_activated
+
+
+Slicing criterion: decision_s00000802_activated,callToProcess_s00000348_output_s00000264,task_s00000760_output_s00000264,task_s00000758_inputCriterion_s00000257_used
+
+
+Slicing criterion: task_s00000715_output_s00000264,task_s00000716_inputCriterion_s00000257_used,task_s00000714_inputCriterion_s00000257_used,merge_s00000446_activated,task_s00000714_output_s00000264
+
+
+Slicing criterion: task_s00000706_inputCriterion_s00000257_used,task_s00000761_input_s00000263
+
+
+Slicing criterion: task_s00000738_output_s00000264
+
+
+Slicing criterion: task_s00000704_output_s00000264,task_s00000710_output_s00000264,task_s00000706_inputCriterion_s00000257_used,task_s00000706_output_s00000264,task_s00000757_inputCriterion_s00000257_used
+
+
+Slicing criterion: task_s00000708_output_s00000264,decision_s00000802_activated
+
+
+Slicing criterion: task_s00000746_inputCriterion_s00000257_used,decision_s00000792_activated
+
 
 File: examples/mcc_models/2015/IOTPpurchase/IOTP_c1m1p1d1.pnml
 ************************
 
-Properties:
-num_places: 111
-num_transitions: 45
-num_labels: 45
-num_arcs: 224
-num_tokens: 17
-plain: Yes
-pure: No
-nonpure_only_simple_side_conditions: Yes
-free_choice: No
-restricted_free_choice: No
-t_net: No
-s_net: No
-output_nonbranching: No
-conflict_free: No
-k-marking: 1
-safe: Yes
-bounded: Yes
-k-bounded: 1
-isolated_elements: No
-strongly_connected: Yes
-weakly_connected: Yes
-bcf: Yes
-bicf: Yes
-strongly_live: Yes
-weakly_live: Yes
-simply_live: Yes
-persistent: Yes
-backwards_persistent: Yes
-reversible: Yes
-homogeneous: Yes
-asymmetric_choice: Yes
-
-Slicing criterion: Payment_p21_3,p7_1
-
-
-Slicing criterion: PayReceipt_p21_12,ConsumerPayment_p3,p6_4,Status_p21_5,PaymentNote_p21_16
-
-
-Slicing criterion: p3_7
-
-
-Slicing criterion: PayReceipt_p21_12,p4_5,p6_4,MerchantDelivery_p4_6
-
-
-Slicing criterion: Delivery_p20_10,p4_1,PaySchemeData_p21_10,DeliveryHandlerDelivery_p8_0,p5_1
-
-
-Slicing criterion: PayReceipt_p21_15
-
-
-Slicing criterion: p11_11
-
-
-Slicing criterion: p6_4
-
-
-Slicing criterion: MerchantOffer_p2,p4_4,HowDeliver_p12_2,p6_3
-
-
-Slicing criterion: DeliveryNote_p22_14,Status_p22_13
-
+Property analysis timeouted.
 
 File: examples/mcc_models/2015/Parking/parking_1_4.pnml
 ************************
 
-Property analysys timeouted.
+Property analysis timeouted.
 
 File: examples/mcc_models/2015/PhaseVariation/2-10_phaseVariation.pnml
 ************************
 
-Property analysys timeouted.
+Property analysis timeouted.
 
 File: examples/mcc_models/2015/Raft/raft_02.pnml
 ************************
 
-Property analysys timeouted.
+Property analysis timeouted.
 
 File: examples/mcc_models/2015/SafeBus/SafeBus-03-unfolded.pnml
 ************************
 
-Property analysys timeouted.
+Property analysis timeouted.
 
 File: examples/mcc_models/2015/SmallOperatingSystem/SmallOperatingSystem-MT0016DC0008.pnml
 ************************
 
-Property analysys timeouted.
+Property analysis timeouted.
 
 File: examples/mcc_models/2015/SquareGrid/sg-2-1-2.pnml
 ************************
 
-Property analysys timeouted.
+Property analysis timeouted.
 
 File: examples/mcc_models/2015/SwimmingPool/SwimmingPool-1.pnml
 ************************
 
-Property analysys timeouted.
-{"Rakow's slicer CTL", [{"backwards_persistent",{46,46}},
-                        {"num_places",{6,46}},
-                        {"weakly_connected",{46,46}},
-                        {"output_nonbranching",{46,46}},
-                        {"siphons",{40,40}},
-                        {"plain",{46,46}},
-                        {"pure",{46,46}},
-                        {"free_choice",{46,46}},
-                        {"strongly_connected",{46,46}},
-                        {"bicf",{46,46}},
-                        {"s_net",{40,46}},
-                        {"k-marking",{46,46}},
-                        {"strongly_live",{46,46}},
-                        {"persistent",{46,46}},
-                        {"nonpure_only_simple_side_conditions",{46,46}},
-                        {"size",{33.89993551181651,46}},
-                        {"num_tokens",{46,46}},
-                        {"bcf",{46,46}},
-                        {"num_arcs",{6,46}},
-                        {"asymmetric_choice",{46,46}},
-                        {"num_transitions",{17,46}},
-                        {"simply_live",{37,46}},
-                        {"traps",{0,40}},
-                        {"num_labels",{17,46}},
-                        {"t_net",{46,46}},
-                        {"time",{810,46}},
-                        {"deadlock",{46,46}},
-                        {"safe",{46,46}},
-                        {"restricted_free_choice",{46,46}},
-                        {"weakly_live",{46,46}},
-                        {"isolated_elements",{46,46}},
-                        {"bounded",{46,46}},
-                        {"k-bounded",{46,46}},
-                        {"homogeneous",{46,46}},
-                        {"conflict_free",{46,46}},
-                        {"reversible",{46,46}}]},
-{"Yu et al's slicer", [{"backwards_persistent",{16,46}},
-                       {"num_places",{0,46}},
-                       {"weakly_connected",{30,46}},
-                       {"output_nonbranching",{10,46}},
-                       {"siphons",{30,40}},
-                       {"plain",{46,46}},
-                       {"pure",{40,46}},
-                       {"free_choice",{40,46}},
-                       {"strongly_connected",{40,46}},
-                       {"bicf",{6,46}},
-                       {"s_net",{38,46}},
-                       {"k-marking",{46,46}},
-                       {"strongly_live",{40,46}},
-                       {"persistent",{6,46}},
-                       {"nonpure_only_simple_side_conditions",{40,46}},
-                       {"size",{9.366362807466455,46}},
-                       {"num_tokens",{46,46}},
-                       {"bcf",{6,46}},
-                       {"num_arcs",{0,46}},
-                       {"asymmetric_choice",{46,46}},
-                       {"num_transitions",{0,46}},
-                       {"simply_live",{26,46}},
-                       {"traps",{0,40}},
-                       {"num_labels",{0,46}},
-                       {"t_net",{20,46}},
-                       {"time",{1861,46}},
-                       {"deadlock",{46,46}},
-                       {"safe",{46,46}},
-                       {"restricted_free_choice",{36,46}},
-                       {"weakly_live",{40,46}},
-                       {"isolated_elements",{40,46}},
-                       {"bounded",{46,46}},
-                       {"k-bounded",{36,46}},
-                       {"homogeneous",{46,46}},
-                       {"conflict_free",{10,46}},
-                       {"reversible",{40,46}}]},
-{"Llorens et al's slicer improved", [{"backwards_persistent",{6,35}},
-                                     {"num_places",{6,35}},
-                                     {"weakly_connected",{35,35}},
-                                     {"output_nonbranching",{28,35}},
-                                     {"siphons",{29,29}},
-                                     {"plain",{35,35}},
-                                     {"pure",{35,35}},
-                                     {"free_choice",{35,35}},
-                                     {"strongly_connected",{35,35}},
-                                     {"bicf",{28,35}},
-                                     {"s_net",{28,35}},
-                                     {"k-marking",{35,35}},
-                                     {"strongly_live",{35,35}},
-                                     {"persistent",{28,35}},
-                                     {"nonpure_only_simple_side_conditions",
-                                      {35,35}},
-                                     {"size",{16.826475396912073,35}},
-                                     {"num_tokens",{35,35}},
-                                     {"bcf",{28,35}},
-                                     {"num_arcs",{6,35}},
-                                     {"asymmetric_choice",{35,35}},
-                                     {"num_transitions",{6,35}},
-                                     {"simply_live",{26,35}},
-                                     {"traps",{0,29}},
-                                     {"num_labels",{6,35}},
-                                     {"t_net",{28,35}},
-                                     {"time",{74620,35}},
-                                     {"deadlock",{35,35}},
-                                     {"safe",{25,35}},
-                                     {"restricted_free_choice",{35,35}},
-                                     {"weakly_live",{35,35}},
-                                     {"isolated_elements",{35,35}},
-                                     {"bounded",{35,35}},
-                                     {"k-bounded",{25,35}},
-                                     {"homogeneous",{35,35}},
-                                     {"conflict_free",{28,35}},
-                                     {"reversible",{35,35}}]},
-{"Rakow's slicer safety", [{"backwards_persistent",{46,46}},
-                           {"num_places",{6,46}},
-                           {"weakly_connected",{46,46}},
-                           {"output_nonbranching",{46,46}},
-                           {"siphons",{40,40}},
-                           {"plain",{46,46}},
-                           {"pure",{46,46}},
-                           {"free_choice",{46,46}},
-                           {"strongly_connected",{46,46}},
-                           {"bicf",{46,46}},
-                           {"s_net",{40,46}},
-                           {"k-marking",{46,46}},
-                           {"strongly_live",{46,46}},
-                           {"persistent",{46,46}},
-                           {"nonpure_only_simple_side_conditions",{46,46}},
-                           {"size",{33.570791539929175,46}},
-                           {"num_tokens",{46,46}},
-                           {"bcf",{46,46}},
-                           {"num_arcs",{6,46}},
-                           {"asymmetric_choice",{46,46}},
-                           {"num_transitions",{16,46}},
-                           {"simply_live",{37,46}},
-                           {"traps",{0,40}},
-                           {"num_labels",{16,46}},
-                           {"t_net",{46,46}},
-                           {"time",{745,46}},
-                           {"deadlock",{46,46}},
-                           {"safe",{46,46}},
-                           {"restricted_free_choice",{46,46}},
-                           {"weakly_live",{46,46}},
-                           {"isolated_elements",{46,46}},
-                           {"bounded",{46,46}},
-                           {"k-bounded",{46,46}},
-                           {"homogeneous",{46,46}},
-                           {"conflict_free",{46,46}},
-                           {"reversible",{46,46}}]},
-{"Llorens et al's slicer", [{"backwards_persistent",{47,47}},
-                            {"num_places",{7,47}},
-                            {"weakly_connected",{47,47}},
-                            {"output_nonbranching",{47,47}},
-                            {"siphons",{40,40}},
-                            {"plain",{47,47}},
-                            {"pure",{47,47}},
-                            {"free_choice",{47,47}},
-                            {"strongly_connected",{47,47}},
-                            {"bicf",{47,47}},
-                            {"s_net",{41,47}},
-                            {"k-marking",{47,47}},
-                            {"strongly_live",{47,47}},
-                            {"persistent",{47,47}},
-                            {"nonpure_only_simple_side_conditions",{47,47}},
-                            {"size",{34.09290490923927,47}},
-                            {"num_tokens",{47,47}},
-                            {"bcf",{47,47}},
-                            {"num_arcs",{7,47}},
-                            {"asymmetric_choice",{47,47}},
-                            {"num_transitions",{17,47}},
-                            {"simply_live",{38,47}},
-                            {"traps",{0,40}},
-                            {"num_labels",{17,47}},
-                            {"t_net",{47,47}},
-                            {"time",{1166,47}},
-                            {"deadlock",{47,47}},
-                            {"safe",{47,47}},
-                            {"restricted_free_choice",{47,47}},
-                            {"weakly_live",{47,47}},
-                            {"isolated_elements",{47,47}},
-                            {"bounded",{47,47}},
-                            {"k-bounded",{47,47}},
-                            {"homogeneous",{47,47}},
-                            {"conflict_free",{47,47}},
-                            {"reversible",{47,47}}]},
+Property analysis timeouted.
