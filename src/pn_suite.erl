@@ -2,7 +2,7 @@
  
 -export( 
     [
-        main/1, web/1, web_convert/1, 
+        main/1, web/1, web_convert/0, web_convert/1, 
         slice_prop_preserving/1, prop_preservation/1
     ]).
 
@@ -310,13 +310,13 @@ web([File, Alg, TimeoutStr, SCStr]) ->
                         fun pn_slice:slice/2
                 end,
             case SC of
-                [] ->
-                    PNtoExport = 
-                        pn_input:read_pos_from_svg_web(PN),
-                    pn_output:print_pnml_file(
-                        PNtoExport, 
-                        "pn_slicer_slice.xml"),
-                    io:format("1");                
+                % [] ->
+                %     PNtoExport = 
+                %         pn_input:read_pos_from_svg_web(PN),
+                %     pn_output:print_pnml_file(
+                %         PNtoExport, 
+                %         "pn_slicer_slice.xml"),
+                %     io:format("1");                
                 _ -> 
                     Self = self(),
                     spawn(fun() -> Self!FunSlice(PN, SC) end),
@@ -332,7 +332,21 @@ web([File, Alg, TimeoutStr, SCStr]) ->
                             io:format("0")
                     end
             end
-    end.
+    end;
+web([File]) ->
+    PNtoExport = 
+        pn_input:read_pos_from_svg_web(PN),
+    pn_output:print_pnml_file(
+        PNtoExport, 
+        "pn_slicer_slice.xml"),
+    io:format("1").
+
+web_convert() ->
+    PN = pn_input:read_pn("pn_slicer_temp.xml"),
+    pn_lib:build_digraph(PN),
+    pn_output:print_net_file(
+        PN,
+        "pn_slicer_net", "pdf").  
 
 web_convert(Format) ->
     case Format of 

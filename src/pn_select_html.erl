@@ -11,7 +11,6 @@
 create() ->
     Directories = 
         [
-            {"other", all},
             "mcc_models/2011/FMS",
             "mcc_models/2011/Kanban",
             "mcc_models/2011/MAPK",
@@ -75,7 +74,8 @@ create() ->
             "mcc_models/2016/HypertorusGrid",
             "mcc_models/2016/PaceMaker",
             "mcc_models/2016/TCPcondis",
-            "mcc_models/2016/TriangularGrid"
+            "mcc_models/2016/TriangularGrid",
+            {"other", all}
         ],
     lists:map(fun create_options_dir/1, Directories).
 
