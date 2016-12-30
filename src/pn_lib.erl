@@ -174,20 +174,20 @@ flush() ->
 algorithms() -> 
     [
         #slicer{
-            name = "Llorens et al's slicer", 
-            function = fun pn_slice:slice/2},
-        #slicer{
             name = "Llorens et al's slicer improved", 
             function = fun pn_slice:slice_imp/2},
+        #slicer{
+            name = "Llorens et al's slicer", 
+            function = fun pn_slice:slice/2},
         #slicer{
             name = "Rakow's slicer CTL", 
             function = fun pn_rakow:slice_ctl/2},
         #slicer{
-            name = "Rakow's slicer safety", 
-            function = fun pn_rakow:slice_safety/2},
-        #slicer{
             name = "Yu et al's slicer", 
-            function = fun pn_yuetal:slice/2}
+            function = fun pn_yuetal:slice/2},
+        #slicer{
+            name = "Rakow's slicer safety", 
+            function = fun pn_rakow:slice_safety/2}
     ].
 
 size(#petri_net{places = Ps, transitions = Ts}) ->

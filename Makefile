@@ -22,6 +22,14 @@ install:
 bench:
 	@erl -pa ebin -run pn_bench bench -noshell -s erlang halt
 
+bench_all:
+	@make bench_2011 > 2011_res
+	@make bench_2012 > 2012_res
+	@make bench_2013 > 2013_res
+	@make bench_2014 > 2014_res
+	@make bench_2015 > 2015_res
+	@make bench_2016 > 2016_res
+
 bench_prop:
 	@erl -pa ebin -run pn_bench_prop bench -noshell -s erlang halt
 

@@ -18,8 +18,8 @@ directories() ->
         , "mcc_models/2011/Kanban"
         , "mcc_models/2011/MAPK"
         , "mcc_models/2011/Peterson"
-        % , "mcc_models/2011/Philosophers"
-        % , "mcc_models/2011/TokenRing"
+        , "mcc_models/2011/Philosophers"
+        , "mcc_models/2011/TokenRing"
         , "mcc_models/2012/CSRepetitions"
         , "mcc_models/2012/Echo"
         , "mcc_models/2012/Eratosthenes"
@@ -91,7 +91,7 @@ bench_common(Dirs, Filename) ->
     Timeout = 
         10000,
     SlicesPerNet = 
-        10,
+        20,
     MaxSC = 
         5,
     bench(Dirs, Timeout, SlicesPerNet, MaxSC, Filename).
@@ -113,9 +113,10 @@ bench(Directories, Timeout, SlicesPerNet, MaxSC, Filename0) ->
             end,
             new_alg_dict({0, 0}),
             Directories),
-    [file:write(OutDev, list_to_binary(pn_lib:format( "{~p, ~p},\n", [A, dict:to_list(DL)]))) || {A, DL} <- dict:to_list(FinalDict)],
-    % final_report(FinalDict, "Final report", OutDev),
-    file:close(OutDev).
+    file:close(OutDev),
+    [io:format( "{~p, ~p},\n", [A, dict:to_list(DL)]) || {A, DL} <- dict:to_list(FinalDict)],
+    ok.
+    % final_report(FinalDict, "Final report", OutDev).
 
 bench_dir([], _, _, _, _, TotalDict) ->
     TotalDict;
@@ -166,8 +167,8 @@ bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev, TotalDict) ->
             TotalDict; 
         _ ->
             file:write(OutDev, list_to_binary("Properties:\n" ++ ResAnalyses)),
-            file:write(OutDev, list_to_binary(dict:fetch("traps", DictPropOri))),
-            file:write(OutDev, list_to_binary(dict:fetch("siphons", DictPropOri))),
+            % file:write(OutDev, list_to_binary(dict:fetch("traps", DictPropOri))),
+            % file:write(OutDev, list_to_binary(dict:fetch("siphons", DictPropOri))),
             file:write(OutDev, list_to_binary(pn_lib:format("Deadlock: ~p\n" , [dict:fetch("deadlock", DictPropOri)]))),
             file:write(OutDev, list_to_binary(pn_lib:format("Size: ~p\n\n" , [dict:fetch("size", DictPropOri)]))),
             Ps = dict:fetch_keys(PN#petri_net.places),
@@ -202,8 +203,12 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
                 "\nSlicing criterion: ~s\n\n", 
                 [string:join(SC, ",")] ) ) ),
     ResAlg = 
-        lists:map(
-            fun(A) ->
+        lists:foldl(
+            fun
+            (_, none) ->
+                none;
+            
+            (A, Acc) ->
                 ResFun = 
                     try 
                         bench_fun(A, PN, SC, Timeout, OutDev, DictPropOri)
@@ -211,22 +216,23 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
                         _:_ ->
                             none 
                     end,
-                {A#slicer.name, ResFun}
+                case ResFun of 
+                    none ->
+                        none;
+                    _ ->
+                        [{A#slicer.name, ResFun} | Acc]
+                end
             end,
+            [],
             pn_lib:algorithms()),
-    case length([R || R = {_, RD} <- ResAlg, RD /= none]) == length(ResAlg) of 
-        false ->
+    case ResAlg of 
+        none ->
             Dict;
-        true ->
+        _ ->
             lists:foldl(
                 fun
                     ({A, DictA}, CDict) ->
-                        % io:format("~p\n", [DictA]),
-                        % io:format("~p\n", [CDict]),
-                        % io:format("~p\n", [dict:to_list(DictA)]),
-                        % io:format("~p\n", [dict:to_list(CDict)]),
                         OldValue = dict:fetch(A, CDict),
-                        % io:format("~p\n", [merge_prop_dict(OldValue, DictA)]),
                         dict:store(A, merge_prop_dict(OldValue, DictA), CDict)
                 end,
                 Dict,
