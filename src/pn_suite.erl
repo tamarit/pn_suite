@@ -360,6 +360,8 @@ web_convert(Format, SC) ->
         _ ->
             PN = pn_input:read_pn("pn_slicer_slice.xml"),
             SCParsed = parse_sc(PN, SC),
+            io:format("SC: ~p\n", [SC]),
+            io:format("SCParsed: ~p\n", [SCParsed]),
             pn_lib:build_digraph(PN),
             pn_output:print_net_file(
                 PN,

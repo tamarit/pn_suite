@@ -66,7 +66,8 @@ place_to_dot(
             false -> 
                 "";
             true -> 
-                " style=filled color=\"blue\" fontcolor=\"white\" fillcolor=\"blue\""
+                % color=\"blue\"
+                " style=filled fontcolor=\"white\" fillcolor=\"blue\""
         end,       
     Name = 
         if 
