@@ -497,10 +497,10 @@ ask_other_formats(PN, Suffix) ->
 
 slice_prop_preserving(Args) -> 
     TimeoutAnalysis = 5000,
-    [PNFile, SCStr, PropsStr | _] = Args,
+    [PNSUITEPath, PNFile, SCStr, PropsStr | _] = Args,
     % io:format("~p\n", [{PNFile, PropsStr, SCStr}]),
     {PN, SizeOriginal, PropOriginal} = 
-        create_pn_and_prop(PNFile, TimeoutAnalysis, false),
+        create_pn_and_prop(PNFile, TimeoutAnalysis, false, PNSUITEPath),
     SC = 
         parse_sc(PN, SCStr),
     io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
@@ -544,7 +544,7 @@ slice_prop_preserving(Args) ->
                             pn_input:read_pos_from_svg(PNSlice),
                         pn_output:print_lola(PNtoExportSlice, "_temp_slice"),
                         {PropSlice, _} = 
-                            pn_properties:apt_properties(PNSlice, TimeoutAnalysis),
+                            pn_properties:apt_properties(PNSlice, TimeoutAnalysis, PNSUITEPath),
                         are_properties_preserved(PropsParsed, PropOriginal, PropSlice, PN, PNSlice, TimeoutAnalysis)
                     end,
                     Slices0
@@ -568,7 +568,7 @@ slice_prop_preserving(Args) ->
             ok
     end.
 
-create_pn_and_prop(PNFile, Timeout, Silent) ->
+create_pn_and_prop(PNFile, Timeout, Silent, PNSUITEPath) ->
     PN = pn_input:read_pn(PNFile),
     pn_lib:build_digraph(PN),
     case Silent of 
@@ -579,7 +579,7 @@ create_pn_and_prop(PNFile, Timeout, Silent) ->
             ok 
     end,
     {PropOriginal, _} = 
-        pn_properties:apt_properties(PN, Timeout),
+        pn_properties:apt_properties(PN, Timeout, PNSUITEPath),
     {PN, pn_lib:size(PN), PropOriginal}.
 
 are_properties_preserved(PropList, DictOri, DictMod, PN, PNSlice, TimeoutAnalysis) ->
@@ -613,11 +613,11 @@ is_lola_property_preserved(Formula, PN, TimeoutAnalysis) ->
 
 prop_preservation(Args) -> 
     TimeoutAnalysis = 5000,
-    [PNFile1, PNFile2 | TailArgs] = Args,
+    [PNSUITEPath, PNFile1, PNFile2 | TailArgs] = Args,
     [{PN1, _, D1}, {PN2, _, D2}] = 
         lists:map(
             fun(PN) -> 
-                create_pn_and_prop(PN, TimeoutAnalysis, true) 
+                create_pn_and_prop(PN, TimeoutAnalysis, true, PNSUITEPath) 
             end, 
             [PNFile1, PNFile2]),
     case TailArgs of 

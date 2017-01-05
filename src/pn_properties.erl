@@ -2,7 +2,7 @@
  
 -export( 
     [
-        apt_properties/2, 
+        apt_properties/2, apt_properties/3, 
         compare_properties/2, compare_properties_all/2,
         all_properties/0, check_reachable_sc/4,
         parse_property_list/1, check_formula/4,
@@ -129,11 +129,14 @@ compare_properties_all(DictOri, DictSlice) ->
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 apt_properties(PN, TimeOut) ->
+    apt_properties(PN, TimeOut, ".").
+
+apt_properties(PN, TimeOut, Path) ->
     Dir = PN#petri_net.dir ++ "/output/",
     AptFile = Dir ++ PN#petri_net.name ++ ".apt",
     pn_output:print_apt(PN, ""),
     Cmd = 
-        "java -jar apt/apt.jar examine_pn "  ++ AptFile,
+        "java -jar " ++ Path ++ "/apt/apt.jar examine_pn "  ++ AptFile,
     pn_lib:flush(),
     cmd_run(Cmd, fun cmd_loop_dict_building/3, TimeOut, {none, "No analyzed (error).\n\n"}).
     % Res = os:cmd(Cmd), 
