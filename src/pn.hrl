@@ -42,5 +42,6 @@
 -record(slicer, 
     {
         name = ?UNNAMED,
+        short_name = ?UNNAMED,
         function = none
     }).

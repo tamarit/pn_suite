@@ -6,7 +6,8 @@
         compare_properties/2, compare_properties_all/2,
         all_properties/0, check_reachable_sc/4,
         parse_property_list/1, check_formula/4,
-        apt_property/3, is_apt_property_preserved/4
+        apt_property/3, apt_property/4, 
+        is_apt_property_preserved/5
     ] ).
 
 -include("pn.hrl").
@@ -19,7 +20,7 @@
 parse_property_list(PropsStr) ->
     case PropsStr of 
         [$a, $l, $g, $: |Alg] ->
-            {alg, Alg};
+            {{alg, Alg},""};
         _ ->
             parse_property_list_aux(PropsStr)
     end.
@@ -35,30 +36,31 @@ parse_property_list_aux(PropsStr) ->
         ] 
     of 
         TokPropsStr -> 
-            TokPropsStr;
+            {TokPropsStr, ""};
         PropsStrFiltered -> 
             Rest = TokPropsStr -- PropsStrFiltered,
             LolaExprs = 
                 [   {lola, element(2, is_lola(P))} 
                 ||  P <- Rest, element(1, is_lola(P))],
-            STExprs =
+            {STExprs, Warnings} =
                 case length(LolaExprs) < length(Rest) of 
                     true -> 
                         Rest2 = Rest -- LolaExprs,
                         STExprs0 = 
                             [   {st, P}
                             ||  P <- Rest2, P == "siphons" orelse P == "traps"],
-                        case length(STExprs0) < length(Rest2) of 
-                            true ->
-                                io:format("Some properties are unknown. They will be ignored.\n");
-                            false ->
-                                ok
-                        end,
-                        STExprs0;
+                        Warnings0 = 
+                            case length(STExprs0) < length(Rest2) of 
+                                true ->
+                                    "Some properties are unknown. They will be ignored.";
+                                false ->
+                                    ""
+                            end,
+                        {STExprs0, Warnings0};
                     false -> 
                         []
                 end,       
-            PropsStrFiltered ++ LolaExprs ++ STExprs
+            {PropsStrFiltered ++ LolaExprs ++ STExprs, Warnings}
     end.
 
 is_lola([$l, $o, $l, $a, $: | LolaExp]) ->
@@ -144,11 +146,14 @@ apt_properties(PN, TimeOut, Path) ->
     % {lists:foldl(fun(X, Acc) -> dict:store(X, "0", Acc) end, dict:new(), all_properties()), ""}.
 
 apt_property(Prop, PN, TimeOut) ->
+    apt_property(Prop, PN, TimeOut, ".").    
+
+apt_property(Prop, PN, TimeOut, Path) ->
     Dir = PN#petri_net.dir ++ "/output/",
     AptFile = Dir ++ PN#petri_net.name ++ ".apt",
     pn_output:print_apt(PN, ""),
     Cmd = 
-        "java -jar apt/apt.jar " ++ Prop ++ " "  ++ AptFile,
+        "java -jar " ++ Path ++ "/apt/apt.jar " ++ Prop ++ " "  ++ AptFile,
     cmd_run(Cmd, fun cmd_loop/3, TimeOut, none).
 
 
@@ -177,14 +182,14 @@ all_properties() ->
          "num_transitions", "t_net", "num_labels", "isolated_elements"
     ].
 
-is_apt_property_preserved(ST, PN, PNSlice, Timeout) ->
+is_apt_property_preserved(ST, PN, PNSlice, Timeout, APTPath) ->
     [PropOri, PropSlice] = 
         lists:map(
             fun(N) ->
                 StrProp = 
                     string:to_lower(
                         string:substr(
-                            apt_property(ST, N, Timeout), length(ST) + 11)),
+                            apt_property(ST, N, Timeout, APTPath), length(ST) + 11)),
                 % io:format("~s\n", [StrProp]),
                 % io:format("~p\n", [erl_scan:string(StrProp ++ ".")]),
                 {ok, Prop} = 

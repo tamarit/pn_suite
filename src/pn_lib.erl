@@ -175,18 +175,23 @@ algorithms() ->
     [
         #slicer{
             name = "Llorens et al's slicer improved", 
+            short_name = "llorens_imp",
             function = fun pn_slice:slice_imp/2},
         #slicer{
             name = "Llorens et al's slicer", 
+            short_name = "llorens",
             function = fun pn_slice:slice/2},
         #slicer{
-            name = "Rakow's slicer CTL", 
+            name = "Rakow's slicer CTL",
+            short_name = "rakow_ctl", 
             function = fun pn_rakow:slice_ctl/2},
         #slicer{
             name = "Yu et al's slicer", 
+            short_name = "yu",
             function = fun pn_yuetal:slice/2},
         #slicer{
             name = "Rakow's slicer safety", 
+            short_name = "rakow_safety",
             function = fun pn_rakow:slice_safety/2}
     ].
 

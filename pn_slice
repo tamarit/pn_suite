@@ -2,10 +2,14 @@
 
 path="."
 
-if [ $# != 3 ]
+if [ $# -lt 3 ] || [ $# -gt 4 ] 
 then 
-	echo -e "Usage:\n\tpn_slice PNML_FILE SLICING_CRITERION (PROPERTIES_LIST or SLICING_ALGORITHM)"
+	echo -e "Usage:\n\tpn_slice PNML_FILE SLICING_CRITERION (PROPERTIES_LIST or SLICING_ALGORITHM) [-json]"
 else
-	erl -pa "$path/ebin" -run pn_suite slice_prop_preserving $path $1 $2 "$3" -noshell -s erlang halt
+	if [ $# -eq 4 ]
+	then
+		erl -pa "$path/ebin" -run pn_suite slice_prop_preserving $path $1 $2 "$3" "JSON" -noshell -s erlang halt
+	else 
+		erl -pa "$path/ebin" -run pn_suite slice_prop_preserving $path $1 $2 "$3" -noshell -s erlang halt
+	fi
 fi
-

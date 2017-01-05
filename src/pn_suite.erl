@@ -98,7 +98,8 @@ slicing_common(PN, SliceFun, SC, Suffix) ->
     pn_lib:build_digraph(PN),
     PNSlice = SliceFun(PN, SC),
     PNtoExport = pn_input:read_pos_from_svg(PNSlice),
-    pn_output:print_pnml(PNtoExport, Suffix).
+    pn_output:print_pnml(PNtoExport, Suffix),
+    pn_lib:size(PNtoExport).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Slicing criterion
@@ -243,10 +244,9 @@ parse_sc(PN, SCStr) ->
     SCParsed = string:tokens(SCStr, " ,"),
     case [P || P <- SCParsed, lists:member(P, PsKeys)] of 
         SCParsed ->
-            SCParsed;
-        SCFiltered ->
-            io:format("The slicing criterion contains unknown places. They will be ignored.\n"),       
-            SCFiltered
+            {SCParsed, ""};
+        SCFiltered ->      
+            {SCFiltered, "The slicing criterion contains unknown places. They will be ignored."}
     end.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -275,7 +275,8 @@ web([File, Alg, TimeoutStr, SCStr]) ->
                         io:format("Timeout set to default value, i.e. 50 milisec.\n"),
                         50
                 end,
-            SCParsed = parse_sc(PN0, SCStr),
+            {SCParsed, Warnings} = parse_sc(PN0, SCStr),
+            io:format("~s\n", [Warnings]),
             {PN0, SCParsed, Timeout0}
         catch 
             _:_ ->
@@ -359,7 +360,7 @@ web_convert(Format, SC) ->
                 "pn_slicer_slice.apt");   
         _ ->
             PN = pn_input:read_pn("pn_slicer_slice.xml"),
-            SCParsed = parse_sc(PN, SC),
+            {SCParsed, _} = parse_sc(PN, SC),
             % io:format("SC: ~p\n", [SC]),
             % io:format("SCParsed: ~p\n", [SCParsed]),
             pn_lib:build_digraph(PN),
@@ -497,41 +498,66 @@ ask_other_formats(PN, Suffix) ->
 
 slice_prop_preserving(Args) -> 
     TimeoutAnalysis = 5000,
-    [PNSUITEPath, PNFile, SCStr, PropsStr | _] = Args,
-    % io:format("~p\n", [{PNFile, PropsStr, SCStr}]),
+    [PNSUITEPath, PNFile, SCStr, PropsStr | TailArgs] = Args,
+    % io:format("~p\n", [{PNFile, PropsStr, SCStr, TailArgs}]),
     {PN, SizeOriginal, PropOriginal} = 
-        create_pn_and_prop(PNFile, TimeoutAnalysis, false, PNSUITEPath),
-    SC = 
+        create_pn_and_prop(PNFile, TimeoutAnalysis, TailArgs /= [], PNSUITEPath),
+    {SC,WarningsSC} = 
         parse_sc(PN, SCStr),
-    io:format("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
-    PropsParsed = 
+    {PropsParsed, Warnings} = 
         pn_properties:parse_property_list(PropsStr),
+    Printer = 
+        fun(Str, Data) ->
+            case TailArgs of 
+                [] ->
+                    io:format(Str, Data);
+                _ ->
+                    ok 
+            end
+        end,
+    Printer("~s\n", [WarningsSC]),
+    Printer("Slicing criterion: [~s]\n", [string:join(SC, ", ")]),
+    Printer("~s\n", [Warnings]),
     case PropsParsed of 
         {alg, Alg} ->
-            case Alg of 
-                "llorens_imp" ->
-                    io:format("Slicing using Llorens et al. improved.\n"),
-                    slicing_common(PN, fun pn_slice:slice_imp/2, SC, "_slc_imp");
-                "rakow_ctl" ->
-                    io:format("Slicing using Rakow CTL.\n"),
-                    slicing_common(PN, fun pn_rakow:slice_ctl/2, SC, "_slc_rakow_ctl");
-                "rakow_safety" ->
-                    io:format("Slicing using Rakow safety.\n"),
-                    slicing_common(PN, fun pn_rakow:slice_safety/2, SC, "_slc_rakow_safety");
-                "yu" ->
-                    io:format("Slicing using Yu et al.\n"),
-                    slicing_common(PN, fun pn_yuetal:slice/2, SC, "_slc_yu");
-                _ ->
-                    io:format("Slicing using Llorens et al.\n"),
-                    slicing_common(PN, fun pn_slice:slice/2, SC, "_slc")
-            end;
+            {SizeSlice, Suffix} = 
+                case Alg of 
+                    "llorens_imp" ->
+                        Printer("Slicing using Llorens et al. improved.\n", []),
+                        Suffix0 = "_slc_imp",
+                        Fun = fun pn_slice:slice_imp/2, 
+                        {slicing_common(PN, Fun, SC, Suffix0), Suffix0};
+                    "rakow_ctl" ->
+                        Printer("Slicing using Rakow CTL.\n", []),
+                        Suffix0 = "_slc_rakow_ctl",
+                        Fun = fun pn_rakow:slice_ctl/2,
+                        {slicing_common(PN, Fun, SC, Suffix0), Suffix0};
+                    "rakow_safety" ->
+                        Printer("Slicing using Rakow safety.\n", []),
+                        Suffix0 = "_slc_rakow_safety",
+                        Fun = fun pn_rakow:slice_safety/2,
+                        {slicing_common(PN, Fun, SC, Suffix0), Suffix0};
+                    "yu" ->
+                        Printer("Slicing using Yu et al.\n", []),
+                        Suffix0 = "_slc_yu",
+                        Fun = fun pn_yuetal:slice/2,
+                        {slicing_common(PN, Fun, SC, Suffix0), Suffix0};
+                    _ ->
+                        Printer("Slicing using Llorens et al.\n", []),
+                        Suffix0 = "_slc",
+                        Fun = fun pn_slice:slice/2,
+                        {slicing_common(PN, Fun, SC, Suffix0), Suffix0}
+                end,
+            ReductionStr = 
+                float_to_list(100 - (100 * SizeSlice / SizeOriginal),[{decimals,2}]),
+            json_output_alg(TailArgs, {SC, ReductionStr, [Warnings, WarningsSC], PN#petri_net.name, PNFile, [{Alg, Suffix, no_calc}]});
         _ ->
             Slices0 = 
                 lists:map(
-                    fun(#slicer{name = Name, function = Fun}) ->
+                    fun(#slicer{name = Name, short_name = SName, function = Fun}) ->
                         PNS = Fun(PN, SC),
                         pn_lib:build_digraph(PNS),
-                        {Name, PNS}
+                        {Name, SName, PNS}
                     end,
                     pn_lib:algorithms() ),
             PNtoExportOri = 
@@ -539,33 +565,34 @@ slice_prop_preserving(Args) ->
             pn_output:print_lola(PNtoExportOri, "_temp_ori"),
             Slices = 
                 lists:filter(
-                    fun({_, PNSlice}) ->
+                    fun({_, _, PNSlice}) ->
                         PNtoExportSlice = 
                             pn_input:read_pos_from_svg(PNSlice),
                         pn_output:print_lola(PNtoExportSlice, "_temp_slice"),
                         {PropSlice, _} = 
                             pn_properties:apt_properties(PNSlice, TimeoutAnalysis, PNSUITEPath),
-                        are_properties_preserved(PropsParsed, PropOriginal, PropSlice, PN, PNSlice, TimeoutAnalysis)
+                        are_properties_preserved(PropsParsed, PropOriginal, PropSlice, PN, PNSlice, TimeoutAnalysis, PNSUITEPath)
                     end,
                     Slices0
                     ),
-            lists:foldl(
-                fun({Name, PNSlice}, Acc) ->
-                    PNtoExport = 
-                        pn_input:read_pos_from_svg(PNSlice),
-                    Suffix = 
-                        "_" ++ integer_to_list(Acc),
-                    pn_output:print_pnml(PNtoExport, Suffix),
-                    pn_output:print_net(PNtoExport, false, "pdf", Suffix),
-                    ReductionStr = 
-                        float_to_list(100 - (100 * pn_lib:size(PNSlice) / SizeOriginal),[{decimals,2}]),
-                    io:format("~p.- ~s -> Reduction: ~s %\n", [Acc, Name, ReductionStr]),
-                    Acc + 1
-                end,
-                1,
-                Slices
-                ),
-            ok
+            {Res , _} = 
+                lists:mapfoldl(
+                    fun({Name, ShortName, PNSlice}, Acc) ->
+                        PNtoExport = 
+                            pn_input:read_pos_from_svg(PNSlice),
+                        Suffix = 
+                            "_" ++ integer_to_list(Acc),
+                        pn_output:print_pnml(PNtoExport, Suffix),
+                        pn_output:print_net(PNtoExport, false, "pdf", Suffix),
+                        ReductionStr = 
+                            float_to_list(100 - (100 * pn_lib:size(PNSlice) / SizeOriginal),[{decimals,2}]),
+                        Printer("~p.- ~s -> Reduction: ~s %\n", [Acc, Name, ReductionStr]),
+                        {{ShortName, "_" ++ integer_to_list(Acc), ReductionStr} , Acc + 1}
+                    end,
+                    1,
+                    Slices
+                    ),
+            json_output_alg(TailArgs, {SC, PropsParsed, [Warnings, WarningsSC], PN#petri_net.name, PNFile, Res})
     end.
 
 create_pn_and_prop(PNFile, Timeout, Silent, PNSUITEPath) ->
@@ -582,13 +609,13 @@ create_pn_and_prop(PNFile, Timeout, Silent, PNSUITEPath) ->
         pn_properties:apt_properties(PN, Timeout, PNSUITEPath),
     {PN, pn_lib:size(PN), PropOriginal}.
 
-are_properties_preserved(PropList, DictOri, DictMod, PN, PNSlice, TimeoutAnalysis) ->
+are_properties_preserved(PropList, DictOri, DictMod, PN, PNSlice, TimeoutAnalysis, PNSUITEPath) ->
     lists:all(
         fun
             ({lola, LolaFormula}) ->
                 is_lola_property_preserved(LolaFormula, PN, TimeoutAnalysis);
             ({st, ST}) ->
-                pn_properties:is_apt_property_preserved(ST, PN, PNSlice, TimeoutAnalysis);
+                pn_properties:is_apt_property_preserved(ST, PN, PNSlice, TimeoutAnalysis, PNSUITEPath);
             (Prop) -> 
                 is_property_preserved(Prop, DictOri, DictMod) 
         end, 
@@ -606,6 +633,41 @@ is_lola_property_preserved(Formula, PN, TimeoutAnalysis) ->
     pn_properties:check_formula(Formula, LOLAFile1, Dir, TimeoutAnalysis) 
     == 
     pn_properties:check_formula(Formula, LOLAFile2, Dir, TimeoutAnalysis). 
+
+json_output_alg([], _) ->
+    ok;
+json_output_alg(_, {SC, PropsParsed, [WarningsProp, WarningsSC], PNName, PNFile, Res}) ->
+    JSON =
+        {struct,[
+            {"slicing_criterion", 
+                {array,[{struct, [{"place", P}]} || P <- SC]}},
+            {"preserved_properties", 
+                case PropsParsed of 
+                    none ->
+                        {array,[]};
+                    _ ->
+                        {array,
+                            [{struct, [{"property", P}]} || P <- PropsParsed]}
+                end
+            },
+            {"warnings_parsing_slicing_criterion", WarningsSC},
+            {"warnings_parsing_properties", WarningsProp},
+            {"petri_net", 
+                {struct, 
+                    [{"name", PNName}, 
+                    {"file", PNFile}]
+                }},
+            {"slices", 
+                {array,
+                    [{struct, [
+                        {"algorithm", Alg}, 
+                        {"reduction", Reduction}, 
+                        {"output_file", "output/" ++ PNName ++ Suffix ++ ".pnml"}
+                    ]} 
+                    || {Alg, Suffix, Reduction} <- Res]
+                }}
+        ]},
+    io:format("~s",[mochijson:encode(JSON)]).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Property-preservation info
@@ -642,7 +704,7 @@ prop_preservation(Args) ->
             PropsParsed = 
                 pn_properties:parse_property_list(PropsStr),
             Preserved = 
-                are_properties_preserved(PropsParsed, D1, D2, PN1, PN2, TimeoutAnalysis),
+                are_properties_preserved(PropsParsed, D1, D2, PN1, PN2, TimeoutAnalysis, PNSUITEPath),
             io:format("~p\n", [Preserved])
     end.
 
