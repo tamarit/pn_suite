@@ -1,9 +1,11 @@
 #!/bin/bash
 
+path="."
+
 if [ $# != 3 ]
 then 
 	echo -e "Usage:\n\tpn_slice PNML_FILE SLICING_CRITERION (PROPERTIES_LIST or SLICING_ALGORITHM)"
 else
-	erl -pa ebin -run pn_suite slice_prop_preserving $1 $2 "$3" -noshell -s erlang halt
+	erl -pa "$path/ebin" -run pn_suite slice_prop_preserving $1 $2 "$3" -noshell -s erlang halt
 fi
 

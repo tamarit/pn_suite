@@ -1,9 +1,12 @@
 #!/bin/bash
 
+path="."
+
 if [ $# != 1 ]
 then 
 	echo -e "Usage:\n\tpn_suite PNML_FILE"
 else
-	erl -pa ebin -run pn_suite main $1  -noshell -s erlang halt
+	echo "$path/ebin"
+	erl -pa "$path/ebin" -run pn_suite main $1  -noshell -s erlang halt
 fi
 

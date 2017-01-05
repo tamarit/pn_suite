@@ -2,6 +2,7 @@
  
 -export( [  read_pn/1, read_pos_from_svg/1, 
             read_pos_from_svg_web/1, read_data/1,
+            read_file_lines/1,
             is_pnml_file/1] ).
 
 -include("pn.hrl").
@@ -225,6 +226,14 @@ str2int(Str) ->
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % General Input
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+read_file_lines(File) ->
+    {ok, InpDev} = 
+        file:open(File, [read]),
+    Res = 
+        read_data(InpDev),
+    file:close(InpDev),
+    Res.
 
 read_xml_document(File) ->
     {ok, InpDev} = 

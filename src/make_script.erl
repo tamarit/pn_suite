@@ -2,17 +2,19 @@
 
 -export([from_path/1]).
 
-from_path(Path) ->
-	Lines = 
-		["#!/bin/bash"
-		,""
-		,"if [ $# != 1 ]"
-		,"then" 
-		,"\techo -e \"Usage:\n\tpn_suite PNML_FILE\""
-		,"else"
-		,"\terl -pa " ++ Path ++ "/ebin -run pn_suite main $1  -noshell -s erlang halt"
-		,"fi"],
-	   file:write_file("pn_suite_temp",  
-        	list_to_binary(string:join(Lines, "\n"))).
+from_path([Path, Script]) ->
+	ScriptLines = 
+		pn_input:read_file_lines(Script),
+	NewScriptLines = 
+		substitute_path(ScriptLines, Path),
+	file:write_file(Script ++ "_temp",  
+        list_to_binary(string:join(NewScriptLines, "\n"))).
+
+substitute_path([[$p,$a,$t,$h,$= | _] | T], Path) ->
+	["path=\"" ++ Path ++ "\"" | T];
+substitute_path([Other | T], Path) ->
+	[Other | substitute_path(T, Path)];
+substitute_path([], _) ->
+	[].
 
 
