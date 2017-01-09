@@ -52,7 +52,10 @@ parse_property_list_aux(PropsStr) ->
                         Warnings0 = 
                             case length(STExprs0) < length(Rest2) of 
                                 true ->
-                                    "Some properties are unknown. They will be ignored.";
+                                    Unknown = 
+                                        [   P
+                                        ||  P <- Rest2, P /= "siphons" andalso P /= "traps"],
+                                    "Warning: Some properties are unknown. They will be ignored.\n\tUnknown properties: " ++ lists:join(" ", Unknown);
                                 false ->
                                     ""
                             end,

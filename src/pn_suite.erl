@@ -246,7 +246,7 @@ parse_sc(PN, SCStr) ->
         SCParsed ->
             {SCParsed, ""};
         SCFiltered ->      
-            {SCFiltered, "The slicing criterion contains unknown places. They will be ignored."}
+            {SCFiltered, "Warning: The slicing criterion contains unknown places. They will be ignored.\n\tUnknown places: " ++ lists:join(" ", SCParsed -- SCFiltered)}
     end.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
