@@ -25,7 +25,10 @@ run(PN = #petri_net{transitions = Ts}, FunChoose, Executed) ->
             [],
             Ts),
     case FunChoose(PN, Enabled) of 
+        finished ->
+            {PN, lists:reverse(Executed)};
         none ->
+            io:format("There is not any fireable transition.\n"),
             {PN, lists:reverse(Executed)};
         error ->
             error;
@@ -45,10 +48,10 @@ ask_fired_transition(PN, Enabled) ->
     case Enabled of 
         [] ->
             none;
-        [{T, SN}] -> 
-            io:format("Transition ~s is chosen.\n", [SN]),
-            io:get_line(standard_io, ""),
-            T;
+        % [{T, SN}] -> 
+        %     io:format("Only transition ~s is fireable, therefore it is automatically fired.\n", [SN]),
+        %     io:get_line(standard_io, ""),
+        %     T;
         _ ->
             SortingFun = fun({_,V1}, {_, V2}) -> V1 < V2 end,
             {_, Lines, Ans, AnsDict} = 
@@ -57,7 +60,7 @@ ask_fired_transition(PN, Enabled) ->
                     {1, [], [], dict:new()},
                     lists:sort(SortingFun, Enabled)),
             EnhAns = ["f" | Ans],
-            EnhAnsDict = dict:store(f, none,AnsDict),
+            EnhAnsDict = dict:store(f, finished, AnsDict),
             QuestionLines = 
                     ["The following transitions are enabled:" | lists:reverse(Lines)]
                 ++  ["What is the next transition to be fired?" 
