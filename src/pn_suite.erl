@@ -427,7 +427,7 @@ server_random(N) when N > 0 ->
                 none ->
                     ok;
                 _ ->
-                    io:format("Seleced transition: ~s\n", [Next]),
+                    io:format("Selected transition: ~s\n", [Next]),
                     server_random(N - 1)
             end  
     end;
