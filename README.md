@@ -11,7 +11,7 @@ In the rest of this document we describe the main features and functionality of 
 
 Installation and usage
 ----------------------
-There are two prerequisites to use this tool. One is the (free) tool [Graphviz](http://www.graphviz.org/), and the other is the (free) [Erlang/OTP framework](\url{http://www.erlang.org/). The (free) system [LoLA](http://home.gna.org/service-tech/lola/) is optional: it enables the use of [LoLA](http://home.gna.org/service-tech/lola/) expressions as properties to preserve when preforming slicing. These are the few steps needed to have PN-Slicer installed in a Unix system.
+There are two prerequisites to use this tool. One is the (free) tool [Graphviz](http://www.graphviz.org/), and the other is the (free) [Erlang/OTP framework](http://www.erlang.org/). The (free) system [LoLA](http://home.gna.org/service-tech/lola/) is optional: it enables the use of [LoLA](http://home.gna.org/service-tech/lola/) expressions as properties to preserve when preforming slicing. These are the few steps needed to have PN-Slicer installed in a Unix system.
 
 	$ git clone https://github.com/tamarit/pn_suite.git
 	$ cd pn_suite/
