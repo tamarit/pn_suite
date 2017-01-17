@@ -103,7 +103,7 @@ For instance, we can compute several slices with the following command (observe 
 	4.- Yu et al's slicer -> Reduction: 13.64 %
 	5.- Rakow's slicer safety -> Reduction: 4.55 %
 	
-Each slice is stored in a file named `output/<PNML_NAME>_<OUTPUT_NUMBER>.pnml`. For example, Yu's slice generated above can be found at `output/example\_4.pnml`. A pdf file is also generated. If flag `-json` is used, a JSON output is generated with exact details about locations and other relevant data.
+Each slice is stored in a file named `output/<PNML_NAME>_<OUTPUT_NUMBER>.pnml`. For example, Yu's slice generated above can be found at `output/example_4.pnml`. A pdf file is also generated. If flag `-json` is used, a JSON output is generated with exact details about locations and other relevant data.
 
 	{
 	  "slicing_criterion": [
