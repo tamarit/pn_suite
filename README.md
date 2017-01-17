@@ -92,7 +92,7 @@ The names of the algorithms are:
     llorens_prec
     yu
 
-For instance, we can compute several slices with the following command (observe that they all preserve the property `  conflict_free}` and the same deadlock freedom, i.e. `lola:EF DEADLOCK`).
+For instance, we can compute several slices with the following command (observe that they all preserve the property `  conflict_free` and the same deadlock freedom, i.e. `lola:EF DEADLOCK`).
 
 	$ pn_slicer examples/other/pn_example.xml "P6,P9" "conflict_free,lola:EF DEADLOCK" 
 	Petri net named example successfully read.
@@ -176,7 +176,7 @@ Given two Petri nets (often a Petri net and its slice), it shows a list of prope
 	backwards_persistent, num_places, bicf, persistent, bcf, num_tokens,
 	asymmetric_choice, num_arcs, num_transitions, num_labels, safe, k-bounded
 
-For instance, code bellow shows that both properties, `simply_live` and `EF DEADLOCK}`, are preserved between the two Petri nets given as arguments.
+For instance, code bellow shows that both properties, `simply_live` and `EF DEADLOCK`, are preserved between the two Petri nets given as arguments.
 
 
 	$ pn_prop pn_example.xml output/example_1.pnml "simply_live,lola:EF DEADLOCK"
