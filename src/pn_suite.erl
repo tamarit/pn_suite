@@ -23,7 +23,7 @@ main(Args) ->
     Op1 = "Run the Petri Net",
     Op2 = "Export the Petri Net",
     Op3 = "Slicing Llorens et al",
-    Op4 = "Slicing Llorens et al (improved)",
+    Op4 = "Slicing Llorens et al (precise)",
     Op5 = "Slicing Llorens et al (for a given transition sequence)",
     Op6 = "Slicing Yu et al",
     Op7 = "Slicing Rakow CTL",
@@ -57,7 +57,7 @@ main(Args) ->
         Op3 ->
             slicing_common(PN, fun pn_slice:slice/2, "_slc");
         Op4 ->
-            slicing_common(PN, fun pn_slice:slice_imp/2, "_slc_imp");
+            slicing_common(PN, fun pn_slice:slice_imp/2, "_slc_prec");
         Op5 ->
             SC0 = ask_slicing_criterion(PN),
             SC = lists:usort(SC0),
@@ -294,8 +294,8 @@ web([File, Alg, TimeoutStr, SCStr]) ->
             % TODO: Improve this using or extending pn_lib:algorithms()
             FunSlice = 
                 case Alg of 
-                    "llorens_imp" ->
-                        io:format("Slicing using Llorens et al. improved.\n"),
+                    "llorens_prec" ->
+                        io:format("Slicing using Llorens et al. precise.\n"),
                         fun pn_slice:slice_imp/2;
                     "rakow_ctl" ->
                         io:format("Slicing using Rakow CTL.\n"),
@@ -446,7 +446,7 @@ export(PN, Suffix) ->
     PNtoExport = pn_input:read_pos_from_svg(PN),
     Op1 = "pdf",
     Op2 = "dot",
-    Op3 = "PNML compatible with PIPE",
+    Op3 = "PNML (compatible with PIPE)",
     Op4 = "LoLa",
     Op5 = "APT",
     Op6 = "Other formats",
@@ -522,9 +522,9 @@ slice_prop_preserving(Args) ->
         {alg, Alg} ->
             {SizeSlice, Suffix} = 
                 case Alg of 
-                    "llorens_imp" ->
-                        Printer("Slicing using Llorens et al. improved.\n", []),
-                        Suffix0 = "_slc_imp",
+                    "llorens_prec" ->
+                        Printer("Slicing using Llorens et al. precise.\n", []),
+                        Suffix0 = "_slc_prec",
                         Fun = fun pn_slice:slice_imp/2, 
                         {slicing_common(PN, Fun, SC, Suffix0), Suffix0};
                     "rakow_ctl" ->

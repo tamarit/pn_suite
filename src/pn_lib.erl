@@ -174,8 +174,8 @@ flush() ->
 algorithms() -> 
     [
         #slicer{
-            name = "Llorens et al's slicer improved", 
-            short_name = "llorens_imp",
+            name = "Llorens et al's slicer precise", 
+            short_name = "llorens_prec",
             function = fun pn_slice:slice_imp/2},
         #slicer{
             name = "Llorens et al's slicer", 
