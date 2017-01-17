@@ -9,8 +9,21 @@ PN-Suite implements interfaces to communicate with other systems such as [LoLA](
 
 In the rest of this document we describe the main features and functionality of PN-Suite, and its architecture.
 
-Installation and usage
-----------------------
+Table of contents
+=================
+
+  * [PN-Suite](#pn-suite)
+  * [Table of contents](#table-of-contents)
+  * [Installation](#installation)
+  * [Usage](#usage)
+    * [`pn_slicer`](#pn_slicer)
+    * [`pn_prop`](#pn_prop)
+    * [`pn_tools`](#pn_tools)
+  * [Web interface](#web-interface)
+
+
+Installation
+============
 There are two prerequisites to use this tool. One is the (free) tool [Graphviz](http://www.graphviz.org/), and the other is the (free) [Erlang/OTP framework](http://www.erlang.org/). The (free) system [LoLA](http://home.gna.org/service-tech/lola/) is optional: it enables the use of [LoLA](http://home.gna.org/service-tech/lola/) expressions as properties to preserve when preforming slicing. These are the few steps needed to have PN-Slicer installed in a Unix system.
 
 	$ git clone https://github.com/tamarit/pn_suite.git
@@ -19,6 +32,11 @@ There are two prerequisites to use this tool. One is the (free) tool [Graphviz](
 	$ sudo make install
 	
 The first step clones the GitHub's repository content to the local system. Then, `make` is used to compile source files and, finally, three executables ([`pn_slicer`](#pn_slicer), [`pn_prop`](#pn_prop), and [`pn_tools`](#pn_tools)) are generated and installed by `make install`.
+
+Usage
+=====
+
+The three available commands are described in next sections.
 
 pn_slicer
 ---------
@@ -166,3 +184,58 @@ For instance, code bellow shows that both properties, `simply_live` and `EF DEAD
 
 pn_tools
 --------
+
+ This tool is interactive and it can be used to animate a Petri net, slice it, or convert it to several formats.
+ 
+ 	$ pn_tools pn_example.xml
+	Petri net example successfully read.
+
+	These are the available options:
+	1 .- Run the Petri Net
+	2 .- Export the Petri Net
+	3 .- Slicing Llorens et al
+	4 .- Slicing Llorens et al precise
+	5 .- Slicing Llorens et al (for a given transition seq.)
+	6 .- Slicing Yu et al
+	7 .- Slicing Rakow CTL
+	8 .- Slicing Rakow Safety
+	What do you want to do?
+	[1/2/3/4/5/6/7/8]: 
+
+### Animation
+The Petri net can be animated either manually or randomly. If manual animation is chosen, the system iteratively shows the user the enabled transitions, and she can select the transitions that must be fired. The Petri net that is being animated can be found at `output/<PN_NAME>_run.pdf` (thus, an external PDF viewer can be used as a visual support). In this PDF the enabled transitions are highlighted in red, so the user can see them clearly. In the random animation we can specify the number `n` of random steps to be performed, and the Petri net fires `n` random transitions, or until no more transitions can be fired.
+
+	[1/2/3/4/5/6/7/8]: $ 1
+	Available modes:
+	0.- Manually
+	n.- n random steps (at most)
+	How do you want to run the PN? $ 10
+	Selected transition: T5
+	Selected transition: T9
+	Selected transition: T10
+	Selected transition: T7
+	Selected transition: T8
+	There is not any fireable transition.
+	Execution:
+	T5,T9,T10,T7,T8
+
+### Slicing
+The user can select from a menu a slicing algorithm. Then, according to the chosen algorithm, the user can specify a slicing criterion. The Petri net is then automatically sliced and a new Petri net (the slice) is produced. It is important to highlight that this tool implements another slicing algorithm (option 5) besides those of {\tt pn\_slicer}. This algorithm allows us to extract a slice from a Petri net considering a specific firing sequence (instead of all possible firing sequences as all the other algorithms do).
+
+### Output
+The output of PN-Suite can be produced in many different formats, including standard [PNML](http://www.pnml.org/) (compatible with [PIPE5](http://sarahtattersall.github.io/PIPE/)), [LoLA](http://home.gna.org/service-tech/lola/), [APT](https://github.com/CvO-theory/apt), DOT and more than 50 other formats provided by [Graphviz](http://www.graphviz.org/).
+
+	[1/2/3/4/5/6/7/8]: $ 2
+	1 .- pdf
+	2 .- dot
+	3 .- PNML (compatible with PIPE)
+	4 .- LoLA
+	5 .- APT
+	6 .- Other formats
+	What format do you need?
+	[1/2/3/4/5/6]: $ 1
+	
+Web interface
+=============
+
+Even though we strongly encourage all users to install PN-Suite, we have implemented an [online web interface](http://kaz.dsic.upv.es/pn_slicer).
