@@ -61,7 +61,7 @@ parse_property_list_aux(PropsStr) ->
                             end,
                         {STExprs0, Warnings0};
                     false -> 
-                        []
+                        {[], []}
                 end,       
             {PropsStrFiltered ++ LolaExprs ++ STExprs, Warnings}
     end.

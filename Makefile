@@ -15,8 +15,8 @@ clean:
 	@find . -name '*.dump' -prune -exec rm -fr {} \;
 
 install:
-	@make script_install FILE=pn_suite
-	@make script_install FILE=pn_slice
+	@make script_install FILE=pn_tools
+	@make script_install FILE=pn_slicer
 	@make script_install FILE=pn_prop
 
 script_install:

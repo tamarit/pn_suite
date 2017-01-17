@@ -4,7 +4,7 @@ path="."
 
 if [ $# -lt 3 ] || [ $# -gt 4 ] 
 then 
-	echo -e "Usage:\n\tpn_slice PNML_FILE SLICING_CRITERION (PROPERTIES_LIST or SLICING_ALGORITHM) [-json]"
+	echo -e "Usage:\n\tpn_slicer PNML_FILE SLICING_CRITERION (PROPERTIES_LIST or SLICING_ALGORITHM) [-json]"
 else
 	if [ $# -eq 4 ]
 	then

@@ -1,22 +1,28 @@
 -module( pn_results_printer ).
  
--export( [print/0] ).
+-export( [print/0, total/0] ).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Printing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+results() ->
+    [
+      results_2011(), 
+      % results_2012(), 
+      results_2013(), 
+      results_2014(), 
+      results_2015() 
+      % results_2016()
+    ].
+
+total() ->
+    lists:sum([lists:sum( [T || {_, [{_,{_,T}} | _]} <- ResultYear]) || ResultYear <- results()]).
+
 print() ->
     [FirstDict | Rest] = 
         [   to_dict(L) 
-        ||  L <- [
-                results_2011(), 
-                % results_2012(), 
-                results_2013(), 
-                results_2014(), 
-                results_2015() 
-                % results_2016()
-                ]],
+        ||  L <- results()],
     JointDict = 
         lists:foldl(
             fun join_dict/2,
