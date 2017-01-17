@@ -647,8 +647,20 @@ json_output_alg(_, {SC, PropsParsed, [WarningsProp, WarningsSC], PNName, PNFile,
                     none ->
                         {array,[]};
                     _ ->
+                        STs = 
+                            [P || {st, P} <- PropsParsed],
+                        LOLAs = 
+                            [("lola:" ++ P) || {lola, P} <- PropsParsed],
+                        Rest = 
+                            PropsParsed 
+                            -- 
+                            ([P || P = {st, _} <- PropsParsed] 
+                             ++ 
+                             [P || P = {lola, _} <- PropsParsed] ),
+                        PrinteableProps = 
+                            STs ++ LOLAs ++ Rest,
                         {array,
-                            [{struct, [{"property", P}]} || P <- PropsParsed]}
+                            [{struct, [{"property", P}]} || P <- PrinteableProps]}
                 end
             },
             {"warnings_parsing_slicing_criterion", WarningsSC},
