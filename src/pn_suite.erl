@@ -610,6 +610,7 @@ create_pn_and_prop(PNFile, Timeout, Silent, PNSUITEPath) ->
     {PN, pn_lib:size(PN), PropOriginal}.
 
 are_properties_preserved(PropList, DictOri, DictMod, PN, PNSlice, TimeoutAnalysis, PNSUITEPath) ->
+    % io:format("~p\n", [PropList]),
     lists:all(
         fun
             ({lola, LolaFormula}) ->
@@ -701,7 +702,7 @@ prop_preservation(Args) ->
                 ],
             io:format("~s\n", [string:join(InfoAlg, "\n")]);
         [PropsStr | _] ->
-            PropsParsed = 
+            {PropsParsed, _} = 
                 pn_properties:parse_property_list(PropsStr),
             Preserved = 
                 are_properties_preserved(PropsParsed, D1, D2, PN1, PN2, TimeoutAnalysis, PNSUITEPath),
