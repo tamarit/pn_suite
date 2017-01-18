@@ -4,7 +4,7 @@ path="."
 
 if [ $# -lt 2 ] || [ $# -gt 3 ] 
 then 
-	echo -e "Usage: \n\tpn_prop PNML_FILE PNML_FILE [PROPERTIES_LIST]"
+	echo -e "Usage: \n\tpn_prop PNML_FILE PNML_FILE [PROPERTY_LIST]"
 else
 	if [ $# -eq 3 ]
 	then

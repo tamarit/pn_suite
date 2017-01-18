@@ -498,7 +498,19 @@ ask_other_formats(PN, Suffix) ->
 
 slice_prop_preserving(Args) -> 
     TimeoutAnalysis = 5000,
-    [PNSUITEPath, PNFile, SCStr, PropsStr | TailArgs] = Args,
+    % io:format("Args: ~p\n", [Args]),
+    {PNSUITEPath, PNFile, SCStr, PropsStr, TailArgs} = 
+        case Args of 
+            [PNSUITEPath0, PNFile0, SCStr0, PropsStr0 , "JSON" | _] ->
+                {PNSUITEPath0, PNFile0, SCStr0, PropsStr0, "JSON"};
+            [PNSUITEPath0, PNFile0, SCStr0, "JSON" | _] ->
+                {PNSUITEPath0, PNFile0, SCStr0, "", "JSON"};
+            [PNSUITEPath0, PNFile0, SCStr0, PropsStr0 | TailArgs0] ->
+                {PNSUITEPath0, PNFile0, SCStr0, PropsStr0, []};
+            [PNSUITEPath0, PNFile0, SCStr0 | _] ->
+                {PNSUITEPath0, PNFile0, SCStr0, "", []}
+        end,
+    % [PNSUITEPath, PNFile, SCStr, PropsStr | TailArgs] = Args,
     % io:format("~p\n", [{PNFile, PropsStr, SCStr, TailArgs}]),
     {PN, SizeOriginal, PropOriginal} = 
         create_pn_and_prop(PNFile, TimeoutAnalysis, TailArgs /= [], PNSUITEPath),
