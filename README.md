@@ -43,7 +43,7 @@ pn_slicer
 
 This tool allows us to extract slices using one of the algorithms, or to extract all the slices (using all algorithms) that preserve a given set of properties
 
-    $ pn_slicer PNML_FILE SLICING_CRITERION [PROPERTY_LIST|ALGORITHM] [-json]
+    $ pn_slicer PNML_FILE SLICING_CRITERION (PROPERTIES_LIST or SLICING_ALGORITHM) [-json]
     
 where `SLICING_CRITERION` is a list of places separated with commas.
 `PROPERTY_LIST` is optional. It accepts both [APT](https://github.com/CvO-theory/apt]) properties and [LoLA](http://home.gna.org/service-tech/lola/) expressions.
@@ -205,7 +205,7 @@ pn_tools
 ### Animation
 The Petri net can be animated either manually or randomly. If manual animation is chosen, the system iteratively shows the user the enabled transitions, and she can select the transitions that must be fired. The Petri net that is being animated can be found at `output/<PN_NAME>_run.pdf` (thus, an external PDF viewer can be used as a visual support). In this PDF the enabled transitions are highlighted in red, so the user can see them clearly. In the random animation we can specify the number `n` of random steps to be performed, and the Petri net fires `n` random transitions, or until no more transitions can be fired.
 
-	[1/2/3/4/5/6/7/8]: $ 1
+	[1/2/3/4/5/6/7/8]:  1
 	Available modes:
 	0.- Manually
 	n.- n random steps (at most)
@@ -233,7 +233,7 @@ The output of PN-Suite can be produced in many different formats, including stan
 	5 .- APT
 	6 .- Other formats
 	What format do you need?
-	[1/2/3/4/5/6]: $ 1
+	[1/2/3/4/5/6]:  1
 	
 Web interface
 =============
