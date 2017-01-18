@@ -83,7 +83,7 @@ Valid [APT](https://github.com/CvO-theory/apt]) properties are:
 
 LoLA expressions are preceded by `lola`, e.g., `lola:EF DEADLOCK`.
 `ALGORITHM` is also optional. If not specified, all algorithms will be used.
-To choose a slicing algorithm we have to write `alg: ALGORITHM` (no quotes required).
+To choose a slicing algorithm we have to write `alg:ALGORITHM` (no quotes required).
 The names of the algorithms are:
 
     rakow_ctl
@@ -91,6 +91,15 @@ The names of the algorithms are:
     llorens
     llorens_prec
     yu
+
+An example of this usage is:
+
+	$ pn_slicer examples/other/pn_example.xml "P2,P7" alg:llorens
+	Petri net named example successfully read.
+
+	Slicing criterion: [P2, P7]
+
+	Slicing using Llorens et al.
 
 For instance, we can compute several slices with the following command (observe that they all preserve the property `  conflict_free` and the same deadlock freedom, i.e. `lola:EF DEADLOCK`).
 
