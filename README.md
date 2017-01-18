@@ -43,7 +43,7 @@ pn_slicer
 
 This tool allows us to extract slices using one of the algorithms, or to extract all the slices (using all algorithms) that preserve a given set of properties
 
-    $ pn_slicer PNML_FILE SLICING_CRITERION (PROPERTIES_LIST or SLICING_ALGORITHM) [-json]
+    $ pn_slicer PNML_FILE SLICING_CRITERION [PROPERTY_LIST | SLICING_ALGORITHM] [-json]
     
 where `SLICING_CRITERION` is a list of places separated with commas.
 `PROPERTY_LIST` is optional. It accepts both [APT](https://github.com/CvO-theory/apt]) properties and [LoLA](http://home.gna.org/service-tech/lola/) expressions.
@@ -105,6 +105,7 @@ For instance, we can compute several slices with the following command (observe 
 	
 Each slice is stored in a file named `output/<PNML_NAME>_<OUTPUT_NUMBER>.pnml`. For example, Yu's slice generated above can be found at `output/example_4.pnml`. A pdf file is also generated. If flag `-json` is used, a JSON output is generated with exact details about locations and other relevant data.
 
+	$ pn_slicer examples/other/pn_example.xml "P6,P9" "conflict_free,lola:EF DEADLOCK" -json
 	{
 	  "slicing_criterion": [
 	    {
