@@ -2,8 +2,8 @@
 
 <!-- ![Petri Net Slicer](http://kaz.dsic.upv.es/pn_slicer_logo.png) -->
 
-We present PN-Suite, a system prepared to implement, combine, compare, and evaluate Petri net slicing algorithms.
-Roughly, this system can be seen as a workbench that implements the currently most important algorithms for Petri net slicing (it is prepared to easily integrate more algorithms into it). This system provides a new functionality that is particularly useful for the analysis and optimization of Petri nets: It combines all the slicing algorithms with the analysis of properties in such a way that one can reduce the size of a Petri net producing a slice that preserves some desired properties.
+PN-Suite is a system prepared to implement, combine, compare, and evaluate Petri net slicing algorithms.
+Roughly, this system can be seen as a workbench that implements the currently most important algorithms for Petri net slicing (it is prepared to easily integrate more algorithms into it). This system provides a new functionality that is particularly useful for the analysis and optimization of Petri nets: it combines all the slicing algorithms with the analysis of properties in such a way that one can reduce the size of a Petri net producing a slice that preserves some desired properties.
 
 PN-Suite implements interfaces to communicate with other systems such as [LoLA](http://home.gna.org/service-tech/lola/) and [APT](https://github.com/CvO-theory/apt]). This means that PN-Suite takes advantage of [LoLA](http://home.gna.org/service-tech/lola/) and [APT](https://github.com/CvO-theory/apt]) analyses to report about the properties kept or lost by the slices produced.
 
@@ -24,7 +24,7 @@ Table of contents
 
 Installation
 ============
-There are two prerequisites to use this tool. One is the (free) tool [Graphviz](http://www.graphviz.org/), and the other is the (free) [Erlang/OTP framework](http://www.erlang.org/). The (free) system [LoLA](http://home.gna.org/service-tech/lola/) is optional: it enables the use of [LoLA](http://home.gna.org/service-tech/lola/) expressions as properties to preserve when preforming slicing. These are the few steps needed to have PN-Slicer installed in a Unix system.
+There are two prerequisites to use this tool. One is the (free) tool [Graphviz](http://www.graphviz.org/), and the other is the (free) [Erlang/OTP framework](http://www.erlang.org/). The (free) system [LoLA](http://home.gna.org/service-tech/lola/) is optional: it enables the use of [LoLA](http://home.gna.org/service-tech/lola/) expressions as properties to preserve when preforming slicing. These are the few steps needed to have PN-Suite installed in a Unix system.
 
 	$ git clone https://github.com/tamarit/pn_suite.git
 	$ cd pn_suite/
@@ -81,7 +81,7 @@ Valid [APT](https://github.com/CvO-theory/apt]) properties are:
 	num_labels
 	isolated_elements
 
-LoLA expressions are preceded by `lola`, e.g., `lola: EF DEADLOCK`.
+LoLA expressions are preceded by `lola`, e.g., `lola:EF DEADLOCK`.
 `ALGORITHM` is also optional. If not specified, all algorithms will be used.
 To choose a slicing algorithm we have to write `alg: ALGORITHM` (no quotes required).
 The names of the algorithms are:
@@ -166,7 +166,7 @@ This tool allows us to study the preservation of properties of a slice.
     
 Given two Petri nets (often a Petri net and its slice), it shows a list of properties that hold in both Petri nets, and a list of properties that only hold in the original Petri net. It is also possible to specify some specific properties, and only them will be analyzed. For the analysis of properties, `pn_prop` conveniently communicates with either [LoLA](http://home.gna.org/service-tech/lola/), or [APT](https://github.com/CvO-theory/apt]), or both. With the information provided by these tools, it decides whether the required properties are preserved. 
 
-        $ pn_prop pn_example.xml output/example_1.pnml 
+    $ pn_prop pn_example.xml output/example_1.pnml 
 	Preserved properties:
 	weakly_connected, output_nonbranching, strongly_connected, free_choice, pure, 
 	plain, strongly_live, k-marking, s_net, nonpure_only_simple_side_conditions,
@@ -220,7 +220,7 @@ The Petri net can be animated either manually or randomly. If manual animation i
 	T5,T9,T10,T7,T8
 
 ### Slicing
-The user can select from a menu a slicing algorithm. Then, according to the chosen algorithm, the user can specify a slicing criterion. The Petri net is then automatically sliced and a new Petri net (the slice) is produced. It is important to highlight that this tool implements another slicing algorithm (option 5) besides those of {\tt pn\_slicer}. This algorithm allows us to extract a slice from a Petri net considering a specific firing sequence (instead of all possible firing sequences as all the other algorithms do).
+The user can select from a menu a slicing algorithm. Then, according to the chosen algorithm, the user can specify a slicing criterion. The Petri net is then automatically sliced and a new Petri net (the slice) is produced. It is important to highlight that this tool implements another slicing algorithm (option 5) besides those of `pn_slicer`. This algorithm allows us to extract a slice from a Petri net considering a specific firing sequence (instead of all possible firing sequences as all the other algorithms do).
 
 ### Output
 The output of PN-Suite can be produced in many different formats, including standard [PNML](http://www.pnml.org/) (compatible with [PIPE5](http://sarahtattersall.github.io/PIPE/)), [LoLA](http://home.gna.org/service-tech/lola/), [APT](https://github.com/CvO-theory/apt), DOT and more than 50 other formats provided by [Graphviz](http://www.graphviz.org/).
