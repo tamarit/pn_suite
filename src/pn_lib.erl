@@ -174,11 +174,11 @@ flush() ->
 algorithms() -> 
     [
         #slicer{
-            name = "Llorens et al's slicer precise", 
+            name = "Llorens et al.'s slicer (precise)", 
             short_name = "llorens_prec",
             function = fun pn_slice:slice_imp/2},
         #slicer{
-            name = "Llorens et al's slicer", 
+            name = "Llorens et al.'s slicer", 
             short_name = "llorens",
             function = fun pn_slice:slice/2},
         #slicer{
@@ -186,7 +186,7 @@ algorithms() ->
             short_name = "rakow_ctl", 
             function = fun pn_rakow:slice_ctl/2},
         #slicer{
-            name = "Yu et al's slicer", 
+            name = "Yu et al.'s slicer", 
             short_name = "yu",
             function = fun pn_yuetal:slice/2},
         #slicer{

@@ -22,10 +22,10 @@ main(Args) ->
     %     [PN#petri_net.name, PN#petri_net.dir]),
     Op1 = "Run the Petri Net",
     Op2 = "Export the Petri Net",
-    Op3 = "Slicing Llorens et al",
-    Op4 = "Slicing Llorens et al (precise)",
-    Op5 = "Slicing Llorens et al (for a given transition sequence)",
-    Op6 = "Slicing Yu et al",
+    Op3 = "Slicing Llorens et al.",
+    Op4 = "Slicing Llorens et al. (precise)",
+    Op5 = "Slicing Llorens et al. (for a given transition sequence)",
+    Op6 = "Slicing Yu et al.",
     Op7 = "Slicing Rakow CTL",
     Op8 = "Slicing Rakow Safety",
     {_, Lines, Ans, AnsDict} = 
@@ -295,7 +295,7 @@ web([File, Alg, TimeoutStr, SCStr]) ->
             FunSlice = 
                 case Alg of 
                     "llorens_prec" ->
-                        io:format("Slicing using Llorens et al. precise.\n"),
+                        io:format("Slicing using Llorens et al. (precise).\n"),
                         fun pn_slice:slice_imp/2;
                     "rakow_ctl" ->
                         io:format("Slicing using Rakow CTL.\n"),
@@ -535,7 +535,7 @@ slice_prop_preserving(Args) ->
             {SizeSlice, Suffix} = 
                 case Alg of 
                     "llorens_prec" ->
-                        Printer("Slicing using Llorens et al. precise.\n", []),
+                        Printer("Slicing using Llorens et al. (precise).\n", []),
                         Suffix0 = "_slc_prec",
                         Fun = fun pn_slice:slice_imp/2, 
                         {slicing_common(PN, Fun, SC, Suffix0), Suffix0};
