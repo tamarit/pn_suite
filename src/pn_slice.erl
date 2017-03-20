@@ -1,6 +1,6 @@
 -module( pn_slice ).
  
--export( [slice/2, slice_imp/2] ).
+-export( [slice/2, slice_imp/2, slice_gen/2] ).
 
 -include("pn.hrl").
 
@@ -22,6 +22,15 @@ slice(PN0, SC) ->
     % PsSet = sets:intersection(PsB, PsF),
     % TsSet = sets:intersection(TsB, TsF),
     % pn_lib:filter_pn(PN, {PsSet, TsSet}).
+
+slice_gen(PN0, SC) ->
+    PN = pn_lib:new_pn_fresh_digraph(PN0),
+    {PsB, TsB} = backward_slice_gen(PN, SC),
+
+    % Without intersection
+    BPN = pn_lib:filter_pn(PN, {PsB, TsB}),
+    {PsF, TsF} = forward_slice(BPN),
+    pn_lib:filter_pn(BPN, {PsF, TsF}).
     
 backward_slice(PN = #petri_net{digraph = G}, [P | W], Done, {PsS, TsS}) ->
     InTs = 
@@ -34,7 +43,21 @@ backward_slice(PN = #petri_net{digraph = G}, [P | W], Done, {PsS, TsS}) ->
     backward_slice(PN, lists:usort((W ++ InPs) -- Done), [P|Done], {PsS, InTs ++ TsS});
 backward_slice(_, [], Done, {PsS, TsS}) ->
     {sets:from_list(PsS ++ Done), sets:from_list(TsS)}.
+
+backward_slice_gen(PN, SC) ->
+    pn_lib:slice_rec(
+        PN, 
+        sets:from_list(SC), 
+        sets:new(), 
+        sets:new(), 
+        fun(I, _) -> 
+            sets:from_list(I) 
+        end,
+        % No restrictions. All are ok.
+        fun(_, _) -> true end).
     
+
+
 forward_slice(PN = #petri_net{places = Ps}) ->
     StartingPs = 
         dict:fold(
@@ -47,8 +70,8 @@ forward_slice(PN = #petri_net{places = Ps}) ->
             [],
             Ps),
     % io:format("StartingPs: ~p\n", [StartingPs]),
-    #petri_net{transitions = NTs} 
-        = pn_run:set_enabled_transitions(PN),
+    #petri_net{transitions = NTs} = 
+        pn_run:set_enabled_transitions(PN),
     StartingTs = 
         dict:fold(
             fun

@@ -24,9 +24,11 @@ script_install:
 	@chmod +x "$(FILE)_temp"
 	@mv -f "$(FILE)_temp" $(ERLC_PATH)/$(FILE)
 
-
 select:
 	@erl -pa ebin -run pn_select_html create -noshell -s erlang halt
+
+test:
+	@erl -noshell -pa ebin -eval "eunit:test(pn_tests, [verbose])" -s init stop	
 
 # ***********************************
 # *********** Benchmarking **********

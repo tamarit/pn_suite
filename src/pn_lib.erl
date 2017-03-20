@@ -13,8 +13,8 @@
         flush/0,
         algorithms/0,
         size/1,
-        new_pn_fresh_digraph/1
-
+        new_pn_fresh_digraph/1,
+        slice_rec/6
     ] ).
 
 -include("pn.hrl").
@@ -201,3 +201,46 @@ size(#petri_net{places = Ps, transitions = Ts}) ->
 new_pn_fresh_digraph(PN = #petri_net{digraph = G}) ->
     NG = digraph_utils:subgraph(G, digraph:vertices(G)),
     PN#petri_net{digraph = NG}.
+
+% Generic function for Rakow_CTL, Rakow_Safety, Llorens_backwards
+slice_rec(PN = #petri_net{digraph = G}, P_, T_, PDone, TsFun, ValidTFun) ->
+    % io:format("T_: ~p\n", [lists:sort(sets:to_list(T_))]),
+    Pending = sets:to_list(sets:subtract(P_, PDone)),
+    case Pending of 
+        [] ->
+            {P_, T_};
+        [P|_] ->
+            InTs = 
+                digraph:in_neighbours(G, P),
+            OutTs = 
+                digraph:out_neighbours(G, P),
+            Ts = 
+                sets:to_list(
+                    sets:subtract(
+                        TsFun(InTs, OutTs),
+                        T_)),
+            {NP_, NT_} = 
+                lists:foldl(
+                    fun(T, {CP_, CT_}) -> 
+                        TinOut =  
+                            lists:member(T, InTs),
+                        TinIn = 
+                            lists:member(T, OutTs), 
+                        case ValidTFun(TinIn, TinOut) of 
+                            false -> 
+                                {CP_, CT_};
+                            true ->
+                                {
+                                    sets:union(
+                                        CP_,
+                                        sets:from_list(
+                                            digraph:in_neighbours(G, T))
+                                        ),
+                                    sets:add_element(T, CT_)
+                                }
+                        end
+                    end,
+                    {P_, T_},
+                    Ts),
+            slice_rec(PN, NP_, NT_, sets:add_element(P, PDone), TsFun, ValidTFun)
+    end.

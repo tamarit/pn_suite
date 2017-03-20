@@ -1,6 +1,6 @@
 -module( pn_bench ).
  
--export( [bench/0] ).
+-export( [bench/0, build_scs/3] ).
 
 -include("pn.hrl").
 
@@ -143,7 +143,7 @@ bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev) ->
                 MaxSC0
         end,
     SCS = 
-        build_scs(Ps, SlicesPerNet, MaxSC, []),
+        build_scs(Ps, SlicesPerNet, MaxSC),
     FinalDict = 
         lists:foldl(
             fun(SC, CDict) ->
@@ -445,6 +445,9 @@ new_alg_dict(Value) ->
                 {AN, Value} 
             end, 
             pn_lib:algorithms())).
+
+build_scs(Vs, SlicesPerNet, MaxSC) ->
+    build_scs(Vs, SlicesPerNet, MaxSC, []).
 
 build_scs(_, 0, _, Acc) ->
     Acc;
