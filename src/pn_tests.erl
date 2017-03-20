@@ -17,10 +17,10 @@ gen_slice_test_() ->
             ,   "examples/other/pn_yuetal2.xml"
         ],
     Res = 
-        [test_file(File) || File <- Files],
+        [slice_file(File) || File <- Files],
     [?_assertEqual({SC, Old}, {SC, New}) || {SC, Old, New} <- Res].
 
-test_file(File) -> 
+slice_file(File) -> 
     MaxSC0 = 5,
     PN = 
         pn_input:read_pn(File),
