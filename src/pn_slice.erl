@@ -217,29 +217,37 @@ take_smallest_net(List, OriPN) ->
                 NPN = 
                 #petri_net{places = NPs, transitions = NTs} = 
                     pn_lib:filter_pn(PN, Net),
-                io:format("~p\n", [{lists:sort(dict:fetch_keys(NPs)), lists:sort(dict:fetch_keys(NTs))} ]),
+                % io:format("~p\n", [{lists:sort(dict:fetch_keys(NPs)), lists:sort(dict:fetch_keys(NTs))} ]),
                 {pn_lib:size(NPN), 
+                 {NPs, NTs},
                  NPN}
             end,
             List),
     Sorted = 
         lists:sort(
-            fun({Size1, _}, {Size2, _}) ->
-                Size1 < Size2
+            fun({Size1, PTs1, _}, {Size2, PTs2, _}) ->
+                if  
+                    Size1 < Size2 ->
+                        true;
+                    Size1 > Size2 ->
+                        false;
+                    Size1 == Size2 ->
+                        PTs1 < PTs2 
+                end 
             end,
             WithSize),
     case first_not_zero(Sorted) of 
         none ->
             OriPN;
             % pn_lib:filter_pn(OriPN, {sets:new(), sets:new()});
-        {_,PN} ->
-            io:format("Selected: ~p\n", [{lists:sort(dict:fetch_keys(PN#petri_net.places)), lists:sort(dict:fetch_keys(PN#petri_net.transitions))} ]),
+        {_,_,PN} ->
+            % io:format("Selected: ~p\n", [{lists:sort(dict:fetch_keys(PN#petri_net.places)), lists:sort(dict:fetch_keys(PN#petri_net.transitions))} ]),
             PN
     end.
     
-first_not_zero([H = {0, _}]) ->
+first_not_zero([H = {0, _, _}]) ->
     H;
-first_not_zero([{0, _} | T]) ->
+first_not_zero([{0, _, _} | T]) ->
     first_not_zero(T);
 first_not_zero([H | _]) ->
     H;
@@ -261,7 +269,6 @@ backward_slice_imp(PN = #petri_net{digraph = G}, [P | W], Done, {PsS, TsS}) ->
         %     backward_slice_imp(PN, lists:usort((W ++ InPs) -- NDone), NDone, {NPs, [T | TsS]});
         _ ->
             % All branches
-            % io:format("P: ~p InTs: ~p\n", [P, InTs]),
             Branches = 
                 lists:map(
                     fun(T) ->
@@ -276,7 +283,8 @@ backward_slice_imp(PN = #petri_net{digraph = G}, [P | W], Done, {PsS, TsS}) ->
             Res = 
                 lists:concat(Branches),
             % io:format("~p\n", [Branches]),
-            io:format("\nBranches:\n~p\n", [[{lists:sort(sets:to_list(PsT)), lists:sort(sets:to_list(TsT))} || {PsT, TsT} <- Res]]),
+            % io:format("P: ~p InTs: ~p\n", [P, InTs]),
+            % io:format("\nBranches:\n~p\n", [[{lists:sort(sets:to_list(PsT)), lists:sort(sets:to_list(TsT))} || {PsT, TsT} <- Res]]),
             Res
             
     end;

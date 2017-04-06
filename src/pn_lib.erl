@@ -202,24 +202,36 @@ new_pn_fresh_digraph(PN = #petri_net{digraph = G}) ->
     NG = digraph_utils:subgraph(G, digraph:vertices(G)),
     PN#petri_net{digraph = NG}.
 
-% Generic function for Rakow_CTL, Rakow_Safety, Llorens_backwards
+% Generic function for Rakow_CTL, Rakow_Safety, Llorens_backwards, Llorens_backwards (precise), Llorens_backwards (precise & single)
 slice_rec(PN = #petri_net{digraph = G}, P_, T_, PDone, TsFun, ValidTFun, CreateBranches) ->
     % io:format("T_: ~p\n", [lists:sort(sets:to_list(T_))]),
     Pending = sets:to_list(sets:subtract(P_, PDone)),
+    % io:format("Pending: ~p\n", [Pending]),
+    % io:format("P_: ~p\n", [sets:to_list(P_)]),
     case Pending of 
         [] ->
+            % io:format("Acaba\n"),
             [{P_, T_}];
         [P|_] ->
             InTs = 
                 digraph:in_neighbours(G, P),
             OutTs = 
                 digraph:out_neighbours(G, P),
+            % io:format("P: ~p\n", [P]),
             % io:format("InTs: ~p\n", [InTs]),
+            % io:format("OutTs: ~p\n", [OutTs]),
             Ts = 
-                sets:to_list(
-                    sets:subtract(
-                        TsFun(InTs, OutTs, G, P_),
-                        T_)),
+                % TODO: Study if it should be another parameter: Ignore visited transition
+                case CreateBranches of 
+                    true -> 
+                        sets:to_list(
+                            TsFun(InTs, OutTs, G, P_));
+                    false -> 
+                        sets:to_list(
+                            sets:subtract(
+                                TsFun(InTs, OutTs, G, P_),
+                                T_))
+                end,
             FoldFun = 
                 fun(T, {CP_, CT_}) -> 
                         TinOut =  
@@ -240,7 +252,7 @@ slice_rec(PN = #petri_net{digraph = G}, P_, T_, PDone, TsFun, ValidTFun, CreateB
                                 }
                         end
                     end,
-            NPsNTs = 
+            NPsNTs0 = 
                 case CreateBranches of 
                     true -> 
                         lists:map(
@@ -254,7 +266,16 @@ slice_rec(PN = #petri_net{digraph = G}, P_, T_, PDone, TsFun, ValidTFun, CreateB
                             {P_, T_},
                             Ts)]
                 end,
-            io:format("~p\n", [[{lists:sort(sets:to_list(PsT)), lists:sort(sets:to_list(TsT))} || {PsT, TsT} <- NPsNTs]]),
+            NPsNTs = 
+                case NPsNTs0 of 
+                    [] -> 
+                        [{P_, T_}];
+                    [_|_] ->
+                        NPsNTs0
+                end,
+            % io:format("P: ~p InTs: ~p\n", [P, InTs]),
+            % io:format("Ts: ~p\n", [Ts]),
+            % io:format("\nBranches:\n~p\n", [[{lists:sort(sets:to_list(PsT)), lists:sort(sets:to_list(TsT))} || {PsT, TsT} <- NPsNTs]]),
             NPDone = 
                 sets:add_element(P, PDone),
             lists:concat(

@@ -76,6 +76,16 @@ llorens_prec_single_ori_vs_gen_test_() ->
     [?_assertEqual({SC, File, Old}, {SC, File, New}) 
      || {SC, File, Old, New} <- Res].
 
+llorens_prec_ori_vs_gen_test_() ->
+    Res = 
+        [slice_file(
+            fun pn_slice:slice_imp/2, 
+            fun pn_slice:slice_imp_gen/2, 
+            File) 
+        || File <- files()],
+    [?_assertEqual({SC, File, Old}, {SC, File, New}) 
+     || {SC, File, Old, New} <- Res].
+
 slice_file(OldFun, NewFun, File) -> 
     MaxSC0 = 
         5,
