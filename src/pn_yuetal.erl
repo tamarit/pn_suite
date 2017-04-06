@@ -1,8 +1,9 @@
 -module( pn_yuetal ).
  
 -export( [
-    slice/2,
+    slice/2, slice_no_sim/2,
     write_sdg/2,
+    write_sdg_sim/2,
     sdg/2,
     bsg/3
     ] ).
@@ -18,15 +19,33 @@ slice(PN0, SC) ->
     PN = pn_lib:new_pn_fresh_digraph(PN0),
     SDG = sdg_sim(PN, SC),
     BSG = bsg_sim(PN, SDG, SC),
-    % write_sdg(SDG, "sdg_sim.dot"),
-    % write_sdg(BSG, "bsg_sim.dot"),
-    pn_lib:filter_pn(PN, sdg_places_trans(BSG)).
+    write_sdg_sim(SDG, "sdg_sim.dot"),
+    write_sdg_sim(BSG, "bsg_sim.dot"),
+    PTs = sdg_places_trans(BSG),
+    io:format("~p\n", [{lists:sort(sets:to_list(element(1, PTs))), lists:sort(sets:to_list(element(2, PTs)))} ]),
+    pn_lib:filter_pn(PN, PTs).
+
+slice_no_sim(PN0, SC) ->
+    PN = pn_lib:new_pn_fresh_digraph(PN0),
+    SDG = sdg(PN, SC),
+    % io:format("Finished SDG construction\n"),
+    write_sdg(SDG, "sdg.dot"),
+    BSG = bsg(PN, SDG, SC),
+    % io:format("Finished BSG construction\n"),
+    write_sdg(BSG, "bsg.dot"),
+    PTs = sdg_places_trans(BSG),
+    io:format("~p\n", [{lists:sort(sets:to_list(element(1, PTs))), lists:sort(sets:to_list(element(2, PTs)))} ]),
+    pn_lib:filter_pn(PN, PTs).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SDG Output
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 write_sdg(SDG, File) ->
+    file:write_file(File, 
+        list_to_binary(sdg_to_dot(SDG))).
+
+write_sdg_sim(SDG, File) ->
     file:write_file(File, 
         list_to_binary(sdg_to_dot_sim(SDG))).
 
@@ -83,7 +102,12 @@ sdg_to_dot_sim(#sdg{digraph = G}) ->
     Vs = 
         digraph:vertices(G),
     Es = 
-        lists:usort([begin {_, S, T, Label} = digraph:edge(G, E), {S, T, Label} end || E <- digraph:edges(G)]),
+        lists:usort(
+            [begin 
+                {_, S, T, Label} = digraph:edge(G, E), 
+                {S, T, Label} 
+            end 
+            || E <- digraph:edges(G)]),
     VsDot = 
         lists:map(fun sdg_node_to_dot/1, Vs),
     EsDot = 
@@ -139,7 +163,7 @@ bsg_sim(#petri_net{places = Ps}, #sdg{digraph = SDG}, SC) ->
             BSG
     end.
 
-% Partir de nodes amb marcat
+% Partir de nodes con marcado
 
 % Cuando procesa un lugar coge tanto ese lugar como todos los lugares a los que se puede llegar con las transciones del bslice que salgan de ese lugar 
 % Si p_i -> t -> * coger todas las p_k tal que p_k -> t -> *, es decir todos los lugares que hacen falta para habilitar la transicion
@@ -150,13 +174,24 @@ bsg_while_S_sim(G_SDG, G_BSG, [S_i | S0], Done) ->
     digraph:add_vertex(G_BSG, S_i),
     R = digraph:vertices(G_SDG),
     R_ = digraph:vertices(G_BSG),
-    SKs0 = [N || N <- R, sets:intersection(sets:from_list(S_i), sets:from_list(N)) /= sets:new()],
+    SKs0 = 
+        [N 
+        ||  N <- R, 
+            sets:intersection(
+                sets:from_list(S_i), 
+                sets:from_list(N)) /= sets:new()],
     % io:format("SKs0: ~p\n", [{S_i,R, SKs0}]),
     % io:format("R_: ~p\n", [R_]),
-    SKs = [begin digraph:add_vertex(G_BSG, S_k), S_k end  || S_k <- SKs0, lists:member(S_k -- S_i, R_)],
+    SKs = 
+        [begin 
+            digraph:add_vertex(G_BSG, S_k), 
+            S_k 
+         end  
+        || S_k <- SKs0, lists:member(S_k -- S_i, R_)],
     % io:format("SKs: ~p\n", [SKs]),
     S = SKs ++ S0,
     OE = digraph:out_edges(G_SDG, S_i),
+    % io:format("OE: ~p\n", [[digraph:edge(G_SDG, OneOE) || OneOE <- OE]]),
     case OE of 
         [] -> 
             bsg_while_S_sim(G_SDG, G_BSG, S -- Done, [S_i | Done]);
@@ -177,14 +212,38 @@ bsg_while_S_sim(G_SDG, G_BSG, [S_i | S0], Done) ->
                             SJs)
                     end,
                     S,
+                    % selection of the representative arcs
                     % OE),
                     % [lists:last(OE)]),
-                    [hd(OE)]),
+                    % [hd(OE)]),
+                    [take_smallest_transition(G_SDG, OE)]),
             bsg_while_S_sim(G_SDG, G_BSG, NS -- Done, [S_i | Done])
     end;
 bsg_while_S_sim(_, _, [], _) -> 
     ok.
 
+take_smallest_transition(G_SDG, List) -> 
+    WithTs = 
+        [begin 
+            {E, _, _, T_i} = digraph:edge(G_SDG, E), 
+            {E, T_i} 
+        end
+        || E <- List],
+    Sorted = 
+        lists:sort(
+            fun({_, TA}, {_, TB}) -> 
+                if 
+                    length(TA) < length(TB) -> 
+                        true;
+                    length(TA) == length(TB) -> 
+                        TA < TB;
+                    length(TA) > length(TB) -> 
+                        false 
+                end 
+            end,
+            WithTs),
+    {Smallest, _} = hd(Sorted),
+    Smallest.
 
 bsg_process_s_j_sim(G_BSG, S_i, S_j, T_i, S) ->
     % io:format("S_j: ~p\n", [S_j]),
@@ -210,9 +269,9 @@ sdg(PN, SC) ->
      || N <- Nodes],
     SDG = SDG0#sdg{structural_nodes = [Nodes]},
     FSDG = sdg_while(PN, SDG, Nodes),
-    file:write_file(
-        "sdg.dot", 
-        list_to_binary(sdg_to_dot(FSDG))),
+    % file:write_file(
+    %     "sdg.dot", 
+    %     list_to_binary(sdg_to_dot(FSDG))),
     FSDG.
 
 
@@ -294,8 +353,6 @@ add_to_structurals(SDG = #sdg{structural_nodes = SN}, N) ->
             SDG#sdg{structural_nodes = [N | SN]}
     end.
 
-
-
 sdg_to_dot(#sdg{digraph = G, structural_nodes = SN}) ->
     % Vs = 
     %     digraph:vertices(G),
@@ -371,7 +428,7 @@ bsg(#petri_net{places = Ps}, #sdg{digraph = G_SDG, structural_nodes = SN}, SC) -
             digraph:add_vertex(G_BSG, N) 
         end, 
         S),
-    bsg_while_S(G_SDG, G_BSG, SN, S),
+    bsg_while_S(G_SDG, G_BSG, SN, S, []),
     Vs = digraph:vertices(G_BSG),
     % if \forall r \in R' -> r \not\in SlicingCriterion
         % BSG = \empty
@@ -383,9 +440,9 @@ bsg(#petri_net{places = Ps}, #sdg{digraph = G_SDG, structural_nodes = SN}, SC) -
             NSN = 
                 [[N || N <- Group, lists:member(N, Vs)] || Group <- SN],
             FBSG = BSG#sdg{structural_nodes = NSN},
-            file:write_file(
-                "bsg.dot", 
-                list_to_binary(sdg_to_dot(FBSG))),
+            % file:write_file(
+            %     "bsg.dot", 
+            %     list_to_binary(sdg_to_dot(FBSG))),
             % clean structural_nodes leaving only the nodes in R'
             FBSG
     end.
@@ -394,14 +451,22 @@ bsg(#petri_net{places = Ps}, #sdg{digraph = G_SDG, structural_nodes = SN}, SC) -
     % foreach s_i \in S
         % Elegir un t_i de los arcos de salida de s_i
             % foreach s_j al que se llega desde el arco etiquetado con t_i
-bsg_while_S(G_SDG, G_BSG, SN, [S_i | S0]) -> 
+bsg_while_S(G_SDG, G_BSG, SN, [S_i | S0], Done) -> 
     % io:format("Entra : ~p\n", [S_i]),
+    % io:get_line(""),
+    NDone = [S_i | Done],
     digraph:add_vertex(G_BSG, S_i),
     OE = digraph:out_edges(G_SDG, S_i),
 
     R = digraph:vertices(G_SDG),
     R_ = digraph:vertices(G_BSG),
-    SKs0 = [N || N <- R, sets:intersection(sets:from_list(S_i), sets:from_list(N)) /= sets:new()] -- [S_i],
+    SKs0 = 
+        [N 
+        ||  N <- R, 
+            sets:intersection(
+                sets:from_list(S_i), 
+                sets:from_list(N)) /= sets:new()] 
+        -- [S_i],
     % io:format("SKs0: ~p\n", [{S_i,R, SKs0}]),
     % io:format("R_: ~p\n", [R_]),
     SKs = [S_k || S_k <- SKs0, lists:member(S_k -- S_i, R_)],
@@ -413,7 +478,7 @@ bsg_while_S(G_SDG, G_BSG, SN, [S_i | S0]) ->
             [S_k | _] ->
                 digraph:add_vertex(G_BSG, S_k),
                 % FromSNk = sn_of_node(SN, S_k),
-                FromSNk = [S_k],
+                FromSNk = [S_k] -- NDone,
                 lists:usort(FromSNk ++ S0) 
         end,
 
@@ -423,13 +488,15 @@ bsg_while_S(G_SDG, G_BSG, SN, [S_i | S0]) ->
     %     [digraph:edge(G_SDG, E) || E <- OE],
     case OE of 
         [] -> 
-            bsg_while_S(G_SDG, G_BSG, SN, S);
-        [OneOE|_] ->
+            bsg_while_S(G_SDG, G_BSG, SN, S, NDone);
+        List = [_|_] ->
+            OneOE = take_smallest_transition(G_SDG, List),
             {OneOE, S_i, _, T_i} = digraph:edge(G_SDG, OneOE),
             SJs = 
                 [element(3, digraph:edge(G_SDG, E)) 
                  || E <- digraph:edges(G_SDG), 
                     element(4, digraph:edge(G_SDG, E)) == T_i],
+            % io:format("S: ~p\n", [S]),
             NS = 
                 lists:foldl(
                     fun (S_j, CS) ->
@@ -437,18 +504,34 @@ bsg_while_S(G_SDG, G_BSG, SN, [S_i | S0]) ->
                     end,
                     S,
                     SJs),
-            bsg_while_S(G_SDG, G_BSG, SN, NS)
+            % io:format("NS: ~p\n", [NS]),
+            % io:format("Vs: ~p\n", [digraph:vertices(G_BSG)]),
+            bsg_while_S(G_SDG, G_BSG, SN, NS, NDone)
     end;
-bsg_while_S(_, _, _, []) -> 
+bsg_while_S(_, _, _, [],_) -> 
     ok.
 
 
 bsg_process_s_j(G_SDG, G_BSG, _, S_i, S_j, T_i, S0) ->
     S = S0,
-
     case digraph:vertex(G_BSG, S_j) of 
         {S_j, _} ->
-            case [E || E <- digraph:out_edges(G_BSG, S_i), element(3, digraph:edge(G_SDG, E)) ==  S_j] of 
+            case [  E 
+                    ||  E <- digraph:out_edges(G_BSG, S_i),
+                        % begin 
+                        %     file:write_file(
+                        %         "salida.txt", 
+                        %         list_to_binary(
+                        %             pn_lib:format("E: ~p\n", [digraph:edge(G_SDG, E)]))), 
+                        %     true 
+                        % end, 
+                        case digraph:edge(G_SDG, E) of 
+                            false -> 
+                                false;
+                            EdgeInfo -> 
+                                element(3, EdgeInfo) ==  S_j
+                        end] 
+            of 
                 [] ->
                     digraph:add_edge(G_BSG, S_i, S_j, T_i),
                     % io:format("No estava arc\n"),

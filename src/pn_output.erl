@@ -1,6 +1,7 @@
 -module( pn_output ).
  
--export( [  print_net_run/1, print_net/4, 
+-export( [  print_net_run/1, 
+            print_net/4, print_net/5,
             print_net_file/3, print_net_file/4,
             print_pnml/2, print_pnml_file/2,
             print_lola/2, print_lola_file/2, 
@@ -125,13 +126,13 @@ print_net_file_common(PN, File, Format, Highlighted) ->
         ++   File ++ "." ++ Format),
     cmd_try("rm -f pn_slicer_temp.dot").
 
-print_net(PN, ShowEnabled, Format, Suffix) ->
+print_net(PN, ShowEnabled, Format, Suffix, Highlighted) ->
     Output = PN#petri_net.dir ++ "/output",
     cmd_try("mkdir " ++ Output),
     file:write_file(
             Output ++ "/" 
         ++  PN#petri_net.name ++ "_temp.dot",  
-        list_to_binary(to_dot(PN, ShowEnabled, []))),
+        list_to_binary(to_dot(PN, ShowEnabled, Highlighted))),
     cmd_try(
             "dot -T" ++ Format ++ " " 
         ++  Output ++ "/" 
@@ -141,6 +142,9 @@ print_net(PN, ShowEnabled, Format, Suffix) ->
     cmd_try(
             "rm -f " ++  Output ++ "/" 
         ++  PN#petri_net.name ++ "_temp.dot").
+
+print_net(PN, ShowEnabled, Format, Suffix) ->
+    print_net(PN, ShowEnabled, Format, Suffix, []).
 
 formats() ->
     [bmp, canon, cgimage, cmap, cmapx, cmapx_np, dot, 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <pnml>
-    <net id="imp1" type="P/T net">
-        <token id="improve1" red="0" green="0" blue="0"/>
+    <net id="imp2" type="P/T net">
+        <token id="improve2" red="0" green="0" blue="0"/>
         <place id="P0">
             <graphics>
                 <position x="259.0" y="118.0"/>
@@ -79,7 +79,7 @@
                 <graphics>
                     <offset x="0.0" y="0.0"/>
                 </graphics>
-                <value>Default,1</value>
+                <value></value>
             </initialMarking>
         </place>
         <place id="P4">

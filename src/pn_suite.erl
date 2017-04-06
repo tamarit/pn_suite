@@ -94,11 +94,19 @@ slicing_common(PN, SliceFun, Suffix) ->
     PNSlice = SliceFun(PN, SC),
     export(PNSlice, Suffix).
 
-slicing_common(PN, SliceFun, SC, Suffix) ->
+% slicing_common(PN, SliceFun, SC, Suffix) ->
+%     pn_lib:build_digraph(PN),
+%     PNSlice = SliceFun(PN, SC),
+%     PNtoExport = pn_input:read_pos_from_svg(PNSlice),
+%     pn_output:print_pnml(PNtoExport, Suffix),
+%     pn_lib:size(PNtoExport).
+
+slicing_common_with_print(PN, SliceFun, SC, Suffix) ->
     pn_lib:build_digraph(PN),
     PNSlice = SliceFun(PN, SC),
     PNtoExport = pn_input:read_pos_from_svg(PNSlice),
     pn_output:print_pnml(PNtoExport, Suffix),
+    pn_output:print_net(PNtoExport, false, "pdf", Suffix, SC),
     pn_lib:size(PNtoExport).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -538,28 +546,54 @@ slice_prop_preserving(Args) ->
                         Printer("Slicing using Llorens et al. (precise).\n", []),
                         Suffix0 = "_slc_prec",
                         Fun = fun pn_slice:slice_imp/2, 
-                        {slicing_common(PN, Fun, SC, Suffix0), Suffix0};
+                        {slicing_common_with_print(PN, Fun, SC, Suffix0), Suffix0};
+                    "llorens_pg" ->
+                        Printer("Slicing using Llorens et al. (precise). GENERIC VERSION.\n", []),
+                        Suffix0 = "_slc_pg",
+                        Fun = fun pn_slice:slice_imp_gen/2, 
+                        {slicing_common_with_print(PN, Fun, SC, Suffix0), Suffix0};
+                    "llorens_ps" ->
+                        Printer("Slicing using Llorens et al. (precise) SINGLE VERSION.\n", []),
+                        Suffix0 = "_slc_ps",
+                        Fun = fun pn_slice:slice_imp_single/2, 
+                        {slicing_common_with_print(PN, Fun, SC, Suffix0), Suffix0};
+                    "llorens_psg" ->
+                        Printer("Slicing using Llorens et al. (precise) SINGLE & GENERIC VERSION.\n", []),
+                        Suffix0 = "_slc_psg",
+                        Fun = fun pn_slice:slice_imp_single_gen/2, 
+                        {slicing_common_with_print(PN, Fun, SC, Suffix0), Suffix0};
                     "rakow_ctl" ->
                         Printer("Slicing using Rakow CTL.\n", []),
                         Suffix0 = "_slc_rakow_ctl",
                         Fun = fun pn_rakow:slice_ctl/2,
-                        {slicing_common(PN, Fun, SC, Suffix0), Suffix0};
+                        {slicing_common_with_print(PN, Fun, SC, Suffix0), Suffix0};
                     "rakow_safety" ->
                         Printer("Slicing using Rakow safety.\n", []),
                         Suffix0 = "_slc_rakow_safety",
                         Fun = fun pn_rakow:slice_safety/2,
-                        {slicing_common(PN, Fun, SC, Suffix0), Suffix0};
+                        {slicing_common_with_print(PN, Fun, SC, Suffix0), Suffix0};
                     "yu" ->
                         Printer("Slicing using Yu et al.\n", []),
                         Suffix0 = "_slc_yu",
                         Fun = fun pn_yuetal:slice/2,
-                        {slicing_common(PN, Fun, SC, Suffix0), Suffix0};
+                        {slicing_common_with_print(PN, Fun, SC, Suffix0), Suffix0};
+                    "yu_ori" ->
+                        Printer("Slicing using Yu et al. (ORIGINAL)\n", []),
+                        Suffix0 = "_slc_yu_ori",
+                        Fun = fun pn_yuetal:slice_no_sim/2,
+                        {slicing_common_with_print(PN, Fun, SC, Suffix0), Suffix0};
+                    "llorens_gen" ->
+                        Printer("Slicing using Llorens et al. (GENERIC)\n", []),
+                        Suffix0 = "_slc_gen",
+                        Fun = fun pn_slice:slice_gen/2,
+                        {slicing_common_with_print(PN, Fun, SC, Suffix0), Suffix0};
                     _ ->
                         Printer("Slicing using Llorens et al.\n", []),
                         Suffix0 = "_slc",
                         Fun = fun pn_slice:slice/2,
-                        {slicing_common(PN, Fun, SC, Suffix0), Suffix0}
+                        {slicing_common_with_print(PN, Fun, SC, Suffix0), Suffix0}
                 end,
+            % pn_output:print_net(PN, false, "pdf", Suffix),
             ReductionStr = 
                 float_to_list(100 - (100 * SizeSlice / SizeOriginal),[{decimals,2}]),
             json_output_alg(TailArgs, {SC, ReductionStr, [Warnings, WarningsSC], PN#petri_net.name, PNFile, [{Alg, Suffix, no_calc}]});

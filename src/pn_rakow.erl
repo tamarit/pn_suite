@@ -11,19 +11,20 @@
 
 slice_ctl(PN0, SC) ->
     PN = pn_lib:new_pn_fresh_digraph(PN0),
-    {Ps, Ts} = 
+    [{Ps, Ts}] = 
         pn_lib:slice_rec(
             PN, 
             sets:from_list(SC), 
             sets:new(), 
             sets:new(), 
-            fun(I, O) -> 
+            fun(I, O, _, _) -> 
                 sets:union(
                     sets:from_list(I), 
                     sets:from_list(O)) 
             end,
             % Discard loops as in the algorithm
-            fun(I, O) -> not(I) or not(O) end),
+            fun(I, O) -> not(I) or not(O) end,
+            false),
     pn_lib:filter_pn(PN, {Ps, Ts}).
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -31,7 +32,8 @@ slice_ctl(PN0, SC) ->
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 slice_safety(PN0, SC) ->
-    PN = #petri_net{transitions = T, digraph = G} = pn_lib:new_pn_fresh_digraph(PN0),
+    PN = #petri_net{transitions = T, digraph = G} = 
+        pn_lib:new_pn_fresh_digraph(PN0),
     PDone = 
         sets:from_list(SC),
     T_ = 
@@ -49,18 +51,19 @@ slice_safety(PN0, SC) ->
             end,
             PDone,
             T_),
-    {Ps, Ts} = 
+    [{Ps, Ts}] = 
         pn_lib:slice_rec(
             PN, 
             P_, 
             T_, 
             PDone, 
-            fun(I, _) -> 
+            fun(I, _, _, _) -> 
                 sets:from_list(I)
             end,
             % fun(I, O) -> not(I and O) end),
             % Discard loops as in the algorithm
-            fun(I, O) -> not(I) or not(O) end),
+            fun(I, O) -> not(I) or not(O) end,
+            false),
     pn_lib:filter_pn(PN, {Ps, Ts}).
     
 

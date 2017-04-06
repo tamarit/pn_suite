@@ -14,7 +14,7 @@
         algorithms/0,
         size/1,
         new_pn_fresh_digraph/1,
-        slice_rec/6
+        slice_rec/7
     ] ).
 
 -include("pn.hrl").
@@ -203,25 +203,25 @@ new_pn_fresh_digraph(PN = #petri_net{digraph = G}) ->
     PN#petri_net{digraph = NG}.
 
 % Generic function for Rakow_CTL, Rakow_Safety, Llorens_backwards
-slice_rec(PN = #petri_net{digraph = G}, P_, T_, PDone, TsFun, ValidTFun) ->
+slice_rec(PN = #petri_net{digraph = G}, P_, T_, PDone, TsFun, ValidTFun, CreateBranches) ->
     % io:format("T_: ~p\n", [lists:sort(sets:to_list(T_))]),
     Pending = sets:to_list(sets:subtract(P_, PDone)),
     case Pending of 
         [] ->
-            {P_, T_};
+            [{P_, T_}];
         [P|_] ->
             InTs = 
                 digraph:in_neighbours(G, P),
             OutTs = 
                 digraph:out_neighbours(G, P),
+            % io:format("InTs: ~p\n", [InTs]),
             Ts = 
                 sets:to_list(
                     sets:subtract(
-                        TsFun(InTs, OutTs),
+                        TsFun(InTs, OutTs, G, P_),
                         T_)),
-            {NP_, NT_} = 
-                lists:foldl(
-                    fun(T, {CP_, CT_}) -> 
+            FoldFun = 
+                fun(T, {CP_, CT_}) -> 
                         TinOut =  
                             lists:member(T, InTs),
                         TinIn = 
@@ -240,7 +240,32 @@ slice_rec(PN = #petri_net{digraph = G}, P_, T_, PDone, TsFun, ValidTFun) ->
                                 }
                         end
                     end,
-                    {P_, T_},
-                    Ts),
-            slice_rec(PN, NP_, NT_, sets:add_element(P, PDone), TsFun, ValidTFun)
+            NPsNTs = 
+                case CreateBranches of 
+                    true -> 
+                        lists:map(
+                            fun(T) -> 
+                                FoldFun(T, {P_, T_})
+                            end,
+                            Ts);
+                    false ->
+                        [lists:foldl(
+                            FoldFun,
+                            {P_, T_},
+                            Ts)]
+                end,
+            io:format("~p\n", [[{lists:sort(sets:to_list(PsT)), lists:sort(sets:to_list(TsT))} || {PsT, TsT} <- NPsNTs]]),
+            NPDone = 
+                sets:add_element(P, PDone),
+            lists:concat(
+                [slice_rec(
+                    PN, 
+                    NP_, 
+                    NT_, 
+                    NPDone, 
+                    TsFun, 
+                    ValidTFun,
+                    CreateBranches) 
+                || {NP_, NT_} <- NPsNTs])
     end.
+
