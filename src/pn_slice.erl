@@ -442,6 +442,7 @@ select_transitions(G, SCPs, Ts = [_|_]) ->
                 unavoidable_transition(G, SCPs, T)
             end, 
             Ts),
+    % io:format("SCPs: ~p\n", [SCPs]),
     % io:format("UnavoidableInfo: ~p\n", [UnavoidableInfo]),
     case [ {T, InPs} || {true, T, InPs} <- UnavoidableInfo] of 
         [] -> 
@@ -454,18 +455,19 @@ select_transitions(G, SCPs, Ts = [_|_]) ->
             List
     end.
 
-unavoidable_transition(G, SCPs, T) -> 
+unavoidable_transition(G, _SCPs, T) -> 
     InPs = digraph:in_neighbours(G, T),
-    case sets:to_list(
-            sets:intersection(
-                sets:from_list(InPs), 
-                sets:from_list(SCPs)))
-    of 
-        [] -> 
-            {false, T, InPs};
-        _ -> 
-            {true, T, InPs}
-    end.
+    {false, T, InPs}.
+    % case sets:to_list(
+    %         sets:intersection(
+    %             sets:from_list(InPs), 
+    %             sets:from_list(SCPs)))
+    % of 
+    %     [] -> 
+    %         {false, T, InPs};
+    %     _ -> 
+    %         {true, T, InPs}
+    % end.
 
 take_smallest_transition(Ts) -> 
     Sorted = 
