@@ -14,7 +14,10 @@
         algorithms/0,
         size/1,
         new_pn_fresh_digraph/1,
-        slice_rec/7
+        slice_rec/7,
+        forward_slice/1,
+        slice/11,
+        check_loops_with_sc/3
     ] ).
 
 -include("pn.hrl").
@@ -289,4 +292,121 @@ slice_rec(PN = #petri_net{digraph = G}, P_, T_, PDone, TsFun, ValidTFun, CreateB
                     CreateBranches) 
                 || {NP_, NT_} <- NPsNTs])
     end.
+
+forward_slice(PN = #petri_net{places = Ps}) ->
+    StartingPs = 
+        dict:fold(
+            fun
+                (K, #place{marking = IM}, Acc) when IM > 0 ->
+                    [K | Acc];
+                (_, _, Acc) ->
+                    Acc
+            end,
+            [],
+            Ps),
+    % io:format("StartingPs: ~p\n", [StartingPs]),
+    % io:format("Places: ~p\n", [dict:to_list(Ps)]),
+    #petri_net{transitions = NTs} = 
+        pn_run:set_enabled_transitions(PN),
+    StartingTs = 
+        dict:fold(
+            fun
+                (K, #transition{enabled = true}, Acc) -> 
+                    [K | Acc];
+                (_, _, Acc) ->
+                    Acc 
+            end,
+            [],
+            NTs),
+    % io:format("StartingTs: ~p\n", [StartingTs]),
+    forward_slice(
+        PN,
+        sets:from_list(StartingPs), 
+        sets:from_list([]), 
+        sets:from_list(StartingTs)).
+
+forward_slice(PN = #petri_net{transitions = Ts, digraph = G}, W, R, V) ->
+    case sets:to_list(V) of 
+        [] ->
+            {W, R};
+        _ ->
+            OutV = 
+                lists:append(
+                    [digraph:out_neighbours(G, P) 
+                    || P <- sets:to_list(V)]),
+            NW = sets:union(W, sets:from_list(OutV)),
+            NR = sets:union(R, V),
+            NV0 = 
+                dict:fold(
+                    fun(K, _, Acc) ->
+                        case sets:is_element(K, NR) of 
+                            true ->
+                                Acc;
+                            false ->
+                                InK = 
+                                    sets:from_list(
+                                        digraph:in_neighbours(G, K)),
+                                case sets:is_subset(InK, NW) of 
+                                    true ->
+                                        [K | Acc];
+                                    false ->
+                                        Acc
+                                end
+                        end
+                    end,
+                    [],
+                    Ts),
+            NV = sets:from_list(NV0),
+            forward_slice(PN, NW, NR, NV)
+    end.
+
+slice(  PN0,
+        SC, 
+        P_, 
+        T_, 
+        PDone, 
+        TsFun, 
+        ValidTFun, 
+        CreateBranches, 
+        PerformForward, 
+        FilteringFun,
+        SelectFun) ->
+    PN = 
+        pn_lib:new_pn_fresh_digraph(PN0),
+    ListOfPsBTsB = 
+        slice_rec(PN, P_, T_, PDone, TsFun, ValidTFun, CreateBranches),
+    ForwardFun = 
+        case PerformForward of 
+            true -> 
+                fun({PsB, TsB}) ->
+                    BPN = filter_pn(PN, {PsB, TsB}),
+                    {BPN, forward_slice(BPN)}
+                end;
+            false -> 
+                fun({PsB, TsB}) ->
+                    BPN = filter_pn(PN, {PsB, TsB}),
+                    {BPN, {PsB, TsB}}
+                end
+        end,
+    ListOfPsFTsF =
+        lists:map(
+            ForwardFun,
+            ListOfPsBTsB), 
+    ListOfPsFTsFFIltered = 
+        FilteringFun(ListOfPsFTsF, sets:from_list(SC)),
+    SelectFun(ListOfPsFTsFFIltered, PN).
+
+check_loops_with_sc(T, [P | Ps] , G) ->
+    TinOut =  
+        lists:member(T, digraph:in_neighbours(G, P)),
+    TinIn = 
+        lists:member(T, digraph:out_neighbours(G, P)),
+    case  (TinOut xor TinIn) of 
+        false -> 
+            check_loops_with_sc(T, Ps, G);
+        true ->
+            true 
+    end;
+check_loops_with_sc(_, [] , _) ->
+    false.
 

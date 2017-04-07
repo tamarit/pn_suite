@@ -40,7 +40,7 @@ slice_safety(PN0, SC) ->
         sets:from_list(
             [K 
             ||  K <- dict:fetch_keys(T), 
-                check_loops_with_sc(K, SC, G)]),
+                pn_lib:check_loops_with_sc(K, SC, G)]),
     % io:format("T_: ~p\n", [lists:sort(sets:to_list(T_))]),
     P_ =
         sets:fold(
@@ -67,19 +67,6 @@ slice_safety(PN0, SC) ->
     pn_lib:filter_pn(PN, {Ps, Ts}).
     
 
-check_loops_with_sc(T, [P | Ps] , G) ->
-    TinOut =  
-        lists:member(T, digraph:in_neighbours(G, P)),
-    TinIn = 
-        lists:member(T, digraph:out_neighbours(G, P)),
-    case  (TinOut xor TinIn) of 
-        false -> 
-            check_loops_with_sc(T, Ps, G);
-        true ->
-            true 
-    end;
-check_loops_with_sc(_, [] , _) ->
-    false.
 
 
 

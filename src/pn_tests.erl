@@ -114,6 +114,7 @@ slice_file(OldFun, NewFun, File) ->
         lists:sort(dict:fetch_keys(Old#petri_net.places)),
     OTs = 
         lists:sort(dict:fetch_keys(Old#petri_net.transitions)),
+    print_to_file("~p\n", [New]),
     NPs = 
         lists:sort(dict:fetch_keys(New#petri_net.places)),
     NTs = 
