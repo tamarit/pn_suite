@@ -137,12 +137,14 @@ extract_position_contents(_, _, _, _, []) ->
 
 extract_info_place(T) ->
     Name = 
-        string:strip(read_attribute(T, "id"), both, $ ),
+        replace_minus(
+            string:strip(read_attribute(T, "id"), both, $ )),
     #place{
         name = 
             Name,
         showed_name = 
-            string:strip(read_value_or_text(T, "name", Name)),
+            replace_minus(
+                string:strip(read_value_or_text(T, "name", Name))),
         marking = 
             str2int(case string:tokens(read_value_or_text(T, "initialMarking", "0"), ",") of 
                 [H] ->
@@ -155,22 +157,27 @@ extract_info_place(T) ->
 extract_info_transition(T) ->
     #transition{
         name = 
-            string:strip(read_attribute(T, "id"), both, $ ),
+            replace_minus(
+                string:strip(read_attribute(T, "id"), both, $ )),
         showed_name = 
-            string:strip(
-                read_value_or_text(T, "name", ?UNNAMED), 
-                both, 
-                $ )
+            replace_minus(
+                string:strip(
+                    read_value_or_text(T, "name", ?UNNAMED), 
+                    both, 
+                    $ ))
     }.
 
 extract_info_arc(T) ->
     #arc{
         name = 
-            string:strip(read_attribute(T, "id"), both, $ ),
+            replace_minus(
+                string:strip(read_attribute(T, "id"), both, $ )),
         source =  
-            string:strip(read_attribute(T, "source"), both, $ ),
+            replace_minus(
+                string:strip(read_attribute(T, "source"), both, $ )),
         target = 
-            string:strip(read_attribute(T, "target"), both, $ )
+            replace_minus(
+                string:strip(read_attribute(T, "target"), both, $ ))
     }.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -219,6 +226,16 @@ read_value_or_text(T, Tag, DefaultValue) ->
                     DefaultValue
             end
     end.
+
+replace_minus(L) ->
+    lists:map(
+        fun
+            ($-) ->
+                $_;
+            (Other) ->
+                Other
+        end,
+        L).
 
 str2int(Str) ->
     element(1,string:to_integer(Str)).
