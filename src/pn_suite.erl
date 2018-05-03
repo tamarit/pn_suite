@@ -28,11 +28,12 @@ main(Args) ->
     Op6 = "Slicing Yu et al.",
     Op7 = "Slicing Rakow CTL",
     Op8 = "Slicing Rakow Safety",
+    Op9 = "Slicing Khan",
     {_, Lines, Ans, AnsDict} = 
         lists:foldl(
             fun pn_lib:build_question_option/2,
             {1, [], [], dict:new()},
-            [Op1, Op2, Op3, Op4, Op5, Op6, Op7, Op8]),
+            [Op1, Op2, Op3, Op4, Op5, Op6, Op7, Op8, Op9]),
     QuestionLines = 
             ["These are the available options: " | lists:reverse(Lines)]
         ++  ["What do you want to do?" 
@@ -78,7 +79,9 @@ main(Args) ->
         Op7 ->
             slicing_common(PN, fun pn_rakow:slice_ctl/2, "_slc_rakow_ctl");
         Op8 ->
-            slicing_common(PN, fun pn_rakow:slice_safety/2, "_slc_rakow_safety")
+            slicing_common(PN, fun pn_rakow:slice_safety/2, "_slc_rakow_safety");
+        Op9 ->
+            slicing_common(PN, fun pn_khan:slice_abs/2, "_slc_khan_abs")
     end,
     ok.
 
