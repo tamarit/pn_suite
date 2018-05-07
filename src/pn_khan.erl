@@ -95,7 +95,7 @@ neutral_trans_removal(PN = #petri_net{transitions = T}, SC) ->
 neutral_trans_removal([], PN, _, Removed) ->
     {PN, Removed};
 neutral_trans_removal([T | TsPending], PN, SC, Removed) ->
-    #petri_net{digraph = G, places = Ps, transitions = Ts} = 
+    #petri_net{digraph = G, places = Ps, transitions = Ts, arcs = As} = 
         PN,
     {NPN, NRemoved} = 
         case 
@@ -121,8 +121,26 @@ neutral_trans_removal([T | TsPending], PN, SC, Removed) ->
                                     dict:erase(T, Ts),
                                 NPs1 = 
                                     dict:store(P_, NPlaceP_, NPs),
+                                % We assume here that the internal while of the neutral transtions removal is connecting all the t' that arrives to p to p', taking into account that t' can already be conected to p' 
+                                NAs = 
+                                    lists:foldl(
+                                        fun(A = #arc{source = TA, target = PA}, Acc) ->
+                                            case PA of 
+                                                P -> 
+                                                    [#arc{source = TA, target = P_} | Acc];
+                                                _ ->
+                                                    [A | Acc]
+                                            end 
+                                        end,
+                                        [],
+                                        As),
                                 NPN_ = 
-                                    PN#petri_net{places = NPs1, transitions = NTs},
+                                    PN#petri_net{
+                                        places = NPs1, 
+                                        transitions = NTs, 
+                                        arcs = NAs
+                                    },
+                                pn_lib:build_digraph(NPN_),
                                 {NPN_, true};
                             true ->
                                {PN, Removed}
