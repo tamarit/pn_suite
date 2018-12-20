@@ -454,7 +454,8 @@ server_random(_) ->
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 export(PN, Suffix) ->
-    PNtoExport = pn_input:read_pos_from_svg(PN),
+    % PNtoExport = pn_input:read_pos_from_svg(PN),
+    PNtoExport = PN,
     Op1 = "pdf",
     Op2 = "dot",
     Op3 = "PNML (compatible with PIPE)",
@@ -474,7 +475,8 @@ export(PN, Suffix) ->
         pn_lib:get_answer(string:join(QuestionLines,"\n"), lists:seq(1, length(Ans))),
     case dict:fetch(Answer, AnsDict) of 
         Op3 -> 
-            pn_output:print_pnml(PNtoExport, Suffix);
+            PNtoExport2 = pn_input:read_pos_from_svg(PNtoExport),
+            pn_output:print_pnml(PNtoExport2, Suffix);
         Op4 -> 
             pn_lib:build_digraph(PN),
             pn_output:print_lola(PNtoExport, Suffix);
@@ -482,9 +484,11 @@ export(PN, Suffix) ->
             pn_lib:build_digraph(PN),
             pn_output:print_apt(PNtoExport, Suffix);
         Op6 ->
-            ask_other_formats(PNtoExport, Suffix);
+            PNtoExport2 = pn_input:read_pos_from_svg(PNtoExport),
+            ask_other_formats(PNtoExport2, Suffix);
         Format ->
-            pn_output:print_net(PNtoExport, false, Format, Suffix)
+            PNtoExport2 = pn_input:read_pos_from_svg(PNtoExport),
+            pn_output:print_net(PNtoExport2, false, Format, Suffix)
     end.
 
 ask_other_formats(PN, Suffix) ->
