@@ -24,6 +24,7 @@ main(Args) ->
     Op2 = "Export the Petri Net",
     Op3 = "Slicing Llorens et al.",
     Op4 = "Slicing Llorens et al. (precise)",
+    % Op10 = "Slicing Llorens et al. (precise single)",
     Op5 = "Slicing Llorens et al. (for a given transition sequence)",
     Op6 = "Slicing Yu et al.",
     Op7 = "Slicing Rakow CTL",
@@ -59,6 +60,8 @@ main(Args) ->
             slicing_common(PN, fun pn_slice:slice/2, "_slc");
         Op4 ->
             slicing_common(PN, fun pn_slice:slice_imp/2, "_slc_prec");
+        % Op10 ->
+        %     slicing_common(PN, fun pn_slice:slice_imp_single_gen/2, "_slc_prec_single");
         Op5 ->
             SC0 = ask_slicing_criterion(PN),
             SC = lists:usort(SC0),
