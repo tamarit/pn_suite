@@ -5,7 +5,7 @@
 PN-Suite is a system prepared to implement, combine, compare, and evaluate Petri net slicing algorithms.
 Roughly, this system can be seen as a workbench that implements the currently most important algorithms for Petri net slicing (it is prepared to easily integrate more algorithms into it). This system provides a new functionality that is particularly useful for the analysis and optimization of Petri nets: it combines all the slicing algorithms with the analysis of properties in such a way that one can reduce the size of a Petri net producing a slice that preserves some desired properties.
 
-PN-Suite implements interfaces to communicate with other systems such as [LoLA](http://service-technology.org/lola/index.html) and [APT](https://github.com/CvO-theory/apt]). This means that PN-Suite takes advantage of [LoLA](http://service-technology.org/lola/index.html) and [APT](https://github.com/CvO-theory/apt]) analyses to report about the properties kept or lost by the slices produced.
+PN-Suite implements interfaces to communicate with other systems such as [LoLA](http://service-technology.org/lola/index.html) and [APT](https://github.com/CvO-theory/apt). This means that PN-Suite takes advantage of [LoLA](http://service-technology.org/lola/index.html) and [APT](https://github.com/CvO-theory/apt) analyses to report about the properties kept or lost by the slices produced.
 
 In the rest of this document we describe the main features and functionality of PN-Suite, and its architecture.
 
@@ -60,8 +60,8 @@ This tool allows us to extract slices using one of the algorithms, or to extract
     $ pn_slicer PNML_FILE SLICING_CRITERION [PROPERTY_LIST | SLICING_ALGORITHM] [-json]
     
 where `SLICING_CRITERION` is a list of places separated with commas.
-`PROPERTY_LIST` is optional. It accepts both [APT](https://github.com/CvO-theory/apt]) properties and [LoLA](http://service-technology.org/lola/index.html) expressions.
-Valid [APT](https://github.com/CvO-theory/apt]) properties are:
+`PROPERTY_LIST` is optional. It accepts both [APT](https://github.com/CvO-theory/apt) properties and [LoLA](http://service-technology.org/lola/index.html) expressions.
+Valid [APT](https://github.com/CvO-theory/apt) properties are:
 
 	backwards_persistent
 	output_nonbranching
@@ -188,7 +188,7 @@ This tool allows us to study the preservation of properties of a slice.
 
     $ pn_prop PNML_FILE PNML_FILE [PROPERTY_LIST]
     
-Given two Petri nets (often a Petri net and its slice), it shows a list of properties that hold in both Petri nets, and a list of properties that only hold in the original Petri net. It is also possible to specify some specific properties, and only them will be analyzed. For the analysis of properties, `pn_prop` conveniently communicates with either [LoLA](http://service-technology.org/lola/index.html), or [APT](https://github.com/CvO-theory/apt]), or both. With the information provided by these tools, it decides whether the required properties are preserved. 
+Given two Petri nets (often a Petri net and its slice), it shows a list of properties that hold in both Petri nets, and a list of properties that only hold in the original Petri net. It is also possible to specify some specific properties, and only them will be analyzed. For the analysis of properties, `pn_prop` conveniently communicates with either [LoLA](http://service-technology.org/lola/index.html), or [APT](https://github.com/CvO-theory/apt), or both. With the information provided by these tools, it decides whether the required properties are preserved. 
 
     $ pn_prop pn_example.xml output/example_1.pnml 
 	Preserved properties:
