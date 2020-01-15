@@ -414,6 +414,8 @@ backward_slice_imp_single(PN = #petri_net{digraph = G}, [P | W], Done, {PsS, TsS
             % io:format("P: ~p InTs: ~p\n", [P, InTs]),
             SelectedTrans = 
                 select_transitions(G, NDone ++ W, InTs),
+            % io:format("State: ~p\n", [{G, NDone ++ W, InTs}]),
+            % io:format("SelectedTrans: ~p\n", [SelectedTrans]),
             backward_slice_imp_single(
                 PN, 
                 lists:usort(
@@ -444,9 +446,12 @@ backward_slice_imp_single_gen(PN, SC) ->
         sets:new(), 
         sets:new(), 
         fun(I, _, G, CPs) -> 
-            sets:from_list(
+            TR = sets:from_list(
                 [T 
-                || {T, _} <- select_transitions(G, sets:to_list(CPs), I)])
+                || {T, _} <- select_transitions(G, sets:to_list(CPs), I)]),
+            % io:format("State: ~p\n", [{G, sets:to_list(CPs), I}]),
+            % io:format("SelectedTrans: ~p\n", [sets:to_list(TR)]),
+            TR
         end,
         % No restrictions. All are ok.
         fun(_, _) -> true end,
@@ -462,7 +467,7 @@ select_transitions(G, SCPs, Ts = [_|_]) ->
             end, 
             Ts),
     % io:format("SCPs: ~p\n", [SCPs]),
-    % io:format("UnavoidableInfo: ~p\n", [UnavoidableInfo]),
+    io:format("UnavoidableInfo: ~p\n", [UnavoidableInfo]),
     case [ {T, InPs} || {true, T, InPs} <- UnavoidableInfo] of 
         [] -> 
             TSmallest = 
@@ -503,6 +508,7 @@ take_smallest_transition(Ts) ->
                 end 
             end,
             Ts),
+    % io:format("Sorted: ~p\n", [Sorted]),
     hd(Sorted).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
