@@ -15,6 +15,7 @@ Table of contents
   * [PN-Suite](#pn-suite)
   * [Table of contents](#table-of-contents)
   * [Installation](#installation)
+  * [Docker](#docker)
   * [Usage](#usage)
     * [`pn_slicer`](#pn_slicer)
     * [`pn_prop`](#pn_prop)
@@ -24,7 +25,7 @@ Table of contents
 
 Installation
 ============
-There are two prerequisites to use this tool. One is the (free) tool [Graphviz](http://www.graphviz.org/), and the other is the (free) [Erlang/OTP framework](http://www.erlang.org/). The (free) system [LoLA](http://home.gna.org/service-tech/lola/) is optional: it enables the use of [LoLA](http://home.gna.org/service-tech/lola/) expressions as properties to preserve when preforming slicing. These are the few steps needed to have PN-Suite installed in a Unix system.
+There are two prerequisites to use this tool. One is the (free) tool [Graphviz](http://www.graphviz.org/), and the other is the (free) [Erlang/OTP framework](http://www.erlang.org/). The (free) system [LoLA](http://service-technology.org/lola/index.html) is optional: it enables the use of [LoLA](http://service-technology.org/lola/index.html) expressions as properties to preserve when preforming slicing. These are the few steps needed to have PN-Suite installed in a Unix system.
 
 	$ git clone https://github.com/tamarit/pn_suite.git
 	$ cd pn_suite/
@@ -32,6 +33,19 @@ There are two prerequisites to use this tool. One is the (free) tool [Graphviz](
 	$ sudo make install
 	
 The first step clones the GitHub's repository content to the local system. Then, `make` is used to compile source files and, finally, three executables ([`pn_slicer`](#pn_slicer), [`pn_prop`](#pn_prop), and [`pn_tools`](#pn_tools)) are generated and installed by `make install`.
+
+Docker
+======
+
+We have prepared a docker container for those users that are unable to find an environment that fullfils the intallation's requirements. To create the docker image simply run:
+
+	$ docker build -t pn_suite .
+	
+The next step  is to run the container. To do so use thhe following command:
+
+	$ docker run --name pn -it -v $PWD/examples:/pn_suite/examples --rm pn_suite
+	
+Once inside the container the instruction to follow are the same as it is explanied in section [Usage](#usage). The on-host examples' folder can be used to add your own petri nets or modify the existing ones. The outputs will be generated also there as explained in section [Usage](#usage).
 
 Usage
 =====
@@ -46,7 +60,7 @@ This tool allows us to extract slices using one of the algorithms, or to extract
     $ pn_slicer PNML_FILE SLICING_CRITERION [PROPERTY_LIST | SLICING_ALGORITHM] [-json]
     
 where `SLICING_CRITERION` is a list of places separated with commas.
-`PROPERTY_LIST` is optional. It accepts both [APT](https://github.com/CvO-theory/apt]) properties and [LoLA](http://home.gna.org/service-tech/lola/) expressions.
+`PROPERTY_LIST` is optional. It accepts both [APT](https://github.com/CvO-theory/apt]) properties and [LoLA](http://service-technology.org/lola/index.html) expressions.
 Valid [APT](https://github.com/CvO-theory/apt]) properties are:
 
 	backwards_persistent
@@ -174,7 +188,7 @@ This tool allows us to study the preservation of properties of a slice.
 
     $ pn_prop PNML_FILE PNML_FILE [PROPERTY_LIST]
     
-Given two Petri nets (often a Petri net and its slice), it shows a list of properties that hold in both Petri nets, and a list of properties that only hold in the original Petri net. It is also possible to specify some specific properties, and only them will be analyzed. For the analysis of properties, `pn_prop` conveniently communicates with either [LoLA](http://home.gna.org/service-tech/lola/), or [APT](https://github.com/CvO-theory/apt]), or both. With the information provided by these tools, it decides whether the required properties are preserved. 
+Given two Petri nets (often a Petri net and its slice), it shows a list of properties that hold in both Petri nets, and a list of properties that only hold in the original Petri net. It is also possible to specify some specific properties, and only them will be analyzed. For the analysis of properties, `pn_prop` conveniently communicates with either [LoLA](http://service-technology.org/lola/index.html), or [APT](https://github.com/CvO-theory/apt]), or both. With the information provided by these tools, it decides whether the required properties are preserved. 
 
     $ pn_prop pn_example.xml output/example_1.pnml 
 	Preserved properties:
@@ -233,7 +247,7 @@ The Petri net can be animated either manually or randomly. If manual animation i
 The user can select from a menu a slicing algorithm. Then, according to the chosen algorithm, the user can specify a slicing criterion. The Petri net is then automatically sliced and a new Petri net (the slice) is produced. It is important to highlight that this tool implements another slicing algorithm (option 5) besides those of `pn_slicer`. This algorithm allows us to extract a slice from a Petri net considering a specific firing sequence (instead of all possible firing sequences as all the other algorithms do).
 
 ### Output
-The output of PN-Suite can be produced in many different formats, including standard [PNML](http://www.pnml.org/) (compatible with [PIPE5](http://sarahtattersall.github.io/PIPE/)), [LoLA](http://home.gna.org/service-tech/lola/), [APT](https://github.com/CvO-theory/apt), DOT and more than 50 other formats provided by [Graphviz](http://www.graphviz.org/).
+The output of PN-Suite can be produced in many different formats, including standard [PNML](http://www.pnml.org/) (compatible with [PIPE5](http://sarahtattersall.github.io/PIPE/)), [LoLA](http://service-technology.org/lola/index.html), [APT](https://github.com/CvO-theory/apt), DOT and more than 50 other formats provided by [Graphviz](http://www.graphviz.org/).
 
 	[1/2/3/4/5/6/7/8]: $ 2
 	1 .- pdf
