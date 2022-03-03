@@ -9,7 +9,7 @@ RUN apt-get install -y git
 RUN apt-get install -y graphviz
 RUN apt-get install -y wget 
 
-RUN wget http://service-technology.org/files/lola/lola-2.0.tar.gz
+RUN wget https://theo.informatik.uni-rostock.de/storages/uni-rostock/Alle_IEF/Inf_THEO/images/tools_daten/lola-2.0.tar.gz
 RUN tar xvzf lola-2.0.tar.gz
 
 RUN cd lola-2.0 \
