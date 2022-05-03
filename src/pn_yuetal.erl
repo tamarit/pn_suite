@@ -22,7 +22,7 @@ slice(PN0, SC) ->
     write_sdg_sim(SDG, "sdg_sim.dot"),
     write_sdg_sim(BSG, "bsg_sim.dot"),
     PTs = sdg_places_trans(BSG),
-    io:format("~p\n", [{lists:sort(sets:to_list(element(1, PTs))), lists:sort(sets:to_list(element(2, PTs)))} ]),
+    % io:format("~p\n", [{lists:sort(sets:to_list(element(1, PTs))), lists:sort(sets:to_list(element(2, PTs)))} ]),
     pn_lib:filter_pn(PN, PTs).
 
 slice_no_sim(PN0, SC) ->
@@ -34,7 +34,7 @@ slice_no_sim(PN0, SC) ->
     % io:format("Finished BSG construction\n"),
     write_sdg(BSG, "bsg.dot"),
     PTs = sdg_places_trans(BSG),
-    io:format("~p\n", [{lists:sort(sets:to_list(element(1, PTs))), lists:sort(sets:to_list(element(2, PTs)))} ]),
+    % io:format("~p\n", [{lists:sort(sets:to_list(element(1, PTs))), lists:sort(sets:to_list(element(2, PTs)))} ]),
     pn_lib:filter_pn(PN, PTs).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
