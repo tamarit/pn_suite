@@ -13,61 +13,64 @@ timeout_analysis() ->
 
 directories() ->
     [
-        % {"other", all},
-         "mcc_models/2011/FMS"
-        , "mcc_models/2011/Kanban"
-        , "mcc_models/2011/MAPK"
-        , "mcc_models/2011/Peterson"
-        , "mcc_models/2011/Philosophers"
-        , "mcc_models/2011/TokenRing"
-        , "mcc_models/2012/CSRepetitions"
-        , "mcc_models/2012/Echo"
-        , "mcc_models/2012/Eratosthenes"
-        , "mcc_models/2012/GlobalResAllocation"
-        , "mcc_models/2012/LamportFastMutEx"
-        , "mcc_models/2012/NeoElection"
-        , "mcc_models/2012/PhilosophersDyn"
-        , "mcc_models/2012/Planning"
-        , "mcc_models/2012/Railroad"
-        , "mcc_models/2012/Ring"
-        , "mcc_models/2012/RwMutex"
-        , "mcc_models/2012/SimpleLoadBal"
-        , "mcc_models/2013/Dekker"
-        , "mcc_models/2013/DrinkVendingMachine"
-        , "mcc_models/2013/HouseConstruction"
-        , "mcc_models/2013/IBMB2S565S3960"
-        , "mcc_models/2013/PermAdmissibility"
-        , "mcc_models/2013/QuasiCertifProtocol"
-        , "mcc_models/2013/ResAllocation"
-        , "mcc_models/2013/Vasy2003"
-        , "mcc_models/2014/ARMCacheCoherence"
-        , "mcc_models/2014/Angiogenesis"
-        , "mcc_models/2014/CircadianClock"
-        , "mcc_models/2014/CircularTrains"
-        , "mcc_models/2014/DatabaseWithMutex"
-        , "mcc_models/2014/Diffusion2D"
-        , "mcc_models/2014/ERK"
-        , "mcc_models/2014/MultiwaySync"
-        , "mcc_models/2014/ParamProductionCell"
-        , "mcc_models/2014/PolyORBLF"
-        , "mcc_models/2014/PolyORBNT"
-        , "mcc_models/2014/ProductionCell"
-        , "mcc_models/2014/Solitaire"
-        , "mcc_models/2014/UtahNoC"
-        , "mcc_models/2015/BridgeAndVehicles"
-        , "mcc_models/2015/HypercubeGrid"
-        , "mcc_models/2015/IBM319"
-        , "mcc_models/2015/IBM5964"
-        , "mcc_models/2015/IBM703"
-        , "mcc_models/2015/IOTPpurchase"
-        , "mcc_models/2015/Parking"
-        , "mcc_models/2015/PhaseVariation"
-        , "mcc_models/2015/Raft"
-        , "mcc_models/2015/SafeBus"
-        , "mcc_models/2015/SmallOperatingSystem"
-        , "mcc_models/2015/SquareGrid"
-        , "mcc_models/2015/SwimmingPool"
-        , "mcc_models/2016/AirplaneLD"
+        % {"other", all}
+        % "examples/other"
+        % "other"
+        %  "mcc_models/2011/FMS"
+        % , "mcc_models/2011/Kanban"
+        % , "mcc_models/2011/MAPK"
+        % , "mcc_models/2011/Peterson"
+        % , "mcc_models/2011/Philosophers"
+        % , "mcc_models/2011/SharedMemory" 
+        % , "mcc_models/2011/TokenRing"
+        %  "mcc_models/2012/CSRepetitions"
+        % , "mcc_models/2012/Echo"
+        % , "mcc_models/2012/Eratosthenes"
+        % , "mcc_models/2012/GlobalResAllocation"
+        % , "mcc_models/2012/LamportFastMutEx"
+        % , "mcc_models/2012/NeoElection"
+        % , "mcc_models/2012/PhilosophersDyn"
+        % , "mcc_models/2012/Planning"
+        % , "mcc_models/2012/Railroad"
+        % , "mcc_models/2012/Ring"
+        % , "mcc_models/2012/RwMutex"
+        % , "mcc_models/2012/SimpleLoadBal"
+        %  "mcc_models/2013/Dekker"
+        % , "mcc_models/2013/DrinkVendingMachine"
+        % , "mcc_models/2013/HouseConstruction"
+        % , "mcc_models/2013/IBMB2S565S3960"
+        % , "mcc_models/2013/PermAdmissibility"
+        % , "mcc_models/2013/QuasiCertifProtocol"
+        % , "mcc_models/2013/ResAllocation"
+        % , "mcc_models/2013/Vasy2003"
+        %  "mcc_models/2014/ARMCacheCoherence"
+        % , "mcc_models/2014/Angiogenesis"
+        % , "mcc_models/2014/CircadianClock"
+        % , "mcc_models/2014/CircularTrains"
+        % , "mcc_models/2014/DatabaseWithMutex"
+        % , "mcc_models/2014/Diffusion2D"
+        % , "mcc_models/2014/ERK"
+        % , "mcc_models/2014/MultiwaySync"
+        % , "mcc_models/2014/ParamProductionCell"
+        % , "mcc_models/2014/PolyORBLF"
+        % , "mcc_models/2014/PolyORBNT"
+        % , "mcc_models/2014/ProductionCell"
+        % , "mcc_models/2014/Solitaire"
+        % , "mcc_models/2014/UtahNoC"
+        %  "mcc_models/2015/BridgeAndVehicles"
+        % , "mcc_models/2015/HypercubeGrid"
+        % , "mcc_models/2015/IBM319"
+        % , "mcc_models/2015/IBM5964"
+        % , "mcc_models/2015/IBM703"
+        % , "mcc_models/2015/IOTPpurchase"
+        % , "mcc_models/2015/Parking"
+        % , "mcc_models/2015/PhaseVariation"
+        % , "mcc_models/2015/Raft"
+        % , "mcc_models/2015/SafeBus"
+        % , "mcc_models/2015/SmallOperatingSystem"
+        % , "mcc_models/2015/SquareGrid"
+        % , "mcc_models/2015/SwimmingPool"
+         "mcc_models/2016/AirplaneLD"
         , "mcc_models/2016/AutoFlight"
         , "mcc_models/2016/CloudDeployment"
         , "mcc_models/2016/DES"
@@ -89,11 +92,13 @@ bench() ->
 
 bench_common(Dirs, Filename) ->
     Timeout = 
-        10000,
+        5000,
     SlicesPerNet = 
+        % 20,
         20,
     MaxSC = 
         5,
+        % 1,
     bench(Dirs, Timeout, SlicesPerNet, MaxSC, Filename).
 
 bench(Directories, Timeout, SlicesPerNet, MaxSC, Filename0) ->
@@ -126,6 +131,7 @@ bench_dir(Dir0, Timeout, SlicesPerNet, MaxSC, OutDev, TotalDict) ->
     % file:write(OutDev, list_to_binary(sep() ++ "Dir: " ++ Dir ++ sep() ++ "\n")),
     {ok, FileList} = 
         file:list_dir(Dir),
+    io:format("~p\n", [FileList]),
     MinLenght = 
         lists:foldl(
             fun(File, CMin) ->
@@ -150,15 +156,54 @@ bench_dir(Dir0, Timeout, SlicesPerNet, MaxSC, OutDev, TotalDict) ->
             TotalDict
     end.
 
+% get_selected_apt_properties(PN, TimeOut) -> 
+%     ResDict = lists:foldl(
+%         fun(Property, CurrentDict) ->
+%             dict:store(Property, pn_properties:apt_property(Property, PN, TimeOut), CurrentDict)
+%         end,
+%         dict:new(),
+%         ["num_places","num_transitions","num_arcs","num_tokens"]),
+%     ResStr = lists:foldl(
+%         fun(Key, CurrentStr) ->
+%             CurrentStr + "\n" + io_lib:format("~p: ~p",[Key, dict:fetch(Key, ResDict)])
+%         end,
+%         "",
+%         dict:fetch_keys(ResDict)),
+%     {ResDict, ResStr}.
+
+get_selected_apt_properties(PN) -> 
+    ListForDict = 
+        [
+            {"num_places", dict:size(PN#petri_net.places)},
+            {"num_transitions", dict:size(PN#petri_net.transitions)},
+            {"num_arcs", length(PN#petri_net.arcs)},
+            {"num_tokens", lists:sum([(dict:fetch(Place, PN#petri_net.places))#place.marking || Place <- dict:fetch_keys(PN#petri_net.places)])}
+        ],
+    ResStr = lists:foldl(
+        fun({K,V}, Prev)->
+            Prev ++ io_lib:format("~s: ~p\n", [K, V])
+        end,
+        "",
+        ListForDict
+        ),
+    {dict:from_list(ListForDict), ResStr}.
+
 bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev, TotalDict) ->
     file:write(OutDev, list_to_binary("\nFile: " ++ File ++ sep() ++ "\n")),
     io:format("Benchmarking with file " ++ File ++ "\n"),
     PN = 
         pn_input:read_pn(File),
     pn_lib:build_digraph(PN),
-    build_lola(PN, ""),
-    {DictPropOri0, ResAnalyses} = 
-        pn_properties:apt_properties(PN, timeout_analysis()),
+    % build_lola(PN, ""),
+    % io:format("~p\n", [dict:size(PN#petri_net.places)]),
+    % io:format("~p\n", [dict:size(PN#petri_net.transitions)]),
+    % io:format("~p\n", [length(PN#petri_net.arcs)]),
+    % io:format("~p\n", [lists:sum([(dict:fetch(Place, PN#petri_net.places))#place.marking || Place <- dict:fetch_keys(PN#petri_net.places)])]),
+
+    % {DictPropOri0, ResAnalyses} = 
+    %     pn_properties:apt_properties(PN, timeout_analysis()),
+    {DictPropOri0, ResAnalyses} = get_selected_apt_properties(PN),
+    % io:format("~p\n", [{DictPropOri0, ResAnalyses}]),
     DictPropOri = 
         build_other_properties(PN, DictPropOri0, none, ""),
     case DictPropOri of 
@@ -169,9 +214,11 @@ bench_file(File, Timeout, SlicesPerNet, MaxSC0, OutDev, TotalDict) ->
             file:write(OutDev, list_to_binary("Properties:\n" ++ ResAnalyses)),
             % file:write(OutDev, list_to_binary(dict:fetch("traps", DictPropOri))),
             % file:write(OutDev, list_to_binary(dict:fetch("siphons", DictPropOri))),
-            file:write(OutDev, list_to_binary(pn_lib:format("Deadlock: ~p\n" , [dict:fetch("deadlock", DictPropOri)]))),
+            % file:write(OutDev, list_to_binary(pn_lib:format("Deadlock: ~p\n" , [dict:fetch("deadlock", DictPropOri)]))),
             file:write(OutDev, list_to_binary(pn_lib:format("Size: ~p\n\n" , [dict:fetch("size", DictPropOri)]))),
-            Ps = dict:fetch_keys(PN#petri_net.places),
+            % Ps = dict:fetch_keys(PN#petri_net.places),
+            Ps0 = [{P, dict:fetch(P, PN#petri_net.places)} || P <- dict:fetch_keys(PN#petri_net.places)],
+            Ps = [P || {P, M} <- Ps0, M#place.marking == 0],
             MaxSC = 
                 case MaxSC0 > length(Ps) of 
                     true ->
@@ -202,6 +249,9 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
             pn_lib:format(
                 "\nSlicing criterion: ~s\n\n", 
                 [string:join(SC, ",")] ) ) ),
+    % io:format(
+    %             "\nSlicing criterion: ~s\n\n", 
+    %             [string:join(SC, ",")] ),
     ResAlg = 
         lists:foldl(
             fun
@@ -224,7 +274,7 @@ bench_sc(PN, SC, Timeout, OutDev, DictPropOri, Dict) ->
                 end
             end,
             [],
-            pn_lib:algorithms()),
+            pn_lib:algorithms_bench()),
     case ResAlg of 
         none ->
             Dict;
@@ -247,9 +297,9 @@ bench_fun(#slicer{name = AN, function = AF}, PN, SC, Timeout, OutDev, DictPropOr
     Pid = 
         spawn(
             fun() -> 
-                TimeBeforeExecuting = erlang:monotonic_time(millisecond),
+                TimeBeforeExecuting = erlang:monotonic_time(milli_seconds),
                 TempRes = AF(PN, SC),
-                TimeAfterExecuting = erlang:monotonic_time(millisecond),
+                TimeAfterExecuting = erlang:monotonic_time(milli_seconds),
                 TimeExecuting = TimeAfterExecuting - TimeBeforeExecuting,
                 Self!{TempRes, TimeExecuting},
                 receive 
@@ -266,6 +316,7 @@ bench_fun(#slicer{name = AN, function = AF}, PN, SC, Timeout, OutDev, DictPropOr
         after
             Timeout ->
                 exit(Pid, kill),
+                pn_output:cmd_try("pkill python3"),
                 {none, none}
         end,
     store_fun_info(Res, PN, AN, SC, OutDev, DictPropOri, TimeInfo).
@@ -281,8 +332,9 @@ store_fun_info(Res, PN, AN, SC, OutDev, DictPropOri, TimeInfo) ->
                 none ->
                     none;
                 _ ->
-                    {DictSlice0, _} = 
-                        pn_properties:apt_properties(Res, timeout_analysis()), 
+                    % {DictSlice0, _} = 
+                    %     pn_properties:apt_properties(Res, timeout_analysis()), 
+                    {DictSlice0, _} = get_selected_apt_properties(Res), 
                     DictSlice = 
                         build_other_properties(Res, DictSlice0, TimeInfo, ".slice"),
                     % file:write(OutDev, list_to_binary("\nDICT: " ++ string:join(lists:map(fun(X) -> pn_lib:format("~p", [X]) end, dict:to_list(DictSlice)), ","))),
@@ -291,7 +343,7 @@ store_fun_info(Res, PN, AN, SC, OutDev, DictPropOri, TimeInfo) ->
         end,
     case pn_lib:size(Res) of 
         0 ->
-            build_lola(Res, ".slice"),
+            % build_lola(Res, ".slice"),
             Dir = PN#petri_net.dir ++ "/output/",
             LOLAFile = 
                 Dir ++  PN#petri_net.name ++ ".slice.lola", 
@@ -306,7 +358,7 @@ store_fun_info(Res, PN, AN, SC, OutDev, DictPropOri, TimeInfo) ->
                     none
             end;
         _ ->
-            build_lola(Res, ".slice"),
+            % build_lola(Res, ".slice"),
             FunOK()
     end.
 
@@ -324,11 +376,13 @@ new_alg_dict(Value) ->
             fun(#slicer{name = AN}) -> 
                 {AN, create_alg_dict(Value)} 
             end, 
-            pn_lib:algorithms())).
+            pn_lib:algorithms_bench())).
 
 create_alg_dict(Value) ->
     Props = 
-        pn_properties:all_properties() ++ ["siphons", "traps", "deadlock", "size", "time"],
+        % pn_properties:all_properties() ++ ["siphons", "traps", "deadlock", "size", "time"],
+        pn_properties:all_properties() ++ ["size", "time"],
+        % ["num_places","num_transitions","num_arcs","num_tokens", "size", "time"],
     dict:from_list(
         lists:zip(
             Props,
@@ -361,11 +415,11 @@ build_sc(List, Max, Acc) ->
             end 
     end.
 
-siphons_and_traps(PN) ->
-    {
-        pn_properties:apt_property("siphons", PN, timeout_analysis()),
-        pn_properties:apt_property("traps", PN, timeout_analysis())
-    }.
+% siphons_and_traps(PN) ->
+%     {
+%         pn_properties:apt_property("siphons", PN, timeout_analysis()),
+%         pn_properties:apt_property("traps", PN, timeout_analysis())
+%     }.
 
 
 build_lola(PN, Suffix) ->
@@ -374,27 +428,32 @@ build_lola(PN, Suffix) ->
 
 build_other_properties(_, none, _, _) ->
     none;
-build_other_properties(PN, DictProp, TimeInfo, Suffix) ->
-    {SiphonsValue, TrapsValue} = 
-        siphons_and_traps(PN),
-    Dir = PN#petri_net.dir ++ "/output/",
-    LOLAFile = 
-        Dir ++  PN#petri_net.name ++ Suffix ++".lola",
-    DeadlockRes = 
-        pn_properties:check_formula("EF DEADLOCK", LOLAFile, Dir, timeout_analysis()),
+build_other_properties(PN, DictProp, TimeInfo, _) ->
+% build_other_properties(PN, DictProp, TimeInfo, Suffix) ->
+    % {SiphonsValue, TrapsValue} = 
+    %     siphons_and_traps(PN),
+    % Dir = PN#petri_net.dir ++ "/output/",
+    % LOLAFile = 
+    %     Dir ++  PN#petri_net.name ++ Suffix ++".lola",
+    % DeadlockRes = 
+    %     % pn_properties:check_formula("EF DEADLOCK", LOLAFile, Dir, timeout_analysis()),
+    %     true,
     % io:format("~p\n", [DeadlockRes]),
-    case lists:any(fun(none) -> true; (_) -> false end, [SiphonsValue, TrapsValue, DeadlockRes]) of 
+    % case lists:any(fun(none) -> true; (_) -> false end, [SiphonsValue, TrapsValue, DeadlockRes]) of 
+    case false of
         false -> 
             lists:foldl(
                 fun({K, V}, CDict) ->
                     dict:store(K, V, CDict)
                 end,
                 DictProp,
-                [{"siphons", SiphonsValue}, 
-                 {"traps", TrapsValue}, 
-                 {"deadlock", DeadlockRes},
-                 {"size", pn_lib:size(PN)},
-                 {"time", TimeInfo}]);
+                [
+                    % {"siphons", SiphonsValue}, 
+                    % {"traps", TrapsValue}, 
+                    % {"deadlock", DeadlockRes},
+                    {"size", pn_lib:size(PN)},
+                    {"time", TimeInfo}
+                ]);
         true ->
             none
     end.
@@ -421,6 +480,13 @@ merge_prop_dict(DictAlg, DictProp) ->
         fun
             (K, {Count, CountTotal}, CDict) -> 
                 % io:format("~p\n", [dict:fetch_keys(DictProp)]),
+                % case K of
+                %     "num_tokens" when Count > 1 ->
+                %         io:format("Found a case"),
+                %         0/0;
+                %     _ -> 
+                %         true 
+                % end,
                 case dict:find(K, DictProp) of 
                     error ->
                         dict:store(K, {Count, CountTotal}, CDict);
