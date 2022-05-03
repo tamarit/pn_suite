@@ -6,7 +6,9 @@
             print_pnml/2, print_pnml_file/2,
             print_lola/2, print_lola_file/2, 
             print_apt/2, print_apt_file/2, 
-            formats/0] ).
+            formats/0,
+            cmd_try/1,
+            print_sc_file/2] ).
 
 -include("pn.hrl").
  
@@ -128,6 +130,7 @@ print_net_file_common(PN, File, Format, Highlighted) ->
 
 print_net(PN, ShowEnabled, Format, Suffix, Highlighted) ->
     Output = PN#petri_net.dir ++ "/output",
+    % io:format("~p\n", [Output]),
     cmd_try("mkdir " ++ Output),
     file:write_file(
             Output ++ "/" 
@@ -412,8 +415,23 @@ marking_to_apt([], Acc) ->
 
 cmd_try(Cmd) ->
     try 
-        os:cmd(Cmd)
+        Res = os:cmd(Cmd),
+        % io:format("~p\n", [Res]),
+        Res
     catch 
         _:_ -> 
+            % io:format("Something went wrong when executing command: ~p\n", [Cmd]),
             ok
     end.
+
+print_sc_file(SC, Filename) ->
+    % io:format("~s~n",[string:join(SC, ",")]),
+    {ok, OutDev} = 
+        file:open(Filename, [write]),
+    file:write(
+        OutDev, 
+        list_to_binary(
+            pn_lib:format(
+                "~s", 
+                [string:join(SC, ",")] ) ) ),
+    file:close(OutDev).
