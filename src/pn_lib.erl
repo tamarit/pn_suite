@@ -9,9 +9,11 @@
     	get_answer_multiple/2,
     	get_answer/2,
     	filter_pn/2,
+        filter_pn_by_slicing_criterion/3,
         format/2,
         flush/0,
         algorithms/0,
+        algorithms_bench/0,
         size/1,
         new_pn_fresh_digraph/1,
         slice_rec/7,
@@ -93,6 +95,37 @@ filter_pn(
             transitions= TsS,
             arcs = AsS
         }.
+
+filter_pn_by_slicing_criterion(PN, {PsSet, TsSet}, SlicingCriterion) ->
+    % NPN = filter_pn(PN, {PsSet, TsSet}),
+    NPN = filter_pn(PN, {PsSet, TsSet}),
+    build_digraph(NPN),
+    NodesReachingSC_ = digraph_utils:reaching_neighbours(SlicingCriterion, NPN#petri_net.digraph),
+    NodesReachingSC = sets:from_list(NodesReachingSC_ ++ SlicingCriterion),
+    % io:format("~p\n", [sets:to_list(NodesReachingSC)]),
+    % SCC = [sets:from_list(SCC_) || SCC_ <- digraph_utils:strong_components(PN#petri_net.digraph)],
+    % io:format("~p\n", [[sets:to_list(SCC_)  || SCC_ <- SCC]]),
+    % SetSlicingCriterion = sets:from_list(SlicingCriterion),
+    % NodesReachesSC = lists:foldl(
+    %     fun(SCC_, CurrentSet) ->
+    %         case sets:intersection(SCC_, SetSlicingCriterion) == sets:new() of 
+    %             false ->
+    %                 sets:union(SCC_, CurrentSet);
+    %             true ->
+    %                 CurrentSet
+    %         end
+    %     end,
+    %     sets:new(),
+    %     SCC),
+    NPsSet = sets:intersection(PsSet, NodesReachingSC),
+    NTsSet = sets:intersection(TsSet, NodesReachingSC),
+    % io:format("~p\n", [sets:to_list(NPsSet)]),
+    % io:format("~p\n", [sets:to_list(NTsSet)]),
+    filter_pn(NPN, {NPsSet, NTsSet}).
+    % filter_pn(PN, {PsSet, TsSet}).
+
+
+    
 
 get_value_list_from_dict(Dict) ->
     lists:map(
@@ -196,6 +229,15 @@ algorithms() ->
             name = "Rakow's slicer safety", 
             short_name = "rakow_safety",
             function = fun pn_rakow:slice_safety/2}
+    ].
+
+algorithms_bench() -> 
+    [
+        #slicer{
+            name = "Llorens et al.'s slicer (original)", 
+            short_name = "llorens_ori",
+            function = fun pn_slice:slice_ori/2}
+        | algorithms()
     ].
 
 size(#petri_net{places = Ps, transitions = Ts}) ->
