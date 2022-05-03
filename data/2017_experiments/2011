@@ -1,0 +1,332 @@
+
+File: examples/mcc_models/2011/FMS/FMS-2.pnml
+************************
+
+Properties:
+num_places: 22
+num_transitions: 20
+num_labels: 20
+num_arcs: 50
+num_tokens: 12
+plain: Yes
+pure: No
+nonpure_only_simple_side_conditions: Yes
+free_choice: No
+restricted_free_choice: No
+t_net: No
+s_net: No
+output_nonbranching: No
+conflict_free: No
+k-marking: 1
+safe: No
+bounded: Yes
+k-bounded: 3
+isolated_elements: No
+strongly_connected: Yes
+weakly_connected: Yes
+bcf: No
+bicf: No
+strongly_live: Yes
+weakly_live: Yes
+simply_live: Yes
+persistent: No
+backwards_persistent: No
+reversible: Yes
+homogeneous: Yes
+asymmetric_choice: Yes
+Deadlock: false
+Size: 42
+
+
+Slicing criterion: P12M3,M3,P3s
+
+
+Slicing criterion: P2M2,P2wM2,P2d,M2,P2wP1
+
+
+Slicing criterion: P3M2,M2
+
+
+Slicing criterion: P2M2,P3s,P1wM1,P2wP1,P1d
+
+
+Slicing criterion: P3M2
+
+
+Slicing criterion: P12wM3,P1s,P2d,P1wM1,P2wM2
+
+
+Slicing criterion: P2wP1,P1wM1,P12wM3,P1M1
+
+
+Slicing criterion: P3,P12wM3,P1wP2,P2s
+
+
+Slicing criterion: P1wM1,P1d,M3,P2d,P12wM3
+
+
+Slicing criterion: P1wM1,P12s,P2wP1,P3s,P12
+
+
+Slicing criterion: P12s
+
+
+Slicing criterion: P1d,P1M1,M3,M1,P2wM2
+
+
+Slicing criterion: P2wM2,P12s,P1wM1,P3s
+
+
+Slicing criterion: P12s,P3s,P2s,P1wP2
+
+
+Slicing criterion: P12M3,P12s,P1wP2,P12wM3,P3
+
+
+Slicing criterion: M2
+
+
+Slicing criterion: P2M2,M1
+
+
+Slicing criterion: P1wM1,P12M3
+
+
+Slicing criterion: P2wM2,P12M3,M2,P2M2
+
+
+Slicing criterion: P2wM2,P3s,M2,P3M2
+
+
+File: examples/mcc_models/2011/Kanban/Kanban-5.pnml
+************************
+
+Property analysis timeouted.
+
+File: examples/mcc_models/2011/MAPK/MAPK-8.pnml
+************************
+
+Property analysis timeouted.
+
+File: examples/mcc_models/2011/Peterson/Peterson-2.pnml
+************************
+
+Properties:
+num_places: 102
+num_transitions: 126
+num_labels: 126
+num_arcs: 384
+num_tokens: 8
+plain: Yes
+pure: No
+nonpure_only_simple_side_conditions: Yes
+free_choice: No
+restricted_free_choice: No
+t_net: No
+s_net: No
+output_nonbranching: No
+conflict_free: No
+k-marking: 1
+safe: Yes
+bounded: Yes
+k-bounded: 1
+isolated_elements: No
+strongly_connected: Yes
+weakly_connected: Yes
+bcf: No
+bicf: No
+strongly_live: No
+weakly_live: Yes
+simply_live: Yes
+persistent: No
+backwards_persistent: No
+reversible: No
+homogeneous: Yes
+asymmetric_choice: No
+Deadlock: false
+Size: 228
+
+
+Slicing criterion: TestIdentity_1_1_1
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: BeginLoop_1_1_1,BeginLoop_2_0_1
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: TestAlone_2_0_1,AskForSection_0_1,IsEndLoop_1_0_0,TestTurn_1_0
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: WantSection_1_F
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: TestAlone_0_0_2,Turn_1_1
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: IsEndLoop_1_0_0,TestAlone_0_0_1,TestIdentity_2_0_1
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: BeginLoop_2_1_2,BeginLoop_0_0_0
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: TestTurn_0_1,EndTurn_2_1,IsEndLoop_1_0_2,IsEndLoop_1_1_0,Turn_1_1
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: TestTurn_0_0
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: IsEndLoop_0_0_1,TestIdentity_0_0_1,BeginLoop_1_0_1,BeginLoop_1_0_2,TestAlone_0_0_1
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: EndTurn_1_1,TestAlone_2_1_1,AskForSection_2_0
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: TestIdentity_0_0_0,IsEndLoop_0_1_1
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: IsEndLoop_2_1_2,EndTurn_2_1,BeginLoop_2_0_2,WantSection_2_F,EndTurn_2_0
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: BeginLoop_2_1_2,WantSection_0_F,Turn_0_2,TestIdentity_0_1_1
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: IsEndLoop_0_0_0,TestAlone_0_0_2,TestTurn_0_0
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: IsEndLoop_2_1_0,EndTurn_0_1,TestAlone_1_1_2
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: IsEndLoop_1_0_0
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: AskForSection_0_1,TestAlone_0_0_2,Idle_2,BeginLoop_0_0_2
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: TestIdentity_1_0_0,AskForSection_2_1,AskForSection_0_1,Idle_0,TestIdentity_0_0_2
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: EndTurn_0_1,BeginLoop_0_1_1,BeginLoop_0_0_0
+
+Llorens et al's slicer improved: timeouted
+
+File: examples/mcc_models/2011/Philosophers/Philosophers-5.pnml
+************************
+
+Properties:
+num_places: 25
+num_transitions: 25
+num_labels: 25
+num_arcs: 80
+num_tokens: 10
+plain: Yes
+pure: Yes
+nonpure_only_simple_side_conditions: No
+free_choice: No
+restricted_free_choice: No
+t_net: No
+s_net: No
+output_nonbranching: No
+conflict_free: No
+k-marking: 1
+safe: Yes
+bounded: Yes
+k-bounded: 1
+isolated_elements: No
+strongly_connected: Yes
+weakly_connected: Yes
+bcf: No
+bicf: No
+strongly_live: No
+weakly_live: Yes
+simply_live: Yes
+persistent: No
+backwards_persistent: No
+reversible: No
+homogeneous: Yes
+asymmetric_choice: No
+Deadlock: true
+Size: 50
+
+
+Slicing criterion: Catch2_3
+
+
+Slicing criterion: Fork_4,Think_5,Think_2
+
+
+Slicing criterion: Catch2_1,Fork_4,Eat_4
+
+
+Slicing criterion: Catch1_1
+
+
+Slicing criterion: Catch2_2
+
+
+Slicing criterion: Catch2_5,Eat_3,Catch1_3,Fork_5,Think_5
+
+
+Slicing criterion: Think_1,Eat_3,Think_4
+
+
+Slicing criterion: Eat_4
+
+
+Slicing criterion: Fork_4,Think_1,Eat_5,Catch1_5,Eat_1
+
+
+Slicing criterion: Think_2,Catch1_2,Catch2_5
+
+
+Slicing criterion: Catch2_3,Fork_3
+
+
+Slicing criterion: Catch1_3,Eat_2,Catch1_5,Catch2_1,Fork_4
+
+
+Slicing criterion: Think_1,Catch2_1,Catch1_3
+
+
+Slicing criterion: Catch1_2,Catch2_1
+
+
+Slicing criterion: Catch1_3,Eat_1,Catch2_5
+
+
+Slicing criterion: Fork_5
+
+
+Slicing criterion: Eat_4,Catch2_4
+
+
+Slicing criterion: Catch1_1,Eat_3,Think_3,Catch1_4
+
+
+Slicing criterion: Catch1_4,Eat_4,Fork_5,Catch2_1,Catch1_1
+
+
+Slicing criterion: Think_1,Eat_2,Think_4
+
+
+File: examples/mcc_models/2011/TokenRing/TokenRing-5-unfolded.pnml
+************************
+
+Property analysis timeouted.
