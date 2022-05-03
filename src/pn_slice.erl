@@ -1,7 +1,7 @@
 -module( pn_slice ).
  
 -export( [
-            slice/2, slice_gen/2, 
+            slice_ori/2, slice/2, slice_gen/2, 
             slice_imp/2, slice_imp_gen/2, 
             slice_imp_single/2, slice_imp_single_gen/2
           ] ).
@@ -12,20 +12,56 @@
 % Slicing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+% From LLorens et al 2008
+slice_ori(PN0, SC) ->
+    PN = pn_lib:new_pn_fresh_digraph(PN0),
+    {PsB, TsB} = backward_slice(PN, SC, [], {[], []}),
+
+    % Without intersection
+    % io:format("NO INTERSECTION"),
+    % BPN = pn_lib:filter_pn(PN, {PsB, TsB}),
+    % {PsF, TsF} = pn_lib:forward_slice(BPN),
+    % pn_lib:filter_pn(BPN, {PsF, TsF}).
+
+    % With intersection
+    % io:format("INTERSECTION"),
+    {PsF, TsF} = pn_lib:forward_slice(PN),
+    PsSet = sets:intersection(PsB, PsF),
+    TsSet = sets:intersection(TsB, TsF),
+    pn_lib:filter_pn(PN, {PsSet, TsSet}).
+
+% New Algorithm1 version
 slice(PN0, SC) ->
     PN = pn_lib:new_pn_fresh_digraph(PN0),
     {PsB, TsB} = backward_slice(PN, SC, [], {[], []}),
 
     % Without intersection
+    % io:format("NO INTERSECTION"),
+    BPN = pn_lib:filter_pn(PN, {PsB, TsB}),
+    {PsF, TsF} = pn_lib:forward_slice(BPN),
+    % pn_lib:filter_pn(BPN, {PsF, TsF}).
+    pn_lib:filter_pn_by_slicing_criterion(BPN, {PsF, TsF}, SC).
+
+% Algorithm1 previous version
+slice_prev(PN0, SC) ->
+    PN = pn_lib:new_pn_fresh_digraph(PN0),
+    {PsB, TsB} = backward_slice(PN, SC, [], {[], []}),
+
+    % Without intersection
+    % io:format("NO INTERSECTION"),
     BPN = pn_lib:filter_pn(PN, {PsB, TsB}),
     {PsF, TsF} = pn_lib:forward_slice(BPN),
     pn_lib:filter_pn(BPN, {PsF, TsF}).
 
     % With intersection
+    % io:format("INTERSECTION"),
     % {PsF, TsF} = pn_lib:forward_slice(PN),
     % PsSet = sets:intersection(PsB, PsF),
     % TsSet = sets:intersection(TsB, TsF),
     % pn_lib:filter_pn(PN, {PsSet, TsSet}).
+
+
 
 % slice_gen(PN, SC) ->
     % PN = pn_lib:new_pn_fresh_digraph(PN0),
@@ -95,9 +131,10 @@ backward_slice(_, [], Done, {PsS, TsS}) ->
 % Slicing Improved
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-slice_imp(PN0, SC) ->
+% Previous version of algorithm 2
+slice_imp_prev(PN0, SC) ->
     PN = pn_lib:new_pn_fresh_digraph(PN0),
-    ListOfPsBTsB = backward_slice_imp(PN, SC, [], {[], []}),
+    ListOfPsBTsB = backward_slice_imp_prev(PN, SC, [], {[], []}),
     % [ io:format("~p\n", [{P, [{T, {sets:to_list(PsT), sets:to_list(TsT)}} || {T, {PsT, TsT}} <- BI]}]) || {P, BI} <- Bif],
     % io:format("~p\n", [[{lists:sort(sets:to_list(PsT)), lists:sort(sets:to_list(TsT))} || {PsT, TsT} <- ListOfPsBTsB]]),
     % io:format("Bif: ~p\n", [Bif]),
@@ -126,6 +163,97 @@ slice_imp(PN0, SC) ->
     % PsSet = sets:intersection(PsB, PsF),
     % TsSet = sets:intersection(TsB, TsF),
     % pn_lib:filter_pn(PN, {PsSet, TsSet}).
+
+% New version of algorithm 2
+slice_imp(PN0, SC) ->
+    PN = pn_lib:new_pn_fresh_digraph(PN0),
+    {PsB, TsB} = backward_slice(PN, SC, [], {[], []}),
+
+    BPN = pn_lib:filter_pn(PN, {PsB, TsB}),
+    pn_output:print_pnml_file(BPN, "examples/temp_slice_pn.xml"),
+    pn_output:print_sc_file(SC, "examples/temp_slice_pn_sc.txt"),
+    pn_output:cmd_try("python3 src/prova.py"),
+    Result0 = pn_input:read_json("examples/prova_fw.json"),
+    % TODO: Recover PN original name, directory and retore the whole places and transitions names
+    pn_output:cmd_try("rm -rf examples/prova_fw.json"),
+    % Result = pn_lib:new_pn_fresh_digraph(Result0),
+    % TODO: Put the markings in the original places
+    % pn_input:read_json("examples/prova_fw.json"),
+    % pn_output:cmd_try("python3 src/prova.py")
+    Result0.
+
+    % % Without intersection
+    % % io:format("NO INTERSECTION"),
+    % BPN = pn_lib:filter_pn(PN, {PsB, TsB}),
+    % {PsF, TsF} = pn_lib:forward_slice(BPN),
+    % % pn_lib:filter_pn(BPN, {PsF, TsF}).
+    % pn_lib:filter_pn_by_slicing_criterion(BPN, {PsF, TsF}, SC).
+
+
+
+    % PN = pn_lib:new_pn_fresh_digraph(PN0),
+    % ListOfPsBTsB = backward_slice_imp(PN, SC, [], {[], []}),
+    % % [ io:format("~p\n", [{P, [{T, {sets:to_list(PsT), sets:to_list(TsT)}} || {T, {PsT, TsT}} <- BI]}]) || {P, BI} <- Bif],
+    % % io:format("~p\n", [[{lists:sort(sets:to_list(PsT)), lists:sort(sets:to_list(TsT))} || {PsT, TsT} <- ListOfPsBTsB]]),
+    % % io:format("Bif: ~p\n", [Bif]),
+    % % io:format("~p\n", [ListOfPsBTsB]),
+
+    % % Without intersection
+    % ListOfPsFTsF=
+    %     lists:map(
+    %         fun({PsB, TsB}) ->
+    %             BPN = pn_lib:filter_pn(PN, {PsB, TsB}),
+    %             {BPN, pn_lib:forward_slice(BPN)}
+    %         end,
+    %         ListOfPsBTsB),
+    % % WithOutRepetitions = 
+    % %     lists:usort(ListOfPsFTsF),
+    % % io:format("~p\n", [[{lists:sort(sets:to_list(PsT)), lists:sort(sets:to_list(TsT))} || {_, {PsT, TsT}} <- WithOutRepetitions]]),
+    % % io:format("~p\n", [ListOfPsFTsF]),
+    % ListOfPsFTsFFIltered = 
+    %     filterWOSC(ListOfPsFTsF, sets:from_list(SC)),
+    % % {BPN, {PsF, TsF}} = 
+    %     take_smallest_net(ListOfPsFTsFFIltered, PN).
+    % % pn_lib:filter_pn(BPN, {PsF, TsF}).
+    
+    % % With intersection
+    % % {PsF, TsF} = pn_lib:forward_slice(PN),
+    % % PsSet = sets:intersection(PsB, PsF),
+    % % TsSet = sets:intersection(TsB, TsF),
+    % % pn_lib:filter_pn(PN, {PsSet, TsSet}).
+
+
+% slice_imp(PN0, SC) ->
+%     PN = pn_lib:new_pn_fresh_digraph(PN0),
+%     ListOfPsBTsB = backward_slice_imp(PN, SC, [], {[], []}),
+%     % [ io:format("~p\n", [{P, [{T, {sets:to_list(PsT), sets:to_list(TsT)}} || {T, {PsT, TsT}} <- BI]}]) || {P, BI} <- Bif],
+%     % io:format("~p\n", [[{lists:sort(sets:to_list(PsT)), lists:sort(sets:to_list(TsT))} || {PsT, TsT} <- ListOfPsBTsB]]),
+%     % io:format("Bif: ~p\n", [Bif]),
+%     % io:format("~p\n", [ListOfPsBTsB]),
+
+%     % Without intersection
+%     ListOfPsFTsF=
+%         lists:map(
+%             fun({PsB, TsB}) ->
+%                 BPN = pn_lib:filter_pn(PN, {PsB, TsB}),
+%                 {BPN, pn_lib:forward_slice(BPN)}
+%             end,
+%             ListOfPsBTsB),
+%     % WithOutRepetitions = 
+%     %     lists:usort(ListOfPsFTsF),
+%     % io:format("~p\n", [[{lists:sort(sets:to_list(PsT)), lists:sort(sets:to_list(TsT))} || {_, {PsT, TsT}} <- WithOutRepetitions]]),
+%     % io:format("~p\n", [ListOfPsFTsF]),
+%     ListOfPsFTsFFIltered = 
+%         filterWOSC(ListOfPsFTsF, sets:from_list(SC)),
+%     % {BPN, {PsF, TsF}} = 
+%         take_smallest_net(ListOfPsFTsFFIltered, PN).
+%     % pn_lib:filter_pn(BPN, {PsF, TsF}).
+    
+%     % With intersection
+%     % {PsF, TsF} = pn_lib:forward_slice(PN),
+%     % PsSet = sets:intersection(PsB, PsF),
+%     % TsSet = sets:intersection(TsB, TsF),
+%     % pn_lib:filter_pn(PN, {PsSet, TsSet}).
 
 % slice_imp_gen(PN0, SC) ->
 %     PN = pn_lib:new_pn_fresh_digraph(PN0),
@@ -273,6 +401,49 @@ first_not_zero([H | _]) ->
 first_not_zero([]) ->
     none.
 
+backward_slice_imp_prev(PN = #petri_net{digraph = G}, [P | W], Done, {PsS, TsS}) ->
+    InTs = 
+        digraph:in_neighbours(G, P),
+    NDone = 
+        [P | Done],
+    NPs = 
+        [P | PsS],
+    case InTs of 
+        [] -> 
+            backward_slice_imp_prev(PN, lists:usort(W -- NDone), NDone, {NPs, TsS});
+        % [T] ->
+        %     InPs = digraph:in_neighbours(G, T),
+        %     backward_slice_imp_prev(PN, lists:usort((W ++ InPs) -- NDone), NDone, {NPs, [T | TsS]});
+        _ ->
+            % All branches
+            Branches = 
+                lists:map(
+                    fun(T) ->
+                        InPs = digraph:in_neighbours(G, T),
+                        backward_slice_imp_prev(
+                            PN, 
+                            lists:usort((InPs ++ W) -- NDone), 
+                            NDone, 
+                            {NPs, [T | TsS]}) 
+                    end,
+                    InTs),
+            Res = 
+                lists:concat(Branches),
+            % io:format("~p\n", [Branches]),
+            % io:format("P: ~p InTs: ~p\n", [P, InTs]),
+            % io:format("\nBranches:\n~p\n", [[{lists:sort(sets:to_list(PsT)), lists:sort(sets:to_list(TsT))} || {PsT, TsT} <- Res]]),
+            Res
+            
+    end;
+backward_slice_imp_prev(_, [], _, {PsS, TsS}) ->
+    [{sets:from_list(PsS), sets:from_list(TsS)}].
+
+powerset([]) -> [[]];
+powerset([H|T]) -> 
+    PT = powerset(T),
+    [ [H|X] || X <- PT ] ++ PT.
+
+
 backward_slice_imp(PN = #petri_net{digraph = G}, [P | W], Done, {PsS, TsS}) ->
     InTs = 
         digraph:in_neighbours(G, P),
@@ -287,18 +458,20 @@ backward_slice_imp(PN = #petri_net{digraph = G}, [P | W], Done, {PsS, TsS}) ->
         %     InPs = digraph:in_neighbours(G, T),
         %     backward_slice_imp(PN, lists:usort((W ++ InPs) -- NDone), NDone, {NPs, [T | TsS]});
         _ ->
+            Powerset = powerset(InTs),
+            % io:format("~p\n", [Powerset]),
             % All branches
             Branches = 
                 lists:map(
                     fun(T) ->
-                        InPs = digraph:in_neighbours(G, T),
+                        InPs = lists:usort(lists:concat([digraph:in_neighbours(G, T_) || T_ <- T])),
                         backward_slice_imp(
                             PN, 
                             lists:usort((InPs ++ W) -- NDone), 
                             NDone, 
-                            {NPs, [T | TsS]}) 
+                            {NPs, T ++ TsS}) 
                     end,
-                    InTs),
+                    Powerset),
             Res = 
                 lists:concat(Branches),
             % io:format("~p\n", [Branches]),
