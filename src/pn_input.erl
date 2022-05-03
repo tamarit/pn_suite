@@ -3,7 +3,8 @@
 -export( [  read_pn/1, read_pos_from_svg/1, 
             read_pos_from_svg_web/1, read_data/1,
             read_file_lines/1,
-            is_pnml_file/1] ).
+            is_pnml_file/1,
+            read_json/1] ).
 
 -include("pn.hrl").
  
@@ -81,6 +82,104 @@ read_pos_from_svg_web(PN) ->
         read_xml_document("pn_slicer_temp.svg"),
     os:cmd("rm -f pn_slicer_temp.svg"),
     extract_positions(SVG, PN).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Read JSON
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% {struct,[{"directed",true},
+%          {"multigraph",false},
+%          {"graph",{struct,[]}},
+%          {"nodes",
+%           {array,[{struct,[{"id",{array,["transition","T2"]}}]},
+%                   {struct,[{"id",{array,["place","P3"]}}]},
+%                   {struct,[{"id",{array,["place","P4"]}}]},
+%                   {struct,[{"id",{array,["transition","T3"]}}]},
+%                   {struct,[{"id",{array,["place","P2"]}}]},
+%                   {struct,[{"id",{array,["transition","T1"]}}]},
+%                   {struct,[{"id",{array,["place","P1"]}}]},
+%                   {struct,[{"id",{array,["transition","T0"]}}]},
+%                   {struct,[{"id",{array,["place","P0"]}}]}]}},
+%          {"links",
+%           {array,[{struct,[{"source",{array,["transition","T2"]}},
+%                            {"target",{array,["place","P3"]}}]},
+%                   {struct,[{"source",{array,["place","P4"]}},
+%                            {"target",{array,["transition","T2"]}}]},
+%                   {struct,[{"source",{array,["transition","T3"]}},
+%                            {"target",{array,["place","P4"]}}]},
+%                   {struct,[{"source",{array,["place","P2"]}},
+%                            {"target",{array,["transition","T2"]}}]},
+%                   {struct,[{"source",{array,["transition","T1"]}},
+%                            {"target",{array,["place","P2"]}}]},
+%                   {struct,[{"source",{array,["place","P1"]}},
+%                            {"target",{array,["transition","T1"]}}]},
+%                   {struct,[{"source",{array,["place","P1"]}},
+%                            {"target",{array,["transition","T3"]}}]},
+%                   {struct,[{"source",{array,["transition","T0"]}},
+%                            {"target",{array,["place","P1"]}}]},
+%                   {struct,[{"source",{array,["place","P0"]}},
+%                            {"target",{array,["transition","T0"]}}]}]}}]}
+
+read_json(JSONFile) -> 
+    {ok, IODev} = file:open(JSONFile, [read]),
+    [JSONContent|_] = read_data(IODev),
+    file:close(JSONFile),
+    % io:format("~p\n", [JSONContent]),
+    JSON = mochijson:decode(JSONContent),
+    % io:format("~p\n", [JSON]),
+    Name = "temp_slice_pn",
+    % Name = JSONFile,
+        % case Name0 of 
+        %     "" ->
+        %         [$.|RestName] = 
+        %             lists:dropwhile(
+        %                 fun($.) ->
+        %                         false;
+        %                     (_) ->
+        %                         true
+        %                 end,
+        %                 lists:reverse(Name0)),
+        %         lists:reverse(RestName);
+        %     _ ->
+        %         Name0
+        % end,
+    {struct, [_, _, _, {"nodes", {array, Nodes}}, {"links", {array, Links}}]} = JSON,
+    Places = [#place{
+        name = replace_minus(
+            string:strip(PlaceName, both, $ )),
+        showed_name = replace_minus(
+            string:strip(PlaceName, both, $ )),
+        marking = PlaceMarking
+        } || {struct,[{"id",{array,["place",PlaceName, PlaceMarking]}}]} <- Nodes],
+    Transitions = [#transition{
+        name = replace_minus(
+            string:strip(TransitionName, both, $ )),
+        showed_name = replace_minus(
+            string:strip(TransitionName, both, $ ))
+        } || {struct,[{"id",{array,["transition",TransitionName]}}]} <- Nodes],
+    Arcs1 = [#arc{
+        name = replace_minus(
+            string:strip(Source ++ "-" ++ Target, both, $ )),
+        source = replace_minus(
+            string:strip(Source, both, $ )),
+        target = replace_minus(
+            string:strip(Target, both, $ ))
+        } || {struct,[{"source",{array,[_,Source,_]}}, {"target",{array,[_,Target]}}]} <- Links],
+    Arcs2 = [#arc{
+        name = replace_minus(
+            string:strip(Source ++ "-" ++ Target, both, $ )),
+        source = replace_minus(
+            string:strip(Source, both, $ )),
+        target = replace_minus(
+            string:strip(Target, both, $ ))
+        } || {struct,[{"source",{array,[_,Source]}}, {"target",{array,[_,Target,_]}}]} <- Links],
+    #petri_net{
+        name = Name,
+        places = build_dict(place, Places),
+        transitions = build_dict(transition, Transitions),
+        arcs = Arcs1 ++ Arcs2,
+        dir = filename:dirname(filename:absname(JSONFile))
+    }.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Info extractors
@@ -253,6 +352,7 @@ read_file_lines(File) ->
     Res.
 
 read_xml_document(File) ->
+    % io:format("~p\n", [File]),
     {ok, InpDev} = 
         file:open(File, [read]),
     {XML, []} = 
