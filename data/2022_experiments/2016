@@ -1,0 +1,490 @@
+
+File: examples/mcc_models/2016/AirplaneLD/AirplaneLD-pt-0010.pnml
+************************
+
+Property analysis timeouted.
+
+File: examples/mcc_models/2016/AutoFlight/afcs_01_a.pnml
+************************
+
+Properties:
+num_places: 32
+num_transitions: 30
+num_labels: 30
+num_arcs: 100
+num_tokens: 1
+plain: Yes
+pure: No
+nonpure_only_simple_side_conditions: Yes
+free_choice: No
+restricted_free_choice: No
+t_net: No
+s_net: No
+output_nonbranching: No
+conflict_free: No
+k-marking: 1
+safe: Yes
+bounded: Yes
+k-bounded: 1
+isolated_elements: No
+strongly_connected: No
+weakly_connected: Yes
+bcf: No
+bicf: No
+strongly_live: No
+weakly_live: No
+simply_live: Yes
+persistent: No
+backwards_persistent: No
+reversible: No
+homogeneous: Yes
+asymmetric_choice: Yes
+Deadlock: true
+Size: 62
+
+
+Slicing criterion: p0
+
+
+Slicing criterion: p24,p22,p26,p0
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p28,p8
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p29
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p28,p13,p27,p24,p4
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p11
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p19,p30,p18,p31
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p9,p1,p19,p3
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p28,p4,p22
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p30,p0,p18,p29
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p4,p8,p15
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p23
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p20,p11,p29
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p27,p30,p9,p6,p8
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p21
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p9,p19,p11,p20
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p7,p28,p0,p10
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p16
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p24,p2,p21,p9,p3
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p0,p30
+
+Llorens et al's slicer improved: timeouted
+
+File: examples/mcc_models/2016/CloudDeployment/deploy_2_a.pnml
+************************
+
+Properties:
+num_places: 69
+num_transitions: 174
+num_labels: 174
+num_arcs: 821
+num_tokens: 1
+plain: Yes
+pure: No
+nonpure_only_simple_side_conditions: Yes
+free_choice: No
+restricted_free_choice: No
+t_net: No
+s_net: No
+output_nonbranching: No
+conflict_free: No
+k-marking: 1
+safe: Yes
+bounded: Yes
+k-bounded: 1
+isolated_elements: No
+strongly_connected: No
+weakly_connected: Yes
+bcf: No
+bicf: No
+strongly_live: No
+weakly_live: No
+simply_live: Yes
+persistent: No
+backwards_persistent: No
+reversible: No
+homogeneous: Yes
+asymmetric_choice: No
+Deadlock: true
+Size: 243
+
+
+Slicing criterion: p31,p10,p14,p44,p56
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p58,p4,p2
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p41,p6
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p23,p48,p36
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p34,p24,p63,p54,p67
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p36
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p54,p23,p38,p8,p18
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p47,p60,p59
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p36,p0
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p19,p50,p6,p24,p52
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p42,p8
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p52,p17,p28
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p67,p65,p55,p40
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p3,p25
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p23,p42,p30,p41,p65
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p26,p55
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p12,p0,p13,p17,p52
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p28,p11
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p53,p56,p28
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: p38,p13
+
+Llorens et al's slicer improved: timeouted
+
+File: examples/mcc_models/2016/DES/des_00_a.pnml
+************************
+
+Property analysis timeouted.
+
+File: examples/mcc_models/2016/DLCshifumi/dlcsh_2_a.pnml
+************************
+
+Property analysis timeouted.
+
+File: examples/mcc_models/2016/DNAwalker/dnawalk-01.pnml
+************************
+
+Properties:
+num_places: 13
+num_transitions: 82
+num_labels: 82
+num_arcs: 241
+num_tokens: 13
+plain: Yes
+pure: No
+nonpure_only_simple_side_conditions: Yes
+free_choice: No
+restricted_free_choice: No
+t_net: No
+s_net: No
+output_nonbranching: No
+conflict_free: No
+k-marking: 1
+safe: No
+bounded: Yes
+k-bounded: 2
+isolated_elements: No
+strongly_connected: No
+weakly_connected: Yes
+bcf: No
+bicf: No
+strongly_live: No
+weakly_live: No
+simply_live: Yes
+persistent: No
+backwards_persistent: No
+reversible: No
+homogeneous: Yes
+asymmetric_choice: No
+Deadlock: false
+Size: 95
+
+
+Slicing criterion: A12,A7,A8,A6
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: A10,A12,A9
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: A8,A7
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: A3,A9,A2,A11,B5
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: B5,A11,A3
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: A1
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: A4,B5
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: A9
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: A8
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: A12
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: A5,A10
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: A11,A7
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: B5,A6,A4,A5
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: A9,A5
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: A7,A8,A1,A10
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: A3,A9,A7,A12
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: A8,A4
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: A8
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: A2,A3
+
+Llorens et al's slicer improved: timeouted
+
+Slicing criterion: A5,A7,A11,A8,B5
+
+Llorens et al's slicer improved: timeouted
+
+File: examples/mcc_models/2016/GPPP/G-PPP-1-1.pnml
+************************
+
+Properties:
+num_places: 33
+num_transitions: 22
+num_labels: 22
+num_arcs: 83
+num_tokens: 22
+plain: Yes
+pure: Yes
+nonpure_only_simple_side_conditions: No
+free_choice: No
+restricted_free_choice: No
+t_net: No
+s_net: No
+output_nonbranching: No
+conflict_free: No
+k-marking: 1
+safe: No
+bounded: Yes
+k-bounded: 7
+isolated_elements: No
+strongly_connected: Yes
+weakly_connected: Yes
+bcf: Yes
+bicf: Yes
+strongly_live: No
+weakly_live: No
+simply_live: No
+persistent: Yes
+backwards_persistent: No
+reversible: No
+homogeneous: Yes
+asymmetric_choice: Yes
+Deadlock: false
+Size: 55
+
+
+Slicing criterion: Lac,start,Gluc,PEP,GAP
+
+
+Slicing criterion: a2,NADPH
+
+
+Slicing criterion: S7P,NADPplus,NADH
+
+
+Slicing criterion: Lac,E4P
+
+
+Slicing criterion: c1,_3PG
+
+
+Slicing criterion: G6P,Pyr,ATP,R5P
+
+
+Slicing criterion: c1,PEP,a1
+
+
+Slicing criterion: Pi,Gluc,DHAP
+
+
+Slicing criterion: a2,Lac,_3PG,NADPH
+
+
+Slicing criterion: c1
+
+
+Slicing criterion: a2,Xu5P
+
+
+Slicing criterion: Pi,DHAP
+
+
+Slicing criterion: Xu5P,NADPH,Pi
+
+
+Slicing criterion: F6P
+
+
+Slicing criterion: _2PG,R5P,b2
+
+
+Slicing criterion: ADP,b2
+
+
+Slicing criterion: FBP,a2
+
+
+Slicing criterion: a1,PEP,Gluc,GAP,b2
+
+
+Slicing criterion: PEP
+
+
+Slicing criterion: GSH,ADP
+
+
+File: examples/mcc_models/2016/HypertorusGrid/ht_d2k1p8b00.pnml
+************************
+
+Property analysis timeouted.
+
+File: examples/mcc_models/2016/PaceMaker/PaceMaker.pnml
+************************
+
+Property analysis timeouted.
+
+File: examples/mcc_models/2016/TCPcondis/tcp5.pnml
+************************
+
+Property analysis timeouted.
+
+File: examples/mcc_models/2016/TriangularGrid/trg_1-20-0.pnml
+************************
+
+Property analysis timeouted.
