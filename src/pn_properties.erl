@@ -108,6 +108,21 @@ compare_properties_all(DictOri, DictSlice) ->
         fun
             (K = "size", V, CDict) ->
                 dict:store(K, dict:fetch(K, DictSlice) / V, CDict);
+            (K = "num_places", V, CDict) ->
+                dict:store(K, dict:fetch(K, DictSlice) / V, CDict);
+            (K = "num_transitions", V, CDict) ->
+                dict:store(K, dict:fetch(K, DictSlice) / V, CDict);
+            (K = "num_tokens", V, CDict) ->
+                % case dict:fetch(K, DictSlice) > V of 
+                %     true -> 
+                %         io:format("Found case ~p > ~p\n", [dict:fetch(K, DictSlice), V ]),
+                %         0/0;
+                %     false -> 
+                %         true
+                % end,
+                dict:store(K, dict:fetch(K, DictSlice) / V, CDict);
+            (K = "num_arcs", V, CDict) ->
+                dict:store(K, dict:fetch(K, DictSlice) / V, CDict);
             (K = "time", _, CDict) ->
                 dict:store(K, dict:fetch(K, DictSlice), CDict);
             (K, none, CDict) ->
