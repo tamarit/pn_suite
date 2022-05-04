@@ -102,29 +102,28 @@ The names of the algorithms are:
 
     rakow_ctl
     rakow_safety
-    llorens
-    llorens_prec
+    llorens_maximal
+    llorens_minimal
     yu
 
 An example of this usage is:
 
-	$ pn_slicer examples/other/pn_example.xml "P2,P7" alg:llorens
+	$ pn_slicer examples/other/pn_example.xml "P2,P7" alg:llorens_maximal
 	Petri net named example successfully read.
 
 	Slicing criterion: [P2, P7]
 
-	Slicing using Llorens et al.
+	Slicing using Llorens et al. (maximal)
 
 For instance, we can compute several slices with the following command (observe that they all preserve the property `  conflict_free` and the same deadlock freedom, i.e. `lola:EF DEADLOCK`).
 
 	$ pn_slicer examples/other/pn_example.xml "P6,P9" "conflict_free,lola:EF DEADLOCK" 
 	Petri net named example successfully read.
 	Slicing criterion: [P6, P9]
-	1.- Llorens et al's slicer improved -> Reduction: 54.55 %
-	2.- Llorens et al's slicer -> Reduction: 9.09 %
-	3.- Rakow's slicer CTL -> Reduction: 0.00 %
-	4.- Yu et al's slicer -> Reduction: 13.64 %
-	5.- Rakow's slicer safety -> Reduction: 4.55 %
+	1.- Llorens et al's slicer (maximal) -> Reduction: 9.09 %
+	2.- Rakow's slicer CTL -> Reduction: 0.00 %
+	3.- Yu et al's slicer -> Reduction: 13.64 %
+	4.- Rakow's slicer safety -> Reduction: 4.55 %
 	
 Each slice is stored in a file named `output/<PNML_NAME>_<OUTPUT_NUMBER>.pnml`. For example, Yu's slice generated above can be found at `output/example_4.pnml`. A pdf file is also generated. If flag `-json` is used, a JSON output is generated with exact details about locations and other relevant data.
 
@@ -154,12 +153,7 @@ Each slice is stored in a file named `output/<PNML_NAME>_<OUTPUT_NUMBER>.pnml`. 
 	  },
 	  "slices": [
 	    {
-	      "algorithm": "llorens_imp",
-	      "reduction": "54.55",
-	      "output_file": "output/example_1.pnml"
-	    },
-	    {
-	      "algorithm": "llorens",
+	      "algorithm": "llorens_maximal",
 	      "reduction": "9.09",
 	      "output_file": "output/example_2.pnml"
 	    },
@@ -217,8 +211,8 @@ pn_tools
 	These are the available options:
 	1 .- Run the Petri Net
 	2 .- Export the Petri Net
-	3 .- Slicing Llorens et al
-	4 .- Slicing Llorens et al precise
+	3 .- Slicing Llorens et al (maximal)
+	4 .- Slicing Llorens et al (minimal)
 	5 .- Slicing Llorens et al (for a given transition seq.)
 	6 .- Slicing Yu et al
 	7 .- Slicing Rakow CTL
