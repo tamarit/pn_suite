@@ -22,8 +22,8 @@ main(Args) ->
     %     [PN#petri_net.name, PN#petri_net.dir]),
     Op1 = "Run the Petri Net",
     Op2 = "Export the Petri Net",
-    Op3 = "Slicing Llorens et al.",
-    Op4 = "Slicing Llorens et al. (precise)",
+    Op3 = "Slicing Llorens et al. (maximal)",
+    Op4 = "Slicing Llorens et al. (minimal)",
     % Op10 = "Slicing Llorens et al. (precise single)",
     Op5 = "Slicing Llorens et al. (for a given transition sequence)",
     Op6 = "Slicing Yu et al.",
@@ -309,7 +309,7 @@ web([File, Alg, TimeoutStr, SCStr]) ->
             FunSlice = 
                 case Alg of 
                     "llorens_prec" ->
-                        io:format("Slicing using Llorens et al. (precise).\n"),
+                        io:format("Slicing using Llorens et al. (minimal).\n"),
                         fun pn_slice:slice_imp/2;
                     "rakow_ctl" ->
                         io:format("Slicing using Rakow CTL.\n"),
@@ -321,7 +321,7 @@ web([File, Alg, TimeoutStr, SCStr]) ->
                         io:format("Slicing using Yu et al.\n"),
                         fun pn_yuetal:slice/2;
                     _ ->
-                        io:format("Slicing using Llorens et al.\n"),
+                        io:format("Slicing using Llorens et al. (maximal)\n"),
                         fun pn_slice:slice/2
                 end,
             case SC of
@@ -552,8 +552,8 @@ slice_prop_preserving(Args) ->
         {alg, Alg} ->
             {SizeSlice, Suffix} = 
                 case Alg of 
-                    "llorens_prec" ->
-                        Printer("Slicing using Llorens et al. (precise).\n", []),
+                    "llorens_minimal" ->
+                        Printer("Slicing using Llorens et al. (minimal).\n", []),
                         Suffix0 = "_slc_prec",
                         Fun = fun pn_slice:slice_imp/2, 
                         {slicing_common_with_print(PN, Fun, SC, Suffix0), Suffix0};
@@ -598,7 +598,7 @@ slice_prop_preserving(Args) ->
                         Fun = fun pn_slice:slice_gen/2,
                         {slicing_common_with_print(PN, Fun, SC, Suffix0), Suffix0};
                     _ ->
-                        Printer("Slicing using Llorens et al.\n", []),
+                        Printer("Slicing using Llorens et al. (maximal)\n", []),
                         Suffix0 = "_slc",
                         Fun = fun pn_slice:slice/2,
                         {slicing_common_with_print(PN, Fun, SC, Suffix0), Suffix0}
