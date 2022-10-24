@@ -5,7 +5,7 @@
 PN-Suite is a system prepared to implement, combine, compare, and evaluate Petri net slicing algorithms.
 Roughly, this system can be seen as a workbench that implements the currently most important algorithms for Petri net slicing (it is prepared to easily integrate more algorithms into it). This system provides a new functionality that is particularly useful for the analysis and optimization of Petri nets: it combines all the slicing algorithms with the analysis of properties in such a way that one can reduce the size of a Petri net producing a slice that preserves some desired properties.
 
-PN-Suite implements interfaces to communicate with other systems such as [LoLA](https://theo.informatik.uni-rostock.de/theo-forschung/tools/lola/) and [APT](https://github.com/CvO-theory/apt). This means that PN-Suite takes advantage of [LoLA](https://theo.informatik.uni-rostock.de/theo-forschung/tools/lola/) and [APT](https://github.com/CvO-theory/apt) analyses to report about the properties kept or lost by the slices produced.
+PN-Suite implements interfaces to communicate with other systems such as [APT](https://github.com/CvO-theory/apt). This means that PN-Suite takes advantage of [APT](https://github.com/CvO-theory/apt) analyses to report about the properties kept or lost by the slices produced.
 
 In the rest of this document we describe the main features and functionality of PN-Suite, and its architecture.
 
@@ -25,7 +25,7 @@ Table of contents
 
 Installation
 ============
-There are two prerequisites to use this tool. One is the (free) tool [Graphviz](http://www.graphviz.org/), and the other is the (free) [Erlang/OTP framework](http://www.erlang.org/). The (free) system [LoLA](https://theo.informatik.uni-rostock.de/theo-forschung/tools/lola/) is optional: it enables the use of [LoLA](https://theo.informatik.uni-rostock.de/theo-forschung/tools/lola/) expressions as properties to preserve when preforming slicing. These are the few steps needed to have PN-Suite installed in a Unix system.
+There are two prerequisites to use this tool. One is the (free) tool [Graphviz](http://www.graphviz.org/), and the other is the (free) [Erlang/OTP framework](http://www.erlang.org/). These are the few steps needed to have PN-Suite installed in a Unix system.
 
 	$ git clone https://github.com/tamarit/pn_suite.git
 	$ cd pn_suite/
@@ -60,7 +60,7 @@ This tool allows us to extract slices using one of the algorithms, or to extract
     $ pn_slicer PNML_FILE SLICING_CRITERION [PROPERTY_LIST | SLICING_ALGORITHM] [-json]
     
 where `SLICING_CRITERION` is a list of places separated with commas.
-`PROPERTY_LIST` is optional. It accepts both [APT](https://github.com/CvO-theory/apt) properties and [LoLA](http://service-technology.org/lola/index.html) expressions.
+`PROPERTY_LIST` is optional. It accepts [APT](https://github.com/CvO-theory/apt) properties.
 Valid [APT](https://github.com/CvO-theory/apt) properties are:
 
 	backwards_persistent
@@ -95,8 +95,7 @@ Valid [APT](https://github.com/CvO-theory/apt) properties are:
 	num_labels
 	isolated_elements
 
-LoLA expressions are preceded by `lola`, e.g., `lola:EF DEADLOCK`.
-`ALGORITHM` is also optional. If not specified, all algorithms will be used.
+If not specified, all algorithms will be used.
 To choose a slicing algorithm we have to write `alg:ALGORITHM` (no quotes required).
 The names of the algorithms are:
 
@@ -115,9 +114,9 @@ An example of this usage is:
 
 	Slicing using Llorens et al. (maximal)
 
-For instance, we can compute several slices with the following command (observe that they all preserve the property `  conflict_free` and the same deadlock freedom, i.e. `lola:EF DEADLOCK`).
+For instance, we can compute several slices with the following command (observe that they all preserve the property `  conflict_free`.
 
-	$ pn_slicer examples/other/pn_example.xml "P6,P9" "conflict_free,lola:EF DEADLOCK" 
+	$ pn_slicer examples/other/pn_example.xml "P6,P9" "conflict_free" 
 	Petri net named example successfully read.
 	Slicing criterion: [P6, P9]
 	1.- Llorens et al's slicer (maximal) -> Reduction: 9.09 %
@@ -127,7 +126,7 @@ For instance, we can compute several slices with the following command (observe 
 	
 Each slice is stored in a file named `output/<PNML_NAME>_<OUTPUT_NUMBER>.pnml`. For example, Yu's slice generated above can be found at `output/example_4.pnml`. A pdf file is also generated. If flag `-json` is used, a JSON output is generated with exact details about locations and other relevant data.
 
-	$ pn_slicer examples/other/pn_example.xml "P6,P9" "conflict_free,lola:EF DEADLOCK" -json
+	$ pn_slicer examples/other/pn_example.xml "P6,P9" "conflict_free" -json
 	{
 	  "slicing_criterion": [
 	    {
@@ -138,9 +137,6 @@ Each slice is stored in a file named `output/<PNML_NAME>_<OUTPUT_NUMBER>.pnml`. 
 	    }
 	  ],
 	  "preserved_properties": [
-	    {
-	      "property": "lola:EF DEADLOCK"
-	    },
 	    {
 	      "property": "conflict_free"
 	    }
@@ -182,7 +178,7 @@ This tool allows us to study the preservation of properties of a slice.
 
     $ pn_prop PNML_FILE PNML_FILE [PROPERTY_LIST]
     
-Given two Petri nets (often a Petri net and its slice), it shows a list of properties that hold in both Petri nets, and a list of properties that only hold in the original Petri net. It is also possible to specify some specific properties, and only them will be analyzed. For the analysis of properties, `pn_prop` conveniently communicates with either [LoLA](http://service-technology.org/lola/index.html), or [APT](https://github.com/CvO-theory/apt), or both. With the information provided by these tools, it decides whether the required properties are preserved. 
+Given two Petri nets (often a Petri net and its slice), it shows a list of properties that hold in both Petri nets, and a list of properties that only hold in the original Petri net. It is also possible to specify some specific properties, and only them will be analyzed. For the analysis of properties, `pn_prop` conveniently communicates with [APT](https://github.com/CvO-theory/apt). With the information provided by these tools, it decides whether the required properties are preserved. 
 
     $ pn_prop pn_example.xml output/example_1.pnml 
 	Preserved properties:
@@ -194,10 +190,10 @@ Given two Petri nets (often a Petri net and its slice), it shows a list of prope
 	backwards_persistent, num_places, bicf, persistent, bcf, num_tokens,
 	asymmetric_choice, num_arcs, num_transitions, num_labels, safe, k-bounded
 
-For instance, code bellow shows that both properties, `simply_live` and `EF DEADLOCK`, are preserved between the two Petri nets given as arguments.
+For instance, code bellow shows that property `simply_live` is preserved between the two Petri nets given as arguments.
 
 
-	$ pn_prop pn_example.xml output/example_1.pnml "simply_live,lola:EF DEADLOCK"
+	$ pn_prop pn_example.xml output/example_1.pnml "simply_live"
 	true
 
 pn_tools
@@ -241,17 +237,16 @@ The Petri net can be animated either manually or randomly. If manual animation i
 The user can select from a menu a slicing algorithm. Then, according to the chosen algorithm, the user can specify a slicing criterion. The Petri net is then automatically sliced and a new Petri net (the slice) is produced. It is important to highlight that this tool implements another slicing algorithm (option 5) besides those of `pn_slicer`. This algorithm allows us to extract a slice from a Petri net considering a specific firing sequence (instead of all possible firing sequences as all the other algorithms do).
 
 ### Output
-The output of PN-Suite can be produced in many different formats, including standard [PNML](http://www.pnml.org/) (compatible with [PIPE5](http://sarahtattersall.github.io/PIPE/)), [LoLA](http://service-technology.org/lola/index.html), [APT](https://github.com/CvO-theory/apt), DOT and more than 50 other formats provided by [Graphviz](http://www.graphviz.org/).
+The output of PN-Suite can be produced in many different formats, including standard [PNML](http://www.pnml.org/) (compatible with [PIPE5](http://sarahtattersall.github.io/PIPE/)), [APT](https://github.com/CvO-theory/apt), DOT and more than 50 other formats provided by [Graphviz](http://www.graphviz.org/).
 
 	[1/2/3/4/5/6/7/8]: $ 2
 	1 .- pdf
 	2 .- dot
 	3 .- PNML (compatible with PIPE)
-	4 .- LoLA
-	5 .- APT
-	6 .- Other formats
+	4 .- APT
+	5 .- Other formats
 	What format do you need?
-	[1/2/3/4/5/6]:  1
+	[1/2/3/4/5]:  1
 	
 Web interface
 =============
