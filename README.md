@@ -117,11 +117,11 @@ An example of this usage is:
 For instance, we can compute several slices with the following command (observe that they all preserve the property `  conflict_free`.
 
 	$ pn_slicer examples/other/pn_example.xml "P6,P9" "conflict_free" 
-	Petri net named example successfully read.
+	Petri net named pn_example successfully read.
 	Slicing criterion: [P6, P9]
-	1.- Llorens et al's slicer (maximal) -> Reduction: 9.09 %
+	1.- Llorens et al.'s slicer (maximal) -> Reduction: 9.09 %
 	2.- Rakow's slicer CTL -> Reduction: 0.00 %
-	3.- Yu et al's slicer -> Reduction: 13.64 %
+	3.- Yu et al.'s slicer -> Reduction: 13.64 %
 	4.- Rakow's slicer safety -> Reduction: 4.55 %
 	
 Each slice is stored in a file named `output/<PNML_NAME>_<OUTPUT_NUMBER>.pnml`. For example, Yu's slice generated above can be found at `output/example_4.pnml`. A pdf file is also generated. If flag `-json` is used, a JSON output is generated with exact details about locations and other relevant data.
